@@ -93,19 +93,11 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -113,21 +105,37 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Assumption {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .DONE {
   --color1: #cce7b1;
@@ -137,31 +145,23 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Goal {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -345,17 +345,13 @@ window.Quarto = {
 
 <section id="welcome" class="level1 unnumbered">
 <h1 class="unnumbered">Welcome</h1>
-<p>These are the Lecture Notes of <strong>Differential Geometry 661955</strong> for T1 2023/24 at the University of Hull. We will study curves and surfaces in <span class="math inline">\(\mathbb{R}^3\)</span>. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at</p>
+<p>These are the Lecture Notes of <strong>Differential Geometry 661955</strong> for 2024/25 at the University of Hull. I will use this material during lectures. If you have any question or find any typo, please email me at</p>
 <div style="text-align: center;">
 <p><strong><a href="mailto:%20S.Fanzon@hull.ac.uk">S.Fanzon@hull.ac.uk</a></strong></p>
 </div>
 <p>Up to date information about the course, Tutorials and Homework will be published on the University of Hull <strong>Canvas Website</strong></p>
 <div style="text-align: center;">
-<p><strong><a href="https://canvas.hull.ac.uk/courses/67594">canvas.hull.ac.uk/courses/67594</a></strong></p>
-</div>
-<p>and on the <strong>Course Webpage</strong> hosted on my website</p>
-<div style="text-align: center;">
-<p><strong><a href="https://www.silviofanzon.com/blog/2023/Differential-Geometry/">silviofanzon.com/blog/2023/Differential-Geometry</a></strong></p>
+<p><strong><a href="https://canvas.hull.ac.uk/courses/73612">canvas.hull.ac.uk/courses/73612</a></strong></p>
 </div>
 <section id="digital-notes" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="digital-notes">Digital Notes</h2>
@@ -369,12 +365,12 @@ window.Quarto = {
 </section>
 <section id="readings" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="readings">Readings</h2>
-<p>Main textbooks:</p>
+<p>We will study curves and surfaces in <span class="math inline">\(\mathbb{R}^3\)</span>, as well as some general topology. The main textbooks are:</p>
 <ul>
 <li>Pressley <span class="citation" data-cites="pressley">(<a href="sections/references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span> for differential geometry,</li>
 <li>Manetti <span class="citation" data-cites="manetti">(<a href="sections/references.html#ref-manetti" role="doc-biblioref">Manetti 2023</a>)</span> for general topology.</li>
 </ul>
-<p>Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">do Carmo 2017</a>)</span> and Abate, Tovena <span class="citation" data-cites="abate-tovena">(<a href="sections/references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Other good readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">do Carmo 2017</a>)</span> and Abate, Tovena <span class="citation" data-cites="abate-tovena">(<a href="sections/references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
 </section>
 <section id="visualization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
@@ -390,7 +386,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.</p>
+<p>You are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the Homework and Final Exam.</p>
 </div>
 </div>
 

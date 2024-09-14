@@ -1,0 +1,2542 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+:::
+
+
+
+
+# Curvature and Torsion
+
+We have seen how to describe curves and reparametrized them. Now we want to look at local properties of curves:
+
+- How much does a curve twist?
+- How much does a curve bend?
+
+We will measure two quantities:
+
+- **Curvature**: measures how much a curve $\g$ deviates from a straight line.
+- **Torsion**: measures how much a curve $\g$ fails to lie on a plane.
+
+For example a 2D spiral is curved, but still lies in a plane. Instead the Helix both deviates from a straight line and *pulls away* from any fixed plane. 
+
+
+
+## Curvature 
+
+We start with an informal discussion. Suppose $\g$ is a straight line
+$$
+\g(t) = \mathbf{a} + t \mathbf{v}
+$$
+with $\mathbf{a}, \mathbf{v} \in \R^3$. The tangent vector to $\g$ is constant
+$$
+\dg(t) =  \mathbf{v} \,.
+$$
+Whatever the definition of curvature will be, it has to hold that $\g$ has zero curvature in this case. If we further derive the tangent vector, we obtain
+$$
+\ddg(t) =  \zero \,.
+$$
+Thus $\ddg$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
+
+
+Suppose now that $\g$ is a curve in $\R^2$ with unit speed. We have proven that in this case
+$$
+\dg \cdot \ddg = 0 \,,
+$$
+that is, the vector $\ddg$ is orthogonal to the tangent $\dg$ at all times. Now let $\mathbf{n}(t)$ be the unit vector orthogonal to $\dg(t)$ at the point $\g(t)$. The amount that the curve $\g$ deviates from its tangent at $\g(t)$ after time $t_0$ is
+$$
+( \g(t + t_0) - \g(t) ) \cdot \mathbf{n}(t) \,,
+$$ {#eq-curvature-heuristics}
+as seen in the figure below.
+
+
+![Amount that $\g$ deviates from tangent is $(\g(t+t_0)-\g(t)) \cdot \nn(t)$](/images/curvature.png){width=70%}
+
+
+Equation (@eq-curvature-heuristics) is what we take as measure of curvature. Since 
+$$
+\dg(t) \cdot \ddg(t) = 0 \quad \mbox{ and } \quad   \dg(t) \cdot \mathbf{n}(t)= 0 \,,
+$$
+we conclude that $\ddg(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
+$$
+\ddg(t)  = \kappa(t) \, \mathbf{n}(t) \,.
+$$
+As $\nn$ is unitary, we have
+$$
+\kappa(t) = \norm{ \ddg(t) }
+$$
+
+
+Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
+$$
+\g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0)
+$$
+where the remainder $o(t_0)$ is such that 
+$$
+\lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
+$$
+Therefore, discarding the remainder, 
+$$
+\g(t+t_0) - \g(t) \approx \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 \,.
+$$
+Multiplying by $\nn(t)$ we get
+$$
+(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx \dg(t) \cdot \nn(t) t_0 + 
+\frac{\ddg(t) \cdot \nn(t) }{2} t_0^2\,.
+$$
+Recalling that 
+$$
+\dg(t) \cdot \nn(t) = 0\,, \quad  \ddg(t) \cdot \nn(t) = \kappa(t) \,, 
+$$
+we then obtain
+$$
+(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx 
+\frac{1}{2} \, \kappa(t) \, t_0^2
+$$
+
+
+::: Important
+
+The amount that $\g$ deviates from a straight line is proportional to 
+$$
+\kappa(t) = \norm{\ddg (t)}\,.
+$$
+
+:::
+
+We take this as definition of curvature for a general unit speed curve in $\R^n.$
+
+
+::: Definition 
+
+Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. The **curvature** of $\g$ at $\g(t)$ is
+$$
+\kappa^\g(t) := \norm{\ddg (t)} \,.
+$$
+
+:::
+
+
+
+Note that $\kappa(t)$ is a function of time. Therefore the curvature of $\g$ can change from point to point.
+
+
+We now define curvature for curves which are regular, but not necessarily unit speed.
+
+
+::: Definition 
+
+Let $\g \ \colon (a,b) \to \R^n$ be a regular. The **curvature** of $\g$ at $\g(t)$ is
+$$
+\kappa^\g(t) :=   \norm{\ddtg (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
+$$
+where $\tg$ is a unit speed reparametrization of $\g$, with $\g = \tg \circ \f$.
+
+:::
+
+
+::: Remark
+
+The above definition is well posed:
+
+- Since $\g$ is regular, there exist a unit speed reparametrization $\tg$ of $\g$.
+- If $\hat{\g}$ is another unit speed reaprametrization of $\g$, with $\g = \hat{\g} \circ \hat\f$, then
+$$
+\kappa^{\g} (t) =   \norm{\ddot{\hat\g} (\hat\f(t))} \,,
+$$
+showing that there is no ambiguity in the definition of $\kappa^\g$.
+
+> Indeed, since $\tg$ and $\hat{\g}$ are both reparametrizations of $\g$, then 
+$$
+\g(t) = \tg(  \tilde{\f}(t)) \,, \quad 
+\g(t) = \hat{\g} (\hat{\f}(t)  ) 
+$$
+for some diffeomorphisms $\tilde{\f}, \hat{\f}$. Hence 
+$$
+{\tg}(t) = \hat\g(\f(t))\,, \quad \f := \hat{\f} \circ (\tilde{\f})^{-1} \,,
+$${#eq-well-posed-curvature-3}
+where $\f$ is a diffeomorphism, since it is composition of diffeomorphisms. 
+Differentiating (@eq-well-posed-curvature-3) we get
+$$
+\dtg(t) = \dot{\hat{\g}}(\f(t)) \dot\f(t) \,.
+$${#eq-well-posed-curvature-2}
+Taking the norms of the above, and recalling that $\tg$ and $\hat\g$ are unit speed, we get
+$$
+|\dot\f(t)| = 1 \,, \quad  \forall \, t \,. 
+$${#eq-well-posed-curvature}
+Since $\f$ is a diffeomorphism, we already know that $|\dot\f| \neq 0$. As $\dot\f$ is continuous, this means that the sign of $\dot\f$ is constant. Thus (@eq-well-posed-curvature) implies 
+$$
+\dot\f(t) \equiv 1 \quad \mbox{or} \quad
+\dot\f(t) \equiv -1 \,.
+$$
+In both cases, we have
+$$
+\ddot \f \equiv 0 \,.
+$$
+Differentiating (@eq-well-posed-curvature-2) we then obtain
+\begin{align*}
+\ddtg(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
+                         \dot{\hat{\g}}(\f(t)) \ddot\f (t) \\
+                  & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) \,.
+\end{align*}
+Taking the norms and using again that $|\dot\f| \equiv 1$, we get  that 
+$$
+\norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
+$$
+Recalling that $\phi  = \hat\f \circ (\tilde{\f})^{-1}$ we get
+$$
+\norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,, \quad \forall \, t \in (a,b) \,.
+$$
+Therefore 
+$$
+\kappa^\g(t) =  \norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
+$$
+
+:::
+
+
+
+::: Remark 
+### Methods for computing curvature
+
+In summary, the curvature of a regular curve 
+$$
+\g \ \colon (a,b) \to \R^n
+$$ 
+is defined via unit speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
+
+- We find a unit speed reparametrization $\tg$ of the regular curve $\g$
+- This can be done by computing $s$ the arc-length of $\g$, and then defining 
+$$
+\tg:= \g \circ \psi \,, \quad \psi:=s^{-1} 
+$$
+- Then we compute 
+$$
+\kappa^{\tg}(t) = \norm{\ddtg}(t)
+$$
+- We obtain the curvature of $\g$ by
+$$
+\kappa^\g (t)= \kappa^{\tg} (t) 
+$$
+
+When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To do this, we will need the notion of **cross product**, or **vector product**. We will see this in the following sections.
+:::
+
+
+![Procedure for computing curvature $\kappa$](/images/curvature_shortcut.png){width=70%}
+
+
+
+We conclude with two examples in which we compute the curvature $\kappa$ using unit speed reparametrizations.
+
+
+::: Example
+
+Consider the circle of radius $R>0$:
+$$
+\g(t) = (R\cos(t),R\sin(t)) \,, \quad t \in [0,2\pi] \,.
+$$
+To compute the curvature of $\g$ we need to find a unit speed reparametrization. We have shown that:
+$$
+\g \, \mbox{ regular } \,\,\, \implies \,\,\, \f = s^{-1} \, \mbox{ unit speed reparametrization}
+$$
+where $s$ is the arc length of $\g$:
+$$
+s(t):= \int_{t_0}^t \norm{\dg(\tau)} \, d\tau  \,.
+$$
+In our case 
+$$
+\dg(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
+\norm{\dg(t)} = R  
+$$
+and so $\g$ is regular. However $\g$ is not unit speed, therefore we need to find
+a unit speed reparametrization. The arc length starting at $t_0 = 0$ is
+$$
+s(t) = \int_{0}^t R d \tau = t R \,.
+$$
+The inverse of $s$ is
+$$
+\f(t) := s^{-1} (t) = \frac{t}{R} \,.
+$$
+Therefore a unit speed reparametrization of $\g$ is 
+$$
+\tg :=\g \circ \f 
+$$
+which reads
+$$
+\tg(t) :=  \left( R \cos \left( \frac{t}{R} \right) , R \sin \left( \frac{t}{R} \right)\right) \,.
+$$
+We have
+\begin{align*}
+\dtg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
+\ddtg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\end{align*}
+Therefore the curvature of $\g$ is
+$$
+\kappa(t) = \norm{ \ddtg (t) } = \frac{1}{R} \,.
+$$
+In this case $\kappa(t)$ is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable. 
+:::
+
+
+
+
+Before proceeding with the next example, let us give a short overview of the **Hyperbolic functions**.
+ 
+
+::: Remark 
+### Hyperbolic functions    {#remark-hyperbolic-functions}
+
+The Hyperbloic functions are the analogous of the trigonometric functions, but defined using the hyperbola rather than the circle. Their formulas can be obtained by means of the exponential function $e^t$. We have:
+
+
+- Hyperbolic cosine: The **even part** of the function $e^t$, that is, 
+$$
+\cosh (t) = \frac {e^t + e^{-t}} {2} = \frac {e^{2t} + 1} {2e^t} = \frac {1 + e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic sine: The **odd part** of the function $e^t$, that is, 
+$$
+\sinh (t) = \frac {e^t - e^{-t}} {2} = \frac {e^{2t} - 1} {2e^t} = \frac {1 - e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic tangent: Defined by
+$$
+\tanh(t) = \frac{\sinh t}{\cosh t} = \frac {e^t - e^{-t}} {e^t + e^{-t}}
+= \frac{e^{2t} - 1} {e^{2t} + 1} \,.
+$$
+
+- Hyperbolic cotangent: The reciprocal of $\tanh$ for $t \neq 0$,
+$$
+\coth t = \frac{\cosh t}{\sinh t} = \frac {e^t + e^{-t}} {e^t - e^{-t}}
+= \frac{e^{2t} + 1} {e^{2t} - 1} \,.
+$$
+
+- Hyperbolic secant: The reciprocal of $\cosh$
+$$
+\sech (t) = \frac{1}{\cosh t} = \frac {2} {e^t + e^{-t}}
+= \frac{2e^t} {e^{2t} + 1} \,.
+$$
+
+* Hyperbolic cosecant: The reciprocal of $\sinh$ for $t \neq 0$,
+$$
+\csch (t) = \frac{1}{\sinh t} = \frac {2} {e^t - e^{-t}}
+= \frac{2e^t} {e^{2t} - 1} \,.
+$$
+
+For a plot $\cosh, \sinh, \tanh$ see @fig-hyperbolic-functions below. The properties of the
+hyperbolic functions which are of interest to us are:
+
+1. Identities: 
+\begin{align*}
+&\cosh(t) + \sinh(t) = e^t \\
+&\cosh(t) - \sinh(t) = e^{-t} \\
+&\cosh^2(t) - \sinh^2(t)  = 1 \\
+&{\sech}^2(t) - \tanh^2(t)  = 1  
+\end{align*}
+
+2. Derivatives: 
+\begin{align*}
+\frac{d}{dt} \left[ \sinh(t) \right] & = \cosh (t) \\
+\frac{d}{dt} \left[ \cosh(t) \right] & = \sinh (t) \\
+\frac{d}{dt} \left[ \tanh(t) \right] & = 1 - \tanh^2 (t) = - {\csch}^2(t) 
+\end{align*}
+
+3. Integrals: 
+\begin{align*}
+\int_{t_0}^t \sinh(u) \, du & = \cosh (t) - \cosh( t_0 ) \\
+\int_{t_0}^t \cosh(u) \, du & = \sinh (t) - \sinh( t_0 ) \\
+\int_{t_0}^t \tanh(u) \, du & = \log ( \cosh (t) ) - \log ( \cosh (t_0) )
+\end{align*}
+
+:::
+
+
+![Plot of $\cosh, \sinh, \tanh$.](/images/hyperbolic_functions.png){#fig-hyperbolic-functions width=70%}
+
+
+::: Example
+### The Catenary
+
+The **catenary** is the shape of a heavy chain suspended at its ends. The chain is only subjected to gravity, see @fig-catenary. This shape looks similar to a parabola, but it is not a parabola. This was first noted by Galilei, see this [Wikipedia page](https://en.wikipedia.org/wiki/Catenary). The profile of the hanging chain can be obtained via a minimization problem, and one can show it is of the form 
+$$
+\g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
+$$
+See @fig-catenary-plot for a plot of $\g$. Let us check if $\g$ is regular. We have
+$$
+\dg (t) = (1 , \sinh(t)) 
+$$
+so that
+$$
+\norm{ \dg }^2 = 1 + {\sinh}^2 (t) = \cosh^2 (t) 
+\quad \implies \quad
+\norm{ \dg } = \cosh (t) \,. 
+$$
+Note that 
+$$
+\cosh(t) \geq 1
+$$
+showing that $\g$ is regular. However
+$$
+\norm{\dg(1)} = \cosh (1) = \frac{e + e^{-1}}{2} \approx 1.54 \,, 
+$$
+proving that $\g$ is not unit speed. Let us then compute the arc length of $\g$ starting at $t_0 = 0$
+$$
+s(t) = \int_0^t \norm{ \dg (u) } \, du =  \int_0^t \cosh (u) \, du = \sinh (t)
+$$
+since $\sinh(0) = 0$. We need to invert $s$. We have
+$$
+s = \sinh(t) \quad \iff \quad s = \frac{e^t - e^{-t}}{2} \quad \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
+$$
+where the last equation was obtained multuplying both sides by $e^t$. Now we substitute
+$$
+y = e^t
+$$
+and obtain
+$$
+e^{2t} - 2s e^{t} - 1 = 0 \quad \iff \quad y^{2} - 2s y - 1 = 0  \quad \iff \quad y = s \pm \sqrt{1+s^2} \,.
+$$
+Recalling that $y=e^t$, we only consider the positive solution, and obtain that
+$$
+e^t = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
+$$
+We have proven that the inverse of the arc length $s(t)$ is 
+$$
+\psi(t) := s^{-1}(t) = \log \left( t + \sqrt{ 1+ t^2} \right) \,.
+$$
+Therefore 
+$$
+\tg (t) := \g( \psi(t) )
+$$
+is a unit speed reparametrization of $\g$. Substituting $\psi$ and using the definition of $\g$ we have
+$$
+\tg(t) = \left(  \log \left( t + \sqrt{ 1+ t^2} \right) , \sqrt{1 + t^2}  \right) \,.
+$$
+We can now compute the curvature. We have:
+\begin{align*}
+\dtg (t) &  = \left(  \frac{1}{ \sqrt{1 + t^2} } , \frac{t}{ \sqrt{1 + t^2}}   \right) \\
+\ddtg (t) & = \left( - \frac{t}{ (1 + t^2)^{3/2} } , \frac{1}{(1 + t^2)^{3/2} }   \right)
+\end{align*}
+Moreover
+$$
+\norm{\ddtg (t)}^2 = \frac{t^2}{(1+t^2)^3} + \frac{1}{(1+t^2)^3} = \frac{1}{(1+t^2)^2} \,.
+$$
+Therefore the curvature is
+$$
+\kappa (t) = \norm{\ddtg (t)} = \frac{1}{1+t^2} \,.
+$$
+:::
+
+
+![The catenary is the shape of a heavy chain suspended at its ends. Image from [Wikipedia](https://en.wikipedia.org/wiki/Catenary).](/images/catenary.png){#fig-catenary width=70%}
+
+
+![Plot of the catenary curve $\g(t) = (t, \cosh(t))$.](/images/catenary_plot.png){#fig-catenary-plot width=70%}
+
+
+
+
+
+
+
+## Vector product in $\R^3$
+
+
+The discussion in this section follows [@do-carmo]. We start by defining **orientation** for a vector space.
+
+
+::: Definition
+### Same orientation
+
+Consider two ordered basis of $\R^3$
+$$
+B = (\bb_1,\bb_2,\bb_3) \,, \quad \tilde{B} = (\widetilde{\bb}_1,\widetilde{\bb}_2,\widetilde{\bb}_3) \,.
+$$
+We say that $B$ and $\widetilde{B}$ have the same orientation if the matrix of change of basis has positive determinant.
+
+:::
+
+When two basis $B$ and $\widetilde{B}$ have the same orientation, we write
+$$
+\bb \sim \widetilde{\bb} \,.
+$$
+The above is clearly an equivalence relation on the set of ordered basis. Therefore the set of ordered basis of $\R^3$ can be decomposed into equivalence classes.
+Since the determinant of the matrix of change of basis can only be positive or negative, there are only two equivalence classes.
+
+
+::: Definition 
+### Orientation
+
+The two equivalence classes determined by $\sim$ on the set of ordered basis are called **orientations**. 
+
+:::
+
+
+
+::: Definition 
+### Positive orientation
+
+Consider the standard basis of $\R^3$ 
+$$
+E = (\ee_1,\ee_2,\ee_3)
+$$
+where we set
+$$
+\ee_1 = (1,0,0)\,, \quad \ee_2 = (0,1,0) \,, \quad \ee_3 = (0,0,1) \,.
+$$
+Then:
+
+- The orientation corresponding to $E$ is called **positive orientation** of $\R^3$.
+- The orientation corresponding to the other equivalence class is called **negative orientation** of $\R^3$.
+
+
+For a basis $B$ of $\R^3$ we say that:
+
+- $B$ is a **positive basis** if it belongs to the class of $e$.
+- $B$ is a **negative basis** if it does not belong to the class of $e$.
+:::
+
+
+
+::: Example
+
+Since we are dealing with ordered basis, the order in which vectors appear is fundamental. For example, we defined the equivalence class of
+$$
+E = (\ee_1,\ee_2,\ee_3) \,,
+$$
+to be the positive orientation of $\R^3$. In particular $e$ is a positive basis.  
+Consider instead
+$$
+\widetilde{E} = (\ee_2,\ee_1,\ee_3) \,.
+$$
+The matrix of change of variables between $\widetilde{E}$ and $E$ is 
+$$
+(\ee_2 | \ee_1 | \ee_3 ) = \left(
+\begin{array}{ccc}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}
+\right)
+$$
+and the latter has negative determinant. Thus $\widetilde{E}$ does not belong to the class of $E$, and is therefore a negative basis. 
+:::
+
+
+We are now ready to define the vector product in $\R^3$.
+
+
+::: Definition
+### Vector product in $\R^3$   
+
+Let $\uu,\vv \in \R^3$. The vector product of $\uu$ and $\vv$ is the unique vector 
+$$
+\uu \times \vv \in \R^3
+$$
+which satisfies the property:
+$$
+(\uu \times \vv) \cdot \ww = 
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+w_1 & w_2 & w_3 \\
+\end{array}
+\right| \,, \quad \forall \, \ww \in \R^3 \,.
+$${#eq-def-vector-product}
+Here $|a_{ij}|$ denotes the determinant of the matrix $(a_{ij})$, and 
+$$
+\uu= \sum_{i=1}^3 u_i \ee_i \,, \quad
+\vv= \sum_{i=1}^3 v_i \ee_i \,, \quad
+\ww= \sum_{i=1}^3 w_i \ee_i \,,
+$$
+with $(\ee_1,\ee_2,\ee_3)$ standard basis of $\R^3$.
+:::
+
+
+The following proposition gives an explicit formula for computing $\uu \times \vv$.
+
+
+::: Proposition
+
+Let $\uu,\vv \in \R^3$. Then
+$$
+\uu \times \vv = 
+\left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right| \ee_1 -
+\left|
+\begin{array}{cc}
+u_1 & u_3  \\
+v_1 & v_3 
+\end{array}
+\right| \ee_2 +
+\left|
+\begin{array}{cc}
+u_1 & u_2  \\
+v_1 & v_2 
+\end{array}
+\right| \ee_3  \,. 
+$$ {#eq-formula-cross-product}
+:::
+
+
+
+
+::: Proof
+Denote by $(\uu \times \vv)_i$ the $i$-th component of $\uu \times \vv$ with respect to the standard basis, that is,
+$$
+\uu \times \vv = \sum_{i=1}^3  (\uu \times \vv)_i \, \ee_i \,.
+$$
+We can use (@eq-def-vector-product) with $\ww = \ee_1$ to obtain 
+$$
+(\uu \times \vv) \cdot \ee_1  = 
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 1  & 0   &   0 \\
+\end{array}
+\right| =
+\left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right|
+$$
+where we used the Laplace expansion for computing the determinant of the $3 \times 3$ matrix. As the standard basis is orthonormal, by bilinearity of the scalar product we get
+$$
+(\uu \times \vv) \cdot \ee_1 = \sum_{i=1}^3  (\uu \times \vv)_i \, \ee_i \cdot \ee_1 = (\uu \times \vv)_i \,.
+$$
+Therefore we have shown
+$$
+(\uu \times \vv)_1 = \left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right| \,.
+$$
+Similarly we obtain
+$$
+(\uu \times \vv)_2  = \left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 0  & 1   &   0 \\
+\end{array}
+\right| = -
+\left|
+\begin{array}{cc}
+u_1 & u_3  \\
+v_1 & v_3 
+\end{array}
+\right|
+$$
+and 
+$$
+(\uu \times \vv)_3  = \left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 0  & 0   &   1 \\
+\end{array}
+\right| = 
+\left|
+\begin{array}{cc}
+u_1 & u_2  \\
+v_1 & v_2 
+\end{array}
+\right| \,,
+$$
+from which we conclude.
+:::
+
+
+
+
+
+Sometimes we will denote formula (@eq-formula-cross-product) by
+$$
+\uu \times \vv = 
+\left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+u_1 & u_2 & u_2 \\
+v_1 & v_2 & v_3 
+\end{array} 
+\right| \,.
+$$
+
+Let us collect some crucial properties of the vector product.
+
+
+
+
+::: {.Proposition #proposition-vector-product}
+
+The vector product in $\R^3$ satisfies the following properties: For all $\uu, \vv \in \R^3$ 
+
+1. $\uu \times \vv = - \vv \times \uu$
+2. $\uu \times \vv = \zero$ if and only if $\uu$ and $\vv$ are linearly dependent
+3. $(\uu \times \vv) \cdot \uu = 0$, $(\uu \times \vv) \cdot \vv = 0$
+4. For all $\ww \in \R^3$, $a,b \in \R$
+$$
+(a\uu + b\ww) \times \vv = a \uu \times \vv + b\ww \times \ww 
+$$
+:::
+
+The proof, which is based on the properties of determinants, is omitted.
+
+
+::: Remark
+### Geometric interpretation of vector product   {#remark-vector-product}
+
+Let $\uu, \vv \in \R^3$ be linearly independent. We make some observations:
+
+1. Property 3 in Proposition \ref{proposition-vector-product} says that
+$$
+(\uu \times \vv) \cdot \uu = 0 \,, \quad  (\uu \times \vv) \cdot \vv = 0 \,.
+$$
+Therefore $\uu \times \vv$ is orthogonal to both $\uu$ and $\vv$. 
+
+2. In particular $\uu \times \vv$ is orthogonal to the plane generated by $\uu$ and $\vv$.
+
+3. Since $\uu$ and $\vv$ are linearly independent, Property 2 in Proposition \ref{proposition-vector-product} says that
+$$
+\uu \times \vv \neq \zero
+$$
+
+4. Therefore we have
+$$
+(\uu \times \vv) \cdot (\uu \times \vv) = \norm{ \uu \times \vv }^2 > 0 
+$$
+
+5. On the other hand, using the definition of $\uu \times \vv$ with $\ww = \vv \times \ww$ yields
+$$
+(\uu \times \vv) \cdot (\uu \times \vv) =
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+(\uu \times \vv)_1 & (\uu \times \vv)_2 & (\uu \times \vv)_3 \\
+\end{array}
+\right| 
+$$
+
+6. Therefore the determinant of the matrix
+$$
+(\uu | \vv | \uu \times \vv)
+$$
+is positive. This shows that 
+$$
+(\uu , \vv , \uu \times \vv)
+$$
+is a **positive basis** of $\R^3$.
+
+7. For all $\uu,\vv,\xx,\yy \in \R^3$ it holds
+$$
+(\uu \times \vv) \cdot (\xx \times \yy ) = 
+\left|
+\begin{array}{cc}
+\uu \cdot \xx & \vv \cdot \xx  \\
+\uu \cdot \yy & \vv \cdot \yy 
+\end{array}
+\right| \,.
+$${#eq-formula-cross}
+Indeed, one can check that the above formula holds for the standard vectors $\ee_i$, and thus the general formula follows by linearity.
+
+8. Using (@eq-formula-cross) we get
+\begin{align*}
+\norm{\uu \times \vv}^2 & = (\uu \times \vv) \cdot (\uu \times \vv) = 
+\left|
+\begin{array}{cc}
+\uu \cdot \uu & \vv \cdot \uu  \\
+\uu \cdot \vv & \vv \cdot \vv 
+\end{array}
+\right|   \\
+& = \norm{\uu}^2 \norm{\vv}^2 - |\uu \cdot \vv|^2 \\
+& = \norm{\uu}^2 \norm{\vv}^2 - \norm{\uu}^2 \norm{\vv}^2 \cos^2(\theta) \\
+& = \norm{\uu}^2\norm{\vv}^2 (1-\cos^2(\theta)) \\
+& = \norm{\uu}^2\norm{\vv}^2 \sin^2(\theta) \\
+& = A^2  
+\end{align*} 
+where $A$ is the area of the parallelogram with sides $\uu$ and $\vv$.
+:::
+
+
+![For $\uu,\vv$ linearly independent, $\uu \times \vv$ is orthogonal to the plane generated by $\uu,\vv$. Moreover $|\uu \times \vv|$ is the area of the parallelogram with sides $\uu,\vv$, and $(\uu,\vv,\uu \times \vv)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
+
+
+Let us summarize the above remark.
+
+::: Remark
+### Summary: Properties of $\uu \times \vv$
+
+Let $\uu,\vv \in \R^3$ be linearly independent. Then
+
+- $\uu \times \vv$ is orthogonal to the plane spanned by $\uu,\vv$
+- $\norm{\uu \times \vv}$ is equal to the area of the parallelogram with sides $\uu,\vv$
+- $\uu \times \vv$ is such that
+$$
+(\uu,\vv,\uu \times \vv)
+$$
+is a positive basis of $\R^3$.
+
+:::
+
+
+
+We conclude with noting that the cross product is not associative, and with a useful proposition for differentiating the cross product of curves in $\R^3$.
+
+
+
+::: Proposition
+The vector product is not associative. In particular, for all $\uu, \vv, \ww \in \R^3$ it holds:
+$$
+(\uu \times \vv) \times \ww = ( \uu \cdot \ww ) \vv - ( \vv \cdot \ww ) \uu \,.
+$$ {#eq-cross-prod-triple}
+
+:::
+
+
+The proof is omitted. It follows by observing that both sides of (@eq-cross-prod-triple) are linear in $\uu, \vv, \ww$. Therefore it is sufficient to verify (@eq-cross-prod-triple) for the standard basis vectors $\ee_i$. This is left as an exercise.
+
+
+::: Proposition
+
+Suppose $\g,\eeta \ \colon (a,b) \to \R^3$ are parametrized curves. Then
+the curve 
+$$
+\g \times \eeta \ \colon (a,b) \to \R^3
+$$
+is smooth, and
+$$
+\frac{d}{dt} ( \g \times \eeta ) = \dg \times \eeta + \g \times \dot{\eeta} \,.
+$${#eq-cross-prod-derivative}
+
+:::
+
+The proof is omitted. It follows immediately from formula (@eq-formula-cross-product).
+
+
+
+
+
+
+## Curvature formula in $\R^3$
+
+
+Given a unit speed curve
+$$
+\g \ \colon (a,b) \to \R^n
+$$
+we defined its curvature as
+$$
+\kappa(t) = \norm{ \ddg(t) } \,.
+$$
+If $\g$ is not unit speed then the curvature is not defined. However, when $\g$ is regular, then we can find a unit-speed reparametrization $\tg$ of $\g$, and compute $\kappa$ as
+$$
+\kappa(t) = \norm{ \ddtg(t) } \,.
+$$
+If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
+
+::: Proposition
+### Curvature formula {#proposition-curvature-formula}
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
+$${#eq-curvature}
+
+:::
+
+
+We delay the proof of the above Proposition, as this will get easier when the **Frenet frame** is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in [@pressley].
+
+For now we use (@eq-curvature) the above proposition to compute the curvature on specific curves.
+
+
+::: Example
+
+Consider the straight line
+$$
+\g(t) = \mathbf{a} + t \mathbf{v}
+$$
+for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq \zero$. Then
+$$
+\dg (t) = \mathbf{v} \,, \quad \ddg(t) = \zero \,. 
+$$
+Therefore 
+$$
+\norm{\dg (t)} = \norm{\mathbf{v}} \neq 0
+$$
+showing that $\g$ is regular. We have
+$$
+\dg \times \ddg = \mathbf{v} \times \zero = \zero \,.
+$$
+Therefore the curvature is
+$$
+\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } = 0 \,,
+$$
+as expected.
+:::
+
+
+
+::: Example
+
+Consider the Helix of radius $R>0$ and rise $H>0$
+$$
+\g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
+$$
+Then
+\begin{align*}
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) 
+\end{align*}
+From this we deduce that
+$$
+\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,
+$$
+showing that $\g$ is regular. Finally
+\begin{align*}
+\dg \times \ddg & = 
+\left|
+\begin{array}{cc}
+{\dot\gamma}_2 & {\dot\gamma}_3  \\
+{\ddot\gamma}_2 & {\ddot\gamma}_3
+\end{array}
+\right| \ee_1 -
+\left|
+\begin{array}{cc}
+{\dot\gamma}_1 & {\dot\gamma}_3  \\
+{\ddot\gamma}_1 & {\ddot\gamma}_3
+\end{array}
+\right| \ee_2 +
+\left|
+\begin{array}{cc}
+{\dot\gamma}_1 & {\dot\gamma}_2  \\
+{\ddot\gamma}_1 & {\ddot\gamma}_2
+\end{array}
+\right| \ee_3 \\
+& = 
+\left|
+\begin{array}{cc}
+R\cos(t) & H \\
+-R\sin(t) & 0
+\end{array}
+\right| \ee_1 -
+\left|
+\begin{array}{cc}
+-R\sin(t) & H \\
+-R\cos(t) & 0 
+\end{array}
+\right| \ee_2 +
+\left|
+\begin{array}{cc}
+-R\sin(t) & R\cos(t) \\
+-R\cos(t) & -R\sin(t)  
+\end{array}
+\right| \ee_3 \\
+& = 
+\left(   
+RH\sin(t),    
+-RH\cos(t),
+ R^2\cos^2(t) + R^2\sin^2(t)
+\right) \\
+& = 
+\left(   
+RH\sin(t),    
+-RH\cos(t),
+R^2
+\right) 
+\end{align*}
+and therefore
+$$
+\norm{ \dg \times \ddg } =  R\sqrt{R^2 + H^2   } \,.
+$$
+By the general formula we have
+$$
+\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } =
+\frac{ R (R^2 + H^2)^{\frac12} }{  (R^2 + H^2)^{\frac32}    } =
+\frac{ R }{  R^2 + H^2   } 
+$$
+
+We notice the following:
+
+- If $H=0$ then the Helix is just a circle of radius $R$. In this case the curvature is
+$$
+\kappa  = \frac{1}{R}
+$$
+which agrees with the curvature computed for the circle of radius $R$.
+
+- If $R=0$ then the Helix is just parametrizing the $z$-axis. In this case the curvature is
+$$
+\kappa  = 0 \,,
+$$
+which agrees with the curvature of a straight line.
+
+:::
+
+
+
+
+
+
+## Signed curvature of plane curves
+
+In this section we assume to have plane curves, that is, curves with values in $\R^2$. In this case we can give a geometric interpretation for the sign of the curvature. This cannot be done in higher dimension.
+
+
+::: Definition
+
+Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dg(t)$ anti-clockwise by an angle of $\pi/2$.
+
+:::
+
+
+::: Definition
+
+Let $\g \ \colon (a,b) \to \R^2$ be unit speed. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
+$$
+\ddg(t) = k_s(t) \nn(t)
+$$
+:::
+
+::: Remark
+Notice that since $\nn$ is a unit vector and $\g$ is unit speed, then
+$$
+|\kappa_s(t)| = \norm{\ddg(t)} = \kappa(t) \,.
+$$
+Thus the signed curvature is related to the curvature by
+$$
+\kappa_s(t) = \pm \kappa(t) \,.
+$$
+:::
+
+
+::: Remark
+It can be shown that the signed curvature is the rate at which the tangent vector $\dg$ of the curve $\g$ rotates. The signed curvature is:
+
+- positive if $\dg$ is rotating anti-clockwise
+- negative if $\dg$ is rotating clockwise
+
+In other words, 
+
+- $k_s > 0$ means the curve is turning left,
+- $k_s < 0$ means the curve is turning right.
+
+A rigorous justification of the above statement is found in Proposition 2.2.3 in [@pressley].
+:::
+
+
+
+For curves which are not unit speed, we define the signed curvature as the signed curvature of the unit speed reparametrization. 
+
+
+
+::: Definition
+
+Let $\g \ \colon (a,b) \to \R^2$ be regular and let $\tg$ be a unit speed reparametrization of $\g$. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
+$$
+\ddtg(t) = k_s(t) \nn(t) \,,
+$$
+where $\nn(t)$ is the unit vector obtained by rotating $\dtg(t)$ anti-clockwise by an angle $\pi/2$.
+:::
+
+
+The signed curvature completely characterizes plane curves, in the sense of the following theorem.
+
+
+::: Theorem
+### Characterization of plane curves {#theorem-characterization-plane}
+
+Let $\f \ \colon \R \to \R$ be smooth. Then:
+
+1. There exists a unit speed curve $\g \ \colon \R \to \R^2$ such that its signed curvature $\kappa_s$ satisfies
+$$
+\kappa_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
+$$
+
+2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit speed curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
+$$
+\tilde{\kappa}_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
+$$
+Then 
+$$
+\tg = \g
+$$
+up to rotations and translations.
+:::
+
+
+We do not prove the above theorem. For a proof, see Theorem 2.2.6 in [@pressley].
+
+
+
+
+
+
+## Space curves
+
+In this section we deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compare to the plane case:
+
+- A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*.
+
+- We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eeta$ space curves such that 
+$$
+\kappa^{\g} = \kappa^{\eeta} \,, \quad  \g \neq \eeta \,,
+$$
+that is, $\g$ and $\eeta$ have same curvature but are different curves.
+
+
+
+::: Example
+
+Let $\g$ be a circle of radius $R>0$
+$$
+\g(t) = (R\cos(t),R\sin(t),0) \,,
+$$
+and $\eeta$ be a helix of radius $S>0$ and rise $H>0$
+$$
+\eeta(t) = (S\cos(t),S\sin(t),Ht) \,.
+$$
+We have computed that 
+$$
+\kappa^\g = \frac{1}{R}\,, \quad 
+\kappa^\eeta = \frac{S}{S^2 + H^2} \,.
+$$
+If we now choose $R=2$ and we impose that $\kappa^\g = \kappa^\eeta$ we get
+$$
+\frac1R = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
+$$
+Therefore choosing $S=1$ and $H=1$ yields 
+$$
+\kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,..
+$$
+:::
+
+
+Therefore curvature is not enough for characterizing space curves, and we need a new quantity. 
+As we did with curvature, we start by considering the simpler case of unit speed curves. We will also
+need to assume that the curvature is never zero.
+
+
+::: Definition
+### Principal normal vector
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+The **principal normal vector** to $\g$ at $\g(t)$ is 
+$$
+\nn(t) := \frac{1}{\kappa (t)} \, \ddg(t) \,.
+$$
+:::
+
+
+
+::: Remark
+
+Since for $\g$ unit speed we defined
+$$
+\kappa (t) := \norm{ \ddg(t) } \,,
+$$
+we have that 
+$$
+\norm{ \nn (t) } = 1 \,,
+$$
+thus $\nn$ is a unit vector. Moreover $\nn$ is orthogonal to $\dg$, that is,
+$$
+\dg \cdot \nn = 0 \,.
+$$
+
+>This is because
+$$
+\dg \cdot \nn = \frac{1}{\kappa} \, \dg \cdot \ddg = 0 \,,
+$$
+where the last equality follows from $\dg \cdot \ddg = 0$, being $\g$ unit speed.
+
+:::
+
+
+![Principal normal vector $\nn(t)$ to $\g$ at $\g(t)$.](/images/unit_normal.png){width=70%}
+
+
+
+
+::: Question
+Why is the principal normal interesting? Because it can tell the difference beween a plane curve and a space curve. See picture below.
+:::
+
+
+![Left: Principal normal to a circle. Note that $\nn$ always points towards the origin $\zero$. Right: Principal normal to a helix. Note that $\nn$ points towards the $z$-axis, but never towards the same point.](/images/unit_normal_point.png){width=70%}
+
+
+
+::: Definition
+### Binormal vector
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+The **binormal vector** to $\g$ at $\g(t)$ is 
+$$
+\bb(t) := \dg (t) \times \nn(t) \,.
+$$
+:::
+
+
+
+::: Definition
+### Orthonormal basis
+
+Let $\vv_1, \vv_2, \vv_3$ be vectors in $\R^3$. We say that the triple
+$$
+\{\vv_1, \vv_2,\vv_3\}
+$$
+is **orthonormal** if 
+$$
+\norm{v_i} = 1 \,, \quad   v_i \cdot v_j = 0 \,, \,\, \mbox{ for } \, i \neq j \,.
+$$
+:::
+
+
+
+::: Proposition
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+Then the triple
+$$
+B = (  \dg(t), \nn(t), \bb(t)  )
+$$
+is a positive orthonormal basis of $\R^3$ for all $t \in (a,b)$.
+:::
+
+
+
+::: Proof
+
+Since $\g$ is unit speed we have
+$$
+\norm{ \dg (t) } \equiv 1 \,.
+$$
+Moreover we have already observed that 
+$$
+\norm{\nn(t)} \equiv 1 \,, \quad \dg (t) \cdot \nn(t) \equiv 0 \,.
+$$
+As $\bb$ is defined by
+$$
+\bb:= \dg \times \nn \,,
+$$
+by the properties of the vector product, see Proposition \ref{proposition-vector-product}, it follows that
+$$
+\bb \cdot \dg = 0 \,, \quad  \bb \cdot \nn = 0  \,.
+$$
+By the calculation in Remark \ref{remark-vector-product} Point 8, we have that
+$$
+\norm{ \bb }^2 = \| \dg \|^2 \|\nn \|^2 -   |\dg \cdot \nn|^2 = 1   \,.
+$$
+This shows that the vectors
+$$
+\{ \dg, \nn, \bb  \}
+$$
+are orthonormal. By the properties of the vector product, see Remark \ref{remark-vector-product} Point 6, we also know that
+$$
+( \dg, \nn, \bb  )
+$$
+is a positive basis of $\R^3$.
+:::
+
+
+::: {.Proposition  #proposition-positive-basis}
+
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
+$$
+\bb = \dg \times \nn \,, \quad
+\nn = \bb \times \dg \,, \quad
+\dg = \nn \times \bb \,.
+$$ {#eq-frenet-positive-basis}
+
+:::
+
+
+::: Proof
+
+The first equality in (@eq-frenet-positive-basis) is true by definition of $\bb$. For the other $2$ equalities, recall formula (@eq-cross-prod-triple): 
+$$
+(\uu \times \vv ) \times \ww = ( \uu \cdot \ww) \vv - ( \vv \cdot \ww ) \uu \,,
+$${#eq-cross-prod-triple-1}
+for all $\uu,\vv,\ww \in \R^3$. Applying the above with 
+$$
+\uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \dg \,,
+$$
+yields
+\begin{align*}
+( \dg \times \nn ) \times \dg & = ( \dg \cdot \dg ) \nn - (\nn \cdot \dg) \dg \\
+                                      & = \norm{\dg }^2 \nn - 0 \\
+                                      & = \nn \,,
+\end{align*}
+where we used that $\dg$ is a unit vector and $\nn \cdot \dg = 0$. Therefore, by definition of $\bb$, we have
+$$
+\bb \times \dg = ( \dg \times \nn ) \times \dg = \nn
+$$
+showing the second equality in (@eq-frenet-positive-basis). For showing the third equality in (@eq-frenet-positive-basis), we apply (@eq-cross-prod-triple-1) with 
+$$
+\uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
+$$
+to get
+\begin{align*}
+( \dg \times \nn ) \times \nn  & = ( \dg \cdot \nn ) \nn - (\nn \cdot \nn ) \dg \\
+                                      & = 0 - \norm{\nn }^2 \dg  \\
+                                      & = - \dg
+\end{align*}
+where we used that $\nn$ is a unit vector and $\dg \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
+$$
+\nn \times \bb = - \bb \times \nn = - (\dg \times \nn ) \times \nn = \dg \,,
+$$
+showing the last equality in (@eq-frenet-positive-basis).
+:::
+
+
+::: {.Proposition #proposition-binormal}
+
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
+$$
+\dot{\bb} (t) = - \tau(t) \nn(t) \,,
+$$ {#eq-binormal-derivative}
+for some $\tau(t) \in \R$. 
+
+:::
+
+
+::: Proof
+
+By definition of $\bb$ and the formula of derivation of the cross product (@eq-cross-prod-derivative) we have
+\begin{align*}
+\dot{\bb} & = \frac{d}{dt} ( \dg \times \nn  ) \\
+          & = \ddg \times \nn + \dg \times \dot{\nn} \\
+          & =  \dg \times \dot{\nn} \,,
+\end{align*}
+where we used that
+$$
+\ddg \times \nn  = 0\,,
+$$
+since $\nn$ is defined by $\nn :=  \ddg/\kappa$, and therefore $\nn$ and $\ddg$ are parallel. Hence, we have proven that
+$$
+\dot{\bb} = \dg \times \dot{\nn} \,.
+$${#eq-derivative-b-1}
+By the properties of the cross product we have that $\uu \times \vv$ is orthogonal to both $\uu$
+and $\vv$. Thus (@eq-derivative-b-1) implies that
+$$
+\dot{\bb} \cdot \dg = 0 \,.
+$$
+Further, observe that
+$$
+\frac{d}{dt}( \bb \cdot \bb ) = \dot{\bb} \cdot \bb + \bb \cdot \dot{\bb} = 2\dot{\bb} \cdot \bb \,.
+$$
+On the other hand, since $\bb$ is a unit vector, we have 
+$$
+\frac{d}{dt}( \bb \cdot \bb ) = \frac{d}{dt}( \norm{\bb}^2 ) = \frac{d}{dt}( 1 ) = 0 \,  
+$$
+Therefore 
+$$
+\dot{\bb} \cdot \bb = 0 \,.
+$$
+To summarize, we have shown that $\dot{\bb}$ is orthogonal to $\bb$ and $\dg$. Since 
+$$
+( \dg, \nn , \bb )
+$$
+is an orthonormal basis of $\R^3$ we conclude that $\dot{\bb}$ is parallel to $\nn$. Therefore there exists $\tau(t) \in \R$ such that 
+$$
+\dot{\bb} = - \tau(t) \nn(t) \,,
+$$
+concluding the proof.
+:::
+
+
+The scalar $\tau$ in equation (@eq-binormal-derivative) is called the torsion of $\g$.
+
+::: Definition
+### Torsion of unit speed curve
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve, with $\kappa \neq 0$. The **torsion** of $\g$ at $\g(t)$ is the unique scalar
+$$
+\tau (t) \in \R
+$$
+such that
+$$
+\dot{\bb} (t) = - \tau(t) \nn(t) \,.
+$$
+
+:::
+
+
+
+::: Remark
+In particular the torsion satisfies:
+$$
+\tau(t) = - \dot{\bb} (t) \cdot \nn (t) \,.
+$$
+
+> The above can be immediately obtained by multiplying (@eq-binormal-derivative) by $\nn$. Indeed,
+$$
+\dot{\bb} = - \tau \nn \quad \implies \quad 
+\dot{\bb} \cdot \nn = - \tau \nn \cdot \nn = - \tau \,,
+$$
+since $\nn$ is a unit vector.
+
+:::
+
+
+
+::: Warning
+
+We defined the torsion only for space curves  $\g \colon (a,b) \to \R^3$
+which are unit speed and have non-vanishing curvature, that is, such that
+$$
+\norm{\dg(t)} = 1 \,, \quad \kappa(t) = \norm{ \ddg(t) }  \neq 0 \,,
+$$
+for all $t \in (a,b)$.
+
+:::
+
+
+We can extend the definition of torsion to regular curves $\g$ with non-vanishing curvature. In this
+case the torsion of $\g$ is defined as the torsion of a unit speed reparametrization of $\g$. 
+
+
+::: Definition
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Let $\tg$ be a unit speed reparametrization of 
+$\g$, with 
+$$
+\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
+$$
+We define the torsion of $\g$ at $\g(t)$ as
+$$
+\tau^\g(t) := \tau^{\tg} ( \f(t) ) \,,
+$$
+where ${\tau}^{\tg}(s)$ denotes the torsion of $\tg$ at $\tg(s)$.
+
+:::
+
+As usual, it is possible to check that the above definition of torsion does not depend 
+on the choice of unit speed reparametrization $\tg$. As with curvature, there is a general 
+formula to compute the torsion without having to reparametrize.
+
+
+::: Proposition 
+### Torsion formula   {#proposition-torsion-formula}
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
+$$
+
+:::
+
+We delay the proof of the above proposition for a bit. In the meantime, let us look at examples.
+
+
+
+
+::: Example
+### Torsion Helix
+
+
+Consider the Helix of radius $R>0$ and rise $H>0$
+$$
+\g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
+$$
+We have already shown that
+$$
+\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
+$$
+Therefore the Helix is regular with non-vanishing curvature. The torsion can be then
+computed via the formula 
+$$
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
+$$
+Let us compute the quantities appearing in the formula for $\tau$
+\begin{align*}
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dddg (t) & = ( R\sin(t) , -R\cos(t) , 0) 
+\end{align*}
+Moreover we had already computed that
+\begin{align*}
+\dg \times \ddg & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \,.
+\end{align*}
+Finally we compute
+$$
+(\dg \times \ddg) \cdot \dddg = R^2 H \,.
+$$
+We are ready to find the torsion:
+$$
+\tau = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 }
+       = \frac{ H }{ R^2 + H^2 } \,.
+$$
+:::
+
+
+
+
+::: Example 
+### Curvature and Torsion of Circle   {#example-circle-curvature-torsion}
+
+The Circle of radius $R>0$ is
+$$
+\g(t) := ( R \cos(t), R \sin(t) , 0 ) \,.
+$$
+The curvature and torsion of the Helix of radius $R$ and rise $H>0$ are
+$$
+\kappa = \frac{R}{R^2 + H^2}\,, \quad \tau = \frac{H}{R^2 + H^2}  \,.
+$$
+For $H=0$ the Helix coincides with the Circle $\g$. Therefore we can set $H=0$ in the 
+above formulas to obtain the 
+curvature and torsion of the Circle
+$$
+\kappa = \frac{1}{R}\,, \quad \tau = 0  \,.
+$$
+
+:::
+
+
+From the above example we notice that the torsion of the circle is $0$. This is true in general for space curves which are contained in a plane: we will prove this result in general. For the moment, let us give an example for which this happens, that is, an example of space curve $\g$ which is contained in a plane. 
+
+
+::: {.Example  #example-circle-rotated}
+Define the space curve
+$$
+\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+$$
+for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been rotated an translated. Therefore $\g$ is contained in a plane, and we expect curvature and torsion to be
+$$
+\kappa = \frac1R , \quad \tau = 0\,, 
+$$
+for some $R>0$, radius of the Circle $\g$. Let us proceed with the calculations:
+$$
+\dg =   \left( -\frac45 \sin(t),  - \cos(t) , \frac35 \sin(t)  \right)
+$$
+so that 
+$$
+\norm{ \dg }^2 = \frac{16}{25} \sin^2(t) + \cos^2(t) + \frac{9}{25} \sin^2(t) = 1\,,
+$$
+showing that $\g$ is regular and unit speed. Further
+$$
+\ddg  =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
+$$
+As $\g$ is unit speed, we have
+$$
+\kappa = \norm{ \ddot \g } = \frac{16}{25} \cos^2(t) + \sin^2(t) + \frac{9}{25} \cos^2(t) = 1 \,.
+$$
+As $\g$ is unit speed, the normal vector is 
+$$
+\nn = \frac{1}{\kappa}  \ddg =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
+$$
+We can then compute the binormal
+\begin{align*}
+\bb & = \dg \times \nn \\ 
+    & = 
+    \left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\frac{4}{5} \sin (t)  & - \cos(t) & \frac35 \sin(t) \\
+ -\frac45 \cos(t) &  \sin(t) & \frac35 \cos(t) 
+\end{array} \right| \\
+    & = \left(  -\frac35 \cos^2(t) - \frac35 \sin^2(t), - \frac{12}{25} \cos(t) \sin(t) + \frac{12}{25} \cos(t) \sin(t), - \frac45 \sin^2(t) - \frac45 \cos^2(t)   \right) \\
+    & = \left( -\frac35, 0 ,-\frac45  \right) \,.
+\end{align*}
+Therefore 
+$$
+\dot{\bb} = 0\,,
+$$
+and we obtain that the torsion is
+$$
+\tau = - \dot{\bb} \cdot \nn = 0 \,.
+$$
+:::
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of the curve in example above"
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameter 't'
+t = np.linspace(0, 2*np.pi, 100)
+
+# Calculate the corresponding x, y, and z values
+x = (4/5)*np.cos(t) 
+y = 1- np.sin(t)
+z = -(3/5)*np.sin(t)
+
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
+plt.show()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+## Frenet frame
+
+For a unit speed curve $\g \colon (a,b) \to \R^3$ with non-vanishing curvature we computed the triple
+$$
+\{ \dg, \nn, \bb \} \,.
+$$
+We saw that the above is a positive orthonormal basis of $\R^3$. We also used this triple to compute curvature $\kappa$ and torsion $\tau$ of $\g$:
+$$
+\kappa = \norm{ \ddg } \,, \quad \tau = - \dot{\bb} \cdot \nn \,. 
+$$
+This triple is so important that it has a name.
+
+
+::: Definition
+### Frenet frame
+
+Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The positive orthonormal basis
+$$
+\{ \dg, \nn, \bb \}
+$$
+is called **Frenet frame** of $\g$.
+
+:::
+
+We can also define the Frenet frame for regular curves with non-vanishing curvature.
+
+::: Definition
+
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. The 
+Frenet frame of $\g$ is defined as the Frenet frame of a unit speed reparametrization $\tg$ of $\g$.
+
+:::
+
+:::Remark
+We should check that the above definition is well-posed: 
+
+- Note that $\tg$ is unit speed. Moreover the curvature of ${\kappa}^{\tg}$ is given by
+$$
+{\kappa}^{\tg} (t) = {\kappa}^{\g} (\f(t))
+$$
+for some $\f$ diffeomorphism. Therefore ${\kappa}^{\tg} \neq 0$ as we are assuming ${\kappa}^{\g} \neq 0$. Therefore the Frenet-Frame of $\tg$ is well defined.
+
+- If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
+:::
+
+From the Frenet frame we can define the Frenet-Serret equations.
+
+::: Theorem
+### Frenet-Serret equations
+
+Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
+\begin{align*}  
+\ddg & = \kappa \nn \\
+\dot{\nn} & = - \kappa \dg + \tau \bb \\
+\dot{\bb} & = -\tau \nn
+\end{align*}
+:::
+
+
+::: Proof 
+
+The first Frenet-Serret equation
+$$
+\ddg  = \kappa \nn
+$${#eq-proof-frenet-2}
+holds by definition of $\nn$ and $\kappa$. The third Frenet-Serret equation
+$$
+\dot{\bb} = - \tau \nn
+$${#eq-proof-frenet-3}
+holds by Proposition \ref{proposition-binormal}. Now, recall that in Proposition \ref{proposition-positive-basis} we have proven
+$$
+\bb = \dg \times \nn \,, \quad
+\nn = \bb \times \dg \,, \quad
+\dg = \nn \times \bb \,.
+$${#eq-proof-frenet-1}
+Differentiating the second equation in (@eq-proof-frenet-1) and using (@eq-proof-frenet-2)-(@eq-proof-frenet-3) we get
+\begin{align*}
+\dot{\nn} & = \dot{\bb} \times \dg + \bb \times \ddg & \\
+          & = ( - \tau \nn \times \dg) + \bb \times \kappa \nn \\
+          & = \tau ( \dg \times \nn ) - \kappa (\nn \times \bb ) \\
+          & = \tau \bb - \kappa \dg \,,
+\end{align*}
+where in the last equality we used the first and third equations in
+(@eq-proof-frenet-1). The above is exactly the second Frenet-Serret equation.
+
+:::
+
+
+::: Remark
+
+We can write the Frenet-Serret ODE sysyem in vectorial form. To this end, introduce the matrix
+$$
+F : =
+\left(
+\begin{array}{ccc}
+0 & \kappa & 0 \\
+- \kappa & 0 & \tau \\
+0 & \tau & 0
+\end{array}
+\right) \,.
+$$
+It is immediate to check that the Frenet-Serret equations are equivalent to
+$$
+\left(
+\begin{array}{c}
+\ddg \\
+\dot{\nn} \\
+\dot{\bb}
+\end{array}
+\right) 
+= 
+F 
+\left(
+\begin{array}{c}
+\dg \\
+\nn \\
+\bb
+\end{array}
+\right)  \,.
+$$
+
+:::
+
+
+
+
+::: Important
+### Summary
+
+Recall that:
+
+1. Curvature $\kappa$ is defined only for regular curves.
+2. Torsion $\tau$ is defined only for regular curves with non-vanishing $\kappa$.
+
+The two strategies for computing $\kappa$ and $\tau$ are discussed in the diagram in @fig-diagram below.
+
+:::
+
+![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){#fig-diagram width=80%}
+
+
+
+
+Let us conclude the section with an example. We compute the Frenet frame of the helix. As a consequence we obtain curvature and torsion.
+
+
+
+::: Example
+### Frenet frame of helix   
+
+Consider the helix of radius $1$ and rise $1$ given by
+$$
+\g (t) = ( \cos(t), \sin(t),t )\,,
+$$
+for $t \in \R$. We now proceed following the diagram at @fig-diagram.
+We ask the first question:
+$$
+\mbox{Is $\g$ unit speed?}
+$$
+We have that
+$$
+\dg (t) = ( -\sin(t), \cos(t), 1 )    \,,
+$$
+and therefore 
+$$
+\norm{ \dg } = \sqrt{2} \,.
+$$
+This shows that $\g$ is regular but not unit speed. We ask the second question in the diagram:
+$$
+\mbox{Can we find a unit speed reparametrization of $\g$?}
+$$
+Let us try. We compute the arc length of $\g$ starting at $t_0 = 0$
+$$
+s(t) := \int_0^t \norm{ \dg(u) } \, du = \sqrt{2} \, t \,.  
+$$
+The arc length is invertible with 
+$$
+\psi(t) := s^{-1}(t) = \frac{t}{\sqrt{2}} \,.
+$$
+Therefore a unit speed reparametrization of $\g$ is given by
+$$
+\tg(t):=\g( \psi(t)) = \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , \sin \left( \frac{t}{\sqrt{2}}  \right) , \frac{t}{\sqrt{2}}    \right) \,.
+$$
+The next step in the diagram is
+$$
+\mbox{Compute Frenet frame $\{ \dg, \nn, \bb \}$ and curvature $\kappa$, torsion $\tau$}
+$$
+We compute
+\begin{align*}
+\dtg (t) & = \frac{1}{\sqrt{2}} \left(  -\sin \left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1    \right) \\
+\ddtg (t) & = \frac12 \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right)
+\end{align*}
+Therefore the curvature is
+$$
+\kappa (t) = \norm{ \ddtg(t) } = \frac12 \,.
+$$
+From the curvature we obtain the principal normal vector
+$$
+\nn(t) = \frac{1}{\kappa(t)} \, \ddtg(t) =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \,.
+$$
+We can now compute the binormal
+\begin{align*}
+\bb(t) & = \dtg \times \nn  \\
+    & = \frac{1}{\sqrt{2}}
+    \left|
+    \begin{array}{ccc}
+    \ii & \jj & \kk \\
+    - \sin \left( \frac{t}{\sqrt{2}}  \right)  & \cos \left( \frac{t}{\sqrt{2}}  \right) & 1 \\
+    - \cos \left( \frac{t}{\sqrt{2}}  \right) & - \sin \left( \frac{t}{\sqrt{2}}  \right) & 0 
+    \end{array}
+    \right| \\
+    & =  \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
+\end{align*}
+We have therefore computed the Frenet frame of $\g$. This is given by
+\begin{align*}
+\dtg(t) & = \frac{1}{\sqrt{2}}  \left( -\sin\left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \\
+\nn(t) & =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \\
+\bb(t) & = \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
+\end{align*}
+See below for a picture of the Frenet frame of the helix.
+Given the Frenet frame, we can compute the torsion via the formula
+$$
+\tau (t) = - \dot{\bb} \cdot \nn \,.
+$$
+Indeed, we have
+$$
+\dot{\bb} = \frac12 \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , - \sin \left( \frac{t}{\sqrt{2}}  \right) , 0   \right)
+$$
+and therefore 
+$$
+\dot{\bb} \cdot \nn = \frac12 \left( - \cos^2 \left( \frac{t}{\sqrt{2}}  \right) - \sin^2 \left( \frac{t}{\sqrt{2}}  \right) \right) = - \frac12 \,.
+$$
+The torsion is then
+$$
+\tau (t) = - \dot{\bb} \cdot \nn = \frac12 \,.
+$$
+The Frenet-Frame of the unit-speed Helix is plotted in @fig-helix-frenet. 
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Frenet frame of the helix of radius 1 and rise 1."
+#| label: fig-helix-frenet
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Parameters for the helix
+t = np.linspace(0, 4 * np.pi, 1000)  # Time parameter
+radius = 1.0
+pitch = 0.2
+x = radius * np.cos(t)
+y = radius * np.sin(t)
+z = pitch * t
+
+# Create a figure
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the helix in magenta
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Select three points on the helix: t = pi, t = 2*pi, and t = 3*pi
+t1_index = np.abs(t - np.pi).argmin()
+t2_index = np.abs(t - 2 * np.pi).argmin()
+t3_index = np.abs(t - 2.7 * np.pi).argmin()
+
+# Calculate Frenet frame at t1
+tangent1 = np.array([np.cos(t[t1_index]), np.sin(t[t1_index]), pitch])
+tangent1 /= np.linalg.norm(tangent1)
+normal1 = np.array([-np.sin(t[t1_index]), np.cos(t[t1_index]), 0])
+normal1 /= np.linalg.norm(normal1)
+binormal1 = np.cross(tangent1, normal1)
+
+# Calculate Frenet frame at t2
+tangent2 = np.array([np.cos(t[t2_index]), np.sin(t[t2_index]), pitch])
+tangent2 /= np.linalg.norm(tangent2)
+normal2 = np.array([-np.sin(t[t2_index]), np.cos(t[t2_index]), 0])
+normal2 /= np.linalg.norm(normal2)
+binormal2 = np.cross(tangent2, normal2)
+
+# Calculate Frenet frame at t3
+tangent3 = np.array([np.cos(t[t3_index]), np.sin(t[t3_index]), pitch])
+tangent3 /= np.linalg.norm(tangent3)
+normal3 = np.array([-np.sin(t[t3_index]), np.cos(t[t3_index]), 0])
+normal3 /= np.linalg.norm(normal3)
+binormal3 = np.cross(tangent3, normal3)
+
+# Plot Frenet frame at t1
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          tangent1[0], tangent1[1], tangent1[2],
+          color='black', label='Tangent (t1)')
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          normal1[0], normal1[1], normal1[2],
+          color='black', label='Normal (t1)')
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          binormal1[0], binormal1[1], binormal1[2],
+          color='black', label='Binormal (t1)')
+
+# Plot Frenet frame at t2
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          tangent2[0], tangent2[1], tangent2[2],
+          color='black', label='Tangent (t2)')
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          normal2[0], normal2[1], normal2[2],
+          color='black', label='Normal (t2)')
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          binormal2[0], binormal2[1], binormal2[2],
+          color='black', label='Binormal (t2)')
+
+# Plot Frenet frame at t3
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          tangent3[0], tangent3[1], tangent3[2],
+          color='black', label='Tangent (t3)')
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          normal3[0], normal3[1], normal3[2],
+          color='black', label='Normal (t3)')
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          binormal3[0], binormal3[1], binormal3[2],
+          color='black', label='Binormal (t3)')
+
+# Set axis labels
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set aspect ratio to be equal
+ax.set_box_aspect([1, 1, 1])
+
+
+# Remove axis ticks
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_zticks([])
+# Display the plot
+plt.show()
+
+
+
+```
+
+
+
+
+
+
+
+
+
+## Consequences of Frenet-Serret
+
+
+
+The most important consequence of the Frenet-Serret equations is that they allow to fully characterize space curves in terms of curvature and torsion. Precisely, the following theorem
+holds.
+
+
+::: Theorem
+### Characterization of space curves  {#theorem-characterization-space}
+
+
+Let $\kappa, \tau \ \colon \R \to \R$ be smooth functions, with $\kappa>0$. Then:
+
+1. There exists aunit speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
+$$
+\kappa^{\g}(t) = \kappa(t) \,, \quad 
+\tau^{\g}(t) = \tau(t) \,,
+  \,\, \forall \, t \in \R \,.
+$$
+
+2. Suppose that $\tg \ \colon \R \to \R^3$ is a unit speed curve such that its curvature $\tilde{\kappa}^{\tg}$ and torsion $\tau^{\tg}$ satisfy
+$$
+\kappa^{\tg}(t) = \kappa(t) \,, \quad 
+\tau^{\tg}(t) = \tau(t) 
+  \,,\,\, \forall \, t \in \R \,.
+$$
+Then 
+$$
+\tg = \g
+$$
+up to rotations and translations.
+
+:::
+
+
+
+The proof of Theorem \ref{theorem-characterization-space} is omitted, and it can be found in Theorem 2.3.6 in [@pressley]. 
+
+Theorem \ref{theorem-characterization-space} is a very strong result. It is saying two things:
+
+1. If we prescribe curvature and torsion, then there exists a unit speed curve which has such curvature and torsion.
+
+2. If two unit speed curves have same curvature and torsion, then they must be the same curve, up to translations and rotations.
+
+In other words, curvature and torsion fully characterize space curves. This result is the 3D counterpart of
+Theorem \ref{theorem-characterization-plane}, which said that signed curvature characterizes 
+2D curves.
+
+
+
+::: Example
+
+In Example \ref{example-circle-rotated} we have considered the unit speed curve
+$$
+\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+$$
+for $t \in [0,2\pi]$. We have computed that 
+$$
+\kappa^{\g} = 1 \,, \quad \tau^{\g} = 0 \,. 
+$$
+If we plot $\g$, we clearly see that $\g$ is just obtained by translating and 
+rotating a unit circle, see plot below. Theorem \ref{theorem-characterization-space} enables
+us to rigorously prove this claim. Indeed, consider the unit speed circle
+$$
+\tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
+$$
+for $t \in [0,2\pi]$. In Example \ref{example-circle-curvature-torsion} we have proven that curvature and torsion are  
+$$
+\kappa^{\tg} = 1 \,, \quad \tau^{\tg} = 1 \,. 
+$$
+Therefore 
+$$
+\kappa^{\g} = \kappa^{\tg} \,, \quad \tau^{\g} = \tau^{\tg}  \,,
+$$
+and by Theorem  \ref{theorem-characterization-space} we conclude that $\g$ is equal to  $\tg$ up to rotations and translations.
+
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of the curve in example above"
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameter 't'
+t = np.linspace(0, 2*np.pi, 100)
+
+# Calculate the corresponding x, y, and z values
+x = (4/5)*np.cos(t) 
+y = 1- np.sin(t)
+z = -(3/5)*np.sin(t)
+
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
+plt.show()
+```
+
+
+
+Another consequence of the Frenet-Serret equations is that they allow us to finally 
+prove the curvature and torsion formulas given in Proposition \ref{proposition-curvature-formula} and Proposition \ref{proposition-torsion-formula}. For reader's convenience we recall these two results.
+
+
+::: Proposition 
+### Curvature and torsion formulas  {#proposition-curvature-torsion-formulas}
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
+$$
+Suppose in addition that $\g$ has non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
+$$
+
+:::
+
+
+Before proceeding with the proof, we need to establish some notation.
+
+::: Notation
+### Compact notation for arc length reparametrization
+
+Suppose $\g \colon (a,b) \to \R^n$ is regular and denote by 
+$$
+s \colon (a,b) \to (\tilde{a},\tilde{b})\,, \quad t \mapsto s(t)  
+$$
+its arc length. We already know that in this case $s$ invertible, with inverse $s^{-1}$ giving a unit speed reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ of $\g$, defined by
+$$
+\tg = \g \circ \psi \,, \quad \psi:=s^{-1} \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+Sometimes it is more convenient to adopt more compact notation. In the new notation the unit speed 
+reparametrization $\tg$ is denoted by $\g(s)$:
+$$
+t \mapsto \tg(t) \qquad \leadsto \qquad s \mapsto \g(s) \,.
+$$
+Thus, the reparametrization is denoted with the same symbol $\g$, but this time $\g$ is considered as
+a function of the **arc length parameter** 
+$$
+s \in (\tilde{a}, \tilde{b}) \,.
+$$ 
+We will denote:
+
+- The derivative of $s$ by
+$$
+\frac{ds}{dt}
+$$
+
+- The derivative of $\psi = s^{-1}$ by
+$$
+\frac{dt}{ds} \,.
+$$
+
+Moreover:
+
+- The derivative of $\g(t)$ is denoted by 
+$$
+\frac{d\g}{dt}(t) = \dg(t) \,, \quad  t \in (a,b)
+$$
+
+- The derivative of $\g(s)$ is denoted by
+$$
+\frac{d\g}{ds}(s) = \dg(s) \,, \quad  s \in (\tilde{a},\tilde{b}) \,.
+$$
+
+We also have new notations for the **chain rule**:
+
+- The chain rule for $\g$ is the old notations is:
+$$
+\g(t) = \tg (s(t)) \quad  \implies \quad \dg(t) = \dtg(s(t)) \, \dot{s} (t) \,, \quad t \in (a,b) \,.
+$$
+In the new notations the above chain rule is written
+$$
+\frac{d\g}{dt}(t) = \frac{d\g}{ds}(s(t)) \, \frac{ds}{dt}(t) \,, \quad t \in (a,b) \,.
+$$
+We will often omit the dependence on the point $t$ by writing
+$$
+\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds} \,.
+$$
+
+- The chain rule for the reparametrization $\tg$ in the old notation is:
+$$
+\tg(t) = \g( \psi (t)) \quad \implies \quad \dtg(t) = \dg( \psi(t) ) \, \dot{\psi}(t) \,, \quad 
+t \in (\tilde{a},\tilde{b}) \,.
+$$
+In the new notations the above chain rule is written
+$$
+\frac{d\g}{ds}(s) = \frac{d\g}{dt}( \psi(s) )  \, \frac{dt}{ds} ( s ) \,,\quad s \in (\ta,\tb) \,,
+$$
+since $\dot \psi$ is written $dt/ds$ in the new notations. 
+Without dependence on the point $s$, the above reads
+$$
+\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds}  \,.
+$$
+:::
+
+
+::: Example 
+### How to use the new notations
+
+Let $\g$ and $\tg$ be as above. We know that $\tg$ is unit speed. Thus $\g(s)$ is unit speed with respect to $s$, that is,
+$$
+\norm{\dg(s)} = 1\,, \quad \forall \, s \in (\tilde{a}, \tilde{b})  \,.
+$${#eq-new-notations-1}
+As an exercise, let us check that (@eq-new-notations-1) holds, using the new notations. By chain rule we have
+\begin{align*}
+\norm{\dg(s)} & = \norm{ \frac{d\g}{ds} (s) } \\
+              & = \norm{\frac{d\g}{dt} (\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \\
+              & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \,. 
+\end{align*}
+Now, recall that 
+$$
+\frac{ds}{dt}(t) = \dot{s}(t) = \norm{\dg (t)} \,, \quad \forall \, t \in (a,b) \,.
+$${#eq-new-notations-2}
+According to the new notations and the inverse function theorem,
+$$
+\frac{dt}{ds}(s) = \frac{1}{\left(\dfrac{ds}{dt} (\psi(s)) \right)} = 
+\frac{1}{\norm{\dg (\psi(s))}} \,, \quad \forall \, s \in (\tilde{a},\tilde{b}) \,,
+$$
+where we used (@eq-new-notations-2) evaluated at $t = \psi(s)$. Thus
+\begin{align*}
+\norm{\dg(s)} & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right|  \\
+              & = \norm{\dg(\psi(s))} \, \frac{1}{\norm{\dg(\psi(s))} }  \\
+              & = 1 \,,
+\end{align*}
+concluding (@eq-new-notations-1).
+:::
+
+Let us highlight the main feature of the above notation.
+
+::: Important
+### New Notation!
+
+Let $\g \colon (a,b) \to \R^n$ be a regular curve:
+
+1. We denote by 
+$$
+t \mapsto \g(t)  \,, \quad t \in (a,b)
+$$
+the **given** curve $\g$.
+
+
+2. We denote by 
+$$
+s \mapsto \g(s)  \,, \quad s \in (\tilde{a},\tilde{b})
+$$
+the **arc length reparametrization** of the curve $\g$. The parameter $s$ is the 
+**arc length parameter**. In particular $\g(s)$ is unit speed with respect to $s$. 
+
+:::
+
+
+We will heavily rely on the new notations for proving Proposition \ref{proposition-curvature-torsion-formulas}.
+
+::: Proof
+### Proof of Proposition \ref{proposition-curvature-torsion-formulas}
+
+We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
+
+
+Since $\g$ is regular, we can reparametrize $\g$ by arc length $s(t)$. We denote the arc lenght 
+reparametrization by $\g(s)$. We know that $\g(s)$ is unit speed, that is,
+$$
+\norm{  \frac{d\g}{ds}  } = 1 \,.
+$$
+Therefore is well
+define the Frenet frame
+$$
+\{\ttt (s), \nn (s), \bb (s) \}  \,, \quad \ttt (s):=\dg(s) = \frac{d \g}{ds} (s)\,.
+$$
+The Frenet-Serret equations are
+\begin{align*}
+\dot{\ttt}(s) & = \kappa(s) \nn(s) \\
+\dot{\nn}(s) & = -\kappa(s) \ttt(s) + \tau(s) \bb(s) \\
+\dot{\bb}(s) & = - \tau(s) \nn(s) 
+\end{align*}
+By chain rule
+$$
+\frac{d \g}{dt} = \frac{d\g}{ds} \, \frac{ds}{dt} =\left( \frac{ds}{dt} \right) \, \ttt \,.
+$$
+Differentiating the above we infer
+\begin{align*}
+\frac{d^2 \g}{dt^2} & = \frac{d}{dt} \left[ \left( \frac{ds}{dt} \right) \, \ttt  \right] \\
+                    & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \,. \\
+\end{align*}
+By chain rule we have
+$$
+ \frac{d\ttt}{dt}  =  \frac{d\ttt}{ds} \, \frac{dt}{ds} \,,
+$$
+and therefore 
+\begin{align*}
+\frac{d^2 \g}{dt^2} & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \\
+   & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds} \,. 
+\end{align*}
+Hence
+\begin{align*}
+\dg(t) \times \ddg (t) & = \frac{d \g}{dt} \times  \frac{d^2 \g}{dt^2}  \\
+& =   \left(\frac{ds}{dt} \right) \ttt \times  \left[  \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds}  \right] \\
+& =  \left[ \left(\frac{ds}{dt} \right) \left(\frac{d^2s}{dt^2} \right)  \ttt \times \ttt \right] +
+     \left[ \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \right] \\
+& =  \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \,,
+\end{align*}
+since $\ttt \times \ttt = 0$ by the properties of the cross product. Now we recall that 
+$$
+\frac{d\ttt}{ds} = \kappa(s) \, \nn(s)
+$$
+by the first Frenet-Serret equation. Moreover
+$$
+\frac{ds}{dt}(t) = \norm{  \dg(t) }^2 \,.
+$$
+Therefore
+\begin{align*}
+\dg(t) \times \ddg (t) & = \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \\
+                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \ttt \times \nn \\
+                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \bb \,,
+\end{align*}
+where in the last line we used the definition of $\bb$
+$$
+\bb(s) = \dg(s) \times \nn(s) = \ttt(s) \times \nn(s) \,. 
+$$
+We can now take the norms and obtain
+\begin{align*}
+\norm{\dg(t) \times \ddg (t)} & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,  \norm{\bb} \\
+                              & = \norm{ \dg (t) }^3 \, \kappa(s(t)) 
+\end{align*}
+using that $\norm{\bb} = 1$. As $\g$ is regular, we can divide by $\norm{\dg(t)}^3$ and obtain
+$$
+\kappa(s (t)) = \frac{\norm{\dg(t) \times \ddg (t)}}{\norm{ \dg (t) }^3} \,.
+$$
+Recalling that the curvature of $\g$ at $t$ is defined as the curvature of $\g(s)$ at $s(t)$, we conclude that the above is the desired formula.
+:::
+
+
+
+We now state and prove two more results which directly follow from the Frenet-Serret equations. They state, respectivley:
+
+1. A curve has torsion $\tau = 0$ if and only if it is contained in a plane.
+
+2. A curve has constant curvature and zero torsion if and only if it is part of a circle.
+
+
+Before proceeding, we recall the following.
+
+
+
+::: Remark
+### Equation of a plane
+
+The general equation of a plane $\pmb{\pi}_d$ in $\R^3$ is given by
+
+$$
+\pmb{\pi}_d = \{ \xx \in \R^3 \, \colon \,  \xx \cdot \mathbf{P} = d \}\,,
+$$
+for some vector $\mathbf{P} \in \R^3$ and scalar $d \in \R$. Note that:
+
+- If $d = 0$, the condition
+$$
+\xx \cdot \mathbf{P} = 0
+$$
+is saying that the plane $\pmb{\pi}_0$ contains all the points $\xx$ in $\R^3$ which are orthogonal to $\mathbf{P}$. In particular $\pmb{\pi}_0$ contains the origin $\zero$. 
+
+- If $d \neq 0$, then $\pmb{\pi}_d$ is the translation of $\pmb{\pi}_0$ by the quantity $d$ in direction $\mathbf{P}$.
+
+ In both cases, $\mathbf{P}$ is the normal vector to the plane, as shown in @fig-general-plane below.
+:::
+
+
+![The plane $\pmb{\pi}_0$ is the set of points of $\R^3$ orthogonal to $\mathbf{P}$. The plane $\pmb{\pi}_d$ is obtained by translating $\pmb{\pi}_0$ by a quantity $d$ in direction $\mathbf{P}$.](/images/general_plane.png){#fig-general-plane width=70%}
+
+
+
+
+
+::: {.Proposition  #proposition-zero-torsion}
+
+Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. They are equivalent:
+
+
+1. The torsion of $\g$ satisfies $\tau(t) = 0$ for all $t \in (a,b)$.
+
+2. The image of $\g$ is contained in a plane, that is, there exists a vector $\mathbf{P} \in \R^3$ and a scalar $d \in \R$ such that
+$$
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+$$
+
+
+:::
+
+
+
+::: Proof
+Without loss of generality we can assume that $\g$ is unit speed. Indeed, if we were to consider $\tg$ a unit speed reparametrization of $\g$, then
+
+- $\tg$ would still be contained in the same plane in which $\g$ is contained.
+- The torsion of $\tg$ would not change, i.e., it would still be identically zero.
+
+Thefore the Frenet frame of $\g$ exists. We denote it by 
+$$
+\{ \dg(t), \nn(t) ,\bb(t) \} \,.
+$$
+
+
+*Step 1.* Suppose that $\tau = 0$ for all $t$. By the Frenet-Serret equations we have
+$$
+\dot{\bb} = -\tau(t) \nn = \zero \,,
+$$
+so that $\bb(t)$ is constant. As by definition 
+$$
+\bb = \dg \times \nn \,,
+$$ 
+we conclude that the vectors $\dg(t)$ and $\nn(t)$ always span the same plane, which has constant normal vector $\bb$. Intuition suggests that $\g$ should be contained in such plane, see Figure @fig-proof-plane below. Indeed, recall that the Frenet frame is orthonormal. Hence
+$$
+\dg \cdot \bb = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+Then
+$$
+\frac{d}{dt} ( \g \cdot \bb ) = \dg \cdot \bb + \g \cdot \dot{\bb} = 0\,,  \quad \forall \, t \in (a,b) \,,
+$$
+since $\dot{\bb}=0$. Thus $\g \cdot \bb$ is a constant scalar function, meaning that there exists costant $d \in \R$ such that
+$$
+\g(t) \cdot \bb = d \,, \,\, \forall \, t \in (a,b) \,.
+$$
+The says that $\g$ is contained in a plane.
+
+*Step 2.* Suppose that $\g$ is contained in a plane. Hence there exists $\mathbf{P} \in \R^3$ and $d \in \R$ such that 
+$$
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
+$$
+We can differentiate the above equation twice to obtain
+$$
+\dg \cdot \mathbf{P} = 0 \,, \quad   \ddg \cdot \mathbf{P} = 0 \,,
+$$
+where we used that $\mathbf{P}$ and $d$ are constant.
+By Frenet-Serret we have
+$$
+\ddg (t)= \kappa (t) \nn (t) \,.
+$$
+Therefore the already proven relation $\ddg \cdot \mathbf{P} = 0$ implies
+$$
+\kappa (t) \nn (t) \cdot \mathbf{P} = 0 \,.
+$$
+As we are assuming $\kappa \neq 0$, we deduce that
+$$
+\nn (t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda(t) \in \R$ such that
+$$
+\bb(t) = \lambda(t) \mathbf{P} \,\forall \, t \in (a,b) \,.
+$${#eq-proof-plane}
+Since $\norm{\bb} = 1$ and $\mathbf{P}$ is constant, from (@eq-proof-plane) we conclude that $\lambda(t)$ is constant. Differentiating (@eq-proof-plane) we obtain
+$$
+\dot{\bb}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+By definition of torsion we thus have
+$$
+\tau(t) = - \dot{\bb} \cdot \nn(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+:::
+
+
+
+![If $\bb$ is constant, then $\g$ lies in the plane spanned by $\dg$ and $\nn$.](/images/proof_plane_intuition.png){#fig-proof-plane width=70%}
+
+
+
+::: {.Proposition #proposition-constant-k-zero-t}
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve. They are equivalent:
+
+
+1. The image of $\g$ is contained in a circle of radius $1/c$.
+
+
+2. The curvature and torsion of $\g$ satisfy
+$$
+\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+$$
+for some constant $c \in \R$.
+
+
+
+:::
+
+
+Proposition \ref{proposition-constant-k-zero-t} is actually a consequence of Theorem 
+\ref{theorem-characterization-space}, and of the fact that we have computed 
+that for a circle of radius $R$ one has
+$$
+\kappa  = \frac1R \,, \quad  \tau = 0\,.
+$$
+Therefore, by Theorem \ref{theorem-characterization-space}, every unit speed curve $\g$ with
+constant curvature and torsion must be equal to a circle, up to rigid motions. 
+
+Nevertheless, we still give a proof of Proposition \ref{proposition-constant-k-zero-t}, to show yet another application of the Frenet-Serret equations.
+
+
+::: Proof
+*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $1/c$. Then, up to a translation, $\g$ is parametrized by 
+$$
+\g(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right) 
+$$
+for $t$ in some interval $(\tilde{a},\tilde{b})$. We have already seen that in this case
+$$
+\kappa = c  \,, \quad \tau = 0 \,,
+$$
+concluding the proof.
+
+
+*Step 2.* Suppose that 
+$$
+\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+$$
+for some constant $c \in \R$. Since $\g$ is unit speed, its Frenet-Serret equations are:
+\begin{align*}
+\ddg & = \kappa \nn = c \nn \\
+\dot{\nn} & = - \kappa \dg + \tau \bb = -c \dg \\
+\dot{\bb} & = -\tau \nn = 0  
+\end{align*}
+In particular $\dot{\bb}=0$ and so $\bb$ is a constant vector. As seen in the proof Proposition \ref{proposition-zero-torsion}, this implies that $\g$ is contained in a plane $\p$ orthogonal to $\bb$, see @fig-proof-plane. As $c$ is constant we get
+$$
+\frac{d}{dt} \left(  \g  + \frac1c \nn   \right)  = \dg + \frac{1}{c} \dot{\nn} = \dg - \frac1c 
+\, c \dg = 0 \,,
+$$
+where we used the second Frenet-Serret equation. Therefore 
+$$ 
+\g(t)  + \frac1c \nn(t) = \pp \,, \quad  t \in (a,b) \,,
+$$
+for some constant point $\pp \in \R^3$. In particular
+$$
+\norm{ \g(t) - \pp } =   \norm{  -\frac1c \nn(t) } = \frac1c \,,
+$$
+since $\nn$ is a unit vector. The above shows that $\g$ is contained in a sphere of radius $1/c$ and center $\pp$. In formulas:
+$$
+\g((a,b) ) \subset \SSS := \{  \xx \in \R^3 \, \colon \,  \norm{\xx - \pp} = 1/c    \} \,.
+$$
+The intersection of $\SSS$ with the plane $\p$ is a circle $\mathcal{C}$ with some radius $R$. Since 
+$$
+\g((a,b) ) \subset \p \,, \quad \g((a,b) ) \subset \SSS \,,
+$$
+this implies 
+$$
+\g((a,b) ) \subset  \p  \cap \SSS  = \mathcal{C} \,.
+$${#eq-proof-contained-circle}
+Thus $\g$ parametrizes part of $\mathcal{C}$. From Step 1 it follows that the curvature and torsion of $\g$ must satisfy
+$$
+\kappa = \frac1R \,, \quad \tau = 0 \,.
+$$
+Since we already know that $\kappa=c$, we conclude that $R=1/c$. Therefore the circle $\mathcal{C}$ has radius $1/c$ and the thesis follows by (@eq-proof-contained-circle).
+
+:::

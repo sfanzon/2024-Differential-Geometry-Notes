@@ -72,9 +72,33 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Proposition {
   --color1: #f4cce0;
@@ -84,14 +108,6 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -100,23 +116,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Lemma {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -124,25 +132,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 </style>
 
@@ -309,7 +309,7 @@ window.Quarto = {
 <p>Curves are, intuitively speaking, 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates: respectively <span class="math display">\[
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 \]</span></p>
-<div id="c8468efd" class="cell" data-execution_count="1">
+<div id="fd53d64c" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -319,7 +319,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="f49d6f7b" class="cell" data-execution_count="2">
+<div id="b2794fe1" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -329,7 +329,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="4d163b07" class="cell" data-execution_count="3">
+<div id="386765ce" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -362,7 +362,7 @@ f(x,y) = x^2 + y^2  \,\,, c = 1 \,.
 \]</span> But what about for example a helix in 3 dimensions? It would be more difficult to find an equation of the form <span class="math display">\[
 f(x,y,z) = 0
 \]</span> to describe such object.</p>
-<div id="a7e2060e" class="cell" data-execution_count="4">
+<div id="f9298960" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -523,7 +523,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </ul>
 </div></details>
 </div>
-<div id="16d0bdf9" class="cell" data-execution_count="5">
+<div id="b307c4ec" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -533,7 +533,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="e285d89d" class="cell" data-execution_count="6">
+<div id="ed5440f5" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -543,7 +543,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="586ad5f0" class="cell" data-execution_count="7">
+<div id="e6d21167" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -553,7 +553,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="030a209a" class="cell" data-execution_count="8">
+<div id="0bac05f2" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -708,7 +708,7 @@ Figure&nbsp;1.3: Approximating the tangent vector
 \]</span> This is plotted in <a href="#fig-helix-tangent" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> below. The tangent vector at point <span class="math inline">\({\pmb{\gamma}}(t)\)</span> is given by <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = ( -\sin(t), \cos(t) , 1) \,.
 \]</span> For example in <a href="#fig-helix-tangent" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> we plot the tangent vector at time <span class="math inline">\(t = \pi/2\)</span>, that is, <span class="math display">\[
-\dot{{\pmb{\gamma}}}(\pi/2) = (-1,0,\pi/2) \,.
+\dot{{\pmb{\gamma}}}(\pi/2) = (-1,0,1) \,.
 \]</span> The above looks very similar to the tangent vector to the circle. Except that there is a <span class="math inline">\(z\)</span> component, and that component is constant and equal to <span class="math inline">\(1\)</span>. Intuitively this means that the helix is <em>lifting</em> from the plane <span class="math inline">\(xy\)</span> with constant speed with respect to the <span class="math inline">\(z\)</span>-axis. We will soon give a name to this concept.<p></p>
 </div></details>
 </div>
@@ -800,8 +800,8 @@ t_0, \ldots, t_m \in (a,b) \,.
 L({\pmb{\gamma}}) \approx \sum_{i=1}^m \left\|  {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\| \,.  
 \tag{1.5}\]</span></span> Intuitively, if we increase the number of points <span class="math inline">\(t_i\)</span>, the quantity on the RHS of (<a href="#eq-approx-length" class="quarto-xref"><span>1.5</span></a>) should approximate <span class="math inline">\(L({\pmb{\gamma}})\)</span> better and better. Let us make this precise.</p>
 <div id="partition" class="Definition" title="Partition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Partition</summary><div>Let <span class="math inline">\((a,b)\)</span> be an interval. A partition <span class="math inline">\(\mathcal{P}\)</span> of <span class="math inline">\([a,b]\)</span> is a vector of time instants <span class="math display">\[
-\mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Partition</summary><div>A partition <span class="math inline">\(\mathcal{P}\)</span> of the interval <span class="math inline">\([a,b]\)</span> is a vector of time instants <span class="math display">\[
+\mathcal{P} = (t_0,\ldots, t_m) \in [a,b]^{m+1}
 \]</span> with <span class="math display">\[
 t_0 = a &lt; t_1 &lt; \ldots &lt; t_{m-1} &lt; t_m = b \,.
 \]</span> If <span class="math inline">\(\mathcal{P}\)</span> is a partition of <span class="math inline">\([a,b]\)</span>, we define its maximum length as <span class="math display">\[
@@ -896,7 +896,7 @@ The second estimate is more delicate. We need to carefully construct a polygonal
 {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1}) &amp; = \int_{t_{i-1}}^{ t_i }  \dot{{\pmb{\gamma}}}(t)\, dt \\
                       &amp; =  \int_{t_{i-1}}^{ t_i } \dot{{\pmb{\gamma}}}(s) +  (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt \\
                       &amp; = ( t_i - t_{i-1} ) \dot{{\pmb{\gamma}}}(s) + \int_{t_{i-1}}^{ t_i }   (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt
-\end{align*}\]</span> Therefore <span id="eq-length-formula-4"><span class="math display">\[
+\end{align*}\]</span> The idea now is that the integral on the RHS can be made arbitrarily small by choosing a sufficiently fine partition, thanks to the uniform continuity of <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> on the compact interval <span class="math inline">\([a,b]\)</span>. In details, taking the absolute value of the above equation yields <span id="eq-length-formula-4"><span class="math display">\[
 \left\|  {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\|  = \left\|  ( t_i - t_{i-1} ) \dot{{\pmb{\gamma}}}(s) +
 \int_{t_{i-1}}^{ t_i }   (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt  \right\|
 \tag{1.11}\]</span></span> We can now use the reverse triangle inequality <span class="math display">\[
@@ -1609,7 +1609,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 \]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>. It can be shown that the above integral does not have a closed form in terms of elementary functions. Therefore the unit speed parametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> cannot be computed explicitly.<p></p>
 </div></details>
 </div>
-<div id="7cbc4fb8" class="cell" data-execution_count="13">
+<div id="fc15d4a2" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

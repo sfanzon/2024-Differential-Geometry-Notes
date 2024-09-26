@@ -841,7 +841,7 @@ $$
 $$
 For example in @fig-helix-tangent we plot the tangent vector at time $t = \pi/2$, that is,
 $$
-\dg(\pi/2) = (-1,0,\pi/2) \,. 
+\dg(\pi/2) = (-1,0,1) \,. 
 $$
 The above looks very similar to the tangent vector to the circle. Except that there is a $z$ component, and that component is constant and equal to $1$. Intuitively this means that the helix is *lifting* from the plane $xy$ with constant speed with respect to the $z$-axis. We will soon give a name to this concept. 
 :::
@@ -1044,9 +1044,9 @@ Intuitively, if we increase the number of points $t_i$, the quantity on the RHS 
 ::: Definition
 ### Partition
 
-Let $(a,b)$ be an interval. A partition $\mathcal{P}$ of $[a,b]$ is a vector of time instants
+A partition $\mathcal{P}$ of the interval $[a,b]$ is a vector of time instants
 $$
-\mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+\mathcal{P} = (t_0,\ldots, t_m) \in [a,b]^{m+1}
 $$
 with 
 $$
@@ -1211,7 +1211,9 @@ for each $i = 1, \ldots, m$. For all $i = 1, \ldots, m$ and $s \in [t_{i-1},t_i]
                       & =  \int_{t_{i-1}}^{ t_i } \dg(s) +  (\dg(t) - \dg(s))    \, dt \\
                       & = ( t_i - t_{i-1} ) \dg(s) + \int_{t_{i-1}}^{ t_i }   (\dg(t) - \dg(s))    \, dt
 \end{align*}
-Therefore
+The idea now is that the integral on the RHS can be made arbitrarily small by choosing a sufficiently fine
+partition, thanks to the uniform continuity of $\dg$ on the compact interval $[a,b]$. In details,
+taking the absolute value of the above equation yields
 $$
 \norm{ \g(t_i) - \g(t_{i-1}) }  = \norm{ ( t_i - t_{i-1} ) \dg(s) + 
  \int_{t_{i-1}}^{ t_i }   (\dg(t) - \dg(s))    \, dt }

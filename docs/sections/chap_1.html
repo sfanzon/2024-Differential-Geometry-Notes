@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.542">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Differential Geometry - 1&nbsp; Curves</title>
+<title>1&nbsp; Curves – Differential Geometry</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,35 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proposition {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,19 +80,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,13 +88,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Corollary {
   --color1: #f4cce0;
@@ -144,9 +108,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -189,7 +189,7 @@ window.Quarto = {
     <span class="navbar-title">Differential Geometry</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-end">
     <a href="../Differential-Geometry.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -198,11 +198,11 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -628,7 +628,7 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 </div></details>
 </div>
 <p>In <a href="#fig-smooth-curve" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point <span class="math inline">\(x\)</span>.</p>
-<div id="fig-smooth-curve" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-smooth-curve" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-smooth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/smooth_curve.png" class="img-fluid figure-img" style="width:70.0%">
@@ -655,7 +655,7 @@ Figure&nbsp;1.1: Example of smooth and non-smooth curves
 </div>
 <div id="cell-fig-circle-tangent" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
-<div id="fig-circle-tangent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-circle-tangent" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-circle-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chap_1_files/figure-html/fig-circle-tangent-output-1.png" width="534" height="503" class="figure-img">
@@ -681,7 +681,7 @@ Figure&nbsp;1.2: Plot of Circle and Tangent Vector at <span class="math inline">
 \]</span> for non-negative <span class="math inline">\(\delta\)</span>, we see that this vector is parallel to the chord joining <span class="math inline">\({\pmb{\gamma}}(t)\)</span> to <span class="math inline">\({\pmb{\gamma}}(t + \delta)\)</span>, as shown in <a href="#fig-tangent" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> below. As <span class="math inline">\(\delta \to 0\)</span>, the length of the chord tends to zero. However the <strong>direction</strong> of the chord becomes <strong>parallel</strong> to that of the tangent vector of the curve <span class="math inline">\({\pmb{\gamma}}\)</span> at <span class="math inline">\({\pmb{\gamma}}(t)\)</span>. Since <span class="math display">\[
 \frac{{\pmb{\gamma}}(t + \delta) - {\pmb{\gamma}}(t)}{\delta}  \to \dot{{\pmb{\gamma}}}(t)
 \]</span> as <span class="math inline">\(\delta \to 0\)</span>, we see that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> is <strong>parallel</strong> to the tangent of <span class="math inline">\({\pmb{\gamma}}\)</span> at <span class="math inline">\({\pmb{\gamma}}(t)\)</span>, as showin in <a href="#fig-tangent" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>.</p>
-<div id="fig-tangent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tangent" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/tangent.png" class="img-fluid figure-img" style="width:70.0%">
@@ -714,7 +714,7 @@ Figure&nbsp;1.3: Approximating the tangent vector
 </div>
 <div id="cell-fig-helix-tangent" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
-<div id="fig-helix-tangent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-helix-tangent" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-helix-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chap_1_files/figure-html/fig-helix-tangent-output-1.png" width="332" height="328" class="figure-img">
@@ -750,7 +750,7 @@ p = {\pmb{\gamma}}(t_1) = {\pmb{\gamma}}(t_2)\,.
 </div>
 <div id="cell-fig-eight" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<div id="fig-eight" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-eight" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chap_1_files/figure-html/fig-eight-output-1.png" width="534" height="503" class="figure-img">
@@ -1053,7 +1053,7 @@ s(t) &amp; = \int_{t_0}^t \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau 
 </div>
 <div id="cell-fig-log-spiral" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
-<div id="fig-log-spiral" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-log-spiral" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-log-spiral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chap_1_files/figure-html/fig-log-spiral-output-1.png" width="528" height="503" class="figure-img">
@@ -2059,18 +2059,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2102,7 +2091,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2110,10 +2121,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // default icon
           link.classList.add("external");
       }
@@ -2152,7 +2168,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2200,7 +2220,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -2423,12 +2448,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link  aria-label=" welcome"="">
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/chap_2.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Curvature and Torsion</span>">
+      <a href="../sections/chap_2.html" class="pagination-link" aria-label="Curvature and Torsion">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

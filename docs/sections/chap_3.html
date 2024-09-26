@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.542">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Differential Geometry - 3&nbsp; Topology</title>
+<title>3&nbsp; Topology – Differential Geometry</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,43 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Important {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -116,15 +88,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Proposition {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -132,21 +104,49 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -189,7 +189,7 @@ window.Quarto = {
     <span class="navbar-title">Differential Geometry</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-end">
     <a href="../Differential-Geometry.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -198,11 +198,11 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topology</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -410,7 +410,7 @@ B_r(\mathbf{x}) := \{ \mathbf{y}\in \mathbb{R}^n \, \colon \,\left\|  \mathbf{y}
 <p>See <a href="#fig-open-set-Rn" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> for a schematic picture of an open set.</p>
 </div></details>
 </div>
-<div id="fig-open-set-Rn" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-open-set-Rn" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-open-set-Rn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/open_set_R.png" class="img-fluid figure-img" style="width:70.0%">
@@ -461,7 +461,7 @@ B_{\varepsilon} (\mathbf{y}) \subseteq B_r (\mathbf{x}) \,,
 \]</span> where we used that <span class="math inline">\(\left\| \mathbf{y}- \mathbf{z} \right\| &lt; \varepsilon\)</span> and the definition of <span class="math inline">\(\varepsilon\)</span>. Hence <span class="math inline">\(\mathbf{z}\in B_r(\mathbf{x})\)</span>, proving (<a href="#eq-proof-ball-open" class="quarto-xref"><span>3.3</span></a>). This proves that <span class="math inline">\(B_r(\mathbf{x})\)</span> satisfies (<a href="#eq-open-set-Rn" class="quarto-xref"><span>3.1</span></a>), and is therefore open.<p></p>
 </div></details>
 </div>
-<div id="fig-balls-open" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-balls-open" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-balls-open-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/balls_open.png" class="img-fluid figure-img" style="width:70.0%">
@@ -866,7 +866,7 @@ d_{\infty} (\mathbf{x},\mathbf{y}) \leq d_p (\mathbf{x},\mathbf{y}) \leq n \, d_
 <p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>If two metrics are equivalent, that does not mean they have the same balls. For example the balls of the metrics <span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span> and <span class="math inline">\(d_{\infty}\)</span> on <span class="math inline">\(\mathbb{R}^n\)</span> look very different, see <a href="#fig-balls-R2" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>.<p></p>
 </div></details>
 </div>
-<div id="fig-balls-R2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-balls-R2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-balls-R2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/balls_R2.png" class="img-fluid figure-img" style="width:80.0%">
@@ -2360,18 +2360,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2403,7 +2392,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2411,10 +2422,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // default icon
           link.classList.add("external");
       }
@@ -2453,7 +2469,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2501,7 +2521,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -2724,12 +2749,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap_2.html" class="pagination-link  aria-label=" &lt;span="" and="" torsion&lt;="" span&gt;"="">
+      <a href="../sections/chap_2.html" class="pagination-link" aria-label="Curvature and Torsion">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/chap_4.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Surfaces</span>">
+      <a href="../sections/chap_4.html" class="pagination-link" aria-label="Surfaces">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

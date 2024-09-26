@@ -191,9 +191,11 @@ plt.show()
 
 ::: {.Problem .unnumbered}
 
-We need a unified way to describe curves. 
+We need a unified and convenient way to describe curves. 
 
 :::
+
+This can be done via parametrization.
 
 
 

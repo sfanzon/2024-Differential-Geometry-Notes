@@ -8,7 +8,7 @@ $$
 
 # Curves {#sec-introduction}
 
-Curves are, intuitively speaking, 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the $x$ and $y$ coordinates: respectively
+Curves are 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the $x$ and $y$ coordinates: respectively
 $$
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 $$
@@ -816,7 +816,7 @@ The above remark motivates the following definition.
 
 Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. The tangent vector to $\g$ at the point $\g(t)$ is defined as 
 $$
-\tau:= \dg(t) \,.
+\dg (t) \in \R^n \,.
 $$
 :::
 
@@ -934,8 +934,8 @@ $$
 $$
 and therefore we have two tangents at $(0,0)$, that is,
 $$
-\tau_1 = \dg(0) = (1,1) \,, \,\,
-\tau_2 = \dg(\pi) = (-1,1) \,.
+\dg(0) = (1,1) \,, \,\,
+\dg(\pi) = (-1,1) \,.
 $$
 :::
 
@@ -1197,7 +1197,7 @@ The second estimate is more delicate. We need to carefully construct a polygonal
 $$
 |t-s| < \delta \implies \norm{ \dg(t)-\dg(s) } < \frac{ \e }{b-a} \,.
 $$ {#eq-length-formula-uc}
-for all $t,s \in [a,b]$. Let $\mathcal{P} = (t_0, \ldots, t_m)$ be a partition of $[a,b]$ with $\norm{\mathcal{P}} < \delta$. Recall that 
+Let $\mathcal{P} = (t_0, \ldots, t_m)$ be a partition of $[a,b]$ with $\norm{\mathcal{P}} < \delta$. Recall that 
 $$
 \norm{\mathcal{P}} = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
 $$
@@ -1334,8 +1334,20 @@ Therefore
 $$
 L(\g) = \int_0^{2\pi} \norm{ \dg(t) } \, dt = 2 \pi \sqrt{R^2 + H^2} \,. 
 $$
+
 :::
 
+
+Note that if $H>0$ then
+$$
+2\pi \sqrt{R^2 + H^2} > 2\pi R \,,
+$$
+showing that the length of one full turn of the Helix
+is larger than the length of a disk. This might seem
+counterintuitive as it looks like one turn of the Helix
+can be superimposed to the circle by *squashing* the Helix
+on the plane. However this *squashing* action clearly 
+causes a bit of shrinkage, as shown in the above estimate.
 
 
 
@@ -1416,7 +1428,7 @@ $$
 - The arc-length is a differentiable function, with
 $$
 \dot s(t) = \frac{d}{dt} \int_{t_0}^t \norm{\dg (\tau)} \, d\tau =
- \norm{\dg (t)} \,.
+ \norm{\dg (t)}  \,.
 $$
      
      >Since $\dg$ is continuous, the above follows by the Fundamental Theorem of Calculus.
@@ -1515,11 +1527,11 @@ plt.show()
 Let us start by defining the scalar product in $\R^2$. 
 
 ::: Definition
-### Scalar product in $\R^2$
+### Scalar product in $\R^2$  {#definition-scalar}
 
-Let $u, v \in \R^2$ and denote by $\theta \in [0,\pi]$ the angle formed by $u$ and $v$. The *scalar product* between $u$ and $v$ is defined by 
+Let $\uu, \vv \in \R^2$ and denote by $\theta \in [0,\pi]$ the angle formed by $u$ and $v$. The *scalar product* between $\uu$ and $\vv$ is defined by 
 $$
-u \cdot v := |u| |v| \cos(\theta) \,. 
+\uu \cdot \vv := \|\uu\| \|\vv\| \cos(\theta) \,. 
 $$
 
 :::
@@ -1530,14 +1542,36 @@ $$
 
 ::: Remark 
 
-The scalar product is maximized for $\theta = 0$, for which we have
+1. Two vectors in the plane form two complementary angles. To avoid ambiguity, we choose the smallest of the two angles. This is enforced in Definition \ref{definition-scalar} by requiring that $\theta \in [0,\pi]$.
+
+2. The scalar product is maximized for $\theta = 0$, for which we have
 $$
-u \cdot v = |u| |v| \cos(\theta) =  |u| |v| \,.
+\uu \cdot \vv = \|\uu\| \|\vv\| \cos(\theta) =  \|\uu\| \|\vv\| \,.
 $$
-It is instead minimized for $\theta = \pi$, for which 
+
+3. It is instead minimized for $\theta = \pi$, for which 
 $$
-u \cdot v = |u| |v| \cos(\theta) =  -|u| |v| \,.
+\uu \cdot \vv = \|\uu\| \|\vv\| \cos(\theta) =  - \|\uu\| \|\vv\| \,.
 $$
+
+4. For each $\uu,\vv \in \R^2$ the Cauchy-Schwarz inequality holds: 
+$$
+-\|\uu\| \|\vv\| \leq  \uu \cdot \vv  \leq \|\uu\| \|\vv\|
+$$
+The above is immediate from the observation that $|\cos(\theta)| \leq 1$.
+
+
+5. The observations in points 2-3 imply that the Cauchy-Schwarz inequality is sharp, in the sense that both inequalities are attained.
+
+6. Usually the Cauchy-Schwarz inequality is written in the equivalent form
+$$
+| \uu \cdot \vv | \leq \| \uu \| \| \vv \|
+$$
+
+7. By the above observations it follows that equality holds if
+and only if $\uu$ and $\vv$ are parallel.
+
+
 :::
 
 
@@ -1545,11 +1579,11 @@ $$
 ::: Definition 
 ### Orthogonal vectors
 
-Let $u, v \in \R^2$. If 
+Let $\uu, \vv \in \R^2$. We say that $\uu$ and $\vv$ are **orthogonal** if
 $$
-u \cdot v = 0
+\uu \cdot \vv = 0
 $$
-we say that $u$ and $v$ are **orthogonal**.
+
 :::
 
 
@@ -1558,21 +1592,29 @@ we say that $u$ and $v$ are **orthogonal**.
 ::: Proposition
 ### Bilinearity and symmetry of scalar product
 
-Let $u, v, w \in \R^2$ and $\lambda \in \R$. Then
+Let $\uu, \vv, \ww \in \R^2$ and $\lambda \in \R$. Then
 
-- **Symmetry**: $u \cdot v = v \cdot u$
-- **Bilinearity**: It holds
+- **Symmetry**: It holds 
 $$
-\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+\uu \cdot \vv = \vv \cdot \uu
+$$
+
+- **Bilinearity**: They hold
+$$
+\lambda (\uu \cdot \vv) = (\lambda \uu) \cdot \vv = \uu \cdot (\lambda \vv) \,,
 $$
 $$
-u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+\uu \cdot (\vv + \ww) = \uu \cdot \vv  + \uu \cdot \ww \,.
 $$
 
 :::
 
 
-We leave the proof to the reader. The above proposition is saying that the scalar product is **bilinear** and **symmetric**.
+The above proposition is saying that the scalar product is **bilinear** and **symmetric**. We leave the proof to the reader: only the condition
+$$
+\uu \cdot (\vv + \ww) = \uu \cdot \vv  + \uu \cdot \ww \,.
+$$
+is non-trivial, due to the presence of 3 vectors.
 
 
 ::: Proposition
@@ -1580,18 +1622,18 @@ We leave the proof to the reader. The above proposition is saying that the scala
 
 Denote by 
 $$
-e_1 = (1,0) \,, \quad e_2 = (0,1)
+\ee_1 = (1,0) \,, \quad \ee_2 = (0,1)
 $$
-the euclidean basis of $\R^2$. Let $u,v \in \R^2$ and denote by 
+the euclidean basis of $\R^2$. Let $\uu, \vv \in \R^2$ and denote by 
 $$
-u = (u_1,u_2) = u_1 e_1 + u_2 e_2 
+\uu = (u_1,u_2) = u_1 \ee_1 + u_2 \ee_2 
 $$
 $$
-v = (v_1,v_2) = v_1 e_1 + v_2 e_2 
+\vv = (v_1,v_2) = v_1 \ee_1 + v_2 \ee_2 
 $$
-their coordinates with respect to $e_1,e_2$. Then
+their coordinates with respect to $\ee_1, \ee_2$. Then
 $$
-u \cdot v = u_1v_2 + u_2 v_2 \,.
+\uu \cdot \vv = u_1v_2 + u_2 v_2 \,.
 $$
 :::
 
@@ -1600,67 +1642,69 @@ $$
 
 Note that 
 $$
-e_1 \cdot e_1 = 1 \,, \quad e_2 \cdot e_2 = 1 \,, \quad 
-e_1 \cdot e_2 = e_2 \cdot e_1 = 0 \,.
+\ee_1 \cdot \ee_1 = 1 \,, \quad \ee_2 \cdot \ee_2 = 1 \,, \quad 
+\ee_1 \cdot \ee_2 = \ee_2 \cdot \ee_1 = 0 \,.
 $$
 Using the bilinearity of scalar product we have
 \begin{align*}
-u \cdot v & = (u_1 e_1 + u_2 e_2) \cdot (v_1 e_1 + v_2 e_2) \\
-          & = u_1 v_1 e_1 \cdot e_1 +  u_1 v_2 e_1 \cdot e_2 +
-              u_2 v_1 e_2 \cdot e_1 + u_2 v_2  e_2 \cdot e_2 \\
+\uu \cdot \vv & = (u_1 \ee_1 + u_2 \ee_2) \cdot (v_1 \ee_1 + v_2 \ee_2) \\
+          & = u_1 v_1 \ee_1 \cdot \ee_1 +  u_1 v_2 \ee_1 \cdot \ee_2 +
+              u_2 v_1 \ee_2 \cdot \ee_1 + u_2 v_2  \ee_2 \cdot \ee_2 \\
           & = u_1 v_1  + u_2 v_2 \,.
 \end{align*}
 :::
 
 
+The above proposition provides a natural way to define a scalar product in $\R^n$.
 
-
-The above proposition provides a way to generalize of the scalar product to $\R^n$..
 
 ::: Definition
 ### Scalar product in $\R^n$
 
-Let $u,v \in \R^n$ and denote their coordinates by
+Let $\uu, \vv \in \R^n$ and denote their coordinates by
 $$
-u = (u_1, \ldots, u_n) \,, \quad
-u = (v_1, \ldots, v_n) \,. 
+\uu = (u_1, \ldots, u_n) \,, \quad
+\vv = (v_1, \ldots, v_n) \,. 
 $$
-We define the scalar product between $u$ and $v$ by
+We define the scalar product between $\uu$ and $\vv$ by
 $$
-u \cdot v := \sum_{i=1}^n u_i v_i \,.
+\uu \cdot \vv := \sum_{i=1}^n u_i v_i \,.
 $$
 
 
 :::
 
-
-With the above definition we still have that the scalar product is bilinear and symmetric, as detailed in the following proposition:
+The scalar product in $\R^n$ is still bilinear and symmetric, as detailed in the following proposition:
 
 ::: Proposition
 ### Bilinearity and symmetry of scalar product in $\R^n$
 
-Let $u, v, w \in \R^n$ and $\lambda \in \R$. Then
+Let $\uu, \vv, \ww \in \R^n$ and $\lambda \in \R$. Then
 
-- **Symmetry**: $u \cdot v = v \cdot u$
-- **Bilinearity**: It holds
+- **Symmetry**: It holds 
 $$
-\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+\uu \cdot \vv = \vv \cdot \uu
+$$
+
+- **Bilinearity**: They hold
+$$
+\lambda (\uu \cdot \vv) = (\lambda \uu) \cdot \vv = \uu \cdot (\lambda \vv) \,,
 $$
 $$
-u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+\uu \cdot (\vv + \ww) = \uu \cdot \vv  + \uu \cdot \ww \,.
 $$
 
 :::
 
 
 The proof of the above proposition is an easy check, and is left to the reader for exercise.
-
+We can now define orthogonal vectors in $\R^n$.
 
 ::: Definition
 
-Let $u,v \in \R^n$. We say that $u$ and $v$ are **orthogonal** if 
+Let $\uu, \vv \in \R^n$. We say that $\uu$ and $\vv$ are **orthogonal** if 
 $$
-u \cdot v = 0 \,.
+\uu \cdot \vv = 0 \,.
 $$
 
 :::
@@ -1668,10 +1712,10 @@ $$
 
 
 ::: Proposition
-### Differentiating scalar product  {#proposition-diff-scalar}
+### Differentiating the scalar product  {#proposition-diff-scalar}
 
 
-Let $\g , \eeta \ \colon (a,b) \to \R^n$ be parametrized curves. Then the scalar map 
+Let $\g , \eeta \ \colon (a,b) \to \R^n$ be parametrized curves. The scalar map 
 $$
 \g \cdot \eeta \ \colon (a,b) \to \R
 $$
@@ -1688,17 +1732,17 @@ for all $t \in (a,b)$.
 
 Denote by 
 $$
-\g = (\g_1 ,\ldots , \g_n) \,, \quad \eeta = (\eta_1, \ldots , \eta_n)
+\g = (\gamma_1 ,\ldots , \gamma_n) \,, \quad \eeta = (\eta_1, \ldots , \eta_n)
 $$
 the coordinates of $\g$ and $\eeta$. Clearly the map
 $$
-t \mapsto \g \cdot \eeta = \sum_{i=1}^n \g_i \eta_i
+t \mapsto \g \cdot \eeta = \sum_{i=1}^n \gamma_i \eta_i
 $$
 is smooth, being sum and product of smooth functions.  
 Concerning the formula, by definition of scalar product and linearity of the derivative we have
 \begin{align*}
-\frac{d}{dt} (\g \cdot \eeta) & = \frac{d}{dt} \left( \sum_{i=1}^n \g_i \eta_i \right) \\
-& = \sum_{i=1}^n \frac{d}{dt} ( \g_i \eta_i ) \\
+\frac{d}{dt} (\g \cdot \eeta) & = \frac{d}{dt} \left( \sum_{i=1}^n \gamma_i \eta_i \right) \\
+& = \sum_{i=1}^n \frac{d}{dt} ( \gamma_i \eta_i ) \\
 & = \sum_{i=1}^n  {\dot\gamma}_i \eta_i + \dot{\gamma}_i {\dot \eta}_i \\
 & = \dg \cdot \eeta + \g \cdot \dot{\eeta} \,,
 \end{align*}
@@ -1718,17 +1762,16 @@ Given a curve $\g$ we defined the **tangent** vector at $\g(t)$ to be
 $$
 \dg (t) \,.
 $$
-The tangent vector measures the change of direction of the curve. Therefore the magnitude of $\dg$ can be interpreted as the **speed** of the curve.
+The tangent vector measures the change of direction of a curve. Therefore the magnitude of $\dg$ can be interpreted as 
+the rate of change, i.e. **speed**, of the curve.
+
 
 ::: Definition
+### Speed of a curve
 
 Let $\g \ \colon (a,b) \to \R^n$ be a curve. We define the speed of $\g$ at the point $\g(t)$ by
 $$
 \norm{\dg (t)} \,.
-$$
-We say that $\g$ is a **unit-speed** curve if
-$$
-\norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
 $$
 
 :::
@@ -1745,17 +1788,30 @@ $$
 :::
 
 
+::: Definition
+### Unit speed curve
 
-The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.
+Let $\g \ \colon (a,b) \to \R^n$ be a curve. We say that $\g$ is a **unit speed** curve if
+$$
+\norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+
+The reason why we introduce unit speed curves is because they make calculations easy. 
+A crucial identity which allows to simplify calculations for unit speed curves is given in
+the next proposition.
 
 
 ::: { .Proposition #proposition-speed-identity} 
 
 Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. Then
 $$
-\dg \cdot \ddg = 0 
+\dg \cdot \ddg = 0  \,, \quad \forall \, t \in (a,b) \,.
 $$
-for all $t \in (a,b)$.
+
 :::
 
 
@@ -1779,16 +1835,15 @@ $$
 $${#eq-speed-identity-2}
 where we used Proposition \ref{proposition-diff-scalar} and symmetry of the scalar product. Differentiating (@eq-speed-identity) and using (@eq-speed-identity-1)-(@eq-speed-identity-2)  we conclude
 $$
-2 \dg \cdot \ddg = 0 \quad \forall \, t \in (a,b) \,.
+2 \dg \cdot \ddg = 0 \quad \forall \, t \in (a,b) \,,
 $$
+which gives the thesis.
 :::
-
-
 
 
 ::: Remark
 
-Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit speed, then its tangent vector $\dg$ is always orthogonal to the second derivative $\ddg$. This will be very useful in the future.
+Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit speed, then its tangent vector $\dg$ is always orthogonal to the second derivative $\ddg$. This information will be used in the next Chapter to define the Frenet Frame: an orthonormal basis of vectors which moves smoothly along the curve. The Frenet frame will be crucial for studing local behavior of curves.
 
 :::
 
@@ -1802,7 +1857,40 @@ Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit spee
 
 ## Reparametrization
 
-As we have observed in the Examples of @sec-introduction, there is in general no unique way to parametrize a curve. However we would like to understand when two parametrizations are related. In other words, we want to clarify the concept of **equivalence** of two parametrizations. 
+As we have observed in the Examples of @sec-introduction, there is in general no unique way to parametrize a curve. However we would like to understand when two parametrizations are related. In other words, we want to clarify the concept of **equivalence** of two parametrizations. First we need some notation:
+
+
+::: Notation 
+
+1. Let $X,Y,Z$ be sets and 
+$$
+f \colon X \to Y \,, \quad g \colon Y \to Z
+$$
+two maps. The **composition** of $f$ and $g$ is the map
+$$
+g \circ f \colon X \to Z  \,, \quad (g \circ f)(x) := g(f(x))
+$$
+
+2. The **identity map** on $X$ is denoted by 
+$$
+{\id}_{X} \colon X \to X \,, \quad  {\id}_{X} (x) := x \,, \quad \forall \, x \in X \,.
+$$
+The identity in $\R$ will just be denoted by $\id$.
+
+3. The function $f \colon X \to Y$ is **invertible** if there exists
+a function $g \colon Y \to X$ such that
+$$
+g \circ f = {\id}_{X} \,, \quad 
+f \circ g = {\id}_{Y} \,,
+$$
+The map $g$, if it exists, is called the **inverse** of $f$ and is denoted by
+$$
+g:= f^{-1} \,.
+$$
+
+4. It is elementary to check that the inverse is unique if it exists.
+
+:::
 
 
 
@@ -1811,7 +1899,11 @@ As we have observed in the Examples of @sec-introduction, there is in general no
 
 Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We say that $\f$ is a **diffeomorphism** if the following conditions are satisfied:
 
-1. $\f$ is invertible, with inverse $\f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Thus
+1. $\f$ is invertible: There exists a map 
+$$
+\f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$ 
+such that
 $$
 \f^{-1} \circ \f =   \f \circ \f^{-1} = \id \,,
 $$
@@ -1819,10 +1911,12 @@ where $\id \colon \R \to \R$ is the identity map on $\R$, that is,
 $$
 \id(t) = t \,, \quad \forall \, t \in \R \,.
 $$
+
 2. $\f$ is smooth,
-2.  $\f^{-1}$ is smooth.
+3. $\f^{-1}$ is smooth.
 
 ::: 
+
 
 
 
@@ -1833,21 +1927,30 @@ Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. A **reparametrization*
 $$
 \tg (t) = \g (\f(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,, 
 $$ {#eq-reparametrization}
-where 
+for a suitable diffeomorphism
 $$
-\f \colon (\tilde{a},\tilde{b}) \to (a,b)
+\f \colon (\tilde{a},\tilde{b}) \to (a,b) \,.
 $$
-is a diffeomerphism. We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
+We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
 :::
 
 ::: Remark
-A comment about the above definition.
-Given a parametrized curve $\g$, this identifies a 1D shape $\Gamma \subset \R^n$. A reparametrization $\tg$ is just an equivalent way to describe $\Gamma$. For $\g$ and $\tg$ to be reparametrizations of each other, there must exist a smooth rule $\f$ to switch from one to another, according to formula (@eq-reparametrization) 
+
+1. Given a parametrized curve $\g$, this identifies a 1D shape $\Gamma \subset \R^n$ defined by
+$$
+\Gamma := \{ \g(t) \, \colon \, t \in (a,b) \} \,.
+$$
+$\Gamma$ is called the support of $\gamma$. 
+
+2. A reparametrization $\tg$ is just an equivalent way to describe $\Gamma$. 
+
+3. For $\g$ and $\tg$ to be reparametrizations of each other, there must exist a smooth rule $\f$ (the diffeomorphism) to switch from one to another, according to formula (@eq-reparametrization). This concept is sketched in @fig-reparametrization.
+
 :::
 
 
 
-![Sketch of 1D shaper \Gamma parametrized by $\g$ and $\tg$](/images/reparametrization.png){width=70%}
+![Sketch of 1D shape $\Gamma$ parametrized by $\g$ and $\tg$. We can switch parametrization by means of the diffeomorphism $\f$.](/images/reparametrization.png){#fig-reparametrization width=70%}
 
 
 
@@ -1972,17 +2075,18 @@ $$
 
 
 ::: Important
-The main reason we are interested in reparametrizations is because we want to parametrize curves by **arc-lenght**: This means that, for a curve $\g$, we want to find a reparametrization $\tg$ such that $\tg$ is unit speed:
+Reparametrizations are important for the following reason: For a curve $\g$ we wish to find a reparametrization 
+$\tg$ which is unit speed:
 $$
-\norm{ \dtg } = 1 \,, \quad  \forall t \in (a,b) \,.
+\norm{ \dtg } = 1 \,, \quad  \forall \, t \in (a,b) \,.
 $$
-We will see that this is not always possible.
+We will see that this is possible if and only if the curve $\g$ is regular, in the sense of Definition \ref{definition-regular} below.
 :::
 
 
 
 ::: Definition
-### Regular points
+### Regular points  {#definition-regular}
 
 Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. We say that:
 
@@ -2033,7 +2137,7 @@ From (@eq-lemma-diffeomorphism-1) we then get
 $$
  \dot\psi (\f(t)) \, \dot\f(t) = 1 \, , \quad \forall \, t \in (a,b) \,.
 $$
-Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that 
+As the RHS is non-zero, we must have that both the elements in the LHS product are non-zero. In particular we conclude
 $$
 \dot\f(t) \neq  0 \, , \quad \forall \, t \in (a,b) \,.
 $$
@@ -2045,47 +2149,63 @@ $$
 
 Consider the parabola
 $$
-\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 < x < 1\} \,.
 $$
-This can be parametrized in two ways by $\g, \eeta \ \colon [-1,1] \to \R^2$ defined as
+This is parametrized by the curves $\g, \eeta \ \colon (-1,1) \to \R^2$ defined by
 $$
 \g (t) = (t,t^2) \,, \quad 
 \eeta(t) = (t^3, t^6) \,.
 $$
-We will see that the above parametrizations are **not** equivalent. This is intuitively clear, since the change of variables map should be 
+We claim that $\eeta$ cannot be a reparametrization of $\g$.
+
+Indeed, suppose by contradiction there exist a diffeomorphism 
 $$
-\f(t) = t^3 \,.
+\phi \colon (-1,1) \to (-1,1) 
 $$
-This is smooth and invertible, with inverse 
+such that 
+$$
+\eeta (t) = \g (\phi(t)) \,, \quad \forall \, t \in (-1,1) \, .
+$$
+Substituting the definitions of $\g$ and $\eeta$ we obtain
+$$
+(t^3,t^6) = (\f(t), \f(t)^2) \,, \quad \forall \, t \in (-1,1)\,,
+$$
+which forces
+$$
+\f(t) = t^3 \,, \quad \forall \, t \in (-1,1)\,.
+$$
+Note that $f$ is invertible in $(-1,1)$ with inverse
 $$
 \f^{-1}(t) = \sqrt[3]{x} \,.
 $$
-However $\f^{-1}$ is not smooth at $t=0$, and thus $\f$ is not a diffeomorphism. Alternatively we could have just noticed that 
+However $\f^{-1}$ is not smooth at $t=0$, and therefore $\f$ is not a diffeomorphism. Alternatively we could have just noticed that 
 $$
 \dot \f (t) = 3t^2 \quad \implies \quad \dot\f(0) = 0 \,, 
 $$
 and therefore $\f$ cannot be a diffeomorphism due to Lemma \ref{lemma-diffeomorphism}.
 
-Let us look at the derivatives:
+To understand what is going on with the two parametrizations, let us look at the derivatives:
 $$
 \dg (t) = (1,2t) \,, \quad \dot{\eeta} (t)= (3t^2,6t^5) \,.
 $$
 We notice a difference:
 
-- $\g$ is a regular parametrization,
-- $\eeta(t)$ is regular only for $t \neq 0$.
+- $\g$ is a regular parametrization, as the first component of $\dg$ is non-zero.
+- $\eeta$ is regular if and only if $t \neq 0$.
 
 Indeed if we animate the plots of the above parametrizations, we see that:
 
 - The point $\g(t)$ moves with constant horizontal speed
-- The point $\eeta(t)$ is decelerating for $t < 0$, it stops at $t = 0$, and then accelerates again for $t>0$.
+- The point $\eeta(t)$ is decelerating for $t < 0$, it **stops** at $t = 0$, and then accelerates again for $t>0$.
+
+
 :::
 
 
 
 ::: {.content-visible when-format="html"}
 
-![Left: Animation of $\g$. Right: Animation of $\eeta$](/images/singular_curve_animated.gif){width=90%}
+![Left: Animation of $\g(t) = (t,t^2)$. Right: Animation of $\eeta(t) = (t^3,t^6)$.](/images/singular_curve_animated.gif){width=90%}
 
 :::
 
@@ -2096,6 +2216,10 @@ Indeed if we animate the plots of the above parametrizations, we see that:
 
 :::
 
+
+
+
+The previous example shows that, altough $\g$ and $\eeta$ describe the same parabola $\Gamma$, they are not reparametrizations of each other. We have seen that this is due to the fact that $\g$ is regular, while $\eeta$ is not. Indeed we can prove that regularity is invariant by reparametrization.
 
 
 
@@ -2129,15 +2253,11 @@ But we are assuming that $\g$ is regular, so that
 $$
 \dg (\f(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
 $$
-Thus (@eq-regularity-invariant-1) is equivalent to 
+Moreover $\f$ is a diffeomorphism, so that 
 $$
-\dtg(t) \neq 0 \quad \iff \quad  \dot\f(t)  \neq 0 \,.
-$$ {#eq-regularity-invariant-2}
-Since $\f$ is a diffeomorphism, by Lemma \ref{lemma-diffeomorphism} we have that 
+\dot \f (t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,,
 $$
-\dot \f (t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,.
-$$
-By (@eq-regularity-invariant-2) we conclude that 
+by Lemma \ref{lemma-diffeomorphism}. From (@eq-regularity-invariant-1) we conclude that 
 $$
 \dtg(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,, 
 $$
@@ -2150,7 +2270,7 @@ proving that $\tg$ is regular.
 
 Let us go back to the parabola
 $$
-\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 < x < 1\} \,,
 $$
 with the two parametrizations $\g, \eeta \ \colon [-1,1] \to \R^2$ with
 $$
@@ -2166,27 +2286,47 @@ Therefore
 - $\g$ is a regular parametrization,
 - $\eeta(t)$ is regular only for $t \neq 0$.
 
-Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **NOT** a reparametrization of $\g$.
+Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **not** a reparametrization of $\g$.
 :::
 
 
+We now define unit speed reparametrizations:
 
 ::: Definition 
 ### Unit speed reparametrization
 
-Let $\g$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is a reparametrization $\tg$ such that $\tg$ is unit speed.
+Let $\g \colon (a,b) \to \R^n$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit speed, i.e.,
+$$
+\norm{ \dtg(t) } = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
 
 :::
 
 
-The next theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
+The next Theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
 $$
 s(t):=\int_{t_0}^t \norm{ \dg (\tau) } \, d\tau \,,
 $$
-for some arbitrary $t_0 \in (a,b)$ fixed. Indeed, we will see that for $\f$ regular the unit speed parametrization map can be taken as 
+for some arbitrary $t_0 \in (a,b)$ fixed. Notice that
 $$
-\f = s^{-1} \,.
+\dot{s}(t) = \norm{ \dg (t) } \,.
+$$
+Therefore if $\g$ is regular we have
+$$
+\norm{ \dg (t) } \neq 0  \quad \implies \quad
+\dot{s}(t) \neq 0 \,.
+$$
+It seems like $s$ could be a diffeomorphism! Indeed, we will prove that if $\g$ is regular then $s$ is a diffeomorphism, and all the unit speed reparametrizations of $\g$ are of the form
+$$
+\f = \pm s^{-1}  + c 
 $$ 
+with $s^{-1}$ the inverse of $s$ and $c \in \R$ constant. This essentially means that $s^{-1}$ is the *only* unit speed reparametrization, given that all the others are obtained either 
+
+- by constant time-shift $c$,
+- or by time reversal, taking $\phi = - s^{-1}$.
+
+These statements will be proved in Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} below.
+
 
 
 ::: Theorem
@@ -2397,13 +2537,13 @@ proving that $\tg$ is a unit speed reparametrization.
 
 
 ::: Remark
-Let $\g$ be regular. The above proposition tells us that they are equivalent:
+Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that the following are equivalent:
 
 1. Computing a unit speed reparametrization of $\g$,
 
 2. Computing $s$ the arc-length of $\g$.
 
-In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions, even for very simple curves.
+In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
 :::
 
 

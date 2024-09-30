@@ -17,7 +17,7 @@ We have seen how to describe curves and reparametrized them. Now we want to look
 We will measure two quantities:
 
 - **Curvature**: measures how much a curve $\g$ deviates from a straight line.
-- **Torsion**: measures how much a curve $\g$ fails to lie on a plane.
+- **Torsion**: measures how much a curve $\g$ deviates from a plane.
 
 For example a 2D spiral is curved, but still lies in a plane. Instead the Helix both deviates from a straight line and *pulls away* from any fixed plane. 
 
@@ -1355,7 +1355,7 @@ Therefore
 $$
 \dot{\bb} \cdot \bb = 0 \,.
 $$
-To summarize, we have shown that $\dot{\bb}$ is orthogonal to $\bb$ and $\dg$. Since 
+To summarize, we have shown that $\dot{\bb}$ is orthogonal to both $\bb$ and $\dg$. Since 
 $$
 ( \dg, \nn , \bb )
 $$
@@ -2412,7 +2412,22 @@ since $\dot{\bb}=0$. Thus $\g \cdot \bb$ is a constant scalar function, meaning 
 $$
 \g(t) \cdot \bb = d \,, \,\, \forall \, t \in (a,b) \,.
 $$
-The says that $\g$ is contained in a plane.
+As the above equation holds for each $t$, we can fix an arbitrary $t_0 \in (a,b)$ and
+find that the constant
+$$
+d = \g(t_0) \cdot \bb 
+$$
+Hence we obtain
+$$
+(\g(t) - \g(t_0)) \cdot \bb = 0 \,, \,\, \forall \, t \in (a,b) \,.
+$$
+The above is says that $\g$ is contained in the plane (orthogonal to $\bb$) with equation
+$$
+(\xx - \g(t_0)) \cdot \bb = 0
+$$
+This concludes the first part of the proof.
+
+
 
 *Step 2.* Suppose that $\g$ is contained in a plane. Hence there exists $\mathbf{P} \in \R^3$ and $d \in \R$ such that 
 $$
@@ -2435,24 +2450,51 @@ As we are assuming $\kappa \neq 0$, we deduce that
 $$
 \nn (t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
 $$
-We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda(t) \in \R$ such that
+We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to both $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda(t) \in \R$ such that
 $$
-\bb(t) = \lambda(t) \mathbf{P} \,\forall \, t \in (a,b) \,.
+\bb(t) = \lambda(t) \mathbf{P} \,, \quad \forall \, t \in (a,b) \,.
+$$
+Since $\norm{\bb} = 1$ and $\mathbf{P}$ is constant, from (@eq-proof-plane) we conclude that $\lambda(t)$ is constant
+and non-zero. In particular we have proven that $\bb$ is parallel to $\mathbf{P}$, i.e.,
+$$
+\bb(t) = \hat{\lambda} \mathbf{P} \,, \quad \forall \, t \in (a,b) \,,
 $${#eq-proof-plane}
-Since $\norm{\bb} = 1$ and $\mathbf{P}$ is constant, from (@eq-proof-plane) we conclude that $\lambda(t)$ is constant. Differentiating (@eq-proof-plane) we obtain
+for some $\hat{\lambda} \neq 0$. Differentiating (@eq-proof-plane) we obtain
 $$
-\dot{\bb}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+\dot{\bb}(t) = 0 \,, \quad \forall \, t \in (a,b) \,,
 $$
-By definition of torsion we thus have
+meaning that the binormal $\bb$ is a constant vector. By definition of torsion we thus have
 $$
-\tau(t) = - \dot{\bb} \cdot \nn(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+\tau(t) = - \dot{\bb} \cdot \nn(t) = 0 \,, \quad \forall \, t \in (a,b) \,,
 $$
+as required.
 :::
 
 
 
-![If $\bb$ is constant, then $\g$ lies in the plane spanned by $\dg$ and $\nn$.](/images/proof_plane_intuition.png){#fig-proof-plane width=70%}
+![If $\bb$ is constant, then $\g$ lies in the plane spanned by $\dg$ and $\nn$. Note that $\bb$ is the unit normal to such plane.](/images/proof_plane_intuition.png){#fig-proof-plane width=70%}
 
+
+
+As a corollary of Step 1 in the proof of Proposition \ref{proposition-zero-torsion}
+we obtain the following statement.
+
+::: {.Corollary  #corollary-zero-torsion}
+
+
+Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. Suppose that
+the torsion
+$$
+\tau(t) = 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Then the image of $\g$ is contained in the plane of
+equation
+$$
+(\xx - \g(t_0)) \cdot \bb = 0 \,,
+$$
+where $t_0 \in (a,b)$ is arbitrarily chosen. Note that such plane is orthogonal to the binormal $\bb$.
+
+:::
 
 
 ::: {.Proposition #proposition-constant-k-zero-t}
@@ -2470,7 +2512,6 @@ $$
 for some constant $c \in \R$.
 
 
-
 :::
 
 
@@ -2483,7 +2524,8 @@ $$
 Therefore, by Theorem \ref{theorem-characterization-space}, every unit speed curve $\g$ with
 constant curvature and torsion must be equal to a circle, up to rigid motions. 
 
-Nevertheless, we still give a proof of Proposition \ref{proposition-constant-k-zero-t}, to show yet another application of the Frenet-Serret equations.
+Nevertheless, we still give a proof of Proposition \ref{proposition-constant-k-zero-t}, 
+to show yet another explicit application of the Frenet-Serret equations.
 
 
 ::: Proof

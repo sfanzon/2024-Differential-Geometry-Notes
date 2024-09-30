@@ -92,31 +92,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Lemma {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -124,7 +108,23 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -132,35 +132,35 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Goal {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Theorem {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -331,7 +331,7 @@ window.Quarto = {
 <p>We will measure two quantities:</p>
 <ul>
 <li><strong>Curvature</strong>: measures how much a curve <span class="math inline">\({\pmb{\gamma}}\)</span> deviates from a straight line.</li>
-<li><strong>Torsion</strong>: measures how much a curve <span class="math inline">\({\pmb{\gamma}}\)</span> fails to lie on a plane.</li>
+<li><strong>Torsion</strong>: measures how much a curve <span class="math inline">\({\pmb{\gamma}}\)</span> deviates from a plane.</li>
 </ul>
 <p>For example a 2D spiral is curved, but still lies in a plane. Instead the Helix both deviates from a straight line and <em>pulls away</em> from any fixed plane.</p>
 <section id="curvature" class="level2" data-number="2.1">
@@ -1207,7 +1207,7 @@ B = (  \dot{{\pmb{\gamma}}}(t), \mathbf{n}(t), \mathbf{b}(t)  )
 \frac{d}{dt}( \mathbf{b}\cdot \mathbf{b}) = \frac{d}{dt}( \left\| \mathbf{b} \right\|^2 ) = \frac{d}{dt}( 1 ) = 0 \,  
 \]</span> Therefore <span class="math display">\[
 \dot{\mathbf{b}} \cdot \mathbf{b}= 0 \,.
-\]</span> To summarize, we have shown that <span class="math inline">\(\dot{\mathbf{b}}\)</span> is orthogonal to <span class="math inline">\(\mathbf{b}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span>. Since <span class="math display">\[
+\]</span> To summarize, we have shown that <span class="math inline">\(\dot{\mathbf{b}}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{b}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span>. Since <span class="math display">\[
 ( \dot{{\pmb{\gamma}}}, \mathbf{n}, \mathbf{b})
 \]</span> is an orthonormal basis of <span class="math inline">\(\mathbb{R}^3\)</span> we conclude that <span class="math inline">\(\dot{\mathbf{b}}\)</span> is parallel to <span class="math inline">\(\mathbf{n}\)</span>. Therefore there exists <span class="math inline">\(\tau(t) \in \mathbb{R}\)</span> such that <span class="math display">\[
 \dot{\mathbf{b}} = - \tau(t) \mathbf{n}(t) \,,
@@ -1325,7 +1325,7 @@ B = (  \dot{{\pmb{\gamma}}}(t), \mathbf{n}(t), \mathbf{b}(t)  )
 \]</span><p></p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="1">
+<div id="1d75dd54" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1493,7 +1493,7 @@ s(t) := \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = \sqrt{2} \, 
 \]</span> The Frenet-Frame of the unit-speed Helix is plotted in <a href="#fig-helix-frenet" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>.<p></p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="cell-fig-helix-frenet" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-helix-frenet" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1552,7 +1552,7 @@ Figure&nbsp;2.5: Frenet frame of the helix of radius 1 and rise 1.
 \]</span> and by Theorem <a href="chap_2.html#theorem-characterization-space">50</a> we conclude that <span class="math inline">\({\pmb{\gamma}}\)</span> is equal to <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> up to rotations and translations.<p></p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="3">
+<div id="aa8d9669" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1758,7 +1758,13 @@ Figure&nbsp;2.6: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is t
 \frac{d}{dt} ( {\pmb{\gamma}}\cdot \mathbf{b}) = \dot{{\pmb{\gamma}}}\cdot \mathbf{b}+ {\pmb{\gamma}}\cdot \dot{\mathbf{b}} = 0\,,  \quad \forall \, t \in (a,b) \,,
 \]</span> since <span class="math inline">\(\dot{\mathbf{b}}=0\)</span>. Thus <span class="math inline">\({\pmb{\gamma}}\cdot \mathbf{b}\)</span> is a constant scalar function, meaning that there exists costant <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t) \cdot \mathbf{b}= d \,, \,\, \forall \, t \in (a,b) \,.
-\]</span> The says that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane.</p>
+\]</span> As the above equation holds for each <span class="math inline">\(t\)</span>, we can fix an arbitrary <span class="math inline">\(t_0 \in (a,b)\)</span> and find that the constant <span class="math display">\[
+d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
+\]</span> Hence we obtain <span class="math display">\[
+({\pmb{\gamma}}(t) - {\pmb{\gamma}}(t_0)) \cdot \mathbf{b}= 0 \,, \,\, \forall \, t \in (a,b) \,.
+\]</span> The above is says that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in the plane (orthogonal to <span class="math inline">\(\mathbf{b}\)</span>) with equation <span class="math display">\[
+(\mathbf{x}- {\pmb{\gamma}}(t_0)) \cdot \mathbf{b}= 0
+\]</span> This concludes the first part of the proof.</p>
 <p><em>Step 2.</em> Suppose that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane. Hence there exists <span class="math inline">\(\mathbf{P} \in \mathbb{R}^3\)</span> and <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
 \]</span> We can differentiate the above equation twice to obtain <span class="math display">\[
@@ -1769,13 +1775,15 @@ Figure&nbsp;2.6: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is t
 \kappa (t) \mathbf{n}(t) \cdot \mathbf{P} = 0 \,.
 \]</span> As we are assuming <span class="math inline">\(\kappa \neq 0\)</span>, we deduce that <span class="math display">\[
 \mathbf{n}(t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
-\]</span> We have shown that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> are both orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. Since <span class="math inline">\(\mathbf{b}(t)\)</span> is orthogonal to <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span>, we conclude that <span class="math inline">\(\mathbf{b}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>. Hence, there exists <span class="math inline">\(\lambda(t) \in \mathbb{R}\)</span> such that <span id="eq-proof-plane"><span class="math display">\[
-\mathbf{b}(t) = \lambda(t) \mathbf{P} \,\forall \, t \in (a,b) \,.
-\tag{2.20}\]</span></span> Since <span class="math inline">\(\left\| \mathbf{b} \right\| = 1\)</span> and <span class="math inline">\(\mathbf{P}\)</span> is constant, from (<a href="#eq-proof-plane" class="quarto-xref"><span>2.20</span></a>) we conclude that <span class="math inline">\(\lambda(t)\)</span> is constant. Differentiating (<a href="#eq-proof-plane" class="quarto-xref"><span>2.20</span></a>) we obtain <span class="math display">\[
-\dot{\mathbf{b}}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
-\]</span> By definition of torsion we thus have <span class="math display">\[
-\tau(t) = - \dot{\mathbf{b}} \cdot \mathbf{n}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
-\]</span></p>
+\]</span> We have shown that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> are both orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. Since <span class="math inline">\(\mathbf{b}(t)\)</span> is orthogonal to both <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span>, we conclude that <span class="math inline">\(\mathbf{b}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>. Hence, there exists <span class="math inline">\(\lambda(t) \in \mathbb{R}\)</span> such that <span class="math display">\[
+\mathbf{b}(t) = \lambda(t) \mathbf{P} \,, \quad \forall \, t \in (a,b) \,.
+\]</span> Since <span class="math inline">\(\left\| \mathbf{b} \right\| = 1\)</span> and <span class="math inline">\(\mathbf{P}\)</span> is constant, from (<a href="#eq-proof-plane" class="quarto-xref"><span>2.20</span></a>) we conclude that <span class="math inline">\(\lambda(t)\)</span> is constant and non-zero. In particular we have proven that <span class="math inline">\(\mathbf{b}\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>, i.e., <span id="eq-proof-plane"><span class="math display">\[
+\mathbf{b}(t) = \hat{\lambda} \mathbf{P} \,, \quad \forall \, t \in (a,b) \,,
+\tag{2.20}\]</span></span> for some <span class="math inline">\(\hat{\lambda} \neq 0\)</span>. Differentiating (<a href="#eq-proof-plane" class="quarto-xref"><span>2.20</span></a>) we obtain <span class="math display">\[
+\dot{\mathbf{b}}(t) = 0 \,, \quad \forall \, t \in (a,b) \,,
+\]</span> meaning that the binormal <span class="math inline">\(\mathbf{b}\)</span> is a constant vector. By definition of torsion we thus have <span class="math display">\[
+\tau(t) = - \dot{\mathbf{b}} \cdot \mathbf{n}(t) = 0 \,, \quad \forall \, t \in (a,b) \,,
+\]</span> as required.</p>
 </div></details>
 </div>
 <div id="fig-proof-plane" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1784,12 +1792,21 @@ Figure&nbsp;2.6: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is t
 <img src="../images/proof_plane_intuition.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proof-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant, then <span class="math inline">\({\pmb{\gamma}}\)</span> lies in the plane spanned by <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>.
+Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant, then <span class="math inline">\({\pmb{\gamma}}\)</span> lies in the plane spanned by <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>. Note that <span class="math inline">\(\mathbf{b}\)</span> is the unit normal to such plane.
 </figcaption>
 </figure>
 </div>
+<p>As a corollary of Step 1 in the proof of Proposition <a href="chap_2.html#proposition-zero-torsion">55</a> we obtain the following statement.</p>
+<div id="corollary-zero-torsion" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 56</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be regular and such that <span class="math inline">\(\kappa \neq 0\)</span>. Suppose that the torsion <span class="math display">\[
+\tau(t) = 0 \,, \quad \forall \, t \in (a,b)\,.
+\]</span> Then the image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in the plane of equation <span class="math display">\[
+(\mathbf{x}- {\pmb{\gamma}}(t_0)) \cdot \mathbf{b}= 0 \,,
+\]</span> where <span class="math inline">\(t_0 \in (a,b)\)</span> is arbitrarily chosen. Note that such plane is orthogonal to the binormal <span class="math inline">\(\mathbf{b}\)</span>.<p></p>
+</div></details>
+</div>
 <div id="proposition-constant-k-zero-t" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 56</strong></summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57</strong></summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve. They are equivalent:</p>
 <ol type="1">
 <li><p>The image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>.</p></li>
@@ -1799,10 +1816,10 @@ Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant,
 </ol>
 </div></details>
 </div>
-<p>Proposition <a href="chap_2.html#proposition-constant-k-zero-t">56</a> is actually a consequence of Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, and of the fact that we have computed that for a circle of radius <span class="math inline">\(R\)</span> one has <span class="math display">\[
+<p>Proposition <a href="chap_2.html#proposition-constant-k-zero-t">57</a> is actually a consequence of Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, and of the fact that we have computed that for a circle of radius <span class="math inline">\(R\)</span> one has <span class="math display">\[
 \kappa  = \frac1R \,, \quad  \tau = 0\,.
 \]</span> Therefore, by Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, every unit speed curve <span class="math inline">\({\pmb{\gamma}}\)</span> with constant curvature and torsion must be equal to a circle, up to rigid motions.</p>
-<p>Nevertheless, we still give a proof of Proposition <a href="chap_2.html#proposition-constant-k-zero-t">56</a>, to show yet another application of the Frenet-Serret equations.</p>
+<p>Nevertheless, we still give a proof of Proposition <a href="chap_2.html#proposition-constant-k-zero-t">57</a>, to show yet another explicit application of the Frenet-Serret equations.</p>
 <div id="Proof*-13" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose the image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>. Then, up to a translation, <span class="math inline">\({\pmb{\gamma}}\)</span> is parametrized by <span class="math display">\[
 {\pmb{\gamma}}(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right)

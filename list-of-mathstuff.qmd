@@ -65,7 +65,7 @@
 
  [**Example 1.27**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
 
- [**Definition 1.28**](#scalar-product-in-mathbbr2): Scalar product in $\mathbb{R}^2$\Pageref{scalar-product-in-mathbbr2}
+ [**Definition 1.28**](#definition-scalar): Scalar product in $\mathbb{R}^2$\Pageref{definition-scalar}
 
  [**Remark 1.29**](#Remark-1.29)\Pageref{Remark-1.29}
 
@@ -83,87 +83,91 @@
 
  [**Definition 1.35**](#Definition-1.35)\Pageref{Definition-1.35}
 
- [**Proposition 1.36**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
+ [**Proposition 1.36**](#proposition-diff-scalar): Differentiating the scalar product\Pageref{proposition-diff-scalar}
 
  [**Proof**](#Proof*-1.8)\Pageref{Proof*-1.8}
 
- [**Definition 1.37**](#Definition-1.37)\Pageref{Definition-1.37}
+ [**Definition 1.37**](#speed-of-a-curve-1): Speed of a curve\Pageref{speed-of-a-curve-1}
 
  [**Remark 1.38**](#Remark-1.38)\Pageref{Remark-1.38}
 
- [**Proposition 1.39**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
+ [**Definition 1.39**](#unit-speed-curve): Unit speed curve\Pageref{unit-speed-curve}
+
+ [**Proposition 1.40**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
 
  [**Proof**](#Proof*-1.9)\Pageref{Proof*-1.9}
 
- [**Remark 1.40**](#Remark-1.40)\Pageref{Remark-1.40}
+ [**Remark 1.41**](#Remark-1.41)\Pageref{Remark-1.41}
 
- [**Definition 1.41**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+ [**Notation**](#Notation*-1.10)\Pageref{Notation*-1.10}
 
- [**Definition 1.42**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
+ [**Definition 1.42**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
 
- [**Remark 1.43**](#Remark-1.43)\Pageref{Remark-1.43}
+ [**Definition 1.43**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
 
- [**Example 1.44**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+ [**Remark 1.44**](#Remark-1.44)\Pageref{Remark-1.44}
 
- [**Example 1.45**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
+ [**Example 1.45**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
 
- [**Example 1.46**](#change-of-speed): Change of speed\Pageref{change-of-speed}
+ [**Example 1.46**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
 
- [**Example 1.47**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
+ [**Example 1.47**](#change-of-speed): Change of speed\Pageref{change-of-speed}
 
- [**Important**](#Important*-1.10)\Pageref{Important*-1.10}
+ [**Example 1.48**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
 
- [**Definition 1.48**](#regular-points): Regular points\Pageref{regular-points}
+ [**Important**](#Important*-1.11)\Pageref{Important*-1.11}
 
- [**Lemma 1.49**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
+ [**Definition 1.49**](#definition-regular): Regular points\Pageref{definition-regular}
 
- [**Proof**](#Proof*-1.11)\Pageref{Proof*-1.11}
-
- [**Example 1.50**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
-
- [**Proposition 1.51**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
+ [**Lemma 1.50**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
 
  [**Proof**](#Proof*-1.12)\Pageref{Proof*-1.12}
 
- [**Example 1.52**](#Example-1.52)\Pageref{Example-1.52}
+ [**Example 1.51**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
 
- [**Definition 1.53**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
-
- [**Theorem 1.54**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+ [**Proposition 1.52**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
 
  [**Proof**](#Proof*-1.13)\Pageref{Proof*-1.13}
 
- [**Proposition 1.55**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
+ [**Example 1.53**](#Example-1.53)\Pageref{Example-1.53}
+
+ [**Definition 1.54**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
+
+ [**Theorem 1.55**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
 
  [**Proof**](#Proof*-1.14)\Pageref{Proof*-1.14}
 
- [**Remark 1.56**](#Remark-1.56)\Pageref{Remark-1.56}
-
- [**Example 1.57**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
-
- [**Example 1.58**](#example-curve-loop)\Pageref{example-curve-loop}
-
- [**Definition 1.59**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
-
- [**Definition 1.60**](#closed-curve): Closed curve\Pageref{closed-curve}
-
- [**Remark 1.61**](#remark-closed)\Pageref{remark-closed}
-
- [**Definition 1.62**](#Definition-1.62)\Pageref{Definition-1.62}
-
- [**Proposition 1.63**](#Proposition-1.63)\Pageref{Proposition-1.63}
+ [**Proposition 1.56**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
 
  [**Proof**](#Proof*-1.15)\Pageref{Proof*-1.15}
 
- [**Example 1.64**](#Example-1.64)\Pageref{Example-1.64}
+ [**Remark 1.57**](#Remark-1.57)\Pageref{Remark-1.57}
 
- [**Definition 1.65**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+ [**Example 1.58**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
 
- [**Remark 1.66**](#Remark-1.66)\Pageref{Remark-1.66}
+ [**Example 1.59**](#example-curve-loop)\Pageref{example-curve-loop}
 
- [**Example 1.67**](#Example-1.67)\Pageref{Example-1.67}
+ [**Definition 1.60**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
 
- [**Example 1.68**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+ [**Definition 1.61**](#closed-curve): Closed curve\Pageref{closed-curve}
+
+ [**Remark 1.62**](#remark-closed)\Pageref{remark-closed}
+
+ [**Definition 1.63**](#Definition-1.63)\Pageref{Definition-1.63}
+
+ [**Proposition 1.64**](#Proposition-1.64)\Pageref{Proposition-1.64}
+
+ [**Proof**](#Proof*-1.16)\Pageref{Proof*-1.16}
+
+ [**Example 1.65**](#Example-1.65)\Pageref{Example-1.65}
+
+ [**Definition 1.66**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+
+ [**Remark 1.67**](#Remark-1.67)\Pageref{Remark-1.67}
+
+ [**Example 1.68**](#Example-1.68)\Pageref{Example-1.68}
+
+ [**Example 1.69**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
 
  [**Important**](#Important*-2.1)\Pageref{Important*-2.1}
 
@@ -299,7 +303,9 @@
 
  [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
 
- [**Proposition 2.56**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Corollary 2.56**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+
+ [**Proposition 2.57**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
 
  [**Proof**](#Proof*-2.13)\Pageref{Proof*-2.13}
 

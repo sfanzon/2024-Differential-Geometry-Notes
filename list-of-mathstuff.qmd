@@ -305,7 +305,9 @@
 
  [**Corollary 2.56**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
 
- [**Proposition 2.57**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Example 2.57**](#Example-2.57)\Pageref{Example-2.57}
+
+ [**Proposition 2.58**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
 
  [**Proof**](#Proof*-2.13)\Pageref{Proof*-2.13}
 

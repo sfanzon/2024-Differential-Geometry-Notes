@@ -92,17 +92,53 @@ div.csl-indent {
   }
 }</script>
 <style>
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Warning {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Goal {
   --color1: #f4cce0;
@@ -112,35 +148,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -148,21 +160,9 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -297,7 +297,9 @@ window.Quarto = {
   <li><a href="#signed-curvature-of-plane-curves" id="toc-signed-curvature-of-plane-curves" class="nav-link" data-scroll-target="#signed-curvature-of-plane-curves"><span class="header-section-number">2.4</span> Signed curvature of plane curves</a></li>
   <li><a href="#space-curves" id="toc-space-curves" class="nav-link" data-scroll-target="#space-curves"><span class="header-section-number">2.5</span> Space curves</a></li>
   <li><a href="#frenet-frame" id="toc-frenet-frame" class="nav-link" data-scroll-target="#frenet-frame"><span class="header-section-number">2.6</span> Frenet frame</a></li>
-  <li><a href="#consequences-of-frenet-serret" id="toc-consequences-of-frenet-serret" class="nav-link" data-scroll-target="#consequences-of-frenet-serret"><span class="header-section-number">2.7</span> Consequences of Frenet-Serret</a></li>
+  <li><a href="#characterization-theorem-for-3d-curves" id="toc-characterization-theorem-for-3d-curves" class="nav-link" data-scroll-target="#characterization-theorem-for-3d-curves"><span class="header-section-number">2.7</span> Characterization Theorem for 3D curves</a></li>
+  <li><a href="#proving-curvature-and-torsion-formulae" id="toc-proving-curvature-and-torsion-formulae" class="nav-link" data-scroll-target="#proving-curvature-and-torsion-formulae"><span class="header-section-number">2.8</span> Proving curvature and torsion formulae</a></li>
+  <li><a href="#rigidity-results" id="toc-rigidity-results" class="nav-link" data-scroll-target="#rigidity-results"><span class="header-section-number">2.9</span> Rigidity results</a></li>
   </ul>
 </nav>
     </div>
@@ -347,11 +349,15 @@ window.Quarto = {
 \dot{{\pmb{\gamma}}}\cdot \ddot{{\pmb{\gamma}}}= 0 \,,
 \]</span> that is, the vector <span class="math inline">\(\ddot{{\pmb{\gamma}}}\)</span> is orthogonal to the tangent <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> at all times. Now let <span class="math inline">\(\mathbf{n}(t)\)</span> be the unit vector orthogonal to <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> at the point <span class="math inline">\({\pmb{\gamma}}(t)\)</span>. The amount that the curve <span class="math inline">\({\pmb{\gamma}}\)</span> deviates from its tangent at <span class="math inline">\({\pmb{\gamma}}(t)\)</span> after time <span class="math inline">\(t_0\)</span> is <span id="eq-curvature-heuristics"><span class="math display">\[
 ( {\pmb{\gamma}}(t + t_0) - {\pmb{\gamma}}(t) ) \cdot \mathbf{n}(t) \,,
-\tag{2.1}\]</span></span> as seen in the figure below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/curvature.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Amount that <span class="math inline">\({\pmb{\gamma}}\)</span> deviates from tangent is <span class="math inline">\(({\pmb{\gamma}}(t+t_0)-{\pmb{\gamma}}(t)) \cdot \mathbf{n}(t)\)</span></figcaption>
+\tag{2.1}\]</span></span> as seen in Figure <a href="#fig-curvature" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
+<div id="fig-curvature" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-curvature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/curvature.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-curvature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Amount that <span class="math inline">\({\pmb{\gamma}}\)</span> deviates from tangent is <span class="math inline">\(({\pmb{\gamma}}(t+t_0)-{\pmb{\gamma}}(t)) \cdot \mathbf{n}(t)\)</span>
+</figcaption>
 </figure>
 </div>
 <p>Equation (<a href="#eq-curvature-heuristics" class="quarto-xref"><span>2.1</span></a>) is what we take as measure of curvature. Since <span class="math display">\[
@@ -515,7 +521,7 @@ s(t) = \int_{0}^t R d \tau = t R \,.
 = \frac{2e^t} {e^{2t} - 1} \,.
 \]</span></p></li>
 </ul>
-<p>For a plot <span class="math inline">\(\cosh, \sinh, \tanh\)</span> see <a href="#fig-hyperbolic-functions" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> below. The properties of the hyperbolic functions which are of interest to us are:</p>
+<p>For a plot <span class="math inline">\(\cosh, \sinh, \tanh\)</span> see <a href="#fig-hyperbolic-functions" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> below. The properties of the hyperbolic functions which are of interest to us are:</p>
 <ol type="1">
 <li><p>Identities: <span class="math display">\[\begin{align*}
 &amp;\cosh(t) + \sinh(t) = e^t \\
@@ -542,14 +548,14 @@ s(t) = \int_{0}^t R d \tau = t R \,.
 <img src="../images/hyperbolic_functions.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hyperbolic-functions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Plot of <span class="math inline">\(\cosh, \sinh, \tanh\)</span>.
+Figure&nbsp;2.2: Plot of <span class="math inline">\(\cosh, \sinh, \tanh\)</span>.
 </figcaption>
 </figure>
 </div>
 <div id="the-catenary" class="Example" title="The Catenary">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 7: </strong>The Catenary</summary><div>The <strong>catenary</strong> is the shape of a heavy chain suspended at its ends. The chain is only subjected to gravity, see <a href="#fig-catenary" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>. This shape looks similar to a parabola, but it is not a parabola. This was first noted by Galilei, see this <a href="https://en.wikipedia.org/wiki/Catenary">Wikipedia page</a>. The profile of the hanging chain can be obtained via a minimization problem, and one can show it is of the form <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 7: </strong>The Catenary</summary><div>The <strong>catenary</strong> is the shape of a heavy chain suspended at its ends. The chain is only subjected to gravity, see <a href="#fig-catenary" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>. This shape looks similar to a parabola, but it is not a parabola. This was first noted by Galilei, see this <a href="https://en.wikipedia.org/wiki/Catenary">Wikipedia page</a>. The profile of the hanging chain can be obtained via a minimization problem, and one can show it is of the form <span class="math display">\[
 {\pmb{\gamma}}(t) = ( t, \cosh(t) ) \,, \quad t \in \mathbb{R}\,.
-\]</span> See <a href="#fig-catenary-plot" class="quarto-xref">Figure&nbsp;<span>2.3</span></a> for a plot of <span class="math inline">\({\pmb{\gamma}}\)</span>. Let us check if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. We have <span class="math display">\[
+\]</span> See <a href="#fig-catenary-plot" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> for a plot of <span class="math inline">\({\pmb{\gamma}}\)</span>. Let us check if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. We have <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = (1 , \sinh(t))
 \]</span> so that <span class="math display">\[
 \left\|  \dot{{\pmb{\gamma}}} \right\|^2 = 1 + {\sinh}^2 (t) = \cosh^2 (t)
@@ -591,7 +597,7 @@ e^t = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2
 <img src="../images/catenary.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: The catenary is the shape of a heavy chain suspended at its ends. Image from <a href="https://en.wikipedia.org/wiki/Catenary">Wikipedia</a>.
+Figure&nbsp;2.3: The catenary is the shape of a heavy chain suspended at its ends. Image from <a href="https://en.wikipedia.org/wiki/Catenary">Wikipedia</a>.
 </figcaption>
 </figure>
 </div>
@@ -601,7 +607,7 @@ Figure&nbsp;2.2: The catenary is the shape of a heavy chain suspended at its end
 <img src="../images/catenary_plot.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenary-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: Plot of the catenary curve <span class="math inline">\({\pmb{\gamma}}(t) = (t, \cosh(t))\)</span>.
+Figure&nbsp;2.4: Plot of the catenary curve <span class="math inline">\({\pmb{\gamma}}(t) = (t, \cosh(t))\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1295,7 +1301,7 @@ B = (  \dot{{\pmb{\gamma}}}(t), \mathbf{n}(t), \mathbf{b}(t)  )
 <div id="example-circle-rotated" class="Example">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 43</strong></summary><div>Define the space curve <span class="math display">\[
 {\pmb{\gamma}}(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
-\]</span> for <span class="math inline">\(t \in \mathbb{R}\)</span>. As seen in the plot below, <span class="math inline">\({\pmb{\gamma}}\)</span> is just a Circle which has been rotated an translated. Therefore <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane, and we expect curvature and torsion to be <span class="math display">\[
+\]</span> for <span class="math inline">\(t \in \mathbb{R}\)</span>. As seen in the plot in <a href="#fig-circle-rigid" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>, <span class="math inline">\({\pmb{\gamma}}\)</span> is just a Circle which has been rotated an translated. Therefore <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane, and we expect curvature and torsion to be <span class="math display">\[
 \kappa = \frac1R , \quad \tau = 0\,,
 \]</span> for some <span class="math inline">\(R&gt;0\)</span>, radius of the Circle <span class="math inline">\({\pmb{\gamma}}\)</span>. Let us proceed with the calculations: <span class="math display">\[
 \dot{{\pmb{\gamma}}}=   \left( -\frac45 \sin(t),  - \cos(t) , \frac35 \sin(t)  \right)
@@ -1325,12 +1331,16 @@ B = (  \dot{{\pmb{\gamma}}}(t), \mathbf{n}(t), \mathbf{b}(t)  )
 \]</span><p></p>
 </div></details>
 </div>
-<div id="f974f61f" class="cell" data-execution_count="1">
+<div id="cell-fig-circle-rigid" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="chap_2_files/figure-html/cell-2-output-1.png" width="413" height="389" class="figure-img"></p>
-<figcaption>Plot of the curve in example above</figcaption>
+<div id="fig-circle-rigid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-circle-rigid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chap_2_files/figure-html/fig-circle-rigid-output-1.png" width="413" height="389" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-circle-rigid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Plot of the curve in Example above
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1427,7 +1437,7 @@ F
 <li>Curvature <span class="math inline">\(\kappa\)</span> is defined only for regular curves.</li>
 <li>Torsion <span class="math inline">\(\tau\)</span> is defined only for regular curves with non-vanishing <span class="math inline">\(\kappa\)</span>.</li>
 </ol>
-<p>The two strategies for computing <span class="math inline">\(\kappa\)</span> and <span class="math inline">\(\tau\)</span> are discussed in the diagram in <a href="#fig-diagram" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> below.</p>
+<p>The two strategies for computing <span class="math inline">\(\kappa\)</span> and <span class="math inline">\(\tau\)</span> are discussed in the diagram in <a href="#fig-diagram" class="quarto-xref">Figure&nbsp;<span>2.6</span></a> below.</p>
 </div></details>
 </div>
 <div id="fig-diagram" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1436,7 +1446,7 @@ F
 <img src="../images/diagram_curvature_torsion.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: Summary for computing <span class="math inline">\(\kappa\)</span> and <span class="math inline">\(\tau\)</span> for regular curve <span class="math inline">\({\pmb{\gamma}}\)</span>.
+Figure&nbsp;2.6: Summary for computing <span class="math inline">\(\kappa\)</span> and <span class="math inline">\(\tau\)</span> for regular curve <span class="math inline">\({\pmb{\gamma}}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1444,7 +1454,7 @@ Figure&nbsp;2.4: Summary for computing <span class="math inline">\(\kappa\)</spa
 <div id="frenet-frame-of-helix" class="Example" title="Frenet frame of helix">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 49: </strong>Frenet frame of helix</summary><div>Consider the helix of radius <span class="math inline">\(1\)</span> and rise <span class="math inline">\(1\)</span> given by <span class="math display">\[
 {\pmb{\gamma}}(t) = ( \cos(t), \sin(t),t )\,,
-\]</span> for <span class="math inline">\(t \in \mathbb{R}\)</span>. We now proceed following the diagram at <a href="#fig-diagram" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>. We ask the first question: <span class="math display">\[
+\]</span> for <span class="math inline">\(t \in \mathbb{R}\)</span>. We now proceed following the diagram at <a href="#fig-diagram" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. We ask the first question: <span class="math display">\[
 \mbox{Is ${\pmb{\gamma}}$ unit speed?}
 \]</span> We have that <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = ( -\sin(t), \cos(t), 1 )    \,,
@@ -1490,7 +1500,7 @@ s(t) := \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = \sqrt{2} \, 
 \dot{\mathbf{b}} \cdot \mathbf{n}= \frac12 \left( - \cos^2 \left( \frac{t}{\sqrt{2}}  \right) - \sin^2 \left( \frac{t}{\sqrt{2}}  \right) \right) = - \frac12 \,.
 \]</span> The torsion is then <span class="math display">\[
 \tau (t) = - \dot{\mathbf{b}} \cdot \mathbf{n}= \frac12 \,.
-\]</span> The Frenet-Frame of the unit-speed Helix is plotted in <a href="#fig-helix-frenet" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>.<p></p>
+\]</span> The Frenet-Frame of the unit-speed Helix is plotted in <a href="#fig-helix-frenet" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>.<p></p>
 </div></details>
 </div>
 <div id="cell-fig-helix-frenet" class="cell" data-execution_count="2">
@@ -1501,15 +1511,15 @@ s(t) := \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = \sqrt{2} \, 
 <img src="chap_2_files/figure-html/fig-helix-frenet-output-1.png" width="389" height="389" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-helix-frenet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5: Frenet frame of the helix of radius 1 and rise 1.
+Figure&nbsp;2.7: Frenet frame of the helix of radius 1 and rise 1.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="consequences-of-frenet-serret" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="consequences-of-frenet-serret"><span class="header-section-number">2.7</span> Consequences of Frenet-Serret</h2>
+<section id="characterization-theorem-for-3d-curves" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="characterization-theorem-for-3d-curves"><span class="header-section-number">2.7</span> Characterization Theorem for 3D curves</h2>
 <p>The most important consequence of the Frenet-Serret equations is that they allow to fully characterize space curves in terms of curvature and torsion. Precisely, the following theorem holds.</p>
 <div id="theorem-characterization-space" class="Theorem" title="Characterization of space curves">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 50: </strong>Characterization of space curves</summary><div>
@@ -1542,7 +1552,7 @@ Figure&nbsp;2.5: Frenet frame of the helix of radius 1 and rise 1.
 {\pmb{\gamma}}(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 \]</span> for <span class="math inline">\(t \in [0,2\pi]\)</span>. We have computed that <span class="math display">\[
 \kappa^{{\pmb{\gamma}}} = 1 \,, \quad \tau^{{\pmb{\gamma}}} = 0 \,.
-\]</span> If we plot <span class="math inline">\({\pmb{\gamma}}\)</span>, we clearly see that <span class="math inline">\({\pmb{\gamma}}\)</span> is just obtained by translating and rotating a unit circle, see plot below. Theorem <a href="chap_2.html#theorem-characterization-space">50</a> enables us to rigorously prove this claim. Indeed, consider the unit speed circle <span class="math display">\[
+\]</span> If we plot <span class="math inline">\({\pmb{\gamma}}\)</span>, we clearly see that <span class="math inline">\({\pmb{\gamma}}\)</span> is just obtained by translating and rotating a unit circle, see plot in <a href="#fig-circle-rigid" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>. Theorem <a href="chap_2.html#theorem-characterization-space">50</a> enables us to rigorously prove this claim. Indeed, consider the unit speed circle <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
 \]</span> for <span class="math inline">\(t \in [0,2\pi]\)</span>. In Example <a href="chap_2.html#example-circle-curvature-torsion">42</a> we have proven that curvature and torsion are<br>
 <span class="math display">\[
@@ -1552,16 +1562,9 @@ Figure&nbsp;2.5: Frenet frame of the helix of radius 1 and rise 1.
 \]</span> and by Theorem <a href="chap_2.html#theorem-characterization-space">50</a> we conclude that <span class="math inline">\({\pmb{\gamma}}\)</span> is equal to <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> up to rotations and translations.<p></p>
 </div></details>
 </div>
-<div id="b07b0688" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="chap_2_files/figure-html/cell-4-output-1.png" width="413" height="389" class="figure-img"></p>
-<figcaption>Plot of the curve in example above</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="proving-curvature-and-torsion-formulae" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="proving-curvature-and-torsion-formulae"><span class="header-section-number">2.8</span> Proving curvature and torsion formulae</h2>
 <p>Another consequence of the Frenet-Serret equations is that they allow us to finally prove the curvature and torsion formulas given in Proposition <a href="chap_2.html#proposition-curvature-formula">19</a> and Proposition <a href="chap_2.html#proposition-torsion-formula">40</a>. For reader’s convenience we recall these two results.</p>
 <div id="proposition-curvature-torsion-formulas" class="Proposition" title="Curvature and torsion formulas">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 52: </strong>Curvature and torsion formulas</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. The curvature <span class="math inline">\(\kappa(t)\)</span> of <span class="math inline">\({\pmb{\gamma}}\)</span> at <span class="math inline">\({\pmb{\gamma}}(t)\)</span> is given by <span class="math display">\[
@@ -1698,6 +1701,9 @@ s \mapsto {\pmb{\gamma}}(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 \]</span> Recalling that the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> at <span class="math inline">\(t\)</span> is defined as the curvature of <span class="math inline">\({\pmb{\gamma}}(s)\)</span> at <span class="math inline">\(s(t)\)</span>, we conclude that the above is the desired formula.</p>
 </div></details>
 </div>
+</section>
+<section id="rigidity-results" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rigidity-results"><span class="header-section-number">2.9</span> Rigidity results</h2>
 <p>We now state and prove two more results which directly follow from the Frenet-Serret equations. They state, respectivley:</p>
 <ol type="1">
 <li><p>A curve has torsion <span class="math inline">\(\tau = 0\)</span> if and only if it is contained in a plane.</p></li>
@@ -1715,7 +1721,7 @@ s \mapsto {\pmb{\gamma}}(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 \]</span> is saying that the plane <span class="math inline">\(\pmb{\pi}_0\)</span> contains all the points <span class="math inline">\(\mathbf{x}\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> which are orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. In particular <span class="math inline">\(\pmb{\pi}_0\)</span> contains the origin <span class="math inline">\({\pmb{0}}\)</span>.</p></li>
 <li><p>If <span class="math inline">\(d \neq 0\)</span>, then <span class="math inline">\(\pmb{\pi}_d\)</span> is the translation of <span class="math inline">\(\pmb{\pi}_0\)</span> by the quantity <span class="math inline">\(d\)</span> in direction <span class="math inline">\(\mathbf{P}\)</span>.</p></li>
 </ul>
-<p>In both cases, <span class="math inline">\(\mathbf{P}\)</span> is the normal vector to the plane, as shown in <a href="#fig-general-plane" class="quarto-xref">Figure&nbsp;<span>2.6</span></a> below.</p>
+<p>In both cases, <span class="math inline">\(\mathbf{P}\)</span> is the normal vector to the plane, as shown in <a href="#fig-general-plane" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> below.</p>
 </div></details>
 </div>
 <div id="fig-general-plane" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1724,7 +1730,7 @@ s \mapsto {\pmb{\gamma}}(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 <img src="../images/general_plane.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-general-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is the set of points of <span class="math inline">\(\mathbb{R}^3\)</span> orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. The plane <span class="math inline">\(\pmb{\pi}_d\)</span> is obtained by translating <span class="math inline">\(\pmb{\pi}_0\)</span> by a quantity <span class="math inline">\(d\)</span> in direction <span class="math inline">\(\mathbf{P}\)</span>.
+Figure&nbsp;2.8: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is the set of points of <span class="math inline">\(\mathbb{R}^3\)</span> orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. The plane <span class="math inline">\(\pmb{\pi}_d\)</span> is obtained by translating <span class="math inline">\(\pmb{\pi}_0\)</span> by a quantity <span class="math inline">\(d\)</span> in direction <span class="math inline">\(\mathbf{P}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1752,7 +1758,7 @@ Figure&nbsp;2.6: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is t
 \dot{\mathbf{b}} = -\tau(t) \mathbf{n}= {\pmb{0}}\,,
 \]</span> so that <span class="math inline">\(\mathbf{b}(t)\)</span> is constant. As by definition <span class="math display">\[
 \mathbf{b}= \dot{{\pmb{\gamma}}}\times \mathbf{n}\,,
-\]</span> we conclude that the vectors <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> always span the same plane, which has constant normal vector <span class="math inline">\(\mathbf{b}\)</span>. Intuition suggests that <span class="math inline">\({\pmb{\gamma}}\)</span> should be contained in such plane, see Figure <a href="#fig-proof-plane" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> below. Indeed, recall that the Frenet frame is orthonormal. Hence <span class="math display">\[
+\]</span> we conclude that the vectors <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> always span the same plane, which has constant normal vector <span class="math inline">\(\mathbf{b}\)</span>. Intuition suggests that <span class="math inline">\({\pmb{\gamma}}\)</span> should be contained in such plane, see Figure <a href="#fig-proof-plane" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> below. Indeed, recall that the Frenet frame is orthonormal. Hence <span class="math display">\[
 \dot{{\pmb{\gamma}}}\cdot \mathbf{b}= 0 \,, \quad \forall \, t \in (a,b) \,.
 \]</span> Then <span class="math display">\[
 \frac{d}{dt} ( {\pmb{\gamma}}\cdot \mathbf{b}) = \dot{{\pmb{\gamma}}}\cdot \mathbf{b}+ {\pmb{\gamma}}\cdot \dot{\mathbf{b}} = 0\,,  \quad \forall \, t \in (a,b) \,,
@@ -1792,7 +1798,7 @@ d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
 <img src="../images/proof_plane_intuition.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proof-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant, then <span class="math inline">\({\pmb{\gamma}}\)</span> lies in the plane spanned by <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>. Note that <span class="math inline">\(\mathbf{b}\)</span> is the unit normal to such plane.
+Figure&nbsp;2.9: If <span class="math inline">\(\mathbf{b}\)</span> is constant, then <span class="math inline">\({\pmb{\gamma}}\)</span> lies in the plane spanned by <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>. Note that <span class="math inline">\(\mathbf{b}\)</span> is the unit normal to such plane.
 </figcaption>
 </figure>
 </div>
@@ -1805,8 +1811,27 @@ Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant,
 \]</span> where <span class="math inline">\(t_0 \in (a,b)\)</span> is arbitrarily chosen. Note that such plane is orthogonal to the binormal <span class="math inline">\(\mathbf{b}\)</span>.<p></p>
 </div></details>
 </div>
+<div id="Example-57" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 57</strong></summary><div>Consider again the curve of Example <a href="chap_2.html#example-circle-rotated">43</a> <span class="math display">\[
+{\pmb{\gamma}}(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+\]</span> for <span class="math inline">\(t \in \mathbb{R}\)</span>. Recall that <span class="math inline">\({\pmb{\gamma}}\)</span> is a Circle which has been rotated an translated, as shown in <a href="#fig-circle-rigid" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>. We have already proven in Example <a href="chap_2.html#example-circle-rotated">43</a> that the curvature and torsion satisfy <span class="math display">\[
+\kappa = 1 \,, \qquad \tau = 0 \,.  
+\]</span> Since <span class="math inline">\(\kappa \neq 0\)</span> and <span class="math inline">\(\tau=0\)</span>, we can apply Corollary <a href="chap_2.html#corollary-zero-torsion">56</a> and infer that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in the plane of equation <span class="math display">\[
+    (\mathbf{x}- {\pmb{\gamma}}(t_0)) \cdot \mathbf{b}= 0 \,, \quad \mathbf{x}\in \mathbb{R}^3 \,,
+\]</span> where <span class="math inline">\(\mathbf{b}\)</span> is the binormal vector to <span class="math inline">\({\pmb{\gamma}}\)</span>. As computed in Example <a href="chap_2.html#example-circle-rotated">43</a> we have <span class="math display">\[
+\mathbf{b}=  \left( -\frac35, 0, -\frac45 \right) \,.
+\]</span> Next, we take a point on the curve. At <span class="math inline">\(t = 0\)</span> we have <span class="math display">\[
+{\pmb{\gamma}}(0) = \left( \frac45, 1, -\frac35 \right)
+\]</span> The equation of the plane is then <span class="math display">\[
+-\frac{3}{5} \left(x - \frac45 \right) -  \frac{4}{5} \left( z + \frac{3}{5} \right) = 0.
+\]</span> Simplifying, we obtain that the equation of the plane containing <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+3x + 4z = 0 \, .
+\]</span><p></p>
+</div></details>
+</div>
+<p>We now state and prove the second result anticipated at the beginning of this section.</p>
 <div id="proposition-constant-k-zero-t" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57</strong></summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 58</strong></summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve. They are equivalent:</p>
 <ol type="1">
 <li><p>The image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>.</p></li>
@@ -1816,10 +1841,10 @@ Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant,
 </ol>
 </div></details>
 </div>
-<p>Proposition <a href="chap_2.html#proposition-constant-k-zero-t">57</a> is actually a consequence of Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, and of the fact that we have computed that for a circle of radius <span class="math inline">\(R\)</span> one has <span class="math display">\[
+<p>Proposition <a href="chap_2.html#proposition-constant-k-zero-t">58</a> is actually a consequence of Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, and of the fact that we have computed that for a circle of radius <span class="math inline">\(R\)</span> one has <span class="math display">\[
 \kappa  = \frac1R \,, \quad  \tau = 0\,.
 \]</span> Therefore, by Theorem <a href="chap_2.html#theorem-characterization-space">50</a>, every unit speed curve <span class="math inline">\({\pmb{\gamma}}\)</span> with constant curvature and torsion must be equal to a circle, up to rigid motions.</p>
-<p>Nevertheless, we still give a proof of Proposition <a href="chap_2.html#proposition-constant-k-zero-t">57</a>, to show yet another explicit application of the Frenet-Serret equations.</p>
+<p>Nevertheless, we still give a proof of Proposition <a href="chap_2.html#proposition-constant-k-zero-t">58</a>, to show yet another explicit application of the Frenet-Serret equations.</p>
 <div id="Proof*-13" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose the image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>. Then, up to a translation, <span class="math inline">\({\pmb{\gamma}}\)</span> is parametrized by <span class="math display">\[
 {\pmb{\gamma}}(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right)
@@ -1832,7 +1857,7 @@ Figure&nbsp;2.7: If <span class="math inline">\(\mathbf{b}\)</span> is constant,
 \ddot{{\pmb{\gamma}}}&amp; = \kappa \mathbf{n}= c \mathbf{n}\\
 \dot{\mathbf{n}} &amp; = - \kappa \dot{{\pmb{\gamma}}}+ \tau \mathbf{b}= -c \dot{{\pmb{\gamma}}}\\
 \dot{\mathbf{b}} &amp; = -\tau \mathbf{n}= 0  
-\end{align*}\]</span> In particular <span class="math inline">\(\dot{\mathbf{b}}=0\)</span> and so <span class="math inline">\(\mathbf{b}\)</span> is a constant vector. As seen in the proof Proposition <a href="chap_2.html#proposition-zero-torsion">55</a>, this implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane <span class="math inline">\({\pmb{\pi}}\)</span> orthogonal to <span class="math inline">\(\mathbf{b}\)</span>, see <a href="#fig-proof-plane" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>. As <span class="math inline">\(c\)</span> is constant we get <span class="math display">\[
+\end{align*}\]</span> In particular <span class="math inline">\(\dot{\mathbf{b}}=0\)</span> and so <span class="math inline">\(\mathbf{b}\)</span> is a constant vector. As seen in the proof Proposition <a href="chap_2.html#proposition-zero-torsion">55</a>, this implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane <span class="math inline">\({\pmb{\pi}}\)</span> orthogonal to <span class="math inline">\(\mathbf{b}\)</span>, see <a href="#fig-proof-plane" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>. As <span class="math inline">\(c\)</span> is constant we get <span class="math display">\[
 \frac{d}{dt} \left(  {\pmb{\gamma}}+ \frac1c \mathbf{n}\right)  = \dot{{\pmb{\gamma}}}+ \frac{1}{c} \dot{\mathbf{n}} = \dot{{\pmb{\gamma}}}- \frac1c
 \, c \dot{{\pmb{\gamma}}}= 0 \,,
 \]</span> where we used the second Frenet-Serret equation. Therefore <span class="math display">\[

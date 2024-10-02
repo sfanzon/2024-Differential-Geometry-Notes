@@ -48,10 +48,10 @@ that is, the vector $\ddg$ is orthogonal to the tangent $\dg$ at all times. Now 
 $$
 ( \g(t + t_0) - \g(t) ) \cdot \mathbf{n}(t) \,,
 $$ {#eq-curvature-heuristics}
-as seen in the figure below.
+as seen in Figure @fig-curvature.
 
 
-![Amount that $\g$ deviates from tangent is $(\g(t+t_0)-\g(t)) \cdot \nn(t)$](/images/curvature.png){width=70%}
+![Amount that $\g$ deviates from tangent is $(\g(t+t_0)-\g(t)) \cdot \nn(t)$](/images/curvature.png){#fig-curvature width=70%}
 
 
 Equation (@eq-curvature-heuristics) is what we take as measure of curvature. Since 
@@ -1524,7 +1524,7 @@ Define the space curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 $$
-for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been rotated an translated. Therefore $\g$ is contained in a plane, and we expect curvature and torsion to be
+for $t \in \R$. As seen in the plot in @fig-circle-rigid, $\g$ is just a Circle which has been rotated an translated. Therefore $\g$ is contained in a plane, and we expect curvature and torsion to be
 $$
 \kappa = \frac1R , \quad \tau = 0\,, 
 $$
@@ -1575,8 +1575,8 @@ $$
 
 ```{python}
 #| echo: false
-#| fig-cap: "Plot of the curve in example above"
-
+#| label: fig-circle-rigid
+#| fig-cap: "Plot of the curve in Example above"
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1971,9 +1971,7 @@ plt.show()
 
 
 
-## Consequences of Frenet-Serret
-
-
+## Characterization Theorem for 3D curves
 
 The most important consequence of the Frenet-Serret equations is that they allow to fully characterize space curves in terms of curvature and torsion. Precisely, the following theorem
 holds.
@@ -2033,7 +2031,7 @@ $$
 \kappa^{\g} = 1 \,, \quad \tau^{\g} = 0 \,. 
 $$
 If we plot $\g$, we clearly see that $\g$ is just obtained by translating and 
-rotating a unit circle, see plot below. Theorem \ref{theorem-characterization-space} enables
+rotating a unit circle, see plot in @fig-circle-rigid. Theorem \ref{theorem-characterization-space} enables
 us to rigorously prove this claim. Indeed, consider the unit speed circle
 $$
 \tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
@@ -2051,43 +2049,10 @@ and by Theorem  \ref{theorem-characterization-space} we conclude that $\g$ is eq
 :::
 
 
-```{python}
-#| echo: false
-#| fig-cap: "Plot of the curve in example above"
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
-# Define the parameter 't'
-t = np.linspace(0, 2*np.pi, 100)
-
-# Calculate the corresponding x, y, and z values
-x = (4/5)*np.cos(t) 
-y = 1- np.sin(t)
-z = -(3/5)*np.sin(t)
-
-# Create a 3D plot
-fig = plt.figure(figsize=(5, 5))
-ax = fig.add_subplot(111, projection='3d')
-
-# Plot the curve
-ax.plot(x, y, z, color='deeppink', linewidth=2)
-
-# Set labels for the axes
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('z')
-
-# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
-ax.view_init(elev=20, azim=-25)
-
-# Show the plot
-plt.show()
-```
-
-
+## Proving curvature and torsion formulae
 
 Another consequence of the Frenet-Serret equations is that they allow us to finally 
 prove the curvature and torsion formulas given in Proposition \ref{proposition-curvature-formula} and Proposition \ref{proposition-torsion-formula}. For reader's convenience we recall these two results.
@@ -2324,6 +2289,10 @@ Recalling that the curvature of $\g$ at $t$ is defined as the curvature of $\g(s
 
 
 
+
+## Rigidity results
+
+
 We now state and prove two more results which directly follow from the Frenet-Serret equations. They state, respectivley:
 
 1. A curve has torsion $\tau = 0$ if and only if it is contained in a plane.
@@ -2479,8 +2448,8 @@ as required.
 As a corollary of Step 1 in the proof of Proposition \ref{proposition-zero-torsion}
 we obtain the following statement.
 
-::: {.Corollary  #corollary-zero-torsion}
 
+::: {.Corollary  #corollary-zero-torsion}
 
 Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. Suppose that
 the torsion
@@ -2495,6 +2464,47 @@ $$
 where $t_0 \in (a,b)$ is arbitrarily chosen. Note that such plane is orthogonal to the binormal $\bb$.
 
 :::
+
+
+::: Example 
+
+Consider again the curve of Example \ref{example-circle-rotated}
+$$
+\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+$$
+for $t \in \R$. Recall that $\g$ is a Circle which has been rotated an translated, as shown in @fig-circle-rigid. We have
+already proven in Example \ref{example-circle-rotated} that the curvature and torsion satisfy
+$$
+\kappa = 1 \,, \qquad \tau = 0 \,.  
+$$
+Since $\kappa \neq 0$ and $\tau=0$, we can apply Corollary \ref{corollary-zero-torsion} and infer that $\g$ is contained in the plane of equation
+$$
+	(\xx - \g(t_0)) \cdot \bb = 0 \,, \quad \xx \in \R^3 \,,
+$$
+where $\bb$ is the binormal vector to $\g$. As computed in Example \ref{example-circle-rotated} we have
+$$
+\bb =  \left( -\frac35, 0, -\frac45 \right) \,.
+$$
+Next, we take a point on the curve. At $t = 0$ we have
+$$
+\g(0) = \left( \frac45, 1, -\frac35 \right)
+$$
+The equation of the plane is then
+$$
+-\frac{3}{5} \left(x - \frac45 \right) -  \frac{4}{5} \left( z + \frac{3}{5} \right) = 0.
+$$
+Simplifying, we obtain that the equation of the plane containing $\g$ is
+$$
+3x + 4z = 0 \, .
+$$
+:::
+
+
+
+
+
+
+We now state and prove the second result anticipated at the beginning of this section.
 
 
 ::: {.Proposition #proposition-constant-k-zero-t}
@@ -2582,3 +2592,4 @@ $$
 Since we already know that $\kappa=c$, we conclude that $R=1/c$. Therefore the circle $\mathcal{C}$ has radius $1/c$ and the thesis follows by (@eq-proof-contained-circle).
 
 :::
+

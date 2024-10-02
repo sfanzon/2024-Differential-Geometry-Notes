@@ -2040,7 +2040,7 @@ $$
 $$
 for $t \in [0,2\pi]$. In Example \ref{example-circle-curvature-torsion} we have proven that curvature and torsion are  
 $$
-\kappa^{\tg} = 1 \,, \quad \tau^{\tg} = 1 \,. 
+\kappa^{\tg} = 1 \,, \quad \tau^{\tg} = 0 \,. 
 $$
 Therefore 
 $$

@@ -997,13 +997,13 @@ plt.show()
 ## Length of curves
 
 
-For a vector $v \in \R^n$ with components 
+For a vector $\vv \in \R^n$ with components 
 $$
-v=(v_1,\ldots,v_n),
+\vv=(v_1,\ldots,v_n),
 $$
 its **length** is defined by
 $$
-\norm{v}:= \sqrt{\sum_{i=1}^n v_i^2 } \,.
+\norm{\vv}:= \sqrt{\sum_{i=1}^n v_i^2 } \,.
 $$
 The above is just an extension of the Pythagoras theorem to $\R^n$, and the length of $v$ is computed from the origin.
 
@@ -1011,14 +1011,14 @@ The above is just an extension of the Pythagoras theorem to $\R^n$, and the leng
 ![Interpretation of $\norm{v}$ in $\R^2$](/images/pythagoras.png){width=70%}
 
 
-If we have a second vector $u \in \R^n$, then the quantity 
+If we have a second vector $\uu \in \R^n$, then the quantity 
 $$
-\norm{u-v}:= \sqrt{\sum_{i=1}^n (u_i-v_i)^2 } 
+\norm{\uu-\vv}:= \sqrt{\sum_{i=1}^n (u_i-v_i)^2 } 
 $$
 measures the length of the difference between $u$ and $v$.
 
 
-![Interpretation of $\norm{u-v}$ in $\R^2$](/images/length_difference.png){width=70%}
+![Interpretation of $\norm{\uu-\vv}$ in $\R^2$](/images/length_difference.png){width=70%}
 
 
 We would like to define the concept of **length** of a curve. Intuitively, one could proceed by approximation as in the figure below.

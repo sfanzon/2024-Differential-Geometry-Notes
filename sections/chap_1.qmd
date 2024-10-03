@@ -2354,11 +2354,11 @@ so that
 $$
 \dot s (t) > 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
-Since $s$ is a scalar function, the above condition and the Inverse Function Theorem guarantee the existsence of a smooth inverse
+Since $s$ is a scalar function, the above condition and the Inverse Function Theorem guarantee the existence of a smooth inverse
 $$
 s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 $$
-for some $\tilde{\alpha}< \tilde{\beta}$. 
+for some $\tilde{a}< \tilde{b}$. 
 Define the reparametrization map $\f$ as
 $$
 \f := s^{-1}
@@ -2374,13 +2374,13 @@ $$
 $$
 or in other words
 $$
-\g(t) = \tg (s(t)) \,, \quad \forall t \in (a,b) \,.
+\g(t) = \tg (s(t)) \,, \quad \forall \, t \in (a,b) \,.
 $$
 Differentiating the above expression and using the chain rule we get
 $$
 \dg (t) = \dtg(s(t)) \, \dot s(t) =  \dtg(s(t)) \, \norm{ \dg(t) }  
 $$
-where in the last equality we used (@eq-derivative-arc). Taking the absolute value of the above yileds
+where in the last equality we used (@eq-derivative-arc). Taking the absolute value of the above yields
 $$
  \norm{ \dg(t) }   = \norm{\dtg(s(t))} \, \norm{ \dg(t) } \,.  
 $${#eq-derivative-arc-1}
@@ -2415,11 +2415,7 @@ Since $\tg$ is unit speed we obtain
 $$
 \norm{\dg (\f(t)) } \, |\dot \f (t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 $$ {#eq-derivative-arc-3}
-Since $\f$ is a diffeomorphism from $(\tilde{a},\tilde{b})$ into $(a,b)$, Lemma \ref{lemma-diffeomorphism} guarantees that
-$$
-\dot{\f} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,.
-$$
-In particular (@eq-derivative-arc-3) implies
+Hence none of terms on the LHS can be zero, meaning that
 $$
 \dg (\f(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 $$
@@ -2461,14 +2457,15 @@ $$ {#eq-proposition-unit-speed}
 
 
 ::: Proof
-*Step 1. First Point.*  
-First note that a unit speed reparametrization $\tg$ of $\g$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. Thus assume $\tg$ is unit speed reparametrization of $\g$.  By differentiating both sides of
+*Step 1. First Point.* 
+Assume $\tg$ is a unit speed reparametrization of $\g$ (note that $\tg$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular). Then
+there exists a reparametrization map $\f$ such that
 $$
-\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
-we obtain
+Differentiating the above we get
 $$
-\dg(t) = \frac{d}{dt} \tg ( \f(t) ) = \dtg(\f(t)) \, \dot\f(t)  \,. 
+\dg(t)  = \dtg(\f(t)) \, \dot\f(t)  \,. 
 $$
 Taking the norms we then have
 \begin{align*}
@@ -2490,45 +2487,62 @@ s(t) = \int_{t_0}^t \norm{ \dg(\tau) } \, d\tau =  \int_{t_0}^t | \dot \f(\tau) 
 $$
 By the Fundamental Theorem of Calculus we get
 $$
-\dot s(t) = |\dot \f(t) | 
+\dot s(t) = |\dot \f(t) |  \quad  \forall \, t \in (a,b)
+$${#eq-proposition-unit-speed-2bis}
+As $\f$ is a diffeomorphism, by Lemma \ref{lemma-diffeomorphism} we have
 $$
-and therefore 
+\dot \f(t) \neq 0  \quad  \forall \, t \in (a,b) \,.
+$$
+By continuity of $\dot \f$ and the Mean Value Theorem we conclude that
+either
+$$
+\dot \f(t) > 0  \quad  \forall \, t \in (a,b) \,.
+$$
+or 
+$$
+\dot \f(t) < 0  \quad  \forall \, t \in (a,b) \,.
+$$
+Therefore (@eq-proposition-unit-speed-2bis) reads either
+$$
+\dot s(t) = \dot \f(t)   \quad  \forall \, t \in (a,b)
+$$
+or
+$$
+\dot s(t) = - \dot \f(t)   \quad  \forall \, t \in (a,b)
+$$ 
+Integrating the last two equations we obtain the thesis
 $$
 \f = \pm s + c
 $$
 for some $c \in \R$, concluding the proof.
 
 
-*Step 2. Second Point.*  
-Suppose that 
+*Step 2. Second Point.*  Suppose that $\tg$ is a reparametrization of $\g$, that is,
+$$
+\g(t) = \tg (\f(t)) \,, \quad \forall \, t \in (a,b) 
+$${#eq-proposition-unit-speed-2tris}
+for some diffeomorphism $\f \colon (a,b) \to (\tilde{a}, \tilde{b})$.
+Further, suppose that
 $$
 \f := \pm s + c
 $$
-for some $c \in \R$, so that $\phi \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We have 
+for some $c \in \R$. Differentiating (@eq-proposition-unit-speed-2tris) we get
+\begin{align*}
+\dg (t) & = \dtg( \f(t) ) \dot\f(t) \\
+        & = \pm \dtg( \f(t) ) \dot s(t) \\
+        & =  \pm \dtg( \f(t) ) \norm{ \dg(t) }
+\end{align*}
+where in the last equality we used the Fundamental Theorem of Calculus and
+definition of $s$. Taking the absolute values yileds
 $$
-\dot\f (t) =  \pm \dot s (t) = \pm \norm{ \dg(t) } \neq 0  
-$${#eq-proposition-unit-speed-2}
-where the last term is non-zero since $\g$ is regular. Therefore, due to the Inverse Function Theorem, $\f$ is invertible with smooth inverse. This proves that $\tg$ defined by 
+\norm{\dg(t)} = \norm{ \dg(\f(t)) } \norm{ \dg(t)} \,.
 $$
-\tg := \g \circ \psi  \,, \quad \psi := \f^{-1} \,,
+Since $\g$ is regular we have $\norm{\dg(t)} \neq 0$. Hence we can divide by
+$\norm{\dg(t)}$ and obtain that
 $$
-is a reparametrization of $\g$. In particular 
+\norm{ \dg(\f(t)) } = 1 \,, \quad \forall \, t \in (a,b) \,.
 $$
-\g = \tg \circ \f \,.
-$$
-Differentiating the above, and recalling (@eq-proposition-unit-speed-2), we get
-$$
-\dg (t) = \dtg( \f(t) ) \, \dot\f(t) = \dtg( \f(t) ) \,\left( \pm \norm{ \dg(t) } \right) \,.
-$$
-Taking the absolute value of the above yields
-$$
-\norm{ \dg(t) } = \norm{ \dtg( \f(t) )}  \, \norm{ \dg(t) } \,.
-$$
-Since $\g$ is regular we can divide by $\norm{ \dg(t) }$ to get
-$$
- \norm{ \dtg( \f(t) )}  = 1 \, \quad \forall \, t \in (a,b)  \, .
-$$
-Since $\f$ is invertible, the above is equivalent to
+As $\f$ is invertible, the above is equivalent to
 $$
  \norm{ \dtg( t )}  = 1 \, \quad \forall \, t \in (\tilde{a},\tilde{b})  \, ,
 $$
@@ -2539,9 +2553,9 @@ proving that $\tg$ is a unit speed reparametrization.
 ::: Remark
 Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that the following are equivalent:
 
-1. Computing a unit speed reparametrization of $\g$,
+1. Computing a unit speed reparametrization $\tg$ of $\g$,
 
-2. Computing $s$ the arc-length of $\g$.
+2. Computing $s^{-1}$ where $s$ is the arc-length of $\g$.
 
 In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
 :::
@@ -2564,7 +2578,7 @@ so that
 $$
 \dg (t) \neq 0 \,, \quad \forall \, t \in \R  \,,
 $$
-meaning that $\g$ is regular. In particular we have
+meaning that $\g$ is regular. In particular
 $$
 \norm{ \dg(t) } = \sqrt{  1 + 4t^2 + 9t^4 }
 $$
@@ -2572,7 +2586,7 @@ so that the arc-length of $\g$ is
 $$
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 $$
-Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} we know that $\g$ admits a unit speed reparametrization $\tg$ such that
+Since $\g$ is regular, by Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} we know that $\g$ admits a unit speed reparametrization $\tg$ such that
 $$
 \g =  \tg \circ \f
 $$
@@ -2580,7 +2594,7 @@ with the diffeomorphism $\f$ given by
 $$
 \f(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
 $$
-for some $c \in \R$. It can be shown that the above integral does not have a closed form in terms of elementary functions. Therefore the unit speed parametrization $\tg$ cannot be computed explicitly.
+for some $c \in \R$. It can be shown that the above integral cannot be written in terms of elementary functions. Therefore the unit speed parametrization $\tg$ cannot be computed explicitly by inverting $s$.
 :::
 
 
@@ -2819,23 +2833,19 @@ $$
 P = \inf S \,.
 $$
 The proof is concluded if we show that:
-
-*Claim*. We have
 $$
 P = \min S  \,.
 $$
-This is equivalent to saying that 
-$$
-P \in S \,.
-$$
+Since $P = \inf S$, the above is equivalent to showing that 
 
-*Proof of claim.*  
-To see that $P \in S$ we need to show that
+*Claim:* $P \in S$
 
-1. $\g$ is $P$-periodic,
-2. $P>0$.
+*Proof of claim.*  To prove that $P \in S$, by definition of $S$ we need to show that
 
-Since $P$ is the infimum of $S$, there exists an infimizing sequence $\{T_n\}_{n \in \N} \subset S$ such that
+1. $\g$ is $P$-periodic
+2. $P > 0$
+
+Since $P = \inf S$, there exists an infimizing sequence $\{T_n\}_{n \in \N} \subset S$ such that
 $$
 T_n \to P \,.
 $$
@@ -2844,9 +2854,9 @@ $$
 T_1 > T_2 > \ldots > T_n > \ldots > 0 \,.
 $$
 
-*Proof of Point 1.* As $T_n \in S$, we have that $\g$ is $T_n$-periodic. Then
+*Proof of Point 1.* As $T_n \in S$, by definition $\g$ is $T_n$-periodic. Then
 $$
-\g (t + T_n) = \g(t) \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
+\g(t) = \g (t + T_n)  \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
 $$
 Since $T_n \to P$, we can take the limit as $n \to \infty$ and use the continuity of $\g$ to obtain
 $$
@@ -2855,7 +2865,11 @@ $$
 showing that $\g$ is $P$-periodic. 
  
 
-*Proof of Point 2.* Suppose by contradiction that
+*Proof of Point 2.* We have shown that $\g$ is $P$-periodic. Therefore
+$$
+P \in S \quad \iff \quad P > 0 \,.
+$$
+Suppose by contradiction that
 $$
 P = 0 \,.
 $$
@@ -2906,22 +2920,21 @@ Therefore $\g$ is constant. This is a contradiction, as we were assuming that $\
 
 
 ::: Example
+### Examples of closed curves
 
-Some examples of closed curves: 
-
-- The circumference 
+1. The circumference 
 $$
 \g (t) = (\cos(t), \sin(t)) \,, \quad t \in \R
 $$
 is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
 
-- The Lemniscate
+2. The Lemniscate
 $$
 \g (t) = (\sin(t), \sin(t) \cos(t)) \,, \quad t \in \R
 $$
 is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
 
-- Consider again the curve from Example \ref{example-curve-loop} 
+3. Consider again the curve from Example \ref{example-curve-loop} 
 $$
 \g(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \R \,.
 $$

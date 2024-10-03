@@ -159,7 +159,7 @@
 
  [**Proof**](#Proof*-1.16)\Pageref{Proof*-1.16}
 
- [**Example 1.65**](#Example-1.65)\Pageref{Example-1.65}
+ [**Example 1.65**](#examples-of-closed-curves): Examples of closed curves\Pageref{examples-of-closed-curves}
 
  [**Definition 1.66**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
 

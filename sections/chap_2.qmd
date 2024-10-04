@@ -393,17 +393,22 @@ since $\sinh(0) = 0$. We need to invert $s$. We have
 $$
 s = \sinh(t) \quad \iff \quad s = \frac{e^t - e^{-t}}{2} \quad \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
 $$
-where the last equation was obtained multuplying both sides by $e^t$. Now we substitute
+where the last equation was obtained multiplying both sides by $e^t$. Now we substitute
 $$
 y = e^t
 $$
 and obtain
+\begin{align*}
+e^{2t} - 2s e^{t} - 1 = 0 \quad & \iff \quad y^{2} - 2s y - 1 = 0 \\
+                           \quad & \iff \quad y_{\pm} = s \pm \sqrt{1+s^2} \,.
+\end{align*}
+Notice that
 $$
-e^{2t} - 2s e^{t} - 1 = 0 \quad \iff \quad y^{2} - 2s y - 1 = 0  \quad \iff \quad y = s \pm \sqrt{1+s^2} \,.
+y_{+} = s + \sqrt{1 + s^2} \geq s + \sqrt{s^2} = s + |s| \geq 0
 $$
-Recalling that $y=e^t$, we only consider the positive solution, and obtain that
+by definition of absolute value. As we were looking for $y$ in the form $y=e^t$, we only consider the positive solution $y_+$. Then
 $$
-e^t = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
+e^t = y_+ = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
 $$
 We have proven that the inverse of the arc length $s(t)$ is 
 $$
@@ -858,10 +863,12 @@ we defined its curvature as
 $$
 \kappa(t) = \norm{ \ddg(t) } \,.
 $$
-If $\g$ is not unit speed then the curvature is not defined. However, when $\g$ is regular, then we can find a unit-speed reparametrization $\tg$ of $\g$, and compute $\kappa$ as
+When $\g$ is regular we defined the curvature as
 $$
-\kappa(t) = \norm{ \ddtg(t) } \,.
+\kappa(t) = \norm{ \ddtg(t) } \,,
 $$
+where $\tg$ is a unit-speed reparametrization $\g$.
+
 If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
 
 ::: Proposition

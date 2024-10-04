@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Surfaces – Differential Geometry</title>
+<title>1&nbsp; Surfaces – Differential Geometry</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/chap_5.html" rel="next">
-<link href="../sections/chap_3.html" rel="prev">
+<link href="../sections/chap_2.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -92,21 +92,29 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Corollary {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Question {
   --color1: #f4cce0;
@@ -116,39 +124,27 @@ div.csl-indent {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Proposition {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -156,11 +152,15 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -221,7 +221,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_4.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -241,8 +241,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
+  <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -259,8 +259,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -291,51 +291,53 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries"><span class="header-section-number">4.1</span> Preliminaries</a>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries"><span class="header-section-number">1.1</span> Preliminaries</a>
   <ul class="collapse">
-  <li><a href="#linear-algebra" id="toc-linear-algebra" class="nav-link" data-scroll-target="#linear-algebra"><span class="header-section-number">4.1.1</span> Linear algebra</a></li>
-  <li><a href="#topology-of-mathbbrn" id="toc-topology-of-mathbbrn" class="nav-link" data-scroll-target="#topology-of-mathbbrn"><span class="header-section-number">4.1.2</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
-  <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">4.1.3</span> Smooth functions</a></li>
+  <li><a href="#linear-algebra" id="toc-linear-algebra" class="nav-link" data-scroll-target="#linear-algebra"><span class="header-section-number">1.1.1</span> Linear algebra</a></li>
+  <li><a href="#topology-of-mathbbrn" id="toc-topology-of-mathbbrn" class="nav-link" data-scroll-target="#topology-of-mathbbrn"><span class="header-section-number">1.1.2</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+  <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">1.1.3</span> Smooth functions</a></li>
   </ul></li>
-  <li><a href="#definition-of-surface" id="toc-definition-of-surface" class="nav-link" data-scroll-target="#definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</a></li>
-  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a></li>
-  <li><a href="#level-surfaces" id="toc-level-surfaces" class="nav-link" data-scroll-target="#level-surfaces"><span class="header-section-number">4.4</span> Level surfaces</a></li>
-  <li><a href="#reparametrizations" id="toc-reparametrizations" class="nav-link" data-scroll-target="#reparametrizations"><span class="header-section-number">4.5</span> Reparametrizations</a></li>
-  <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">4.6</span> Transition maps</a></li>
-  <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</a></li>
-  <li><a href="#tangent-space" id="toc-tangent-space" class="nav-link" data-scroll-target="#tangent-space"><span class="header-section-number">4.8</span> Tangent space</a></li>
-  <li><a href="#differential-of-smooth-functions" id="toc-differential-of-smooth-functions" class="nav-link" data-scroll-target="#differential-of-smooth-functions"><span class="header-section-number">4.9</span> Differential of smooth functions</a></li>
-  <li><a href="#examples-of-surfaces" id="toc-examples-of-surfaces" class="nav-link" data-scroll-target="#examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</a>
+  <li><a href="#definition-of-surface" id="toc-definition-of-surface" class="nav-link" data-scroll-target="#definition-of-surface"><span class="header-section-number">1.2</span> Definition of Surface</a></li>
+  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">1.3</span> Regular Surfaces</a></li>
+  <li><a href="#level-surfaces" id="toc-level-surfaces" class="nav-link" data-scroll-target="#level-surfaces"><span class="header-section-number">1.4</span> Level surfaces</a></li>
+  <li><a href="#reparametrizations" id="toc-reparametrizations" class="nav-link" data-scroll-target="#reparametrizations"><span class="header-section-number">1.5</span> Reparametrizations</a></li>
+  <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">1.6</span> Transition maps</a></li>
+  <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">1.7</span> Functions between surfaces</a></li>
+  <li><a href="#tangent-space" id="toc-tangent-space" class="nav-link" data-scroll-target="#tangent-space"><span class="header-section-number">1.8</span> Tangent space</a></li>
+  <li><a href="#differential-of-smooth-functions" id="toc-differential-of-smooth-functions" class="nav-link" data-scroll-target="#differential-of-smooth-functions"><span class="header-section-number">1.9</span> Differential of smooth functions</a></li>
+  <li><a href="#examples-of-surfaces" id="toc-examples-of-surfaces" class="nav-link" data-scroll-target="#examples-of-surfaces"><span class="header-section-number">1.10</span> Examples of Surfaces</a>
   <ul class="collapse">
-  <li><a href="#level-surfaces-1" id="toc-level-surfaces-1" class="nav-link" data-scroll-target="#level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</a></li>
-  <li><a href="#quadrics" id="toc-quadrics" class="nav-link" data-scroll-target="#quadrics"><span class="header-section-number">4.10.2</span> Quadrics</a></li>
-  <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">4.10.3</span> Ruled surfaces</a></li>
-  <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">4.10.4</span> Surfaces of Revolution</a></li>
+  <li><a href="#level-surfaces-1" id="toc-level-surfaces-1" class="nav-link" data-scroll-target="#level-surfaces-1"><span class="header-section-number">1.10.1</span> Level surfaces</a></li>
+  <li><a href="#quadrics" id="toc-quadrics" class="nav-link" data-scroll-target="#quadrics"><span class="header-section-number">1.10.2</span> Quadrics</a></li>
+  <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">1.10.3</span> Ruled surfaces</a></li>
+  <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">1.10.4</span> Surfaces of Revolution</a></li>
   </ul></li>
-  <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</a>
+  <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">1.11</span> First fundamental form</a>
   <ul class="collapse">
-  <li><a href="#length-on-surfaces" id="toc-length-on-surfaces" class="nav-link" data-scroll-target="#length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</a></li>
-  <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves"><span class="header-section-number">4.11.2</span> Length of curves</a></li>
-  <li><a href="#local-isometries" id="toc-local-isometries" class="nav-link" data-scroll-target="#local-isometries"><span class="header-section-number">4.11.3</span> Local isometries</a></li>
-  <li><a href="#angles-on-surfaces" id="toc-angles-on-surfaces" class="nav-link" data-scroll-target="#angles-on-surfaces"><span class="header-section-number">4.11.4</span> Angles on surfaces</a></li>
-  <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">4.11.5</span> Angle between curves</a></li>
-  <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">4.11.6</span> Conformal maps</a></li>
-  <li><a href="#conformal-parametrizations" id="toc-conformal-parametrizations" class="nav-link" data-scroll-target="#conformal-parametrizations"><span class="header-section-number">4.11.7</span> Conformal parametrizations</a></li>
+  <li><a href="#length-on-surfaces" id="toc-length-on-surfaces" class="nav-link" data-scroll-target="#length-on-surfaces"><span class="header-section-number">1.11.1</span> Length on surfaces</a></li>
+  <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves"><span class="header-section-number">1.11.2</span> Length of curves</a></li>
+  <li><a href="#local-isometries" id="toc-local-isometries" class="nav-link" data-scroll-target="#local-isometries"><span class="header-section-number">1.11.3</span> Local isometries</a></li>
+  <li><a href="#angles-on-surfaces" id="toc-angles-on-surfaces" class="nav-link" data-scroll-target="#angles-on-surfaces"><span class="header-section-number">1.11.4</span> Angles on surfaces</a></li>
+  <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">1.11.5</span> Angle between curves</a></li>
+  <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">1.11.6</span> Conformal maps</a></li>
+  <li><a href="#conformal-parametrizations" id="toc-conformal-parametrizations" class="nav-link" data-scroll-target="#conformal-parametrizations"><span class="header-section-number">1.11.7</span> Conformal parametrizations</a></li>
   </ul></li>
-  <li><a href="#second-fudamental-form" id="toc-second-fudamental-form" class="nav-link" data-scroll-target="#second-fudamental-form"><span class="header-section-number">4.12</span> Second fudamental form</a>
+  <li><a href="#second-fudamental-form" id="toc-second-fudamental-form" class="nav-link" data-scroll-target="#second-fudamental-form"><span class="header-section-number">1.12</span> Second fudamental form</a>
   <ul class="collapse">
-  <li><a href="#unit-normal-and-orientability" id="toc-unit-normal-and-orientability" class="nav-link" data-scroll-target="#unit-normal-and-orientability"><span class="header-section-number">4.12.1</span> Unit normal and orientability</a></li>
-  <li><a href="#definition-of-second-fundamental-form" id="toc-definition-of-second-fundamental-form" class="nav-link" data-scroll-target="#definition-of-second-fundamental-form"><span class="header-section-number">4.12.2</span> Definition of Second fundamental form</a></li>
-  <li><a href="#gauss-and-weingarten-maps" id="toc-gauss-and-weingarten-maps" class="nav-link" data-scroll-target="#gauss-and-weingarten-maps"><span class="header-section-number">4.12.3</span> Gauss and Weingarten maps</a></li>
-  <li><a href="#matrix-of-weingarten-map" id="toc-matrix-of-weingarten-map" class="nav-link" data-scroll-target="#matrix-of-weingarten-map"><span class="header-section-number">4.12.4</span> Matrix of Weingarten map</a></li>
+  <li><a href="#unit-normal-and-orientability" id="toc-unit-normal-and-orientability" class="nav-link" data-scroll-target="#unit-normal-and-orientability"><span class="header-section-number">1.12.1</span> Unit normal and orientability</a></li>
+  <li><a href="#definition-of-second-fundamental-form" id="toc-definition-of-second-fundamental-form" class="nav-link" data-scroll-target="#definition-of-second-fundamental-form"><span class="header-section-number">1.12.2</span> Definition of Second fundamental form</a></li>
+  <li><a href="#gauss-and-weingarten-maps" id="toc-gauss-and-weingarten-maps" class="nav-link" data-scroll-target="#gauss-and-weingarten-maps"><span class="header-section-number">1.12.3</span> Gauss and Weingarten maps</a></li>
+  <li><a href="#matrix-of-weingarten-map" id="toc-matrix-of-weingarten-map" class="nav-link" data-scroll-target="#matrix-of-weingarten-map"><span class="header-section-number">1.12.4</span> Matrix of Weingarten map</a></li>
   </ul></li>
-  <li><a href="#curvatures" id="toc-curvatures" class="nav-link" data-scroll-target="#curvatures"><span class="header-section-number">4.13</span> Curvatures</a>
+  <li><a href="#curvatures" id="toc-curvatures" class="nav-link" data-scroll-target="#curvatures"><span class="header-section-number">1.13</span> Curvatures</a>
   <ul class="collapse">
-  <li><a href="#gaussian-and-mean-curvature" id="toc-gaussian-and-mean-curvature" class="nav-link" data-scroll-target="#gaussian-and-mean-curvature"><span class="header-section-number">4.13.1</span> Gaussian and mean curvature</a></li>
-  <li><a href="#principal-curvatures" id="toc-principal-curvatures" class="nav-link" data-scroll-target="#principal-curvatures"><span class="header-section-number">4.13.2</span> Principal curvatures</a></li>
-  <li><a href="#normal-and-geodesic-curvatures" id="toc-normal-and-geodesic-curvatures" class="nav-link" data-scroll-target="#normal-and-geodesic-curvatures"><span class="header-section-number">4.13.3</span> Normal and geodesic curvatures</a></li>
-  <li><a href="#local-shape-of-a-surface" id="toc-local-shape-of-a-surface" class="nav-link" data-scroll-target="#local-shape-of-a-surface"><span class="header-section-number">4.13.4</span> Local shape of a surface</a></li>
-  <li><a href="#umbilical-points" id="toc-umbilical-points" class="nav-link" data-scroll-target="#umbilical-points"><span class="header-section-number">4.13.5</span> Umbilical points</a></li>
+  <li><a href="#gaussian-and-mean-curvature" id="toc-gaussian-and-mean-curvature" class="nav-link" data-scroll-target="#gaussian-and-mean-curvature"><span class="header-section-number">1.13.1</span> Gaussian and mean curvature</a></li>
+  <li><a href="#principal-curvatures" id="toc-principal-curvatures" class="nav-link" data-scroll-target="#principal-curvatures"><span class="header-section-number">1.13.2</span> Principal curvatures</a></li>
+  <li><a href="#normal-and-geodesic-curvatures" id="toc-normal-and-geodesic-curvatures" class="nav-link" data-scroll-target="#normal-and-geodesic-curvatures"><span class="header-section-number">1.13.3</span> Normal and geodesic curvatures</a></li>
+  </ul></li>
+  <li><a href="#local-shape-of-a-surface" id="toc-local-shape-of-a-surface" class="nav-link" data-scroll-target="#local-shape-of-a-surface"><span class="header-section-number">1.14</span> Local shape of a surface</a>
+  <ul class="collapse">
+  <li><a href="#umbilical-points" id="toc-umbilical-points" class="nav-link" data-scroll-target="#umbilical-points"><span class="header-section-number">1.14.1</span> Umbilical points</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -345,7 +347,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></h1>
 </div>
 
 
@@ -400,11 +402,11 @@ window.Quarto = {
 <figcaption>A surface <span class="math inline">\(\mathcal{S}\)</span> can be described by a family of charts <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}\)</span> with <span class="math inline">\(U_i \subseteq \mathbb{R}^2\)</span> open set.</figcaption>
 </figure>
 </div>
-<section id="preliminaries" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">4.1</span> Preliminaries</h2>
+<section id="preliminaries" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">1.1</span> Preliminaries</h2>
 <p>Before proceeding with the formal definition of surface, we need to establish some basic notation and terminology regarding linear algebra, the topology of <span class="math inline">\(\mathbb{R}^n\)</span>, and calculus for smooth maps from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>.</p>
-<section id="linear-algebra" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="linear-algebra"><span class="header-section-number">4.1.1</span> Linear algebra</h3>
+<section id="linear-algebra" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="linear-algebra"><span class="header-section-number">1.1.1</span> Linear algebra</h3>
 <div id="bilinear-form" class="Definition" title="Bilinear form">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Bilinear form</summary><div>Let <span class="math inline">\(V\)</span> be a vector space and <span class="math inline">\(B \colon V \times V \to \mathbb{R}\)</span>. We say that:<p></p>
 <ul>
@@ -628,8 +630,8 @@ A = P D P^T
 </div></details>
 </div>
 </section>
-<section id="topology-of-mathbbrn" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="topology-of-mathbbrn"><span class="header-section-number">4.1.2</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></h3>
+<section id="topology-of-mathbbrn" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="topology-of-mathbbrn"><span class="header-section-number">1.1.2</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></h3>
 <p>The Euclidean norm on <span class="math inline">\(\mathbb{R}^n\)</span> is denoted by <span class="math display">\[
 \| \mathbf{x}\| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \mathbf{x}= (x_1 , \ldots, x_n) \in \mathbb{R}^n \,.
 \]</span> The Euclidean norm induces the distance <span class="math display">\[
@@ -675,8 +677,8 @@ V := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| \geq 1  \}
 </div></details>
 </div>
 </section>
-<section id="smooth-functions" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="smooth-functions"><span class="header-section-number">4.1.3</span> Smooth functions</h3>
+<section id="smooth-functions" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="smooth-functions"><span class="header-section-number">1.1.3</span> Smooth functions</h3>
 <p>We recall some basic facts about smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>. For a vector valued function <span class="math inline">\(f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> we denote its components by <span class="math display">\[
 f = (f_1,\ldots,f_m) \,.
 \]</span></p>
@@ -798,8 +800,8 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 </div>
 </section>
 </section>
-<section id="definition-of-surface" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</h2>
+<section id="definition-of-surface" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="definition-of-surface"><span class="header-section-number">1.2</span> Definition of Surface</h2>
 <p>We give our main definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <div id="surface" class="Definition" title="Surface">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>Surface</summary><div>
@@ -1008,8 +1010,8 @@ B_{\varepsilon} (\mathbf{x}_0) \smallsetminus \{ \mathbf{x}_0 \} \,,
 </figure>
 </div>
 </section>
-<section id="regular-surfaces" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</h2>
+<section id="regular-surfaces" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="regular-surfaces"><span class="header-section-number">1.3</span> Regular Surfaces</h2>
 <p>We have defined a regular curve to be a map <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> such that <span class="math display">\[
 \left\| {\pmb{\gamma}}(t) \right\| \neq 0 \,, \quad \forall \, t \in (a,b) \,.
 \]</span> This allowed us to define tangent vectors and, eventually, Frenet frame.</p>
@@ -1152,7 +1154,7 @@ y &amp; = \rho \cos (\theta)  \sin(\phi) \\
 z &amp; = \rho \sin (\theta)
 \end{align*}\]</span> where <span class="math display">\[
 \rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \phi\in [0,2\pi] \,, \quad \theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
-\]</span> with the angles <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span> as in Figure <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>.</p>
+\]</span> with the angles <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span> as in Figure <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>.</p>
 <blockquote class="blockquote">
 <p>It is clear that <span class="math inline">\(z = \rho \sin(\theta)\)</span>, by basic trigonometry. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{p}\)</span> has length <span class="math display">\[
 L = \rho \cos \theta \,.
@@ -1169,7 +1171,7 @@ y &amp; = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi)
 <img src="../images/spherical_coordinates.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Spherical coordinates in <span class="math inline">\(\mathbb{R}^3\)</span>.
+Figure&nbsp;1.1: Spherical coordinates in <span class="math inline">\(\mathbb{R}^3\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1187,7 +1189,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 <li><p><span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
 <li><p>Moreover <span class="math display">\[
 {\pmb{\sigma}}(U) = \mathbb{S}^2 \smallsetminus \{ (x,0,z) \in \mathbb{R}^3 \, \colon \,x \geq 0  \} \,,
-\]</span> as seen also in the left picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>.</p></li>
+\]</span> as seen also in the left picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p></li>
 <li><p>The set <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is evidently open in <span class="math inline">\(\mathbb{S}^2\)</span>.</p></li>
 <li><p>It is easy to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is invertible, with continuous inverse.</p></li>
 <li><p>Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism from <span class="math inline">\(U\)</span> into <span class="math inline">\({\pmb{\sigma}}(U)\)</span>.</p></li>
@@ -1205,7 +1207,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}_{\theta}\)</span> and <span class="math inline">\({\pmb{\sigma}}_{\phi}\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
 <p>Since <span class="math inline">\({\pmb{\sigma}}(U) \neq \mathbb{S}^2\)</span>, the chart <span class="math inline">\({\pmb{\sigma}}\)</span> does not form an atlas. We need a second chart. An option is to define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} := ( - \cos(\theta) \cos (\phi), -\sin(\theta) , - \cos (\theta) \sin(\phi)) \,.
-\]</span> Notice that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is obtained by rotating <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math inline">\(\pi\)</span> about the <span class="math inline">\(z\)</span>-axis and by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span>-axis, as seen in the right picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. It is an exercise to check that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regular chart.</p>
+\]</span> Notice that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is obtained by rotating <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math inline">\(\pi\)</span> about the <span class="math inline">\(z\)</span>-axis and by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span>-axis, as seen in the right picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>. It is an exercise to check that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regular chart.</p>
 <p>Since we have <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} (U) = \mathbb{S}^2 \smallsetminus \{ (x,y,0) \in \mathbb{R}^3 \, \colon \,x \leq 0  \} \,,
 \]</span> it is immediate to see that <span class="math display">\[
@@ -1215,7 +1217,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 \]</span> is a regular atlas for <span class="math inline">\(\mathbb{S}^2\)</span>.</p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="1">
+<div id="cell-fig-chart-sphere" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div id="fig-chart-sphere" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1223,7 +1225,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 <img src="chap_4_files/figure-html/fig-chart-sphere-output-1.png" width="693" height="336" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chart-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Image of the charts of the sphere from the above example.
+Figure&nbsp;1.2: Image of the charts of the sphere from the above example.
 </figcaption>
 </figure>
 </div>
@@ -1241,10 +1243,10 @@ Figure&nbsp;4.2: Image of the charts of the sphere from the above example.
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly dependent along the line <span class="math display">\[
 L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 \]</span> Hence <span class="math inline">\({\pmb{\sigma}}\)</span> is not a regular chart.<p></p>
-<p>Looking at Figure <a href="#fig-plot-cusp" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\({\pmb{\sigma}}(L)\)</span>.</p>
+<p>Looking at Figure <a href="#fig-plot-cusp" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\({\pmb{\sigma}}(L)\)</span>.</p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="cell-fig-plot-cusp" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-plot-cusp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1252,15 +1254,15 @@ L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 <img src="chap_4_files/figure-html/fig-plot-cusp-output-1.png" width="349" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-cusp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Example of non-regular surface.
+Figure&nbsp;1.3: Example of non-regular surface.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="level-surfaces" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="level-surfaces"><span class="header-section-number">4.4</span> Level surfaces</h2>
+<section id="level-surfaces" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="level-surfaces"><span class="header-section-number">1.4</span> Level surfaces</h2>
 <div id="level-surface" class="Definition" title="Level surface">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
 \mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
@@ -1297,7 +1299,7 @@ f(x,y,z) := x^2 + y^2 -1 \,.
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
 \]</span> is not a surface. However the positive sheet <span class="math display">\[
 \mathcal{S}^+ := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2 \,, \,  z&gt;0  \} \,.
-\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.4</span></a> Indeed, define the open set <span class="math display">\[
+\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> Indeed, define the open set <span class="math display">\[
 V := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,z &gt; 0 \}
 \]</span> and the function <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> by <span class="math display">\[
 f(x,y,z) := x^2 + y^2 - z^2 \,.
@@ -1312,7 +1314,7 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 \]</span></p>
 </div></details>
 </div>
-<div class="cell" data-execution_count="3">
+<div id="cell-fig-positive-cone" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-positive-cone" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1320,15 +1322,15 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 <img src="chap_4_files/figure-html/fig-positive-cone-output-1.png" width="348" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positive-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Positive sheet of circular cone.
+Figure&nbsp;1.4: Positive sheet of circular cone.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="reparametrizations" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="reparametrizations"><span class="header-section-number">4.5</span> Reparametrizations</h2>
+<section id="reparametrizations" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="reparametrizations"><span class="header-section-number">1.5</span> Reparametrizations</h2>
 <p>We have defined the reparametrization of curves. In a similar way, one can reparametrize surface charts.</p>
 <div id="Definition-59" class="Definition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 59</strong></summary><div>Suppose that <span class="math inline">\(U, \widetilde{U} \subseteq \mathbb{R}^2\)</span> are open sets and <span class="math display">\[
@@ -1435,7 +1437,7 @@ f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial
 {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \,.
 \]</span> To see that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is regular it is sufficient to prove that <span id="eq-change-chart-1"><span class="math display">\[
 \widetilde{{\pmb{\sigma}}}_{\tilde u} \times \widetilde{{\pmb{\sigma}}}_{\tilde v} \neq 0 \,.
-\tag{4.1}\]</span></span> By chain rule we have <span class="math display">\[\begin{align*}
+\tag{1.1}\]</span></span> By chain rule we have <span class="math display">\[\begin{align*}
 \widetilde{{\pmb{\sigma}}}_{\tilde{u}}  &amp; =
 {\pmb{\sigma}}_u  \frac{\partial u}{\partial \tilde{u}} + {\pmb{\sigma}}_v  \frac{\partial v}{\partial \tilde{u}} \\
 \widetilde{{\pmb{\sigma}}}_{\tilde{v}}  &amp; =
@@ -1460,21 +1462,21 @@ f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial
 &amp; = \det  J \Phi \,  \left( {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v}\right) \,.
 \end{align*}\]</span> Since <span class="math inline">\(\Phi\)</span> is a diffeomorphism, we have that <span class="math display">\[
 \det J\Phi \neq 0 \,,
-\]</span> from which we conclude (<a href="#eq-change-chart-1" class="quarto-xref"><span>4.1</span></a>).<p></p>
+\]</span> from which we conclude (<a href="#eq-change-chart-1" class="quarto-xref"><span>1.1</span></a>).<p></p>
 </div></details>
 </div>
 </section>
-<section id="transition-maps" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="transition-maps"><span class="header-section-number">4.6</span> Transition maps</h2>
+<section id="transition-maps" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="transition-maps"><span class="header-section-number">1.6</span> Transition maps</h2>
 <p>Consider the situation in which two regular charts have overlapping image.<br>
-It is natural to ask wether these maps are reparametrizations of each other on the overlapping region, see <a href="#fig-transition-maps" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>. If such reparametrization exists, it is called a transition map.</p>
+It is natural to ask wether these maps are reparametrizations of each other on the overlapping region, see <a href="#fig-transition-maps" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>. If such reparametrization exists, it is called a transition map.</p>
 <div id="fig-transition-maps" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-transition-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/surfaces_transition_map.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transition-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: If the two regular charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have overlapping image, then they are reparametrization of each other, through a transition map <span class="math inline">\(\Phi\)</span>.
+Figure&nbsp;1.5: If the two regular charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have overlapping image, then they are reparametrization of each other, through a transition map <span class="math inline">\(\Phi\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1540,8 +1542,8 @@ V := {\pmb{\sigma}}^{-1} (  I  ) \,, \quad
 </div></details>
 </div>
 </section>
-<section id="functions-between-surfaces" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</h2>
+<section id="functions-between-surfaces" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="functions-between-surfaces"><span class="header-section-number">1.7</span> Functions between surfaces</h2>
 <p>We would like to define a concept of smooth function <span class="math display">\[
 f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
 \]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces. So far we know what a smooth function from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span> is. The idea is to use surface charts to define such <span class="math inline">\(f\)</span>.</p>
@@ -1651,8 +1653,8 @@ f \colon V \to f(V)
 </div>
 <p>The above definition is well posed since open subsets of surfaces are themselves surfaces.</p>
 </section>
-<section id="tangent-space" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="tangent-space"><span class="header-section-number">4.8</span> Tangent space</h2>
+<section id="tangent-space" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="tangent-space"><span class="header-section-number">1.8</span> Tangent space</h2>
 <p>We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. The anolgue concept of tangent vector for surfaces is called the tangent space. To avoid clumsy terminology, we make the following assumption.</p>
 <div id="Assumption-71" class="Assumption">
 <p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption 71</strong></summary><div>From now on, all the surfaces will be regular and all the charts will be regular.<p></p>
@@ -1674,7 +1676,7 @@ T_{\mathbf{p}} \mathcal{S}:= \{ \mathbf{v}\in \mathbb{R}^3 \, \colon \,\mathbf{v
 <img src="../images/tangent_space.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
+Figure&nbsp;1.6: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1777,12 +1779,12 @@ F^{-1} \colon V \to W
 F^{-1} \circ {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to W \subseteq U \,.
 \]</span> Moreover such composition is smooth, being <span class="math inline">\(F^{-1}\)</span> and <span class="math inline">\({\pmb{\gamma}}\)</span> smooth. Therefore <span id="eq-lemma-curve-S"><span class="math display">\[
 (F^{-1} \circ {\pmb{\gamma}}) (t) = (u(t),v(t))
-\tag{4.2}\]</span></span> with <span class="math inline">\(u,v\)</span> smooth. As <span class="math inline">\({\pmb{\gamma}}(0)=\mathbf{p}\)</span>, by definition of <span class="math inline">\(F\)</span> we have <span class="math display">\[
+\tag{1.2}\]</span></span> with <span class="math inline">\(u,v\)</span> smooth. As <span class="math inline">\({\pmb{\gamma}}(0)=\mathbf{p}\)</span>, by definition of <span class="math inline">\(F\)</span> we have <span class="math display">\[
 (u(0),v(0)) = (F^{-1} \circ {\pmb{\gamma}}) (0) = F^{-1}(\mathbf{p}) =  (u_0,v_0) \,,
 \]</span> showing that <span class="math display">\[
 u(0) = u_0 \,, \quad
 v(0) = v_0 \,.
-\]</span> Moreover, applying <span class="math inline">\({\pmb{\sigma}}\)</span> to both sides of (<a href="#eq-lemma-curve-S" class="quarto-xref"><span>4.2</span></a>) yields <span class="math display">\[
+\]</span> Moreover, applying <span class="math inline">\({\pmb{\sigma}}\)</span> to both sides of (<a href="#eq-lemma-curve-S" class="quarto-xref"><span>1.2</span></a>) yields <span class="math display">\[
 {\pmb{\sigma}}(u(t),v(t)) = {\pmb{\sigma}}((F^{-1} \circ {\pmb{\gamma}})) (t) = {\pmb{\gamma}}(t) \,,
 \]</span> as we wanted to show.</p>
 <p>The converse statement is trivial.</p>
@@ -1856,7 +1858,7 @@ T_{\mathbf{p}} \mathcal{S}
 <blockquote class="blockquote">
 <p>To see this, take the curve <span class="math inline">\({\pmb{\gamma}}(t) \equiv \mathbf{p}\)</span>. Then <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0) = {\pmb{0}}\)</span>, showing that <span class="math inline">\({\pmb{0}}\in T_{\mathbf{p}} \mathcal{S}\)</span>.</p>
 </blockquote>
-<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. When we draw the tangent plane as a plane resting on the surface, see <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>, we are not drawing <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, but rather the plane <span class="math display">\[
+<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. When we draw the tangent plane as a plane resting on the surface, see <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>1.6</span></a>, we are not drawing <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, but rather the plane <span class="math display">\[
 \mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\,,
 \]</span> which is the <strong>affine tangent plane</strong> through <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
 </div></details>
@@ -1963,8 +1965,8 @@ T_{\mathbf{p}} U \subseteq (C^{\infty}(U))^* \,,
 </div></details>
 </div>
 </section>
-<section id="differential-of-smooth-functions" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="differential-of-smooth-functions"><span class="header-section-number">4.9</span> Differential of smooth functions</h2>
+<section id="differential-of-smooth-functions" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="differential-of-smooth-functions"><span class="header-section-number">1.9</span> Differential of smooth functions</h2>
 <p>Let <span class="math inline">\(f \colon U \to V\)</span> with <span class="math inline">\(U,V \subseteq \mathbb{R}^2\)</span> open. Suppose <span class="math inline">\(f\)</span> is smooth. The differential of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{p}\in U\)</span> is a linear map <span class="math display">\[
 df_{\mathbf{p}} \colon \mathbb{R}^2 \to \mathbb{R}^2 \,.
 \]</span> We have seen that <span class="math display">\[
@@ -2072,10 +2074,10 @@ f \colon \mathcal{S}_1 \to \mathcal{S}_2
 </div>
 <p>The proof is based on the Inverse Function Theorem, see Proposition 4.4.6 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
 </section>
-<section id="examples-of-surfaces" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</h2>
-<section id="level-surfaces-1" class="level3" data-number="4.10.1">
-<h3 data-number="4.10.1" class="anchored" data-anchor-id="level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</h3>
+<section id="examples-of-surfaces" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="examples-of-surfaces"><span class="header-section-number">1.10</span> Examples of Surfaces</h2>
+<section id="level-surfaces-1" class="level3" data-number="1.10.1">
+<h3 data-number="1.10.1" class="anchored" data-anchor-id="level-surfaces-1"><span class="header-section-number">1.10.1</span> Level surfaces</h3>
 <p>We have already seen level surfaces. Let us recall the defintion.</p>
 <div id="level-surface-1" class="Definition" title="Level surface">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 86: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
@@ -2126,8 +2128,8 @@ k = \nabla f(\mathbf{p}) \cdot (x_0,y_0,z_0) \,.
 </div></details>
 </div>
 </section>
-<section id="quadrics" class="level3" data-number="4.10.2">
-<h3 data-number="4.10.2" class="anchored" data-anchor-id="quadrics"><span class="header-section-number">4.10.2</span> Quadrics</h3>
+<section id="quadrics" class="level3" data-number="1.10.2">
+<h3 data-number="1.10.2" class="anchored" data-anchor-id="quadrics"><span class="header-section-number">1.10.2</span> Quadrics</h3>
 <p>Quadrics are level surfaces <span class="math display">\[
 S_f = \left\{  (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0   \right\} \,,
 \]</span> where <span class="math display">\[\begin{align*}
@@ -2222,8 +2224,8 @@ D =
 </div></details>
 </div>
 </section>
-<section id="ruled-surfaces" class="level3" data-number="4.10.3">
-<h3 data-number="4.10.3" class="anchored" data-anchor-id="ruled-surfaces"><span class="header-section-number">4.10.3</span> Ruled surfaces</h3>
+<section id="ruled-surfaces" class="level3" data-number="1.10.3">
+<h3 data-number="1.10.3" class="anchored" data-anchor-id="ruled-surfaces"><span class="header-section-number">1.10.3</span> Ruled surfaces</h3>
 <p>A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined in the following way.</p>
 <div id="ruled-surface" class="Definition" title="Ruled surface">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 92: </strong>Ruled surface</summary><div>
@@ -2255,7 +2257,7 @@ D =
 {\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,,
 \]</span> with <span class="math display">\[
 {\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
-\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>.<p></p>
+\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-ruled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2264,7 +2266,7 @@ D =
 <img src="../images/surfaces_ruled.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
+Figure&nbsp;1.7: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2277,7 +2279,7 @@ Figure&nbsp;4.7: Unit cylinder is a ruled surface with base curve <span class="m
 \mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right)
-\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>.<p></p>
+\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>1.8</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-mobius-ruled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2286,13 +2288,13 @@ Figure&nbsp;4.7: Unit cylinder is a ruled surface with base curve <span class="m
 <img src="../images/surfaces_ruled_2.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mobius-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
+Figure&nbsp;1.8: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="surfaces-of-revolution" class="level3" data-number="4.10.4">
-<h3 data-number="4.10.4" class="anchored" data-anchor-id="surfaces-of-revolution"><span class="header-section-number">4.10.4</span> Surfaces of Revolution</h3>
+<section id="surfaces-of-revolution" class="level3" data-number="1.10.4">
+<h3 data-number="1.10.4" class="anchored" data-anchor-id="surfaces-of-revolution"><span class="header-section-number">1.10.4</span> Surfaces of Revolution</h3>
 <p>Surfaces of revolution are obtained by rotating a curve about the <span class="math inline">\(z\)</span>-axis.</p>
 <div id="surface-of-revolution" class="Definition" title="Surface of revolution">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>Surface of revolution</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve in the <span class="math inline">\((x,z)\)</span>-plane, that is, <span class="math display">\[
@@ -2318,7 +2320,7 @@ Figure&nbsp;4.8: The Möbius band is a ruled surface with base curve <span class
 </div></details>
 </div>
 <div id="catenoid" class="Example" title="Catenoid">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 98: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. Recall that the catenary function is defined by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 98: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>. Recall that the catenary function is defined by <span class="math display">\[
 f(u) = \cosh (u) \,.  
 \]</span> Therefore the catenoid is obtained by rotating <span class="math display">\[
 {\pmb{\gamma}}(u) = \left(  \cosh (u), 0 , u \right) \,.
@@ -2336,14 +2338,14 @@ f(u) = \cosh (u) \,.
 <img src="../images/surface_catenoid.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
+Figure&nbsp;1.9: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="first-fundamental-form" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</h2>
+<section id="first-fundamental-form" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="first-fundamental-form"><span class="header-section-number">1.11</span> First fundamental form</h2>
 <p>In this section we introduce the first <strong>fundamental form</strong> of a surface. This will allow us to compute:</p>
 <ul>
 <li>Inner product between tangent vectors</li>
@@ -2355,8 +2357,8 @@ Figure&nbsp;4.9: The Catenoid is the surface of revolution obtained by rotating 
 <li>Length of curves on a surface</li>
 <li>Angle between curves on a surface</li>
 </ul>
-<section id="length-on-surfaces" class="level3" data-number="4.11.1">
-<h3 data-number="4.11.1" class="anchored" data-anchor-id="length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</h3>
+<section id="length-on-surfaces" class="level3" data-number="1.11.1">
+<h3 data-number="1.11.1" class="anchored" data-anchor-id="length-on-surfaces"><span class="header-section-number">1.11.1</span> Length on surfaces</h3>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and consider two points <span class="math inline">\(\mathbf{p}, \mathbf{q} \in \mathcal{S}\)</span>. The euclidean distance between <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> is <span class="math display">\[
 \left\| \mathbf{p}- \mathbf{q} \right\| \,.
 \]</span> However this measures the length of the straight segment which connects <span class="math inline">\(\mathbf{p}\)</span> to <span class="math inline">\(\mathbf{q}\)</span>. We are interested in measuring the distance on <span class="math inline">\(\mathcal{S}\)</span>. A way to measure such distance is the following: Suppose <span class="math display">\[
@@ -2413,10 +2415,10 @@ G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
 \mathscr{F}_1 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
 \]</span> defined by <span id="eq-fff-chart"><span class="math display">\[
 \mathscr{F}_1 (\mathbf{v}) := E \, du^2(\mathbf{v}) + 2F \, du(\mathbf{v}) \, dv (\mathbf{v})+ G \, dv^2 (\mathbf{v}) \,,
-\tag{4.3}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, where <span class="math inline">\(E,F,G\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
+\tag{1.3}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, where <span class="math inline">\(E,F,G\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
 </div></details>
 </div>
-<p>We usually omit the dependence on <span class="math inline">\(\mathbf{v}\)</span> in (<a href="#eq-fff-chart" class="quarto-xref"><span>4.3</span></a>), and write <span class="math display">\[
+<p>We usually omit the dependence on <span class="math inline">\(\mathbf{v}\)</span> in (<a href="#eq-fff-chart" class="quarto-xref"><span>1.3</span></a>), and write <span class="math display">\[
 \mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 \]</span> The quadratic form <span class="math inline">\(\mathscr{F}_1\)</span> is related to <span class="math inline">\(I_{\mathbf{p}}\)</span> in the following way.</p>
 <div id="proposition-fff-quadratic" class="Proposition">
@@ -2515,7 +2517,7 @@ J\Phi = \left(
 \]</span> The linear maps <span class="math inline">\(du, dv\)</span> and <span class="math inline">\(d\tilde{u}, d\tilde{v}\)</span> are related by <span id="eq-fff-change-basis-1"><span class="math display">\[
 du = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \,, \quad
 dv = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v}
-\tag{4.4}\]</span></span> Moreover the matrices of <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are related by <span id="eq-fff-change-basis-2"><span class="math display">\[
+\tag{1.4}\]</span></span> Moreover the matrices of <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are related by <span id="eq-fff-change-basis-2"><span class="math display">\[
 \left(
 \begin{array}{cc}
 \widetilde{E} &amp; \widetilde{F} \\
@@ -2532,9 +2534,9 @@ F &amp; G
 \right)
 \,
 J \Phi  \,.
-\tag{4.5}\]</span></span></p>
+\tag{1.5}\]</span></span></p>
 <blockquote class="blockquote">
-<p>The proof of the above statements follows by basic linear algebra: The pairs <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_u\}\)</span> and <span class="math inline">\(\{\widetilde{{\pmb{\sigma}}}_{\tilde{u}} , \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \}\)</span> are bases for the vector space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The change of basis matrix is given exactly by <span class="math inline">\(J\Phi\)</span>. Therefore formulas (<a href="#eq-fff-change-basis-1" class="quarto-xref"><span>4.4</span></a>) and (<a href="#eq-fff-change-basis-2" class="quarto-xref"><span>4.5</span></a>) are consequence of change of basis results for linear maps and bilinear forms, respectively.</p>
+<p>The proof of the above statements follows by basic linear algebra: The pairs <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_u\}\)</span> and <span class="math inline">\(\{\widetilde{{\pmb{\sigma}}}_{\tilde{u}} , \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \}\)</span> are bases for the vector space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The change of basis matrix is given exactly by <span class="math inline">\(J\Phi\)</span>. Therefore formulas (<a href="#eq-fff-change-basis-1" class="quarto-xref"><span>1.4</span></a>) and (<a href="#eq-fff-change-basis-2" class="quarto-xref"><span>1.5</span></a>) are consequence of change of basis results for linear maps and bilinear forms, respectively.</p>
 </blockquote>
 </div></details>
 </div>
@@ -2595,8 +2597,8 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 </div></details>
 </div>
 </section>
-<section id="length-of-curves" class="level3" data-number="4.11.2">
-<h3 data-number="4.11.2" class="anchored" data-anchor-id="length-of-curves"><span class="header-section-number">4.11.2</span> Length of curves</h3>
+<section id="length-of-curves" class="level3" data-number="1.11.2">
+<h3 data-number="1.11.2" class="anchored" data-anchor-id="length-of-curves"><span class="header-section-number">1.11.2</span> Length of curves</h3>
 <p>Let us show how the first fundamental form allows to compute the length of curves with values on surfaces.</p>
 <div id="proposition-fff-length" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 109</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface with chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Suppose <span class="math display">\[
@@ -2667,8 +2669,8 @@ G(u(t),v(t)) &amp; = G(t,t) = t^2  \,.
 </div></details>
 </div>
 </section>
-<section id="local-isometries" class="level3" data-number="4.11.3">
-<h3 data-number="4.11.3" class="anchored" data-anchor-id="local-isometries"><span class="header-section-number">4.11.3</span> Local isometries</h3>
+<section id="local-isometries" class="level3" data-number="1.11.3">
+<h3 data-number="1.11.3" class="anchored" data-anchor-id="local-isometries"><span class="header-section-number">1.11.3</span> Local isometries</h3>
 <p>We have seen that a plane <span class="math inline">\(\pmb{\pi}\)</span> and a cylinder <span class="math inline">\(\mathcal{C}\)</span> have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that <span class="math inline">\(\pmb{\pi}\)</span> and <span class="math inline">\(\mathcal{C}\)</span> are locally isometric. Let us give a general definition of such concept.</p>
 <div id="local-isometry" class="Definition" title="Local isometry">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 111: </strong>Local isometry</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces. A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a <strong>local isometry</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> the differential <span class="math inline">\(d_{\mathbf{p}}f \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetilde{\mathcal{S}}\)</span> satisfies <span class="math display">\[
@@ -2854,8 +2856,8 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 </div></details>
 </div>
 </section>
-<section id="angles-on-surfaces" class="level3" data-number="4.11.4">
-<h3 data-number="4.11.4" class="anchored" data-anchor-id="angles-on-surfaces"><span class="header-section-number">4.11.4</span> Angles on surfaces</h3>
+<section id="angles-on-surfaces" class="level3" data-number="1.11.4">
+<h3 data-number="1.11.4" class="anchored" data-anchor-id="angles-on-surfaces"><span class="header-section-number">1.11.4</span> Angles on surfaces</h3>
 <p>We want to define the notion of angle between tangent vectors.</p>
 <div id="angle-between-tangent-vectors" class="Definition" title="Angle between tangent vectors">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 115: </strong>Angle between tangent vectors</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The angle between two vectors <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is defined as the number <span class="math inline">\(\theta\)</span> such that <span class="math display">\[
@@ -2882,7 +2884,7 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <div id="Proof*-25" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is <span id="eq-angle-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
-\tag{4.6}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
+\tag{1.6}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
 \mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
 \mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
 \]</span> for some <span class="math inline">\(\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \mathbb{R}\)</span>. Hence, the coordinates of <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> are <span class="math display">\[
@@ -2902,12 +2904,12 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 \end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
 \| \mathbf{v}\|^2 &amp; = \mathbf{v}\cdot \mathbf{v}= E  {\lambda}^2 + 2 F  \lambda \mu + G \mu^2  \\
 \| \mathbf{w}\|^2 &amp; = \mathbf{w}\cdot \mathbf{w}= E  \tilde{\lambda}^2 + 2 F  \tilde{\lambda} \tilde{\mu}  + G  \tilde{\mu}^2 \,.  
-\end{align*}\]</span> Substituting in (<a href="#eq-angle-proof" class="quarto-xref"><span>4.6</span></a>) we conclude.<p></p>
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-proof" class="quarto-xref"><span>1.6</span></a>) we conclude.<p></p>
 </div></details>
 </div>
 </section>
-<section id="angle-between-curves" class="level3" data-number="4.11.5">
-<h3 data-number="4.11.5" class="anchored" data-anchor-id="angle-between-curves"><span class="header-section-number">4.11.5</span> Angle between curves</h3>
+<section id="angle-between-curves" class="level3" data-number="1.11.5">
+<h3 data-number="1.11.5" class="anchored" data-anchor-id="angle-between-curves"><span class="header-section-number">1.11.5</span> Angle between curves</h3>
 <p>Since tangent vectors are derivatives of curves with values in <span class="math inline">\(\mathcal{S}\)</span>, it also makes sense to define the angle between two intersecting curves.</p>
 <div id="angle-between-curves-1" class="Definition" title="Angle between curves">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 117: </strong>Angle between curves</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and suppose to have two curves <span class="math display">\[
@@ -2943,7 +2945,7 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <div id="Proof*-26" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span id="eq-angle-curves-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,.
-\tag{4.7}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">74</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
+\tag{1.7}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">74</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
 \]</span> Differentiating the above expressions we obtain <span class="math display">\[
@@ -2966,12 +2968,12 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 \end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
 \| \dot{{\pmb{\gamma}}}\|^2 &amp; = \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2  \\
 \| \dot{\widetilde{{\pmb{\gamma}}}}\|^2 &amp; = \dot{\widetilde{{\pmb{\gamma}}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}= E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
-\end{align*}\]</span> Substituting in (<a href="#eq-angle-curves-proof" class="quarto-xref"><span>4.7</span></a>) we conclude.<p></p>
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-curves-proof" class="quarto-xref"><span>1.7</span></a>) we conclude.<p></p>
 </div></details>
 </div>
 </section>
-<section id="conformal-maps" class="level3" data-number="4.11.6">
-<h3 data-number="4.11.6" class="anchored" data-anchor-id="conformal-maps"><span class="header-section-number">4.11.6</span> Conformal maps</h3>
+<section id="conformal-maps" class="level3" data-number="1.11.6">
+<h3 data-number="1.11.6" class="anchored" data-anchor-id="conformal-maps"><span class="header-section-number">1.11.6</span> Conformal maps</h3>
 <p>Local isometries are maps which preserve the <strong>scalar product</strong> of tangent vectors. We want to consider maps which preserve the <strong>angle</strong> of tangent vectors. These will be called <strong>conformal maps</strong>.</p>
 <div id="conformal-map" class="Definition" title="Conformal map">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 119: </strong>Conformal map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces. A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a <strong>conformal mapping</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> and <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is holds <span class="math display">\[
@@ -3029,21 +3031,21 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose <span class="math inline">\(f\)</span> is a conformal map, so that <span id="eq-theorem-conformal-proof"><span class="math display">\[
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
-\tag{4.8}\]</span></span> Let <span class="math inline">\(\{\pmb{\alpha}_1,\pmb{\alpha}_2\}\)</span> be an orthonormal basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, that is, <span class="math display">\[
+\tag{1.8}\]</span></span> Let <span class="math inline">\(\{\pmb{\alpha}_1,\pmb{\alpha}_2\}\)</span> be an orthonormal basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, that is, <span class="math display">\[
 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle = 0 \,, \quad
 \| \pmb{\alpha}_1  \| = \| \pmb{\alpha}_2 \| = 1 \,.
 \]</span> Define <span class="math display">\[\begin{align*}
 \lambda(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_1} \right\rangle_f = \| \pmb{\alpha_1} \|_f^2 \,, \\
 \mu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f \,, \\
 \nu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_2},\pmb{\alpha_2} \right\rangle_f = \| \pmb{\alpha_2} \|_f^2   \,.
-\end{align*}\]</span> By (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.8</span></a>) we have <span class="math display">\[
+\end{align*}\]</span> By (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>1.8</span></a>) we have <span class="math display">\[
 \frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle}{ \| \pmb{\alpha_1} \| \| \pmb{\alpha_2} \|  } =
 \frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f}{ \| \pmb{\alpha_1} \|_f \| \pmb{\alpha_2} \|_f  } \,.
 \]</span> Since <span class="math inline">\(\pmb{\alpha}_1 \cdot \pmb{\alpha}_2 = 0\)</span>, from the above we get <span class="math display">\[
 \mu (\mathbf{p}) = \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2  \right\rangle_f = 0 \,.
 \]</span> Moreover, since <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_2\)</span> are orthonormal, the angle between <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_1 + \pmb{\alpha}_2\)</span> is <span class="math inline">\(\theta = \pi/4\)</span>. By definition of angle between vectors, we infer <span class="math display">\[
 \frac{\sqrt{2}}{2} = \cos (\theta) = \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } \,.
-\]</span> On the other hand, using (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.8</span></a>) we get <span class="math display">\[
+\]</span> On the other hand, using (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>1.8</span></a>) we get <span class="math display">\[
 \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } =
 \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle_f  }{ \| \pmb{\alpha}_1 \|_f \| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f } \,.
 \]</span> The numerator of the right hand side satisfies <span class="math display">\[\begin{align*}
@@ -3161,8 +3163,8 @@ f( {\pmb{\sigma}}( u,v) ) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
 </div></details>
 </div>
 </section>
-<section id="conformal-parametrizations" class="level3" data-number="4.11.7">
-<h3 data-number="4.11.7" class="anchored" data-anchor-id="conformal-parametrizations"><span class="header-section-number">4.11.7</span> Conformal parametrizations</h3>
+<section id="conformal-parametrizations" class="level3" data-number="1.11.7">
+<h3 data-number="1.11.7" class="anchored" data-anchor-id="conformal-parametrizations"><span class="header-section-number">1.11.7</span> Conformal parametrizations</h3>
 <p>We conclude this section with the definition of <strong>conformally flat surface</strong> and <strong>conformal parametrization</strong>.</p>
 <div id="definition-conformally-flat" class="Definition" title="Conformally flat surface and conformal parametrization">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 125: </strong>Conformally flat surface and conformal parametrization</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
@@ -3233,13 +3235,13 @@ f \colon \pi \to \mathcal{S}\,, \quad f(u,v,0) = {\pmb{\sigma}}(u,v) \,,
 </div>
 </section>
 </section>
-<section id="second-fudamental-form" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="second-fudamental-form"><span class="header-section-number">4.12</span> Second fudamental form</h2>
+<section id="second-fudamental-form" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="second-fudamental-form"><span class="header-section-number">1.12</span> Second fudamental form</h2>
 <p>The first fundamental form allows to measure distances on a surface. However it does not give any information on how curved a surface is: For example, we saw that a plane and a cylinder have the same first fundamental form <span class="math display">\[
 \mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span> However the plane is flat, while the cylinder curves. We would like to find a measure of curvature which allows us to tell these two surfaces apart.</p>
-<section id="unit-normal-and-orientability" class="level3" data-number="4.12.1">
-<h3 data-number="4.12.1" class="anchored" data-anchor-id="unit-normal-and-orientability"><span class="header-section-number">4.12.1</span> Unit normal and orientability</h3>
+<section id="unit-normal-and-orientability" class="level3" data-number="1.12.1">
+<h3 data-number="1.12.1" class="anchored" data-anchor-id="unit-normal-and-orientability"><span class="header-section-number">1.12.1</span> Unit normal and orientability</h3>
 <p>Before talking about curvatures, we need to clarify what we mean by normal vector to a surface and orientability. Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> passes through the origin. Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is completely determined by giving a unit vector <span class="math inline">\(\mathbf{N}\)</span> perpendicular to it: <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}\cdot \mathbf{N}= 0 \} \,.
 \]</span> In this case we write <span class="math display">\[
@@ -3386,8 +3388,8 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 </section>
-<section id="definition-of-second-fundamental-form" class="level3" data-number="4.12.2">
-<h3 data-number="4.12.2" class="anchored" data-anchor-id="definition-of-second-fundamental-form"><span class="header-section-number">4.12.2</span> Definition of Second fundamental form</h3>
+<section id="definition-of-second-fundamental-form" class="level3" data-number="1.12.2">
+<h3 data-number="1.12.2" class="anchored" data-anchor-id="definition-of-second-fundamental-form"><span class="header-section-number">1.12.2</span> Definition of Second fundamental form</h3>
 <p>We can now start our discussion about curvature of surfaces. We can make a similar argument to the one we made for curves: If <span class="math inline">\({\pmb{\gamma}}\)</span> is a unit speed curve, the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is defined as <span class="math display">\[
 \kappa (t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\| \,.
 \]</span> The quantity <span class="math inline">\(\kappa(t)\)</span> gave us a measure of how much <span class="math inline">\({\pmb{\gamma}}\)</span> is deviating from a straight line. Similarly, we would like to quantify how much a surface <span class="math inline">\(\mathcal{S}\)</span> is deviating from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Recall that <span class="math display">\[
@@ -3400,14 +3402,14 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 {\pmb{\sigma}}( u_0 + \Delta u , v_0 + \Delta v ) \in \mathcal{S}
 \]</span> deviates from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, the deviation is given by <span class="math display">\[
 \delta := \left[  {\pmb{\sigma}}(  u_0 + \Delta u , v_0 + \Delta v  ) - {\pmb{\sigma}}(u_0,v_0)    \right] \cdot \mathbf{N}\,,
-\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>.</p>
+\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>.</p>
 <div id="fig-sff-sketch" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/sff_sketch.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
+Figure&nbsp;1.10: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -3441,7 +3443,7 @@ N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \mathscr{F}_2 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
 \]</span> defined by <span id="eq-sff-chart"><span class="math display">\[
 \mathscr{F}_2 (\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv (\mathbf{v})+ N \, dv^2 (\mathbf{v}) \,,
-\tag{4.9}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="chap_4.html#definition-coordinate-functions">101</a>.<p></p>
+\tag{1.9}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="chap_4.html#definition-coordinate-functions">101</a>.<p></p>
 </div></details>
 </div>
 <div id="Notation*-33" class="Notation">
@@ -3481,9 +3483,9 @@ M &amp; N
 \right)
 \,
 J \Phi  \,,
-\tag{4.10}\]</span></span> where (<a href="#eq-sff-repar" class="quarto-xref"><span>4.10</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.</p>
+\tag{1.10}\]</span></span> where (<a href="#eq-sff-repar" class="quarto-xref"><span>1.10</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.</p>
 <blockquote class="blockquote">
-<p>Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>4.10</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
+<p>Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>1.10</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
 \widetilde{\mathbf{N}} = \frac{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} }{\left\| \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \right\|} = \frac{\det J\Phi}{|\det J\Phi|} \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|} = \pm \mathbf{N}\,,
 \]</span> as shown in Remark <a href="chap_4.html#remark-normal-chart">130</a>.</p>
 </blockquote>
@@ -3563,8 +3565,8 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 </div></details>
 </div>
 </section>
-<section id="gauss-and-weingarten-maps" class="level3" data-number="4.12.3">
-<h3 data-number="4.12.3" class="anchored" data-anchor-id="gauss-and-weingarten-maps"><span class="header-section-number">4.12.3</span> Gauss and Weingarten maps</h3>
+<section id="gauss-and-weingarten-maps" class="level3" data-number="1.12.3">
+<h3 data-number="1.12.3" class="anchored" data-anchor-id="gauss-and-weingarten-maps"><span class="header-section-number">1.12.3</span> Gauss and Weingarten maps</h3>
 <p>Another way to quantify how much a surface <span class="math inline">\(\mathcal{S}\)</span> is curving is by examining the behavior of standard unit normal <span class="math inline">\(\mathbf{N}\)</span>. If <span class="math inline">\(\mathcal{S}\)</span> is a plane spanned by vectors <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span>, then its standard unit normal is <span class="math display">\[
 \mathbf{N}= \frac{\mathbf{p}\times \mathbf{q}}{ \left\| \mathbf{p}\times \mathbf{q} \right\| } \,,
 \]</span> which is constant across <span class="math inline">\(\mathcal{S}\)</span>. If <span class="math inline">\(\mathcal{S}\)</span> is a general surface, measuring the variation of <span class="math inline">\(\mathbf{N}\)</span> will tell us how much <span class="math inline">\(\mathcal{S}\)</span> is deviating from being a plane. This is the idea behind the definition of the <strong>Gauss</strong> and <strong>Weingarten</strong> maps.</p>
@@ -3602,12 +3604,12 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <div id="Example-149" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 149</strong></summary><div>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>1.11</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
-\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>.</p></li>
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>1.12</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Then <span class="math display">\[
@@ -3628,7 +3630,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = (\cos(u_0), \sin(u_0), 0) \,,
-\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.</p></li>
+\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>1.13</span></a>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -3638,7 +3640,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <img src="../images/sff_gauss_sphere.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
+Figure&nbsp;1.11: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
 </figcaption>
 </figure>
 </div>
@@ -3648,7 +3650,7 @@ Figure&nbsp;4.11: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_plane.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
+Figure&nbsp;1.12: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
 </figcaption>
 </figure>
 </div>
@@ -3658,7 +3660,7 @@ Figure&nbsp;4.12: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
+Figure&nbsp;1.13: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -3668,7 +3670,7 @@ Figure&nbsp;4.13: If <span class="math inline">\(\mathcal{S}\)</span> is the uni
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
 T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
-\tag{4.11}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. Therefore <span class="math display">\[
+\tag{1.11}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>. Therefore <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <blockquote class="blockquote">
@@ -3678,7 +3680,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 \mathbf{N}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,.
 \]</span> Since by definition <span class="math display">\[
 \mathbf{N}(\mathbf{p}) \perp T_{\mathbf{p}} \mathcal{S}\,,
-\]</span> we infer (<a href="#eq-gauss-identification" class="quarto-xref"><span>4.11</span></a>).</p>
+\]</span> we infer (<a href="#eq-gauss-identification" class="quarto-xref"><span>1.11</span></a>).</p>
 </blockquote>
 </div></details>
 </div>
@@ -3688,7 +3690,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 <img src="../images/sff_weingarten.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weingarten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.14: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
+Figure&nbsp;1.14: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -3861,8 +3863,8 @@ II_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathscr{F}_2(\mathbf{v})
 </div></details>
 </div>
 </section>
-<section id="matrix-of-weingarten-map" class="level3" data-number="4.12.4">
-<h3 data-number="4.12.4" class="anchored" data-anchor-id="matrix-of-weingarten-map"><span class="header-section-number">4.12.4</span> Matrix of Weingarten map</h3>
+<section id="matrix-of-weingarten-map" class="level3" data-number="1.12.4">
+<h3 data-number="1.12.4" class="anchored" data-anchor-id="matrix-of-weingarten-map"><span class="header-section-number">1.12.4</span> Matrix of Weingarten map</h3>
 <p>The Weingarten map is a linear map <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> We would like to find a formula to compute <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>. This is easily done: Given a chart <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, we have that <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> is a basis for the vector space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore there exists a <span class="math inline">\(2 \times 2\)</span> matrix <span class="math inline">\(A\)</span> which represents <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>, that is, <span class="math display">\[
@@ -4026,10 +4028,9 @@ d &amp; -b \\
 </div></details>
 </div>
 <div id="helicoid" class="Example" title="Helicoid">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 160: </strong>Helicoid</summary><div>
-<p>The Helicoid is charted by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 160: </strong>Helicoid</summary><div>The Helicoid is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
-\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
+\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>1.15</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
 \mathcal{W}=
 \left(
 \begin{array}{cc}
@@ -4037,8 +4038,7 @@ d &amp; -b \\
 \dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} &amp; 0
 \end{array}
 \right) \,.
-\]</span></p>
-<blockquote class="blockquote">
+\]</span><p></p>
 <p><em>Solution.</em> We compute <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = ( \cos(v), \sin(v), 0  )  \\
 {\pmb{\sigma}}_v &amp; = ( - u \sin(v), u \cos(v), \lambda  )  \\
@@ -4110,7 +4110,7 @@ M &amp; N
 \right) \,.
 \]</span> Finally <span class="math display">\[\begin{align*}
 \mathcal{W}&amp; = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
-&amp; =
+    &amp; =
 \left(
 \begin{array}{cc}
 1 &amp; 0 \\
@@ -4131,10 +4131,9 @@ M &amp; N
 \end{array}
 \right) \,.
 \end{align*}\]</span></p>
-</blockquote>
 </div></details>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="cell-fig-helicoid" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-helicoid" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -4142,18 +4141,16 @@ M &amp; N
 <img src="chap_4_files/figure-html/fig-helicoid-output-1.png" width="346" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-helicoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.15: Plot of Helicoid.
+Figure&nbsp;1.15: Plot of Helicoid.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="example-weingarten-2" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 161</strong></summary><div>
-<p>Find the Weingarten matrix of the following surface chart <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 161</strong></summary><div>Find the Weingarten matrix of the following surface chart <span class="math display">\[
 {\pmb{\sigma}}(u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
-\]</span></p>
-<blockquote class="blockquote">
+\]</span><p></p>
 <p><em>Solution</em>. Start by computing the first fundamental form: <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_{u} &amp; =(1,1,2u) \\
 {\pmb{\sigma}}_{v} &amp; =(-1,1,2v) \\  
@@ -4163,7 +4160,7 @@ G &amp; = {\pmb{\sigma}}_{v} \cdot {\pmb{\sigma}}_v  = 2 (1+2v^2)
 \end{align*}\]</span> so that <span class="math display">\[
 \mathscr{F}_{1}=
 \left(
-\begin{array}{ll}
+  \begin{array}{ll}
 E &amp; F \\
 F &amp; G
 \end{array}
@@ -4178,7 +4175,7 @@ F &amp; G
 \]</span> and therefore <span class="math display">\[\begin{align*}
 \mathscr{F}_{1}^{-1} &amp; = \frac{1}{\det (\mathscr{F}_1)}
 \left(
-\begin{array}{ll}
+  \begin{array}{ll}
 G &amp; -F \\
 -F &amp; E
 \end{array}
@@ -4223,13 +4220,12 @@ M &amp; N
 - 2uv &amp; 1 + 2u^2
 \end{array}\right) \,.
 \end{align*}\]</span></p>
-</blockquote>
 </div></details>
 </div>
 </section>
 </section>
-<section id="curvatures" class="level2" data-number="4.13">
-<h2 data-number="4.13" class="anchored" data-anchor-id="curvatures"><span class="header-section-number">4.13</span> Curvatures</h2>
+<section id="curvatures" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="curvatures"><span class="header-section-number">1.13</span> Curvatures</h2>
 <p>Curvatures of a surface <span class="math inline">\(\mathcal{S}\)</span> are scalars associated to the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>. We will define:</p>
 <ul>
 <li>Gaussian curvature</li>
@@ -4238,8 +4234,8 @@ M &amp; N
 <li>Normal curvature</li>
 <li>Geodesic curvature</li>
 </ul>
-<section id="gaussian-and-mean-curvature" class="level3" data-number="4.13.1">
-<h3 data-number="4.13.1" class="anchored" data-anchor-id="gaussian-and-mean-curvature"><span class="header-section-number">4.13.1</span> Gaussian and mean curvature</h3>
+<section id="gaussian-and-mean-curvature" class="level3" data-number="1.13.1">
+<h3 data-number="1.13.1" class="anchored" data-anchor-id="gaussian-and-mean-curvature"><span class="header-section-number">1.13.1</span> Gaussian and mean curvature</h3>
 <p>The Weingarten map of <span class="math inline">\(\mathcal{S}\)</span> encodes the rate of change of the standard unit normal <span class="math inline">\(\mathbf{N}\)</span>. We use this map to produce scalar values, which we call <strong>curvatures</strong>. The first two curvatures that we consider are called <strong>Gaussian</strong> and <strong>mean</strong> curvatures.</p>
 <div id="gaussian-and-mean-curvature-1" class="Definition" title="Gaussian and mean curvature">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 162: </strong>Gaussian and mean curvature</summary><div>
@@ -4429,8 +4425,8 @@ H = \frac12 \, \operatorname{trace} \mathcal{W}=  - \frac12 \,.
 </div></details>
 </div>
 </section>
-<section id="principal-curvatures" class="level3" data-number="4.13.2">
-<h3 data-number="4.13.2" class="anchored" data-anchor-id="principal-curvatures"><span class="header-section-number">4.13.2</span> Principal curvatures</h3>
+<section id="principal-curvatures" class="level3" data-number="1.13.2">
+<h3 data-number="1.13.2" class="anchored" data-anchor-id="principal-curvatures"><span class="header-section-number">1.13.2</span> Principal curvatures</h3>
 <p>Let <span class="math inline">\(V\)</span> be a two-dimensional vector space. For a linear map <span class="math inline">\(L \colon V \to V\)</span> we say that <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is an <strong>eigenvalue</strong> of <span class="math inline">\(L\)</span> with <strong>eigenvector</strong> <span class="math inline">\(\mathbf{v}\in V\)</span> if <span class="math display">\[
 L(\mathbf{v})  = \lambda \mathbf{v}\,, \quad \mathbf{v}\neq 0 \,.
 \]</span> Suppose <span class="math inline">\(A \in \mathbb{R}^{2 \times 2}\)</span> is the matrix of <span class="math inline">\(L\)</span> with respect to a basis <span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2\}\)</span> of <span class="math inline">\(V\)</span>. Denote by <span class="math display">\[
@@ -4620,7 +4616,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 \]</span> and the principal vectors are <span class="math display">\[\begin{align*}
 \mathbf{t}_1 &amp; = {\pmb{\sigma}}_u = (-\sin(u),\cos(v),0) \,,\\
 \mathbf{t}_2 &amp; = {\pmb{\sigma}}_v = (0,0,1)\,,
-\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>.<p></p>
+\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>1.16</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-principal" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -4629,13 +4625,12 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 <img src="../images/sff_principal_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-principal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.16: Principal vectors of the unit cylinder.
+Figure&nbsp;1.16: Principal vectors of the unit cylinder.
 </figcaption>
 </figure>
 </div>
 <div id="example-sphere-principal" class="Example" title="Sphere">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 174: </strong>Sphere</summary><div>
-<p>Consider the chart for the sphere <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 174: </strong>Sphere</summary><div>Consider the chart for the sphere <span class="math display">\[
 {\pmb{\sigma}}(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
 \]</span> Prove that <span class="math display">\[
 \mathcal{F}_1 =
@@ -4656,8 +4651,7 @@ Figure&nbsp;4.16: Principal vectors of the unit cylinder.
 \]</span> and <span class="math display">\[
 K = H = \kappa_1 = \kappa_2 =1 \,, \quad \mathbf{t}_1 = {\pmb{\sigma}}_u \,, \quad
 \mathbf{t}_2 = {\pmb{\sigma}}_v \,.
-\]</span></p>
-<blockquote class="blockquote">
+\]</span><p></p>
 <p><em>Solution.</em> We compute <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = (-\sin(u)\sin(v), \cos(u)\sin(v),0) \\
 {\pmb{\sigma}}_v &amp; = (\cos(u)\cos(v), \sin(u)\cos(v), - \sin(v)) \\
@@ -4716,7 +4710,6 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 1
 H = \frac{\kappa_1 + \kappa_2}{2} = 1 \,, \quad
 K= \kappa_1 \kappa_2 = 1 \,.
 \]</span></p>
-</blockquote>
 </div></details>
 </div>
 <div id="torus" class="Example" title="Torus">
@@ -4759,8 +4752,8 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 </div></details>
 </div>
 </section>
-<section id="normal-and-geodesic-curvatures" class="level3" data-number="4.13.3">
-<h3 data-number="4.13.3" class="anchored" data-anchor-id="normal-and-geodesic-curvatures"><span class="header-section-number">4.13.3</span> Normal and geodesic curvatures</h3>
+<section id="normal-and-geodesic-curvatures" class="level3" data-number="1.13.3">
+<h3 data-number="1.13.3" class="anchored" data-anchor-id="normal-and-geodesic-curvatures"><span class="header-section-number">1.13.3</span> Normal and geodesic curvatures</h3>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and consider all the curves <span class="math inline">\({\pmb{\gamma}}\)</span> on <span class="math inline">\(\mathcal{S}\)</span> passing through the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
 <div id="Question-176" class="Question">
 <p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 176</strong></summary><div>Which curves through <span class="math inline">\(\mathbf{p}\)</span> have greatest or lowest curvature?<p></p>
@@ -4795,13 +4788,13 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 <div id="Proposition-178" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 178</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span id="eq-surface-curve-curvature"><span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa_n \mathbf{N}+ \kappa_g \, \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
-\tag{4.12}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
+\tag{1.12}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
 \kappa_n = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\,, \quad \kappa_g = \ddot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right)  \,,
-\tag{4.13}\]</span></span> <span id="eq-surface-curve-curvature-2"><span class="math display">\[
+\tag{1.13}\]</span></span> <span id="eq-surface-curve-curvature-2"><span class="math display">\[
 \kappa^2 = \kappa_n^2 + \kappa_g^2 \,,
-\tag{4.14}\]</span></span> <span id="eq-surface-curve-curvature-3"><span class="math display">\[
+\tag{1.14}\]</span></span> <span id="eq-surface-curve-curvature-3"><span class="math display">\[
 \kappa_n = \kappa \cos (\phi) \,, \quad  \kappa_g = \pm \kappa \sin(\phi) \,,
-\tag{4.15}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+\tag{1.15}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-49" class="Proof">
@@ -4818,34 +4811,34 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= \left\| \dot{{\pmb{\gamma}}} \right\|^2 = 1 \,.
 \]</span> Therefore <span class="math inline">\(a = 0\)</span> and <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= b \mathbf{N}+ c \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,.
-\]</span> Setting <span class="math inline">\(\kappa_n := b\)</span> and <span class="math inline">\(\kappa_g := c\)</span> we conclude (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.12</span></a>).<p></p>
-<p><em>Part 2.</em> Taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.12</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> yields <span class="math display">\[
+\]</span> Setting <span class="math inline">\(\kappa_n := b\)</span> and <span class="math inline">\(\kappa_g := c\)</span> we conclude (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>1.12</span></a>).<p></p>
+<p><em>Part 2.</em> Taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>1.12</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> yields <span class="math display">\[
 \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}= \kappa_n \left\| \mathbf{N} \right\|^2 + \kappa_g \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \cdot \mathbf{N}= \kappa_n \,,
-\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal vectors. Similarly, taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.12</span></a>) with <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> yields the second equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.13</span></a>).</p>
-<p><em>Part 3.</em> By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.12</span></a>) we infer <span class="math display">\[\begin{align*}
+\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal vectors. Similarly, taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>1.12</span></a>) with <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> yields the second equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>1.13</span></a>).</p>
+<p><em>Part 3.</em> By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>1.12</span></a>) we infer <span class="math display">\[\begin{align*}
 \left\| \ddot{{\pmb{\gamma}}} \right\|^2 &amp; = \kappa_n^2 \left\| \mathbf{N} \right\|^2 + 2 \kappa_n \kappa_g \mathbf{N}\cdot
 \left(\mathbf{N}\times \dot{{\pmb{\gamma}}}\right) + \kappa_g^2  \left\| \mathbf{N}\times \dot{{\pmb{\gamma}}} \right\|^2 \\
               &amp; = \kappa_n^2 + \kappa_g^2 \,,
-\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal. Since <span class="math inline">\(\kappa(t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\|\)</span>, we get (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.14</span></a>).</p>
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal. Since <span class="math inline">\(\kappa(t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\|\)</span>, we get (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>1.14</span></a>).</p>
 <p><em>Part 4.</em> Recalling that <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa \mathbf{n}\,,
-\]</span> from the first equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.13</span></a>) we obtain <span class="math display">\[\begin{align*}
+\]</span> from the first equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>1.13</span></a>) we obtain <span class="math display">\[\begin{align*}
 \kappa_n &amp; = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\\
          &amp; = \kappa \mathbf{n}\cdot \mathbf{N}\\
          &amp; = \kappa \| \mathbf{n}\|^2 \| \mathbf{N}\|^2 \cos(\phi) \\
          &amp; = \kappa \cos(\phi) \,,
-\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{n}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> have unit norm. Hence the first equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.15</span></a>) is established. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.14</span></a>) we get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{n}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> have unit norm. Hence the first equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>1.15</span></a>) is established. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>1.14</span></a>) we get <span class="math display">\[\begin{align*}
 \kappa_g^2 &amp; = \kappa^2 - \kappa_n^2 \\
            &amp; = \kappa^2 \cos^2(\phi) -  \kappa_n^2 \\
            &amp; = \kappa^2 (\cos^2(\phi) - 1 ) \\
            &amp; = \kappa^2 \sin^2(\phi) \,,
-\end{align*}\]</span> from which we obtain the second equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.15</span></a>).</p>
+\end{align*}\]</span> from which we obtain the second equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>1.15</span></a>).</p>
 </div></details>
 </div>
 <p>The quantities <span class="math inline">\(\kappa_n\)</span> and <span class="math inline">\(\kappa_g\)</span> are the normal and geodesic curvatures of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
 <div id="normal-and-geodesic-curvature" class="Definition" title="Normal and geodesic curvature">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 179: </strong>Normal and geodesic curvature</summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.12</span></a>) we have <span class="math display">\[
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>1.12</span></a>) we have <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa_{n} \mathbf{N}+ \kappa_{g} (\mathbf{N}\times \dot{{\pmb{\gamma}}})
 \]</span> for <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> and scalars <span class="math inline">\(\kappa_n , \kappa_g \in \mathbb{R}\)</span>. We call</p>
 <ul>
@@ -4875,26 +4868,26 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 \dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}
 \]</span> when <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>. Set <span id="eq-theorem-normal-curvature-1"><span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) := \mathbf{N}( {\pmb{\gamma}}(t)) \,.
-\tag{4.16}\]</span></span> By definition of differential we have <span id="eq-theorem-normal-curvature-2"><span class="math display">\[
+\tag{1.16}\]</span></span> By definition of differential we have <span id="eq-theorem-normal-curvature-2"><span class="math display">\[
 d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) = \dot{\widetilde{{\pmb{\gamma}}}}(t)  \,.
-\tag{4.17}\]</span></span> Note that <span class="math display">\[
+\tag{1.17}\]</span></span> Note that <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) \cdot \dot{{\pmb{\gamma}}}(t) = 0 \,,
 \]</span> since <span class="math inline">\(\mathbf{N}\)</span> is normal to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}}(\mathcal{S})\)</span>. Differentiating the above expression we get <span class="math display">\[\begin{align*}
 0 &amp; = \frac{d}{dt} \left( \widetilde{{\pmb{\gamma}}}(t) \cdot \dot{{\pmb{\gamma}}}(t) \right) \\
   &amp; = \widetilde{{\pmb{\gamma}}}(t) \cdot \ddot{{\pmb{\gamma}}}(t)  + \dot{\widetilde{{\pmb{\gamma}}}}(t) \cdot \dot{{\pmb{\gamma}}}(t)   \\
   &amp; = \mathbf{N}({\pmb{\gamma}}(t)) \cdot \ddot{{\pmb{\gamma}}}(t)  + d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  
-\end{align*}\]</span> where in the last equation we used (<a href="#eq-theorem-normal-curvature-1" class="quarto-xref"><span>4.16</span></a>) and (<a href="#eq-theorem-normal-curvature-2" class="quarto-xref"><span>4.17</span></a>). Hence <span id="eq-theorem-normal-curvature-3"><span class="math display">\[
+\end{align*}\]</span> where in the last equation we used (<a href="#eq-theorem-normal-curvature-1" class="quarto-xref"><span>1.16</span></a>) and (<a href="#eq-theorem-normal-curvature-2" class="quarto-xref"><span>1.17</span></a>). Hence <span id="eq-theorem-normal-curvature-3"><span class="math display">\[
 - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  =
 \mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t)   \,.
-\tag{4.18}\]</span></span> By definition of Weingarten and Gauss map we get <span id="eq-theorem-normal-curvature-4"><span class="math display">\[
+\tag{1.18}\]</span></span> By definition of Weingarten and Gauss map we get <span id="eq-theorem-normal-curvature-4"><span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) = - d_{\mathbf{p}} \mathcal{G} (\dot{{\pmb{\gamma}}}(t)) =  
 - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \,.
-\tag{4.19}\]</span></span> Therefore, using (<a href="#eq-theorem-normal-curvature-3" class="quarto-xref"><span>4.18</span></a>) and (<a href="#eq-theorem-normal-curvature-4" class="quarto-xref"><span>4.19</span></a>), we infer <span class="math display">\[\begin{align*}
+\tag{1.19}\]</span></span> Therefore, using (<a href="#eq-theorem-normal-curvature-3" class="quarto-xref"><span>1.18</span></a>) and (<a href="#eq-theorem-normal-curvature-4" class="quarto-xref"><span>1.19</span></a>), we infer <span class="math display">\[\begin{align*}
 II_{\mathbf{p}} (\dot{{\pmb{\gamma}}}(t) , \dot{{\pmb{\gamma}}}(t) ) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
                             &amp; = - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
                             &amp; = \mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t) \\
                             &amp; = \kappa_n \,,
-\end{align*}\]</span> where in the last equality we used (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.13</span></a>).<p></p>
+\end{align*}\]</span> where in the last equality we used (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>1.13</span></a>).<p></p>
 <p><em>Part 2.</em> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span> and <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,.
 \]</span> Differentiating the above expression we get <span class="math display">\[
@@ -4910,23 +4903,21 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 </div></details>
 </div>
 <div id="example-curves-on-sphere" class="Example" title="Curves on the sphere">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 181: </strong>Curves on the sphere</summary><div>
-<p>Consider the chart for the sphere <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 181: </strong>Curves on the sphere</summary><div>Consider the chart for the sphere <span class="math display">\[
 {\pmb{\sigma}}(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
 \]</span> Show that <span class="math display">\[
 \kappa_{n}(t)=1
-\]</span> for all unit speed curves on the sphere.</p>
-<blockquote class="blockquote">
+\]</span> for all unit speed curves on the sphere.<p></p>
 <p><em>Solution.</em> We have computed in Example <a href="chap_4.html#example-sphere-principal">174</a> that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathcal{F}_2 = \sin^{2}(v) du^2 + dv^2
 \]</span> Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a unit speed curve on the sphere, that is, <span id="eq-sphere-normal-curvature"><span class="math display">\[
 {\pmb{\gamma}}(t)=\sigma(u(t), v(t)) \,.
-\tag{4.20}\]</span></span> By Theorem <a href="chap_4.html#theorem-normal-curvature">180</a> the normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\tag{1.20}\]</span></span> By Theorem <a href="chap_4.html#theorem-normal-curvature">180</a> the normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
 \kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
-\]</span> Differentiating (<a href="#eq-sphere-normal-curvature" class="quarto-xref"><span>4.20</span></a>) we get <span class="math display">\[\begin{align*}
+\]</span> Differentiating (<a href="#eq-sphere-normal-curvature" class="quarto-xref"><span>1.20</span></a>) we get <span class="math display">\[\begin{align*}
 \dot{{\pmb{\gamma}}}(t) &amp; = \frac{d}{dt} ( \cos(u(t)) \sin(v(t)), \sin(u(t)) \sin(v(t)), \cos(v(t)) ) \\
-&amp; = (-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
-&amp; \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v))
+       &amp; = (-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
+  &amp; \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v))
 \end{align*}\]</span> so that <span class="math display">\[
 \| \dot{{\pmb{\gamma}}}(t) \|^2 =  \sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
 \]</span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is unit speed, we also get <span class="math display">\[
@@ -4934,7 +4925,6 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 \]</span> showing that <span class="math display">\[
 \kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
 \]</span> as required.</p>
-</blockquote>
 </div></details>
 </div>
 <p>The normal curvature <span class="math inline">\(\kappa_n\)</span> is related to the principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>.</p>
@@ -4958,7 +4948,7 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 \mu = \sin(\theta) \,.
 \]</span> Hence <span id="eq-euler-thm-proof"><span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \cos(\theta) \mathbf{t}_1 + \sin(\theta) \mathbf{t}_2 \,.
-\tag{4.21}\]</span></span> In particular, we can take the scalar product of (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.21</span></a>) with <span class="math inline">\(\mathbf{t}_1\)</span> to get <span class="math display">\[
+\tag{1.21}\]</span></span> In particular, we can take the scalar product of (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>1.21</span></a>) with <span class="math inline">\(\mathbf{t}_1\)</span> to get <span class="math display">\[
 \cos(\theta) = \lambda = \dot{{\pmb{\gamma}}}(t) \cdot \mathbf{t}_1 \,.
 \]</span> Since <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span> are unit vectors, from the above equation we conclude that <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span>. In addition, recall that <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, \quad
@@ -4968,7 +4958,7 @@ II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\ma
 II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) \cdot \mathbf{t}_2 = \kappa_1  \mathbf{t}_1 \cdot \mathbf{t}_2 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_1 = \kappa_2  \mathbf{t}_2 \cdot \mathbf{t}_1 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_2 = \kappa_2 \left\| \mathbf{t}_2 \right\|^2 = \kappa_2 \\
-\end{align*}\]</span> By Theorem <a href="chap_4.html#theorem-normal-curvature">180</a>, equation (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.21</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> By Theorem <a href="chap_4.html#theorem-normal-curvature">180</a>, equation (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>1.21</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
 \kappa_n &amp; = {II}_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) \\
 &amp; = \cos^2(\theta) \, II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1)  +  \cos(\theta) \sin(\theta) \,  II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) \\
 &amp; \,\,\,\, + \sin(\theta)\cos(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1)  + \sin^2(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2)  \\
@@ -5000,13 +4990,14 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 </div></details>
 </div>
 </section>
-<section id="local-shape-of-a-surface" class="level3" data-number="4.13.4">
-<h3 data-number="4.13.4" class="anchored" data-anchor-id="local-shape-of-a-surface"><span class="header-section-number">4.13.4</span> Local shape of a surface</h3>
+</section>
+<section id="local-shape-of-a-surface" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="local-shape-of-a-surface"><span class="header-section-number">1.14</span> Local shape of a surface</h2>
 <p>The principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> determine the maximum and minimum curvature of a surface <span class="math inline">\(\mathcal{S}\)</span>, see Corollary <a href="chap_4.html#corollary-euler-thm">183</a>. Hence we can study the local shape of <span class="math inline">\(\mathcal{S}\)</span> in function of <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>.</p>
 <div id="theorem-local-surface" class="Theorem" title="Local structure of surfaces">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 185: </strong>Local structure of surfaces</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. In the vicinity of <span class="math inline">\(\mathbf{p}\)</span> the surface <span class="math inline">\(\mathcal{S}\)</span> is approximated by the quadric surface of equation <span id="eq-local-structure"><span class="math display">\[
 z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) \,,
-\tag{4.22}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
+\tag{1.22}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-52" class="Proof">
@@ -5014,13 +5005,13 @@ z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) 
 \mathbf{t}_1 = (1,0,0) \,, \quad
 \mathbf{t}_2 = (0,1,0) \,, \quad
 \mathbf{N}= (0,0,1) \,.
-\tag{4.23}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Up to reparametrizing, we can assume that <span class="math display">\[
+\tag{1.23}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Up to reparametrizing, we can assume that <span class="math display">\[
 {\pmb{\sigma}}(0,0)  = \mathbf{p}= {\pmb{0}}\,.
 \]</span> As <span class="math inline">\(\mathbf{N}= (0,0,1)\)</span>, it follows that <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is the <span class="math inline">\(xy\)</span>-plane <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 = \{ (x,y,0) \, \colon \,x, y \in \mathbb{R}\} \, .
 \]</span> Since <span class="math inline">\(\{{\pmb{\sigma}}_u ,{\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, we have that for each <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> there exist <span class="math inline">\((s,t) \in \mathbb{R}^2\)</span> such that <span id="eq-theorem-local-surface-1"><span class="math display">\[
 (x,y,0) = s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \,,
-\tag{4.24}\]</span></span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. The Taylor approximation of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span> is <span class="math display">\[\begin{align*}
+\tag{1.24}\]</span></span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. The Taylor approximation of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span> is <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}(s,t) &amp; = {\pmb{\sigma}}(0,0) + s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \\
           &amp; \qquad + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R \,, \\
           &amp; = (x,y,0) + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R
@@ -5033,7 +5024,7 @@ z &amp; := \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t
 \mathbf{v}:=  s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  \,.
 \]</span> By Theorem <a href="chap_4.html#theorem-sff-chart">156</a> we have <span class="math display">\[
 L s^2  + 2M st + N t^2  = II_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) \cdot \mathbf{v}\,.
-\]</span> On the other hand, using (<a href="#eq-theorem-local-surface" class="quarto-xref"><span>4.23</span></a>) and (<a href="#eq-theorem-local-surface-1" class="quarto-xref"><span>4.24</span></a>) we get <span class="math display">\[
+\]</span> On the other hand, using (<a href="#eq-theorem-local-surface" class="quarto-xref"><span>1.23</span></a>) and (<a href="#eq-theorem-local-surface-1" class="quarto-xref"><span>1.24</span></a>) we get <span class="math display">\[
 \mathbf{v}= s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  = (x,y,0) = x \mathbf{t}_1 + y \mathbf{t}_2 \,.
 \]</span> Since the Weingarten map is linear we get <span class="math display">\[\begin{align*}
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) &amp; = x  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) + y  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \\
@@ -5057,16 +5048,16 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 <ul>
 <li><p><strong>Elliptic</strong> if <span class="math display">\[
 \kappa_1(\mathbf{p}) &gt; 0 \,, \, \kappa_2(\mathbf{p}) &gt; 0 \quad \mbox{ or } \quad  \kappa_1(\mathbf{p}) &lt; 0 \,, \, \kappa_2(\mathbf{p}) &lt; 0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.22</span></a>) is the equation of an <strong>elliptic paraboloid</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>1.22</span></a>) is the equation of an <strong>elliptic paraboloid</strong>.</p></li>
 <li><p><strong>Hyperbolic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})&lt;0&lt;\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{2}(\mathbf{p})&lt;0&lt; \kappa_{1}(\mathbf{p})
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.22</span></a>) is the equation of a <strong>hyperbolic paraboloid</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>1.22</span></a>) is the equation of a <strong>hyperbolic paraboloid</strong>.</p></li>
 <li><p><strong>Parabolic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{2}(\mathbf{p}) \neq 0, \, \kappa_{1}(\mathbf{p})=0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.22</span></a>) is the equation of a <strong>parabolic cylinder</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>1.22</span></a>) is the equation of a <strong>parabolic cylinder</strong>.</p></li>
 <li><p><strong>Planar</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.22</span></a>) is the equation of a <strong>plane</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>1.22</span></a>) is the equation of a <strong>plane</strong>.</p></li>
 </ul>
 </div></details>
 </div>
@@ -5085,16 +5076,14 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
+Figure&nbsp;1.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>
 <div id="Example-187" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 187</strong></summary><div>
-<p>Consider the surface chart <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 187</strong></summary><div>Consider the surface chart <span class="math display">\[
 {\pmb{\sigma}}(u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
-\]</span> Show that <span class="math inline">\(\mathbf{p}= {\pmb{\sigma}}(1,0)\)</span> is an elliptic point. Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is approximated by an <em>elliptic paraboiloid</em> in the vicinity of <span class="math inline">\(\mathbf{p}\)</span>.</p>
-<blockquote class="blockquote">
+\]</span> Show that <span class="math inline">\(\mathbf{p}= {\pmb{\sigma}}(1,0)\)</span> is an elliptic point. Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is approximated by an <em>elliptic paraboiloid</em> in the vicinity of <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
 <p><em>Solution.</em> In Example <a href="chap_4.html#example-weingarten-2">161</a> we have shown that the Weingarten matrix of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathcal{W}
 =
@@ -5120,12 +5109,10 @@ Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is 
 \kappa_1(\mathbf{p}) = 3^{-\frac32} \,, \quad
 \kappa_2(\mathbf{p}) = 3^{-\frac12} \,. \quad
 \]</span> Since <span class="math inline">\(\kappa_1(\mathbf{p}) &gt; 0\)</span> and <span class="math inline">\(\kappa_2(\mathbf{p}) &gt; 0\)</span> we have that <span class="math inline">\(\mathbf{p}\)</span> is an elliptic point.</p>
-</blockquote>
 </div></details>
 </div>
-</section>
-<section id="umbilical-points" class="level3" data-number="4.13.5">
-<h3 data-number="4.13.5" class="anchored" data-anchor-id="umbilical-points"><span class="header-section-number">4.13.5</span> Umbilical points</h3>
+<section id="umbilical-points" class="level3" data-number="1.14.1">
+<h3 data-number="1.14.1" class="anchored" data-anchor-id="umbilical-points"><span class="header-section-number">1.14.1</span> Umbilical points</h3>
 <div id="umbilical-point" class="Definition" title="Umbilical point">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 188: </strong>Umbilical point</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1(\mathbf{p})\)</span> and <span class="math inline">\(\kappa_2(\mathbf{p})\)</span> its principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>. We say that <span class="math inline">\(\mathbf{p}\)</span> is an <strong>umbilic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
@@ -5149,26 +5136,26 @@ Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is 
 <details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
 <p>By assumption we have <span id="eq-theorem-umbilic"><span class="math display">\[
 \kappa_1 (\mathbf{p}) = \kappa_2 (\mathbf{p}) = \kappa (\mathbf{p}) \,, \quad \forall \, \mathbf{p}\in \mathcal{S}\,.
-\tag{4.25}\]</span></span></p>
+\tag{1.25}\]</span></span></p>
 <p><em>Step 1. <span class="math inline">\(\kappa\)</span> is constant.</em></p>
 <p>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">167</a> the principal vectors <span class="math inline">\(\{\mathbf{t}_1,\mathbf{t}_2\}\)</span> are an orthonormal basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Hence, for each <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
 \mathbf{v}= \lambda \mathbf{t}_1 + \mu \mathbf{t}_2 \,.
-\]</span> Using the linearity of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> and (<a href="#eq-theorem-umbilic" class="quarto-xref"><span>4.25</span></a>) we obtain <span class="math display">\[\begin{align*}
+\]</span> Using the linearity of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> and (<a href="#eq-theorem-umbilic" class="quarto-xref"><span>1.25</span></a>) we obtain <span class="math display">\[\begin{align*}
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) &amp; = \lambda \mathcal{W}_{\mathbf{p},\mathcal{S}} ( \mathbf{t}_1) + \mu  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \\
                      &amp; = \lambda \kappa \mathbf{t}_1 + \mu \kappa \mathbf{t}_2 \\
                      &amp; = \kappa \mathbf{v}\,,
 \end{align*}\]</span> showing that <span id="eq-theorem-umbilic-1"><span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) = \kappa \mathbf{v}\,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
-\tag{4.26}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart of <span class="math inline">\(\mathcal{S}\)</span>. Up to restricting <span class="math inline">\({\pmb{\sigma}}\)</span>, we can assume that <span class="math inline">\(U\)</span> is connected. By Lemma <a href="chap_4.html#lemma-weingarten">158</a> we have <span class="math display">\[
+\tag{1.26}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart of <span class="math inline">\(\mathcal{S}\)</span>. Up to restricting <span class="math inline">\({\pmb{\sigma}}\)</span>, we can assume that <span class="math inline">\(U\)</span> is connected. By Lemma <a href="chap_4.html#lemma-weingarten">158</a> we have <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = - \mathbf{N}_{u} \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = - \mathbf{N}_{v} \,.
-\]</span> On the other hand, by (<a href="#eq-theorem-umbilic-1" class="quarto-xref"><span>4.26</span></a>) we infer <span class="math display">\[
+\]</span> On the other hand, by (<a href="#eq-theorem-umbilic-1" class="quarto-xref"><span>1.26</span></a>) we infer <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = \kappa {\pmb{\sigma}}_u \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = \kappa {\pmb{\sigma}}_v \,,
 \]</span> from which <span id="eq-theorem-umbilic-2"><span class="math display">\[
 \mathbf{N}_{u} = - \kappa {\pmb{\sigma}}_u \,, \quad
 \mathbf{N}_{v} = - \kappa {\pmb{\sigma}}_v \,.
-\tag{4.27}\]</span></span> Thus <span class="math display">\[
+\tag{1.27}\]</span></span> Thus <span class="math display">\[
 \left( \kappa {\pmb{\sigma}}_u \right)_v = - \left( \mathbf{N}_u \right)_v =
 - \left( \mathbf{N}_v \right)_u = \left( \kappa {\pmb{\sigma}}_v \right)_u \,.
 \]</span> Moreover <span class="math display">\[\begin{align*}
@@ -5176,12 +5163,12 @@ Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is 
 \left( \kappa {\pmb{\sigma}}_v \right)_u &amp; = \kappa_u {\pmb{\sigma}}_v + \kappa {\pmb{\sigma}}_{uv} \,,
 \end{align*}\]</span> so that <span id="eq-theorem-umbilic-3"><span class="math display">\[
 \kappa_v {\pmb{\sigma}}_u = \kappa_u {\pmb{\sigma}}_v \,.
-\tag{4.28}\]</span></span> Recall that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, being <span class="math inline">\(\mathcal{S}\)</span> regular. Hence the linear combination at (<a href="#eq-theorem-umbilic-3" class="quarto-xref"><span>4.28</span></a>) must be trivial, implying <span class="math display">\[
+\tag{1.28}\]</span></span> Recall that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, being <span class="math inline">\(\mathcal{S}\)</span> regular. Hence the linear combination at (<a href="#eq-theorem-umbilic-3" class="quarto-xref"><span>1.28</span></a>) must be trivial, implying <span class="math display">\[
 \kappa_u = \kappa_v = 0 \,.
 \]</span> Since <span class="math inline">\(U\)</span> is connected, the above implies that <span class="math inline">\(\kappa\)</span> is constant.</p>
 <p><em>Step 2.</em> We have the two cases <span class="math inline">\(\kappa = 0\)</span> and <span class="math inline">\(\kappa \neq 0\)</span>.</p>
 <ul>
-<li><p>Assume <span class="math inline">\(\kappa = 0\)</span>. By (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.27</span></a>) we get that <span class="math display">\[
+<li><p>Assume <span class="math inline">\(\kappa = 0\)</span>. By (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>1.27</span></a>) we get that <span class="math display">\[
 \mathbf{N}_u = \mathbf{N}_v = {\pmb{0}}\,,
 \]</span> which implies <span class="math inline">\(\mathbf{N}\)</span> is constant. Therefore <span class="math display">\[
 \left( \mathbf{N}\cdot {\pmb{\sigma}}\right)_u = \mathbf{N}_u \cdot {\pmb{\sigma}}+ \mathbf{N}\cdot {\pmb{\sigma}}_u = 0  
@@ -5192,7 +5179,7 @@ Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is 
 \]</span> This shows <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is contained in the plane <span class="math display">\[
 \pi = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{N}\cdot \mathbf{x}= c \} \,.
 \]</span></p></li>
-<li><p>Assume <span class="math inline">\(\kappa \neq 0\)</span>. Condition (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.27</span></a>) implies <span class="math display">\[
+<li><p>Assume <span class="math inline">\(\kappa \neq 0\)</span>. Condition (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>1.27</span></a>) implies <span class="math display">\[
 \mathbf{N}= -\kappa {\pmb{\sigma}}+ \mathbf{a}
 \]</span> for some <span class="math inline">\(\mathbf{a} \in \mathbb{R}^3\)</span> constant vector. Thus <span class="math display">\[
 \left\|  {\pmb{\sigma}}- \frac{1}{\kappa} \mathbf{a}  \right\|^2 =
@@ -5783,13 +5770,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap_3.html" class="pagination-link" aria-label="Topology">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topology</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/chap_5.html" class="pagination-link" aria-label="Plots with Python">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/chap_2.html" class="pagination-link" aria-label="Curvature and Torsion">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

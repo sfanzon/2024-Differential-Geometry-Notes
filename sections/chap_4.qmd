@@ -6392,7 +6392,7 @@ $$
 $$
 
 
-> *Solution.* We compute
+*Solution.* We compute
 \begin{align*}
 \sss_u & = ( \cos(v), \sin(v), 0  )  \\
 \sss_v & = ( - u \sin(v), u \cos(v), \lambda  )  \\
@@ -6571,7 +6571,7 @@ $$
 \sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
 $$
 
-> *Solution*. Start by computing the first fundamental form:
+*Solution*. Start by computing the first fundamental form:
 \begin{align*}
 \sss_{u} & =(1,1,2u) \\
 \sss_{v} & =(-1,1,2v) \\  
@@ -7314,7 +7314,7 @@ K = H = \kappa_1 = \kappa_2 =1 \,, \quad \mathbf{t}_1 = \sss_u \,, \quad
 $$ 
 
 
->*Solution.* We compute
+*Solution.* We compute
 \begin{align*}
 \sss_u & = (-\sin(u)\sin(v), \cos(u)\sin(v),0) \\
 \sss_v & = (\cos(u)\cos(v), \sin(u)\cos(v), - \sin(v)) \\
@@ -7743,7 +7743,7 @@ $$
 $$ 
 for all unit speed curves on the sphere.
 
->*Solution.* 
+*Solution.* 
 We have computed in Example \ref{example-sphere-principal} that the 
 second fundamental form of $\sss$ is
 $$
@@ -7910,7 +7910,7 @@ $$
 
 
 
-### Local shape of a surface
+## Local shape of a surface
 
 
 
@@ -8083,7 +8083,7 @@ $$
 $$
 Show that $\pp = \sss(1,0)$ is an elliptic point. Therefore $\sss$ is approximated by an *elliptic paraboiloid* in the vicinity of $\pp$.
 
-> *Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
+*Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
 $$
 \WW 
  = 

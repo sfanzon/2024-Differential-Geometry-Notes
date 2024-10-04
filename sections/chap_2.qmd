@@ -70,11 +70,11 @@ $$
 
 Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
 $$
-\g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0)
+\g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0^2)
 $$
-where the remainder $o(t_0)$ is such that 
+where the remainder $o(t_0^2)$ is such that 
 $$
-\lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
+\lim_{t_0 \to 0} \ \frac{o(t_0^2)}{t_0^2} = 0 \,.
 $$
 Therefore, discarding the remainder, 
 $$
@@ -119,7 +119,7 @@ $$
 
 
 
-Note that $\kappa(t)$ is a function of time. Therefore the curvature of $\g$ can change from point to point.
+Note that $\kappa(t)$ is a function of time: The curvature of $\g$ can change from point to point.
 
 
 We now define curvature for curves which are regular, but not necessarily unit speed.
@@ -131,7 +131,7 @@ Let $\g \ \colon (a,b) \to \R^n$ be a regular. The **curvature** of $\g$ at $\g(
 $$
 \kappa^\g(t) :=   \norm{\ddtg (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
 $$
-where $\tg$ is a unit speed reparametrization of $\g$, with $\g = \tg \circ \f$.
+where $\tg$ is a unit speed reparametrization of $\g$, that is, $\g = \tg \circ \f$ for some diffeomorphism $\f$.
 
 :::
 
@@ -140,8 +140,9 @@ where $\tg$ is a unit speed reparametrization of $\g$, with $\g = \tg \circ \f$.
 
 The above definition is well posed:
 
-- Since $\g$ is regular, there exist a unit speed reparametrization $\tg$ of $\g$.
-- If $\hat{\g}$ is another unit speed reaprametrization of $\g$, with $\g = \hat{\g} \circ \hat\f$, then
+1. Since $\g$ is regular, there exist a unit speed reparametrization $\tg$ of $\g$.
+
+2. If $\hat{\g}$ is another unit speed reparametrization of $\g$, with $\g = \hat{\g} \circ \hat\f$, then
 $$
 \kappa^{\g} (t) =   \norm{\ddot{\hat\g} (\hat\f(t))} \,,
 $$
@@ -206,16 +207,19 @@ $$
 $$ 
 is defined via unit speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
 
-- We find a unit speed reparametrization $\tg$ of the regular curve $\g$
-- This can be done by computing $s$ the arc-length of $\g$, and then defining 
+1. Find a unit speed reparametrization $\tg$ of the regular curve $\g$
+
+2. This can be done by computing $s$ the arc-length of $\g$, and then defining 
 $$
 \tg:= \g \circ \psi \,, \quad \psi:=s^{-1} 
 $$
-- Then we compute 
+
+3. Compute 
 $$
 \kappa^{\tg}(t) = \norm{\ddtg}(t)
 $$
-- We obtain the curvature of $\g$ by
+
+4. Obtain the curvature of $\g$ by
 $$
 \kappa^\g (t)= \kappa^{\tg} (t) 
 $$
@@ -453,13 +457,20 @@ Consider two ordered basis of $\R^3$
 $$
 B = (\bb_1,\bb_2,\bb_3) \,, \quad \tilde{B} = (\widetilde{\bb}_1,\widetilde{\bb}_2,\widetilde{\bb}_3) \,.
 $$
-We say that $B$ and $\widetilde{B}$ have the same orientation if the matrix of change of basis has positive determinant.
+We say that $B$ and $\widetilde{B}$ have the same orientation if the matrix of change of basis has positive determinant, that is, if 
+$$
+\det P > 0
+$$
+where $P \in \R^{3 \times 3}$ is such that
+$$
+\tilde{B} = P^{-1} B P \,.
+$$
 
 :::
 
 When two basis $B$ and $\widetilde{B}$ have the same orientation, we write
 $$
-\bb \sim \widetilde{\bb} \,.
+B \sim \widetilde{B} \,.
 $$
 The above is clearly an equivalence relation on the set of ordered basis. Therefore the set of ordered basis of $\R^3$ can be decomposed into equivalence classes.
 Since the determinant of the matrix of change of basis can only be positive or negative, there are only two equivalence classes.
@@ -493,8 +504,8 @@ Then:
 
 For a basis $B$ of $\R^3$ we say that:
 
-- $B$ is a **positive basis** if it belongs to the class of $e$.
-- $B$ is a **negative basis** if it does not belong to the class of $e$.
+- $B$ is a **positive basis** if it belongs to the class of $E$.
+- $B$ is a **negative basis** if it does not belong to the class of $E$.
 :::
 
 
@@ -512,7 +523,7 @@ $$
 $$
 The matrix of change of variables between $\widetilde{E}$ and $E$ is 
 $$
-(\ee_2 | \ee_1 | \ee_3 ) = \left(
+P = (\ee_2 | \ee_1 | \ee_3 ) = \left(
 \begin{array}{ccc}
 0 & 1 & 0 \\ 
 1 & 0 & 0 \\
@@ -520,7 +531,11 @@ $$
 \end{array}
 \right)
 $$
-and the latter has negative determinant. Thus $\widetilde{E}$ does not belong to the class of $E$, and is therefore a negative basis. 
+and clearly
+$$
+\det P = - 1 < 0 \,.
+$$
+Thus $\widetilde{E}$ does not belong to the class of $E$, and is therefore a negative basis. 
 :::
 
 
@@ -545,7 +560,8 @@ w_1 & w_2 & w_3 \\
 \end{array}
 \right| \,, \quad \forall \, \ww \in \R^3 \,.
 $${#eq-def-vector-product}
-Here $|a_{ij}|$ denotes the determinant of the matrix $(a_{ij})$, and 
+Here $|A|$ denotes the determinant of the matrix $A = (a_{ij})_{ij}$, and 
+$u_i$, $v_i$, $w_i$ are the components of $\uu$, $\vv$, $\ww$, i.e.
 $$
 \uu= \sum_{i=1}^3 u_i \ee_i \,, \quad
 \vv= \sum_{i=1}^3 v_i \ee_i \,, \quad
@@ -659,9 +675,9 @@ from which we conclude.
 
 
 
+::: Notation
 
-
-Sometimes we will denote formula (@eq-formula-cross-product) by
+In some cases we will denote formula (@eq-formula-cross-product) by
 $$
 \uu \times \vv = 
 \left|
@@ -672,6 +688,8 @@ v_1 & v_2 & v_3
 \end{array} 
 \right| \,.
 $$
+
+:::
 
 Let us collect some crucial properties of the vector product.
 
@@ -773,10 +791,10 @@ where $A$ is the area of the parallelogram with sides $\uu$ and $\vv$.
 ![For $\uu,\vv$ linearly independent, $\uu \times \vv$ is orthogonal to the plane generated by $\uu,\vv$. Moreover $|\uu \times \vv|$ is the area of the parallelogram with sides $\uu,\vv$, and $(\uu,\vv,\uu \times \vv)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
 
 
-Let us summarize the above remark.
+We have therefore proven the following theorem.
 
-::: Remark
-### Summary: Properties of $\uu \times \vv$
+::: Theorem
+### Geometric Properties of vector product
 
 Let $\uu,\vv \in \R^3$ be linearly independent. Then
 
@@ -1072,7 +1090,7 @@ Then
 $$
 \tg = \g
 $$
-up to rotations and translations.
+up to rigid motions.
 :::
 
 
@@ -1085,13 +1103,13 @@ We do not prove the above theorem. For a proof, see Theorem 2.2.6 in [@pressley]
 
 ## Space curves
 
-In this section we deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compare to the plane case:
+In this section we deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compared to the plane case:
 
 - A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*.
 
 - We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eeta$ space curves such that 
 $$
-\kappa^{\g} = \kappa^{\eeta} \,, \quad  \g \neq \eeta \,,
+\kappa^{\g} = \kappa^{\eeta} \quad \text{ but } \quad  \g \neq \eeta \,,
 $$
 that is, $\g$ and $\eeta$ have same curvature but are different curves.
 
@@ -1114,9 +1132,9 @@ $$
 $$
 If we now choose $R=2$ and we impose that $\kappa^\g = \kappa^\eeta$ we get
 $$
-\frac1R = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
+\frac12 = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
 $$
-Therefore choosing $S=1$ and $H=1$ yields 
+Choosing $S=1$ and $H=1$ yields 
 $$
 \kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,..
 $$
@@ -1126,6 +1144,22 @@ $$
 Therefore curvature is not enough for characterizing space curves, and we need a new quantity. 
 As we did with curvature, we start by considering the simpler case of unit speed curves. We will also
 need to assume that the curvature is never zero.
+
+
+
+::: Definition
+### Principal normal vector
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+The **principal normal vector** to $\g$ at $\g(t)$ is 
+$$
+\nn(t) := \frac{1}{\kappa (t)} \, \ddg(t) \,.
+$$
+:::
+
 
 
 ::: Definition
@@ -1644,6 +1678,19 @@ is called **Frenet frame** of $\g$.
 
 :::
 
+
+::: Notation
+For $\g \colon (a,b) \to \R^3$ unit speed the **tangent vector** is defined by
+$$
+\ttt := \dg
+$$
+Therefore the Frenet frame can be equivalently written as
+$$
+\{ \ttt, \nn, \bb \} \,.
+$$
+
+:::
+
 We can also define the Frenet frame for regular curves with non-vanishing curvature.
 
 ::: Definition
@@ -1656,11 +1703,11 @@ Frenet frame of $\g$ is defined as the Frenet frame of a unit speed reparametriz
 :::Remark
 We should check that the above definition is well-posed: 
 
-- Note that $\tg$ is unit speed. Moreover the curvature of ${\kappa}^{\tg}$ is given by
+- $\tg$ is unit speed by assumption. By definition the curvature of ${\kappa}^{\tg}$ is given by
 $$
 {\kappa}^{\tg} (t) = {\kappa}^{\g} (\f(t))
 $$
-for some $\f$ diffeomorphism. Therefore ${\kappa}^{\tg} \neq 0$ as we are assuming ${\kappa}^{\g} \neq 0$. Therefore the Frenet-Frame of $\tg$ is well defined.
+for some $\f$ diffeomorphism. Therefore ${\kappa}^{\tg} \neq 0$ as we are assuming ${\kappa}^{\g} \neq 0$, and the Frenet-Frame of $\tg$ is well defined.
 
 - If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
 :::
@@ -1672,8 +1719,8 @@ From the Frenet frame we can define the Frenet-Serret equations.
 
 Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
 \begin{align*}  
-\ddg & = \kappa \nn \\
-\dot{\nn} & = - \kappa \dg + \tau \bb \\
+\dot{\ttt} & = \kappa \nn \\
+\dot{\nn} & = - \kappa \ttt + \tau \bb \\
 \dot{\bb} & = -\tau \nn
 \end{align*}
 :::
@@ -1683,24 +1730,24 @@ Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-
 
 The first Frenet-Serret equation
 $$
-\ddg  = \kappa \nn
+\dot{\ttt}  = \kappa \nn
 $${#eq-proof-frenet-2}
-holds by definition of $\nn$ and $\kappa$. The third Frenet-Serret equation
+holds by definition of $\ttt$, $\nn$ and $\kappa$. The third Frenet-Serret equation
 $$
 \dot{\bb} = - \tau \nn
 $${#eq-proof-frenet-3}
 holds by Proposition \ref{proposition-binormal}. Now, recall that in Proposition \ref{proposition-positive-basis} we have proven
 $$
-\bb = \dg \times \nn \,, \quad
-\nn = \bb \times \dg \,, \quad
-\dg = \nn \times \bb \,.
+\bb = \ttt \times \nn \,, \quad
+\nn = \bb \times \ttt \,, \quad
+\ttt = \nn \times \bb \,.
 $${#eq-proof-frenet-1}
 Differentiating the second equation in (@eq-proof-frenet-1) and using (@eq-proof-frenet-2)-(@eq-proof-frenet-3) we get
 \begin{align*}
-\dot{\nn} & = \dot{\bb} \times \dg + \bb \times \ddg & \\
-          & = ( - \tau \nn \times \dg) + \bb \times \kappa \nn \\
-          & = \tau ( \dg \times \nn ) - \kappa (\nn \times \bb ) \\
-          & = \tau \bb - \kappa \dg \,,
+\dot{\nn} & = \dot{\bb} \times \ttt + \bb \times \dot{\ttt} & \\
+          & = ( - \tau \nn \times \ttt) + \bb \times \kappa \nn \\
+          & = \tau ( \ttt \times \nn ) - \kappa (\nn \times \bb ) \\
+          & = \tau \bb - \kappa \ttt \,,
 \end{align*}
 where in the last equality we used the first and third equations in
 (@eq-proof-frenet-1). The above is exactly the second Frenet-Serret equation.
@@ -1710,9 +1757,9 @@ where in the last equality we used the first and third equations in
 
 ::: Remark
 
-We can write the Frenet-Serret ODE sysyem in vectorial form. To this end, introduce the matrix
+We can write the Frenet-Serret ODE sysyem in vectorial form. To this end, introduce the (time-dependent) matrix
 $$
-F : =
+F(t) : =
 \left(
 \begin{array}{ccc}
 0 & \kappa & 0 \\
@@ -1725,7 +1772,7 @@ It is immediate to check that the Frenet-Serret equations are equivalent to
 $$
 \left(
 \begin{array}{c}
-\ddg \\
+\dot{\ttt} \\
 \dot{\nn} \\
 \dot{\bb}
 \end{array}
@@ -1734,7 +1781,7 @@ $$
 F 
 \left(
 \begin{array}{c}
-\dg \\
+\ttt \\
 \nn \\
 \bb
 \end{array}
@@ -1791,7 +1838,8 @@ This shows that $\g$ is regular but not unit speed. We ask the second question i
 $$
 \mbox{Can we find a unit speed reparametrization of $\g$?}
 $$
-Let us try. We compute the arc length of $\g$ starting at $t_0 = 0$
+We know that all unit speed reparametrizations are of the form
+$\pm s + c$, where $s$ is the arc length and $c \in \R$. Therefore we compute the arc length of $\g$ starting at $t_0 = 0$
 $$
 s(t) := \int_0^t \norm{ \dg(u) } \, du = \sqrt{2} \, t \,.  
 $$
@@ -1805,24 +1853,24 @@ $$
 $$
 The next step in the diagram is
 $$
-\mbox{Compute Frenet frame $\{ \dg, \nn, \bb \}$ and curvature $\kappa$, torsion $\tau$}
+\mbox{Compute Frenet frame $\{ \ttt, \nn, \bb \}$ and curvature $\kappa$, torsion $\tau$}
 $$
 We compute
 \begin{align*}
-\dtg (t) & = \frac{1}{\sqrt{2}} \left(  -\sin \left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1    \right) \\
-\ddtg (t) & = \frac12 \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right)
+\ttt & = \dtg (t) = \frac{1}{\sqrt{2}} \left(  -\sin \left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1    \right) \\
+\dot{\ttt} & = \frac12 \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right)
 \end{align*}
 Therefore the curvature is
 $$
-\kappa (t) = \norm{ \ddtg(t) } = \frac12 \,.
+\kappa (t) = \norm{ \dot{\ttt} } = \frac12 \,.
 $$
 From the curvature we obtain the principal normal vector
 $$
-\nn(t) = \frac{1}{\kappa(t)} \, \ddtg(t) =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \,.
+\nn(t) = \frac{1}{\kappa(t)} \, \dot{\ttt} =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \,.
 $$
 We can now compute the binormal
 \begin{align*}
-\bb(t) & = \dtg \times \nn  \\
+\bb(t) & = \ttt \times \nn  \\
     & = \frac{1}{\sqrt{2}}
     \left|
     \begin{array}{ccc}
@@ -1835,7 +1883,7 @@ We can now compute the binormal
 \end{align*}
 We have therefore computed the Frenet frame of $\g$. This is given by
 \begin{align*}
-\dtg(t) & = \frac{1}{\sqrt{2}}  \left( -\sin\left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \\
+\ttt & = \frac{1}{\sqrt{2}}  \left( -\sin\left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \\
 \nn(t) & =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \\
 \bb(t) & = \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
 \end{align*}
@@ -1983,7 +2031,7 @@ holds.
 
 Let $\kappa, \tau \ \colon \R \to \R$ be smooth functions, with $\kappa>0$. Then:
 
-1. There exists aunit speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
+1. There exists a unit speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
 $$
 \kappa^{\g}(t) = \kappa(t) \,, \quad 
 \tau^{\g}(t) = \tau(t) \,,
@@ -2000,7 +2048,7 @@ Then
 $$
 \tg = \g
 $$
-up to rotations and translations.
+up to rigid motions.
 
 :::
 
@@ -2012,7 +2060,7 @@ Theorem \ref{theorem-characterization-space} is a very strong result. It is sayi
 
 1. If we prescribe curvature and torsion, then there exists a unit speed curve which has such curvature and torsion.
 
-2. If two unit speed curves have same curvature and torsion, then they must be the same curve, up to translations and rotations.
+2. If two unit speed curves have same curvature and torsion, then they must be the same curve, up to rigid motions.
 
 In other words, curvature and torsion fully characterize space curves. This result is the 3D counterpart of
 Theorem \ref{theorem-characterization-plane}, which said that signed curvature characterizes 
@@ -2044,7 +2092,7 @@ Therefore
 $$
 \kappa^{\g} = \kappa^{\tg} \,, \quad \tau^{\g} = \tau^{\tg}  \,,
 $$
-and by Theorem  \ref{theorem-characterization-space} we conclude that $\g$ is equal to  $\tg$ up to rotations and translations.
+and by Theorem  \ref{theorem-characterization-space} we conclude that $\g$ is equal to  $\tg$ up to rigid motions.
 
 :::
 

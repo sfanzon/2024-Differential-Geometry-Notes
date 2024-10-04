@@ -2550,14 +2550,22 @@ proving that $\tg$ is a unit speed reparametrization.
 :::
 
 
-::: Remark
-Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that the following are equivalent:
+::: Important
 
-1. Computing a unit speed reparametrization $\tg$ of $\g$,
+Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that a unit 
+speed reparametrization of $\g$ is given by
+$$
+\tg := \g (\psi) \,, \quad \psi := s^{-1}
+$$
+with $s$ arc length of $\g$.
 
-2. Computing $s^{-1}$ where $s$ is the arc-length of $\g$.
+:::
+
+
+::: Warning
 
 In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
+
 :::
 
 

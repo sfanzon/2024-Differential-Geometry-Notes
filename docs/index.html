@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sections/chap_1.html" rel="next">
+<link href="./sections/chap_4.html" rel="next">
 <link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -96,11 +96,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Goal {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,11 +112,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -120,23 +128,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -144,25 +144,25 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 </style>
 
@@ -241,8 +241,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sections/chap_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
+  <a href="./sections/chap_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -260,7 +260,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -330,7 +330,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">3 Oct 2024</p>
+      <p class="date">4 Oct 2024</p>
     </div>
   </div>
   
@@ -990,8 +990,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sections/chap_1.html" class="pagination-link" aria-label="Curves">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sections/chap_4.html" class="pagination-link" aria-label="Surfaces">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

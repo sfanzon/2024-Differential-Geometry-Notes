@@ -29,11 +29,12 @@ We start with an informal discussion. Suppose $\g$ is a straight line
 $$
 \g(t) = \mathbf{a} + t \mathbf{v}
 $$
-with $\mathbf{a}, \mathbf{v} \in \R^3$. The tangent vector to $\g$ is constant
+with $\mathbf{a}, \mathbf{v} \in \R^3$. Whichever the definition of curvature will be,
+we expect the curvature of a straight line to be zero. The tangent vector to $\g$ is constant
 $$
 \dg(t) =  \mathbf{v} \,.
 $$
-Whatever the definition of curvature will be, it has to hold that $\g$ has zero curvature in this case. If we further derive the tangent vector, we obtain
+If we further derive the tangent vector, we obtain
 $$
 \ddg(t) =  \zero \,.
 $$

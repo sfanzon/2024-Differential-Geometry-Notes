@@ -652,9 +652,10 @@ $$
 exists for all $n \geq 1$ and $t \in (a,b)$. 
 :::
 
-We will denote the first and second derivatives of $f$ as follows:
+We will denote the first, second and third derivatives of $f$ as follows:
 $$
-\dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
+\dot f :=  \frac{d f}{dt} \,, \quad \ddot f := \frac{d^2 f}{dt^2} \,, 
+\quad \dddot f := \frac{d^3 f}{dt^3} \,.
 $$
 
 
@@ -1934,6 +1935,19 @@ $$
 We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
 :::
 
+
+::: Remark
+
+Since $\f$ is invertible with smooth inverse, $\tg$ is 
+a reparametrization of $\g$
+$$
+\g(t) = \g( \f( \f^{-1}(t) ) ) = \tg ( \f^{-1}(t) ) \,, \quad 
+\forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
 ::: Remark
 
 1. Given a parametrized curve $\g$, this identifies a 1D shape $\Gamma \subset \R^n$ defined by
@@ -2074,14 +2088,15 @@ $$
 
 
 
-::: Important
-Reparametrizations are important for the following reason: For a curve $\g$ we wish to find a reparametrization 
-$\tg$ which is unit speed:
+## Unit-speed reparametrization
+
+
+For a curve $\g$ we wish to find a reparametrization $\tg$ which is unit speed:
 $$
 \norm{ \dtg } = 1 \,, \quad  \forall \, t \in (a,b) \,.
 $$
 We will see that this is possible if and only if the curve $\g$ is regular, in the sense of Definition \ref{definition-regular} below.
-:::
+
 
 
 
@@ -2090,12 +2105,12 @@ We will see that this is possible if and only if the curve $\g$ is regular, in t
 
 Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. We say that:
 
-- $\g(t_0)$ is a **regular point** if 
+1. $\g(t_0)$ is a **regular point** if 
 $$
 \dg(t_0) \neq 0 \,.
 $$
-- A point $\g(t_0)$ is **singular** if it is not regular.
-- The curve $\g$ is regular if every point of $\g$ is regular, that is,
+2. A point $\g(t_0)$ is **singular** if it is not regular.
+3. The curve $\g$ is regular if every point of $\g$ is regular, that is,
 $$
 \dg(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,. 
 $$
@@ -2151,14 +2166,14 @@ Consider the parabola
 $$
 \Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 < x < 1\} \,.
 $$
-This is parametrized by the curves $\g, \eeta \ \colon (-1,1) \to \R^2$ defined by
+Both curves $\g, \eeta \ \colon (-1,1) \to \R^2$
 $$
 \g (t) = (t,t^2) \,, \quad 
 \eeta(t) = (t^3, t^6) \,.
 $$
-We claim that $\eeta$ cannot be a reparametrization of $\g$.
+are parametrizations of $\Gamma$. However $\eeta$ is not a reparametrization of $\g$.
 
-Indeed, suppose by contradiction there exist a diffeomorphism 
+> Indeed, suppose by contradiction there exist a diffeomorphism 
 $$
 \phi \colon (-1,1) \to (-1,1) 
 $$
@@ -2190,10 +2205,10 @@ $$
 $$
 We notice a difference:
 
-- $\g$ is a regular parametrization, as the first component of $\dg$ is non-zero.
+- $\g$ is a regular parametrization, as the first component of $\dg$ is non-zero and so $\dg \neq 0$.
 - $\eeta$ is regular if and only if $t \neq 0$.
 
-Indeed if we animate the plots of the above parametrizations, we see that:
+If we animate the plots of the above parametrizations we see that:
 
 - The point $\g(t)$ moves with constant horizontal speed
 - The point $\eeta(t)$ is decelerating for $t < 0$, it **stops** at $t = 0$, and then accelerates again for $t>0$.
@@ -2245,23 +2260,19 @@ By the chain rule we have
 $$
 \dtg(t) = \frac{d}{dt}  \left(  \g (\f(t))  \right) = \dg (\f(t)) \dot\f(t) \,.
 $$
-Therefore
-$$
-\dtg(t) \neq 0 \quad \iff \quad \dg (\f(t)) \dot\f(t)  \neq 0 \,.
-$$ {#eq-regularity-invariant-1}
-But we are assuming that $\g$ is regular, so that 
-$$
-\dg (\f(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
-$$
-Moreover $\f$ is a diffeomorphism, so that 
+As $\f$ is a diffeomorphism, by Lemma \ref{lemma-diffeomorphism} it holds
 $$
 \dot \f (t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,,
 $$
-by Lemma \ref{lemma-diffeomorphism}. From (@eq-regularity-invariant-1) we conclude that 
+Therefore
 $$
-\dtg(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,, 
+\dtg(t) \neq 0 \quad \iff \quad \dg (\f(t)) \neq 0 \,.
+$$ {#eq-regularity-invariant-1}
+Since $\g$ is regular we infer
 $$
-proving that $\tg$ is regular.
+\dg (\f(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
+$$
+From (@eq-regularity-invariant-1) we conclude that $\tg$ is regular.
 :::
 
 
@@ -2311,21 +2322,17 @@ for some arbitrary $t_0 \in (a,b)$ fixed. Notice that
 $$
 \dot{s}(t) = \norm{ \dg (t) } \,.
 $$
-Therefore if $\g$ is regular we have
+Therefore
 $$
-\norm{ \dg (t) } \neq 0  \quad \implies \quad
+\g \, \text{ regular}  \quad \iff \quad
 \dot{s}(t) \neq 0 \,.
 $$
-It seems like $s$ could be a diffeomorphism! Indeed, we will prove that if $\g$ is regular then $s$ is a diffeomorphism, and all the unit speed reparametrizations of $\g$ are of the form
+In this case the arc-length $s$ is a diffeomorphism by the Inverse Function Theorem.
+As it turns out, all the unit speed reparametrizations of $\g$ are of the form
 $$
-\f = \pm s^{-1}  + c 
-$$ 
-with $s^{-1}$ the inverse of $s$ and $c \in \R$ constant. This essentially means that $s^{-1}$ is the *only* unit speed reparametrization, given that all the others are obtained either 
-
-- by constant time-shift $c$,
-- or by time reversal, taking $\phi = - s^{-1}$.
-
-These statements will be proved in Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} below.
+\tg = \g \circ \psi  \,, \qquad \psi := \pm s^{-1} + c
+$$
+The above statements will be proved in Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} below.
 
 
 
@@ -2334,15 +2341,14 @@ These statements will be proved in Theorem \ref{theorem-regular-unit-speed} and 
 
 Let $\g$ be a parametrized curve. They are equivalent:
 
-- $\g$ is regular,
-- $\g$ has a unit speed reparametrization.
+1. $\g$ is regular,
+2. $\g$ has a unit speed reparametrization.
 :::
 
 
 ::: Proof
 
-*Step 1. Direct implication.*  
-Assume $\g \ \colon (a,b) \to \R^n$ is regular, that is,
+*Step 1. Direct implication.*  Assume $\g \ \colon (a,b) \to \R^n$ is regular, that is,
 $$
 \dg (t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
@@ -2354,7 +2360,7 @@ so that
 $$
 \dot s (t) > 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
-Since $s$ is a scalar function, the above condition and the Inverse Function Theorem guarantee the existence of a smooth inverse
+The above condition and the Inverse Function Theorem guarantee the existence of a smooth inverse
 $$
 s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 $$
@@ -2363,7 +2369,7 @@ Define the reparametrization map $\f$ as
 $$
 \f := s^{-1}
 $$
-and the corresponding reparametrization of $\g$ given by the curve
+and the corresponding reparametrization $\tg$ of $\g$ as
 $$
 \tg \ \colon  (\tilde{a},\tilde{b}) \to \R^n \,, \quad 
 \tg := \g \circ \f \,. 
@@ -2376,7 +2382,7 @@ or in other words
 $$
 \g(t) = \tg (s(t)) \,, \quad \forall \, t \in (a,b) \,.
 $$
-Differentiating the above expression and using the chain rule we get
+By chain rule
 $$
 \dg (t) = \dtg(s(t)) \, \dot s(t) =  \dtg(s(t)) \, \norm{ \dg(t) }  
 $$
@@ -2398,12 +2404,11 @@ $$
 $$
 showing that $\tg$ is a unit speed reparametrization of $\g$.
 
-*Step 2. Reverse implication.*  
-Suppose there exists a unit speed reparametrization of $\g$ denoted by 
+*Step 2. Reverse implication.*  Suppose there exists a unit speed reparametrization of $\g$ denoted by 
 $$
 \tg \ \colon (\tilde{a},\tilde{b})  \to \R^n \,, \quad \tg = \g \circ \f
 $$
-for some reparametrization map $\f \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Differentiating $\tg = \g \circ \f$ and using the chain rule we get
+By chain rule
 $$
 \dtg(t) = \dg (\f(t)) \, \dot{\f} (t) \,.
 $$
@@ -2438,7 +2443,7 @@ is a unit speed reparametrization of $\g$. In the next proposition we show that 
 ### Arc-length and unit speed reparametrization  {#proposition-arc-length-unit}
 Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be reparametrization of $\g$, so that
 $$
-\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
+\g(t) = \tg ( \phi(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
 for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. Denote by
 $$
@@ -2446,7 +2451,7 @@ s(t):= \int_{t_0}^t  \norm{\dg(\tau)} \, d \tau \,, \quad t \in (a,b)
 $$
 the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
 
-1. If $\tg$ is unit speed, then there exists $c \in \R$ such that
+1. If $\tg$ is unit speed there exists $c \in \R$ such that
 $$
 \f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 $$ {#eq-proposition-unit-speed}
@@ -2457,9 +2462,7 @@ $$ {#eq-proposition-unit-speed}
 
 
 ::: Proof
-*Step 1. First Point.* 
-Assume $\tg$ is a unit speed reparametrization of $\g$ (note that $\tg$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular). Then
-there exists a reparametrization map $\f$ such that
+*Step 1. First Point.* Assume $\tg$ is a unit speed reparametrization of $\g$: such $\tg$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. This means there exists a reparametrization map $\f$ such that
 $$
 \g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
@@ -2510,19 +2513,18 @@ or
 $$
 \dot s(t) = - \dot \f(t)   \quad  \forall \, t \in (a,b)
 $$ 
-Integrating the last two equations we obtain the thesis
+Integrating the last two equations we get
 $$
 \f = \pm s + c
 $$
 for some $c \in \R$, concluding the proof.
 
 
-*Step 2. Second Point.*  Suppose that $\tg$ is a reparametrization of $\g$, that is,
+*Step 2. Second Point.*  Let $\tg$ be reparametrization of $\g$
 $$
 \g(t) = \tg (\f(t)) \,, \quad \forall \, t \in (a,b) 
 $${#eq-proposition-unit-speed-2tris}
-for some diffeomorphism $\f \colon (a,b) \to (\tilde{a}, \tilde{b})$.
-Further, suppose that
+with 
 $$
 \f := \pm s + c
 $$
@@ -2533,7 +2535,7 @@ for some $c \in \R$. Differentiating (@eq-proposition-unit-speed-2tris) we get
         & =  \pm \dtg( \f(t) ) \norm{ \dg(t) }
 \end{align*}
 where in the last equality we used the Fundamental Theorem of Calculus and
-definition of $s$. Taking the absolute values yileds
+definition of $s$. Taking the absolute values
 $$
 \norm{\dg(t)} = \norm{ \dg(\f(t)) } \norm{ \dg(t)} \,.
 $$
@@ -2555,16 +2557,109 @@ proving that $\tg$ is a unit speed reparametrization.
 Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that a unit 
 speed reparametrization of $\g$ is given by
 $$
-\tg := \g (\psi) \,, \quad \psi := s^{-1}
+\tg := \g  \circ s^{-1}
 $$
-with $s$ arc length of $\g$.
+with $s^{-1}$ inverse of the arc-length of $\g$.
+
+:::
+
+
+::: Notation
+### Arc-length parameter
+
+
+In the following we will use the letters
+
+1. $s$ to denote the *arc-length parameter*
+2. $t$ to denote an *arbitrary parameter*
+
+Accordingly the parameter of the arc-length function is $t$
+$$
+s = s(t)
+$$
+and the parameter of the inverse $\psi := s^{-1}$ of the arc-lenght is $s$
+$$
+\psi = \psi(s)
+$$
+As the arc-length function allows to transition from an
+arbitrary parameter $t$ to the arc-length parameter $s$, 
+the inverse of $s$ will also be denoted by
+$$
+t = t(s) 
+$$
+
+:::
+
+The above notation might seem confusing, but it actually makes
+a lot of sense in the long run, as calculations get heavier.
+Accordingly we have the following notation for 
+the unit speed reparametrization.
+
+
+::: Notation
+### Unit speed reparametrization
+
+Let $\g \colon (a,b) \to \R^n$ be a regular curve and
+$s \colon (a,b) \to (\tilde{a},\tilde{b})$ its arc-length
+function. By Proposition \ref{proposition-arc-length-unit}
+$$
+\tg := \g \circ s^{-1}
+$$
+is a unit speed reparametrization of $\g$. According to the above notations, we will write
+$$
+\g (t) = \tg(s(t)) \,, \quad t \in (a,b)
+$$
+and also
+$$
+\tg (s) = \g(t(s)) \,, \quad s \in (\tilde{a},\tilde{b}) 
+$$
+
+:::
+
+
+
+
+::: Example 
+### Circle
+
+Let $\g \colon [0,2\pi] \to \R^2$ be the parametrization of the circle
+with center $(x_0,y_0)$ and radius $R>0$
+$$
+\g(t) = ( x_0 + R \cos (t), t_0 + \sin (t))
+$$
+The arc-length of $\g$ starting from $t_0 = 0$ is
+$$
+s(t) = \int_0^t \norm{ \dg(\tau) } \, d\tau = Rt
+$$
+Rearranging we obtain
+$$
+s = Rt \quad \implies \quad t = \frac{s}{R}
+$$
+The inverse $\psi = s^{-1}$ is therefore
+$$
+\psi(s) = \frac{s}{R}
+$$
+According to our notation $\psi$ can also be denoted as
+$$
+t(s) = \frac{s}{R} 
+$$
+By Proposition \ref{proposition-arc-length-unit} 
+$$
+\tg := \g \circ s^{-1} 
+$$
+is a unit speed reparametrization of $\g$.
+Plugging the formula for $s^{-1}$ into the expression for $\g$ 
+yields the explicit formula for $\tg$
+$$
+\tg(s) = \g(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right) \right) 
+$$
 
 :::
 
 
 ::: Warning
 
-In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
+In some cases unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
 
 :::
 
@@ -2593,16 +2688,19 @@ $$
 so that the arc-length of $\g$ is
 $$
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
+$${#eq-twisted-arc}
+Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} 
+we know that $\g$ admits the unit speed reparametrization
 $$
-Since $\g$ is regular, by Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} we know that $\g$ admits a unit speed reparametrization $\tg$ such that
+\tg :=  \g \circ s^{-1}
 $$
-\g =  \tg \circ \f
-$$
-with the diffeomorphism $\f$ given by
-$$
-\f(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
-$$
-for some $c \in \R$. It can be shown that the above integral cannot be written in terms of elementary functions. Therefore the unit speed parametrization $\tg$ cannot be computed explicitly by inverting $s$.
+with $s^{-1}$ the inverse of the arc-length function. 
+It can be shown that the integral 
+at (@eq-twisted-arc) cannot be written in terms of elementary functions. 
+Therefore there are not explicit formulas for $s$ and $s^{-1}$.
+As a consequence the unit speed parametrization $\tg$ cannot be computed explicitly
+ in this case.
+
 :::
 
 
@@ -2650,15 +2748,17 @@ plt.show()
 
 So far we have seen examples of:
 
-- Curves which are infinite, or **unbounded**. This is for example the parabola
+1. Curves which are infinite, or **unbounded**. This is for example the parabola
 $$
 \g(t) := (t,t^2) \,, \quad \forall \, t \in \R \,,
 $$
-- Curves which are finite and have end-points, such as the semi-circle
+
+2. Curves which are finite and have end-points, such as the semi-circle
 $$
 \g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,\pi] \,,
 $$
-- Curves which form **loops**, such as the circle
+
+3. Curves which form **loops**, such as the circle
 $$
 \g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,2\pi] \,.
 $$
@@ -2672,8 +2772,9 @@ $$
 $$
 This curve has two main properties:
 
-- $\g$ is unbounded: If define $\tg$ as the restriction of $\g$ to the time interval $[1,\infty)$, then $\tg$ is unbounded. A point which starts at $\g (1) = (0,0)$ goes towards infinity. 
-- $\g$ contains a loop: If we define $\tg$ as the restriction of $\g$ to the time interval $[-1,1]$, then $\tg$ is a closed loop starting at $\g (-1) = (0,0)$ and returnning at $\g (1) = (0,0)$. 
+1. $\g$ is unbounded: If define $\tg$ as the restriction of $\g$ to the time interval $[1,\infty)$, then $\tg$ is unbounded. A point which starts at $\g (1) = (0,0)$ goes towards infinity. 
+
+2. $\g$ contains a loop: If we define $\tg$ as the restriction of $\g$ to the time interval $[-1,1]$, then $\tg$ is a closed loop starting at $\g (-1) = (0,0)$ and returnning at $\g (1) = (0,0)$. 
 
 :::
 
@@ -2712,21 +2813,21 @@ Note that every curve is $0$-periodic. Therefore to define a closed curve we nee
 ::: Definition
 ### Closed curve
 
-Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **closed** if:
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **closed** if they hold
 
-- $\g$ is not constant,
-- $\g$ is T-periodic for some $T \neq 0$.
+1. $\g$ is not constant,
+2. $\g$ is T-periodic for some $T \neq 0$.
 
 :::
 
 
 ::: {.Remark  #remark-closed}
 
-We have the following basic facts:
+The following basic observations hold:
 
 1. If $\g$ is $T$-periodic, then a point moving around $\g$ returns to its starting point after time $T$.
 
-     >This is exactly the definition of $T$-periodicity. Indeed let $p = \g(a)$ be the point in question, then
+     >This is exactly the definition of $T$-periodicity: let $p = \g(a)$ be the point in question, then
      $$
      \g(a + T) = \g(a) = p 
      $$ 
@@ -2737,12 +2838,12 @@ We have the following basic facts:
 3. Conversely, suppose that $\g \ \colon [a,b] \to \R^n$ satisfies 
 $$
 \g(a) = \g(b) \,, \quad \frac{d^k \g}{dt^k} (a) =\frac{d^k \g}{dt^k}  (b)  
-$$
+$${#eq-smooth-extension}
 for all $k \in \N$. Set
 $$
 T:=b-a \,.
 $$
-Then $\g$ can be extended to a $T$-periodic curve $\tg \ \colon \R \to \R^n$ defined by
+Then $\g$ can be extended to a smooth $T$-periodic curve $\tg \ \colon \R \to \R^n$ defined by
 $$
 \tg (t) := \g (\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \R \,.
 $$
@@ -2754,7 +2855,18 @@ with $k \in \Z$ defined by
 $$
 k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
 $$
-see figure below. In this way $\tg$ is $T$-periodic.
+see figure below. In this way $\tg$ is $T$-periodic and smooth. 
+
+    > Note that 
+    assumption (@eq-smooth-extension) must hold for all $k \in \N$ for the 
+    extension $\tg$ to be smooth. As a counterexample consider 
+    $f(x):=x^2$ for $x \in [-1,1]$. As seen by plotting $f$, it is clear that $f$ cannot be extended to a smooth periodic function. And indeed in this case (@eq-smooth-extension) is violated, because
+    $$
+    f(-1) = f(1) = 1 \,, \quad f'(-1) = -2 \neq 2 = f'(1)
+    $$
+    showing that the periodic extension is continuous but not differentiable.
+
+
 
 4. If $\g$ is $T$-periodic, then it is also $(-T)$-periodic.
      
@@ -2768,7 +2880,7 @@ see figure below. In this way $\tg$ is $T$-periodic.
 
      > This is an immediate consequence of Point 4.
 
-6. If $\g$ is $T$-periodic the $\g$ is $(kT)$-periodic, for all $k \in \Z$.
+6. If $\g$ is $T$-periodic then $\g$ is $(kT)$-periodic, for all $k \in \Z$.
 
      > By point 4 we can assume WLOG that $k \geq 0$. We proceed by induction:   
      > - The statement is true for $k=1$, since $\g$ is $T$-periodic. 
@@ -2778,8 +2890,8 @@ see figure below. In this way $\tg$ is $T$-periodic.
                      & = \g (t + T)   &  \mbox{(by $kT$-periodicity)} \\  
                      & = \g (t)   &  \mbox{(by $T$-periodicity)} 
      \end{align*}
-     showing that $\g$ is $(k+1)T$-periodic.  
-
+     >showing that $\g$ is $(k+1)T$-periodic.  
+     
      >By induction we conclude that $\g$ is $(kT)$-periodic for all $k \in \N$.
 
 

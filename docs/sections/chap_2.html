@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../sections/chap_3.html" rel="next">
-<link href="../sections/chap_4.html" rel="prev">
+<link href="../sections/chap_1.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -92,6 +92,38 @@ div.csl-indent {
   }
 }</script>
 <style>
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -100,69 +132,37 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 </style>
 
@@ -241,8 +241,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  <a href="../sections/chap_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -260,7 +260,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -340,9 +340,9 @@ window.Quarto = {
 <h2 data-number="2.1" class="anchored" data-anchor-id="curvature"><span class="header-section-number">2.1</span> Curvature</h2>
 <p>We start with an informal discussion. Suppose <span class="math inline">\({\pmb{\gamma}}\)</span> is a straight line <span class="math display">\[
 {\pmb{\gamma}}(t) = \mathbf{a} + t \mathbf{v}
-\]</span> with <span class="math inline">\(\mathbf{a}, \mathbf{v} \in \mathbb{R}^3\)</span>. The tangent vector to <span class="math inline">\({\pmb{\gamma}}\)</span> is constant <span class="math display">\[
+\]</span> with <span class="math inline">\(\mathbf{a}, \mathbf{v} \in \mathbb{R}^3\)</span>. Whichever the definition of curvature will be, we expect the curvature of a straight line to be zero. The tangent vector to <span class="math inline">\({\pmb{\gamma}}\)</span> is constant <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) =  \mathbf{v} \,.
-\]</span> Whatever the definition of curvature will be, it has to hold that <span class="math inline">\({\pmb{\gamma}}\)</span> has zero curvature in this case. If we further derive the tangent vector, we obtain <span class="math display">\[
+\]</span> If we further derive the tangent vector, we obtain <span class="math display">\[
 \ddot{{\pmb{\gamma}}}(t) =  {\pmb{0}}\,.
 \]</span> Thus <span class="math inline">\(\ddot{{\pmb{\gamma}}}\)</span> seems to be a good candidate for the definition of curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> at the point <span class="math inline">\({\pmb{\gamma}}(t)\)</span>.</p>
 <p>Suppose now that <span class="math inline">\({\pmb{\gamma}}\)</span> is a curve in <span class="math inline">\(\mathbb{R}^2\)</span> with unit speed. We have proven that in this case <span class="math display">\[
@@ -2485,8 +2485,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap_4.html" class="pagination-link" aria-label="Surfaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Surfaces</span></span>
+      <a href="../sections/chap_1.html" class="pagination-link" aria-label="Curves">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

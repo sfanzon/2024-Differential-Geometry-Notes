@@ -91,7 +91,7 @@
 
  [**Remark 1.38**](#Remark-1.38)\Pageref{Remark-1.38}
 
- [**Definition 1.39**](#unit-speed-curve): Unit speed curve\Pageref{unit-speed-curve}
+ [**Definition 1.39**](#unit-speed-curve): unit-speed curve\Pageref{unit-speed-curve}
 
  [**Proposition 1.40**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
 
@@ -131,63 +131,65 @@
 
  [**Example 1.54**](#Example-1.54)\Pageref{Example-1.54}
 
- [**Definition 1.55**](#unit-speed-reparametrization-1): Unit speed reparametrization\Pageref{unit-speed-reparametrization-1}
+ [**Definition 1.55**](#unit-speed-reparametrization-1): unit-speed reparametrization\Pageref{unit-speed-reparametrization-1}
 
- [**Theorem 1.56**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+ [**Theorem 1.56**](#theorem-regular-unit-speed): Existence of unit-speed reparametrization\Pageref{theorem-regular-unit-speed}
 
  [**Proof**](#Proof*-1.13)\Pageref{Proof*-1.13}
 
- [**Proposition 1.57**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
+ [**Proposition 1.57**](#proposition-arc-length-unit): Arc-length and unit-speed reparametrization\Pageref{proposition-arc-length-unit}
 
  [**Proof**](#Proof*-1.14)\Pageref{Proof*-1.14}
 
- [**Important**](#Important*-1.15)\Pageref{Important*-1.15}
+ [**Definition 1.58**](#arc-length-reparametrization): Arc-length reparametrization\Pageref{arc-length-reparametrization}
 
  [**Notation**](#arc-length-parameter): Arc-length parameter\Pageref{arc-length-parameter}
 
- [**Notation**](#unit-speed-reparametrization-2): Unit speed reparametrization\Pageref{unit-speed-reparametrization-2}
+ [**Notation**](#arc-length-reparametrization-1): Arc-length reparametrization\Pageref{arc-length-reparametrization-1}
 
- [**Example 1.58**](#circle-1): Circle\Pageref{circle-1}
+ [**Example 1.59**](#example-circle-arc): Arc-length reparametrization of the Circle\Pageref{example-circle-arc}
 
- [**Warning**](#Warning*-1.18)\Pageref{Warning*-1.18}
+ [**Warning**](#Warning*-1.17)\Pageref{Warning*-1.17}
 
- [**Example 1.59**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
+ [**Example 1.60**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
 
- [**Example 1.60**](#example-curve-loop)\Pageref{example-curve-loop}
+ [**Example 1.61**](#example-curve-loop)\Pageref{example-curve-loop}
 
- [**Definition 1.61**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
+ [**Definition 1.62**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
 
- [**Definition 1.62**](#closed-curve): Closed curve\Pageref{closed-curve}
+ [**Definition 1.63**](#closed-curve): Closed curve\Pageref{closed-curve}
 
- [**Remark 1.63**](#remark-closed)\Pageref{remark-closed}
+ [**Remark 1.64**](#remark-closed)\Pageref{remark-closed}
 
- [**Definition 1.64**](#Definition-1.64)\Pageref{Definition-1.64}
+ [**Definition 1.65**](#Definition-1.65)\Pageref{Definition-1.65}
 
- [**Proposition 1.65**](#Proposition-1.65)\Pageref{Proposition-1.65}
+ [**Proposition 1.66**](#Proposition-1.66)\Pageref{Proposition-1.66}
 
- [**Proof**](#Proof*-1.19)\Pageref{Proof*-1.19}
+ [**Proof**](#Proof*-1.18)\Pageref{Proof*-1.18}
 
- [**Example 1.66**](#examples-of-closed-curves): Examples of closed curves\Pageref{examples-of-closed-curves}
+ [**Example 1.67**](#examples-of-closed-curves): Examples of closed curves\Pageref{examples-of-closed-curves}
 
- [**Definition 1.67**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+ [**Definition 1.68**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
 
- [**Remark 1.68**](#Remark-1.68)\Pageref{Remark-1.68}
+ [**Remark 1.69**](#Remark-1.69)\Pageref{Remark-1.69}
 
- [**Example 1.69**](#Example-1.69)\Pageref{Example-1.69}
+ [**Example 1.70**](#Example-1.70)\Pageref{Example-1.70}
 
- [**Example 1.70**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+ [**Example 1.71**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
 
  [**Important**](#Important*-2.1)\Pageref{Important*-2.1}
 
- [**Definition 2.1**](#Definition-2.1)\Pageref{Definition-2.1}
+ [**Definition 2.1**](#curvature-of-unit-speed-curve): Curvature of unit-speed curve\Pageref{curvature-of-unit-speed-curve}
 
- [**Definition 2.2**](#Definition-2.2)\Pageref{Definition-2.2}
+ [**Example 2.2**](#curvature-of-the-circle): Curvature of the circle\Pageref{curvature-of-the-circle}
 
- [**Remark 2.3**](#Remark-2.3)\Pageref{Remark-2.3}
+ [**Definition 2.3**](#definition-curvature): Curvature of regular curve\Pageref{definition-curvature}
 
- [**Remark 2.4**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
+ [**Remark 2.4**](#well-posedness-of-definition): Well-posedness of Definition 2.3\Pageref{well-posedness-of-definition}
 
- [**Example 2.5**](#Example-2.5)\Pageref{Example-2.5}
+ [**Remark 2.5**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
+
+ [**Important**](#Important*-2.2)\Pageref{Important*-2.2}
 
  [**Remark 2.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
 
@@ -205,9 +207,9 @@
 
  [**Proposition 2.13**](#Proposition-2.13)\Pageref{Proposition-2.13}
 
- [**Proof**](#Proof*-2.2)\Pageref{Proof*-2.2}
+ [**Proof**](#Proof*-2.3)\Pageref{Proof*-2.3}
 
- [**Notation**](#Notation*-2.3)\Pageref{Notation*-2.3}
+ [**Notation**](#Notation*-2.4)\Pageref{Notation*-2.4}
 
  [**Proposition 2.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
@@ -221,9 +223,9 @@
 
  [**Proposition 2.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
 
- [**Example 2.20**](#Example-2.20)\Pageref{Example-2.20}
+ [**Example 2.20**](#curvature-of-the-straight-line): Curvature of the straight line\Pageref{curvature-of-the-straight-line}
 
- [**Example 2.21**](#Example-2.21)\Pageref{Example-2.21}
+ [**Example 2.21**](#curvature-of-helix): Curvature of Helix\Pageref{curvature-of-helix}
 
  [**Definition 2.22**](#Definition-2.22)\Pageref{Definition-2.22}
 
@@ -237,93 +239,91 @@
 
  [**Theorem 2.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
 
- [**Example 2.28**](#Example-2.28)\Pageref{Example-2.28}
+ [**Example 2.28**](#different-curves-with-same-curvature): Different curves with same curvature\Pageref{different-curves-with-same-curvature}
 
  [**Definition 2.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
 
- [**Definition 2.30**](#principal-normal-vector-1): Principal normal vector\Pageref{principal-normal-vector-1}
+ [**Remark 2.30**](#Remark-2.30)\Pageref{Remark-2.30}
 
- [**Remark 2.31**](#Remark-2.31)\Pageref{Remark-2.31}
+ [**Question 2.31**](#Question-2.31)\Pageref{Question-2.31}
 
- [**Question 2.32**](#Question-2.32)\Pageref{Question-2.32}
+ [**Definition 2.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
 
- [**Definition 2.33**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+ [**Definition 2.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
 
- [**Definition 2.34**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
-
- [**Proposition 2.35**](#Proposition-2.35)\Pageref{Proposition-2.35}
-
- [**Proof**](#Proof*-2.4)\Pageref{Proof*-2.4}
-
- [**Proposition 2.36**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
+ [**Proposition 2.34**](#Proposition-2.34)\Pageref{Proposition-2.34}
 
  [**Proof**](#Proof*-2.5)\Pageref{Proof*-2.5}
 
- [**Proposition 2.37**](#proposition-binormal)\Pageref{proposition-binormal}
+ [**Proposition 2.35**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
 
  [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
 
- [**Definition 2.38**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
+ [**Proposition 2.36**](#proposition-binormal)\Pageref{proposition-binormal}
 
- [**Remark 2.39**](#Remark-2.39)\Pageref{Remark-2.39}
+ [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
 
- [**Warning**](#Warning*-2.7)\Pageref{Warning*-2.7}
+ [**Definition 2.37**](#torsion-of-unit-speed-curve): Torsion of unit-speed curve\Pageref{torsion-of-unit-speed-curve}
 
- [**Definition 2.40**](#Definition-2.40)\Pageref{Definition-2.40}
+ [**Remark 2.38**](#formula-for-torsion): Formula for torsion\Pageref{formula-for-torsion}
 
- [**Proposition 2.41**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
+ [**Warning**](#Warning*-2.8)\Pageref{Warning*-2.8}
 
- [**Example 2.42**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
+ [**Definition 2.39**](#Definition-2.39)\Pageref{Definition-2.39}
 
- [**Example 2.43**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
+ [**Proposition 2.40**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
- [**Example 2.44**](#example-circle-rotated)\Pageref{example-circle-rotated}
+ [**Example 2.41**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
 
- [**Definition 2.45**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
+ [**Example 2.42**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
 
- [**Notation**](#Notation*-2.8)\Pageref{Notation*-2.8}
+ [**Example 2.43**](#example-circle-rotated)\Pageref{example-circle-rotated}
 
- [**Definition 2.46**](#Definition-2.46)\Pageref{Definition-2.46}
+ [**Definition 2.44**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
 
- [**Remark 2.47**](#Remark-2.47)\Pageref{Remark-2.47}
+ [**Notation**](#Notation*-2.9)\Pageref{Notation*-2.9}
 
- [**Theorem 2.48**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
+ [**Definition 2.45**](#Definition-2.45)\Pageref{Definition-2.45}
 
- [**Proof**](#Proof*-2.9)\Pageref{Proof*-2.9}
+ [**Remark 2.46**](#Remark-2.46)\Pageref{Remark-2.46}
 
- [**Remark 2.49**](#Remark-2.49)\Pageref{Remark-2.49}
+ [**Theorem 2.47**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
+
+ [**Proof**](#Proof*-2.10)\Pageref{Proof*-2.10}
+
+ [**Remark 2.48**](#Remark-2.48)\Pageref{Remark-2.48}
 
  [**Important**](#summary): Summary\Pageref{summary}
 
- [**Example 2.50**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+ [**Example 2.49**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
 
- [**Theorem 2.51**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+ [**Theorem 2.50**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
 
- [**Example 2.52**](#Example-2.52)\Pageref{Example-2.52}
+ [**Example 2.51**](#Example-2.51)\Pageref{Example-2.51}
 
- [**Proposition 2.53**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+ [**Proposition 2.52**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
- [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
+ [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
 
- [**Example 2.54**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+ [**Example 2.53**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
 
  [**Important**](#new-notation): New Notation!\Pageref{new-notation}
 
  [**Proof**](#proof-of-proposition): Proof of Proposition 2.48\Pageref{proof-of-proposition}
 
- [**Remark 2.55**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+ [**Remark 2.54**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
 
- [**Proposition 2.56**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
-
- [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
-
- [**Corollary 2.57**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
-
- [**Example 2.58**](#Example-2.58)\Pageref{Example-2.58}
-
- [**Proposition 2.59**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Proposition 2.55**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
 
  [**Proof**](#Proof*-2.15)\Pageref{Proof*-2.15}
+
+ [**Corollary 2.56**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+
+ [**Example 2.57**](#Example-2.57)\Pageref{Example-2.57}
+
+ [**Proposition 2.58**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+
+ [**Proof**](#Proof*-2.16)\Pageref{Proof*-2.16}
 
  [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
@@ -339,7 +339,7 @@
 
  [**Definition 3.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
 
- [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition-1}
 
  [**Proposition 3.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
@@ -533,7 +533,7 @@
 
  [**Definition 3.73**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.73\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#well-posedness-of-definition-2): Well-posedness of Definition 3.73\Pageref{well-posedness-of-definition-2}
 
  [**Proposition 3.74**](#Proposition-3.74)\Pageref{Proposition-3.74}
 

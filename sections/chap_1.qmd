@@ -1790,9 +1790,9 @@ $$
 
 
 ::: Definition
-### Unit speed curve
+### unit-speed curve
 
-Let $\g \ \colon (a,b) \to \R^n$ be a curve. We say that $\g$ is a **unit speed** curve if
+Let $\g \ \colon (a,b) \to \R^n$ be a curve. We say that $\g$ is a **unit-speed** curve if
 $$
 \norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
 $$
@@ -1801,14 +1801,14 @@ $$
 
 
 
-The reason why we introduce unit speed curves is because they make calculations easy. 
-A crucial identity which allows to simplify calculations for unit speed curves is given in
+The reason why we introduce unit-speed curves is because they make calculations easy. 
+A crucial identity which allows to simplify calculations for unit-speed curves is given in
 the next proposition.
 
 
 ::: { .Proposition #proposition-speed-identity} 
 
-Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. Then
+Let $\g \ \colon (a,b) \to \R^n$ be a unit-speed curve. Then
 $$
 \dg \cdot \ddg = 0  \,, \quad \forall \, t \in (a,b) \,.
 $$
@@ -1821,7 +1821,7 @@ Let us consider the identity
 $$
 \dg(t) \cdot \dg(t) = \sum_{i=1}^n {\dg}_i^2(t) = \norm{\dg(t)}^2 \,.
 $$ {#eq-speed-identity}
-Since $\g$ is unit speed we have
+Since $\g$ is unit-speed we have
 $$
 \norm{\dg(t)}^2 = 1 \quad \forall \, t \in (a,b) \,.
 $$
@@ -1844,14 +1844,14 @@ which gives the thesis.
 
 ::: Remark
 
-Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit speed, then its tangent vector $\dg$ is always orthogonal to the second derivative $\ddg$. This information will be used in the next Chapter to define the Frenet Frame: an orthonormal basis of vectors which moves smoothly along the curve. The Frenet frame will be crucial for studing local behavior of curves.
+Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit-speed, then its tangent vector $\dg$ is always orthogonal to the second derivative $\ddg$. This information will be used in the next Chapter to define the Frenet Frame: an orthonormal basis of vectors which moves smoothly along the curve. The Frenet frame will be crucial for studing local behavior of curves.
 
 :::
 
 
 
 
-![If $\g$ is unit speed then $\dg$ and $\ddg$ are orthogonal](/images/tangent_orthogonal.png){width=60%}
+![If $\g$ is unit-speed then $\dg$ and $\ddg$ are orthogonal](/images/tangent_orthogonal.png){width=60%}
 
 
 
@@ -2091,7 +2091,7 @@ $$
 ## Unit-speed reparametrization
 
 
-For a curve $\g$ we wish to find a reparametrization $\tg$ which is unit speed:
+For a curve $\g$ we wish to find a reparametrization $\tg$ which is unit-speed:
 $$
 \norm{ \dtg } = 1 \,, \quad  \forall \, t \in (a,b) \,.
 $$
@@ -2301,12 +2301,12 @@ Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **not
 :::
 
 
-We now define unit speed reparametrizations:
+We now define unit-speed reparametrizations:
 
 ::: Definition 
-### Unit speed reparametrization
+### unit-speed reparametrization
 
-Let $\g \colon (a,b) \to \R^n$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit speed, i.e.,
+Let $\g \colon (a,b) \to \R^n$ be a parametrized curve. A **unit-speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit-speed, i.e.,
 $$
 \norm{ \dtg(t) } = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 $$
@@ -2314,7 +2314,7 @@ $$
 :::
 
 
-The next Theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
+The next Theorem states that a curve is regular if and only if it has a unit-speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
 $$
 s(t):=\int_{t_0}^t \norm{ \dg (\tau) } \, d\tau \,,
 $$
@@ -2328,7 +2328,7 @@ $$
 \dot{s}(t) \neq 0 \,.
 $$
 In this case the arc-length $s$ is a diffeomorphism by the Inverse Function Theorem.
-As it turns out, all the unit speed reparametrizations of $\g$ are of the form
+As it turns out, all the unit-speed reparametrizations of $\g$ are of the form
 $$
 \tg = \g \circ \psi  \,, \qquad \psi := \pm s^{-1} + c
 $$
@@ -2337,12 +2337,12 @@ The above statements will be proved in Theorem \ref{theorem-regular-unit-speed} 
 
 
 ::: Theorem
-### Existence of unit speed reparametrization  {#theorem-regular-unit-speed}
+### Existence of unit-speed reparametrization  {#theorem-regular-unit-speed}
 
 Let $\g$ be a parametrized curve. They are equivalent:
 
 1. $\g$ is regular,
-2. $\g$ has a unit speed reparametrization.
+2. $\g$ has a unit-speed reparametrization.
 :::
 
 
@@ -2374,7 +2374,7 @@ $$
 \tg \ \colon  (\tilde{a},\tilde{b}) \to \R^n \,, \quad 
 \tg := \g \circ \f \,. 
 $$
-We claim that $\tg$ is unit speed. Indeed, by definition
+We claim that $\tg$ is unit-speed. Indeed, by definition
 $$
 \tg := \g \circ \f \quad \implies \quad \g = \tg \circ \f^{-1} = \tg \circ s \,,
 $$
@@ -2402,9 +2402,9 @@ By invertibility of $s$, the above holds if and only if
 $$
 \norm{\dtg(t)} = 1  \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
 $$
-showing that $\tg$ is a unit speed reparametrization of $\g$.
+showing that $\tg$ is a unit-speed reparametrization of $\g$.
 
-*Step 2. Reverse implication.*  Suppose there exists a unit speed reparametrization of $\g$ denoted by 
+*Step 2. Reverse implication.*  Suppose there exists a unit-speed reparametrization of $\g$ denoted by 
 $$
 \tg \ \colon (\tilde{a},\tilde{b})  \to \R^n \,, \quad \tg = \g \circ \f
 $$
@@ -2416,7 +2416,7 @@ Taking the norm
 $$
 \norm{\dtg(t)} = \norm{\dg (\f(t)) } \, |\dot{\f} (t)| \,.
 $$
-Since $\tg$ is unit speed we obtain
+Since $\tg$ is unit-speed we obtain
 $$
 \norm{\dg (\f(t)) } \, |\dot \f (t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 $$ {#eq-derivative-arc-3}
@@ -2436,11 +2436,11 @@ The proof of Theorem \ref{theorem-regular-unit-speed} told us that, if $\g$ is r
 $$
 \tg = \g \circ s^{-1} 
 $$
-is a unit speed reparametrization of $\g$. In the next proposition we show that the arc-length $s$ is essentially the only unit-speed reparametrization of a regular curve. 
+is a unit-speed reparametrization of $\g$. In the next proposition we show that the arc-length $s$ is essentially the only unit-speed reparametrization of a regular curve. 
 
 
 ::: Proposition
-### Arc-length and unit speed reparametrization  {#proposition-arc-length-unit}
+### Arc-length and unit-speed reparametrization  {#proposition-arc-length-unit}
 Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be reparametrization of $\g$, so that
 $$
 \g(t) = \tg ( \phi(t) )  , \quad \forall \, t \in (a,b)\,.
@@ -2451,18 +2451,18 @@ s(t):= \int_{t_0}^t  \norm{\dg(\tau)} \, d \tau \,, \quad t \in (a,b)
 $$
 the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
 
-1. If $\tg$ is unit speed there exists $c \in \R$ such that
+1. If $\tg$ is unit-speed there exists $c \in \R$ such that
 $$
 \f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 $$ {#eq-proposition-unit-speed}
 
-2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit speed.
+2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit-speed.
 
 :::
 
 
 ::: Proof
-*Step 1. First Point.* Assume $\tg$ is a unit speed reparametrization of $\g$: such $\tg$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. This means there exists a reparametrization map $\f$ such that
+*Step 1. First Point.* Assume $\tg$ is a unit-speed reparametrization of $\g$: such $\tg$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. This means there exists a reparametrization map $\f$ such that
 $$
 \g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
@@ -2476,7 +2476,7 @@ Taking the norms we then have
                     & = \norm{ \dtg(\f(t)) } \, | \dot\f(t) | \\
                     & = | \dot\f(t) | \,,
 \end{align*}
-where in the last equality we used that $\tg$ is unit speed, and so 
+where in the last equality we used that $\tg$ is unit-speed, and so 
 $$
 \norm{\dtg} \equiv 1 \,.
 $$
@@ -2548,25 +2548,25 @@ As $\f$ is invertible, the above is equivalent to
 $$
  \norm{ \dtg( t )}  = 1 \, \quad \forall \, t \in (\tilde{a},\tilde{b})  \, ,
 $$
-proving that $\tg$ is a unit speed reparametrization.
+proving that $\tg$ is a unit-speed reparametrization.
 :::
 
 
-::: Important
+::: Definition
+### Arc-length reparametrization
 
 Let $\g$ be regular. Proposition \ref{proposition-arc-length-unit} tells us that a unit 
 speed reparametrization of $\g$ is given by
 $$
 \tg := \g  \circ s^{-1}
 $$
-with $s^{-1}$ inverse of the arc-length of $\g$.
+with $s^{-1}$ inverse of the arc-length of $\g$. We call $\tg$ the **arc-length reparametrization** of $\g$.
 
 :::
 
 
 ::: Notation
 ### Arc-length parameter
-
 
 In the following we will use the letters
 
@@ -2577,7 +2577,7 @@ Accordingly the parameter of the arc-length function is $t$
 $$
 s = s(t)
 $$
-and the parameter of the inverse $\psi := s^{-1}$ of the arc-lenght is $s$
+and the parameter of the inverse $\psi := s^{-1}$ of the arc-length is $s$
 $$
 \psi = \psi(s)
 $$
@@ -2593,19 +2593,20 @@ $$
 The above notation might seem confusing, but it actually makes
 a lot of sense in the long run, as calculations get heavier.
 Accordingly we have the following notation for 
-the unit speed reparametrization.
+the arc-length reparametrization.
 
 
 ::: Notation
-### Unit speed reparametrization
+### Arc-length reparametrization
 
 Let $\g \colon (a,b) \to \R^n$ be a regular curve and
 $s \colon (a,b) \to (\tilde{a},\tilde{b})$ its arc-length
-function. By Proposition \ref{proposition-arc-length-unit}
+function. Denote by
 $$
 \tg := \g \circ s^{-1}
 $$
-is a unit speed reparametrization of $\g$. According to the above notations, we will write
+the arc-length reparametrization of $\g$. 
+According to the above notations, we will write
 $$
 \g (t) = \tg(s(t)) \,, \quad t \in (a,b)
 $$
@@ -2620,7 +2621,7 @@ $$
 
 
 ::: Example 
-### Circle
+### Arc-length reparametrization of the Circle {#example-circle-arc}
 
 Let $\g \colon [0,2\pi] \to \R^2$ be the parametrization of the circle
 with center $(x_0,y_0)$ and radius $R>0$
@@ -2647,7 +2648,7 @@ By Proposition \ref{proposition-arc-length-unit}
 $$
 \tg := \g \circ s^{-1} 
 $$
-is a unit speed reparametrization of $\g$.
+is a unit-speed reparametrization of $\g$.
 Plugging the formula for $s^{-1}$ into the expression for $\g$ 
 yields the explicit formula for $\tg$
 $$
@@ -2659,7 +2660,7 @@ $$
 
 ::: Warning
 
-In some cases unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
+In some cases unit-speed reparametrization and arc-length are impossible to characterize in terms of elementary functions. This can happen even for very simple curves.
 
 :::
 
@@ -2690,7 +2691,7 @@ $$
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 $${#eq-twisted-arc}
 Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} 
-we know that $\g$ admits the unit speed reparametrization
+we know that $\g$ admits the unit-speed reparametrization
 $$
 \tg :=  \g \circ s^{-1}
 $$
@@ -2698,7 +2699,7 @@ with $s^{-1}$ the inverse of the arc-length function.
 It can be shown that the integral 
 at (@eq-twisted-arc) cannot be written in terms of elementary functions. 
 Therefore there are not explicit formulas for $s$ and $s^{-1}$.
-As a consequence the unit speed parametrization $\tg$ cannot be computed explicitly
+As a consequence the unit-speed parametrization $\tg$ cannot be computed explicitly
  in this case.
 
 :::

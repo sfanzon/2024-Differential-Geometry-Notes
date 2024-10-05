@@ -41,34 +41,32 @@ $$
 Thus $\ddg$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
 
 
-Suppose now that $\g$ is a curve in $\R^2$ with unit speed. We have proven that in this case
+Suppose now that $\g \colon (a,b) \to \R^2$ is a **planar curve** with unit-speed. We have proven that in this case
 $$
 \dg \cdot \ddg = 0 \,,
 $$
 that is, the vector $\ddg$ is orthogonal to the tangent $\dg$ at all times. Now let $\mathbf{n}(t)$ be the unit vector orthogonal to $\dg(t)$ at the point $\g(t)$. The amount that the curve $\g$ deviates from its tangent at $\g(t)$ after time $t_0$ is
 $$
-( \g(t + t_0) - \g(t) ) \cdot \mathbf{n}(t) \,,
+[ \g(t + t_0) - \g(t) ] \cdot \mathbf{n}(t) \,,
 $$ {#eq-curvature-heuristics}
 as seen in Figure @fig-curvature.
 
 
-![Amount that $\g$ deviates from tangent is $(\g(t+t_0)-\g(t)) \cdot \nn(t)$](/images/curvature.png){#fig-curvature width=70%}
+![Amount that $\g$ deviates from tangent is $[\g(t+t_0)-\g(t)] \cdot \nn(t)$](/images/curvature.png){#fig-curvature width=70%}
 
 
 Equation (@eq-curvature-heuristics) is what we take as measure of curvature. Since 
 $$
 \dg(t) \cdot \ddg(t) = 0 \quad \mbox{ and } \quad   \dg(t) \cdot \mathbf{n}(t)= 0 \,,
 $$
-we conclude that $\ddg(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
+we conclude that $\ddg(s)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
 $$
 \ddg(t)  = \kappa(t) \, \mathbf{n}(t) \,.
 $$
-As $\nn$ is unitary, we have
+Taking the norms of the above and recalling that $\norm{\nn} = 1$ gives
 $$
 \kappa(t) = \norm{ \ddg(t) }
 $$
-
-
 Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
 $$
 \g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0^2)
@@ -92,7 +90,7 @@ $$
 $$
 we then obtain
 $$
-(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx 
+[\g(t + t_0) - \g(t) ] \cdot \nn(t) \approx 
 \frac{1}{2} \, \kappa(t) \, t_0^2
 $$
 
@@ -106,93 +104,138 @@ $$
 
 :::
 
-We take this as definition of curvature for a general unit speed curve in $\R^n.$
+We take this as definition of curvature for a general unit-speed curve in $\R^n$.
 
 
 ::: Definition 
+### Curvature of unit-speed curve
 
-Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. The **curvature** of $\g$ at $\g(t)$ is
+Let $\g \ \colon (a,b) \to \R^n$ be a unit-speed curve. The **curvature** of $\g$ at $\g(t)$ is
 $$
-\kappa^\g(t) := \norm{\ddg (t)} \,.
+\kappa(t) := \norm{\ddg (t)} \,.
 $$
 
 :::
 
 
 
-Note that $\kappa(t)$ is a function of time: The curvature of $\g$ can change from point to point.
+Note that $\kappa(t)$ is a function of the parameter $t$: The curvature of $\g$ can change from point to point.
 
 
-We now define curvature for curves which are regular, but not necessarily unit speed.
+
+::: Example
+### Curvature of the circle
+
+We have seen that the arc-length parametrization of the circle of center
+$(x_0,y_0)$ and radius $R>0$ is
+$$
+\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) \right) 
+$$
+As $\g$ is parametrized by arc-length, we have that $\g$ is unit-speed.
+To compute the curvature we need the second derivative $\ddg$
+\begin{align*}
+\dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
+\ddg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\end{align*}
+Therefore the curvature of $\g$ is
+$$
+\kappa(t) = \norm{ \ddg (t) } = \frac{1}{R} \,.
+$$
+In this case $\kappa$ is constant. The above formula also tells us that
+the curvature is inversely proportional to the radius of the circle: A large circle will look (locally) almost like a straight line.
+
+:::
+
+
+
+**Question:** How do we define curvature for arbitrary curves?
+
+**Answer:** When $\g$ is regular we can use unit-speed reparametrizations to define $\kappa$.
+
 
 
 ::: Definition 
+### Curvature of regular curve {#definition-curvature}
 
-Let $\g \ \colon (a,b) \to \R^n$ be a regular. The **curvature** of $\g$ at $\g(t)$ is
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve and $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ be a unit-speed reparametrization
 $$
-\kappa^\g(t) :=   \norm{\ddtg (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
+\g(t) = \tg( \f(t) ) \,, \quad \forall \, t \in (a,b) \,,
 $$
-where $\tg$ is a unit speed reparametrization of $\g$, that is, $\g = \tg \circ \f$ for some diffeomorphism $\f$.
+with $\f \colon (a,b) \to (\tilde{a},\tilde{b})$ reparametrization map.
+Denote by
+$$
+\tilde{\kappa} \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tilde{\kappa}(t) :=   \norm{\ddtg (t)}
+$$
+the curvature of $\tg$. The **curvature** of $\g$ at $\g(t)$ is defined by
+$$
+\kappa(t) := \tilde{\kappa}(\f(t))
+$$
 
 :::
 
 
 ::: Remark
+### Well-posedness of Definition \ref{definition-curvature}
 
 The above definition is well posed:
 
-1. Since $\g$ is regular, there exist a unit speed reparametrization $\tg$ of $\g$.
+1. Since $\g$ is regular, there exist a unit-speed reparametrization $\tg$ of $\g$.
 
-2. If $\hat{\g}$ is another unit speed reparametrization of $\g$, with $\g = \hat{\g} \circ \hat\f$, then
+2. If $\hat{\g}$ is another unit-speed reparametrization of $\g$, with $\g = \hat{\g} \circ \psi$, then
 $$
-\kappa^{\g} (t) =   \norm{\ddot{\hat\g} (\hat\f(t))} \,,
+\tilde{\kappa} ( \f(t) ) = \hat{\kappa}(\psi(t)) \,, \quad \forall \, t \in (a,b)
 $$
-showing that there is no ambiguity in the definition of $\kappa^\g$.
+where 
+$$
+\hat{\kappa}(t) := \norm{ \ddot{\hat{ \g }}(t) }
+$$
+is the curvature of $\hat{\g}$. Therefore there is
+no ambiguity in the definition of $\kappa$: we can choose any unit-speed reparametrization of $\g$ and the value of $\kappa$ does not change.
 
-> Indeed, since $\tg$ and $\hat{\g}$ are both reparametrizations of $\g$, then 
+> *Proof.* Since $\tg$ and $\hat{\g}$ are both reparametrizations of $\g$
 $$
-\g(t) = \tg(  \tilde{\f}(t)) \,, \quad 
-\g(t) = \hat{\g} (\hat{\f}(t)  ) 
+\tg(  \f(t)) = \g(t) = \hat{\g} (\psi(t)  ) 
 $$
-for some diffeomorphisms $\tilde{\f}, \hat{\f}$. Hence 
+Using that $\f$ is invertible we obtain
 $$
-{\tg}(t) = \hat\g(\f(t))\,, \quad \f := \hat{\f} \circ (\tilde{\f})^{-1} \,,
+{\tg}(t) = \hat\g(\xi(t))\,, \quad \xi := \psi \circ \f^{-1} \,,
 $${#eq-well-posed-curvature-3}
-where $\f$ is a diffeomorphism, since it is composition of diffeomorphisms. 
-Differentiating (@eq-well-posed-curvature-3) we get
+and $\xi$ is a diffeomorphism, being composition of diffeomorphisms. 
+Differentiating (@eq-well-posed-curvature-3)
 $$
-\dtg(t) = \dot{\hat{\g}}(\f(t)) \dot\f(t) \,.
+\dtg(t) = \dot{\hat{\g}}(\xi(t)) \dot\xi(t) \,.
 $${#eq-well-posed-curvature-2}
-Taking the norms of the above, and recalling that $\tg$ and $\hat\g$ are unit speed, we get
+Taking the norms and recalling that $\tg$ and $\hat\g$ are unit-speed, we get
 $$
-|\dot\f(t)| = 1 \,, \quad  \forall \, t \,. 
-$${#eq-well-posed-curvature}
-Since $\f$ is a diffeomorphism, we already know that $|\dot\f| \neq 0$. As $\dot\f$ is continuous, this means that the sign of $\dot\f$ is constant. Thus (@eq-well-posed-curvature) implies 
+|\dot\xi(t)| = 1 \,, \quad  \forall \, t \,. 
 $$
-\dot\f(t) \equiv 1 \quad \mbox{or} \quad
-\dot\f(t) \equiv -1 \,.
+Since $\dot\xi$ is continuous we infer 
 $$
-In both cases, we have
+\dot\xi(t) \equiv 1 \quad \mbox{or} \quad
+\dot\xi(t) \equiv -1 \,.
 $$
-\ddot \f \equiv 0 \,.
+In both cases
+$$
+\ddot \xi \equiv 0 \,.
 $$
 Differentiating (@eq-well-posed-curvature-2) we then obtain
 \begin{align*}
-\ddtg(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
-                         \dot{\hat{\g}}(\f(t)) \ddot\f (t) \\
-                  & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) \,.
+\ddtg(t) & = \ddot{\hat{\g}}(\xi(t)) \dot\xi^2(t) + 
+                         \dot{\hat{\g}}(\xi(t)) \ddot\xi (t) \\
+                  & = \ddot{\hat{\g}}(\xi(t)) \dot\xi^2(t) \,,
 \end{align*}
-Taking the norms and using again that $|\dot\f| \equiv 1$, we get  that 
+where we used that $\ddot{\xi} = 0$.
+Taking the norms and using again that $|\dot\xi| \equiv 1$ 
 $$
-\norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
+\norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\xi(t))} \,.
 $$
-Recalling that $\phi  = \hat\f \circ (\tilde{\f})^{-1}$ we get
+Recalling that $\xi  = \psi \circ \f^{-1}$ we get
 $$
-\norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,, \quad \forall \, t \in (a,b) \,.
+\norm{  \ddtg( \f(t))} = \norm{ \ddot{\hat{\g}}(\psi(t))} \,, \quad \forall \, t \in (a,b) \,.
 $$
-Therefore 
+By definition of $\tilde{\kappa}$ and $\hat{\kappa}$ we conclude
 $$
-\kappa^\g(t) =  \norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
+\tilde{\kappa} ( \f(t) ) = \hat{\kappa} ( \psi(t) )
 $$
 
 :::
@@ -206,82 +249,32 @@ In summary, the curvature of a regular curve
 $$
 \g \ \colon (a,b) \to \R^n
 $$ 
-is defined via unit speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
+is defined via unit-speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
 
-1. Find a unit speed reparametrization $\tg$ of the regular curve $\g$
+1. Find a unit-speed reparametrization $\tg$ of the regular curve $\g$
 
-2. This can be done by computing $s$ the arc-length of $\g$, and then defining 
+2. This can be done by computing $s$ the arc-length of $\g$, and then defining the arc-length reparametrization
 $$
-\tg:= \g \circ \psi \,, \quad \psi:=s^{-1} 
+\tg:= \g \circ s^{-1}
 $$
 
 3. Compute 
 $$
-\kappa^{\tg}(t) = \norm{\ddtg}(t)
+\tilde{\kappa}(s) = \norm{\ddtg (s)}
 $$
 
-4. Obtain the curvature of $\g$ by
+4. The curvature of $\g$ at $\g(t)$ is
 $$
-\kappa^\g (t)= \kappa^{\tg} (t) 
+\kappa (t)= \tilde{\kappa} (s(t)) 
 $$
 
-When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To do this, we will need the notion of **cross product**, or **vector product**. We will see this in the following sections.
 :::
 
 
-![Procedure for computing curvature $\kappa$](/images/curvature_shortcut.png){width=70%}
+::: Important
 
+When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To see this, we will first need the notion of **cross product**, or **vector product**.
 
-
-We conclude with two examples in which we compute the curvature $\kappa$ using unit speed reparametrizations.
-
-
-::: Example
-
-Consider the circle of radius $R>0$:
-$$
-\g(t) = (R\cos(t),R\sin(t)) \,, \quad t \in [0,2\pi] \,.
-$$
-To compute the curvature of $\g$ we need to find a unit speed reparametrization. We have shown that:
-$$
-\g \, \mbox{ regular } \,\,\, \implies \,\,\, \f = s^{-1} \, \mbox{ unit speed reparametrization}
-$$
-where $s$ is the arc length of $\g$:
-$$
-s(t):= \int_{t_0}^t \norm{\dg(\tau)} \, d\tau  \,.
-$$
-In our case 
-$$
-\dg(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
-\norm{\dg(t)} = R  
-$$
-and so $\g$ is regular. However $\g$ is not unit speed, therefore we need to find
-a unit speed reparametrization. The arc length starting at $t_0 = 0$ is
-$$
-s(t) = \int_{0}^t R d \tau = t R \,.
-$$
-The inverse of $s$ is
-$$
-\f(t) := s^{-1} (t) = \frac{t}{R} \,.
-$$
-Therefore a unit speed reparametrization of $\g$ is 
-$$
-\tg :=\g \circ \f 
-$$
-which reads
-$$
-\tg(t) :=  \left( R \cos \left( \frac{t}{R} \right) , R \sin \left( \frac{t}{R} \right)\right) \,.
-$$
-We have
-\begin{align*}
-\dtg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
-\ddtg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
-\end{align*}
-Therefore the curvature of $\g$ is
-$$
-\kappa(t) = \norm{ \ddtg (t) } = \frac{1}{R} \,.
-$$
-In this case $\kappa(t)$ is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable. 
 :::
 
 
@@ -386,15 +379,16 @@ showing that $\g$ is regular. However
 $$
 \norm{\dg(1)} = \cosh (1) = \frac{e + e^{-1}}{2} \approx 1.54 \,, 
 $$
-proving that $\g$ is not unit speed. Let us then compute the arc length of $\g$ starting at $t_0 = 0$
+proving that $\g$ is not unit-speed. Let us then compute the arc-length of $\g$ starting at $t_0 = 0$
 $$
 s(t) = \int_0^t \norm{ \dg (u) } \, du =  \int_0^t \cosh (u) \, du = \sinh (t)
 $$
-since $\sinh(0) = 0$. We need to invert $s$. We have
-$$
-s = \sinh(t) \quad \iff \quad s = \frac{e^t - e^{-t}}{2} \quad \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
-$$
-where the last equation was obtained multiplying both sides by $e^t$. Now we substitute
+where we used that $\sinh(0) = 0$. We need to invert $s$. We have
+\begin{align*}
+s = \sinh(t) \quad & \iff \quad s = \frac{e^t - e^{-t}}{2} \\
+             \quad & \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
+\end{align*}
+where the last equation was obtained by rearranging and multiplying both sides by $e^t$. Now we substitute
 $$
 y = e^t
 $$
@@ -411,31 +405,34 @@ by definition of absolute value. As we were looking for $y$ in the form $y=e^t$,
 $$
 e^t = y_+ = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
 $$
-We have proven that the inverse of the arc length $s(t)$ is 
+We have proven that the inverse of the arc-length $s(t)$ is 
 $$
-\psi(t) := s^{-1}(t) = \log \left( t + \sqrt{ 1+ t^2} \right) \,.
+\psi(s) = t(s) = \log \left( s + \sqrt{ 1+ s^2} \right) \,.
 $$
-Therefore 
+Therefore the arc-length reparametrization of $\g$ is
 $$
-\tg (t) := \g( \psi(t) )
-$$
-is a unit speed reparametrization of $\g$. Substituting $\psi$ and using the definition of $\g$ we have
-$$
-\tg(t) = \left(  \log \left( t + \sqrt{ 1+ t^2} \right) , \sqrt{1 + t^2}  \right) \,.
+\tg (s) := \g( t(s) ) = \left(  \log \left( s + \sqrt{ 1+ s^2} \right) , \sqrt{1 + s^2}  \right) \,.
 $$
 We can now compute the curvature. We have:
 \begin{align*}
-\dtg (t) &  = \left(  \frac{1}{ \sqrt{1 + t^2} } , \frac{t}{ \sqrt{1 + t^2}}   \right) \\
-\ddtg (t) & = \left( - \frac{t}{ (1 + t^2)^{3/2} } , \frac{1}{(1 + t^2)^{3/2} }   \right)
+\dtg (s) &  = \left(  \frac{1}{ \sqrt{1 + s^2} } , \frac{s}{ \sqrt{1 + s^2}}   \right) \\
+\ddtg (s) & = \left( - \frac{s}{ (1 + s^2)^{3/2} } , \frac{1}{(1 + s^2)^{3/2} }   \right)
 \end{align*}
-Moreover
+Hence
 $$
-\norm{\ddtg (t)}^2 = \frac{t^2}{(1+t^2)^3} + \frac{1}{(1+t^2)^3} = \frac{1}{(1+t^2)^2} \,.
+\norm{\ddtg (s)}^2 = \frac{s^2}{(1+s^2)^3} + \frac{1}{(1+s^2)^3} = \frac{1}{(1+s^2)^2} \,.
 $$
-Therefore the curvature is
+Therefore the curvature of $\tg$ is
 $$
-\kappa (t) = \norm{\ddtg (t)} = \frac{1}{1+t^2} \,.
+\tilde{\kappa}(s) = \norm{\ddtg (s)}= \frac{1}{1+s^2} \,.
 $$
+Recalling that $s(t) = \sinh(t)$, we conclude that the curvature of $\g$ is
+$$
+\kappa (t) = \tilde{\kappa}(s(t)) = \frac{1}{1+ \sinh(t)^2} = 
+\frac{1}{\cosh(t)^2}
+$$
+where we used the identity $1 + \sinh^2 = \cosh^2$.
+
 :::
 
 
@@ -777,24 +774,24 @@ Indeed, one can check that the above formula holds for the standard vectors $\ee
 
 8. Using (@eq-formula-cross) we get
 \begin{align*}
-\norm{\uu \times \vv}^2 & = (\uu \times \vv) \cdot (\uu \times \vv) = 
+\| \uu \times \vv \|^2 & = (\uu \times \vv) \cdot (\uu \times \vv) = 
 \left|
 \begin{array}{cc}
 \uu \cdot \uu & \vv \cdot \uu  \\
 \uu \cdot \vv & \vv \cdot \vv 
 \end{array}
 \right|   \\
-& = \norm{\uu}^2 \norm{\vv}^2 - |\uu \cdot \vv|^2 \\
-& = \norm{\uu}^2 \norm{\vv}^2 - \norm{\uu}^2 \norm{\vv}^2 \cos^2(\theta) \\
-& = \norm{\uu}^2\norm{\vv}^2 (1-\cos^2(\theta)) \\
-& = \norm{\uu}^2\norm{\vv}^2 \sin^2(\theta) \\
+& = \| \uu \|^2 \| \vv \|^2 - |\uu \cdot \vv|^2 \\
+& = \| \uu \|^2 \| \vv \|^2 - \| \uu \|^2 \| \vv \|^2 \cos^2(\theta) \\
+& = \| \uu \|^2 \| \vv \|^2 (1-\cos^2(\theta)) \\
+& = \| \uu \|^2 \| \vv \|^2 \sin^2(\theta) \\
 & = A^2  
 \end{align*} 
 where $A$ is the area of the parallelogram with sides $\uu$ and $\vv$.
 :::
 
 
-![For $\uu,\vv$ linearly independent, $\uu \times \vv$ is orthogonal to the plane generated by $\uu,\vv$. Moreover $|\uu \times \vv|$ is the area of the parallelogram with sides $\uu,\vv$, and $(\uu,\vv,\uu \times \vv)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
+![For $\uu,\vv$ linearly independent, $\uu \times \vv$ is orthogonal to the plane generated by $\uu,\vv$. Moreover $\|\uu \times \vv\|$ is the area of the parallelogram with sides $\uu,\vv$, and $(\uu,\vv,\uu \times \vv)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
 
 
 We have therefore proven the following theorem.
@@ -805,7 +802,7 @@ We have therefore proven the following theorem.
 Let $\uu,\vv \in \R^3$ be linearly independent. Then
 
 - $\uu \times \vv$ is orthogonal to the plane spanned by $\uu,\vv$
-- $\norm{\uu \times \vv}$ is equal to the area of the parallelogram with sides $\uu,\vv$
+- $\| \uu \times \vv \|$ is equal to the area of the parallelogram with sides $\uu,\vv$
 - $\uu \times \vv$ is such that
 $$
 (\uu,\vv,\uu \times \vv)
@@ -856,21 +853,26 @@ The proof is omitted. It follows immediately from formula (@eq-formula-cross-pro
 ## Curvature formula in $\R^3$
 
 
-Given a unit speed curve
+Given a unit-speed curve
 $$
 \g \ \colon (a,b) \to \R^n
 $$
 we defined its curvature as
 $$
-\kappa(t) = \norm{ \ddg(t) } \,.
+\kappa(t) := \norm{ \ddg(t) } \,.
 $$
 When $\g$ is regular we defined the curvature as
 $$
-\kappa(t) = \norm{ \ddtg(t) } \,,
+\kappa(t) :=  \tilde{\kappa}(s(t))
 $$
-where $\tg$ is a unit-speed reparametrization $\g$.
+where
+$$
+\tilde{\kappa}(s) := \norm{ \ddtg(s) }
+$$
+is the curvature of the arc-length reparametrization $\tg := \g \circ s^{-1}$ of 
+$\g$.
 
-If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
+If $\g$ is a regular curve in $\R^3$ the following formula can be used to compute $\kappa$ without passing through $\tg$.
 
 ::: Proposition
 ### Curvature formula {#proposition-curvature-formula}
@@ -885,10 +887,11 @@ $${#eq-curvature}
 
 We delay the proof of the above Proposition, as this will get easier when the **Frenet frame** is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in [@pressley].
 
-For now we use (@eq-curvature) the above proposition to compute the curvature on specific curves.
+For now we use (@eq-curvature) to compute the curvature of specific curves.
 
 
 ::: Example
+### Curvature of the straight line
 
 Consider the straight line
 $$
@@ -900,7 +903,7 @@ $$
 $$
 Therefore 
 $$
-\norm{\dg (t)} = \norm{\mathbf{v}} \neq 0
+\norm{\dg (t)} = \| \mathbf{v} \| \neq 0
 $$
 showing that $\g$ is regular. We have
 $$
@@ -908,7 +911,7 @@ $$
 $$
 Therefore the curvature is
 $$
-\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } = 0 \,,
+\kappa(t) = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } = 0 \,,
 $$
 as expected.
 :::
@@ -916,6 +919,7 @@ as expected.
 
 
 ::: Example
+### Curvature of Helix
 
 Consider the Helix of radius $R>0$ and rise $H>0$
 $$
@@ -996,13 +1000,13 @@ $$
 
 We notice the following:
 
-- If $H=0$ then the Helix is just a circle of radius $R$. In this case the curvature is
+1. If $H=0$ then the Helix is just a circle of radius $R$. In this case the curvature is
 $$
 \kappa  = \frac{1}{R}
 $$
 which agrees with the curvature computed for the circle of radius $R$.
 
-- If $R=0$ then the Helix is just parametrizing the $z$-axis. In this case the curvature is
+2. If $R=0$ then the Helix is just parametrizing the $z$-axis. In this case the curvature is
 $$
 \kappa  = 0 \,,
 $$
@@ -1022,25 +1026,25 @@ In this section we assume to have plane curves, that is, curves with values in $
 
 ::: Definition
 
-Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dg(t)$ anti-clockwise by an angle of $\pi/2$.
+Let $\g \ \colon (a,b) \to \R^2$ be unit-speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dg(t)$ anti-clockwise by an angle of $\pi/2$.
 
 :::
 
 
 ::: Definition
 
-Let $\g \ \colon (a,b) \to \R^2$ be unit speed. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
+Let $\g \ \colon (a,b) \to \R^2$ be unit-speed. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
 $$
 \ddg(t) = k_s(t) \nn(t)
 $$
 :::
 
 ::: Remark
-Notice that since $\nn$ is a unit vector and $\g$ is unit speed, then
+Notice that since $\nn$ is a unit vector and $\g$ is unit-speed, then
 $$
 |\kappa_s(t)| = \norm{\ddg(t)} = \kappa(t) \,.
 $$
-Thus the signed curvature is related to the curvature by
+We deduce that the signed curvature is related to the curvature by
 $$
 \kappa_s(t) = \pm \kappa(t) \,.
 $$
@@ -1063,13 +1067,13 @@ A rigorous justification of the above statement is found in Proposition 2.2.3 in
 
 
 
-For curves which are not unit speed, we define the signed curvature as the signed curvature of the unit speed reparametrization. 
+For curves which are not unit-speed, we define the signed curvature as the signed curvature of the unit-speed reparametrization. 
 
 
 
 ::: Definition
 
-Let $\g \ \colon (a,b) \to \R^2$ be regular and let $\tg$ be a unit speed reparametrization of $\g$. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
+Let $\g \ \colon (a,b) \to \R^2$ be regular and let $\tg$ be a unit-speed reparametrization of $\g$. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
 $$
 \ddtg(t) = k_s(t) \nn(t) \,,
 $$
@@ -1085,12 +1089,12 @@ The signed curvature completely characterizes plane curves, in the sense of the 
 
 Let $\f \ \colon \R \to \R$ be smooth. Then:
 
-1. There exists a unit speed curve $\g \ \colon \R \to \R^2$ such that its signed curvature $\kappa_s$ satisfies
+1. There exists a unit-speed curve $\g \ \colon \R \to \R^2$ such that its signed curvature $\kappa_s$ satisfies
 $$
 \kappa_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
 
-2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit speed curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
+2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit-speed curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
 $$
 \tilde{\kappa}_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
@@ -1111,9 +1115,9 @@ We do not prove the above theorem. For a proof, see Theorem 2.2.6 in [@pressley]
 
 ## Space curves
 
-In this section we deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compared to the plane case:
+We will now deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compared to the plane case:
 
-- A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*.
+- A 3D counterpart of the signed curvature is not available, since there is no notion of *turning left* or *turning right*.
 
 - We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eeta$ space curves such that 
 $$
@@ -1124,6 +1128,7 @@ that is, $\g$ and $\eeta$ have same curvature but are different curves.
 
 
 ::: Example
+### Different curves with same curvature
 
 Let $\g$ be a circle of radius $R>0$
 $$
@@ -1144,36 +1149,23 @@ $$
 $$
 Choosing $S=1$ and $H=1$ yields 
 $$
-\kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,..
+\kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,.
 $$
 :::
 
 
 Therefore curvature is not enough for characterizing space curves, and we need a new quantity. 
-As we did with curvature, we start by considering the simpler case of unit speed curves. We will also
+As we did with curvature, we start by considering the simpler case of unit-speed curves. We will also
 need to assume that the curvature is never zero.
 
+We start by introducing the *principal normal*, which is
+just the unit vector obtained by renormalizing $\ddg$.
 
 
 ::: Definition
 ### Principal normal vector
 
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
-$$
-\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
-$$
-The **principal normal vector** to $\g$ at $\g(t)$ is 
-$$
-\nn(t) := \frac{1}{\kappa (t)} \, \ddg(t) \,.
-$$
-:::
-
-
-
-::: Definition
-### Principal normal vector
-
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with 
 $$
 \kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
 $$
@@ -1187,24 +1179,23 @@ $$
 
 ::: Remark
 
-Since for $\g$ unit speed we defined
+The principal normal is a unit vector orthogonal to $\dg$, that is,
 $$
-\kappa (t) := \norm{ \ddg(t) } \,,
-$$
-we have that 
-$$
-\norm{ \nn (t) } = 1 \,,
-$$
-thus $\nn$ is a unit vector. Moreover $\nn$ is orthogonal to $\dg$, that is,
-$$
-\dg \cdot \nn = 0 \,.
+\norm{ \nn (t) } = 1 \,, \qquad \dg \cdot \nn = 0 \,.
 $$
 
->This is because
+>*Proof.* For $\g$ unit-speed we defined the curvature as
 $$
-\dg \cdot \nn = \frac{1}{\kappa} \, \dg \cdot \ddg = 0 \,,
+\kappa (t) := \norm{ \ddg(t) } \,.
 $$
-where the last equality follows from $\dg \cdot \ddg = 0$, being $\g$ unit speed.
+Therefore 
+$$
+\| \nn \| = \frac{1}{\norm{ \ddg(t) }} \, \norm{ \ddg(t) } = 1
+$$
+In addition for $\g$ unit-speed it holds that $\dg \cdot \ddg = 0$. Therefore
+$$
+\dg \cdot \nn = \frac{1}{\kappa} \, \dg \cdot \ddg = 0 \,.
+$$
 
 :::
 
@@ -1215,18 +1206,26 @@ where the last equality follows from $\dg \cdot \ddg = 0$, being $\g$ unit speed
 
 
 ::: Question
-Why is the principal normal interesting? Because it can tell the difference beween a plane curve and a space curve. See picture below.
+Why is the principal normal interesting? Because it can tell the difference beween a plane curve and a space curve, see @fig-principal-normal.
 :::
 
 
-![Left: Principal normal to a circle. Note that $\nn$ always points towards the origin $\zero$. Right: Principal normal to a helix. Note that $\nn$ points towards the $z$-axis, but never towards the same point.](/images/unit_normal_point.png){width=70%}
+![Left: Principal normal to a circle. Note that $\nn$ always points towards the origin $\zero$. Right: Principal normal to a helix. Note that $\nn$ points towards the $z$-axis, but never towards the same point.](/images/unit_normal_point.png){#fig-principal-normal width=70%}
 
+
+
+We now introduce the binormal vector $\bb$ as the vector product of $\dg$ and $\nn$. By the properties of vector
+product we will see that the triple 
+$$
+(\dg, \nn, \bb)
+$$
+forms a positive orthonormal basis of $\R^3$.
 
 
 ::: Definition
 ### Binormal vector
 
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with 
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with 
 $$
 \kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
 $$
@@ -1254,7 +1253,7 @@ $$
 
 
 ::: Proposition
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with
 $$
 \kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
 $$
@@ -1269,7 +1268,7 @@ is a positive orthonormal basis of $\R^3$ for all $t \in (a,b)$.
 
 ::: Proof
 
-Since $\g$ is unit speed we have
+Since $\g$ is unit-speed we have
 $$
 \norm{ \dg (t) } \equiv 1 \,.
 $$
@@ -1301,10 +1300,18 @@ is a positive basis of $\R^3$.
 :::
 
 
+The next proposition shows that the positive basis
+$( \dg, \nn, \bb  )$ is right-handed. Such property holds in 
+general for any basis of $\R^3$ of the form
+$$
+(\uu, \vv , \ww ) \,, \qquad \ww := \uu \times \vv \,.
+$$
+
+
+
 ::: {.Proposition  #proposition-positive-basis}
 
-
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. Then
 $$
 \bb = \dg \times \nn \,, \quad
 \nn = \bb \times \dg \,, \quad
@@ -1316,46 +1323,50 @@ $$ {#eq-frenet-positive-basis}
 
 ::: Proof
 
-The first equality in (@eq-frenet-positive-basis) is true by definition of $\bb$. For the other $2$ equalities, recall formula (@eq-cross-prod-triple): 
+The first equation in (@eq-frenet-positive-basis) is true by definition of $\bb$. For the remaining $2$ equations, recall formula (@eq-cross-prod-triple): 
 $$
 (\uu \times \vv ) \times \ww = ( \uu \cdot \ww) \vv - ( \vv \cdot \ww ) \uu \,,
 $${#eq-cross-prod-triple-1}
-for all $\uu,\vv,\ww \in \R^3$. Applying the above with 
+for all $\uu,\vv,\ww \in \R^3$. Applying the above to
 $$
 \uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \dg \,,
 $$
 yields
 \begin{align*}
 ( \dg \times \nn ) \times \dg & = ( \dg \cdot \dg ) \nn - (\nn \cdot \dg) \dg \\
-                                      & = \norm{\dg }^2 \nn - 0 \\
+                                      & = \norm{\dg }^2 \nn - \zero \\
                                       & = \nn \,,
 \end{align*}
 where we used that $\dg$ is a unit vector and $\nn \cdot \dg = 0$. Therefore, by definition of $\bb$, we have
 $$
 \bb \times \dg = ( \dg \times \nn ) \times \dg = \nn
 $$
-showing the second equality in (@eq-frenet-positive-basis). For showing the third equality in (@eq-frenet-positive-basis), we apply (@eq-cross-prod-triple-1) with 
+obtaining the second equation in (@eq-frenet-positive-basis). Now we apply (@eq-cross-prod-triple-1) to 
 $$
 \uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
 $$
 to get
 \begin{align*}
 ( \dg \times \nn ) \times \nn  & = ( \dg \cdot \nn ) \nn - (\nn \cdot \nn ) \dg \\
-                                      & = 0 - \norm{\nn }^2 \dg  \\
+                                      & = \zero - \| \nn \|^2 \dg  \\
                                       & = - \dg
 \end{align*}
 where we used that $\nn$ is a unit vector and $\dg \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
 $$
 \nn \times \bb = - \bb \times \nn = - (\dg \times \nn ) \times \nn = \dg \,,
 $$
-showing the last equality in (@eq-frenet-positive-basis).
+obtaining the last equation in (@eq-frenet-positive-basis).
 :::
+
+
+We now investigate what happens when taking the derivative 
+of the binormal vector $\bb$. 
+
 
 
 ::: {.Proposition #proposition-binormal}
 
-
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. Then
 $$
 \dot{\bb} (t) = - \tau(t) \nn(t) \,,
 $$ {#eq-binormal-derivative}
@@ -1374,14 +1385,15 @@ By definition of $\bb$ and the formula of derivation of the cross product (@eq-c
 \end{align*}
 where we used that
 $$
-\ddg \times \nn  = 0\,,
+\ddg \times \nn  = \zero \,,
 $$
-since $\nn$ is defined by $\nn :=  \ddg/\kappa$, and therefore $\nn$ and $\ddg$ are parallel. Hence, we have proven that
+since $\nn$ is defined by $\nn :=  \ddg/\kappa$, and therefore $\nn$ and $\ddg$ are parallel (and thus linearly dependent). This shows
 $$
 \dot{\bb} = \dg \times \dot{\nn} \,.
 $${#eq-derivative-b-1}
-By the properties of the cross product we have that $\uu \times \vv$ is orthogonal to both $\uu$
-and $\vv$. Thus (@eq-derivative-b-1) implies that
+By the properties of the cross product we have 
+that $\dg \times \dot{\nn}$ is orthogonal to both $\dg$
+and $\dot{\nn}$. Thus (@eq-derivative-b-1) implies that
 $$
 \dot{\bb} \cdot \dg = 0 \,.
 $$
@@ -1412,9 +1424,9 @@ concluding the proof.
 The scalar $\tau$ in equation (@eq-binormal-derivative) is called the torsion of $\g$.
 
 ::: Definition
-### Torsion of unit speed curve
+### Torsion of unit-speed curve
 
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve, with $\kappa \neq 0$. The **torsion** of $\g$ at $\g(t)$ is the unique scalar
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve, with $\kappa \neq 0$. The **torsion** of $\g$ at $\g(t)$ is the unique scalar
 $$
 \tau (t) \in \R
 $$
@@ -1428,17 +1440,14 @@ $$
 
 
 ::: Remark
+### Formula for torsion
+
 In particular the torsion satisfies:
 $$
 \tau(t) = - \dot{\bb} (t) \cdot \nn (t) \,.
 $$
 
-> The above can be immediately obtained by multiplying (@eq-binormal-derivative) by $\nn$. Indeed,
-$$
-\dot{\bb} = - \tau \nn \quad \implies \quad 
-\dot{\bb} \cdot \nn = - \tau \nn \cdot \nn = - \tau \,,
-$$
-since $\nn$ is a unit vector.
+> *Proof.* Multiply (@eq-binormal-derivative) by $\nn$ and note that $\| \nn \| = 1$.
 
 :::
 
@@ -1446,23 +1455,22 @@ since $\nn$ is a unit vector.
 
 ::: Warning
 
-We defined the torsion only for space curves  $\g \colon (a,b) \to \R^3$
-which are unit speed and have non-vanishing curvature, that is, such that
+We defined the torsion **only** for space curves  $\g \colon (a,b) \to \R^3$
+which are unit-speed and have non-vanishing curvature, that is, such that
 $$
-\norm{\dg(t)} = 1 \,, \quad \kappa(t) = \norm{ \ddg(t) }  \neq 0 \,,
+\norm{\dg(t)} = 1 \,, \quad \kappa(t) = \norm{ \ddg(t) }  \neq 0 \,, \qquad \forall \, t \in (a,b) \,.
 $$
-for all $t \in (a,b)$.
 
 :::
 
 
 We can extend the definition of torsion to regular curves $\g$ with non-vanishing curvature. In this
-case the torsion of $\g$ is defined as the torsion of a unit speed reparametrization of $\g$. 
+case the torsion of $\g$ is defined as the torsion of a unit-speed reparametrization of $\g$. 
 
 
 ::: Definition
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Let $\tg$ be a unit speed reparametrization of 
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Let $\tg$ be a unit-speed reparametrization of 
 $\g$, with 
 $$
 \g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
@@ -1476,7 +1484,7 @@ where ${\tau}^{\tg}(s)$ denotes the torsion of $\tg$ at $\tg(s)$.
 :::
 
 As usual, it is possible to check that the above definition of torsion does not depend 
-on the choice of unit speed reparametrization $\tg$. As with curvature, there is a general 
+on the choice of unit-speed reparametrization $\tg$. As with curvature, there is a general 
 formula to compute the torsion without having to reparametrize.
 
 
@@ -1578,15 +1586,15 @@ so that
 $$
 \norm{ \dg }^2 = \frac{16}{25} \sin^2(t) + \cos^2(t) + \frac{9}{25} \sin^2(t) = 1\,,
 $$
-showing that $\g$ is regular and unit speed. Further
+showing that $\g$ is regular and unit-speed. Further
 $$
 \ddg  =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
 $$
-As $\g$ is unit speed, we have
+As $\g$ is unit-speed, we have
 $$
 \kappa = \norm{ \ddot \g } = \frac{16}{25} \cos^2(t) + \sin^2(t) + \frac{9}{25} \cos^2(t) = 1 \,.
 $$
-As $\g$ is unit speed, the normal vector is 
+As $\g$ is unit-speed, the normal vector is 
 $$
 \nn = \frac{1}{\kappa}  \ddg =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
 $$
@@ -1664,7 +1672,7 @@ plt.show()
 
 ## Frenet frame
 
-For a unit speed curve $\g \colon (a,b) \to \R^3$ with non-vanishing curvature we computed the triple
+For a unit-speed curve $\g \colon (a,b) \to \R^3$ with non-vanishing curvature we computed the triple
 $$
 \{ \dg, \nn, \bb \} \,.
 $$
@@ -1678,7 +1686,7 @@ This triple is so important that it has a name.
 ::: Definition
 ### Frenet frame
 
-Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The positive orthonormal basis
+Let $\g \colon (a,b) \to \R^3$ be unit-speed with $\kappa \neq 0$. The positive orthonormal basis
 $$
 \{ \dg, \nn, \bb \}
 $$
@@ -1688,7 +1696,7 @@ is called **Frenet frame** of $\g$.
 
 
 ::: Notation
-For $\g \colon (a,b) \to \R^3$ unit speed the **tangent vector** is defined by
+For $\g \colon (a,b) \to \R^3$ unit-speed the **tangent vector** is defined by
 $$
 \ttt := \dg
 $$
@@ -1704,20 +1712,20 @@ We can also define the Frenet frame for regular curves with non-vanishing curvat
 ::: Definition
 
 Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. The 
-Frenet frame of $\g$ is defined as the Frenet frame of a unit speed reparametrization $\tg$ of $\g$.
+Frenet frame of $\g$ is defined as the Frenet frame of a unit-speed reparametrization $\tg$ of $\g$.
 
 :::
 
 :::Remark
 We should check that the above definition is well-posed: 
 
-- $\tg$ is unit speed by assumption. By definition the curvature of ${\kappa}^{\tg}$ is given by
+- $\tg$ is unit-speed by assumption. By definition the curvature of ${\kappa}^{\tg}$ is given by
 $$
 {\kappa}^{\tg} (t) = {\kappa}^{\g} (\f(t))
 $$
 for some $\f$ diffeomorphism. Therefore ${\kappa}^{\tg} \neq 0$ as we are assuming ${\kappa}^{\g} \neq 0$, and the Frenet-Frame of $\tg$ is well defined.
 
-- If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
+- If $\hat{\g}$ is another unit-speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
 :::
 
 From the Frenet frame we can define the Frenet-Serret equations.
@@ -1725,7 +1733,7 @@ From the Frenet frame we can define the Frenet-Serret equations.
 ::: Theorem
 ### Frenet-Serret equations
 
-Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
+Let $\g \colon (a,b) \to \R^3$ be unit-speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
 \begin{align*}  
 \dot{\ttt} & = \kappa \nn \\
 \dot{\nn} & = - \kappa \ttt + \tau \bb \\
@@ -1832,7 +1840,7 @@ $$
 for $t \in \R$. We now proceed following the diagram at @fig-diagram.
 We ask the first question:
 $$
-\mbox{Is $\g$ unit speed?}
+\mbox{Is $\g$ unit-speed?}
 $$
 We have that
 $$
@@ -1842,20 +1850,20 @@ and therefore
 $$
 \norm{ \dg } = \sqrt{2} \,.
 $$
-This shows that $\g$ is regular but not unit speed. We ask the second question in the diagram:
+This shows that $\g$ is regular but not unit-speed. We ask the second question in the diagram:
 $$
-\mbox{Can we find a unit speed reparametrization of $\g$?}
+\mbox{Can we find a unit-speed reparametrization of $\g$?}
 $$
-We know that all unit speed reparametrizations are of the form
-$\pm s + c$, where $s$ is the arc length and $c \in \R$. Therefore we compute the arc length of $\g$ starting at $t_0 = 0$
+We know that all unit-speed reparametrizations are of the form
+$\pm s + c$, where $s$ is the arc-length and $c \in \R$. Therefore we compute the arc-length of $\g$ starting at $t_0 = 0$
 $$
 s(t) := \int_0^t \norm{ \dg(u) } \, du = \sqrt{2} \, t \,.  
 $$
-The arc length is invertible with 
+The arc-length is invertible with 
 $$
 \psi(t) := s^{-1}(t) = \frac{t}{\sqrt{2}} \,.
 $$
-Therefore a unit speed reparametrization of $\g$ is given by
+Therefore a unit-speed reparametrization of $\g$ is given by
 $$
 \tg(t):=\g( \psi(t)) = \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , \sin \left( \frac{t}{\sqrt{2}}  \right) , \frac{t}{\sqrt{2}}    \right) \,.
 $$
@@ -2039,14 +2047,14 @@ holds.
 
 Let $\kappa, \tau \ \colon \R \to \R$ be smooth functions, with $\kappa>0$. Then:
 
-1. There exists a unit speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
+1. There exists a unit-speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
 $$
 \kappa^{\g}(t) = \kappa(t) \,, \quad 
 \tau^{\g}(t) = \tau(t) \,,
   \,\, \forall \, t \in \R \,.
 $$
 
-2. Suppose that $\tg \ \colon \R \to \R^3$ is a unit speed curve such that its curvature $\tilde{\kappa}^{\tg}$ and torsion $\tau^{\tg}$ satisfy
+2. Suppose that $\tg \ \colon \R \to \R^3$ is a unit-speed curve such that its curvature $\tilde{\kappa}^{\tg}$ and torsion $\tau^{\tg}$ satisfy
 $$
 \kappa^{\tg}(t) = \kappa(t) \,, \quad 
 \tau^{\tg}(t) = \tau(t) 
@@ -2066,9 +2074,9 @@ The proof of Theorem \ref{theorem-characterization-space} is omitted, and it can
 
 Theorem \ref{theorem-characterization-space} is a very strong result. It is saying two things:
 
-1. If we prescribe curvature and torsion, then there exists a unit speed curve which has such curvature and torsion.
+1. If we prescribe curvature and torsion, then there exists a unit-speed curve which has such curvature and torsion.
 
-2. If two unit speed curves have same curvature and torsion, then they must be the same curve, up to rigid motions.
+2. If two unit-speed curves have same curvature and torsion, then they must be the same curve, up to rigid motions.
 
 In other words, curvature and torsion fully characterize space curves. This result is the 3D counterpart of
 Theorem \ref{theorem-characterization-plane}, which said that signed curvature characterizes 
@@ -2078,7 +2086,7 @@ Theorem \ref{theorem-characterization-plane}, which said that signed curvature c
 
 ::: Example
 
-In Example \ref{example-circle-rotated} we have considered the unit speed curve
+In Example \ref{example-circle-rotated} we have considered the unit-speed curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 $$
@@ -2088,7 +2096,7 @@ $$
 $$
 If we plot $\g$, we clearly see that $\g$ is just obtained by translating and 
 rotating a unit circle, see plot in @fig-circle-rigid. Theorem \ref{theorem-characterization-space} enables
-us to rigorously prove this claim. Indeed, consider the unit speed circle
+us to rigorously prove this claim. Indeed, consider the unit-speed circle
 $$
 \tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
 $$
@@ -2132,23 +2140,23 @@ $$
 Before proceeding with the proof, we need to establish some notation.
 
 ::: Notation
-### Compact notation for arc length reparametrization
+### Compact notation for arc-length reparametrization
 
 Suppose $\g \colon (a,b) \to \R^n$ is regular and denote by 
 $$
 s \colon (a,b) \to (\tilde{a},\tilde{b})\,, \quad t \mapsto s(t)  
 $$
-its arc length. We already know that in this case $s$ invertible, with inverse $s^{-1}$ giving a unit speed reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ of $\g$, defined by
+its arc-length. We already know that in this case $s$ invertible, with inverse $s^{-1}$ giving a unit-speed reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ of $\g$, defined by
 $$
 \tg = \g \circ \psi \,, \quad \psi:=s^{-1} \colon (\tilde{a},\tilde{b}) \to (a,b)
 $$
-Sometimes it is more convenient to adopt more compact notation. In the new notation the unit speed 
+Sometimes it is more convenient to adopt more compact notation. In the new notation the unit-speed 
 reparametrization $\tg$ is denoted by $\g(s)$:
 $$
 t \mapsto \tg(t) \qquad \leadsto \qquad s \mapsto \g(s) \,.
 $$
 Thus, the reparametrization is denoted with the same symbol $\g$, but this time $\g$ is considered as
-a function of the **arc length parameter** 
+a function of the **arc-length parameter** 
 $$
 s \in (\tilde{a}, \tilde{b}) \,.
 $$ 
@@ -2211,7 +2219,7 @@ $$
 ::: Example 
 ### How to use the new notations
 
-Let $\g$ and $\tg$ be as above. We know that $\tg$ is unit speed. Thus $\g(s)$ is unit speed with respect to $s$, that is,
+Let $\g$ and $\tg$ be as above. We know that $\tg$ is unit-speed. Thus $\g(s)$ is unit-speed with respect to $s$, that is,
 $$
 \norm{\dg(s)} = 1\,, \quad \forall \, s \in (\tilde{a}, \tilde{b})  \,.
 $${#eq-new-notations-1}
@@ -2257,8 +2265,8 @@ the **given** curve $\g$.
 $$
 s \mapsto \g(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 $$
-the **arc length reparametrization** of the curve $\g$. The parameter $s$ is the 
-**arc length parameter**. In particular $\g(s)$ is unit speed with respect to $s$. 
+the **arc-length reparametrization** of the curve $\g$. The parameter $s$ is the 
+**arc-length parameter**. In particular $\g(s)$ is unit-speed with respect to $s$. 
 
 :::
 
@@ -2271,8 +2279,8 @@ We will heavily rely on the new notations for proving Proposition \ref{propositi
 We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
 
 
-Since $\g$ is regular, we can reparametrize $\g$ by arc length $s(t)$. We denote the arc lenght 
-reparametrization by $\g(s)$. We know that $\g(s)$ is unit speed, that is,
+Since $\g$ is regular, we can reparametrize $\g$ by arc-length $s(t)$. We denote the arc-length 
+reparametrization by $\g(s)$. We know that $\g(s)$ is unit-speed, that is,
 $$
 \norm{  \frac{d\g}{ds}  } = 1 \,.
 $$
@@ -2406,7 +2414,7 @@ $$
 
 
 ::: Proof
-Without loss of generality we can assume that $\g$ is unit speed. Indeed, if we were to consider $\tg$ a unit speed reparametrization of $\g$, then
+Without loss of generality we can assume that $\g$ is unit-speed. Indeed, if we were to consider $\tg$ a unit-speed reparametrization of $\g$, then
 
 - $\tg$ would still be contained in the same plane in which $\g$ is contained.
 - The torsion of $\tg$ would not change, i.e., it would still be identically zero.
@@ -2565,7 +2573,7 @@ We now state and prove the second result anticipated at the beginning of this se
 
 ::: {.Proposition #proposition-constant-k-zero-t}
 
-Let $\g \colon (a,b) \to \R^3$ be a unit speed curve. They are equivalent:
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve. They are equivalent:
 
 
 1. The image of $\g$ is contained in a circle of radius $1/c$.
@@ -2587,7 +2595,7 @@ that for a circle of radius $R$ one has
 $$
 \kappa  = \frac1R \,, \quad  \tau = 0\,.
 $$
-Therefore, by Theorem \ref{theorem-characterization-space}, every unit speed curve $\g$ with
+Therefore, by Theorem \ref{theorem-characterization-space}, every unit-speed curve $\g$ with
 constant curvature and torsion must be equal to a circle, up to rigid motions. 
 
 Nevertheless, we still give a proof of Proposition \ref{proposition-constant-k-zero-t}, 
@@ -2610,7 +2618,7 @@ concluding the proof.
 $$
 \kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
 $$
-for some constant $c \in \R$. Since $\g$ is unit speed, its Frenet-Serret equations are:
+for some constant $c \in \R$. Since $\g$ is unit-speed, its Frenet-Serret equations are:
 \begin{align*}
 \ddg & = \kappa \nn = c \nn \\
 \dot{\nn} & = - \kappa \dg + \tau \bb = -c \dg \\

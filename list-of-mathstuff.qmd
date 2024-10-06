@@ -185,11 +185,13 @@
 
  [**Definition 2.3**](#definition-curvature): Curvature of regular curve\Pageref{definition-curvature}
 
- [**Remark 2.4**](#well-posedness-of-definition): Well-posedness of Definition 2.3\Pageref{well-posedness-of-definition}
+ [**Proposition 2.4**](#proposition-curvature-invariant): $\kappa$ is invariant for unit-speed reparametrization\Pageref{proposition-curvature-invariant}
 
- [**Remark 2.5**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
+ [**Proof**](#Proof*-2.2)\Pageref{Proof*-2.2}
 
- [**Important**](#Important*-2.2)\Pageref{Important*-2.2}
+ [**Remark 2.5**](#method-for-computing-curvature): Method for computing curvature\Pageref{method-for-computing-curvature}
+
+ [**Important**](#Important*-2.3)\Pageref{Important*-2.3}
 
  [**Remark 2.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
 
@@ -207,9 +209,9 @@
 
  [**Proposition 2.13**](#Proposition-2.13)\Pageref{Proposition-2.13}
 
- [**Proof**](#Proof*-2.3)\Pageref{Proof*-2.3}
+ [**Proof**](#Proof*-2.4)\Pageref{Proof*-2.4}
 
- [**Notation**](#Notation*-2.4)\Pageref{Notation*-2.4}
+ [**Notation**](#Notation*-2.5)\Pageref{Notation*-2.5}
 
  [**Proposition 2.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
@@ -225,7 +227,7 @@
 
  [**Example 2.20**](#curvature-of-the-straight-line): Curvature of the straight line\Pageref{curvature-of-the-straight-line}
 
- [**Example 2.21**](#curvature-of-helix): Curvature of Helix\Pageref{curvature-of-helix}
+ [**Example 2.21**](#example-curvature-helix): Curvature of Helix\Pageref{example-curvature-helix}
 
  [**Definition 2.22**](#Definition-2.22)\Pageref{Definition-2.22}
 
@@ -253,77 +255,87 @@
 
  [**Proposition 2.34**](#Proposition-2.34)\Pageref{Proposition-2.34}
 
- [**Proof**](#Proof*-2.5)\Pageref{Proof*-2.5}
-
- [**Proposition 2.35**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
-
  [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
 
- [**Proposition 2.36**](#proposition-binormal)\Pageref{proposition-binormal}
+ [**Definition 2.35**](#frenet-frame): Frenet frame\Pageref{frenet-frame}
 
- [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
-
- [**Definition 2.37**](#torsion-of-unit-speed-curve): Torsion of unit-speed curve\Pageref{torsion-of-unit-speed-curve}
-
- [**Remark 2.38**](#formula-for-torsion): Formula for torsion\Pageref{formula-for-torsion}
+ [**Notation**](#Notation*-2.7)\Pageref{Notation*-2.7}
 
  [**Warning**](#Warning*-2.8)\Pageref{Warning*-2.8}
 
- [**Definition 2.39**](#Definition-2.39)\Pageref{Definition-2.39}
+ [**Definition 2.36**](#Definition-2.36)\Pageref{Definition-2.36}
 
- [**Proposition 2.40**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
+ [**Proposition 2.37**](#proposition-frenet-reparametrization): Frenet frame of reparametrization\Pageref{proposition-frenet-reparametrization}
 
- [**Example 2.41**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
+ [**Proof**](#Proof*-2.9)\Pageref{Proof*-2.9}
 
- [**Example 2.42**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
+ [**Example 2.38**](#example-helix-frenet): Frenet frame of Helix\Pageref{example-helix-frenet}
 
- [**Example 2.43**](#example-circle-rotated)\Pageref{example-circle-rotated}
-
- [**Definition 2.44**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
-
- [**Notation**](#Notation*-2.9)\Pageref{Notation*-2.9}
-
- [**Definition 2.45**](#Definition-2.45)\Pageref{Definition-2.45}
-
- [**Remark 2.46**](#Remark-2.46)\Pageref{Remark-2.46}
-
- [**Theorem 2.47**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
+ [**Proposition 2.39**](#proposition-binormal)\Pageref{proposition-binormal}
 
  [**Proof**](#Proof*-2.10)\Pageref{Proof*-2.10}
 
- [**Remark 2.48**](#Remark-2.48)\Pageref{Remark-2.48}
+ [**Definition 2.40**](#torsion-of-unit-speed-curve-with-kappa-neq-0): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0}
+
+ [**Remark 2.41**](#remark-torsion-formula): Formula for torsion\Pageref{remark-torsion-formula}
+
+ [**Warning**](#Warning*-2.11)\Pageref{Warning*-2.11}
+
+ [**Definition 2.42**](#definition-torsion-regular): Torsion of regular curve with $\kappa \neq 0$\Pageref{definition-torsion-regular}
+
+ [**Proposition 2.43**](#tau-is-invariant-for-unit-speed-reparametrization): $\tau$ is invariant for unit-speed reparametrization\Pageref{tau-is-invariant-for-unit-speed-reparametrization}
+
+ [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
+
+ [**Proposition 2.44**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
+
+ [**Example 2.45**](#example-torsion-helix): Torsion Helix\Pageref{example-torsion-helix}
+
+ [**Example 2.46**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
+
+ [**Example 2.47**](#example-circle-rotated)\Pageref{example-circle-rotated}
 
  [**Important**](#summary): Summary\Pageref{summary}
 
- [**Example 2.49**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+ [**Example 2.48**](#curvature-and-torsion-of-helix-with-frenet-frame): Curvature and torsion of Helix with Frenet frame\Pageref{curvature-and-torsion-of-helix-with-frenet-frame}
 
- [**Theorem 2.50**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+ [**Proposition 2.49**](#proposition-positive-basis): Frenet frame is right-handed\Pageref{proposition-positive-basis}
 
- [**Example 2.51**](#Example-2.51)\Pageref{Example-2.51}
+ [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
 
- [**Proposition 2.52**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
-
- [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
-
- [**Example 2.53**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
-
- [**Important**](#new-notation): New Notation!\Pageref{new-notation}
-
- [**Proof**](#proof-of-proposition): Proof of Proposition 2.48\Pageref{proof-of-proposition}
-
- [**Remark 2.54**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
-
- [**Proposition 2.55**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+ [**Theorem 2.50**](#frenet-serret-equations-1): Frenet-Serret equations\Pageref{frenet-serret-equations-1}
 
  [**Proof**](#Proof*-2.15)\Pageref{Proof*-2.15}
 
- [**Corollary 2.56**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+ [**Remark 2.51**](#vectorial-form-of-frenet-serret-equations): Vectorial form of Frenet-Serret equations\Pageref{vectorial-form-of-frenet-serret-equations}
 
- [**Example 2.57**](#Example-2.57)\Pageref{Example-2.57}
+ [**Theorem 2.52**](#theorem-characterization-space): Fundamental Theorem of Space Curves\Pageref{theorem-characterization-space}
 
- [**Proposition 2.58**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Example 2.53**](#Example-2.53)\Pageref{Example-2.53}
 
- [**Proof**](#Proof*-2.16)\Pageref{Proof*-2.16}
+ [**Proposition 2.54**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+
+ [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
+
+ [**Example 2.55**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+
+ [**Important**](#new-notation): New Notation!\Pageref{new-notation}
+
+ [**Proof**](#proof-of-proposition): Proof of Proposition 2.54\Pageref{proof-of-proposition}
+
+ [**Remark 2.56**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+
+ [**Proposition 2.57**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+
+ [**Proof**](#Proof*-2.19)\Pageref{Proof*-2.19}
+
+ [**Corollary 2.58**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+
+ [**Example 2.59**](#Example-2.59)\Pageref{Example-2.59}
+
+ [**Proposition 2.60**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+
+ [**Proof**](#Proof*-2.20)\Pageref{Proof*-2.20}
 
  [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
@@ -339,7 +351,7 @@
 
  [**Definition 3.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition}
 
  [**Proposition 3.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
@@ -533,7 +545,7 @@
 
  [**Definition 3.73**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Proof**](#well-posedness-of-definition-2): Well-posedness of Definition 3.73\Pageref{well-posedness-of-definition-2}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.73\Pageref{well-posedness-of-definition-1}
 
  [**Proposition 3.74**](#Proposition-3.74)\Pageref{Proposition-3.74}
 

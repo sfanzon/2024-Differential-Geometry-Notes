@@ -215,11 +215,15 @@
 
  [**Proposition 2.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
+ [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
+
  [**Remark 2.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
 
- [**Theorem 2.16**](#geometric-properties-of-vector-product): Geometric Properties of vector product\Pageref{geometric-properties-of-vector-product}
+ [**Theorem 2.16**](#theorem-vector-product): Geometric Properties of vector product\Pageref{theorem-vector-product}
 
  [**Proposition 2.17**](#Proposition-2.17)\Pageref{Proposition-2.17}
+
+ [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
 
  [**Proposition 2.18**](#Proposition-2.18)\Pageref{Proposition-2.18}
 
@@ -255,37 +259,37 @@
 
  [**Proposition 2.34**](#Proposition-2.34)\Pageref{Proposition-2.34}
 
- [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
+ [**Proof**](#Proof*-2.8)\Pageref{Proof*-2.8}
 
  [**Definition 2.35**](#frenet-frame): Frenet frame\Pageref{frenet-frame}
 
- [**Notation**](#Notation*-2.7)\Pageref{Notation*-2.7}
+ [**Notation**](#Notation*-2.9)\Pageref{Notation*-2.9}
 
- [**Warning**](#Warning*-2.8)\Pageref{Warning*-2.8}
+ [**Warning**](#Warning*-2.10)\Pageref{Warning*-2.10}
 
  [**Definition 2.36**](#Definition-2.36)\Pageref{Definition-2.36}
 
  [**Proposition 2.37**](#proposition-frenet-reparametrization): Frenet frame of reparametrization\Pageref{proposition-frenet-reparametrization}
 
- [**Proof**](#Proof*-2.9)\Pageref{Proof*-2.9}
+ [**Proof**](#Proof*-2.11)\Pageref{Proof*-2.11}
 
  [**Example 2.38**](#example-helix-frenet): Frenet frame of Helix\Pageref{example-helix-frenet}
 
  [**Proposition 2.39**](#proposition-binormal)\Pageref{proposition-binormal}
 
- [**Proof**](#Proof*-2.10)\Pageref{Proof*-2.10}
+ [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
 
  [**Definition 2.40**](#torsion-of-unit-speed-curve-with-kappa-neq-0): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0}
 
  [**Remark 2.41**](#remark-torsion-formula): Formula for torsion\Pageref{remark-torsion-formula}
 
- [**Warning**](#Warning*-2.11)\Pageref{Warning*-2.11}
+ [**Warning**](#Warning*-2.13)\Pageref{Warning*-2.13}
 
  [**Definition 2.42**](#definition-torsion-regular): Torsion of regular curve with $\kappa \neq 0$\Pageref{definition-torsion-regular}
 
  [**Proposition 2.43**](#tau-is-invariant-for-unit-speed-reparametrization): $\tau$ is invariant for unit-speed reparametrization\Pageref{tau-is-invariant-for-unit-speed-reparametrization}
 
- [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
+ [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
 
  [**Proposition 2.44**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
@@ -301,41 +305,67 @@
 
  [**Proposition 2.49**](#proposition-positive-basis): Frenet frame is right-handed\Pageref{proposition-positive-basis}
 
- [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
+ [**Proof**](#Proof*-2.16)\Pageref{Proof*-2.16}
 
  [**Theorem 2.50**](#frenet-serret-equations-1): Frenet-Serret equations\Pageref{frenet-serret-equations-1}
 
- [**Proof**](#Proof*-2.15)\Pageref{Proof*-2.15}
+ [**Proof**](#Proof*-2.17)\Pageref{Proof*-2.17}
 
- [**Remark 2.51**](#vectorial-form-of-frenet-serret-equations): Vectorial form of Frenet-Serret equations\Pageref{vectorial-form-of-frenet-serret-equations}
+ [**Remark 2.51**](#remark-vector-frenet): Vectorial form of Frenet-Serret equations\Pageref{remark-vector-frenet}
 
- [**Theorem 2.52**](#theorem-characterization-space): Fundamental Theorem of Space Curves\Pageref{theorem-characterization-space}
+ [**Definition 2.52**](#rigid-motion): Rigid motion\Pageref{rigid-motion}
 
- [**Example 2.53**](#Example-2.53)\Pageref{Example-2.53}
+ [**Theorem 2.53**](#theorem-characterization-space): Fundamental Theorem of Space Curves\Pageref{theorem-characterization-space}
 
- [**Proposition 2.54**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+ [**Example 2.54**](#application-of-fundamental-theorem-of-curves): Application of Fundamental Theorem of Curves\Pageref{application-of-fundamental-theorem-of-curves}
 
- [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
+ [**Remark 2.55**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
 
- [**Example 2.55**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+ [**Proposition 2.56**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
 
- [**Important**](#new-notation): New Notation!\Pageref{new-notation}
+ [**Proof**](#Proof*-2.18)\Pageref{Proof*-2.18}
 
- [**Proof**](#proof-of-proposition): Proof of Proposition 2.54\Pageref{proof-of-proposition}
-
- [**Remark 2.56**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
-
- [**Proposition 2.57**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+ [**Corollary 2.57**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
 
  [**Proof**](#Proof*-2.19)\Pageref{Proof*-2.19}
 
- [**Corollary 2.58**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+ [**Example 2.58**](#Example-2.58)\Pageref{Example-2.58}
 
- [**Example 2.59**](#Example-2.59)\Pageref{Example-2.59}
-
- [**Proposition 2.60**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Proposition 2.59**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
 
  [**Proof**](#Proof*-2.20)\Pageref{Proof*-2.20}
+
+ [**Proposition 2.60**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+
+ [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
+
+ [**Example 2.61**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+
+ [**Important**](#new-notation): New Notation!\Pageref{new-notation}
+
+ [**Proof**](#proof-of-proposition): Proof of Proposition 2.60\Pageref{proof-of-proposition}
+
+ [**Theorem 2.62**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
+
+ [**Theorem 2.63**](#existence-and-uniqueness-for-linear-ode-systems): Existence and uniqueness for linear ODE systems\Pageref{existence-and-uniqueness-for-linear-ode-systems}
+
+ [**Proposition 2.64**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
+
+ [**Proof**](#Proof*-2.24)\Pageref{Proof*-2.24}
+
+ [**Proposition 2.65**](#linear-transformations-of-cross-product): Linear transformations of cross product\Pageref{linear-transformations-of-cross-product}
+
+ [**Proof**](#Proof*-2.25)\Pageref{Proof*-2.25}
+
+ [**Proposition 2.66**](#rigid-motion-of-curves): Rigid motion of curves\Pageref{rigid-motion-of-curves}
+
+ [**Proof**](#Proof*-2.26)\Pageref{Proof*-2.26}
+
+ [**Proposition 2.67**](#evolution-of-orthonormal-systems-of-vectors): Evolution of orthonormal systems of vectors\Pageref{evolution-of-orthonormal-systems-of-vectors}
+
+ [**Proof**](#Proof*-2.27)\Pageref{Proof*-2.27}
+
+ [**Proof**](#proof-of-theorem): Proof of Theorem 2.62\Pageref{proof-of-theorem}
 
  [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
@@ -1017,7 +1047,7 @@
 
  [**Proof**](#Proof*-4.36)\Pageref{Proof*-4.36}
 
- [**Proof**](#proof-of-theorem): Proof of Theorem 4.156\Pageref{proof-of-theorem}
+ [**Proof**](#proof-of-theorem-1): Proof of Theorem 4.156\Pageref{proof-of-theorem-1}
 
  [**Theorem 4.159**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
 

@@ -2546,7 +2546,7 @@ $$
 
 
 
-## Geometric applications of Frenet-Serret
+## Applications of Frenet-Serret
 
 
 We now state and prove two results which directly follow from the Frenet-Serret equations. They state, respectively:
@@ -2570,13 +2570,13 @@ $$
 $$
 for some vector $\mathbf{P} \in \R^3$ and scalar $d \in \R$. Note that:
 
-- If $d = 0$, the condition
+1. If $d = 0$, the condition
 $$
 \xx \cdot \mathbf{P} = 0
 $$
 is saying that the plane $\pmb{\pi}_0$ contains all the points $\xx$ in $\R^3$ which are orthogonal to $\mathbf{P}$. In particular $\pmb{\pi}_0$ contains the origin $\zero$. 
 
-- If $d \neq 0$, then $\pmb{\pi}_d$ is the translation of $\pmb{\pi}_0$ by the quantity $d$ in direction $\mathbf{P}$.
+2. If $d \neq 0$, then $\pmb{\pi}_d$ is the translation of $\pmb{\pi}_0$ by the quantity $d$ in direction $\mathbf{P}$.
 
  In both cases, $\mathbf{P}$ is the normal vector to the plane, as shown in @fig-general-plane.
 :::
@@ -2907,7 +2907,47 @@ $$
 Before proceeding with the proof, we need to establish some notation.
 
 ::: Notation
-### Compact notation for arc-length reparametrization
+### Compact notation for derivatives
+
+In the following we will use the letters
+
+1. $s$ to denote the *arc-length parameter*
+2. $t$ to denote an *arbitrary parameter*
+
+Accordingly the parameter of the arc-length function is $t$
+$$
+s = s(t)
+$$
+and the parameter of the inverse $\psi := s^{-1}$ of the arc-length is $s$
+$$
+\psi = \psi(s)
+$$
+As the arc-length function allows to transition from an
+arbitrary parameter $t$ to the arc-length parameter $s$, 
+the inverse of $s$ will also be denoted by
+$$
+t = t(s) 
+$$
+
+
+Let $\g \colon (a,b) \to \R^n$ be a regular curve and
+$s \colon (a,b) \to (\tilde{a},\tilde{b})$ its arc-length
+function. Denote by
+$$
+\tg := \g \circ s^{-1}
+$$
+the arc-length reparametrization of $\g$. 
+According to the above notations, we will write
+$$
+\g (t) = \tg(s(t)) \,, \quad t \in (a,b)
+$$
+and also
+$$
+\tg (s) = \g(t(s)) \,, \quad s \in (\tilde{a},\tilde{b}) 
+$$
+
+
+
 
 Suppose $\g \colon (a,b) \to \R^n$ is regular and denote by 
 $$

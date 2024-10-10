@@ -337,7 +337,7 @@
 
  [**Proposition 2.60**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
- [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc-length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
+ [**Notation**](#compact-notation-for-derivatives): Compact notation for derivatives\Pageref{compact-notation-for-derivatives}
 
  [**Example 2.61**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
 

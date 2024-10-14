@@ -337,35 +337,29 @@
 
  [**Proposition 2.60**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
- [**Notation**](#compact-notation-for-derivatives): Compact notation for derivatives\Pageref{compact-notation-for-derivatives}
+ [**Proof**](#Proof*-2.21)\Pageref{Proof*-2.21}
 
- [**Example 2.61**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+ [**Theorem 2.61**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
 
- [**Important**](#new-notation): New Notation!\Pageref{new-notation}
+ [**Theorem 2.62**](#existence-and-uniqueness-for-linear-ode-systems): Existence and uniqueness for linear ODE systems\Pageref{existence-and-uniqueness-for-linear-ode-systems}
 
- [**Proof**](#proof-of-proposition): Proof of Proposition 2.60\Pageref{proof-of-proposition}
+ [**Proposition 2.63**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
 
- [**Theorem 2.62**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
+ [**Proof**](#Proof*-2.22)\Pageref{Proof*-2.22}
 
- [**Theorem 2.63**](#existence-and-uniqueness-for-linear-ode-systems): Existence and uniqueness for linear ODE systems\Pageref{existence-and-uniqueness-for-linear-ode-systems}
+ [**Proposition 2.64**](#linear-transformations-of-cross-product): Linear transformations of cross product\Pageref{linear-transformations-of-cross-product}
 
- [**Proposition 2.64**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
+ [**Proof**](#Proof*-2.23)\Pageref{Proof*-2.23}
+
+ [**Proposition 2.65**](#frenet-frame-under-rigid-motions): Frenet Frame under rigid motions\Pageref{frenet-frame-under-rigid-motions}
 
  [**Proof**](#Proof*-2.24)\Pageref{Proof*-2.24}
 
- [**Proposition 2.65**](#linear-transformations-of-cross-product): Linear transformations of cross product\Pageref{linear-transformations-of-cross-product}
+ [**Proposition 2.66**](#evolution-of-orthonormal-systems-of-vectors): Evolution of orthonormal systems of vectors\Pageref{evolution-of-orthonormal-systems-of-vectors}
 
  [**Proof**](#Proof*-2.25)\Pageref{Proof*-2.25}
 
- [**Proposition 2.66**](#rigid-motion-of-curves): Rigid motion of curves\Pageref{rigid-motion-of-curves}
-
- [**Proof**](#Proof*-2.26)\Pageref{Proof*-2.26}
-
- [**Proposition 2.67**](#evolution-of-orthonormal-systems-of-vectors): Evolution of orthonormal systems of vectors\Pageref{evolution-of-orthonormal-systems-of-vectors}
-
- [**Proof**](#Proof*-2.27)\Pageref{Proof*-2.27}
-
- [**Proof**](#proof-of-theorem): Proof of Theorem 2.62\Pageref{proof-of-theorem}
+ [**Proof**](#proof-of-theorem): Proof of Theorem 2.61\Pageref{proof-of-theorem}
 
  [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 

@@ -164,11 +164,11 @@ $$
 $$
 Denote by
 $$
-\tilde{\kappa} \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tilde{\kappa}(t) :=   \norm{\ddtg (t)}
+\tkappa \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tkappa(t) :=   \norm{\ddtg (t)}
 $$
 the curvature of $\tg$. The **curvature** of $\g$ at $\g(t)$ is defined by
 $$
-\kappa(t) := \tilde{\kappa}(\f(t))
+\kappa(t) := \tkappa(\f(t))
 $$
 
 :::
@@ -184,7 +184,7 @@ This is shown in the next Proposition.
 Consider the setting of Definition \ref{definition-curvature}.
 If $\hat{\g}$ is another unit-speed reparametrization of $\g$, with $\g = \hat{\g} \circ \psi$, then
 $$
-\kappa(t) = \tilde{\kappa} ( \f(t) ) = \hat{\kappa}(\psi(t)) \,, \quad \forall \, t \in (a,b)
+\kappa(t) = \tkappa ( \f(t) ) = \hat{\kappa}(\psi(t)) \,, \quad \forall \, t \in (a,b)
 $$
 where 
 $$
@@ -233,9 +233,9 @@ Taking the norms and using again that $|\dot\xi| \equiv 1$
 $$
 \norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\xi(t))} \,.
 $$
-Recalling that $\xi  = \psi \circ \f^{-1}$ and the definitions of $\tilde{\kappa}$ and $\hat{\kappa}$ we conclude
+Recalling that $\xi  = \psi \circ \f^{-1}$ and the definitions of $\tkappa$ and $\hat{\kappa}$ we conclude
 $$
-\tilde{\kappa} ( \f(t) ) = \norm{  \ddtg( \f(t))} = \norm{ \ddot{\hat{\g}}(\psi(t))} = \hat{\kappa} ( \psi(t) ) \,.
+\tkappa ( \f(t) ) = \norm{  \ddtg( \f(t))} = \norm{ \ddot{\hat{\g}}(\psi(t))} = \hat{\kappa} ( \psi(t) ) \,.
 $$
 
 :::
@@ -260,12 +260,12 @@ $$
 
 3. Compute curvature of $\tg$
 $$
-\tilde{\kappa}(s) = \norm{\ddtg (s)}
+\tkappa(s) = \norm{\ddtg (s)}
 $$
 
 4. The curvature of $\g$ at $\g(t)$ is
 $$
-\kappa (t)= \tilde{\kappa} (s(t)) 
+\kappa (t)= \tkappa (s(t)) 
 $$
 
 :::
@@ -424,11 +424,11 @@ $$
 $$
 Therefore the curvature of $\tg$ is
 $$
-\tilde{\kappa}(s) = \norm{\ddtg (s)}= \frac{1}{1+s^2} \,.
+\tkappa(s) = \norm{\ddtg (s)}= \frac{1}{1+s^2} \,.
 $$
 Recalling that $s(t) = \sinh(t)$, we conclude that the curvature of $\g$ is
 $$
-\kappa (t) = \tilde{\kappa}(s(t)) = \frac{1}{1+ \sinh(t)^2} = 
+\kappa (t) = \tkappa(s(t)) = \frac{1}{1+ \sinh(t)^2} = 
 \frac{1}{\cosh(t)^2}
 $$
 where we used the identity $1 + \sinh^2 = \cosh^2$.
@@ -927,11 +927,11 @@ $$
 $$
 When $\g$ is regular we defined the curvature as
 $$
-\kappa(t) :=  \tilde{\kappa}(s(t))
+\kappa(t) :=  \tkappa(s(t))
 $$
 where
 $$
-\tilde{\kappa}(s) := \norm{ \ddtg(s) }
+\tkappa(s) := \norm{ \ddtg(s) }
 $$
 is the curvature of the arc-length reparametrization $\tg := \g \circ s^{-1}$ of 
 $\g$.
@@ -1158,9 +1158,9 @@ $$
 \kappa_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
 
-2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit-speed curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
+2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit-speed curve such that its signed curvature $\tkappa_s$ satisfies
 $$
-\tilde{\kappa}_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
+\tkappa_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
 Then 
 $$
@@ -1434,20 +1434,20 @@ $$
 Denote by 
 $$
 (\ttt, \nn, \bb)\,, \qquad 
-(\tilde{\ttt}, \tilde{\nn}, \tilde{\bb})
+(\tttt, \tnn, \tbb)
 $$
 the Frenet frames of $\g$ and $\tg$, respectively. We have:
 
 1. If $\tg$ is *orientation preserving* then $\dot \f \equiv 1$ and
 $$
-\ttt = \tilde{\ttt} \circ \f , \quad \nn = \tilde{\nn} \circ \f, \quad 
-\bb = \tilde{\bb} \circ \f
+\ttt = \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
+\bb = \tbb \circ \f
 $$
 
 2. If $\tg$ is *orientation reversing* then $\dot \f \equiv -1$ and
 $$
-\ttt = - \tilde{\ttt} \circ \f , \quad \nn = \tilde{\nn} \circ \f, \quad 
-\bb = -\tilde{\bb} \circ \f
+\ttt = - \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
+\bb = -\tbb \circ \f
 $$
 
 :::
@@ -1456,7 +1456,7 @@ $$
 
 ::: Proof
 
-Differentiating $\g = \dg \circ \phi$ gives
+Differentiating $\g = \tg \circ \phi$ gives
 $$
 \dg(t) = \dtg ( \f(t) ) \ \dot{\f}(t)
 $${#eq-chain-unit-speed}
@@ -1477,16 +1477,16 @@ $$
 $${#eq-chain-unit-speed-3}
 where we used (@eq-chain-unit-speed-2). By definition 
 $$
-\ttt := \dg \,, \qquad \tilde{\ttt} := \dtg 
+\ttt := \dg \,, \qquad \tttt := \dtg 
 $$
 Therefore (@eq-chain-unit-speed) reads
 $$
-\ttt(t) = \tilde{\ttt}( \f(t) ) \ \dot{\f}(t)
+\ttt(t) = \tttt( \f(t) ) \ \dot{\f}(t)
 $${#eq-chain-unit-speed-4}
 By Proposition \ref{proposition-curvature-invariant} the 
-curvatures $\kappa, \tilde{\kappa}$ of $\g, \tg$ are related by
+curvatures $\kappa, \tkappa$ of $\g, \tg$ are related by
 $$
-\kappa(t) = \tilde{\kappa}( \f (t))  \,.
+\kappa(t) = \tkappa( \f (t))  \,.
 $${#eq-chain-unit-speed-5}
 Dividing both sides of (@eq-chain-unit-speed-3) by $\kappa(t)$ 
 and using (@eq-chain-unit-speed-5) gives
@@ -1494,49 +1494,49 @@ $$
 \begin{aligned}
 \frac{1}{\kappa(t)} \ \ddg (t) & =
 \frac{1}{\kappa(t)} \ \ddtg (\f(t)) \\
-& = \frac{1}{\tilde{\kappa}(\f(t))} \ \ddtg(\f(t))
+& = \frac{1}{\tkappa(\f(t))} \ \ddtg(\f(t))
 \end{aligned}
 $${#eq-chain-unit-speed-6}
 By definition the principal normals are
 $$
 \nn := \frac{1}{\kappa} \ \ddg \,, \qquad 
-\tilde{\nn} := \frac{1}{\tilde{\kappa}} \ \ddtg \,
+\tnn := \frac{1}{\tkappa} \ \ddtg \,
 $$
 and therefore (@eq-chain-unit-speed-6) reads
 $$
-\nn(t) = \tilde{\nn} ( \f(t) ) 
+\nn(t) = \tnn ( \f(t) ) 
 $${#eq-chain-unit-speed-7}
 Recall the definition of binormal
 $$
 \bb = \ttt \times \nn \,, \qquad 
-\tilde{\bb} = \tilde{\ttt} \times \tilde{\nn}
+\tbb = \tttt \times \tnn
 $$
 Using (@eq-chain-unit-speed-4) and (@eq-chain-unit-speed-7) then gives
 \begin{align*}
 \bb(t) & = \ttt(t) \times \nn(t) \\
-       & = \tilde{\ttt} ( \f(t) ) \times \tilde{\nn} ( \f(t) ) \, \dot{\f}(t)\\
-       & = \tilde{\bb}( \f(t) ) \ \dot{\f} (t) 
+       & = \tttt ( \f(t) ) \times \tnn ( \f(t) ) \, \dot{\f}(t)\\
+       & = \tbb( \f(t) ) \ \dot{\f} (t) 
 \end{align*}
 To summarize, we have shown the following relations between the Frenet frames of $\g$ and $\tg$
 $$
 \begin{aligned}
-\ttt(t) & = \tilde{\ttt}( \f(t) ) \ \dot{\f}(t) \\
-\nn(t) & = \tilde{\nn} ( \f(t) ) \\
-\bb(t) & = \tilde{\bb}( \f(t) ) \ \dot{\f} (t) 
+\ttt(t) & = \tttt( \f(t) ) \ \dot{\f}(t) \\
+\nn(t) & = \tnn ( \f(t) ) \\
+\bb(t) & = \tbb( \f(t) ) \ \dot{\f} (t) 
 \end{aligned}
 $${#eq-chain-unit-speed-8}
 We can finally conclude:
 
 1. If $\tg$ is orientation preserving then $\dot \f > 0$. By (@eq-chain-unit-speed-2) we infer $\dot \f \equiv 1$, so that the equations at (@eq-chain-unit-speed-8) read
 $$
-\ttt = \tilde{\ttt} \circ \f , \quad \nn = \tilde{\nn} \circ \f, \quad 
-\bb = \tilde{\bb} \circ \f
+\ttt = \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
+\bb = \tbb \circ \f
 $$
 
 2. If $\tg$ is orientation reversing then $\dot \f < 0$. By (@eq-chain-unit-speed-2) we infer $\dot \f \equiv - 1$, so that the equations at (@eq-chain-unit-speed-8) read
 $$
-\ttt = - \tilde{\ttt} \circ \f , \quad \nn = \tilde{\nn} \circ \f, \quad 
-\bb = - \tilde{\bb} \circ \f
+\ttt = - \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
+\bb = - \tbb \circ \f
 $$
 
 :::
@@ -1547,8 +1547,8 @@ reparametrization. However the Frenet vectors stay the same,
 up to changing the sign of tangent and binormal.
 
 $$
-\ttt = \pm \tilde{\ttt} \circ \f , \quad \nn = \tilde{\nn} \circ \f, \quad 
-\bb = \pm \tilde{\bb} \circ \f
+\ttt = \pm \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
+\bb = \pm \tbb \circ \f
 $$
 
 
@@ -1596,26 +1596,26 @@ $$
 $$
 We compute the tangent vector to $\tg$ and its derivative
 \begin{align*}
-\tilde{\ttt} & = \dtg  = \frac{1}{\rho}
+\tttt & = \dtg  = \frac{1}{\rho}
  \left(  - R \sin \left( \frac{s}{\rho}  \right) , 
  R \cos \left( \frac{s}{\rho}  \right) 
  , H    \right) \\
-\dot{\tilde{\ttt}} & = \frac{R}{\rho^2} \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)
+\dot{\tttt} & = \frac{R}{\rho^2} \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)
 \end{align*}
 We have already computed the curvature of the Helix in 
 Example \ref{example-curvature-helix} by using the general 
 formula. We now compute it again, but this time by using the
 unit-speed reparametrization just obtained:
 $$
-\tilde{\kappa} (s) = \norm{ \dot{\tilde{\ttt}} } = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}\,.
+\tkappa (s) = \norm{ \dot{\tttt} } = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}\,.
 $$
 The principal normal vector is then
 $$
-\tilde{\nn} = \frac{1}{\tilde{\kappa}(t)} \, \dot{\tilde{\ttt}} = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right) \,.
+\tnn = \frac{1}{\tkappa(t)} \, \dot{\tttt} = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right) \,.
 $$
 We can now compute the binormal
 \begin{align*}
-\tilde{\bb}& = \tilde{\ttt} \times \tilde{\nn}  \\
+\tbb& = \tttt \times \tnn  \\
     & = \frac{1}{\rho}
     \left|
     \begin{array}{ccc}
@@ -1624,14 +1624,14 @@ We can now compute the binormal
     - \cos \left( \frac{s}{\rho}  \right) & - \sin \left( \frac{s}{ \rho }  \right) & 0 
     \end{array}
     \right| \\
-    & =  \frac{H}{\rho} \left(  \sin \left( \frac{s}{\rho}  \right) , -  \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
+    & =  \frac{1}{\rho} \left( H \sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
 \end{align*}
 This concludes the calculation of the Frenet frame of $\tg$. 
 For the choice of $R = 1$ and $H = 1$ the Frenet frame is plotted in @fig-helix-frenet.
 
 **Note:** If we had reparametrized $\g$ by $-s$ instead of $s$, we would have obtained the Frenet frame
 $$
-(- \tilde{\ttt} , \tilde{\nn}, - \tilde{\bb})
+(- \tttt , \tnn, - \tbb)
 $$
 in accordance with Proposition \ref{proposition-frenet-reparametrization}. 
 
@@ -1865,9 +1865,9 @@ $\g$, with
 $$
 \g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
 $$
-Denote by $\tilde{\tau} \colon (\tilde{a},\tilde{b}) \to \R$ the torsion of $\tg$. The **torsion** of $\g$ at $\g(t)$ is defined by
+Denote by $\ttau \colon (\tilde{a},\tilde{b}) \to \R$ the torsion of $\tg$. The **torsion** of $\g$ at $\g(t)$ is defined by
 $$
-\tau(t) := \tilde{\tau}(\f(t))
+\tau(t) := \ttau(\f(t))
 $$
 
 :::
@@ -1883,7 +1883,7 @@ on the choice of unit-speed reparametrization $\tg$.
 Consider the setting of Definition \ref{definition-torsion-regular}. Let $\hat{\g}$ is another
 unit-speed reparametrization of $\g$, with $\g = \hat{\g} \circ \psi$. Then
 $$
-\tau(t) = \tilde{\tau}( \f (t) ) = \hat{\tau}( \psi (t) ) 
+\tau(t) = \ttau( \f (t) ) = \hat{\tau}( \psi (t) ) 
 $$
 where $\hat{\tau}$ is the torsion of $\hat{\g}$.
 
@@ -1895,7 +1895,7 @@ where $\hat{\tau}$ is the torsion of $\hat{\g}$.
 The curves $\tg$ and $\hat{\g}$ are unit-speed, therefore
 they are defined their Frenet frames
 $$
-(\tilde{\ttt}, \tilde{\nn}, \tilde{\bb}) \,, \qquad
+(\tttt, \tnn, \tbb) \,, \qquad
 (\hat{\ttt}, \hat{\nn}, \hat{\bb})
 $$
 Since $\tg$ and $\hat{\g}$ are both reparametrization of $\g$
@@ -1909,9 +1909,9 @@ $$
 with $\xi$ diffeomorphims.
 The above formula is saying that $\hat{\g}$ is a reparametrization of $\tg$. As both $\tg$ and $\hat{\g}$ are unit-speed, we can apply Proposition \ref{proposition-frenet-reparametrization} and infer that the Frenet frames are linked by the formulas
 $$
-\tilde{\ttt} = \pm \, \hat{\ttt} \circ \xi \,, \qquad 
-\tilde{\nn} = \hat{\nn} \circ \xi \,, \qquad 
-\tilde{\bb} = \pm \, \hat{\bb} \circ \xi
+\tttt = \pm \, \hat{\ttt} \circ \xi \,, \qquad 
+\tnn = \hat{\nn} \circ \xi \,, \qquad 
+\tbb = \pm \, \hat{\bb} \circ \xi
 $${#eq-torsion-invariant-1}
 and $\xi$ satisfies
 $$
@@ -1919,23 +1919,23 @@ $$
 $$
 Differentiating the third equation in (@eq-torsion-invariant-1) gives
 $$
-\dot{\tilde{\bb}}(t) = \pm \, \frac{d}{dt} \hat{\bb}(\xi(t)) = 
+\dot{\tbb}(t) = \pm \, \frac{d}{dt} \hat{\bb}(\xi(t)) = 
 \pm \, \dot {\hat{\bb}} (\xi(t)) \dot \xi (t) = \dot {\hat{\bb}} (\xi(t))
 $${#eq-torsion-invariant-2}
 where we used that $\dot\xi \equiv \pm 1$.
 By Remark \ref{remark-torsion-formula} the torsions of $\tg$ and $\dtg$ are computed by
 $$
-\tilde{\tau} = - \dot{ \tilde{\bb} } \cdot \tilde{\nn} \,, \qquad  
+\ttau = - \dot{ \tbb } \cdot \tnn \,, \qquad  
 \hat{\tau} = - \dot{ \hat{\bb} } \cdot \hat{\nn}
 $$
 Using the second equation in (@eq-torsion-invariant-1) and (@eq-torsion-invariant-2) allows to infer
 $$
-\tilde{\tau} (t) = - \dot{ \tilde{\bb} }(t) \cdot \tilde{\nn}(t) = - \dot{ \hat{\bb} }(\xi(t)) \cdot \hat{\nn}(\xi(t)) = 
+\ttau (t) = - \dot{ \tbb }(t) \cdot \tnn(t) = - \dot{ \hat{\bb} }(\xi(t)) \cdot \hat{\nn}(\xi(t)) = 
 \hat{\tau}(\xi(t))
 $$
 Recalling that $\xi = \psi \circ \f^{-1}$ we conclude
 $$
-\tilde{\tau} (\f(t)) = \hat{\tau}(\psi(t))
+\ttau (\f(t)) = \hat{\tau}(\psi(t))
 $$
 as required. 
 
@@ -2188,29 +2188,29 @@ $$
 $$
 From Example \ref{example-helix-frenet}, the Frenet frame and curvature of $\tg$ are
 \begin{align*}
-\tilde{\ttt} & =  \frac{1}{\rho}
+\tttt & =  \frac{1}{\rho}
  \left(  - R \sin \left( \frac{s}{\rho}  \right) , 
  R \cos \left( \frac{s}{\rho}  \right) 
  , H    \right)\\
-\tilde{\nn} & = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right) \\
-\tilde{\bb} & = \frac{H}{\rho} \left(  \sin \left( \frac{s}{\rho}  \right) , -  \cos \left( \frac{s}{\rho}  \right) ,  R \right) \\
-\tilde{\kappa} & = \norm{ \dot{\tilde{\ttt}} } = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}
+\tnn & = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right) \\
+\tbb & = \frac{1}{\rho} \left(  H\sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \\
+\tkappa & = \norm{ \dot{\tttt} } = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}
 \end{align*}
 we are left to compute the torsion using formula
 $$
-\tilde{\tau} = - \dot{\tilde{\bb}} \cdot \tilde{\nn} 
+\ttau = - \dot{\tbb} \cdot \tnn 
 $$
 Indeed, we have
 $$
-\dot{\tilde{\bb}} = \frac{H}{\rho^2} \left(  \cos \left( \frac{s}{\rho}  \right) , \sin \left( \frac{s}{\rho}  \right) , 0   \right)
+\dot{\tbb} = \frac{H}{\rho^2} \left(  \cos \left( \frac{s}{\rho}  \right) , \sin \left( \frac{s}{\rho}  \right) , 0   \right)
 $$
 and therefore 
 $$
-\dot{\tilde{\bb}} \cdot \nn = \frac{H}{\rho^2} \left( - \cos^2 \left( \frac{s}{\rho}  \right) -  \sin^2 \left( \frac{s}{\rho}  \right) \right) = - \frac{H}{\rho^2} \,.
+\dot{\tbb} \cdot \nn = \frac{H}{\rho^2} \left( - \cos^2 \left( \frac{s}{\rho}  \right) -  \sin^2 \left( \frac{s}{\rho}  \right) \right) = - \frac{H}{\rho^2} \,.
 $$
 The torsion is then
 $$
-\tilde{\tau} = - \dot{\tilde{\bb}} \cdot \tilde{\nn} = \frac{H}{\rho^2} = \frac{H}{R^2 + H^2} \,,
+\ttau = - \dot{\tbb} \cdot \tnn = \frac{H}{\rho^2} = \frac{H}{R^2 + H^2} \,,
 $$
 which of course agrees with the calculation for $\tau$ in Example \ref{example-torsion-helix}.
 
@@ -2490,10 +2490,10 @@ Let $\kappa, \tau \ \colon (a,b) \to \R$ be smooth functions, with $\kappa>0$. T
 
 1. There exists a unit-speed curve $\g \ \colon (a,b) \to \R^3$ with curvature $\kappa(t)$ and torsion $\tau(t)$.
 
-2. Suppose that $\tg \ \colon (a,b) \to \R^3$ is a unit-speed curve whose curvature $\tilde{\kappa}$ and torsion $\tilde{\tau}$ satisfy
+2. Suppose that $\tg \ \colon (a,b) \to \R^3$ is a unit-speed curve whose curvature $\tkappa$ and torsion $\ttau$ satisfy
 $$
-\tilde{\kappa}(t) = \kappa(t) \,, \quad 
-\tilde{\tau}(t) = \tau(t) 
+\tkappa(t) = \kappa(t) \,, \quad 
+\ttau(t) = \tau(t) 
   \,, \quad \forall \, t \in (a,b) \,.
 $$
 Then there exists a rigid motion $M \colon \R^3 \to \R^3$ such that
@@ -2531,11 +2531,11 @@ $$
 $$
 for $t \in [0,2\pi]$. In Example \ref{example-circle-curvature-torsion} we have proven that curvature and torsion are  
 $$
-\tilde{\kappa} = 1 \,, \quad \tilde{\tau} = 0 \,. 
+\tkappa = 1 \,, \quad \ttau = 0 \,. 
 $$
 Therefore 
 $$
-\kappa = \tilde{\kappa}\,, \quad \tau = \tilde{\tau}  \,,
+\kappa = \tkappa\,, \quad \tau = \ttau  \,,
 $$
 and by Theorem  \ref{theorem-characterization-space} we conclude that there exist a rigid motion $M \colon \R^3 \to \R^3$ such that
 $$
@@ -2607,6 +2607,19 @@ $$
 :::
 
 
+**Idea of the proof:**
+The third Frenet-Serret equation states that
+$$
+\dot{\bb} = - \tau \nn 
+$$
+Therefore $\tau=0$ if and only if $\dot{\bb} = 0$, which means
+that $\bb$ is constant. Now, $\bb$ is orthogonal to the other 
+two vectors $\ttt, \nn$ of the Frenet-Frame. Since $\bb$ is constant, this means $\ttt, \nn$ span a constant plane which has $\bb$ as normal vector. This tells us $\g$ is contained in the plane
+$$
+\g \cdot \bb = d 
+$$
+for suitable $d \in \R$. Let's prove this!
+ 
 
 ::: Proof
 
@@ -2634,12 +2647,11 @@ we conclude that the vectors $\ttt(t)$ and $\nn(t)$ always span the same plane, 
 $$
 \frac{d}{dt} ( \g \cdot \bb ) = \dg \cdot \bb + \ddg \cdot \dot{\bb} = 0\,,
 $$
-where we used that the Frenet frame is orthonormal, and so
+where we used that $\dot{\bb}=0$ and that the Frenet frame is orthonormal, i.e.
 $$
-\dg \cdot \bb = \ttt \cdot \bb = 0 \,,
+\dg \cdot \bb = \ttt \cdot \bb = 0 \,.
 $$
-and also that $\dot{\bb}=0$. We have shown that $\g \cdot \bb$ has derivative zero,
-and hence is constant: there exists $d \in \R$ such that
+Thus $\g \cdot \bb$ has zero derivative, meaning it is constant: there exists $d \in \R$ such that
 $$
 \g(t) \cdot \bb = d \,, \,\, \forall \, t \in (a,b) \,.
 $${#eq-plane-conclusion}
@@ -2706,8 +2718,7 @@ the torsion
 $$
 \tau(t) = 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
-Then the image of $\g$ is contained in the plane of
-equation
+Then the binormal $\bb$ is a constant vector, and the image of $\g$ is contained in the plane of equation
 $$
 (\xx - \g(t_0)) \cdot \bb = 0 \,,
 $$
@@ -2759,13 +2770,13 @@ where $\bb$ is the binormal vector to $\g$. As computed in Example \ref{example-
 $$
 \bb =  \left( -\frac35, 0, -\frac45 \right) \,.
 $$
-Next, we take a point on the curve. At $t = 0$ we have
+Next, we take a point on the curve. At $t = \pi/2$ we have
 $$
-\g(0) = \left( \frac45, 1, -\frac35 \right)
+\g(0) = \zero 
 $$
 The equation of the plane is then
 $$
--\frac{3}{5} \left(x - \frac45 \right) -  \frac{4}{5} \left( z + \frac{3}{5} \right) = 0.
+-\frac{3}{5} x -  \frac{4}{5} z = 0
 $$
 Simplifying, we obtain that $\g$ is contained in the plane of equation
 $$
@@ -2835,7 +2846,7 @@ $$
 $$
 Due to the assumptions on $\kappa$ and $\tau$ the Frenet-Serret equations read
 \begin{align*}
-\ttt & = \kappa \nn = c \nn \\
+\dot{\ttt} & = \kappa \nn = c \nn \\
 \dot{\nn} & = - \kappa \ttt + \tau \bb = -c \ttt \\
 \dot{\bb} & = -\tau \nn = \zero  
 \end{align*}
@@ -2895,39 +2906,158 @@ prove the curvature and torsion formulas given in Proposition \ref{proposition-c
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
 \kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
-$$
-Suppose in addition that $\g$ has non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
+$${#eq-curv-proof}
+If $\kappa >0$ the torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
 $$
 \tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
-$$
+$${#eq-torsion-proof}
 
 :::
 
+
+
+::: Proof
+
+By assumption $\g$ is regular. Denote by $\tg = \g \circ s^{-1}$ the arc-length reparametrization. As $\tg$ is unit-speed, it is well defined its Frenet frame
+$$
+\left\{\tttt (s), \tnn (s), \tbb (s) \right\}  \,, \quad \tttt =\dtg 
+$$
+The Frenet-Serret equations are
+\begin{align*}
+\dot{\tttt} & = \tkappa \tnn \\
+\dot{ \tnn } & = - \tkappa \tttt + \ttau \tbb \\
+\dot{\tbb} & = - \ttau \tnn
+\end{align*}
+where $\tkappa$ and $\ttau$ are the curvature and torsion of $\tg$.
+
+
+
+*Part 1.* Differentiating $\g = \tg \circ s$ we get
+$$
+\dg(t) = \dtg(s(t)) \ \dot{s}(t) = \tttt (s(t)) \ \dot{s}(t)
+$$
+Differentiating once more
+$$
+\begin{aligned}
+\ddg (t) & = \frac{d}{dt} \left[ \tttt (s(t)) \ \dot{s}(t)   \right] \\
+                    & =  \dot{\tttt} \dot{s}^2  +  \tttt \, \ddot{s}  \\
+                    & =  \tkappa \tnn \dot{s}^2  +  \tttt \, \ddot{s}
+\end{aligned}
+$${#eq-prop-curvature-torsion-1}
+where in the last line we used the first Frenet-Serret equation. We are also omitting the dependence on the point for brevity. We compute
+$$
+\begin{aligned}
+\dg(t) \times \ddg (t) & =   \tttt \dot{s} \times  \left[  \tkappa \tnn \dot{s}^2  +  \tttt \, \ddot{s} \right] \\
+& = \dot{s}^3 \tkappa \ \tttt \times \tnn +
+\dot{s}\ddot{s} \ \tttt \times \tttt \\
+& = \dot{s}^3 \tkappa \ \tbb
+\end{aligned}
+$${#eq-prop-curvature-torsion}
+where we used that $\tbb = \tttt \times \tnn$ by definition, and that $\tttt \times \tttt = 0$ by the properties of the cross product. Taking the norms in (@eq-prop-curvature-torsion) gives
+$$
+\norm{ \dg(t) \times \ddg (t) } =   \norm{ \g(t) }^3 \ \tkappa(s(t)) 
+$$
+where we used that $\norm{\tbb} = 1$ and $\dot{s} (t) = \norm{ \g(t) }$.
+Rearranging we get
+$$
+\tkappa(s(t)) = \frac{ \norm{ \dg(t) \times \ddg (t) } }{ \norm{ \g(t) }^3 }
+$$
+Recalling that the curvature $\kappa$ of $\g$ at $t$ is defined as
+$$
+\kappa(t) = \tkappa( s(t) )
+$$
+we conclude (@eq-curv-proof).
+
+
+*Part 2*. Differentiating the second line in  (@eq-prop-curvature-torsion-1) we get
+$$
+\begin{aligned}
+\dddot{\g}(t) & = \frac{d}{dt} \left[ \dot{\tttt}(s(t)) \dot{s}^2(t)  +  \tttt(s(t)) \, \ddot{s}(t) \right] \\
+              & = \ddot{\tttt} \dot{s}^3 + 2\dot{\tttt} \dot{s} \ddot{s} + \dot{\tttt} \dot{s} \ddot{s} + \tttt \ \dddot{s} \\
+              & = \ddot{\tttt} \dot{s}^3 + 3\dot{\tttt} \dot{s} \ddot{s} + \tttt \ \dddot{s} 
+\end{aligned}
+$$
+Therefore, using (@eq-prop-curvature-torsion), we get
+$$
+\begin{aligned}
+\left( \dg \times \ddg  \right) \cdot \dddot{\g} & = 
+\left[\dot{s}^3 \tkappa \ \tbb \right] \cdot 
+\left [ \ddot{\tttt} \dot{s}^3 + 3\dot{\tttt} \dot{s} \ddot{s} + \tttt \ \dddot{s} \right] \\
+& = \dot{s}^6 \ \tkappa \  \tbb \cdot  \ddot{\tttt} +
+3\dot{s}^4  \ \ddot{s} \ \tkappa \ \tbb \cdot \dot{\tttt}  +
+\dot{s}^3 \ \dddot{s} \  \tkappa \ \tbb \cdot \tttt \\
+& =  \dot{s}^6 \ \tkappa \  \tbb \cdot  \ddot{\tttt}
+\end{aligned} 
+$${#eq-prop-curvature-torsion-2}
+where the second term is zero by the first Frenet-Serret equation
+$$
+\tbb \cdot \dot{\tttt} = \tkappa \ \tbb \cdot \tnn = 0 \,,
+$$
+as $\tbb \cdot \tnn = 0$, and the thrid term is zero because  $\tbb \cdot \tttt = 0$. To compute $\ddot{\tttt}$ we differentiate the first Frenet-Serret formula
+$$
+\begin{aligned}
+\ddot{\tttt} & = \frac{d}{ds} \left[ \dot{\tttt}  \right] \\
+             & = \frac{d}{ds} \left[ \tkappa  \ \tnn \right] \\
+             & = \dot{\tkappa}  \ \tnn + \tkappa  \ \dot{\tnn}  
+\end{aligned}
+$$
+Substituting in (@eq-prop-curvature-torsion-2) we get
+$$
+\begin{aligned}
+\left( \dg \times \ddg  \right) \cdot \dddot{\g} 
+& = \dot{s}^6 \ \tkappa \  \tbb \cdot  \ddot{\tttt} \\
+& = \dot{s}^6 \ \tkappa \  \tbb \cdot \left[ \dot{\tkappa}  \ \tnn + \tkappa  \ \dot{\tnn}  \right] \\
+& = \dot{s}^6 \ \tkappa \ \dot{\tkappa} \  \tbb \cdot \tnn +
+\dot{s}^6 \ \tkappa^2 \ \tbb \cdot  \dot{\tnn} \\
+& = \dot{s}^6 \ \tkappa^2 \ \tbb \cdot  \dot{\tnn}
+\end{aligned}
+$$
+where we used that $\tbb \cdot \tnn = 0$. Using the second Frenet-Serret equation we get
+$$
+\begin{aligned}
+\left( \dg \times \ddg  \right) \cdot \dddot{\g} 
+& = \dot{s}^6 \ \tkappa^2 \ \tbb \cdot  \dot{\tnn} \\
+& = \dot{s}^6 \ \tkappa^2 \ \tbb \cdot \left[  -\tkappa \ \tttt + \ttau \ \tbb  \right] \\
+& = -  \dot{s}^6 \ \tkappa^3 \ \tbb \cdot \tttt + \dot{s}^6 \ \tkappa^2 \ \ttau \ \tbb \cdot \tbb \\
+& = \dot{s}^6 \ \tkappa^2 \ \ttau
+\end{aligned}
+$$
+where we used that $\tbb \cdot \tttt = 0$ and $\tbb \cdot \tbb = 1$. Recalling that $\dot s = \norm{\dg}$, and using the already proven formula (@eq-curv-proof), we get
+$$
+\begin{aligned}
+\left( \dg \times \ddg  \right) \cdot \dddot{\g}  & = \dot{s}^6 \ \tkappa^2 \ \ttau \\
+& = \norm{\tg}^6 \ \frac{ \norm{\dg \times \ddg}^2 }{ \norm{\dg}^6 }   \ \ttau \\
+& = \norm{\dg \times \ddg}^2 \ \ttau
+\end{aligned}
+$$
+Rerranging we get
+$$
+\ttau (s(t)) = \frac{ \left( \dg(t) \times \ddg(t)  \right) \cdot \dddot{\g}(t) }{ \norm{\dg(t) \times \ddg(t)}^2  }
+$$
+Recalling that the torsion $\tau$ of $\g$ at $t$ is defined as
+$$
+\tau(t) = \ttau ( s(t) )
+$$
+we conclude (@eq-torsion-proof).
+
+
+:::
+
+
+
+
+
+
+
+
+
+
+::: {.content-hidden}
 
 Before proceeding with the proof, we need to establish some notation.
 
 ::: Notation
 ### Compact notation for derivatives
-
-In the following we will use the letters
-
-1. $s$ to denote the *arc-length parameter*
-2. $t$ to denote an *arbitrary parameter*
-
-Accordingly the parameter of the arc-length function is $t$
-$$
-s = s(t)
-$$
-and the parameter of the inverse $\psi := s^{-1}$ of the arc-length is $s$
-$$
-\psi = \psi(s)
-$$
-As the arc-length function allows to transition from an
-arbitrary parameter $t$ to the arc-length parameter $s$, 
-the inverse of $s$ will also be denoted by
-$$
-t = t(s) 
-$$
 
 
 Let $\g \colon (a,b) \to \R^n$ be a regular curve and
@@ -2937,7 +3067,24 @@ $$
 \tg := \g \circ s^{-1}
 $$
 the arc-length reparametrization of $\g$. 
-According to the above notations, we will write
+In the previous Chapter we used the letters:
+
+1. $s$ to denote the *arc-length parameter*
+2. $t$ to denote an *arbitrary parameter*
+
+With this choice the parameter of the arc-length function is $t$
+$$
+s = s(t)
+$$
+and the parameter of the inverse $\psi := s^{-1}$ of the arc-length is $s$
+$$
+\psi = \psi (s)
+$$
+We equivalently denote the inverse of $s$ by
+$$
+t = t(s)
+$$
+In particular the relations $\g = \tg \circ s$ and $\tg = \g \circ s^{-1}$ read
 $$
 \g (t) = \tg(s(t)) \,, \quad t \in (a,b)
 $$
@@ -2946,79 +3093,58 @@ $$
 \tg (s) = \g(t(s)) \,, \quad s \in (\tilde{a},\tilde{b}) 
 $$
 
-
-
-
-Suppose $\g \colon (a,b) \to \R^n$ is regular and denote by 
-$$
-s \colon (a,b) \to (\tilde{a},\tilde{b})\,, \quad t \mapsto s(t)  
-$$
-its arc-length. We already know that in this case $s$ invertible, with inverse $s^{-1}$ giving a unit-speed reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ of $\g$, defined by
-$$
-\tg = \g \circ \psi \,, \quad \psi:=s^{-1} \colon (\tilde{a},\tilde{b}) \to (a,b)
-$$
-Sometimes it is more convenient to adopt more compact notation. In the new notation the unit-speed 
-reparametrization $\tg$ is denoted by $\g(s)$:
-$$
-t \mapsto \tg(t) \qquad \leadsto \qquad s \mapsto \g(s) \,.
-$$
-Thus, the reparametrization is denoted with the same symbol $\g$, but this time $\g$ is considered as
-a function of the **arc-length parameter** 
-$$
-s \in (\tilde{a}, \tilde{b}) \,.
-$$ 
 We will denote:
 
-- The derivative of $s$ by
+1. The derivative of the arc-length function $s(t)$ by
 $$
-\frac{ds}{dt}
+\dot s(t) = \frac{ds}{dt}(t)
 $$
 
-- The derivative of $\psi = s^{-1}$ by
+2. The derivative of the inverse of the arc-length function $t(s)$ by
 $$
-\frac{dt}{ds} \,.
+\dot t(s) = \frac{dt}{ds}(s)
 $$
 
 Moreover:
 
 - The derivative of $\g(t)$ is denoted by 
 $$
-\frac{d\g}{dt}(t) = \dg(t) \,, \quad  t \in (a,b)
+\dg(t) = \frac{d\g}{dt}(t)  \,, \quad  t \in (a,b)
 $$
 
-- The derivative of $\g(s)$ is denoted by
+- The derivative of $\tg(s)$ is denoted by
 $$
-\frac{d\g}{ds}(s) = \dg(s) \,, \quad  s \in (\tilde{a},\tilde{b}) \,.
+\dtg(s) = \frac{d\tg}{ds}(s)  \,, \quad  s \in (\tilde{a},\tilde{b}) \,.
 $$
 
-We also have new notations for the **chain rule**:
 
-- The chain rule for $\g$ is the old notations is:
+According to the above notations, this is how we can write the **chain rule**:
+
+- The chain rule for $\g = \tg \circ s$ is the old notations is:
 $$
-\g(t) = \tg (s(t)) \quad  \implies \quad \dg(t) = \dtg(s(t)) \, \dot{s} (t) \,, \quad t \in (a,b) \,.
+\dg(t) = \dtg(s(t)) \, \dot{s} (t) \,, \quad t \in (a,b) \,.
 $$
 In the new notations the above chain rule is written
 $$
-\frac{d\g}{dt}(t) = \frac{d\g}{ds}(s(t)) \, \frac{ds}{dt}(t) \,, \quad t \in (a,b) \,.
+\frac{d\g}{dt}(t) = \frac{d\tg}{ds}(s(t)) \, \frac{ds}{dt}(t) \,, \quad t \in (a,b) \,.
 $$
 We will often omit the dependence on the point $t$ by writing
 $$
-\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds} \,.
+\frac{d\g}{dt} = \frac{d\tg}{ds} \, \frac{ds}{dt} 
 $$
 
-- The chain rule for the reparametrization $\tg$ in the old notation is:
+- The chain rule for $\tg = \g \circ s^{-1}$ in the old notation is:
 $$
-\tg(t) = \g( \psi (t)) \quad \implies \quad \dtg(t) = \dg( \psi(t) ) \, \dot{\psi}(t) \,, \quad 
-t \in (\tilde{a},\tilde{b}) \,.
+\dtg(s) = \dg( t(s) ) \, \dot{t}(s) \,, \quad 
+s \in (\tilde{a},\tilde{b}) \,.
 $$
 In the new notations the above chain rule is written
 $$
-\frac{d\g}{ds}(s) = \frac{d\g}{dt}( \psi(s) )  \, \frac{dt}{ds} ( s ) \,,\quad s \in (\ta,\tb) \,,
+\frac{d\tg}{ds}(s) = \frac{d\g}{dt}( t(s) )  \, \frac{dt}{ds} ( s ) \,,\quad s \in (\ta,\tb) \,,
 $$
-since $\dot \psi$ is written $dt/ds$ in the new notations. 
-Without dependence on the point $s$, the above reads
+Omitting the dependence on the point $s$, the above reads
 $$
-\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds}  \,.
+\frac{d\tg}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds} 
 $$
 :::
 
@@ -3026,137 +3152,43 @@ $$
 ::: Example 
 ### How to use the new notations
 
-Let $\g$ and $\tg$ be as above. We know that $\tg$ is unit-speed. Thus $\g(s)$ is unit-speed with respect to $s$, that is,
+Let $\g$ be regular and $\tg := \g \circ s^{-1}$ an arc-length reparametrization fo $\g$. We already know that $\tg$ is unit-speed:
 $$
-\norm{\dg(s)} = 1\,, \quad \forall \, s \in (\tilde{a}, \tilde{b})  \,.
+\norm{\dtg(s)} = 1\,, \quad \forall \, s \in (\tilde{a}, \tilde{b})  \,.
 $${#eq-new-notations-1}
-As an exercise, let us check that (@eq-new-notations-1) holds, using the new notations. By chain rule we have
-\begin{align*}
-\norm{\dg(s)} & = \norm{ \frac{d\g}{ds} (s) } \\
-              & = \norm{\frac{d\g}{dt} (\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \\
-              & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \,. 
-\end{align*}
+As an exercise, let us prove (@eq-new-notations-1) using the new notations. By chain rule we have
+$$
+\begin{aligned}
+\norm{\dtg(s)} & = \norm{ \frac{d\tg}{ds} (s) } \\
+               & = \norm{\frac{d\g}{dt} (t(s))} \, \left| \frac{dt}{ds}(s) \right|
+\end{aligned}
+$${#eq-new-notations-2bis}
 Now, recall that 
 $$
-\frac{ds}{dt}(t) = \dot{s}(t) = \norm{\dg (t)} \,, \quad \forall \, t \in (a,b) \,.
+\frac{ds}{dt}(t) = \dot{s}(t) = \norm{\dg (t)}
+= \norm{ \frac{d\g}{dt} (t) }
 $${#eq-new-notations-2}
-According to the new notations and the inverse function theorem,
+As $t$ is the inverse of $s$, by the inverse function theorem we get
 $$
-\frac{dt}{ds}(s) = \frac{1}{\left(\dfrac{ds}{dt} (\psi(s)) \right)} = 
-\frac{1}{\norm{\dg (\psi(s))}} \,, \quad \forall \, s \in (\tilde{a},\tilde{b}) \,,
+\frac{dt}{ds}(s) = \frac{1}{\left(\dfrac{ds}{dt} (t(s)) \right)} = \frac{ 1 }{ \norm{ \dfrac{d\g}{dt} (t(s)) } }
 $$
-where we used (@eq-new-notations-2) evaluated at $t = \psi(s)$. Thus
+where we used (@eq-new-notations-2) evaluated at $t(s)$. From (@eq-new-notations-2bis)
 \begin{align*}
-\norm{\dg(s)} & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right|  \\
-              & = \norm{\dg(\psi(s))} \, \frac{1}{\norm{\dg(\psi(s))} }  \\
-              & = 1 \,,
+\norm{\dtg(s)} & = \norm{\frac{d\g}{dt} (t(s))} \, \left| \frac{dt}{ds}(s) \right| \\
+              & = \norm{\frac{d\g}{dt} (t(s))}  \frac{1}{\norm{\dfrac{d\g}{dt} (t(s))} } = 1
 \end{align*}
 concluding (@eq-new-notations-1).
-:::
-
-Let us highlight the main feature of the above notation.
-
-::: Important
-### New Notation!
-
-Let $\g \colon (a,b) \to \R^n$ be a regular curve:
-
-1. We denote by 
-$$
-t \mapsto \g(t)  \,, \quad t \in (a,b)
-$$
-the **given** curve $\g$.
-
-
-2. We denote by 
-$$
-s \mapsto \g(s)  \,, \quad s \in (\tilde{a},\tilde{b})
-$$
-the **arc-length reparametrization** of the curve $\g$. The parameter $s$ is the 
-**arc-length parameter**. In particular $\g(s)$ is unit-speed with respect to $s$. 
-
 :::
 
 
 We will heavily rely on the new notations for proving Proposition \ref{proposition-curvature-torsion-formulas}.
 
-::: Proof
-### Proof of Proposition \ref{proposition-curvature-torsion-formulas}
 
-We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
-
-
-Since $\g$ is regular, we can reparametrize $\g$ by arc-length $s(t)$. We denote the arc-length 
-reparametrization by $\g(s)$. We know that $\g(s)$ is unit-speed, that is,
-$$
-\norm{  \frac{d\g}{ds}  } = 1 \,.
-$$
-Therefore is well
-define the Frenet frame
-$$
-\{\ttt (s), \nn (s), \bb (s) \}  \,, \quad \ttt (s):=\dg(s) = \frac{d \g}{ds} (s)\,.
-$$
-The Frenet-Serret equations are
-\begin{align*}
-\dot{\ttt}(s) & = \kappa(s) \nn(s) \\
-\dot{\nn}(s) & = -\kappa(s) \ttt(s) + \tau(s) \bb(s) \\
-\dot{\bb}(s) & = - \tau(s) \nn(s) 
-\end{align*}
-By chain rule
-$$
-\frac{d \g}{dt} = \frac{d\g}{ds} \, \frac{ds}{dt} =\left( \frac{ds}{dt} \right) \, \ttt \,.
-$$
-Differentiating the above we infer
-\begin{align*}
-\frac{d^2 \g}{dt^2} & = \frac{d}{dt} \left[ \left( \frac{ds}{dt} \right) \, \ttt  \right] \\
-                    & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \,. \\
-\end{align*}
-By chain rule we have
-$$
- \frac{d\ttt}{dt}  =  \frac{d\ttt}{ds} \, \frac{dt}{ds} \,,
-$$
-and therefore 
-\begin{align*}
-\frac{d^2 \g}{dt^2} & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \\
-   & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds} \,. 
-\end{align*}
-Hence
-\begin{align*}
-\dg(t) \times \ddg (t) & = \frac{d \g}{dt} \times  \frac{d^2 \g}{dt^2}  \\
-& =   \left(\frac{ds}{dt} \right) \ttt \times  \left[  \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds}  \right] \\
-& =  \left[ \left(\frac{ds}{dt} \right) \left(\frac{d^2s}{dt^2} \right)  \ttt \times \ttt \right] +
-     \left[ \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \right] \\
-& =  \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \,,
-\end{align*}
-since $\ttt \times \ttt = 0$ by the properties of the cross product. Now we recall that 
-$$
-\frac{d\ttt}{ds} = \kappa(s) \, \nn(s)
-$$
-by the first Frenet-Serret equation. Moreover
-$$
-\frac{ds}{dt}(t) = \norm{  \dg(t) }^2 \,.
-$$
-Therefore
-\begin{align*}
-\dg(t) \times \ddg (t) & = \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \\
-                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \ttt \times \nn \\
-                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \bb \,,
-\end{align*}
-where in the last line we used the definition of $\bb$
-$$
-\bb(s) = \dg(s) \times \nn(s) = \ttt(s) \times \nn(s) \,. 
-$$
-We can now take the norms and obtain
-\begin{align*}
-\norm{\dg(t) \times \ddg (t)} & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,  \norm{\bb} \\
-                              & = \norm{ \dg (t) }^3 \, \kappa(s(t)) 
-\end{align*}
-using that $\norm{\bb} = 1$. As $\g$ is regular, we can divide by $\norm{\dg(t)}^3$ and obtain
-$$
-\kappa(s (t)) = \frac{\norm{\dg(t) \times \ddg (t)}}{\norm{ \dg (t) }^3} \,.
-$$
-Recalling that the curvature of $\g$ at $t$ is defined as the curvature of $\g(s)$ at $s(t)$, we conclude that the above is the desired formula.
 :::
+
+
+
+
 
 
 
@@ -3175,10 +3207,10 @@ Let $\kappa, \tau \ \colon (a,b) \to \R$ be smooth functions, with $\kappa>0$. T
 
 1. There exists a unit-speed curve $\g \ \colon (a,b) \to \R^3$ with curvature $\kappa(t)$ and torsion $\tau(t)$.
 
-2. Suppose that $\tg \ \colon (a,b) \to \R^3$ is a unit-speed curve whose curvature $\tilde{\kappa}$ and torsion $\tilde{\tau}$ satisfy
+2. Suppose that $\tg \ \colon (a,b) \to \R^3$ is a unit-speed curve whose curvature $\tkappa$ and torsion $\ttau$ satisfy
 $$
-\tilde{\kappa}(t) = \kappa(t) \,, \quad 
-\tilde{\tau}(t) = \tau(t) 
+\tkappa(t) = \kappa(t) \,, \quad 
+\ttau(t) = \tau(t) 
   \,, \quad \forall \, t \in (a,b) \,.
 $$
 Then there exists a rigid motion $M \colon \R^3 \to \R^3$ such that
@@ -3318,7 +3350,7 @@ under rigid motions.
 
 
 ::: Proposition
-### Rigid motion of curves
+### Frenet Frame under rigid motions
 
 Let $\g, \colon (a,b) \to \R^3$ be unit-speed and $M \colon \R^3 \to \R^3$ be a rigid motion, i.e. such that 
 $$
@@ -3332,9 +3364,9 @@ $$
 Then $\tg$ is unit-speed. Moreover the Frenet frame of $\tg$ is obtained by 
 rotating the Frenet frame of $\g$ by $R$
 $$
-\tilde{\ttt} = R \, \ttt \,, \qquad
-\tilde{\nn} = R \, \nn  \,, \qquad 
-\tilde{\bb} = R \, \bb \,, \qquad
+\tttt = R \, \ttt \,, \qquad
+\tnn = R \, \nn  \,, \qquad 
+\tbb = R \, \bb \,, \qquad
 $${#eq-rigid-motion-frenet}
 
 :::
@@ -3356,7 +3388,7 @@ and the assumption of $\g$ unit-speed. Therefore $\tg$ is unit-speed as well.
 
 Let us now prove (@eq-rigid-motion-frenet). The relation $\dtg = R \dg$ reads
 $$
-\tilde{\ttt} = R \, \ttt \,,
+\tttt = R \, \ttt \,,
 $$
 which gives the first equation in (@eq-rigid-motion-frenet).
 Since $\ddtg = R \ddg$, by (@eq-orthogonal-length) we deduce
@@ -3365,13 +3397,13 @@ $$
 $$
 Therefore, by definition of principal normal,
 $$
-\tilde{\nn} = \frac{ \ddtg }{ \norm{\ddtg} } = 
+\tnn = \frac{ \ddtg }{ \norm{\ddtg} } = 
 \frac{R \ddg}{\norm{ \ddg }} = R \, \nn \,,
 $$
 obtaining the second equation in (@eq-rigid-motion-frenet). Finally,
 by definition of binormal and the first two equations in (@eq-rigid-motion-frenet)
 $$
-\tilde{\bb} = \tilde{\ttt} \times \tilde{\nn}
+\tbb = \tttt \times \tnn
             = R \ttt \times R \nn
             = R \, (\ttt \times \nn)
             = R \, \bb

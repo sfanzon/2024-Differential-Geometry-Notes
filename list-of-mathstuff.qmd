@@ -341,7 +341,7 @@
 
  [**Theorem 2.61**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
 
- [**Theorem 2.62**](#existence-and-uniqueness-for-linear-ode-systems): Existence and uniqueness for linear ODE systems\Pageref{existence-and-uniqueness-for-linear-ode-systems}
+ [**Theorem 2.62**](#theorem-ODE): Existence and uniqueness for linear ODE systems\Pageref{theorem-ODE}
 
  [**Proposition 2.63**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
 
@@ -351,11 +351,11 @@
 
  [**Proof**](#Proof*-2.23)\Pageref{Proof*-2.23}
 
- [**Proposition 2.65**](#frenet-frame-under-rigid-motions): Frenet Frame under rigid motions\Pageref{frenet-frame-under-rigid-motions}
+ [**Proposition 2.65**](#proposition-curve-rotation): Frenet Frame under rigid motions\Pageref{proposition-curve-rotation}
 
  [**Proof**](#Proof*-2.24)\Pageref{Proof*-2.24}
 
- [**Proposition 2.66**](#evolution-of-orthonormal-systems-of-vectors): Evolution of orthonormal systems of vectors\Pageref{evolution-of-orthonormal-systems-of-vectors}
+ [**Proposition 2.66**](#proposition-ODE-orthonormal): Evolution of orthonormal systems of vectors\Pageref{proposition-ODE-orthonormal}
 
  [**Proof**](#Proof*-2.25)\Pageref{Proof*-2.25}
 

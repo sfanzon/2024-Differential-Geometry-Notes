@@ -3215,7 +3215,7 @@ The proof relies on the following classical existence Theorem for linear systems
 
 
 ::: Theorem
-### Existence and uniqueness for linear ODE systems
+### Existence and uniqueness for linear ODE systems {#theorem-ODE}
 
 Assume given a point $t_0 \in (a,b)$, a vector $\uu_0 \in \R^n$ and two functions
 $$
@@ -3340,7 +3340,7 @@ under rigid motions.
 
 
 ::: Proposition
-### Frenet Frame under rigid motions
+### Frenet Frame under rigid motions {#proposition-curve-rotation}
 
 Let $\g \colon (a,b) \to \R^3$ be unit-speed and $M \colon \R^3 \to \R^3$ be a rigid motion, i.e. such that 
 $$
@@ -3402,30 +3402,13 @@ where in the third equality we used (@eq-rotation-cross). The proof is concluded
 
 :::
 
-For the last Proposition, consider a $3 \times 3$ time-dependent matrix
-$$
-A \colon (a,b) \to \R^{3 \times 3}
-$$
-With this matrix, define the $9 \times 9$ block matrix
-$$
-\mathbf{A} \colon (a,b) \to \R^{9 \times 9} \,, \quad 
-\mathbf{A} = \left(
-\begin{array}{ccc}
-a_{11}I & a_{12}I & a_{13}I \\
-a_{21}I & a_{22}I & a_{23}I \\
-a_{31}I & a_{32}I & a_{33}I
-\end{array} \right)
-$${#eq-mathbf-A}
-with $I$ the $3 \times 3$ identity matrix and $a_{ij}$ entries of $A$. 
-Consider smooth functions $\uu_1, \uu_2, \uu_3 \colon (a,b) \to \R^3$ and with them define the $9$ dimensional vector
-$$
-\mathbf{u} \colon (a,b) \to \R^9 \,, \quad \mathbf{u}:= (\uu_1,\uu_2,\uu_3)
-$${#eq-mathbf-u}
+
+The last Proposition concerns the evolution of orthonormal systems of vectors. 
 
 
 
 ::: Proposition
-### Evolution of orthonormal systems of vectors 
+### Evolution of orthonormal systems of vectors {#proposition-ODE-orthonormal}
 
 Let $A \colon (a,b) \to \R^{3 \times 3}$ be smooth and anti-symmetric, that is,
 $$
@@ -3447,7 +3430,7 @@ $$
 \uu_3 
 \end{array}
 \right)
-$$
+$${#eq-ODE-A}
 Suppose that for some $t_0 \in (a,b)$ the vectors 
 $$
 \uu_1(t_0) \,, \quad \uu_2(t_0) \,, \quad \uu_3(t_0)\,,
@@ -3476,61 +3459,207 @@ $$
 $$
 Note that $\uu_1, \uu_2, \uu_3$ are orthonormal for all $t$ if and only if
 $$
-\lambda_{ij} = \delta_{ij} = 
+\lambda_{ij}(t) = \delta_{ij} = 
 \begin{cases}
 1 & \text{if } \, i = j \\
 0 & \text{if } \, i \neq j \\
 \end{cases}
 $${#eq-orthonormal-thesis}
+for all $t$. Hence the proof is concluded if we show 
+(@eq-orthonormal-thesis).
 
+In order to do so, first note that the ODE in (@eq-ODE-A) reads
+$$
+\dot{\uu}_i = \sum_{k=1}^3 a_{ik} \uu_k \,, \qquad i = 1,2,3
+$${#eq-ODE-A-bis}
+Differentiating $\lambda_{ij}$ yields
+\begin{align*}
+\dot{\lambda}_{ij} & = \frac{d}{dt} \uu_i \cdot \uu_j \\
+                   & = \dot{\uu}_i \cdot \uu_j + \uu_i \cdot \dot{\uu}_j \\
+                   & =  \sum_{k=1}^3 a_{ik} \uu_k \cdot \uu_j + \sum_{k=1}^3 a_{jk} \uu_i \cdot \uu_k \\
+                   & = \sum_{k=1}^3 a_{ik} \lambda_{kj}  + \sum_{k=1}^3 a_{jk} \lambda_{ik}
+\end{align*}
+where in the last two equalities we used (@eq-ODE-A-bis) and the definition of $\lambda_{ij}$. The above calculation shows that $\lambda_{ij}$ solves the ODE
+$$
+\dot{\lambda}_{ij} =  \sum_{k=1}^3 a_{ik} \lambda_{kj}  + \sum_{k=1}^3 a_{jk} \lambda_{ik}
+$${#eq-ODE-A-tris}
+We claim that $\delta_{ij}$ solves (@eq-ODE-A-tris). Indeed the LHS is $\dot{\delta}_{ij} = 0$, while the RHS is
+$$
+ \sum_{k=1}^3 a_{ik} \delta_{kj}  + \sum_{k=1}^3 a_{jk} \delta_{ik} = a_{ij} + a_{ji} = 0
+$$
+where we used that $a_{ij} = -  a_{ij}$ because $A^T = -A$ by assumption. Thus $\delta_{ij}$ solves (@eq-ODE-A-tris). Moreover we notice that at $t = t_0$ 
+$$
+\lambda_{ij}(t_0) = \uu_i (t_0) \cdot \uu_j(t_0) = \delta_{ij}
+$$
+because the vectors $\uu_1(t_0),\uu_2(t_0),\uu_3(t_0)$ are orthonormal by assumption. Since $\lambda_{ij}$ is also a solution to (@eq-ODE-A-tris), by the uniqueness of solutions to ODE systems in Theorem \ref{theorem-ODE}, we conclude that (@eq-orthonormal-thesis) holds for all $t$. The proof is concluded.
 
-$$
-\dot{\uu}_i = \sum_{j=1}^3 a_{ij} \uu_j \,, \qquad \forall \, i =1,2,3\,.
-$$
 :::
 
 
 
-We are finally ready to prove the Fundamental Theorem of Curves.
+We are finally ready to prove the Fundamental Theorem of Space Curves.
 
 
 ::: Proof
 ### Proof of Theorem \ref{theorem-FTSC}
 
+Suppose given two smooth functions $\kappa,\tau \colon (a,b) \to \R$ with $\kappa > 0$.
+
+
 *Part 1. Existence of $\g$*.
 
-Let 
+Consider the Frenet-Serret system of ODEs
 $$
-(\ttt_0, \nn_0, \bb_0)
-$$ 
-be an orthonormal basis of $\R^3$ with positive orientation. By the properties of vector product we immediately conclude that 
+\left(
+\begin{array}{c}
+\dot{\ttt} \\
+\dot{\nn} \\
+\dot{\bb} 
+\end{array}
+\right)
+= A \ \left(
+\begin{array}{c}
+\ttt \\
+\nn \\
+\bb 
+\end{array}
+\right)
+$${#eq-FTSP-ODE}
+where the matrix $A$ is
 $$
-\bb_0 = \ttt_0 \times \nn_0
+A = 
+ \left(
+\begin{array}{ccc}
+0 & \kappa  & 0 \\
+- \kappa  & 0 & \tau  \\
+0 & -\tau  & 0
+\end{array}
+\right)  \,.
 $$
+This is a linear system of $9$ equations in $9$ unknowns (the coordinates of $\ttt,\nn,\bb$). Therefore Theorem \ref{theorem-ODE} guarantess the existence of a smooth solution $(\ttt,\nn,\bb)$ such that 
+$$
+\ttt(t_0) = \ee_1 \,, \quad 
+\nn(t_0) = \ee_2 \,, \quad 
+\bb(t_0) = \ee_3
+$${#eq-FTSP-4}
+for some fixed $t_0 \in (a,b)$, 
+where $\ee_1,\ee_2,\ee_3$ are the vectors of the standard basis of $\R^3$. Since the matrix $A$ is anti-symmetric, and the basis $\{\ee_1,\ee_2,\ee_3\}$ is orthonormal, by Proposition \ref{proposition-ODE-orthonormal} we deduce that 
+$$
+(\ttt,\nn,\bb) \,\, \text{ are orthonormal for all } \, t \in (a,b)
+$$
+As both $\bb$ and $\ttt \times \nn$ are unit vectors orthogonal to $\ttt$ and $\nn$, we conclude that
+$$
+\bb =\lambda \ \ttt \times \nn
+$$
+for some continuous function $\lambda$ such that $\lambda(t) = \pm 1$. Substituting $t=t_0$ and recalling (@eq-FTSP-4) gives
+$$
+\bb (t_0) =\lambda(t_0) \ \ttt(t_0) \times \nn(t_0) \implies 
+\ee_3 = \lambda(t_0) \ \ee_1 \times \ee_2
+$$
+As $\ee_1 \times \ee_2 = \ee_3$, we conclude that $\lambda(t_0)= 1$. By continuity of $\lambda$ we then have $\lambda \equiv 1$, so that
+$$
+\bb = \ttt \times \nn
+$${#eq-FTSP-5}
+Define the curve $\g \colon (a,b) \to \R^3$ by
+$$
+\g(t) := \int_{t_0}^t \ttt(u) du
+$$
+We now make a few observations:
 
-> Proof. By assumption $\bb_0$ is a unit vector orthogonal to both 
-$\ttt_0$ and $\nn_0$. Since $\ttt_0$ and $\nn_0$ are unit vectors,
-by the properties of vector product we know that also 
-$\ttt_0 \times \nn_0$ is a unit vector orthogonal to $\ttt_0$ and $\nn_0$.
-Therefore
+1. By the Fundamental Theorem of Calculus we have
 $$
-\bb_0 = \lambda \ttt_0 \times \nn_0  \,, \qquad  \lambda = \pm 1
+\dg = \ttt
 $$
-and we get
-$$
-\det (\ttt_0 | \nn_0 | \bb_0) = \lambda \det(\ttt_0 | \nn_0 | \ttt_0 \times \nn_0 ) = \lambda \,,
-$$
-where in the second equality we used that 
-$$
-(\ttt_0, \nn_0, \ttt_0 \times \nn_0 )
-$$ 
-is an orthonormal basis of $\R^3$ with positive orientation, due to the properties of vector product. Hence $(\ttt_0, \nn_0, \bb_0)$ has positive orientation if and only if $\lambda = 1$ from which we get
-$$ 
-\bb_0 = \ttt_0 \times \nn_0
-$$
+showing that $\ttt$ is the tangent vector to $\g$.
 
+2. In particular $\dg$ is unit-speed, since $\norm{\ttt} = 1$. 
+
+3. Using the first equation in (@eq-FTSP-ODE) gives
+$$
+\ddg = \dot{\ttt} = \kappa \ \nn
+$$
+which shows that $\kappa$ is the curvature of $\g$, and $\nn$ the principal normal. 
+
+4. By (@eq-FTSP-5) we deduce that $\bb$ is the binormal to $\g$
+
+5. Using the third equation in (@eq-FTSP-ODE) gives
+$$
+\dot{\bb} = - \tau \ \nn 
+$$
+showing that $\tau$ is the torsion of $\g$
+
+
+We have therefore constructed a unit-speed curve $\g$ with curvature $\kappa$ and torsion $\tau$.
 
 
 *Part 2. Uniqueness up to rigid motions.*
+
+Suppose that $\tg \colon (a,b) \to \R^3$ is a unit-speed curve with curvature $\tkappa = \kappa$ and torsion $\ttau = \tau$. 
+Denote by 
+$$
+(\ttt,\nn, \bb) \,, \qquad
+(\tttt,\tnn,\tbb)
+$$
+the Frenet frames of $\g$ and $\tg$ respectively. Since the above vectors are orthonormal for each $t$, there exists a rotation $R \in \mathrm{SO}(3)$ such that
+$$
+\tttt(t_0) = R \ \ttt(t_0) \,, \quad \tnn(t_0) = R \ \nn(t_0)\,, \quad \tbb(t_0) = R \ \bb(t_0) 
+$${#eq-FTSP-2}
+Notice that $R$ can always be found (for fixed time!) since the vectors are orthonormal. Define
+$$
+\pp := \tg(t_0) - R \ \g(t_0)
+$$
+We now define the rigid motion
+$$
+M(\vv) := R \ \vv + \pp 
+$$
+By construction
+$$
+M(\g(t_0)) = \tg (t_0)
+$${#eq-FTSP-1}
+Define the new curve 
+$$
+\hat{\g}(t) := M(\g(t)) 
+$$
+By Proposition \ref{proposition-curve-rotation} we know that 
+$\hat\g$ is unit-speed, given that $\g$ is unit-speed. Moreover the Frenet frame of $\hat\g$ satisfies
+$$
+\hat{\ttt} = R \ \ttt \,, \quad 
+\hat{\nn} = R \ \nn \,,  \quad
+\hat{\bb} = R \ \bb 
+$${#eq-FTSP-3}
+From the above relations we deduce that $(\hat{\ttt},\hat{\nn}, \hat{\bb})$ solves the Frenet-Serret equations at (@eq-FTSP-ODE). Since $\tg$ has curvature $\kappa$ and torsion $\tau$, we also know that $(\tttt,\tnn,\tbb)$ solves the Frenet-Serret equations at (@eq-FTSP-ODE). By evaluating (@eq-FTSP-3) at $t_0$, and comparing with (@eq-FTSP-2), we also have that
+$$
+\hat{\ttt}(t_0) = \tttt(t_0) \,, \quad
+\hat{\nn}(t_0) = \tnn(t_0) \,, \quad
+\hat{\bb}(t_0) = \tbb(t_0)
+$$
+By applying the uniqueness in Theorem \ref{theorem-ODE} to the ODE system (@eq-FTSP-ODE), we conclude that 
+$$
+\hat{\ttt} = \tttt \,, \quad
+\hat{\nn} = \tnn \,, \quad
+\hat{\bb} = \tbb
+$$
+for all times $t$. In particular, since $\tttt = \dtg$ and $\hat{\ttt} = \dot{\hat{\g}}$, we infer
+$$
+\hat{\ttt} = \tttt \quad \implies \quad 
+\dot{\hat{\g}} = \dtg
+$$
+and therefore there exists a constant $c \in \R^3$ such that
+$$
+\hat{\g}(t) = \tg(t) + c \,, \quad \forall \, t \in (a,b)
+$$
+By (@eq-FTSP-1) and definition of $\hat{\g}$, it holds
+$$
+\hat{\g}(t_0) = M(\g(t_0)) = \tg(t_0)
+$$
+from which we deduce that $c = 0$. We have therefore proven that 
+$$
+\tg = \hat{\g}
+$$
+Recalling the definition of $\hat{\g}$ we conclude that 
+$$
+\tg(t) = M(\g(t))
+$$
+proving uniqueness up to rigid motions.
 
 :::

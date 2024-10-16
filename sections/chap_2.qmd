@@ -2924,9 +2924,9 @@ $$
 $$
 The Frenet-Serret equations are
 \begin{align*}
-\dot{\tttt} & = \tkappa \tnn \\
-\dot{ \tnn } & = - \tkappa \tttt + \ttau \tbb \\
-\dot{\tbb} & = - \ttau \tnn
+\dot{\tttt} & = \tkappa \ \tnn \\
+\dot{ \tnn } & = - \tkappa \ \tttt + \ttau \ \tbb \\
+\dot{\tbb} & = - \ttau \ \tnn
 \end{align*}
 where $\tkappa$ and $\ttau$ are the curvature and torsion of $\tg$.
 
@@ -2941,16 +2941,16 @@ $$
 \begin{aligned}
 \ddg (t) & = \frac{d}{dt} \left[ \tttt (s(t)) \ \dot{s}(t)   \right] \\
                     & =  \dot{\tttt} \dot{s}^2  +  \tttt \, \ddot{s}  \\
-                    & =  \tkappa \tnn \dot{s}^2  +  \tttt \, \ddot{s}
+                    & =  \tkappa \ \tnn \ \dot{s}^2  +  \tttt \, \ddot{s}
 \end{aligned}
 $${#eq-prop-curvature-torsion-1}
 where in the last line we used the first Frenet-Serret equation. We are also omitting the dependence on the point for brevity. We compute
 $$
 \begin{aligned}
-\dg(t) \times \ddg (t) & =   \tttt \dot{s} \times  \left[  \tkappa \tnn \dot{s}^2  +  \tttt \, \ddot{s} \right] \\
-& = \dot{s}^3 \tkappa \ \tttt \times \tnn +
-\dot{s}\ddot{s} \ \tttt \times \tttt \\
-& = \dot{s}^3 \tkappa \ \tbb
+\dg(t) \times \ddg (t) & =   \tttt \ \dot{s} \times  \left[  \tkappa \ \tnn \  \dot{s}^2  +  \tttt \ \ddot{s} \right] \\
+& = \dot{s}^3 \ \tkappa \ \tttt \times \tnn +
+\dot{s} \ \ddot{s} \ \tttt \times \tttt \\
+& = \dot{s}^3 \ \tkappa \ \tbb
 \end{aligned}
 $${#eq-prop-curvature-torsion}
 where we used that $\tbb = \tttt \times \tnn$ by definition, and that $\tttt \times \tttt = 0$ by the properties of the cross product. Taking the norms in (@eq-prop-curvature-torsion) gives
@@ -3040,13 +3040,7 @@ $$
 $$
 we conclude (@eq-torsion-proof).
 
-
 :::
-
-
-
-
-
 
 
 
@@ -3189,14 +3183,10 @@ We will heavily rely on the new notations for proving Proposition \ref{propositi
 
 
 
-
-
-
-
 ## Proof: Fundamental Theorem of Space Curves {#sec-FTSC-proof}
 
 
-In this section we finally prove the *Fundamental Theorem of Space Curves* Theorem \ref{theorem-characterization-space}.  For reader's convenience we recall the statement.
+In this section we prove the *Fundamental Theorem of Space Curves* Theorem \ref{theorem-characterization-space}. For reader's convenience we recall the statement.
 
 
 
@@ -3352,11 +3342,11 @@ under rigid motions.
 ::: Proposition
 ### Frenet Frame under rigid motions
 
-Let $\g, \colon (a,b) \to \R^3$ be unit-speed and $M \colon \R^3 \to \R^3$ be a rigid motion, i.e. such that 
+Let $\g \colon (a,b) \to \R^3$ be unit-speed and $M \colon \R^3 \to \R^3$ be a rigid motion, i.e. such that 
 $$
-M(\vv) = R \, \vv + \pp \,, \qquad R \in \mathrm{SO}(3)\,, \,\, \pp \in \R^3 \,.
+M(\vv) = R \, \vv + \pp 
 $$
-Define the curve 
+for some $R \in \mathrm{SO}(3)$ and $\pp \in \R^3$. Define the curve 
 $$
 \tg \colon (a,b) \to \R^3 \,, \qquad 
 \tg(t) = M(\g(t)) \,.
@@ -3376,35 +3366,35 @@ $${#eq-rigid-motion-frenet}
 
 Differentiating $\tg = M(\g) = R \, \g + \pp$ gives
 $$
-\dtg(t) = R \dg(t) \,, \qquad 
-\ddtg(t) = R \ddg(t)
+\dtg(t) = R \ \dg(t) \,, \qquad 
+\ddtg(t) = R \ \ddg(t)
 $$
 Taking the norms in $\dtg = R \dg$ gives
 $$
 \norm{\dtg} = \norm{ R \dg } = \norm{\dg} = 1
 $$
 where we used that rotations preseve norms, see (@eq-orthogonal-length),
-and the assumption of $\g$ unit-speed. Therefore $\tg$ is unit-speed as well.
+and the assumption of $\g$ unit-speed. This concludes the proof that $\tg$ is unit-speed.
 
-Let us now prove (@eq-rigid-motion-frenet). The relation $\dtg = R \dg$ reads
+Let us now prove (@eq-rigid-motion-frenet). The relation $\dtg = R \ \dg$ reads
 $$
 \tttt = R \, \ttt \,,
 $$
 which gives the first equation in (@eq-rigid-motion-frenet).
-Since $\ddtg = R \ddg$, by (@eq-orthogonal-length) we deduce
+Since $\ddtg = R \ \ddg$, by (@eq-orthogonal-length) we deduce
 $$
-\norm{ \ddtg } = \norm{ R \ddg } = \norm{ \ddg }
+\norm{ \ddtg } = \norm{ R \ \ddg } = \norm{ \ddg }
 $$
 Therefore, by definition of principal normal,
 $$
 \tnn = \frac{ \ddtg }{ \norm{\ddtg} } = 
-\frac{R \ddg}{\norm{ \ddg }} = R \, \nn \,,
+\frac{R \ \ddg}{\norm{ \ddg }} = R \, \nn \,,
 $$
 obtaining the second equation in (@eq-rigid-motion-frenet). Finally,
-by definition of binormal and the first two equations in (@eq-rigid-motion-frenet)
+by definition of binormal and the first two equations in (@eq-rigid-motion-frenet),
 $$
 \tbb = \tttt \times \tnn
-            = R \ttt \times R \nn
+            = R \ \ttt \times R \ \nn
             = R \, (\ttt \times \nn)
             = R \, \bb
 $$
@@ -3441,12 +3431,23 @@ Let $A \colon (a,b) \to \R^{3 \times 3}$ be smooth and anti-symmetric, that is,
 $$
 A^T(t) = - A(t) \,, \quad  \forall \, t \in (a,b) \,.
 $$
-Let $\uu_1, \uu_2, \uu_3 \colon (a,b) \to \R^3$ be smooth functions. Suppose that
-the following ODE holds
+Let $\uu_1, \uu_2, \uu_3 \colon (a,b) \to \R^3$ be smooth functions satisfying the following ODE
 $$
-\dot{\mathbf{u}} = \mathbf{A} \mathbf{u} \,,
+\left(
+\begin{array}{c}
+\dot{\uu}_1 \\
+\dot{\uu}_2 \\
+\dot{\uu}_3 
+\end{array}
+\right)
+= A \ \left(
+\begin{array}{c}
+\uu_1 \\
+\uu_2 \\
+\uu_3 
+\end{array}
+\right)
 $$
-where $\mathbf{A}$ and $\mathbf{u}$ are defined as in (@eq-mathbf-A) and (@eq-mathbf-u).
 Suppose that for some $t_0 \in (a,b)$ the vectors 
 $$
 \uu_1(t_0) \,, \quad \uu_2(t_0) \,, \quad \uu_3(t_0)\,,
@@ -3460,6 +3461,28 @@ are orthonormal for all values of $t \in (a,b)$.
 :::
 
 ::: Proof
+
+For each pair $i,j$ define
+$$
+\lambda_{ij} := \uu_i \cdot \uu_j
+$$
+Further, define
+$$
+\delta_{ij} = 
+\begin{cases}
+1 & \text{if } \, i = j \\
+0 & \text{if } \, i \neq j \\
+\end{cases}
+$$
+Note that $\uu_1, \uu_2, \uu_3$ are orthonormal for all $t$ if and only if
+$$
+\lambda_{ij} = \delta_{ij} = 
+\begin{cases}
+1 & \text{if } \, i = j \\
+0 & \text{if } \, i \neq j \\
+\end{cases}
+$${#eq-orthonormal-thesis}
+
 
 $$
 \dot{\uu}_i = \sum_{j=1}^3 a_{ij} \uu_j \,, \qquad \forall \, i =1,2,3\,.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Silvio Fanzon">
-<meta name="dcterms.date" content="2024-10-14">
+<meta name="dcterms.date" content="2024-10-16">
 
 <title>Differential Geometry</title>
 <style>
@@ -93,29 +93,61 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Warning {
   --color1: #f4cce0;
@@ -125,43 +157,11 @@ div.csl-indent {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -331,7 +331,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">14 Oct 2024</p>
+      <p class="date">16 Oct 2024</p>
     </div>
   </div>
   
@@ -370,12 +370,22 @@ window.Quarto = {
 <li>Pressley <span class="citation" data-cites="pressley">(<a href="sections/references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span> for differential geometry,</li>
 <li>Manetti <span class="citation" data-cites="manetti">(<a href="sections/references.html#ref-manetti" role="doc-biblioref">Manetti 2023</a>)</span> for general topology.</li>
 </ul>
-<p>Other good readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">do Carmo 2017</a>)</span> and Abate, Tovena <span class="citation" data-cites="abate-tovena">(<a href="sections/references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Other good readings are the books:</p>
+<ul>
+<li>do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">do Carmo 2017</a>)</span>, a classic and really nice textbook</li>
+<li>Abate, Tovena <span class="citation" data-cites="abate-tovena">(<a href="sections/references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>, for a more in depth analysis</li>
+</ul>
+<p>I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
 </section>
 <section id="visualization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
-<p>It is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is <strong><code>not required</code></strong> for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">(<a href="sections/references.html#ref-johansson" role="doc-biblioref">Johansson 2019</a>; <a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">Kong, Qingkai, Siauw, Timmy, and Bayen, Alexandre 2020</a>)</span>.<br>
-If you do not want to mess around with Python, you can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool <a href="https://c3d.libretexts.org/CalcPlot3D/index.html/">CalcPlot3D</a>. To understand how it works, please refer to the <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html">help manual</a> or to the short <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html">video introduction</a>. Another nice tool is <a href="https://www.desmos.com">Desmos</a>.</p>
+<p>It is important to visualize the geometrical objects and concepts we are going to talk about in this module. Chapter 5 contains a basic Python tutorial to plot curves and surfaces. This part of the notes is <strong><code>not examinable</code></strong>.</p>
+<p>If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">(<a href="sections/references.html#ref-johansson" role="doc-biblioref">Johansson 2019</a>; <a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">Kong, Qingkai, Siauw, Timmy, and Bayen, Alexandre 2020</a>)</span>.</p>
+<p>If you do not want to mess around with Python, you can still visualize pretty much everything we will do in this module using</p>
+<ul>
+<li><a href="https://www.desmos.com">Desmos</a></li>
+<li><a href="https://c3d.libretexts.org/CalcPlot3D/index.html">CalcPlot3D</a></li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

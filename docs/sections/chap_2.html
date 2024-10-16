@@ -92,9 +92,13 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Corollary {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Definition {
   --color1: #c6e6ed;
@@ -104,51 +108,19 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Assumption {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -156,11 +128,39 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -2037,9 +2037,9 @@ d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By assumption <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. Denote by <span class="math inline">\(\widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ s^{-1}\)</span> the arc-length reparametrization. As <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, it is well defined its Frenet frame <span class="math display">\[
 \left\{\widetilde{\mathbf{t}}(s), \widetilde{\mathbf{n}}(s), \widetilde{\mathbf{b}}(s) \right\}  \,, \quad \widetilde{\mathbf{t}}=\dot{\widetilde{{\pmb{\gamma}}}}
 \]</span> The Frenet-Serret equations are <span class="math display">\[\begin{align*}
-\dot{\widetilde{\mathbf{t}}} &amp; = \widetilde{\kappa}\widetilde{\mathbf{n}}\\
-\dot{ \widetilde{\mathbf{n}}} &amp; = - \widetilde{\kappa}\widetilde{\mathbf{t}}+ \widetilde{\tau}\widetilde{\mathbf{b}}\\
-\dot{\widetilde{\mathbf{b}}} &amp; = - \widetilde{\tau}\widetilde{\mathbf{n}}
+\dot{\widetilde{\mathbf{t}}} &amp; = \widetilde{\kappa}\ \widetilde{\mathbf{n}}\\
+\dot{ \widetilde{\mathbf{n}}} &amp; = - \widetilde{\kappa}\ \widetilde{\mathbf{t}}+ \widetilde{\tau}\ \widetilde{\mathbf{b}}\\
+\dot{\widetilde{\mathbf{b}}} &amp; = - \widetilde{\tau}\ \widetilde{\mathbf{n}}
 \end{align*}\]</span> where <span class="math inline">\(\widetilde{\kappa}\)</span> and <span class="math inline">\(\widetilde{\tau}\)</span> are the curvature and torsion of <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span>.<p></p>
 <p><em>Part 1.</em> Differentiating <span class="math inline">\({\pmb{\gamma}}= \widetilde{{\pmb{\gamma}}}\circ s\)</span> we get <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \ \dot{s}(t) = \widetilde{\mathbf{t}}(s(t)) \ \dot{s}(t)
@@ -2047,14 +2047,14 @@ d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
 \begin{aligned}
 \ddot{{\pmb{\gamma}}}(t) &amp; = \frac{d}{dt} \left[ \widetilde{\mathbf{t}}(s(t)) \ \dot{s}(t)   \right] \\
                     &amp; =  \dot{\widetilde{\mathbf{t}}} \dot{s}^2  +  \widetilde{\mathbf{t}}\, \ddot{s}  \\
-                    &amp; =  \widetilde{\kappa}\widetilde{\mathbf{n}}\dot{s}^2  +  \widetilde{\mathbf{t}}\, \ddot{s}
+                    &amp; =  \widetilde{\kappa}\ \widetilde{\mathbf{n}}\ \dot{s}^2  +  \widetilde{\mathbf{t}}\, \ddot{s}
 \end{aligned}
 \tag{2.34}\]</span></span> where in the last line we used the first Frenet-Serret equation. We are also omitting the dependence on the point for brevity. We compute <span id="eq-prop-curvature-torsion"><span class="math display">\[
 \begin{aligned}
-\dot{{\pmb{\gamma}}}(t) \times \ddot{{\pmb{\gamma}}}(t) &amp; =   \widetilde{\mathbf{t}}\dot{s} \times  \left[  \widetilde{\kappa}\widetilde{\mathbf{n}}\dot{s}^2  +  \widetilde{\mathbf{t}}\, \ddot{s} \right] \\
-&amp; = \dot{s}^3 \widetilde{\kappa}\ \widetilde{\mathbf{t}}\times \widetilde{\mathbf{n}}+
-\dot{s}\ddot{s} \ \widetilde{\mathbf{t}}\times \widetilde{\mathbf{t}}\\
-&amp; = \dot{s}^3 \widetilde{\kappa}\ \widetilde{\mathbf{b}}
+\dot{{\pmb{\gamma}}}(t) \times \ddot{{\pmb{\gamma}}}(t) &amp; =   \widetilde{\mathbf{t}}\ \dot{s} \times  \left[  \widetilde{\kappa}\ \widetilde{\mathbf{n}}\  \dot{s}^2  +  \widetilde{\mathbf{t}}\ \ddot{s} \right] \\
+&amp; = \dot{s}^3 \ \widetilde{\kappa}\ \widetilde{\mathbf{t}}\times \widetilde{\mathbf{n}}+
+\dot{s} \ \ddot{s} \ \widetilde{\mathbf{t}}\times \widetilde{\mathbf{t}}\\
+&amp; = \dot{s}^3 \ \widetilde{\kappa}\ \widetilde{\mathbf{b}}
 \end{aligned}
 \tag{2.35}\]</span></span> where we used that <span class="math inline">\(\widetilde{\mathbf{b}}= \widetilde{\mathbf{t}}\times \widetilde{\mathbf{n}}\)</span> by definition, and that <span class="math inline">\(\widetilde{\mathbf{t}}\times \widetilde{\mathbf{t}}= 0\)</span> by the properties of the cross product. Taking the norms in (<a href="#eq-prop-curvature-torsion" class="quarto-xref"><span>2.35</span></a>) gives <span class="math display">\[
 \left\|  \dot{{\pmb{\gamma}}}(t) \times \ddot{{\pmb{\gamma}}}(t)  \right\| =   \left\|  {\pmb{\gamma}}(t)  \right\|^3 \ \widetilde{\kappa}(s(t))
@@ -2120,7 +2120,7 @@ d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
 </section>
 <section id="sec-FTSC-proof" class="level2" data-number="2.11">
 <h2 data-number="2.11" class="anchored" data-anchor-id="sec-FTSC-proof"><span class="header-section-number">2.11</span> Proof: Fundamental Theorem of Space Curves</h2>
-<p>In this section we finally prove the <em>Fundamental Theorem of Space Curves</em> Theorem <a href="chap_2.html#theorem-characterization-space">53</a>. For reader’s convenience we recall the statement.</p>
+<p>In this section we prove the <em>Fundamental Theorem of Space Curves</em> Theorem <a href="chap_2.html#theorem-characterization-space">53</a>. For reader’s convenience we recall the statement.</p>
 <div id="theorem-FTSC" class="Theorem" title="Fundamental Theorem of Space Curves">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 61: </strong>Fundamental Theorem of Space Curves</summary><div>
 <p>Let <span class="math inline">\(\kappa, \tau \ \colon (a,b) \to \mathbb{R}\)</span> be smooth functions, with <span class="math inline">\(\kappa&gt;0\)</span>. Then:</p>
@@ -2206,9 +2206,9 @@ R^{-1}= R^T \quad \implies \quad
 </div>
 <p>We need to clarify how unit-speed curves and Frenet frame behave under rigid motions.</p>
 <div id="frenet-frame-under-rigid-motions" class="Proposition" title="Frenet Frame under rigid motions">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 65: </strong>Frenet Frame under rigid motions</summary><div>Let <span class="math inline">\({\pmb{\gamma}}, \colon (a,b) \to \mathbb{R}^3\)</span> be unit-speed and <span class="math inline">\(M \colon \mathbb{R}^3 \to \mathbb{R}^3\)</span> be a rigid motion, i.e.&nbsp;such that <span class="math display">\[
-M(\mathbf{v}) = R \, \mathbf{v}+ \mathbf{p}\,, \qquad R \in \mathrm{SO}(3)\,, \,\, \mathbf{p}\in \mathbb{R}^3 \,.
-\]</span> Define the curve <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 65: </strong>Frenet Frame under rigid motions</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be unit-speed and <span class="math inline">\(M \colon \mathbb{R}^3 \to \mathbb{R}^3\)</span> be a rigid motion, i.e.&nbsp;such that <span class="math display">\[
+M(\mathbf{v}) = R \, \mathbf{v}+ \mathbf{p}
+\]</span> for some <span class="math inline">\(R \in \mathrm{SO}(3)\)</span> and <span class="math inline">\(\mathbf{p}\in \mathbb{R}^3\)</span>. Define the curve <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}\colon (a,b) \to \mathbb{R}^3 \,, \qquad
 \widetilde{{\pmb{\gamma}}}(t) = M({\pmb{\gamma}}(t)) \,.
 \]</span> Then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed. Moreover the Frenet frame of <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is obtained by rotating the Frenet frame of <span class="math inline">\({\pmb{\gamma}}\)</span> by <span class="math inline">\(R\)</span> <span id="eq-rigid-motion-frenet"><span class="math display">\[
@@ -2220,21 +2220,21 @@ M(\mathbf{v}) = R \, \mathbf{v}+ \mathbf{p}\,, \qquad R \in \mathrm{SO}(3)\,, \,
 </div>
 <div id="Proof*-24" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Differentiating <span class="math inline">\(\widetilde{{\pmb{\gamma}}}= M({\pmb{\gamma}}) = R \, {\pmb{\gamma}}+ \mathbf{p}\)</span> gives <span class="math display">\[
-\dot{\widetilde{{\pmb{\gamma}}}}(t) = R \dot{{\pmb{\gamma}}}(t) \,, \qquad
-\ddot{\widetilde{{\pmb{\gamma}}}}(t) = R \ddot{{\pmb{\gamma}}}(t)
+\dot{\widetilde{{\pmb{\gamma}}}}(t) = R \ \dot{{\pmb{\gamma}}}(t) \,, \qquad
+\ddot{\widetilde{{\pmb{\gamma}}}}(t) = R \ \ddot{{\pmb{\gamma}}}(t)
 \]</span> Taking the norms in <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}= R \dot{{\pmb{\gamma}}}\)</span> gives <span class="math display">\[
 \left\| \dot{\widetilde{{\pmb{\gamma}}}} \right\| = \left\|  R \dot{{\pmb{\gamma}}} \right\| = \left\| \dot{{\pmb{\gamma}}} \right\| = 1
-\]</span> where we used that rotations preseve norms, see (<a href="#eq-orthogonal-length" class="quarto-xref"><span>2.38</span></a>), and the assumption of <span class="math inline">\({\pmb{\gamma}}\)</span> unit-speed. Therefore <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed as well.<p></p>
-<p>Let us now prove (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). The relation <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}= R \dot{{\pmb{\gamma}}}\)</span> reads <span class="math display">\[
+\]</span> where we used that rotations preseve norms, see (<a href="#eq-orthogonal-length" class="quarto-xref"><span>2.38</span></a>), and the assumption of <span class="math inline">\({\pmb{\gamma}}\)</span> unit-speed. This concludes the proof that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.<p></p>
+<p>Let us now prove (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). The relation <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}= R \ \dot{{\pmb{\gamma}}}\)</span> reads <span class="math display">\[
 \widetilde{\mathbf{t}}= R \, \mathbf{t}\,,
-\]</span> which gives the first equation in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). Since <span class="math inline">\(\ddot{\widetilde{{\pmb{\gamma}}}}= R \ddot{{\pmb{\gamma}}}\)</span>, by (<a href="#eq-orthogonal-length" class="quarto-xref"><span>2.38</span></a>) we deduce <span class="math display">\[
-\left\|  \ddot{\widetilde{{\pmb{\gamma}}}} \right\| = \left\|  R \ddot{{\pmb{\gamma}}} \right\| = \left\|  \ddot{{\pmb{\gamma}}} \right\|
+\]</span> which gives the first equation in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). Since <span class="math inline">\(\ddot{\widetilde{{\pmb{\gamma}}}}= R \ \ddot{{\pmb{\gamma}}}\)</span>, by (<a href="#eq-orthogonal-length" class="quarto-xref"><span>2.38</span></a>) we deduce <span class="math display">\[
+\left\|  \ddot{\widetilde{{\pmb{\gamma}}}} \right\| = \left\|  R \ \ddot{{\pmb{\gamma}}} \right\| = \left\|  \ddot{{\pmb{\gamma}}} \right\|
 \]</span> Therefore, by definition of principal normal, <span class="math display">\[
 \widetilde{\mathbf{n}}= \frac{ \ddot{\widetilde{{\pmb{\gamma}}}}}{ \left\| \ddot{\widetilde{{\pmb{\gamma}}}} \right\| } =
-\frac{R \ddot{{\pmb{\gamma}}}}{\left\|  \ddot{{\pmb{\gamma}}} \right\|} = R \, \mathbf{n}\,,
-\]</span> obtaining the second equation in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). Finally, by definition of binormal and the first two equations in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>) <span class="math display">\[
+\frac{R \ \ddot{{\pmb{\gamma}}}}{\left\|  \ddot{{\pmb{\gamma}}} \right\|} = R \, \mathbf{n}\,,
+\]</span> obtaining the second equation in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>). Finally, by definition of binormal and the first two equations in (<a href="#eq-rigid-motion-frenet" class="quarto-xref"><span>2.41</span></a>), <span class="math display">\[
 \widetilde{\mathbf{b}}= \widetilde{\mathbf{t}}\times \widetilde{\mathbf{n}}
-            = R \mathbf{t}\times R \mathbf{n}
+            = R \ \mathbf{t}\times R \ \mathbf{n}
             = R \, (\mathbf{t}\times \mathbf{n})
             = R \, \mathbf{b}
 \]</span> where in the third equality we used (<a href="#eq-rotation-cross" class="quarto-xref"><span>2.40</span></a>). The proof is concluded.</p>
@@ -2256,9 +2256,22 @@ a_{31}I &amp; a_{32}I &amp; a_{33}I
 <div id="evolution-of-orthonormal-systems-of-vectors" class="Proposition" title="Evolution of orthonormal systems of vectors">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 66: </strong>Evolution of orthonormal systems of vectors</summary><div>Let <span class="math inline">\(A \colon (a,b) \to \mathbb{R}^{3 \times 3}\)</span> be smooth and anti-symmetric, that is, <span class="math display">\[
 A^T(t) = - A(t) \,, \quad  \forall \, t \in (a,b) \,.
-\]</span> Let <span class="math inline">\(\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3 \colon (a,b) \to \mathbb{R}^3\)</span> be smooth functions. Suppose that the following ODE holds <span class="math display">\[
-\dot{\mathbf{u}} = \mathbf{A} \mathbf{u} \,,
-\]</span> where <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{u}\)</span> are defined as in (<a href="#eq-mathbf-A" class="quarto-xref"><span>2.42</span></a>) and (<a href="#eq-mathbf-u" class="quarto-xref"><span>2.43</span></a>). Suppose that for some <span class="math inline">\(t_0 \in (a,b)\)</span> the vectors <span class="math display">\[
+\]</span> Let <span class="math inline">\(\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3 \colon (a,b) \to \mathbb{R}^3\)</span> be smooth functions satisfying the following ODE <span class="math display">\[
+\left(
+\begin{array}{c}
+\dot{\mathbf{u}}_1 \\
+\dot{\mathbf{u}}_2 \\
+\dot{\mathbf{u}}_3
+\end{array}
+\right)
+= A \ \left(
+\begin{array}{c}
+\mathbf{u}_1 \\
+\mathbf{u}_2 \\
+\mathbf{u}_3
+\end{array}
+\right)
+\]</span> Suppose that for some <span class="math inline">\(t_0 \in (a,b)\)</span> the vectors <span class="math display">\[
 \mathbf{u}_1(t_0) \,, \quad \mathbf{u}_2(t_0) \,, \quad \mathbf{u}_3(t_0)\,,
 \]</span> are orthonormal. Then the vectors <span class="math display">\[
 \mathbf{u}_1(t) \,, \quad \mathbf{u}_2(t) \,, \quad \mathbf{u}_3(t)\,,
@@ -2266,9 +2279,24 @@ A^T(t) = - A(t) \,, \quad  \forall \, t \in (a,b) \,.
 </div></details>
 </div>
 <div id="Proof*-25" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>For each pair <span class="math inline">\(i,j\)</span> define <span class="math display">\[
+\lambda_{ij} := \mathbf{u}_i \cdot \mathbf{u}_j
+\]</span> Further, define <span class="math display">\[
+\delta_{ij} =
+\begin{cases}
+1 &amp; \text{if } \, i = j \\
+0 &amp; \text{if } \, i \neq j \\
+\end{cases}
+\]</span> Note that <span class="math inline">\(\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3\)</span> are orthonormal for all <span class="math inline">\(t\)</span> if and only if <span id="eq-orthonormal-thesis"><span class="math display">\[
+\lambda_{ij} = \delta_{ij} =
+\begin{cases}
+1 &amp; \text{if } \, i = j \\
+0 &amp; \text{if } \, i \neq j \\
+\end{cases}
+\tag{2.44}\]</span></span><p></p>
+<p><span class="math display">\[
 \dot{\mathbf{u}}_i = \sum_{j=1}^3 a_{ij} \mathbf{u}_j \,, \qquad \forall \, i =1,2,3\,.
-\]</span><p></p>
+\]</span></p>
 </div></details>
 </div>
 <p>We are finally ready to prove the Fundamental Theorem of Curves.</p>

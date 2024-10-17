@@ -208,7 +208,7 @@ Let us check that $\TT$ is a topology on $\R^n$:
 
 
 
-Let us make a basic bus useful observation: balls in $\R^n$ are open for the Euclidean topology.
+Let us make a basic, but useful, observation: balls in $\R^n$ are open for the Euclidean topology.
 
 
 ::: {.Proposition   #proposition-balls-open}
@@ -293,7 +293,7 @@ is neither open nor closed.
 
 
 We could have defined a topology starting from closed sets. We would
-have had to replace the properties (A1)-(A2)-(A3) with suitable properties for closed sets. Such properties are detailed in the following proposition.
+have had to replace the properties (A1)-(A2)-(A3) with suitable properties for closed sets, as detailed in the following proposition.
 
 
 ::: Proposition
@@ -360,37 +360,40 @@ Let $(\mathbb{K}, + , \cdot)$ be a field. Define
 $$
 X:=\mathbb{K}^n := \{  (a_1, \ldots, a_n) \divider a_i \in \mathbb{K}  \} \,.
 $$
-Consider the set of polynomials with coefficients in the field 
+Consider the ring of polynomials with coefficients in the field 
 $$
 \mathbb{K}[x_1,\ldots,x_n] \,.
 $$
 Therefore $f \in \mathbb{K}[x_1,\ldots,x_n]$ has the form 
 $$
-f(x_1,\ldots,x_n) = \lambda_1 x_1 + \ldots + \lambda_n x_n \,,
+f(x_1,\ldots,x_n) = \lambda_1 x_1^{k_1} + \ldots + \lambda_n x_n^{k_n} \,,
 $$
-where $\lambda_1, \ldots, \lambda_n$ are given elements of $\mathbb{K}$.
-For $I \subset \mathbb{K}[x_1,\ldots,x_n]$ define
+where $\lambda_1, \ldots, \lambda_n$ are given elements of $\mathbb{K}$ and $k_1, \ldots, k_n \in \N$.
+For a collection of polynomials $I \subset \mathbb{K}[x_1,\ldots,x_n]$ define
 $$
 V(I):= \{  (a_1,\ldots,a_n) \in \mathbb{K}^n \divider 
 f(a_1,\ldots,a_n) = 0 \,, \,\, \forall \, f \in I    \} \,.
 $$
-Define
+The set $V(I)$ is called an **algebraic set**. Define
 $$
 \mathcal{C} := \{ V(I) \divider I \subset \mathbb{K}[x_1,\ldots,x_n] \} \,.
 $$
 Then $\mathcal{C}$ satisfies (C1), (C2) and (C3). This is an easy check,
-and is left as exercise. $\mathcal{C}$ is called the **Zariski Topology**
-on the field $\mathbb{K}^n$. This is used in algebraic geometry to 
-study Affine Varieties, an algebraic version of surfaces, see [Wikipedia page](https://en.wikipedia.org/wiki/Zariski_topology).
+and is left as exercise. 
 
+
+The collection $\mathcal{C}$ is known as the **Zariski topology** on the space $\mathbb{K}^n$. This topology provides a natural framework for studying **Affine Varieties** -- generalized surfaces obtained by gluing together algebraic sets of the form $V(I)$. The area of mathematics studying these objects is known as Algebraic Geometry. For more information, see this [Wikipedia page](https://en.wikipedia.org/wiki/Zariski_topology) and this [paper](https://www.ias.ac.in/public/Volumes/reso/004/08/0036-0057.pdf).
+
+An example of affine variety is the **Quadrifolium**, which is the curve defined by the polar coordinates equation $r = \sin(2\theta)$, see @fig-quadrifolium. It can be easily seen that the Quadrifolium is an affine variety in $\R^2$, which can be described by using just one algebraic set, namely $V( (x^2+y^2)^3 - 4x^2 y^2)$. 
 :::
+
+![The Quadrifolium is an affine variety with algebraic set $V( (x^2+y^2)^3 - 4x^2 y^2)$.](/images/quadrifolium.png){#fig-quadrifolium width=70%}
+
 
 
 
 
 ## Comparing topologies
-
-
 
 
 Consider the situation where you have two topologies $\TT_1$ and $\TT_2$ on the same 

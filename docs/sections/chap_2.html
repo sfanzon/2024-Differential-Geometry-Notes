@@ -92,67 +92,19 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -160,9 +112,57 @@ div.csl-indent {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -1986,7 +1986,7 @@ d = {\pmb{\gamma}}(t_0) \cdot \mathbf{b}
 \]</span> Therefore, by Theorem <a href="chap_2.html#theorem-characterization-space">53</a>, every unit-speed curve <span class="math inline">\({\pmb{\gamma}}\)</span> with constant curvature and torsion must be equal to a circle, up to rigid motions.</p>
 <p>Nevertheless, we still give a proof of Proposition <a href="chap_2.html#proposition-constant-k-zero-t">59</a>, to show yet another explicit application of the Frenet-Serret equations.</p>
 <div id="Proof*-20" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose the image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>. Then, up to a translation, <span class="math inline">\({\pmb{\gamma}}\)</span> is parametrized by <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose the image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>. Then, up to a rotation and translation, <span class="math inline">\({\pmb{\gamma}}\)</span> is parametrized by <span class="math display">\[
 {\pmb{\gamma}}(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right) \,.
 \]</span> We have already seen that in this case <span class="math display">\[
 \kappa = c  \,, \quad \tau = 0 \,,

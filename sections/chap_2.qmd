@@ -2824,7 +2824,7 @@ to show yet another explicit application of the Frenet-Serret equations.
 
 
 ::: Proof
-*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $1/c$. Then, up to a translation, $\g$ is parametrized by 
+*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $1/c$. Then, up to a rotation and translation, $\g$ is parametrized by 
 $$
 \g(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right) \,.
 $$

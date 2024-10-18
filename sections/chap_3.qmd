@@ -2926,11 +2926,11 @@ The proof follows immediately by Theorem \ref{theorem-connected}, and is left to
 
 
 
-::: Example
+::: {.Example #example-dimension}
 
-Let $n \geq 2$. $\R^n$ not homeomorphic to $\R$.
+Let $n \geq 2$. Then $\R^n$ not homeomorphic to $\R$.
 
-> *Proof.*  Suppose by contradiction that there exists an omeomorphism 
+> *Proof.*  Suppose by contradiction that there exists a homeomorphism 
 $$
 f \colon \R^n \to \R \,.
 $$
@@ -2938,12 +2938,28 @@ Define $p = f(0)$ and the restriction
 $$
 g \colon \R^n \smallsetminus \{0\} \to \R \smallsetminus \{p\} \,, \quad g(x) = f(x) \,.
 $$
-Since $g$ is a restriction of an omeomorphism, then $g$ is an omeomorphism. 
+Since $g$ is a restriction of a homeomorphism, then $g$ is a homeomorphism. 
 We have that $\R^n \smallsetminus \{0\}$ is connected, as a consequence of  
 Example \ref{example-Rn-minus-p}. Hence, by Corollary \ref{corollary-invariant-connected}, we infer that $\R \smallsetminus \{p\}$ is connected. This is a contradiction, since $\R \smallsetminus \{p\}$ is
 disconnected, as shown in Example \ref{example-R-minus-p}.
 
 :::
+
+A stronger version of the statement in Example \ref{example-dimension} holds. 
+
+
+::: Theorem 
+### Topological invariance of dimension {#theorem-dimension}
+
+Let $n \neq m$. Then $\R^n$ is not homeomorphic to $\R^m$. 
+
+:::
+
+
+Unfortunately, the argument in Example \ref{example-dimension} cannot be extended to prove Theorem \ref{theorem-dimension}. The bottom line is that connectedness does not give enough information to tell apart $\R^n$ from $\R^m$. The right topological tool to prove Theorem \ref{theorem-dimension} is called **homology**, which requires a serious effort to construct/define.
+
+
+Let us give another example of spaces which are not homeomorphic.
 
 
 

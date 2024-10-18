@@ -72,41 +72,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Problem {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Assumption {
   --color1: #f4cce0;
@@ -116,11 +92,43 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,21 +136,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
+.Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -1973,21 +1973,28 @@ Y \, \mbox{ is connected }
 </div></details>
 </div>
 <p>The proof follows immediately by Theorem <a href="chap_3.html#theorem-connected">91</a>, and is left to the reader as an exercise.</p>
-<div id="Example-93" class="Example">
+<div id="example-dimension" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 93</strong></summary><div>
-<p>Let <span class="math inline">\(n \geq 2\)</span>. <span class="math inline">\(\mathbb{R}^n\)</span> not homeomorphic to <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>Let <span class="math inline">\(n \geq 2\)</span>. Then <span class="math inline">\(\mathbb{R}^n\)</span> not homeomorphic to <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <blockquote class="blockquote">
-<p><em>Proof.</em> Suppose by contradiction that there exists an omeomorphism <span class="math display">\[
+<p><em>Proof.</em> Suppose by contradiction that there exists a homeomorphism <span class="math display">\[
 f \colon \mathbb{R}^n \to \mathbb{R}\,.
 \]</span> Define <span class="math inline">\(p = f(0)\)</span> and the restriction <span class="math display">\[
 g \colon \mathbb{R}^n \smallsetminus \{0\} \to \mathbb{R}\smallsetminus \{p\} \,, \quad g(x) = f(x) \,.
-\]</span> Since <span class="math inline">\(g\)</span> is a restriction of an omeomorphism, then <span class="math inline">\(g\)</span> is an omeomorphism. We have that <span class="math inline">\(\mathbb{R}^n \smallsetminus \{0\}\)</span> is connected, as a consequence of<br>
+\]</span> Since <span class="math inline">\(g\)</span> is a restriction of a homeomorphism, then <span class="math inline">\(g\)</span> is a homeomorphism. We have that <span class="math inline">\(\mathbb{R}^n \smallsetminus \{0\}\)</span> is connected, as a consequence of<br>
 Example <a href="chap_3.html#example-Rn-minus-p">90</a>. Hence, by Corollary <a href="chap_3.html#corollary-invariant-connected">92</a>, we infer that <span class="math inline">\(\mathbb{R}\smallsetminus \{p\}\)</span> is connected. This is a contradiction, since <span class="math inline">\(\mathbb{R}\smallsetminus \{p\}\)</span> is disconnected, as shown in Example <a href="chap_3.html#example-R-minus-p">89</a>.</p>
 </blockquote>
 </div></details>
 </div>
-<div id="Example-94" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 94</strong></summary><div>
+<p>A stronger version of the statement in Example <a href="chap_3.html#example-dimension">93</a> holds.</p>
+<div id="theorem-dimension" class="Theorem" title="Topological invariance of dimension">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 94: </strong>Topological invariance of dimension</summary><div>Let <span class="math inline">\(n \neq m\)</span>. Then <span class="math inline">\(\mathbb{R}^n\)</span> is not homeomorphic to <span class="math inline">\(\mathbb{R}^m\)</span>.<p></p>
+</div></details>
+</div>
+<p>Unfortunately, the argument in Example <a href="chap_3.html#example-dimension">93</a> cannot be extended to prove Theorem <a href="chap_3.html#theorem-dimension">94</a>. The bottom line is that connectedness does not give enough information to tell apart <span class="math inline">\(\mathbb{R}^n\)</span> from <span class="math inline">\(\mathbb{R}^m\)</span>. The right topological tool to prove Theorem <a href="chap_3.html#theorem-dimension">94</a> is called <strong>homology</strong>, which requires a serious effort to construct/define.</p>
+<p>Let us give another example of spaces which are not homeomorphic.</p>
+<div id="Example-95" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 95</strong></summary><div>
 <p>Define the 1D unit circle <span class="math display">\[
 \mathbb{S}^1 := \{(x,y) \in \mathbb{R}^2 \, \colon \, x^2 + y^2 = 1 \} \,.
 \]</span> Then <span class="math inline">\(\mathbb{S}^1\)</span> and <span class="math inline">\([0,1]\)</span> are not homeomorphic.</p>
@@ -2011,14 +2018,14 @@ g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left(
 <h2 data-number="3.13" class="anchored" data-anchor-id="intermediate-value-theorem"><span class="header-section-number">3.13</span> Intermediate Value Theorem</h2>
 <p>Another consequence of Theorem <a href="chap_3.html#theorem-connected">91</a> is a generalization of the Intermediate Value Theorem to arbitrary topological spaces. Before providing statement and proof of such Theorem, we need to characterize the connected subsets of <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="interval" class="Definition" title="Interval">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 95: </strong>Interval</summary><div>A subset <span class="math inline">\(I \subset \mathbb{R}\)</span> is an interval if it holds: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>Interval</summary><div>A subset <span class="math inline">\(I \subset \mathbb{R}\)</span> is an interval if it holds: <span class="math display">\[
 \forall \, a,b \in I \,, \, x \in \mathbb{R}\, \, \text{ s.t. } \, a&lt;x&lt;b \quad
 \implies \quad x \in I \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="theorem-interval-connected" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 96</strong></summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 97</strong></summary><div>
 <p>Let <span class="math inline">\(\mathbb{R}\)</span> be equipped with the Euclidean topology and let <span class="math inline">\(I \subseteq \mathbb{R}\)</span>. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(I\)</span> is connected.</li>
@@ -2065,13 +2072,13 @@ I = A \cup B \,, \quad A \cap B = \emptyset \,.
 </div>
 <p>We are finally ready to prove the Intermediate Value Theorem.</p>
 <div id="intermediate-value-theorem-1" class="Theorem" title="Intermediate Value Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 97: </strong>Intermediate Value Theorem</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a connected topological space. Suppose that <span class="math inline">\(f \colon X \to \mathbb{R}\)</span> is continuous. Suppose that <span class="math inline">\(a,b \in X\)</span> are such that <span class="math inline">\(f(a)&lt;f(b)\)</span>. It holds: <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 98: </strong>Intermediate Value Theorem</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a connected topological space. Suppose that <span class="math inline">\(f \colon X \to \mathbb{R}\)</span> is continuous. Suppose that <span class="math inline">\(a,b \in X\)</span> are such that <span class="math inline">\(f(a)&lt;f(b)\)</span>. It holds: <span class="math display">\[
 \forall \, c \in \mathbb{R}\, \text{ s.t. } \, f(a)&lt; c &lt; f(b) \,, \,\, \exists \, \xi \in X \, \text{ s.t. } \, f(\xi) = c \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="Proof*-41" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>As <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(X\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">91</a> we know that <span class="math inline">\(f(X)\)</span> is connected in <span class="math inline">\(\mathbb{R}\)</span>. By Theorem <a href="chap_3.html#theorem-interval-connected">96</a> we have that <span class="math inline">\(f(X)\)</span> is an interval. Since <span class="math inline">\(a,b \in X\)</span> it follows <span class="math inline">\(f(a), f(b) \in f(X)\)</span>. Therefore, if <span class="math inline">\(c \in \mathbb{R}\)</span> is such that <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>As <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(X\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">91</a> we know that <span class="math inline">\(f(X)\)</span> is connected in <span class="math inline">\(\mathbb{R}\)</span>. By Theorem <a href="chap_3.html#theorem-interval-connected">97</a> we have that <span class="math inline">\(f(X)\)</span> is an interval. Since <span class="math inline">\(a,b \in X\)</span> it follows <span class="math inline">\(f(a), f(b) \in f(X)\)</span>. Therefore, if <span class="math inline">\(c \in \mathbb{R}\)</span> is such that <span class="math display">\[
 f(a) &lt; c &lt; f(b)
 \]</span> we conclude that <span class="math inline">\(c \in f(X)\)</span>, since <span class="math inline">\(f(X)\)</span> is an interval. Hence there exists <span class="math inline">\(\xi \in X\)</span> such that <span class="math inline">\(f(\xi) = c\)</span>.<p></p>
 </div></details>
@@ -2080,15 +2087,15 @@ f(a) &lt; c &lt; f(b)
 <section id="path-connectedness" class="level2" data-number="3.14">
 <h2 data-number="3.14" class="anchored" data-anchor-id="path-connectedness"><span class="header-section-number">3.14</span> Path connectedness</h2>
 <div id="path-connectedness-1" class="Definition" title="Path connectedness">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 98: </strong>Path connectedness</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>path connected</strong> if for every <span class="math inline">\(x,y \in X\)</span> there exist <span class="math inline">\(a,b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>, and a continuous function <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 99: </strong>Path connectedness</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>path connected</strong> if for every <span class="math inline">\(x,y \in X\)</span> there exist <span class="math inline">\(a,b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>, and a continuous function <span class="math display">\[
 \alpha \colon [a,b] \to X
 \]</span> such that <span class="math display">\[
 \alpha (a) = x \,, \quad \alpha(b) = y \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Example-99" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 99</strong></summary><div>
+<div id="Example-100" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 100</strong></summary><div>
 <p>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span> be convex. Then <span class="math inline">\(A\)</span> is path connected.</p>
 <blockquote class="blockquote">
 <p>A is convex if for all <span class="math inline">\(x,y \in A\)</span> the segment connecting <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> is contained in <span class="math inline">\(A\)</span>, namely, <span class="math display">\[
@@ -2101,7 +2108,7 @@ f(a) &lt; c &lt; f(b)
 </div>
 <p>It turns out that path-connectedness implies connectedness.</p>
 <div id="theorem-path-connected" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 100</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a path connected topological space. Then <span class="math inline">\(X\)</span> is connected.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 101</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a path connected topological space. Then <span class="math inline">\(X\)</span> is connected.<p></p>
 </div></details>
 </div>
 <div id="Proof*-42" class="Proof">
@@ -2123,9 +2130,9 @@ A \cap B \neq \emptyset \,.
 \]</span> Hence <span class="math inline">\([0,1]\)</span> is disconnected, which is a contradiction. Therefore <span class="math inline">\(A \cap B \neq \emptyset\)</span> and <span class="math inline">\(X\)</span> is connected.<p></p>
 </div></details>
 </div>
-<p>The converse of the above theorem does not hold. A counterexample is given by the so-called <strong>topologist curve</strong>, which will be examined in Proposition <a href="chap_3.html#proposition-topologist-curve">102</a>. Prior to this, we need a basic Lemma.</p>
+<p>The converse of the above theorem does not hold. A counterexample is given by the so-called <strong>topologist curve</strong>, which will be examined in Proposition <a href="chap_3.html#proposition-topologist-curve">103</a>. Prior to this, we need a basic Lemma.</p>
 <div id="lemma-connected-open-closed" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 101</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. Let <span class="math inline">\(A,  U \subseteq X\)</span> with <span class="math inline">\(A\)</span> connected and <span class="math inline">\(U\)</span> open and closed. Suppose that <span class="math inline">\(A \cap U \neq \emptyset\)</span>, then <span class="math inline">\(A \subseteq U\)</span>.<p></p>
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 102</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. Let <span class="math inline">\(A,  U \subseteq X\)</span> with <span class="math inline">\(A\)</span> connected and <span class="math inline">\(U\)</span> open and closed. Suppose that <span class="math inline">\(A \cap U \neq \emptyset\)</span>, then <span class="math inline">\(A \subseteq U\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-43" class="Proof">
@@ -2136,7 +2143,7 @@ A &amp; = ( A \cap U ) \cup (A \cap U^c)  \\
 </div></details>
 </div>
 <div id="proposition-topologist-curve" class="Proposition" title="Topologist curve">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 102: </strong>Topologist curve</summary><div>Consider <span class="math inline">\(\mathbb{R}^2\)</span> with the Euclidean topology and define the sets <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 103: </strong>Topologist curve</summary><div>Consider <span class="math inline">\(\mathbb{R}^2\)</span> with the Euclidean topology and define the sets <span class="math display">\[
 X := A \cup B
 \]</span> where <span class="math display">\[\begin{align*}
 A &amp; := \left\{   \left(  t, \sin \left( \frac{1}{t} \right)  \right) \, \colon \,t&gt;0   \right\} \\
@@ -2169,11 +2176,11 @@ s_n \to 0 \,, \quad  \sin \left(  \frac{1}{s_n}  \right) = t_0 \,, \quad \forall
 <p>Let <span class="math inline">\(U \subseteq X\)</span> be non-empty, open and closed. If we prove that <span class="math inline">\(U = X\)</span>, we conclude that <span class="math inline">\(X\)</span> is connected. Let us proceed.<br>
 Since <span class="math inline">\(U\)</span> is non-empty, we can fix a point <span class="math inline">\(x \in U\)</span>. We have two possibilities:</p>
 <ul>
-<li><p><span class="math inline">\(x \in A\)</span>: In this case <span class="math inline">\(A \cap U \neq \emptyset\)</span>. Since <span class="math inline">\(A\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, by Lemma <a href="chap_3.html#lemma-connected-open-closed">101</a> we conclude <span class="math inline">\(A \subseteq U\)</span>. As <span class="math inline">\(U\)</span> is closed and contains <span class="math inline">\(A\)</span>, then <span class="math inline">\({}\mkern 2mu \overline{\mkern-2mu A \mkern-2mu}\mkern 2mu {} \subseteq U\)</span>. But we have shown that<br>
+<li><p><span class="math inline">\(x \in A\)</span>: In this case <span class="math inline">\(A \cap U \neq \emptyset\)</span>. Since <span class="math inline">\(A\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, by Lemma <a href="chap_3.html#lemma-connected-open-closed">102</a> we conclude <span class="math inline">\(A \subseteq U\)</span>. As <span class="math inline">\(U\)</span> is closed and contains <span class="math inline">\(A\)</span>, then <span class="math inline">\({}\mkern 2mu \overline{\mkern-2mu A \mkern-2mu}\mkern 2mu {} \subseteq U\)</span>. But we have shown that<br>
 <span class="math display">\[
 {}\mkern 2mu \overline{\mkern-2mu A \mkern-2mu}\mkern 2mu {} = X \,,
 \]</span> and therefore <span class="math inline">\(U = X\)</span>.</p></li>
-<li><p><span class="math inline">\(x \in B\)</span>: Then <span class="math inline">\(U \cap B \neq \emptyset\)</span>. Since <span class="math inline">\(B\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, we can invoke Lemma <a href="chap_3.html#lemma-connected-open-closed">101</a> and conclude that <span class="math inline">\(B \subseteq U\)</span>. Since <span class="math inline">\((0,0) \in B\)</span>, it follows that <span class="math display">\[
+<li><p><span class="math inline">\(x \in B\)</span>: Then <span class="math inline">\(U \cap B \neq \emptyset\)</span>. Since <span class="math inline">\(B\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, we can invoke Lemma <a href="chap_3.html#lemma-connected-open-closed">102</a> and conclude that <span class="math inline">\(B \subseteq U\)</span>. Since <span class="math inline">\((0,0) \in B\)</span>, it follows that <span class="math display">\[
 (0,0) \in U \,.
 \]</span> As <span class="math inline">\(U\)</span> is open in <span class="math inline">\(X\)</span>, and <span class="math inline">\(X\)</span> has the subspace topology induced by the inclusion <span class="math inline">\(X \subseteq \mathbb{R}^2\)</span>, there exists an open set <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^2\)</span> such that <span class="math display">\[
 U = X \cap W \,.
@@ -2183,7 +2190,7 @@ B_{\varepsilon} (0,0) \subseteq W \,.
 X \cap B_{\varepsilon} (0,0)  \subseteq X \cap W = U \,.
 \]</span> The ball <span class="math inline">\(B_{\varepsilon} (0,0)\)</span> contains points of <span class="math inline">\(A\)</span>, and therefore <span class="math display">\[
 A \cap U \neq \emptyset \,.
-\]</span> Since <span class="math inline">\(A\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, we can again use Lemma <a href="chap_3.html#lemma-connected-open-closed">101</a> and obtain that <span class="math inline">\(A \subseteq U\)</span>. Since we already had <span class="math inline">\(B \subseteq U\)</span>, and since <span class="math inline">\(U \subseteq X = A \cup B\)</span>, we conclude hence <span class="math inline">\(U = X\)</span>.</p></li>
+\]</span> Since <span class="math inline">\(A\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, we can again use Lemma <a href="chap_3.html#lemma-connected-open-closed">102</a> and obtain that <span class="math inline">\(A \subseteq U\)</span>. Since we already had <span class="math inline">\(B \subseteq U\)</span>, and since <span class="math inline">\(U \subseteq X = A \cup B\)</span>, we conclude hence <span class="math inline">\(U = X\)</span>.</p></li>
 </ul>
 <p>Therefore <span class="math inline">\(U = X\)</span> in all possible cases, showing that <span class="math inline">\(X\)</span> is connected.</p>
 </div></details>

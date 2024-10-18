@@ -623,33 +623,35 @@
 
  [**Corollary 3.92**](#corollary-invariant-connected)\Pageref{corollary-invariant-connected}
 
- [**Example 3.93**](#Example-3.93)\Pageref{Example-3.93}
+ [**Example 3.93**](#example-dimension)\Pageref{example-dimension}
 
- [**Example 3.94**](#Example-3.94)\Pageref{Example-3.94}
+ [**Theorem 3.94**](#theorem-dimension): Topological invariance of dimension\Pageref{theorem-dimension}
 
- [**Definition 3.95**](#interval): Interval\Pageref{interval}
+ [**Example 3.95**](#Example-3.95)\Pageref{Example-3.95}
 
- [**Theorem 3.96**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
+ [**Definition 3.96**](#interval): Interval\Pageref{interval}
+
+ [**Theorem 3.97**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
 
  [**Proof**](#Proof*-3.40)\Pageref{Proof*-3.40}
 
- [**Theorem 3.97**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
+ [**Theorem 3.98**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
 
  [**Proof**](#Proof*-3.41)\Pageref{Proof*-3.41}
 
- [**Definition 3.98**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
+ [**Definition 3.99**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
 
- [**Example 3.99**](#Example-3.99)\Pageref{Example-3.99}
+ [**Example 3.100**](#Example-3.100)\Pageref{Example-3.100}
 
- [**Theorem 3.100**](#theorem-path-connected)\Pageref{theorem-path-connected}
+ [**Theorem 3.101**](#theorem-path-connected)\Pageref{theorem-path-connected}
 
  [**Proof**](#Proof*-3.42)\Pageref{Proof*-3.42}
 
- [**Lemma 3.101**](#lemma-connected-open-closed)\Pageref{lemma-connected-open-closed}
+ [**Lemma 3.102**](#lemma-connected-open-closed)\Pageref{lemma-connected-open-closed}
 
  [**Proof**](#Proof*-3.43)\Pageref{Proof*-3.43}
 
- [**Proposition 3.102**](#proposition-topologist-curve): Topologist curve\Pageref{proposition-topologist-curve}
+ [**Proposition 3.103**](#proposition-topologist-curve): Topologist curve\Pageref{proposition-topologist-curve}
 
  [**Proof**](#Proof*-3.44)\Pageref{Proof*-3.44}
 

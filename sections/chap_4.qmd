@@ -2881,7 +2881,6 @@ $$
 
 
 
-
 ::: Remark
 ### Tangent space and derivations
 
@@ -2922,6 +2921,295 @@ An in depth discussion can be found in Chapter 3.4 of [@abate-tovena].
 
 
 :::
+
+
+
+
+## Unit normal and orientability
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. The tangent plane $T_{\pp} \SSS$ passes through the origin. Therefore $T_{\pp} \SSS$ is completely determined by giving a unit vector $\NN$ perpendicular to it:
+$$
+T_{\pp} \SSS = \{ \xx \in \R^3 \divider \xx \cdot \NN = 0 \} \,.
+$$
+In this case we write
+$$
+\NN \perp T_{\pp} \SSS \,,
+$$
+to denote that $\NN$ is **perpendicular** to $T_{\pp} \SSS$. Clearly, also $-\NN$ is a unit vector, and
+$$
+(- \NN) \perp T_{\pp} \SSS \,. 
+$$
+
+
+::: Question 
+
+Which unit normal should we choose between $\NN$ and $-\NN$?
+
+:::
+
+There is no right answer to the above question. One way to proceed is the following.
+
+
+::: {.Remark   #remark-normal-chart}
+
+Suppose that $\sss \colon U \to \R^3$ is a regular chart for $\SSS$. Let $\pp \in \sss(U)$. Then
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} \,.
+$$
+Therefore we can choose the unit normal to $T_{\pp} \SSS$ as 
+$$
+\NN_{\sss} :=  \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
+$$
+Clearly $\NN_{\sss}$ has unit norm. Moreover 
+$$
+\NN_{\sss} \cdot \sss_u = 0 \,, \quad \NN_{\sss} \cdot \sss_v = 0
+$$
+by the properties of cross product, showing that $\NN_{\sss}$ is perpendicular to $T_{\pp} \SSS$.
+
+There is however an issue: $\NN_{\sss}$ is not independent on the choice of chart $\sss$. Indeed, suppose that $\widetilde{\sss} \colon  \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,, \quad \Phi \colon \widetilde{U} \to U \,,
+$$
+with $\Phi$ diffeomorphism. As shown in the proof of Proposition \ref{proposition-transition-maps}, we have
+$$
+\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
+= \det (J\Phi)  \, \sss_u \times \sss_v \,.
+$$
+Hence
+$$
+\NN_{\widetilde{\sss}} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN_{\sss} \,.
+$$
+Therefore the sign on the right hand side depends on the sign of the Jacobian determinant of the transition map $\Phi$.
+
+:::
+
+
+The above remark motivates the following definitions.
+
+
+
+::: Definition
+### Standard unit normal of a chart
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. The **standard unit normal** of $\sss$ is the smooth function
+$$
+\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+$$
+
+:::
+
+
+
+::: Definition
+### Charts with same orientation
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$, $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ regular charts such that 
+$$
+\sss(U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+Denote by $\Phi$ the transition map between $\widetilde{\sss}$ and $\sss$. We say that: 
+
+1. $\sss$ and $\widetilde{\sss}$ determine the **same orientation** if 
+$$
+\det J \Phi > 0 \,,
+$$
+where $\Phi$ is defined.
+
+2. $\sss$ and $\widetilde{\sss}$ determine **opposite orientations** if 
+$$
+\det J \Phi < 0 \,,
+$$
+where $\Phi$ is defined.
+
+:::
+
+
+
+::: Example
+
+Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
+The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
+$$
+\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+An alternative parametrization is given by
+$$
+\widetilde{\sss} (u,v):= \mathbf{a}  + \mathbf{q} u + \pp v  \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+We have
+$$
+\sss_u = \pp \,, \quad 
+\sss_v = \mathbf{q} \,, \quad 
+$$
+and therefore
+$$
+\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
+$$
+Similarly, we have
+$$
+\NN_{\widetilde{\sss}} = \frac{ \mathbf{q} \times \pp   }{ \norm{ \mathbf{q} \times \pp } } =
+ \frac{ - \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q}  } } \,,
+$$
+showing that
+$$
+\NN_{\sss} = - \NN_{\widetilde{\sss}} \,.
+$$
+Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
+
+:::
+
+
+
+
+
+If a surface can be covered by charts with the same orientation, it is called orientable.
+
+
+::: Definition
+### Orientable surface
+
+Let $\SSS$ be a regular surface. Then:
+
+1. An atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ is **oriented** if the following property holds: 
+$$
+\sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset \quad \implies \quad 
+\det J \Phi > 0 \,,
+$$
+where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
+
+2. $\SSS$ is **orientable** if there exists an oriented atlas $\mathcal{A}$.
+
+3. If an oriented atlas $\mathcal{A}$ is assigned, we say that $\SSS$ is **oriented** by $\mathcal{A}$.
+
+:::
+
+
+
+::: Example
+### Möbius strip
+
+The classical example of non orientable surface is the Möbius strip, see @fig-mobius-ruled. We will discuss this example in more details when we introduce ruled srufaces, see Example \ref{example-mobius}.
+
+:::
+
+
+::: Example
+
+Let $\sss \colon U \to \R^3$ be a regular chart. Then 
+$$
+\SSS_{\sss} := \sss(U)
+$$ 
+is a regular surface with atlas $\mathcal{A}=\{\sss\}$. Therefore $\SSS_{\sss}$ is orientable.
+
+> This is because we have only one chart. Therefore any transition map $\Phi$ will be the identity,
+so that $\det J \Phi = 1 > 0$.
+
+:::
+
+
+::: Warning
+### Orientability is a global property
+
+The above example is saying that orientability is a global property: To determine wether 
+a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
+$\mathcal{A}$. This is because a single local parametrization $\sss(U) \subseteq \SSS$ is always orientable.
+
+:::
+
+
+
+
+::: Remark
+
+Let $\sss$ and $\widetilde{\sss}$ be regular charts with transition map $\Phi$. We have seen in 
+Remark \ref{remark-normal-chart} that
+$$
+\NN_{\widetilde{\sss}} = \frac{ \det J \Phi }{ |\det J \Phi| } \, \NN_{\sss} \,.
+$$ 
+If $\sss$ and $\widetilde{\sss}$ determine the same orientation, then 
+$$
+\det J \Phi > 0 \,,
+$$
+which implies
+$$
+\NN_{\widetilde{\sss}} =  \NN_{\sss} \,.
+$$
+Hence, if $\SSS$ is an orientable surface, one can define a unit normal vector at each point of 
+$\SSS$, without ambiguity.
+
+:::
+
+
+
+
+::: Definition
+### Unit normal of a surface
+
+Let $\SSS$ be a regular surface. A **unit normal** of $\SSS$ is a smooth function
+$\NN \colon \SSS \to \R^3$ such that
+$$
+\NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
+$$
+
+:::
+
+
+::: Warning 
+
+We require the function $\pp \mapsto \NN(\pp)$ to be globally defined on $\SSS$ and smooth.  
+
+:::
+
+
+
+
+::: Proposition
+
+Let $\SSS$ be a regular surface. They are equivalent:
+
+1. $\SSS$ is orientable.
+
+2. There exists a unit normal $\NN \colon \SSS \to \R^3$.
+
+:::
+
+The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
+
+
+
+In view of the above propostion, for an oriented surface there is a natural choice of unit normal, 
+which we call **standard unit normal** of $\SSS$. 
+
+
+::: Definition
+### Standard unit normal of a surface
+
+Let $\SSS$ be a regular surface oriented by the atlas $\mathcal{A}$. The **standard unit normal**
+to $\SSS$ is the map $\NN \colon \SSS \to \R^3$ such that
+$$
+\NN \circ \sss = \NN_{\sss} \,,
+$$
+for each chart $\sss \in \mathcal{A}$, where 
+$$
+\NN_{\sss} \colon U \to \R^3 \,, \quad  \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
+$$
+is the standard unit normal of $\sss$.
+
+:::
+
+
+
+
+::: Notation
+
+In the following we will denote by $\NN$ both the standard unit normal of $\SSS$ and of a chart. 
+
+:::
+
+
+
+
+
 
 
 
@@ -3675,7 +3963,6 @@ Hence the unit cylinder is a ruled surface, see @fig-cylinder-ruled.
 ::: Example
 ### Möbius band  {#example-mobius}
 
-
 The Möbius band is a ruled surface with chart
 $$
 \sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
@@ -3691,7 +3978,52 @@ $$
                    \cos \left( \frac{u}{2} \right)   \right) 
 $$
 is a vector which does a full rotation while going around the unit
-circle $\g$. This is shown in @fig-mobius-ruled.
+circle $\g$. This is shown in @fig-mobius-ruled. In particular 
+$$
+\sss (u,v) =  \left(   
+  \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
+  \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \sin(u),
+  v \cos \left( \frac{u}{2} \right)   \right) \,.
+$$
+
+We want to prove that $\SSS$ is **non orientable**. From the above formula for $\sss$, it is easy to compute that 
+$$
+\sssu \times \sssv = \left( - \cos(u) \cos \left(  \frac{u}{2} \right),   - \sin(u) \cos \left(  \frac{u}{2} \right) , - \sin \left(  \frac{u}{2} \right) \right) \,.
+$$
+It is also immediate to check that $\norm{\sssu \times \sssv} = 1$, and therefore the principal unit normal of $\sss$ is
+$$
+\NN_{\sss} = \sss_u \times \sssv \,.
+$$
+Suppose by contradiction that $\SSS$ is orientable. This means there exists a globally defined principal unit normal vector
+$$
+\NN \colon \SSS \to \R^3 \,.
+$$
+By definition of principal normal, we have either 
+$$
+\NN \circ \sss = \NN_{\sss} \quad \text{ or } \quad
+\NN \circ \sss = - \NN_{\sss} \,.
+$$
+Without loss of generality assume that 
+$$
+\NN \circ \sss = \NN_{\sss} \,.
+$$
+Consider the point $\pp = (1,0,0)$ on $\SSS$. Notice that, by continuity, $\pp$ can be obtained via $\sss$ through the limits
+$$
+\pp = \lim_{u \to 0^+} \sss(u,0) = \lim_{u \to 2\pi^-} \sss(u,0) \,.
+$$
+Since $\NN$ is continuous, the above implies
+$$
+\NN(\pp) = \lim_{u \to 0^+} \NN \circ \sss(u,0) = \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) \,.
+$${#eq-mobius-not-orientable}
+However, by direct calculation:
+\begin{align*}
+\lim_{u \to 0^+} \NN \circ \sss(u,0) & =
+\lim_{u \to 0^+} \NN_{\sss} (u,0) = (-1,0,0) \\
+\lim_{u \to 2\pi^-} \NN \circ \sss(u,0) & =
+\lim_{u \to 2\pi^-} \NN_{\sss} (u,0) = (1,0,0)
+\end{align*}
+This clearly contradicts (@eq-mobius-not-orientable). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
+
 
 :::
 
@@ -5076,17 +5408,18 @@ f( \sss( u,v) ) = \widetilde{\sss} (u,v) \,.
 $$
 We have:
 
-- $f$ is not a local isometry.
+1. $f$ is not a local isometry.
+2. $f$ is a conformal map.
 
-> If $f$ was a local isometry, by Theorem \ref{theorem-local-isometry} we would conclude that $\sss$ and $\widetilde{\sss} = f \circ \sss$ have the same first fundamental form. However 
+*Proof.*
+
+1. If $f$ was a local isometry, by Theorem \ref{theorem-local-isometry} we would conclude that $\sss$ and $\widetilde{\sss} = f \circ \sss$ have the same first fundamental form. However 
 $$
 \mathscr{F}_1 = du^2 + dv^2 \neq {\sech}^2(u) \, \left(  du^2 + dv^2 \right) 
 = \widetilde{\mathscr{F}}_1  \,.
 $$
 
-- $f$ is a conformal map. 
-
-> The first fundamental forms of $\sss$ and $\widetilde{\sss} = f \circ \sss$ satisfy
+2. The first fundamental forms of $\sss$ and $\widetilde{\sss} = f \circ \sss$ satisfy
 $$
 \widetilde{\mathscr{F}}_1  = \lambda(u,v) \, \mathscr{F}_1  \,, \quad 
 \lambda(u,v) := {\sech}(u) \,.
@@ -5102,34 +5435,42 @@ Therefore $f$ is a conformal map by Corollary \ref{corollary-conformal}.
 ### Conformal parametrizations
 
 
-
-We conclude this section with the definition of **conformally flat surface** and **conformal parametrization**. 
+In the previous section we defined conformal maps between surfaces
+$$
+f \colon \SSS \to \widetilde{\SSS}\,.
+$$
+As a special case, consider a surface chart
+$$
+\sss \colon U \to \SSS \,.
+$$
+The open set $U$ of $\R^2$ can be interpreted as a surface, parametrized by 
+$$
+(u,v) \to (u,v,0) \,.
+$$
+Hence $\sss$ can be seen as a map between surfaces, and it makes sense to discuss whether it is conformal or not.
 
 
 ::: Definition
-### Conformally flat surface and conformal parametrization {#definition-conformally-flat}
+### Conformal parametrization {#definition-conformal-parametrization}
 
 Let $\SSS$ be a regular surface and 
 $$
 \sss \colon U  \to  \SSS
 $$ 
-be a regular chart of $\SSS$. We say that
-$\SSS$ is **conformally flat** and $\sss$ is a **conformal parametrization**
-if the first fundamental form of $\sss$ satisfies
+be a regular chart of $\SSS$. We say that $\sss$ is a **conformal parametrization** if the first fundamental form of $\sss$ satisfies
 $$
 \mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
 $$
-for some smooth function $\lambda \colon U \to \R$.
+for some smooth function $\lambda \colon U \to \R$. 
 
 
 :::
 
 
-Definition \ref{definition-conformally-flat} is motivated by the following Theorem: It states that angles on conformally flat surfaces look like angles on a plane.
+The following Theorem states that, if $\sss$ is a conformal parametrization of $\SSS$, then angles on $\SSS$ look like angles on a plane.
 
 
 ::: Theorem
-
 
 Let $\SSS$ be a regular surface and
 $$
@@ -5144,9 +5485,9 @@ $$
 
     - $\sss$ is a conformal parametrization.
 
-    - There exists a conformal map $f \colon \pi \to \sss(U) \subseteq \SSS$.
+    - There exists a conformal map $f \colon \p \to \sss(U) \subseteq \SSS$.
 
-2. A conformal parametrization $\sss$ preserves angles between vectors,
+2. Angles on $\SSS$ look like angles on the plane, 
 in the following sense: Suppose $\g_1, \g_2$ are curves in $\mathbb{R}^{2}$ such that
 $$
 \g_1 (t_0) = \g_2 (t_0) \,.
@@ -5155,15 +5496,12 @@ Consider the corresponding curves on $\SSS$ given by
 $$
 \tg_1 := \sss \circ \g_1 \,, \quad \tg_2 = \sss \circ \g_2 \,.
 $$
-If
+Then 
 $$
-\dg_1 (t_0) \,, \dg_2(t_0) \,\, \mbox{ form an angle } \,\, \theta \,,
+\theta = \widetilde{\theta}
 $$
-then 
-$$
-\dtg_1 (t_0) \,, \dtg_2(t_0) \,\, \mbox{ form an angle } \,\, \theta \,.
-$$
-
+where $\theta$ is the angle between 
+$\dg_1 (t_0), \dg_2(t_0)$ and $\widetilde{\theta}$ the angle between $\dtg_1 (t_0), \dtg_2(t_0)$
 
 
 :::
@@ -5201,9 +5539,9 @@ showing that $\sss$ is a conformal parametrization.
 *Proof of Point 2.*
 Suppose $\sss$ is a conformal parametrization. By the proof of Point 1 we have that 
 $$
-f \colon \pi \to \SSS  \,, \quad f(u,v,0) = \sss(u,v) \,,
+f \colon \p \to \SSS  \,, \quad f(u,v,0) = \sss(u,v) \,,
 $$
-is a conformal map. Since $T_{\pp} \pi = \R^2$ and $f = \sss$, it follows by the definition of
+is a conformal map. Since $T_{\pp} \p = \R^2$ and $f = \sss$, it follows by the definition of
 differential and $f$ being conformal that the angle between $\g_1$ and $\g_2$ is the same as 
 the angle between $\tg_1$ and $\tg_2$.
 
@@ -5216,11 +5554,11 @@ the angle between $\tg_1$ and $\tg_2$.
 ::: Example
 ### Unit cylinder
 
-The cylinder $\SSS$ charted by
+Consider the unit cylinder $\SSS$ charted by
 $$
-\sss (u,v) = (\cos(u), \sin(u), v)
+\sss (u,v) = (\cos(u), \sin(u), v) \,.
 $$
-is conformally flat, since the first fundamental form of $\sss$ is
+We have proven that the first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
@@ -5232,7 +5570,7 @@ Therefore $\sss$ is a conformal parametrization of $\SSS$.
 
 
 ::: Example
-### Shpere
+### Sphere
 
 Consider the parametrization of the sphere
 $$
@@ -5242,7 +5580,7 @@ In Example \ref{example-conformal} we have seen that the first fundamental form 
 $$
 \mathscr{F}_1  = {\sech}(u) \, ( du^2 + dv^2 )  \,.
 $$
-Therefore $\sss$ is a conformal parametrization of the sphere. 
+Therefore $\sss$ is a conformal parametrization of the sphere.
 
 
 :::
@@ -5250,16 +5588,9 @@ Therefore $\sss$ is a conformal parametrization of the sphere.
 
 
 
-
-
-::: {.content-hidden}
-
 ### Equiareal maps
 
 
-For this part, see Lecure 9 of Will's Notes (not that long) and section 6.4 in Pressley.
-In Lecure 10 of Will's Notes there is an application to the theorem
-of archimedes. Looks pretty cool.
 
 
 ![The area of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){width=70%}
@@ -5301,7 +5632,186 @@ We have also shown that:
 
 
 
+### Application: Cartography
+
+Consider the unit sphere
+$$
+\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
+$$
+To make a map of the Earth one has to define a projection map
+$$
+\pi \colon \sphere^2 \to \R^2 \,.
+$$
+As we will see in the next section, the curvatures of $\sphere^2$ and $\R^2$ are different. Consequently each map $\pi$ will induce some *distorsion* in either
+
+- Length
+- Angles
+- Shapes
+- Area 
+
+These types of distorsion can all be present at the same time. There are 2 main types of Earth maps
+
+1. **Conformal projections:** These preserve angles and shapes but change areas. The main examples are
+    - Stereographic projection (@fig-stereographic)
+    - Mercator projection (@fig-mercator)
+    
+  
+2. **Equiareal projections:** These preserve areas but change angles and shapes. For example:
+    - Lambert cylindrical projection (@fig-lambert)
+
+
+The above mentioned projections admit explicit formulations, and one can actually prove that the corresponding maps are/are not conformal/equi-areal. We will discuss these 3 projections below. Details are left as an exercise. 
+
+
+::: Example
+### Stereographic Projection
+
+Denote the unit sphere by 
+$$
+\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
+$$
+We will call the points 
+$$
+N = (0,0,1) \,, \quad S  = (0,0,-1)
+$$
+the north and south pole, respectively. The plane $\{z=0\}$ slices through the equator of the sphere. Let $P=(x,y,z)$ be any point on $\sphere^2$ except the north pole. The line joining the north pole to $P$ intersects the plane $\{z=0\}$ at the point $P'$, see @fig-stereographic-4. The point $P'$ defines the *Stereographic Projection* map 
+$$
+\pi \colon \sphere^2 \smallsetminus \{N\} \to \R^2 \,,
+$$
+where
+$$
+\pi(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z}  \right) \,.
+$$
+Notice that $\pi$ is slightly different from the map described in @fig-stereographic: there the projection is done onto the plane $\{z=-1\}$, while in this example we project on the plane $\{z=0\}$. This is just because calculations are more convenient when projecting on $\{z=0\}$. It is not difficult to prove that $\pi$ is invertible, with inverse given by 
+$$
+\sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
+$$
+We have that $\sss$ is a regular chart for $\sphere^2 \smallsetminus \{N\}$. It can be computed that the coefficients of the first fundamental form associated of $\sss$ are
+$$
+E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
+$$
+In particualar the fisrt fundamental form is of type
+$$
+\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2)
+$$
+showing that $\sss$ is a conformal parametrization of the sphere. 
+
+However, $\sss$ is not equi-areal. Indeed, recall that the first fundamental form of the plane is $du^2 + dv^2$. Therefore the area element of the plane is $1$. 
+The area element for $\sss$ is
+$$
+EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
+$$
+showing that $\sss$ is not equi-areal. 
+
 :::
+
+
+![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
+
+
+
+
+
+::: Example
+### Lambert cylindrical projection
+
+Consider the unit sphere
+$$
+\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
+$$
+and the unit cylinder of equation
+$$
+x^2 + y^2 = 1 \,.
+$$
+The sphere is contained inside the cylinder, and the two surfaces touch along the circle $x^2 + y^2 = 1$ in the $\{z=0\}$ plane. Let $P \in \sphere^2$ except for north or south pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$, see @fig-archimedes. To write the projection map explicitly, denote the coordinates of $P$ and $P'$ by
+$$
+P = (x,y,z) \,, \quad P' = (X,Y,Z) \,.
+$$
+Since the line through $P$ and $P'$ is parallel to the plane $\{z=0\}$, we have
+$$
+Z = z \,, \quad (X,Y) = \lambda (x,y)
+$$
+for some scalar $\lambda$. Using that $P'$ belongs to the cylinder, we get
+$$
+1 = X^2 + Y^2 = \lambda^2 (x^2 + y^2)
+$$
+from which we deduce that 
+$$
+\lambda = \pm \frac{1}{(x^2 + y^2)^{1/2}} \,.
+$$ 
+Therefore 
+$$
+X = \lambda x = \pm \frac{x}{(x^2 + y^2)^{1/2}} \,, 
+\quad 
+Y = \lambda y = \pm \frac{y}{(x^2 + y^2)^{1/2}} \,.
+$$
+Taking the $+$ sign gives the point
+$$
+P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,.
+$$
+
+
+Consider the chart for the sphere
+$$
+\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+$$
+
+
+The full calculation will be carried out in Example \ref{example-sphere-principal} below. 
+
+
+:::
+
+
+![Lambert projection map: Let $P \in \sphere^2$ except for north or south pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$.](/images/archimedes.png){#fig-archimedes width=80%}
+
+
+
+![Stereographic projection of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Stereographic_projection)](/images/stereographic_2.png){#fig-stereographic-1 width=75%}
+
+![Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.](/images/stereographic_3.png){#fig-stereographic-2 width=75%}
+
+
+
+
+
+![Mercator projection of the Earth. This is the most known Earth map.](/images/mercator_2.png){width=75%}
+
+![Mercator projection: Angles and shapes are preserved. However areas are magnified away from the Equator.](/images/mercator_3.png){width=75%}
+
+The Mercator projection is a conformal map. As such it preseves angles and shapes. However areas are distorted. Images from [Britannica](https://www.britannica.com/science/Mercator-projection) and [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).
+
+:::
+
+
+::: Example
+### Mercator projection
+
+The Mercator projection is a type of cylindrical projection.  Intuitively, it is obtained by blowing up the sphere inside the cylinder, letting the sides of the sphere stick to the cylinder when it comes into contact with it. The main feature of this projection is that parallels and meridians on the Earth become horizontal and vertical lines on the map. This is ideal for navigation. A derivation of the Mercator projection using only elementary geometry is quite involved, see for example this [link](https://personal.math.ubc.ca/~israel/m103/mercator/mercator.html). We can however motivate it as follows, using differential geometry. We parametrize the sphere in spherical coordinates 
+$$
+\sss(\theta,\f)  = 
+$$
+for $\theta \in (-\pi,\pi)$, $\f \in \left(-\frac{pi}{2},\frac{\pi}{2}\right)$. 
+
+:::
+
+
+
+![Lambert cylindrical projection map. First project on a cylinder from the axis passing through North pole and South pole. Then unroll the cylinder.](/images/lambert_1.png){width=75%}
+
+
+![Lambert cylindrical projection of the Earth.](/images/lambert_2.png){width=75%}
+
+![Lambert cylindrical projection: Areas are preserved. Angles and shapes are distorted.](/images/lambert_3.png){width=75%}
+
+The Lambert cylindrical projection is an equi-areal map. As such it preseves areas. However angles and shapes are distorted. Images from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).
+
+
+
+
+
+
+
 
 
 
@@ -5321,302 +5831,6 @@ However the plane is flat, while the cylinder curves. We would like to find a me
 which allows us to tell these two surfaces apart.
 
 
-
-
-### Unit normal and orientability
-
-
-Before talking about curvatures, we need to clarify what we mean by normal
-vector to a surface and orientability. Let $\SSS$ be a regular surface and $\pp \in \SSS$. The tangent plane $T_{\pp} \SSS$ passes through the origin. Therefore $T_{\pp} \SSS$ is completely determined by giving a unit vector $\NN$ perpendicular to it:
-$$
-T_{\pp} \SSS = \{ \xx \in \R^3 \divider \xx \cdot \NN = 0 \} \,.
-$$
-In this case we write
-$$
-\NN \perp T_{\pp} \SSS \,,
-$$
-to denote that $\NN$ is **perpendicular** to $T_{\pp} \SSS$. Clearly, also $-\NN$ is a unit vector, and
-$$
-(- \NN) \perp T_{\pp} \SSS \,. 
-$$
-
-
-::: Question 
-
-Which unit normal should we choose between $\NN$ and $-\NN$?
-
-:::
-
-There is no right answer to the above question. One way to proceed is the following.
-
-
-::: {.Remark   #remark-normal-chart}
-
-Suppose that $\sss \colon U \to \R^3$ is a regular chart for $\SSS$. Let $\pp \in \sss(U)$. Then
-$$
-T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} \,.
-$$
-Therefore we can choose the unit normal to $T_{\pp} \SSS$ as 
-$$
-\NN_{\sss} :=  \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
-$$
-Clearly $\NN_{\sss}$ has unit norm. Moreover 
-$$
-\NN_{\sss} \cdot \sss_u = 0 \,, \quad \NN_{\sss} \cdot \sss_v = 0
-$$
-by the properties of cross product, showing that $\NN_{\sss}$ is perpendicular to $T_{\pp} \SSS$.
-
-There is however an issue: $\NN_{\sss}$ is not independent on the choice of chart $\sss$. Indeed, suppose that $\widetilde{\sss} \colon  \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
-$$
-\widetilde{\sss} = \sss \circ \Phi \,, \quad \Phi \colon \widetilde{U} \to U \,,
-$$
-with $\Phi$ diffeomorphism. As shown in the proof of Proposition \ref{proposition-transition-maps}, we have
-$$
-\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
-= \det (J\Phi)  \, \sss_u \times \sss_v \,.
-$$
-Hence
-$$
-\NN_{\widetilde{\sss}} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN_{\sss} \,.
-$$
-Therefore the sign on the right hand side depends on the sign of the Jacobian determinant of the transition map $\Phi$.
-
-:::
-
-
-The above remark motivates the following definitions.
-
-
-
-::: Definition
-### Standard unit normal of a chart
-
-Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. The **standard unit normal** of $\sss$ is the smooth function
-$$
-\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
-$$
-
-:::
-
-
-
-::: Definition
-### Charts with same orientation
-
-Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$, $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ regular charts such that 
-$$
-\sss(U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
-$$
-Denote by $\Phi$ the transition map between $\widetilde{\sss}$ and $\sss$. We say that: 
-
-1. $\sss$ and $\widetilde{\sss}$ determine the **same orientation** if 
-$$
-\det J \Phi > 0 \,,
-$$
-where $\Phi$ is defined.
-
-2. $\sss$ and $\widetilde{\sss}$ determine **opposite orientations** if 
-$$
-\det J \Phi < 0 \,,
-$$
-where $\Phi$ is defined.
-
-:::
-
-
-
-::: Example
-
-Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
-The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
-$$
-\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
-$$
-An alternative parametrization is given by
-$$
-\widetilde{\sss} (u,v):= \mathbf{a}  + \mathbf{q} u + \pp v  \,, \quad \forall \, (u,v) \in \R^2 \,.
-$$
-We have
-$$
-\sss_u = \pp \,, \quad 
-\sss_v = \mathbf{q} \,, \quad 
-$$
-and therefore
-$$
-\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
-$$
-Similarly, we have
-$$
-\NN_{\widetilde{\sss}} = \frac{ \mathbf{q} \times \pp   }{ \norm{ \mathbf{q} \times \pp } } =
- \frac{ - \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q}  } } \,,
-$$
-showing that
-$$
-\NN_{\sss} = - \NN_{\widetilde{\sss}} \,.
-$$
-Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
-
-:::
-
-
-
-
-
-If a surface can be covered by charts with the same orientation, it is called orientable.
-
-
-::: Definition
-### Orientable surface
-
-Let $\SSS$ be a regular surface. Then:
-
-1. An atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ is **oriented** if the following property holds: 
-$$
-\sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset \quad \implies \quad 
-\det J \Phi > 0 \,,
-$$
-where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
-
-2. $\SSS$ is **orientable** if there exists an oriented atlas $\mathcal{A}$.
-
-3. If an oriented atlas $\mathcal{A}$ is assigned, we say that $\SSS$ is **oriented** by $\mathcal{A}$.
-
-:::
-
-
-
-::: Example
-
-All the surfaces we encountered in these Lecture Notes
-are orientable, except for the Möbius band in Example \ref{example-mobius}. Details about the non-orientability of the Möbius band can be found in Example 4.5.3 in [@pressley].
-
-:::
-
-
-::: Example
-
-Let $\sss \colon U \to \R^3$ be a regular chart. Then 
-$$
-\SSS_{\sss} := \sss(U)
-$$ 
-is a regular surface with atlas $\mathcal{A}=\{\sss\}$. Therefore $\SSS_{\sss}$ is orientable.
-
-> This is because we have only one chart. Therefore any transition map $\Phi$ will be the identity,
-so that $\det J \Phi = 1 > 0$.
-
-:::
-
-
-::: Warning
-### Orientability is a global property
-
-The above example is saying that orientability is a global property: To determine wether 
-a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
-$\mathcal{A}$. This is because a single local parametrization $\sss(U) \subseteq \SSS$ is always orientable.
-
-:::
-
-
-
-
-::: Remark
-
-Let $\sss$ and $\widetilde{\sss}$ be regular charts with transition map $\Phi$. We have seen in 
-Remark \ref{remark-normal-chart} that
-$$
-\NN_{\widetilde{\sss}} = \frac{ \det J \Phi }{ |\det J \Phi| } \, \NN_{\sss} \,.
-$$ 
-If $\sss$ and $\widetilde{\sss}$ determine the same orientation, then 
-$$
-\det J \Phi > 0 \,,
-$$
-which implies
-$$
-\NN_{\widetilde{\sss}} =  \NN_{\sss} \,.
-$$
-Hence, if $\SSS$ is an orientable surface, one can define a unit normal vector at each point of 
-$\SSS$, without ambiguity.
-
-:::
-
-
-
-
-::: Definition
-### Unit normal of a surface
-
-Let $\SSS$ be a regular surface. A **unit normal** of $\SSS$ is a smooth function
-$\NN \colon \SSS \to \R^3$ such that
-$$
-\NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
-$$
-
-:::
-
-
-::: Warning 
-
-We require the function $\pp \mapsto \NN(\pp)$ to be globally defined on $\SSS$ and smooth.  
-
-:::
-
-
-
-
-::: Proposition
-
-Let $\SSS$ be a regular surface. They are equivalent:
-
-1. $\SSS$ is orientable.
-
-2. There exists a unit normal $\NN \colon \SSS \to \R^3$.
-
-:::
-
-The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
-
-
-
-In view of the above propostion, for an oriented surface there is a natural choice of unit normal, 
-which we call **standard unit normal** of $\SSS$. 
-
-
-::: Definition
-### Standard unit normal of a surface
-
-Let $\SSS$ be a regular surface oriented by the atlas $\mathcal{A}$. The **standard unit normal**
-to $\SSS$ is the map $\NN \colon \SSS \to \R^3$ such that
-$$
-\NN \circ \sss = \NN_{\sss} \,,
-$$
-for each chart $\sss \in \mathcal{A}$, where 
-$$
-\NN_{\sss} \colon U \to \R^3 \,, \quad  \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
-$$
-is the standard unit normal of $\sss$.
-
-:::
-
-
-
-
-::: Notation
-
-In the following we will denote by $\NN$ both the standard unit normal of $\SSS$ and of a chart. 
-
-:::
-
-
-
-
-
-
-
-
-
-
-
-### Definition of Second fundamental form
 
 
 We can now start our discussion about curvature of surfaces. We can make a similar argument to the one

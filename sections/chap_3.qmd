@@ -2459,9 +2459,9 @@ $${#eq-topo-basis}
 
 ::: Example
 
-1. Let $(X,\TT)$ be a topological space. Then $\mathcal{B}:=\TT$ is a basis for $\TT$.
-
-> This is true because one can just take $B=U$ in (@eq-topo-basis).
+1. Let $(X,\TT)$ be a topological space. Then $\mathcal{B}:=\TT$ is a basis for $\TT$.  
+    
+    > This is true because one can just take $B=U$ in (@eq-topo-basis).
 
 2. $(X,d)$ metric space with topology $\TT_d$ induced by the metric. Then
 $$
@@ -2469,19 +2469,15 @@ $$
 $$
 is a basis for $\TT_d$.
 
-> This is true by Propostion \ref{proposition-metric-ball}.
+    > This is true by Propostion \ref{proposition-metric-ball}.
 
 3. Let $(X,\TT)$ with $X$ the discrete topology. Then
 $$
 \mathcal{B}:=\{   \{x\}  \divider x \in X \}
 $$
-is a basis for $\TT$.
+is a basis for $\TT$.  
 
-> This is true because for any $U \in \TT$ we have
-$$
-U = \bigcup_{ x \in U }  \, \{x\} \,.
-$$
-
+    > This is true because for any $U \in \TT$ we have $$U = \bigcup_{ x \in U }  \, \{x\} \,. $$
 :::
 
 

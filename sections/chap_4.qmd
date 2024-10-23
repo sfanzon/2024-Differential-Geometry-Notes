@@ -42,7 +42,7 @@ A curve $\Gamma \subseteq \R^3$ can be described with one function $\g \colon (a
 ![A curve $\Gamma$ can be described by a function $\g \colon (a,b) \to \Gamma$.](/images/curves_example_2.png){width=60%}
 
 
-A surface $\SSS$ cannot be described, in general, with just one function $\sss \colon U \to \SSS$, with $U \subseteq \R^2$ open set. The idea is that, to describe $\SSS$, one needs to piece together many local **charts** $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open. Such charts have to cover the whole surface $\SSS$, e.g.
+How do we represent a surface? Suppose given a function $\sss \colon U \to \R^3$, with $U \subseteq \R^2$ open set. Denote by $\SSS := \sss(U)$ the image of $U$ through $\sss$. We say that $\SSS$ is a surface and $\sss$ is a **chart**. Unofortunately, not all surfaces can be described with just one chart: in most cases one needs to piece together many local **charts** $\sss_i \colon U_i \to \SSS$, with $U_i \subseteq \R^2$ open. The charts $\sss_i$ represent $\SSS$ if they cover the whole surface:
 $$
 \SSS = \bigcup_{i} \sss_i (U_i) \,.
 $$
@@ -50,7 +50,7 @@ $$
 
 ![A surface $\SSS$ can be described by a family of charts $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open set.](/images/surfaces_example_2.png){width=60%}
 
-
+Before proceeding with the formal definition of surface, we collect some preliminary definitions and results.
 
 
 ## Preliminaries
@@ -108,6 +108,7 @@ The coefficients of a vector $\ww$ are denoted by
 $$
 \yy := (\mu_1 , \ldots, \mu_n )^T \,. 
 $$
+Notice that we are using different letters to denote abstract vectors $\vv,\ww \in V$, and their components $\xx,\yy \in \R^n$.
 
 :::
 
@@ -649,7 +650,7 @@ $$
 ::: Definition
 ### Jacobian Matrix
 
-The linear map $df_{\xx} \colon \R^n \to \R^m$ can be represented in matrix form, with respect to the Euclidean basis, by the Jacobian matrix
+The differential $df_{\xx} \colon \R^n \to \R^m$ is a linear map. As such, it must have a matrix representation with respect to the Euclidean basis. Such representation matrix is called **Jacobian**, and is given by:
 $$
 Jf(x):= \left( \frac{\partial f_i}{\partial x_j} \right)_{i,j}  \in \R^{m \times n} \,.
 $$
@@ -768,7 +769,7 @@ Non-vanishing Jacobian determinant is a necessary condition for being a diffeomo
 
 
 
-::: Proposition
+::: {.Proposition #proposition-jacobian-zero}
 
 Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a diffeomorphism on $U$. Then 
 $$
@@ -777,6 +778,19 @@ $$
 
 :::
 
+
+::: Example
+
+We have already encountered Proposition \ref{proposition-jacobian-zero} in the scalar case when we were studying curves. Indeed, if $f \colon U \subset \R \to \R$ is a diffeomorphism, then $Jf(x) = \dot{f}(x)$. Hence 
+$$
+\det Jf(x) = \dot{f}(x) \,,
+$$
+and we recover the familiar result
+$$
+\dot{f}(x) \neq 0 \,, \quad \forall \, x \in U \,.
+$$
+
+:::
 
 
 ::: Example
@@ -817,7 +831,6 @@ $$
 
 
 
-
 ## Definition of Surface
 
 
@@ -837,26 +850,9 @@ such that
 - $\sss(U)$ is open in $\SSS$
 - $\sss$ is a homeomorphism between $U$ and $\sss(U)$
 
-
-Further:
-
-- The homeomorphism $\sss$ is called a **surface chart** at $\pp$. 
-- For each $i \in I$ suppose to have a surface chart
-$$
-\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,.
-$$
-We say that the family 
-$$
-\mathcal{A} = \{ \sss_i\}_{i \in I}
-$$ 
-is an **atlas** of $\SSS$ if 
-$$
-\SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
-$$
-
+The homeomorphism $\sss$ is called a **surface chart** at $\pp$.
 
 :::
-
 
 
 
@@ -911,21 +907,40 @@ $$
 
 
 
+::: Definition
+### Atlas of a surface
+
+Let $\SSS$ be a surface. Assume there exists a collection of **charts** 
+$$
+\mathcal{A} = \{ \sss_i\}_{i \in I} \,, \qquad 
+\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,,
+$$
+where $I$ is a suitable family of indices. The family $\mathcal{A}$ is an **atlas** of $\SSS$ if 
+$$
+\SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
+$$
+
+:::
+
+
+
+
+
 ::: Example
 ### 2D Plane in $\R^3$
 
-Planes in $\R^3$ are surfaces with atlas containing one chart. Namely, a plane
-$\pi \subseteq \R^3$ is described by
+Planes in $\R^3$ are surfaces with atlas made by one chart. This is because a plane
+$\pi \subseteq \R^3$ is described by the equation
 $$
 \pi  = \{  \xx  \in \R^3 \divider \xx \cdot \ww = \lambda \} \,.
 $$
 Let
 
-- $\pp,\mathbf{q} \in \R^3$ be ortoghonal to each other and to $\ww$.
+- $\pp,\mathbf{q} \in \R^3$ be linearly independent, and orthogonal to $\ww$.
 - $\mathbf{a} \in \pi$ be any point in the plane.
 
 
-If $\xx \in \pi$ then $\xx-\mathbf{a}$ is parallel to the plane and $\pi$ can be
+If $\xx \in \pi$ then $\xx-\mathbf{a}$ is parallel to the plane. In particular $\xx-\mathbf{a}$ can be written as linear combination of the vectors $\pp$ and $\mathbf{q}$. Hence $\pi$ can be
 equivalently represented as
 $$
 \pi = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} \,.
@@ -1926,7 +1941,7 @@ f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{u}}^1 (\tilde{u}, \tilde{v}) + f
 \tilde{f}_{\tilde{v}} (\tilde{u}, \tilde{v}) & = 
 f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^1 (\tilde{u}, \tilde{v}) + f_v ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^2 (\tilde{u}, \tilde{v}) 
 \end{align*}
-As done previously, we introduce compact notation for reparametrizations and chain rule. Specifically, we denote the components of the diffeomorphism $\Phi$ by
+The above is quite cumbersome. Hence we introduce compact notation for reparametrizations and chain rule. Specifically, we denote the components of the diffeomorphism $\Phi$ by
 \begin{align*}
 \Phi^1 \quad & \leadsto \quad (\tilde u, \tilde v) \mapsto u (\tilde u, \tilde v)  \\
 \Phi^2 \quad & \leadsto \quad (\tilde u, \tilde v) \mapsto v (\tilde u, \tilde v) 
@@ -1977,7 +1992,10 @@ The reparametrization $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ defined b
 $$
 \widetilde{\sss} = \sss \circ \Phi
 $$
-is a regular chart.
+is a regular chart, and it holds
+$$
+ \widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} =\det  J \Phi \,  \left( \sssu \times \sssv  \right)
+$$
 
 :::
 
@@ -2161,7 +2179,7 @@ with $\Phi$ diffeomorphism, showing that $\widetilde{\sss} |_{\widetilde{V}}$ is
 
 ::: Important
 
-Proposition \ref{proposition-transition-map} allows us to define properties of surfaces using charts, as long as we check that the property in question does not depend on reparametrization.
+Proposition \ref{proposition-transition-map} allows us to define properties of surfaces using charts, as long as we check that the property in question does not depend on reparametrization, and hence on the choice of chart.
 
 :::
 
@@ -2176,7 +2194,7 @@ We would like to define a concept of smooth function
 $$
 f \colon \SSS_1 \to \SSS_2 \,,
 $$
-where $\SSS_1$ and $\SSS_2$ are regular surfaces. So far we know what a smooth function from $\R^n$ into $\R^m$ is. The idea is to use surface charts to define such $f$.
+where $\SSS_1$ and $\SSS_2$ are regular surfaces. So far, we only know how to define smooth functions from $\R^n$ into $\R^m$. The idea is to use surface charts to define smooth functions between surfaces.
 
 
 
@@ -2224,40 +2242,40 @@ $$
 
 - The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$, therefore differentiability is intended in the classical sense.
 
-- Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts $\sss_1$ and $\sss_2$
+- Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts $\sss_1$ and $\sss_2$  
 
-> Indeed, suppose that $\widetilde{\sss}_{i} \colon \widetilde{U}_i \to {\SSS}_i$ are charts such that 
-$$
-\pp \in \widetilde{\sss}_1( \widetilde{U}_1) \,, \quad  f(\pp) \in \widetilde{\sss}_2(\widetilde{U}_2) \,.
-$$
-In particular we have
-$$
- \sss_i(U_i) \cap \widetilde{\sss}_i (\widetilde{U}_i) \neq \emptyset \,.
-$$
-As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-map} there exist open sets
-$$
-V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
-$$
-and transition maps 
-$$
-\Phi_i \colon \widetilde{V}_i \to V_i
-$$
-which are diffeomorphisms and satisfy
-$$
-\widetilde{\sss}_i = \sss_i \circ \Phi_i \,.
-$$
-Hence
-\begin{align*}
-\widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1 & =
-\widetilde{\sss}_2^{-1} \circ ( \sss_2 \circ \sss_2^{-1} ) \circ f \circ  ( \sss_1 \circ \sss_1^{-1} ) \circ \widetilde{\sss}_1  \\
-& = ( \widetilde{\sss}_2^{-1} \circ  \sss_2 ) \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 ) \circ (\sss_1^{-1}  \circ \widetilde{\sss}_1 )  \\
-& = \Phi_2^{-1} \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 )  \circ \Phi_1^{-1} \,.
-\end{align*}
-Since $\Phi_i^{-1}$ and $\sss_2^{-1}  \circ f \circ   \sss_1$ are smooth, we conclude that
-$$
-\widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1
-$$
-is smooth. Hence Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts.
+    > Indeed, suppose that $\widetilde{\sss}_{i} \colon \widetilde{U}_i \to {\SSS}_i$ are charts such that 
+    $$
+    \pp \in \widetilde{\sss}_1( \widetilde{U}_1) \,, \quad  f(\pp) \in \widetilde{\sss}_2(\widetilde{U}_2) \,.
+    $$
+    In particular we have
+    $$
+    \sss_i(U_i) \cap \widetilde{\sss}_i (\widetilde{U}_i) \neq \emptyset \,.
+    $$
+    As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-map} there exist open sets
+    $$
+    V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
+    $$
+    and transition maps 
+    $$
+    \Phi_i \colon \widetilde{V}_i \to V_i
+    $$
+    which are diffeomorphisms and satisfy
+    $$
+    \widetilde{\sss}_i = \sss_i \circ \Phi_i \,.
+    $$
+    Hence
+    \begin{align*}
+    \widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1 & =
+    \widetilde{\sss}_2^{-1} \circ ( \sss_2 \circ \sss_2^{-1} ) \circ f \circ  ( \sss_1 \circ \sss_1^{-1} ) \circ \widetilde{\sss}_1  \\
+    & = ( \widetilde{\sss}_2^{-1} \circ  \sss_2 ) \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 ) \circ (\sss_1^{-1}  \circ \widetilde{\sss}_1 )  \\
+    & = \Phi_2^{-1} \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 )  \circ \Phi_1^{-1} \,.
+    \end{align*}
+    Since $\Phi_i^{-1}$ and $\sss_2^{-1}  \circ f \circ   \sss_1$ are smooth, we conclude that
+    $$
+    \widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1
+    $$
+    is smooth. Hence Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts.
 :::
 
 
@@ -2310,9 +2328,11 @@ Let $\SSS_1$ and $\SSS_2$ be regular surfaces. We say that $\SSS_1$ and $\SSS_2$
 
 The key ideas around diffeomorphisms are:
 
-- Two diffeomorphic surfaces are essentially the same. Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. 
+1. Two diffeomorphic surfaces are essentially the same.  
 
-- Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.
+    >Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. 
+
+2. Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.
 
 
 ::: {.Proposition  #proposition-f-chart}
@@ -2351,7 +2371,7 @@ We conclude with the definition of local diffeomorphism between surfaces.
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces. A smooth map $f \colon \SSS_1 \to \SSS_2$ 
 is called a **local diffeomorphism** if for each point $\pp \in \SSS_1$ there exists
-an open set $V \subseteq \SSS_1$ such that $f(V) \subseteq \SSS_2$ is open and 
+an open set $V \subseteq \SSS_1$ with $\pp \in V$, such that $f(V) \subseteq \SSS_2$ is open and 
 $$
 f \colon V \to f(V)
 $$
@@ -2368,7 +2388,7 @@ The above definition is well posed since open subsets of surfaces are themselves
 ## Tangent space
 
 
-We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. The anolgue concept of tangent vector for surfaces is called the tangent space. To avoid clumsy terminology, we 
+We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. It turns out that also regular surfaces admit tangent vectors. To avoid clumsy terminology, we 
 make the following assumption.
 
 
@@ -2408,7 +2428,7 @@ $$
 Let us start with the most basic example: We want to compute the tangent space to an open set in $\R^2$. 
 
 
-::: Example
+::: {.Example #example-tangent-open-set}
 
 Let $U \subseteq \R^2$ be open and $\pp \in U$. Then 
 $$
@@ -2552,11 +2572,11 @@ is smooth. Since $\g(-\e,\e) \subseteq \sss(U)$, it is well defined the composit
 $$
 F^{-1} \circ \g \colon (-\e,\e) \to W \subseteq U \,.
 $$
-Moreover such composition is smooth, being $F^{-1}$ and $\g$ smooth. Therefore 
+In particular, there exist two functions $u,v$ (the components of $F^{-1} \circ \g$) such that
 $$
 (F^{-1} \circ \g) (t) = (u(t),v(t))
 $${#eq-lemma-curve-S}
-with $u,v$ smooth. As $\g(0)=\pp$, by definition of $F$ we have
+Note that $u,v$ are smooth, since $F^{-1} \circ \g$ is smooth, being $F^{-1}$ and $\g$ smooth. As $\g(0)=\pp$, by definition of $F$ we have
 $$
 (u(0),v(0)) = (F^{-1} \circ \g) (0) = F^{-1}(\pp) =  (u_0,v_0) \,,
 $$
@@ -2709,7 +2729,7 @@ $$
 
 > To see this, take the curve $\g(t) \equiv \pp$. Then $\g(0) = \pp$ and $\dg(0) = \zero$, showing that $\zero \in T_{\pp} \SSS$.
 
-Therefore $T_{\pp} \SSS$ is a plane through the origin, no matter where the point $\pp \in \SSS$ is located. When we draw the tangent plane as a plane resting on the surface, see @fig-tangent-plane, we are not drawing $T_{\pp} \SSS$, but rather the plane 
+Therefore $T_{\pp} \SSS$ is a plane through the origin, no matter where the point $\pp \in \SSS$ is located. In pictures, such as @fig-tangent-plane, we draw the tangent plane as if it was touching the surfaces at the point $\pp$, and still denote it by $T_{\pp}\SSS$. This is a slight abuse of notation: to be precise, the plane drawn is 
 $$
 \pp + T_{\pp} \SSS \,,
 $$
@@ -2737,15 +2757,18 @@ $$
 $$
 Let 
 $$
-\nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
+\nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0)
 $$
-The equation of the tangent plane $T_{\pp} \SSS$ is given by
+We have:
+
+1. The equation of the tangent plane $T_{\pp} \SSS$ is given by
 $$
 {\nn}_1 x + {\nn}_2 y + {\nn}_3 z = 0 \,, \quad 
 \forall \, (x,y,z) \in \R^3 \,,
 $$
 where $\nn = ({\nn}_1,{\nn}_2,{\nn}_3)$.
-The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
+
+2. The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
 $$
 {\nn}_1 (x-x_0) + {\nn}_2 (y-x_0) + {\nn}_3 (z-z_0) = 0 \,, \quad 
 \forall \, (x,y,z) \in \R^3 \,.
@@ -2906,30 +2929,30 @@ An in depth discussion can be found in Chapter 3.4 of [@abate-tovena].
 ## Differential of smooth functions
 
 
-Let $f \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $f$ is smooth. The differential of $f$ at $\pp \in U$ is a linear map 
+Let $f \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $f$ is smooth. By definition, the differential of $f$ at $\pp \in U$ is a linear map 
 $$
-df_{\pp} \colon \R^2 \to \R^2 \,.
+df_{\pp} \colon \R^2 \to \R^2 
 $$
-We have seen that 
+which approximates $f$ locally at $\pp$. 
+We have seen in Example \ref{example-tangent-open-set} that
 $$
 T_{\pp} U = \R^2 
 $$
-and therefore we can interpret $df_{\pp}$ as a map between tangent planes:
+Therefore we can interpret $df_{\pp}$ as a map between tangent planes:
 $$
-df_{\pp} \colon \R^2 \to \R^2 \,.
+df_{\pp} \colon T_{\pp} U \to T_{\pp} U \,.
 $$
-Similarly, if $f \colon \SSS \to \widetilde{\SSS}$ is a smooth map between surfaces,
-we can define its differential at $\pp \in \SSS$ as a linear map
+This reasoning suggests how to define the differential of a smooth map between surfaces: If $f \colon \SSS \to \widetilde{\SSS}$ is smooth, we could define its differential at $\pp \in \SSS$ as a linear map
 $$
 df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
 $$
-To define such map, we need the following lemma.
+How is the above map defined explicitly? To answer this question, we need a lemma.
 
 
 ::: {.Lemma  #lemma-derivative}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map.
-For $\vv \in T_{\pp} \SSS$ let $\g \colon (-\e,\e) \to \SSS$ be such that
+For $\vv \in T_{\pp} \SSS$, let $\g \colon (-\e,\e) \to \SSS$ be such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
 $$
@@ -2980,9 +3003,62 @@ where $\widetilde{\vv}$ is as in Lemma \ref{lemma-derivative}.
 :::
 
 
+::: Remark
+### Computing $d_{\pp} f$
 
-We now show that $df_{\pp}$ is well-defined and linear. Moreover we provide a representation of
-$df_{\pp}$ as a matrix.
+The differential of $f$ can be computed using the definition. Specifically, let $\vv \in T_{\pp} \SSS$ and let $\g$ be a curve on $\SSS$ such that 
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv
+$$
+Then 
+$$
+d_{\pp} f (\vv) = (f \circ \gamma)'(0)
+$$
+The problem with this calculation is that one has to produce a curve $\g$ with $\dg(0) = \vv$, in order to compute $d_{\pp} f$ at $\vv$. As you can imagine, finding one curve for each vector is far from ideal.
+
+:::
+
+
+
+::: Example
+
+Let $\SSS = (0,2\pi) \times \R$ and 
+$$
+\widetilde{\SSS} = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} 
+$$
+Note that $\SSS$ is a subset of $\R^2$ (and in particular a regular surface), while $\widetilde{\SSS}$ is a unit cylinder. Define the map 
+$$
+f \colon S \to \widetilde{\SSS} \,, \quad 
+f(u,v) := (\cos u , \sin u, v)
+$$
+Clearly $f \in \widetilde{\SSS}$ since $\cos^2 u + \sin^2 u = 1$. We want to compute the differential of $f$
+$$
+d_{\pp} f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}
+$$
+Since $\SSS$ is a subset of $\R^2$, we have that $T_{\pp} \SSS$ is just $\R^2$. Let $\vv = (a,b) \in \R^2$. We need to find a curve $\g \colon (-\e,\e) \to \SSS$ such that
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv = (a,b)
+$${#eq-example-differential}
+Since $\SSS$ is a subset of $\R^2$, $\g$ can be chosen as the straight line through $\pp$ of direction $\vv$, e.g.,
+$$
+\g(t) := \pp + t \vv = (u_0 + t a, v_0 + tb)\,,
+$$
+where we denoted $\pp = (u_0,v_0)$. Clearly $\g$ satisfies (@eq-example-differential). We have
+\begin{align*}
+(f \circ \g) (t) & = f(u_0 + t a, v_0 + tb) \\
+                 & = ( \cos(u_0 + ta), \sin(u_0 + ta),v_0 + tb  ) \\
+(f \circ \g)' (t) & = (- a \sin (u_0 + ta), a \cos (u_0 + ta), b)
+\end{align*}
+Therefore the differential at $\pp$ is
+$$
+d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- a \sin (u_0), a \cos (u_0), b) \,.
+$$
+
+:::
+
+We need to show that the definition of differential is well-posed, i.e., that $d_{\pp} f (\vv)$ depends only on $\pp$, $f$, $\vv$: This is because there are infinitely many curves $\g$ passing trough $\pp$ and such that $\dg(0) = \vv$, and a priori $d_{\pp} f (\vv)$ could depend on which curve is chosen.
+
+We prove well-posedness of $df_{\pp}$ in the next Proposition. We also show that the map $df_{\pp}$ is linear, and we provide the matrix representation of $df_{\pp}$. The matrix representation, in particular, allows to compute $d_{\pp} f$ without the need to construct suitable curves.
 
 
 ::: {.Proposition #proposition-differential-smooth}
@@ -2993,7 +3069,8 @@ df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
 $$
 We have:
 
-1. $df_{\pp} (\vv)$ does not depend on the choice of $\g$.
+1. $df_{\pp} (\vv)$ does not depend on the choice of $\g$, but rather only on $f, \pp,\vv$.
+
 2. $df_{\pp}$ is linear, that is,
 $$
 df_{\pp} (\lambda \vv + \mu \ww) = \lambda df_{\pp} (\vv) + \mu df_{\pp} (\ww) \,, 
@@ -3010,11 +3087,6 @@ $$
 the components of the smooth map
 $$
 \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
-$$
-In particular 
-$$
-\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
-\quad \forall \, (u,v) \in U \,.
 $$
 The matrix of the linear map $df_{\pp}$ with respect to the basis 
 $$
@@ -3035,8 +3107,171 @@ $$
 :::
 
 
-For a proof, see the discussion at page $87$ of [@pressley].
+Point 3 in the above proposition seems complicated, but it is saying something really simple:
 
+1. Let $f \colon \SSS \to \widetilde{\SSS}$ be a smooth function between surfaces. Consider local charts $\sss$ at $\pp$ and $\widetilde{\sss}$ at $f(\pp)$. By definition of smooth map, the real map
+$$
+\Psi \colon \R^2 \to \R^2 \,, \qquad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss
+$$
+is smooth.
+
+2. The matrix of the differential $d_{\pp}f$ with respect to the basis
+$$
+\{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
+\{ \widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\pp)} \widetilde{\SSS} \,,
+$$
+is just the Jacobian of $\Psi$. 
+
+
+
+::: Proof
+
+Let $\pp \in \SSS$ and $\vv \in T_{\pp} \SSS$ be fixed. In order to prove the thesis, we need compute $d_{\pp} f$. To this end, let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote by $(u_0,v_0) \in U$ the point such that
+$$
+\sss(u_0,v_0) = \pp \,.
+$$
+Let $\widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS}$ a chart at $f(\pp)$. Since $f$ is smooth, the map
+$$
+\Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss
+$$
+is smooth. Denote by 
+$$
+(u,v)  \mapsto ( \alpha(u,v), \beta(u,v) ) 
+$$
+the smooth components of $\Psi$. By definition of $\Psi$ it holds
+$$
+\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
+\quad \forall \, (u,v) \in U \,.
+$${#eq-function-transition}
+Denote by
+$$
+\vv = (\lambda,\mu)
+$$
+the components of $\vv$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp} \SSS$. Define the scalar functions
+$$
+u(t):= u_0 +\lambda t \,, \quad 
+v(t):= v_0 +\mu t \,,
+$$
+and the curve
+$$
+\g(t) := \sss(u(t), v(t)) \,.
+$$
+Clearly $\g$ is a regular curve on $\SSS$, and it holds
+$$
+\g(0) = \sss(u_0, v_0) = \pp  \,, \quad 
+\dg(0) = (\lambda,\mu) = \vv
+$$
+By (@eq-function-transition) we have
+\begin{align*}
+(f \circ \g)(t) & = f(\g(t)) \\
+                & = f( \sss(u(t), v(t)) ) \\
+                & = \widetilde{\sss} ( \alpha(u(t),v(t)), \beta(u(t),v(t))  )
+\end{align*}
+By chain rule we obtain
+\begin{align*}
+(f \circ \g)'(t) & = \widetilde{\sss}_{\tilde{u}} \frac{d}{dt}  \alpha(u(t),v(t)) +
+\widetilde{\sss}_{\tilde{v}} \frac{d}{dt}  \beta(u(t),v(t))   \\
+& = \widetilde{\sss}_{\tilde{u}} [ \alpha_u \dot{u}(t) + \alpha_v \dot{v}(t)  ] + 
+\widetilde{\sss}_{\tilde{v}} [ \beta_u \dot{u}(t) + \beta_v \dot{v}(t)  ]
+\end{align*}
+Recalling that $\dot{u}(0) = \lambda$ and $\dot{v}(0) = \mu$, we get
+$$
+(f \circ \g)'(t) = 
+\widetilde{\sss}_{\tilde{u}} [ \lambda \alpha_u + \mu \alpha_v  ] + 
+\widetilde{\sss}_{\tilde{v}} [ \lambda  \beta_u + \mu \beta_v]
+$$
+As by definition of differential
+$$
+d_{\pp} f (\vv)  = ( f \circ \g )' (0)
+$$
+we have obtained 
+$$
+d_{\pp} f (\vv) = \widetilde{\sss}_{\tilde{u}} [ \lambda \alpha_u + \mu \alpha_v  ] + 
+\widetilde{\sss}_{\tilde{v}} [ \lambda  \beta_u + \mu \beta_v]
+$${#eq-function-transition-1}
+We can now draw our 3 conclusions:
+
+1. The RHS of (@eq-function-transition-1) depends only on $\lambda,\mu$ (the components of $\vv$), $f$ (via the components $\alpha,\beta$ of $\Psi$), and the point $\pp$. In particular $d_{\pp}f(\vv)$ does not depend on the choice of $\g$, and the definition is well-posed.
+
+2. The RHS of (@eq-function-transition-1) is linear in the components $\lambda,\mu$ of $\vv$. In particular $d_{\pp}f(\vv)$ is linear in $\vv$.
+
+3. The coordinates of $\sssu$ with respect to the basis $\{\sssu,\sssv\}$ are $(\lambda,\mu) = (1,0)$. Using (@eq-function-transition-1), we get
+$$
+d_{\pp}f(\sssu) = \widetilde{\sss}_{\tilde{u}}\alpha_u + 
+\widetilde{\sss}_{\tilde{v}} \beta_u 
+$$
+Similarly, the coordinates of $\sssv$ with respect to the basis $\{\sssu,\sssv\}$ are $(\lambda,\mu) = (0,1)$. Therefore
+$$
+d_{\pp}f(\sssv) = \widetilde{\sss}_{\tilde{u}}\alpha_v + 
+\widetilde{\sss}_{\tilde{v}} \beta_v 
+$$ 
+This shows that the matrix of the linear application $d_{\pp}f$ with respect to the basis $\{\sssu,\sssv\}$ on $T_{\pp} \SSS$ and the basis $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}}\}$ on $T_{f(\pp)} \widetilde{\SSS}$ is
+$$
+\left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u & \beta_v \\
+\end{array}
+\right) = J\Psi  \,.
+$$
+:::
+
+
+::: Example
+### Computing the matrix of $d_{\pp}f$
+
+Consider the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
+$$
+and the map
+$$
+f \colon \SSS \to \R^2 \,, \quad 
+f(x,y,z) = (y,xz,0)
+$$
+We want to compute the matrix of $d_{\pp}f$. To this end, a chart of $\SSS$ is given by 
+$$
+\sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
+$$
+A chart of $\widetilde{\SSS} = \R^2$ is given by 
+$$
+\widetilde{\sss}(\tilde{u},\tilde{v}) = (\tilde{u},\tilde{v},0) \,, \quad (\tilde{u},\tilde{v}) \in \tilde{U} = \R^2 \,.
+$$
+We need to compute the map
+$$
+\Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
+$$
+Clearly we have
+$$
+\widetilde{\sss}^{-1} (\tilde{u},\tilde{v},0) =(\tilde{u},\tilde{v}) \,.
+$$
+Therefore
+\begin{align*}
+\Psi(u,v) & = \widetilde{\sss}^{-1} \left( f(\sss(u,v))    \right) \\
+          & = \widetilde{\sss}^{-1} \left( f(\cos u, \sin u, v )    \right) \\
+          & =  \widetilde{\sss}^{-1} \left( \sin (u), \cos (u) v, 0    \right) \\
+          & = \left( \sin (u), \cos (u) v    \right)
+\end{align*}
+Therefore 
+\begin{align*}
+\partial_u \Psi^1 & = \cos (u) \,, & \partial_v & \Psi^1 = 0 \\
+\partial_u \Psi^2 & = -\sin (u) v \,,  & \partial_v & \Psi^2 = \cos(u) 
+\end{align*}
+The matrix of $d_{\pp}f$ is hence
+$$
+d_{\pp}f = J\Psi = 
+\left(
+\begin{array}{cc}
+\cos (u) & 0 \\
+-\sin (u) v  & \cos(u) \\
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+The differential satisfies the following useful properties.
 
 
 ::: Proposition
@@ -3553,28 +3788,21 @@ Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  concl
 
 In this section we introduce the first **fundamental form** of a surface. This will allow us to compute:
 
-- Inner product between tangent vectors
 - Angle between tangent vectors
+- Lengths of tangent vectors
 - Area of surface regions
 
-Moreover we can compute
-
-- Length of curves on a surface
-- Angle between curves on a surface
 
 
 
 
-
-
-
-### Length on surfaces
+### Length and angles between tangent vectors
 
 Let $\SSS$ be a surface and consider two points $\pp, \mathbf{q} \in \SSS$. The euclidean distance between $\pp$ and $\mathbf{q}$ is 
 $$
 \norm{\pp - \mathbf{q}} \,.
 $$
-However this measures the length of the straight segment which connects $\pp$ to $\mathbf{q}$. We are interested in measuring the distance on $\SSS$.
+However this measures the length of the straight segment which connects $\pp$ to $\mathbf{q}$. We are interested in measuring the distance of $\pp$ and $\mathbf{q}$ on $\SSS$.
 A way to measure such distance is the following: Suppose 
 $$
 \g \colon (t_0,t_1) \to \SSS
@@ -3590,7 +3818,7 @@ $$
 
 ::: Question 
 
-How do we compute the above integral? 
+How do we compute the above integral from the knowledge of $\SSS$? 
 
 :::
 
@@ -3601,7 +3829,7 @@ $$
 \dg(t) \in T_{\xx} S \,, \quad \xx := \g(t) \,.
 $$
 Therefore, computing $\norm{\dg(t)}$ is equivalent
-to computing the length of tangent vectors. This motivates the definition of first fundamental form.
+to computing the length of tangent vectors to $\SSS$. This motivates the definition of first fundamental form.
 
 
 ::: Definition
@@ -3619,15 +3847,15 @@ $$
 
 Three observations:
 
-- The first fundamental form of $\SSS$ at $\pp$ is the map obtained by restricting the scalar product of $\R^3$ to $T_{\pp} \SSS$.
+1. The first fundamental form of $\SSS$ at $\pp$ is the map obtained by restricting the scalar product of $\R^3$ to $T_{\pp} \SSS$.
 
-- Note that 
+2. Note that 
 $$
 I_{\pp} (\vv,\vv) = \| \vv \|^2 \,,
 $$
 so that $I_{\pp}$ can be used to compute the length of tangent vectors.
 
-- The definition of $I_{\pp}$ does not depend on a chosen chart.
+3. The definition of $I_{\pp}$ does not depend on a chosen chart, since $T_{\pp}\SSS$ can be defined without using charts.
 
 
 To use the first fundamental form in practice, we need to express $I_{\pp}$ in terms of local
@@ -3948,7 +4176,7 @@ We have seen that a plane and the unit cylinder have the same first fundamental 
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
-Therefore lengths are the same on the two surfaces.
+Therefore lengths and angles are the same on the two surfaces.
 
 :::
 

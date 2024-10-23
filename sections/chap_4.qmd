@@ -3088,6 +3088,11 @@ the components of the smooth map
 $$
 \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
 $$
+In particular it holds
+$$
+\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
+\quad \forall \, (u,v) \in U \,.
+$$
 The matrix of the linear map $df_{\pp}$ with respect to the basis 
 $$
 \{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
@@ -3815,14 +3820,6 @@ The distance between $\pp$ and $\mathbf{q}$ on $\SSS$ is the length of $\g$, i.e
 $$
 \int_{t_0}^{t_1} \norm{ \dg (t) } \, dt \,.
 $$
-
-::: Question 
-
-How do we compute the above integral from the knowledge of $\SSS$? 
-
-:::
-
-
 Since $\g(t) \in \SSS$, by definition
 we have
 $$
@@ -4107,7 +4104,7 @@ Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
-Prove that the first fundamental form of $\sss$ is
+The first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
@@ -4147,7 +4144,7 @@ Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
-Prove that the first fundamental form of $\sss$ is
+The first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
@@ -4222,11 +4219,11 @@ By chain rule we have
 $$
 \dg(t) = \dot u (t) \sss_u( u(t),v(t) ) + \dot v (t) \sss_v( u(t),v(t) ) \,.
 $$
-The above means that the coefficients of $\dg$ with respect to the basis $\{\sss_u,\sss_v\}$ are $\dot u, \dot v$, i.e.,
+The above means that the coefficients of $\dg$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$ are $\dot u$ and $\dot v$, respectively. Then
 $$
-du(dg) = \dot u \,, \quad dv(\dg) = \dot v \,.
+du(\dg) = \dot u \,, \quad dv(\dg) = \dot v \,.
 $$
-By Proposition \ref{proposition-fff-quadratic} we get
+Since $\dg$ is a tagent vector, by Proposition \ref{proposition-fff-quadratic} we get
 \begin{align*}
 \norm{\dg(t)}^2 & = \dg \cdot \dg \\
                 & = I_{\pp} (\dg , \dg ) \\
@@ -4252,12 +4249,12 @@ $$
 $$
 where $u > 0$ and $v \in [0,2\pi]$.
 
-1. Prove that the first fundamental form of $\sss$ is
+1. The first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 $$
 
-2. Let $\g (t):= \sss(t,t)$. Show that
+2. Let $\g (t):= \sss(t,t)$. The length of $\g$ is
 $$
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
 $$
@@ -4277,7 +4274,7 @@ The first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 $$
-Concering the curve $\g$, we have
+Concering the curve $\g$, by definition we have
 $$
 \g(t) := \sss(t,t) \,,
 $$
@@ -4325,7 +4322,7 @@ Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A local diffeomorphism
 $f \colon \SSS \to \widetilde{\SSS}$ is a **local isometry** if for all $\pp \in \SSS$ the 
 differential $d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}$ satisfies
 $$
-\vv \cdot \ww = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
+\vv \cdot \ww  = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
 \forall \, \vv, \ww \in T_{\pp} \SSS \,. 
 $$
 We say that $\SSS$ and $\widetilde{\SSS}$ are **locally isometric** if 
@@ -4378,7 +4375,7 @@ Local isometries preserve the length of curves, as shown in the following propos
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
 
-1. $f$ is a local isometry
+1. $f$ is a local isometry.
 2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\widetilde{\SSS}$. Then $\g$ and $\tg$ have the same length.
 
 :::
@@ -4387,25 +4384,29 @@ Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \wi
 ::: Proof
 
 *Part 1.* Suppose $\g \colon (t_0,t_1) \to \SSS$ is a smooth curve. 
-Consider the smooth curve $\tg := f \circ \g \colon (t_0,t_1) \to \widetilde{\SSS}$. Setting $\pp :=\g(t)$, by definition of differential of a function between surfaces we have
+Consider the smooth curve $\tg := f \circ \g \colon (t_0,t_1) \to \widetilde{\SSS}$. Set $\pp :=\g(t)$. By definition of differential of a function between surfaces, we have
 $$
 \dtg(t) = df_{\pp} (\dg(t)) \,.
 $$
-Hence
+Using that $f$ is a local isometry gives:
 \begin{align*}
 \norm{\dtg(t)}^2 & = \dtg(t) \cdot \dtg(t) \\
                & = df_{\pp} (\dg(t)) \cdot df_{\pp} (\dg(t)) \\
                & = \dg(t) \cdot \dg(t) \\
                & = \norm{\dg(t)}^2
 \end{align*}
-where in the second last inequality we used that $f$ is a local isometry.
 Therefore $\g$ and $\tg$ have the same length:
 $$
 \int_{t_0}^{t_1} \norm{\dtg(t)}\, dt 
 = \int_{t_0}^{t_1} \norm{\dg(t)}\, dt \,.
 $$
 
-*Part 2.* Let $\vv \in T_{\pp} \SSS$. Then there exists a curve $\g \colon (-\e,\e) \to \SSS$ such that
+*Part 2.* 
+We need to prove that $f$ is a local isometry. Thanks to Remark \ref{remark-local-isometry}, it is sufficient to show that
+$$
+df_{\pp} (\vv) \cdot df_{\pp} (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
+$${#eq-proof-loc-iso}
+Therefore, let $\vv \in T_{\pp} \SSS$ be arbitrary. By definition of tangent plane, there exists a curve $\g \colon (-\e,\e) \to \SSS$ such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
 $$
@@ -4414,7 +4415,7 @@ $$
 \int_{-\e}^{\e} \sqrt{ \dtg(t) \cdot \dtg(t) }\, dt 
 = \int_{-\e}^{\e} \sqrt{ \dg(t) \cdot \dg(t) }\, dt \,.
 $$
-Since the above is true for each $\e>0$, we infer
+Since the above is true for each $\e>0$, and the functions integrated are continuous, we infer
 $$
 \dtg(0) \cdot \dtg(0) = \dg(0) \cdot \dg(0) \,.
 $$
@@ -4428,18 +4429,17 @@ df_{\pp} (\vv) \cdot df_{\pp} (\vv) & = \dtg(0) \cdot \dtg(0) \\
                                     & = \dg(0) \cdot \dg(0) \\
                                     & = \vv \cdot \vv \,.
 \end{align*}
-As $\vv$ was arbitrary, we showed that 
-$$
-df_{\pp} (\vv) \cdot df_{\pp} (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
-$$
-Thanks to Remark \ref{remark-local-isometry} we conclude that $f$ is a local isometry.
+As $\vv$ was arbitrary, we conclude (@eq-proof-loc-iso).
 
 :::
 
 
 
-We have seen that local isometries preserve the length of curves. 
-It also happen that they preserve the first fundamental form.
+We have seen that local isometries preserve the length of curves. Recall that the first fundamental form of $\SSS$ is defined by
+$$
+I_{\pp} (\vv, \ww) = \vv \cdot  \ww \,, \quad \vv, \ww \in T_{\pp} \SSS \,.
+$$
+A natural question is how the first fundamental form changes under local isometries. The result is that local isometries preserve the first fundamental form.
 
 
 ::: {.Theorem  #theorem-local-isometry}
@@ -4464,6 +4464,8 @@ G = \sss_v \cdot \sss_v \,, \\
 \widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \,, \quad
 \widetilde{G}  = \widetilde{\sss}_v \cdot \widetilde{\sss}_v \,.
 \end{align*}
+
+> Note that $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore equality is intended pointwise.
 
 :::
 
@@ -4528,8 +4530,7 @@ which means that
 d_{\pp} f(\sss_u)  & = 1 \cdot \widetilde{\sss}_u + 0 \cdot \widetilde{\sss}_v = \widetilde{\sss}_u \\
 d_{\pp} f(\sss_v)  & = 0 \cdot \widetilde{\sss}_u + 1 \cdot \widetilde{\sss}_v = \widetilde{\sss}_v \\
 \end{align*}
-Usingg that $f$ is a local isometry we get
-To this end, note that 
+Using that $f$ is a local isometry gives
 \begin{align*}
 E & = \sss_u \cdot \sss_u 
     = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_u) \\
@@ -4791,7 +4792,7 @@ Substituting in (@eq-angle-curves-proof) we conclude.
 ### Conformal maps
 
 
-Local isometries are maps which preserve the **scalar product** of tangent vectors. We want to consider maps which preserve the **angle** of tangent
+Local isometries are maps which preserve the **scalar product** between tangent vectors. We want to consider maps which preserve the **angle** between tangent
 vectors. These will be called **conformal maps**.
 
 

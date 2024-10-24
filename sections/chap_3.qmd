@@ -1289,21 +1289,26 @@ $$
 \TT := \{ A \subseteq \R \divider A^c = \R \,\, \mbox{ or } \,\, A^c \,
 \mbox{ countable }\} \,.
 $$
-The set 
+Define the set
 $$
-A = (-\infty,0]
+A = (-\infty,0] \,.
 $$
-is not closed and $\closure{A} = \R$. Moreover, convergent sequences in $(X,\TT)$ are eventually constant. Therefore 
+We have the following facts (proof by exercise):
+
+1. $A$ is not closed, and $\closure{A} = \R$. 
+2. Convergent sequences in $(X,\TT)$ are eventually constant. 
+
+Point 2 implies that the limit points of $A$ are all the points in $A$:
 $$
-L(A) = A = [-\infty , 0]
+L(A) = A = [-\infty , 0)
 $$
 In particular this shows
 $$
 \closure{A} \not\subset L(A)
 $$
-since $\closure{A} = \R$.
+since $\closure{A} = \R$ by point 1.
 
-> Exercise: Prove all the above statements.
+> Exercise: Prove the statements in Points 1 and 2.
 :::
 
 
@@ -1636,13 +1641,13 @@ leading to a contradiciton. Hence $X$ is not Hausdorff.
 
 
 ::: Example
-### Cofinite topology on $\R$
+### Cofinite topology is not Hausdorff
 
-Consider the following family $\TT$ of subsets of $\R$
+Consider the cofinite topology on $\R$
 $$
-\TT := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \}\,. 
+\TT := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \} \,. 
 $$
-Then $(\R,\TT)$ is a topological space which is not Hausdorff. The topology $\TT$ is called the **cofinite topology**.
+Then $(\R,\TT)$ is a topological space which is not Hausdorff. 
 
 > Exercise: Show that $(\R,\TT)$ is not Hausdorff.
 
@@ -2097,22 +2102,27 @@ Let $f \colon X \to Y$. They are equivalent:
 :::
 
 
+It is useful to introduce the notion of sequential continuity.
 
-In a topological space, continuity preserves limits
-of sequences. 
 
+::: Definition 
+### Sequential continuity
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces, and  $f \colon X \to Y$. We say that $f$ is **sequentially continuous** if the following condition holds:
+$$
+\{x_n\} \subset X \,, \,\, x_n \to x_0 \,\, \mbox{ in }\, X \,\, \implies \,\,   
+f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
+$$
+
+:::
+
+In other words, $f$ is sequentially continuous if it takes convergent sequences into convergent sequences. In any topological space, continuity implies sequential continuity, as proven in the next Proposition.
 
 
 ::: {.Proposition #proposition-continuity-sequential}
 
 Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let 
-$f \colon X \to Y$ be continuous. Let $\{x_n\} \subset X$
-and $x_0 \in X$. We have
-$$
-x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad 
-f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
-$$
-
+$f \colon X \to Y$ be continuous. Then $f$ is sequentially continuous.
 
 :::
 
@@ -2120,7 +2130,12 @@ $$
 
 ::: Proof
 
-Let $V \in \TT_Y$ be such that $f(x_0) \in V$. Since $f$ is continuous there exists $U \in \TT_X$ with $x_0 \in U$ such that 
+Let $\{x_n\} \subset X$ and suppose that $x_n \to x_0$ in the topology $\TT_X$. 
+We need to prove that 
+$$
+f(x_n) \to f(x_0) \\, \text{ in } \, Y \,.
+$$
+To this end, let $V \in \TT_Y$ be such that $f(x_0) \in V$. Since $f$ is continuous, there exists $U \in \TT_X$ with $x_0 \in U$ such that 
 $$
 f(U) \subset V \,.
 $$
@@ -2145,14 +2160,12 @@ showing that $f(x_n) \to f(x_0)$ in $Y$.
 
 The converse implication of Proposition \ref{proposition-continuity-sequential} is false. That is, even if it holds
 $$
-x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad 
-f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
-$$
-for all sequences $\{x_n\} \subset X$, the function $f$ might **not** be continuous. 
+\text{sequential continuity} \quad  \centernot\implies \quad \text{continuity}
+$$ 
 A counterexample is given in Example \ref{example-sequential-continuity} below.
 
-For the above to hold, it is necessary for the topologies on
-$X$ and $Y$ to be first countable, as for example is the case for metrizable topologies, see
+For continuity to be equivalent to sequential continuity, the topologies on
+$X$ and $Y$ have to be first countable. In particular, this is the case for metrizable topologies, see
 Proposition \ref{proposition-sequential-continuity} below.
 
 :::
@@ -2161,15 +2174,19 @@ Proposition \ref{proposition-sequential-continuity} below.
 
 ::: {.Proposition  #proposition-sequential-continuity}
 
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. Let $f \colon X \to Y$ and suppose that 
-for all convergent sequences $\{x_n\} \subseteq X$, the sequence $\{f(x_n)\}$ is convergent in $Y$.
-Then $f$ is continuous.
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. They are equivalent:
+
+1. $f$ is continuous.
+2. $f$ is sequentially continuous.
 
 :::
 
 
 ::: Proof
 
+*Part 1.* We have already proven that continuity implies sequential continuity in any topological space.
+
+*Part 2.* Assume $f$ is sequentially continuous. 
 Suppose by contradiction $f$ is not continuous at some point $x_0 \in X$. Then there exists
 ${\e}_0 >0$ such that, for all $\delta>0$ it holds
 $$

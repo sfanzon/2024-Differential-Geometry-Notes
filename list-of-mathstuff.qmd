@@ -561,7 +561,7 @@
 
  [**Proof**](#Proof*-3.30)\Pageref{Proof*-3.30}
 
- [**Example 3.71**](#example-sequential-continuity)\Pageref{example-sequential-continuity}
+ [**Example 3.71**](#example-sequential-continuity): Sequential continuity does not imply continuity\Pageref{example-sequential-continuity}
 
  [**Proposition 3.72**](#Proposition-3.72)\Pageref{Proposition-3.72}
 

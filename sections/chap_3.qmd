@@ -2158,7 +2158,7 @@ showing that $f(x_n) \to f(x_0)$ in $Y$.
 
 ::: Warning
 
-The converse implication of Proposition \ref{proposition-continuity-sequential} is false. That is, even if it holds
+The reverse implication of Proposition \ref{proposition-continuity-sequential} is false. That is, even if it holds
 $$
 \text{sequential continuity} \quad  \centernot\implies \quad \text{continuity}
 $$ 
@@ -2223,28 +2223,32 @@ but such that $\{f(y_n)\}$ does not converge. This contradicts our assumption. H
 
 
 ::: {.Example  #example-sequential-continuity}
+### Sequential continuity does not imply continuity
 
-Consider $\R$ with the co-countable topology:
-$$
-{\TT}_{\textrm{cc}} := \{ A \subseteq \R \divider A^c = \R  \, \mbox{ or } \, A^c \, \mbox{ countable} \} \,.
-$$
-Sequences in $(\R,{\TT}_{\textrm{cc}})$ converge if and only if they are eventually constant. 
-Also consider the discrete topology on $\R$, denoted by ${\TT}_{\textrm{discrete}}$. 
-We have seen that sequences in $(\R,{\TT}_{\textrm{discrete}})$ converge if and only if they are
-eventually constant. Consider the identity function
+Consider $\R$ with the co-countable and discrete topologies:
+\begin{gather*}
+{\TT}_{\textrm{cc}} = \{ A \subseteq \R \divider A^c = \R  \, \mbox{ or } \, A^c \, \mbox{ countable} \} \\
+{\TT}_{\textrm{discrete}} = \{ A \subseteq \R \}
+\end{gather*}
+The following holds: Sequences in $(\R,{\TT}_{\textrm{cc}})$ and $(\R,{\TT}_{\textrm{discrete}})$ converge if and only if they are eventually constant. 
+
+Consider the identity function
 $$
 f \colon (\R,{\TT}_{\textrm{cc}}) \to (\R,{\TT}_{\textrm{discrete}}) \,, \quad f(x):=x \,.
 $$
 We have that:
 
-- $f$ is not continuous: Indeed $\{x\} \in {\TT}_{\textrm{discrete}}$ but 
-$$
-f^{-1}(\{ x\}) = \{x\} \notin {\TT}_{\textrm{cc}} \,,
-$$
-since $\{x\}^c$ is neither $\R$, nor countable.
+1. $f$ is not continuous  
+    
+    >Indeed $\{x\} \in {\TT}_{\textrm{discrete}}$ but 
+    $$
+    f^{-1}(\{ x\}) = \{x\} \notin {\TT}_{\textrm{cc}} \,,
+    $$
+    since $\{x\}^c = \R \smallsetminus \{x\}$ is neither equal to $\R$, nor countable.
 
-- If $\{x_n\}$ is convergent in ${\TT}_{\textrm{cc}}$, then it is eventually constant. Therefore 
-$\{f(x_n)\}$ is eventually constant, and so it is convergent in ${\TT}_{\textrm{discrete}}$.
+2. $f$ is sequentially continuous  
+
+    > If $\{x_n\}$ is convergent in ${\TT}_{\textrm{cc}}$, then it is eventually constant. Therefore $\{f(x_n)\}$ is eventually constant, and so it is convergent in ${\TT}_{\textrm{discrete}}$.
 
 :::
 
@@ -2301,7 +2305,7 @@ $$
 :::
 
 
-The above is saying that $f$ is a homeomorphism if it is continuous and has continuous inverse. Homeomorphisms are the way we say that two topological spaces look the same.
+Therefore $f$ is a homeomorphism if it is continuous and admits a continuous inverse. Homeomorphisms are used to study similarities between topological spaces: When 2 topological spaces are homeomorphic, they can be essentially considered to be the same space.
 
 
 
@@ -2309,17 +2313,18 @@ The above is saying that $f$ is a homeomorphism if it is continuous and has cont
 ## Subspace topology
 
 
-Any subset $Y$ in a topological space $X$ inherits naturally a topological structure. Such structure is called **subspace topology**.
+Any subset $Y$ in a topological space $X$ naturally inherits a topological structure. Such structure is called **subspace topology**.
 
 
 ::: Definition
 ### Subspace topology   {#definition-subspace-topology}
 
 Let $(X,\TT)$ be a topological space and $Y \subseteq X$ a subset. Define the family of sets
-$$
-\SSS := \{ A \subset Y \divider \exists \,\, U \in \TT \st A = U \cap Y   \} \,.
-$$
-The family $\SSS$ is called subspace topology on $Y$ induced by the inclusion $Y \subset X$.
+\begin{align*}
+\SSS & := \{ A \subset Y \divider \exists \,\, U \in \TT \st A = U \cap Y   \} \\
+     & = \{ U \cap Y , \,\, U \in \TT  \} \,.
+\end{align*}
+The family $\SSS$ is called **subspace topology** on $Y$ induced by the inclusion $Y \subset X$.
 
 :::
 
@@ -2367,13 +2372,12 @@ $U_1 \cap U_2 \in \TT$.
 
 
 
-If the set $Y$ is open, then sets are open in the subspace topology if
-and only if they are open in $X$.
+If the set $Y$ is open, the subspace topology coincides with the original topology, as see in the next Proposition.
 
 
 ::: Proposition
 
-Let $(X,\TT)$ be a topological space and $Y \in \TT$ a subset. Let
+Let $(X,\TT)$ be a topological space and $Y \in \TT$. 
 $A \subset Y$. Then
 $$
 A \in \SSS \quad \iff \quad A \in \TT \,.
@@ -2423,9 +2427,11 @@ and $(-1,1) \in \TT$.
 
 ::: Example
 
-Let $X=\R$ be equipped with $\TT$ the euclidean topology. Let 
-$\SSS$ be the subspace topology on $\Z$. Then $\SSS$ coincides with
-the discrete topology.
+Let $X=\R$ be equipped with $\TT$, the euclidean topology. Let 
+$\SSS$ be the subspace topology on $\Z$. Then 
+$$
+\SSS = \TT_{\textrm{discrete}}
+$$
 
 > *Proof.* The set $\{z\}$ is open in $\SSS$ for all $z \in \Z$. Indeed, 
 $$

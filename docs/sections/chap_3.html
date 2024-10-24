@@ -72,19 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -92,31 +80,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,21 +92,57 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Theorem {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Conjecture {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -1546,7 +1546,7 @@ f(x_n) \in V \,, \quad \forall \, n \geq N \,,
 </div></details>
 </div>
 <div id="Warning*-29" class="Warning">
-<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>The converse implication of Proposition <a href="chap_3.html#proposition-continuity-sequential">69</a> is false. That is, even if it holds <span class="math display">\[
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>The reverse implication of Proposition <a href="chap_3.html#proposition-continuity-sequential">69</a> is false. That is, even if it holds <span class="math display">\[
 \text{sequential continuity} \quad  \centernot\implies \quad \text{continuity}
 \]</span> A counterexample is given in Example <a href="chap_3.html#example-sequential-continuity">71</a> below.<p></p>
 <p>For continuity to be equivalent to sequential continuity, the topologies on <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have to be first countable. In particular, this is the case for metrizable topologies, see Proposition <a href="chap_3.html#proposition-sequential-continuity">70</a> below.</p>
@@ -1580,19 +1580,27 @@ d_Y (f(y_n), y) = d_Y (f(x_0), y) &gt; 0 \,.
 \]</span> Hence, we have produced a sequence <span class="math inline">\(\{y_n\}\)</span> which is convergent, but such that <span class="math inline">\(\{f(y_n)\}\)</span> does not converge. This contradicts our assumption. Hence <span class="math inline">\(f\)</span> must be continuous.</p>
 </div></details>
 </div>
-<div id="example-sequential-continuity" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71</strong></summary><div>
-<p>Consider <span class="math inline">\(\mathbb{R}\)</span> with the co-countable topology: <span class="math display">\[
-{\mathcal{T}}_{\textrm{cc}} := \{ A \subseteq \mathbb{R}\, \colon \,A^c = \mathbb{R}\, \mbox{ or } \, A^c \, \mbox{ countable} \} \,.
-\]</span> Sequences in <span class="math inline">\((\mathbb{R},{\mathcal{T}}_{\textrm{cc}})\)</span> converge if and only if they are eventually constant. Also consider the discrete topology on <span class="math inline">\(\mathbb{R}\)</span>, denoted by <span class="math inline">\({\mathcal{T}}_{\textrm{discrete}}\)</span>. We have seen that sequences in <span class="math inline">\((\mathbb{R},{\mathcal{T}}_{\textrm{discrete}})\)</span> converge if and only if they are eventually constant. Consider the identity function <span class="math display">\[
+<div id="example-sequential-continuity" class="Example" title="Sequential continuity does not imply continuity">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71: </strong>Sequential continuity does not imply continuity</summary><div>
+<p>Consider <span class="math inline">\(\mathbb{R}\)</span> with the co-countable and discrete topologies: <span class="math display">\[\begin{gather*}
+{\mathcal{T}}_{\textrm{cc}} = \{ A \subseteq \mathbb{R}\, \colon \,A^c = \mathbb{R}\, \mbox{ or } \, A^c \, \mbox{ countable} \} \\
+{\mathcal{T}}_{\textrm{discrete}} = \{ A \subseteq \mathbb{R}\}
+\end{gather*}\]</span> The following holds: Sequences in <span class="math inline">\((\mathbb{R},{\mathcal{T}}_{\textrm{cc}})\)</span> and <span class="math inline">\((\mathbb{R},{\mathcal{T}}_{\textrm{discrete}})\)</span> converge if and only if they are eventually constant.</p>
+<p>Consider the identity function <span class="math display">\[
 f \colon (\mathbb{R},{\mathcal{T}}_{\textrm{cc}}) \to (\mathbb{R},{\mathcal{T}}_{\textrm{discrete}}) \,, \quad f(x):=x \,.
 \]</span> We have that:</p>
-<ul>
-<li><p><span class="math inline">\(f\)</span> is not continuous: Indeed <span class="math inline">\(\{x\} \in {\mathcal{T}}_{\textrm{discrete}}\)</span> but <span class="math display">\[
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> is not continuous</p>
+<blockquote class="blockquote">
+<p>Indeed <span class="math inline">\(\{x\} \in {\mathcal{T}}_{\textrm{discrete}}\)</span> but <span class="math display">\[
 f^{-1}(\{ x\}) = \{x\} \notin {\mathcal{T}}_{\textrm{cc}} \,,
-\]</span> since <span class="math inline">\(\{x\}^c\)</span> is neither <span class="math inline">\(\mathbb{R}\)</span>, nor countable.</p></li>
-<li><p>If <span class="math inline">\(\{x_n\}\)</span> is convergent in <span class="math inline">\({\mathcal{T}}_{\textrm{cc}}\)</span>, then it is eventually constant. Therefore <span class="math inline">\(\{f(x_n)\}\)</span> is eventually constant, and so it is convergent in <span class="math inline">\({\mathcal{T}}_{\textrm{discrete}}\)</span>.</p></li>
-</ul>
+\]</span> since <span class="math inline">\(\{x\}^c = \mathbb{R}\smallsetminus \{x\}\)</span> is neither equal to <span class="math inline">\(\mathbb{R}\)</span>, nor countable.</p>
+</blockquote></li>
+<li><p><span class="math inline">\(f\)</span> is sequentially continuous</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(\{x_n\}\)</span> is convergent in <span class="math inline">\({\mathcal{T}}_{\textrm{cc}}\)</span>, then it is eventually constant. Therefore <span class="math inline">\(\{f(x_n)\}\)</span> is eventually constant, and so it is convergent in <span class="math inline">\({\mathcal{T}}_{\textrm{discrete}}\)</span>.</p>
+</blockquote></li>
+</ol>
 </div></details>
 </div>
 <p>Let us make an observation on continuity of compositions.</p>
@@ -1626,15 +1634,16 @@ g \circ f = {\mathop{\mathrm{Id}}}_{X} \,, \quad f \circ g = {\mathop{\mathrm{Id
 </ol>
 </div></details>
 </div>
-<p>The above is saying that <span class="math inline">\(f\)</span> is a homeomorphism if it is continuous and has continuous inverse. Homeomorphisms are the way we say that two topological spaces look the same.</p>
+<p>Therefore <span class="math inline">\(f\)</span> is a homeomorphism if it is continuous and admits a continuous inverse. Homeomorphisms are used to study similarities between topological spaces: When 2 topological spaces are homeomorphic, they can be essentially considered to be the same space.</p>
 </section>
 <section id="subspace-topology" class="level2" data-number="3.9">
 <h2 data-number="3.9" class="anchored" data-anchor-id="subspace-topology"><span class="header-section-number">3.9</span> Subspace topology</h2>
-<p>Any subset <span class="math inline">\(Y\)</span> in a topological space <span class="math inline">\(X\)</span> inherits naturally a topological structure. Such structure is called <strong>subspace topology</strong>.</p>
+<p>Any subset <span class="math inline">\(Y\)</span> in a topological space <span class="math inline">\(X\)</span> naturally inherits a topological structure. Such structure is called <strong>subspace topology</strong>.</p>
 <div id="definition-subspace-topology" class="Definition" title="Subspace topology">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 74: </strong>Subspace topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \subseteq X\)</span> a subset. Define the family of sets <span class="math display">\[
-\mathcal{S}:= \{ A \subset Y \, \colon \,\exists \,\, U \in \mathcal{T}\, \text{ s.t. } \, A = U \cap Y   \} \,.
-\]</span> The family <span class="math inline">\(\mathcal{S}\)</span> is called subspace topology on <span class="math inline">\(Y\)</span> induced by the inclusion <span class="math inline">\(Y \subset X\)</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 74: </strong>Subspace topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \subseteq X\)</span> a subset. Define the family of sets <span class="math display">\[\begin{align*}
+\mathcal{S}&amp; := \{ A \subset Y \, \colon \,\exists \,\, U \in \mathcal{T}\, \text{ s.t. } \, A = U \cap Y   \} \\
+     &amp; = \{ U \cap Y , \,\, U \in \mathcal{T}\} \,.
+\end{align*}\]</span> The family <span class="math inline">\(\mathcal{S}\)</span> is called <strong>subspace topology</strong> on <span class="math inline">\(Y\)</span> induced by the inclusion <span class="math inline">\(Y \subset X\)</span>.<p></p>
 </div></details>
 </div>
 <div id="well-posedness-of-definition-1" class="Proof" title="Well-posedness of Definition 74">
@@ -1662,9 +1671,9 @@ A_1 \cap A_2  = (  U_1 \cap Y ) \cap (U_2 \cap Y) = (U_1 \cap U_2) \cap Y
 </ul>
 </div></details>
 </div>
-<p>If the set <span class="math inline">\(Y\)</span> is open, then sets are open in the subspace topology if and only if they are open in <span class="math inline">\(X\)</span>.</p>
+<p>If the set <span class="math inline">\(Y\)</span> is open, the subspace topology coincides with the original topology, as see in the next Proposition.</p>
 <div id="Proposition-75" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 75</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \in \mathcal{T}\)</span> a subset. Let <span class="math inline">\(A \subset Y\)</span>. Then <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 75</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \in \mathcal{T}\)</span>. <span class="math inline">\(A \subset Y\)</span>. Then <span class="math display">\[
 A \in \mathcal{S}\quad \iff \quad A \in \mathcal{T}\,.
 \]</span><p></p>
 </div></details>
@@ -1694,7 +1703,9 @@ A =  (-1,1)  \cap Y
 </div>
 <div id="Example-76" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 76</strong></summary><div>
-<p>Let <span class="math inline">\(X=\mathbb{R}\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the euclidean topology. Let <span class="math inline">\(\mathcal{S}\)</span> be the subspace topology on <span class="math inline">\(\mathbb{Z}\)</span>. Then <span class="math inline">\(\mathcal{S}\)</span> coincides with the discrete topology.</p>
+<p>Let <span class="math inline">\(X=\mathbb{R}\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span>, the euclidean topology. Let <span class="math inline">\(\mathcal{S}\)</span> be the subspace topology on <span class="math inline">\(\mathbb{Z}\)</span>. Then <span class="math display">\[
+\mathcal{S}= \mathcal{T}_{\textrm{discrete}}
+\]</span></p>
 <blockquote class="blockquote">
 <p><em>Proof.</em> The set <span class="math inline">\(\{z\}\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> for all <span class="math inline">\(z \in \mathbb{Z}\)</span>. Indeed, <span class="math display">\[
 \{z\} = \left(  z-1 , z + 1   \right)   \cap \mathbb{Z}\,

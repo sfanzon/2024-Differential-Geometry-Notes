@@ -2459,7 +2459,7 @@ that is, $\SSS$ is the discrete topology on $\Z$.
 
 We have seen that in metric spaces every open set is union of 
 open balls, see Propostion \ref{proposition-metric-ball}. We can then 
-regard the open balls as building blocks for the whole topology.
+regard the open balls as the building blocks for the whole topology.
 In this context, we call the open balls a basis for the topology. 
 
 We can generalize the concept of basis to arbitrary topological spaces.
@@ -2894,7 +2894,7 @@ Suppose that $A,B$ are open in $f(X)$ and such that
 $$
 f(X) = A \cup B \,, \quad A \cap B = \emptyset \,.
 $$
-if we show that
+If we show that
 $$
 A = \emptyset \,\, \mbox{ or } \,\, B = \emptyset 
 $${#eq-proof-connected-3}

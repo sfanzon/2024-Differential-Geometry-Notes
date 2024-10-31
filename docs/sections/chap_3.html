@@ -72,10 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
@@ -84,39 +80,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Theorem {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -124,25 +92,57 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -1720,7 +1720,7 @@ A = \bigcup_{z \in A} \, \{ z \} \,,
 </section>
 <section id="topological-basis" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="topological-basis"><span class="header-section-number">3.10</span> Topological basis</h2>
-<p>We have seen that in metric spaces every open set is union of open balls, see Propostion <a href="chap_3.html#proposition-metric-ball">27</a>. We can then regard the open balls as building blocks for the whole topology. In this context, we call the open balls a basis for the topology.</p>
+<p>We have seen that in metric spaces every open set is union of open balls, see Propostion <a href="chap_3.html#proposition-metric-ball">27</a>. We can then regard the open balls as the building blocks for the whole topology. In this context, we call the open balls a basis for the topology.</p>
 <p>We can generalize the concept of basis to arbitrary topological spaces.</p>
 <div id="topological-basis-1" class="Definition" title="Topological basis">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 77: </strong>Topological basis</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and let <span class="math inline">\(\mathcal{B} \subseteq \mathcal{T}\)</span>. We say that <span class="math inline">\(\mathcal{B}\)</span> is a <strong>topological basis</strong> for the topology <span class="math inline">\(\mathcal{T}\)</span> if for all <span class="math inline">\(U \in \mathcal{T}\)</span> there exist open sets <span class="math inline">\(\{B_i\} \subseteq \mathcal{B}\)</span>, with <span class="math inline">\(I\)</span> family of indices, such that <span id="eq-topo-basis"><span class="math display">\[
@@ -1970,7 +1970,7 @@ X = A \cup B \,,  \quad A \cap B = \emptyset \,.
 <div id="Proof*-39" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Suppose that <span class="math inline">\(A,B\)</span> are open in <span class="math inline">\(f(X)\)</span> and such that <span class="math display">\[
 f(X) = A \cup B \,, \quad A \cap B = \emptyset \,.
-\]</span> if we show that <span id="eq-proof-connected-3"><span class="math display">\[
+\]</span> If we show that <span id="eq-proof-connected-3"><span class="math display">\[
 A = \emptyset \,\, \mbox{ or } \,\, B = \emptyset
 \tag{3.15}\]</span></span> the proof is concluded. Since <span class="math inline">\(A,B\)</span> are open for the subspace topology, there exist <span class="math inline">\(\widetilde{A}, \widetilde{B} \in \mathcal{T}_Y\)</span> such that <span id="eq-proof-connected-4"><span class="math display">\[
 A = \widetilde{A} \cap f(X) \,, \quad

@@ -92,35 +92,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Corollary {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,15 +108,11 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Problem {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -144,11 +120,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Lemma {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -156,13 +132,37 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -911,13 +911,18 @@ f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \mathbb{R}^2 , \,  n \in 
 <p>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong> at <span class="math inline">\(\mathbf{p}\)</span>.</p>
 </div></details>
 </div>
+<p>A visual interpretation of the definition of surface is given in <a href="#fig-def-surface" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>.</p>
 <div id="Remark-44" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 44</strong></summary><div>
 <ol type="1">
+<li><p><span class="math inline">\(\mathcal{S}\)</span> is a topological space with the subspace topology induced by the inclusion <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span>. This means that a subset <span class="math inline">\(V \subseteq \mathcal{S}\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>, if there exists and open set <span class="math inline">\(W \subseteq \mathbb{R}^3\)</span> such that <span class="math display">\[
+V = W \cap \mathcal{S}\,.
+\]</span></p></li>
+<li><p><span class="math inline">\(\mathcal{S}\)</span> is required to be <strong>connected</strong>, with respect to the subspace topology.</p></li>
 <li><p>A surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map <span class="math display">\[
 {\pmb{\sigma}}\colon U  \to \mathbb{R}^3 \,,
 \]</span> with <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> open. Therefore smoothness of <span class="math inline">\({\pmb{\sigma}}\)</span> is intended in the classical sense.</p></li>
-<li><p>Given a chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U)\)</span>, the set <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> while <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> with the subspace topology. This means that there exists <span class="math inline">\(W \subseteq \mathbb{R}^3\)</span> open such that <span class="math display">\[
+<li><p>Given a chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U)\)</span>, the set <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> while <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> with the subspace topology. This means there exists and open set <span class="math inline">\(W \subseteq \mathbb{R}^3\)</span> such that <span class="math display">\[
 {\pmb{\sigma}}(U) = W \cap \mathcal{S}\,.
 \]</span></p></li>
 <li><p>The homeomorphism condition is saying that the surface patch <span class="math display">\[
@@ -928,10 +933,14 @@ U \subseteq \mathbb{R}^2 \,.
 </ol>
 </div></details>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/surfaces_example_3.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Sketch of the surface <span class="math inline">\(\mathcal{S}\)</span> and chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>. The set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>. This means there exists <span class="math inline">\(W\)</span> open in <span class="math inline">\(\mathbb{R}^3\)</span> such that <span class="math inline">\({\pmb{\sigma}}(U) = \mathcal{S}\cap W\)</span>.</figcaption>
+<div id="fig-def-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-def-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/surfaces_example_3.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-def-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Sketch of the surface <span class="math inline">\(\mathcal{S}\)</span> and chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>. The set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>. This means there exists <span class="math inline">\(W\)</span> open in <span class="math inline">\(\mathbb{R}^3\)</span> such that <span class="math inline">\({\pmb{\sigma}}(U) = \mathcal{S}\cap W\)</span>.
+</figcaption>
 </figure>
 </div>
 <div id="Notation*-4" class="Notation">
@@ -971,7 +980,7 @@ U \subseteq \mathbb{R}^2 \,.
 <li><span class="math inline">\(\mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> be orthonormal, and orthogonal to <span class="math inline">\(\mathbf{w}\)</span>.</li>
 <li><span class="math inline">\(\mathbf{a} \in {\pmb{\pi}}\)</span> be any point in the plane.</li>
 </ul>
-<p>Let <span class="math inline">\(\mathbf{x}\in {\pmb{\pi}}\)</span>. Then <span class="math inline">\(\mathbf{x}-\mathbf{a}\)</span> satisfies <span class="math display">\[
+<p>This construction is represented in <a href="#fig-plane-surface" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. Let <span class="math inline">\(\mathbf{x}\in {\pmb{\pi}}\)</span>. Then <span class="math inline">\(\mathbf{x}-\mathbf{a}\)</span> satisfies <span class="math display">\[
 (\mathbf{x}- \mathbf{a}) \cdot \mathbf{w}= 0 \,.
 \]</span> Hence, the vector <span class="math inline">\(\mathbf{x}- \mathbf{a}\)</span> is orthogonal to <span class="math inline">\(\mathbf{w}\)</span>, meaning it can be written as linear combination of the vectors <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span>: <span class="math display">\[
 \mathbf{x}- \mathbf{a} = u \mathbf{p}+ v \mathbf{q} \,,
@@ -981,17 +990,17 @@ U \subseteq \mathbb{R}^2 \,.
 {\pmb{\sigma}}(u,v):= \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
 \]</span> Observe that:</p>
 <ul>
-<li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
-<li><span class="math inline">\(\mathbb{R}^2\)</span> is obviously open.</li>
-<li><span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2)\)</span> is open in <span class="math inline">\({\pmb{\pi}}\)</span>, since <span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2) = {\pmb{\pi}}\)</span>.</li>
-<li>Suppose <span class="math inline">\(\mathbf{x}= {\pmb{\sigma}}(u,v)\)</span>. Then <span class="math display">\[
+<li><p><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</p></li>
+<li><p><span class="math inline">\(\mathbb{R}^2\)</span> is obviously open.</p></li>
+<li><p><span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2)\)</span> is open in <span class="math inline">\({\pmb{\pi}}\)</span> for the subspace topology, since <span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2) = {\pmb{\pi}}\)</span>, and <span class="math inline">\({\pmb{\pi}}\)</span> is open in the subspace topology.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathbf{x}= {\pmb{\sigma}}(u,v)\)</span>. Then <span class="math display">\[
 (\mathbf{x}- \mathbf{a}) \cdot \mathbf{p}=  u \,, \quad
 (\mathbf{x}- \mathbf{a}) \cdot \mathbf{q} =  v \,,
-\]</span> given that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal.</li>
-<li>The above shows that the inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math inline">\({\pmb{\sigma}}^{-1} \colon {\pmb{\pi}}\to \mathbb{R}^2\)</span> given by <span class="math display">\[
+\]</span> given that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal.</p></li>
+<li><p>The above shows that the inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math inline">\({\pmb{\sigma}}^{-1} \colon {\pmb{\pi}}\to \mathbb{R}^2\)</span> given by <span class="math display">\[
 {\pmb{\sigma}}^{-1} (\mathbf{x}) = ( (\mathbf{x}- \mathbf{a}) \cdot \mathbf{p}, (\mathbf{x}- \mathbf{a}) \cdot \mathbf{q}  ) \,.
-\]</span></li>
-<li><span class="math inline">\({\pmb{\sigma}}^{-1}\)</span> is continuous. Thus, <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\({\pmb{\pi}}\)</span>.</li>
+\]</span> Clearly, <span class="math inline">\({\pmb{\sigma}}^{-1}\)</span> is continuous.</p></li>
+<li><p>Thus, <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\({\pmb{\pi}}\)</span>.</p></li>
 </ul>
 <p>Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart for <span class="math inline">\({\pmb{\pi}}\)</span>. Since <span class="math display">\[
 {\pmb{\sigma}}(\mathbb{R}^2) = {\pmb{\pi}}\,,
@@ -1000,10 +1009,14 @@ U \subseteq \mathbb{R}^2 \,.
 \]</span> is an atlas for <span class="math inline">\({\pmb{\pi}}\)</span>, showing that <span class="math inline">\({\pmb{\pi}}\)</span> is a surface.</p>
 </div></details>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/surface_plane.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>A plane <span class="math inline">\({\pmb{\pi}}\)</span> is a surface with atlas containing a single chart <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to {\pmb{\pi}}\)</span>.</figcaption>
+<div id="fig-plane-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plane-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/surface_plane.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plane-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: A plane <span class="math inline">\({\pmb{\pi}}\)</span> is a surface with atlas containing a single chart <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to {\pmb{\pi}}\)</span>.
+</figcaption>
 </figure>
 </div>
 <div id="unit-cylinder" class="Example" title="Unit cylinder">
@@ -1018,7 +1031,7 @@ U \subseteq \mathbb{R}^2 \,.
 \]</span> for <span class="math inline">\(i=1,2\)</span>, and <span class="math display">\[
 U_1 := \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,, \quad
 U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
-\]</span></p>
+\]</span> The two charts <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are shown in <a href="#fig-cylinder-surface" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>.</p>
 <blockquote class="blockquote">
 <p>Check:</p>
 <ul>
@@ -1033,10 +1046,14 @@ U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
 </blockquote>
 </div></details>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/surface_cylinder.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>. Depicted are the images <span class="math inline">\({\pmb{\sigma}}_1(U_1)\)</span> and <span class="math inline">\({\pmb{\sigma}}_2(U_2)\)</span>.</figcaption>
+<div id="fig-cylinder-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cylinder-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/surface_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>. Depicted are the images <span class="math inline">\({\pmb{\sigma}}_1(U_1)\)</span> and <span class="math inline">\({\pmb{\sigma}}_2(U_2)\)</span>.
+</figcaption>
 </figure>
 </div>
 <div id="Important*-5" class="Important">
@@ -1053,17 +1070,17 @@ U:= [ 0, 2 \pi ] \times \mathbb{R}\,.
 {\pmb{\sigma}}(0,0) = {\pmb{\sigma}}(2\pi,0) \,.
 \]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> cannot be an homeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
 <p><strong>Note:</strong> In general there cannot be a homeomorphism <span class="math display">\[
-{\pmb{\sigma}}\colon U \to \mathcal{S}
+{\pmb{\sigma}}\colon U \to \mathcal{S}\,,
 \]</span> where <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder. This is because <span class="math inline">\(U\)</span> is <em>simply connected</em> while <span class="math inline">\(\mathcal{S}\)</span> is not: Any closed loop in <span class="math inline">\(U\)</span> can be contracted to a point; while if we take the loop <span class="math display">\[
 {\pmb{\gamma}}(t) = (\cos(t), \sin(t), 0) \,, \quad t \in [0,2\pi] \,,
-\]</span> on the cylinder <span class="math inline">\(\mathcal{S}\)</span>, then <span class="math inline">\({\pmb{\gamma}}\)</span> cannot be contracted to a point.</p>
+\]</span> on the cylinder <span class="math inline">\(\mathcal{S}\)</span>, then <span class="math inline">\({\pmb{\gamma}}\)</span> cannot be contracted to a point. Since simply connectedness is a topological invariant (it is preserved by homeomorphisms), it follows that <span class="math inline">\(U\)</span> and <span class="math inline">\(\mathcal{S}\)</span> cannot be homeomorphic.</p>
 </div></details>
 </div>
 <div id="graph-of-a-function" class="Example" title="Graph of a function">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 48: </strong>Graph of a function</summary><div>
 <p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(f \colon U \to \mathbb{R}\)</span> be smooth. The graph of <span class="math inline">\(f\)</span> is the set <span class="math display">\[
-\Gamma_f := \{ (u,v,f(u,v)) \, \colon \,(u,v) \in U  \}  \,.
-\]</span> We have that <span class="math inline">\(\Gamma_f\)</span> is a surface with atlas given by <span class="math display">\[
+\Gamma_f := \left\{ (u,v,f(u,v)) \, \colon \,(u,v) \in U  \right\}  \,.
+\]</span> <span class="math inline">\(\Gamma_f\)</span> is a surface with atlas given by <span class="math display">\[
 \mathcal{A} = \{ {\pmb{\sigma}}\}
 \]</span> where <span class="math inline">\({\pmb{\sigma}}\colon U \to \Gamma_f\)</span> is <span class="math display">\[
 {\pmb{\sigma}}(u,v):=(u,v,f(u,v)) \,.
@@ -1089,9 +1106,9 @@ U:= [ 0, 2 \pi ] \times \mathbb{R}\,.
 <div id="circular-cone" class="Example" title="Circular cone">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 49: </strong>Circular cone</summary><div>Consider the circular cone <span class="math display">\[
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
-\]</span> Then <span class="math inline">\(\mathcal{S}\)</span> is not a surface. This is essentially consequence of the fact that <span class="math display">\[
+\]</span> Then <span class="math inline">\(\mathcal{S}\)</span> is not a surface. This is, essentially, a consequence of the fact that <span class="math display">\[
 \mathcal{S}\smallsetminus \{{\pmb{0}}\}
-\]</span> is a disconnected set, see <a href="#fig-surface-cone" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>.<p></p>
+\]</span> is a disconnected set, see <a href="#fig-surface-cone" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.<p></p>
 <p>To see that <span class="math inline">\(\mathcal{S}\)</span> is not a surface, suppose there exists an atlas <span class="math inline">\(\{{\pmb{\sigma}}_i\}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> <span class="math display">\[
 {\pmb{\sigma}}_i \colon U_i \to {\pmb{\sigma}}_i(U_i) \subseteq \mathcal{S}\,.
 \]</span> In particular there exists a chart <span class="math inline">\({\pmb{\sigma}}\)</span> such that <span class="math display">\[
@@ -1113,9 +1130,9 @@ B_{\delta} ({\pmb{0}}) \subseteq W \,.
 V := {\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0)) \smallsetminus \{{\pmb{0}}\}
 \]</span> is disconnected, with disconnection given by <span class="math display">\[
 V = ( V \cap \mathcal{S}^- ) \cup (V \cap \mathcal{S}^+) \,.
-\]</span> However <span class="math inline">\(V\)</span> is homeomorphic to <span class="math display">\[
+\]</span> However, <span class="math inline">\(V\)</span> is homeomorphic to <span class="math display">\[
 B_{\varepsilon} (\mathbf{x}_0) \smallsetminus \{ \mathbf{x}_0 \} \,,
-\]</span> which is instead connected. Contradiction. Hence <span class="math inline">\(\mathcal{S}\)</span> is not a surface.</p>
+\]</span> which is instead connected. We have obtained a contradiction, and therefore <span class="math inline">\(\mathcal{S}\)</span> is not a surface.</p>
 </div></details>
 </div>
 <div id="fig-surface-cone" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1124,7 +1141,7 @@ B_{\varepsilon} (\mathbf{x}_0) \smallsetminus \{ \mathbf{x}_0 \} \,,
 <img src="../images/surface_cone.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surface-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: The circular cone is not a surface. This is because <span class="math inline">\(\mathcal{S}\smallsetminus \{{\pmb{0}}\}\)</span> is disconnected.
+Figure&nbsp;4.4: The circular cone is not a surface. This is because <span class="math inline">\(\mathcal{S}\smallsetminus \{{\pmb{0}}\}\)</span> is disconnected.
 </figcaption>
 </figure>
 </div>
@@ -1240,59 +1257,107 @@ U_1 &amp; := \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,,
 </div></details>
 </div>
 <div id="graph-of-a-function-1" class="Example" title="Graph of a function">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 55: </strong>Graph of a function</summary><div>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(f \colon U \to \mathbb{R}\)</span> be smooth. The graph of <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 55: </strong>Graph of a function</summary><div>
+<p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(f \colon U \to \mathbb{R}\)</span> be smooth. The graph of <span class="math inline">\(f\)</span> is the set <span class="math display">\[
 \Gamma_f := \{ (u,v,f(u,v)) \, \colon \,(u,v) \in U  \}  \,.
 \]</span> We have seen that <span class="math inline">\(\Gamma_f\)</span> is surface with atlas given by <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}\}\)</span>, where <span class="math display">\[
 {\pmb{\sigma}}\colon U \to \Gamma_f \,, \quad
 {\pmb{\sigma}}(u,v):=(u,v,f(u,v)) \,.
-\]</span> We have that <span class="math inline">\(\Gamma_f\)</span> is a regular surface, since <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas.<p></p>
+\]</span> We have that <span class="math inline">\(\Gamma_f\)</span> is a regular surface, since <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas.</p>
 <blockquote class="blockquote">
-<p>Compute the partial derivatives</p>
-</blockquote>
-<p><span class="math display">\[
+<p>Compute the partial derivatives <span class="math display">\[
 {\pmb{\sigma}}_u = (1,0,f_u) \,, \quad
 {\pmb{\sigma}}_v = (0,1,f_v) \,.
-\]</span> Therefore <span class="math display">\[
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = (-f_u, - f_v, 1 ) \neq {\pmb{0}}\,,
-\]</span> since the last component never vanishes. Therefore <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.</p>
+\]</span> Therefore, the Jacobian matrix is <span class="math display">\[
+J{\pmb{\sigma}}(u,v) =
+\left(
+\begin{array}{ccc}
+1  &amp;  0 \\
+0  &amp;  1 \\
+f_u  &amp; f_v \\
+\end{array}
+\right) \,.
+\]</span> Notice that the first minor of <span class="math inline">\(J{\pmb{\sigma}}\)</span> is the identity matrix, which has determinant <span class="math inline">\(1\)</span>, and is hence invertible. Therefore <span class="math inline">\(J{\pmb{\sigma}}\)</span> has rank 2, showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Hence <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
+<p>An alternative way to prove regularity would have been to compute <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = (-f_u, - f_v, 1 ) \,.
+\]</span> We observe that <span class="math inline">\({\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0\)</span> because the last component never vanishes. Thus, <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.</p>
+</blockquote>
 </div></details>
 </div>
 <div id="unit-sphere" class="Example" title="Unit sphere">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 56: </strong>Unit sphere</summary><div>
 <p>Consider the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
-\mathbb{S}^2 := \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1  \} \,.
-\]</span> We have that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface, with regular atlas <span class="math display">\[
+\mathbb{S}^2 := \left\{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1  \right\} \,.
+\]</span> Define the collection of charts <span class="math display">\[
 \mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i=1}^6 \,,
-\]</span> defined as follows: Let <span class="math display">\[
+\]</span> where <span class="math inline">\({\pmb{\sigma}}_i\)</span> is defined as follows: Let <span class="math display">\[
 U:= \{ (u,v) \in \mathbb{R}^2 \colon u^2 + v^2 &lt; 1  \}
-\]</span> be the unit open ball in <span class="math inline">\(\mathbb{R}^2\)</span> and define <span class="math inline">\({\pmb{\sigma}}_i \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[\begin{align*}
+\]</span> be the unit open ball in <span class="math inline">\(\mathbb{R}^2\)</span>, and define <span class="math inline">\({\pmb{\sigma}}_i \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_1 (u,v) &amp; = \left(u,v,\sqrt{1-u^2-v^2}  \right) \\
 {\pmb{\sigma}}_2 (u,v) &amp; = \left(u,v,-\sqrt{1-u^2-v^2}  \right) \\
 {\pmb{\sigma}}_3 (u,v) &amp; = \left(u,\sqrt{1-u^2-v^2},v  \right) \\
 {\pmb{\sigma}}_4 (u,v) &amp; = \left(u, -\sqrt{1-u^2-v^2}, v  \right) \\
 {\pmb{\sigma}}_5 (u,v) &amp; = \left(\sqrt{1-u^2-v^2} , u ,v \right) \\
 {\pmb{\sigma}}_6 (u,v) &amp; = \left(-\sqrt{1-u^2-v^2}, u,v,  \right) \\
-\end{align*}\]</span></p>
+\end{align*}\]</span> We have that <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas, showing that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface.</p>
 <blockquote class="blockquote">
-<p>Exercise: Check that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface.</p>
+<p>Let us check that <span class="math inline">\(\mathbb{S}^2\)</span> is a surface:</p>
+<ul>
+<li><span class="math inline">\({\pmb{\sigma}}_1\)</span> is smooth, since in <span class="math inline">\(U\)</span> we have <span class="math inline">\(u^2+v^2&lt;1\)</span>.</li>
+<li><span class="math inline">\(U\)</span> is open, being the open ball of radius <span class="math inline">\(1\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span>.</li>
+<li><span class="math inline">\({\pmb{\sigma}}_1(U)\)</span> is clearly open in <span class="math inline">\(\mathbb{S}^2\)</span>: This is because <span class="math inline">\({\pmb{\sigma}}_1(U)\)</span> coincides with the northern hemisphere, with the equator line removed.</li>
+<li>The inverse of <span class="math inline">\({\pmb{\sigma}}_1\)</span> is given by <span class="math inline">\({\pmb{\sigma}}^{-1} \colon {\pmb{\sigma}}_1(U) \to U\)</span> defined by <span class="math display">\[
+{\pmb{\sigma}}^{-1}(u,v,\sqrt{1-u^2-v^2}) := (u,v) \,.
+\]</span></li>
+<li><span class="math inline">\({\pmb{\sigma}}^{-1}\)</span> is continuous, and thus <span class="math inline">\({\pmb{\sigma}}_1\)</span> is a homeomorphism of <span class="math inline">\(U\)</span> with <span class="math inline">\({\pmb{\sigma}}_1(U)\)</span>.</li>
+<li>With similar arguments, we can see that all the maps <span class="math inline">\({\pmb{\sigma}}_i\)</span> are charts.</li>
+<li>Note that <span class="math inline">\({\pmb{\sigma}}_1\)</span> charts the northern hemisphere (without equator), while <span class="math inline">\({\pmb{\sigma}}_2\)</span> charts the southern hemisphere (without the equator). Thus, <span class="math display">\[
+{\pmb{\sigma}}_1(U) \cup {\pmb{\sigma}}_2(U) = \mathbb{S}^2 \smallsetminus \{z = 0 \} \,.
+\]</span> By including the other 4 charts <span class="math inline">\({\pmb{\sigma}}_3,{\pmb{\sigma}}_4,{\pmb{\sigma}}_5,{\pmb{\sigma}}_6\)</span>, we can cover the whole sphere, that is, <span class="math display">\[
+\mathbb{S}^2 = \bigcup_{i=1}^6 {\pmb{\sigma}}_i(U) \,.
+\]</span> This shows that <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}_i\}_{i=1}^6\)</span> is an atlas for <span class="math inline">\(\mathbb{S}^2\)</span>.</li>
+</ul>
+<p>Let us now check that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface:</p>
+<ul>
+<li>The first chart <span class="math inline">\({\pmb{\sigma}}_1\)</span> has derivatives <span class="math display">\[
+({\pmb{\sigma}}_1)_u = (1,0,f_u) \,, \quad
+({\pmb{\sigma}}_1)_v = (0,1,f_v) \,,
+\]</span> where <span class="math inline">\(f_u,f_v\)</span> are the partial derivatives of <span class="math display">\[
+f(u,v):=\sqrt{1-u^2-v^2} \,.
+\]</span> Therefore, the Jacobian matrix of <span class="math inline">\({\pmb{\sigma}}_1\)</span> is <span class="math display">\[
+J{\pmb{\sigma}}_1 (u,v) =
+\left(
+\begin{array}{ccc}
+1  &amp;  0 \\
+0  &amp;  1 \\
+f_u  &amp; f_v \\
+\end{array}
+\right) \,.
+\]</span> The first minor of <span class="math inline">\(J{\pmb{\sigma}}_1\)</span> is the identity matrix, and therefore <span class="math inline">\(J{\pmb{\sigma}}\)</span> has rank 2, showing that <span class="math inline">\(({\pmb{\sigma}}_1)_u\)</span> and <span class="math inline">\(({\pmb{\sigma}}_2)_v\)</span> are linearly independent. Hence <span class="math inline">\({\pmb{\sigma}}_1\)</span> is regular.</li>
+<li>Clearly, <span class="math inline">\(J{\pmb{\sigma}}_i\)</span> has rank 2 for each of the charts <span class="math inline">\({\pmb{\sigma}}_i\)</span>. Therefore <span class="math inline">\({\pmb{\sigma}}_i\)</span> is regular.</li>
+<li>We conclude that <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas, making <span class="math inline">\(\mathbb{S}^2\)</span> a regular surface.</li>
+</ul>
 </blockquote>
 </div></details>
 </div>
-<div id="spherical-coordinates" class="Remark" title="Spherical coordinates">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 57: </strong>Spherical coordinates</summary><div>
-<p>The equivalent of polar coordinates in dimension <span class="math inline">\(3\)</span> are spherical coordinates. A point <span class="math inline">\((x,y,z) \in \mathbb{R}^3 \smallsetminus \{{\pmb{0}}\}\)</span> can be represented in spherical coordinates by <span class="math display">\[\begin{align*}
-x &amp; = \rho \cos (\theta)  \cos(\phi)  \\
-y &amp; = \rho \cos (\theta)  \sin(\phi) \\
-z &amp; = \rho \sin (\theta)
+<p>Spherical coordinates give an alternative way of charting the sphere <span class="math inline">\(\mathbb{S}^2\)</span>.</p>
+<div id="spherical-coordinates" class="Definition" title="Spherical coordinates">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 57: </strong>Spherical coordinates</summary><div>
+<p>Consider a point <span class="math display">\[
+\mathbf{p}:= (x,y,z) \in \mathbb{R}^3 \smallsetminus \{{\pmb{0}}\} \,.
+\]</span> The point <span class="math inline">\(\mathbf{p}\)</span> is represented in <strong>spherical coordinates</strong> by <span class="math display">\[\begin{align*}
+x &amp; = \rho \cos(\theta) \cos (\varphi)    \\
+y &amp; = \rho \sin(\theta) \cos (\varphi)   \\
+z &amp; = \rho \sin (\varphi)
 \end{align*}\]</span> where <span class="math display">\[
-\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \phi\in [0,2\pi] \,, \quad \theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
-\]</span> with the angles <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span> as in Figure <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>.</p>
+\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \theta \in [-\pi,\pi] \,, \quad \varphi\in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
+\]</span> with the angles <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\varphi\)</span> as in <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>.</p>
 <blockquote class="blockquote">
-<p>It is clear that <span class="math inline">\(z = \rho \sin(\theta)\)</span>, by basic trigonometry. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{p}\)</span> has length <span class="math display">\[
-L = \rho \cos \theta \,.
+<p>It is clear that <span class="math inline">\(z = \rho \sin(\varphi)\)</span>. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{q}\)</span> has length <span class="math display">\[
+L = \rho \cos(\varphi) \,.
 \]</span> Therefore we get <span class="math display">\[\begin{align*}
-x &amp; = L \cos (\phi) = \rho \cos (\theta)  \cos(\phi) \\
-y &amp; = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi)
+x &amp; = L \cos (\theta) = \rho \cos(\theta) \cos (\varphi)   \\
+y &amp; = L \sin (\theta) = \rho \sin(\theta) \cos (\varphi)  
 \end{align*}\]</span> concluding.</p>
 </blockquote>
 </div></details>
@@ -1303,25 +1368,53 @@ y &amp; = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi)
 <img src="../images/spherical_coordinates.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Spherical coordinates in <span class="math inline">\(\mathbb{R}^3\)</span>.
+Figure&nbsp;4.5: Spherical coordinates in <span class="math inline">\(\mathbb{R}^3\)</span>.
 </figcaption>
 </figure>
 </div>
 <div id="unit-sphere-in-spherical-coordinates" class="Example" title="Unit sphere in spherical coordinates">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 58: </strong>Unit sphere in spherical coordinates</summary><div>Consider again the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
 \mathbb{S}^2 := \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1  \} \,.
-\]</span> We want to give an alternative atlas for <span class="math inline">\(\mathbb{S}^2\)</span> based on spherical coordinates. To this end, define <span class="math display">\[
-U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \theta &lt; \frac{\pi}{2} \,, \,\,
-0&lt; \phi &lt; 2 \pi    \right\}
-\]</span> and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
-{\pmb{\sigma}}( \theta , \phi ) :=  ( \cos(\theta) \cos(\phi), \cos(\theta) \sin(\phi), \sin (\theta)  ) \,.
-\]</span> We have:<p></p>
+\]</span> Spherical coordinates allow us to define an alternative atlas on <span class="math inline">\(\mathbb{S}^2\)</span>. In details, define the set <span class="math display">\[
+U := \left\{ (\theta,\varphi)  \in \mathbb{R}^2 \, \colon \,\theta \in ( -\pi,\pi), \, \varphi\in \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,,
+\]</span> and the map <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
+{\pmb{\sigma}}( \theta , \varphi) :=  ( \cos(\theta) \cos(\varphi) , \sin(\theta) \cos(\varphi) , \sin (\varphi)  ) \,.
+\]</span> In order to name some of the parallels and meridians on <span class="math inline">\(\mathbb{S}^2\)</span>, let us identify <span class="math inline">\(\mathbb{S}^2\)</span> with the Earth. We make the following choices:<p></p>
+<ul>
+<li><p>The <em>Equator Line</em> corresponds to the plane <span class="math inline">\(\{z = 0 \}\)</span>, where <span class="math inline">\(\varphi= 0\)</span>. Therefore, we have the parametrization: <span class="math display">\[
+\mbox{Equator Line } =  \left\{ (\cos(\theta) , \sin(\theta) , 0 ) \,, \,\, \theta \in   \left(  - \pi, \pi \right)  \right\} \,.
+\]</span></p></li>
+<li><p>The <em>Greenwich meridian</em> corresponds to the angle <span class="math inline">\(\theta = 0\)</span>. Hence: <span class="math display">\[
+\mbox{Greenwich } = \left\{ (\cos(\varphi) , 0 , \sin (\varphi)) \,, \,\, \varphi\in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
+\]</span></p></li>
+<li><p>The <em>Date Line</em> is the meridian opposite to the Greenwich one. This corresponds to an angle <span class="math inline">\(\theta = \pi\)</span>, and is thus parametrized by: <span class="math display">\[
+\mbox{Date Line } = \left\{ (- \cos(\varphi) , 0 , \sin (\varphi)) \,, \,\, \varphi\in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
+\]</span></p></li>
+<li><p>The <em>North Pole</em> and <em>South Pole</em> have coordinates <span class="math display">\[
+N = (0,0,1) \,, \quad S = (0,0,-1) \,.
+\]</span></p></li>
+</ul>
+<p>Notice that the angles <span class="math display">\[
+\theta = \pi \,, \quad \varphi= \pm \frac{\pi}{2}  
+\]</span> are excluded in the definition of <span class="math inline">\(U\)</span>. Therefore the parametrization <span class="math inline">\({\pmb{\sigma}}\)</span> misses the Date Line, as well as the North and South Poles, see the left picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>. In formulas: <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}(U) &amp; = \mathbb{S}^2 \smallsetminus \{\mbox{Date Line, North Pole, South Pole}\} \\
+        &amp; = \mathbb{S}^2 \smallsetminus \{ (x,0,z) \in \mathbb{R}^3 \, \colon \, x \leq 0 \} \,.
+\end{align*}\]</span> Since <span class="math inline">\({\pmb{\sigma}}(U) \neq \mathbb{S}^2\)</span>, the chart <span class="math inline">\({\pmb{\sigma}}\)</span> does not form an atlas. We need a second chart. An option is to define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} := ( - \cos (\theta)\cos(\varphi) , -\sin(\varphi) , - \sin(\theta) \cos (\varphi) ) \,.
+\]</span> Notice that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is obtained by rotating <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math inline">\(\pi\)</span> about the <span class="math inline">\(z\)</span>-axis, and by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span>-axis, see the right picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>. It is easy to see that <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} (U) = \mathbb{S}^2 \smallsetminus \{ (x,y,0) \in \mathbb{R}^3 \, \colon \,x \leq 0  \} \,,
+\]</span> it is immediate to see that <span class="math display">\[
+\mathbb{S}^2 = {\pmb{\sigma}}(U) \cup \widetilde{{\pmb{\sigma}}}(U) \,.
+\]</span> Hence <span class="math display">\[
+\mathcal{A} := \{   {\pmb{\sigma}}, \widetilde{{\pmb{\sigma}}} \}
+\]</span> is a regular atlas for <span class="math inline">\(\mathbb{S}^2\)</span>.</p>
+<p>We have:</p>
 <ul>
 <li><p><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</p></li>
 <li><p><span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
 <li><p>Moreover <span class="math display">\[
 {\pmb{\sigma}}(U) = \mathbb{S}^2 \smallsetminus \{ (x,0,z) \in \mathbb{R}^3 \, \colon \,x \geq 0  \} \,,
-\]</span> as seen also in the left picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>.</p></li>
+\]</span> as seen also in the left picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>.</p></li>
 <li><p>The set <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is evidently open in <span class="math inline">\(\mathbb{S}^2\)</span>.</p></li>
 <li><p>It is easy to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is invertible, with continuous inverse.</p></li>
 <li><p>Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism from <span class="math inline">\(U\)</span> into <span class="math inline">\({\pmb{\sigma}}(U)\)</span>.</p></li>
@@ -1337,16 +1430,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 \]</span> Since <span class="math inline">\((\theta,\phi)\in U\)</span>, we have <span class="math inline">\(\theta \in ( -\pi/2, \pi/2 )\)</span>, and so <span class="math display">\[
 \left\|  {\pmb{\sigma}}_{\theta} \times {\pmb{\sigma}}_{\phi}  \right\| = |\cos (\theta)| \neq 0 \,,
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}_{\theta}\)</span> and <span class="math inline">\({\pmb{\sigma}}_{\phi}\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
-<p>Since <span class="math inline">\({\pmb{\sigma}}(U) \neq \mathbb{S}^2\)</span>, the chart <span class="math inline">\({\pmb{\sigma}}\)</span> does not form an atlas. We need a second chart. An option is to define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} := ( - \cos(\theta) \cos (\phi), -\sin(\theta) , - \cos (\theta) \sin(\phi)) \,.
-\]</span> Notice that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is obtained by rotating <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math inline">\(\pi\)</span> about the <span class="math inline">\(z\)</span>-axis and by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span>-axis, as seen in the right picture in <a href="#fig-chart-sphere" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>. It is an exercise to check that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regular chart.</p>
-<p>Since we have <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} (U) = \mathbb{S}^2 \smallsetminus \{ (x,y,0) \in \mathbb{R}^3 \, \colon \,x \leq 0  \} \,,
-\]</span> it is immediate to see that <span class="math display">\[
-\mathbb{S}^2 = {\pmb{\sigma}}(U) \cup \widetilde{{\pmb{\sigma}}}(U) \,.
-\]</span> Hence <span class="math display">\[
-\mathcal{A} := \{   {\pmb{\sigma}}, \widetilde{{\pmb{\sigma}}} \}
-\]</span> is a regular atlas for <span class="math inline">\(\mathbb{S}^2\)</span>.</p>
+<p>It is an exercise to check that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regular chart.</p>
 </div></details>
 </div>
 <div id="cell-fig-chart-sphere" class="cell" data-execution_count="1">
@@ -1357,7 +1441,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 <img src="chap_4_files/figure-html/fig-chart-sphere-output-1.png" width="693" height="336" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chart-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Image of the charts of the sphere from the above example.
+Figure&nbsp;4.6: Image of the charts of the sphere from the above example.
 </figcaption>
 </figure>
 </div>
@@ -1375,7 +1459,7 @@ Figure&nbsp;4.3: Image of the charts of the sphere from the above example.
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly dependent along the line <span class="math display">\[
 L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 \]</span> Hence <span class="math inline">\({\pmb{\sigma}}\)</span> is not a regular chart.<p></p>
-<p>Looking at Figure <a href="#fig-plot-cusp" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\({\pmb{\sigma}}(L)\)</span>.</p>
+<p>Looking at Figure <a href="#fig-plot-cusp" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\({\pmb{\sigma}}(L)\)</span>.</p>
 </div></details>
 </div>
 <div id="cell-fig-plot-cusp" class="cell" data-execution_count="2">
@@ -1386,7 +1470,7 @@ L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 <img src="chap_4_files/figure-html/fig-plot-cusp-output-1.png" width="349" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-cusp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Example of non-regular surface.
+Figure&nbsp;4.7: Example of non-regular surface.
 </figcaption>
 </figure>
 </div>
@@ -1431,7 +1515,7 @@ f(x,y,z) := x^2 + y^2 -1 \,.
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
 \]</span> is not a surface. However the positive sheet <span class="math display">\[
 \mathcal{S}^+ := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2 \,, \,  z&gt;0  \} \,.
-\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.5</span></a> Indeed, define the open set <span class="math display">\[
+\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> Indeed, define the open set <span class="math display">\[
 V := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,z &gt; 0 \}
 \]</span> and the function <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> by <span class="math display">\[
 f(x,y,z) := x^2 + y^2 - z^2 \,.
@@ -1454,7 +1538,7 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 <img src="chap_4_files/figure-html/fig-positive-cone-output-1.png" width="348" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positive-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: Positive sheet of circular cone.
+Figure&nbsp;4.8: Positive sheet of circular cone.
 </figcaption>
 </figure>
 </div>
@@ -1603,14 +1687,14 @@ f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial
 <section id="transition-maps" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="transition-maps"><span class="header-section-number">4.6</span> Transition maps</h2>
 <p>Consider the situation in which two regular charts have overlapping image.<br>
-It is natural to ask wether these maps are reparametrizations of each other on the overlapping region, see <a href="#fig-transition-maps" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>. If such reparametrization exists, it is called a transition map.</p>
+It is natural to ask wether these maps are reparametrizations of each other on the overlapping region, see <a href="#fig-transition-maps" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. If such reparametrization exists, it is called a transition map.</p>
 <div id="fig-transition-maps" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-transition-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/surfaces_transition_map.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transition-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: If the two regular charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have overlapping image, then they are reparametrization of each other, through a transition map <span class="math inline">\(\Phi\)</span>.
+Figure&nbsp;4.9: If the two regular charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have overlapping image, then they are reparametrization of each other, through a transition map <span class="math inline">\(\Phi\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1813,7 +1897,7 @@ T_{\mathbf{p}} \mathcal{S}:= \{ \mathbf{v}\in \mathbb{R}^3 \, \colon \,\mathbf{v
 <img src="../images/tangent_space.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
+Figure&nbsp;4.10: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1995,7 +2079,7 @@ T_{\mathbf{p}} \mathcal{S}
 <blockquote class="blockquote">
 <p>To see this, take the curve <span class="math inline">\({\pmb{\gamma}}(t) \equiv \mathbf{p}\)</span>. Then <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0) = {\pmb{0}}\)</span>, showing that <span class="math inline">\({\pmb{0}}\in T_{\mathbf{p}} \mathcal{S}\)</span>.</p>
 </blockquote>
-<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. In pictures, such as <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>, we draw the tangent plane as if it was touching the surfaces at the point <span class="math inline">\(\mathbf{p}\)</span>, and still denote it by <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span>. This is a slight abuse of notation: to be precise, the plane drawn is <span class="math display">\[
+<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. In pictures, such as <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>, we draw the tangent plane as if it was touching the surfaces at the point <span class="math inline">\(\mathbf{p}\)</span>, and still denote it by <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span>. This is a slight abuse of notation: to be precise, the plane drawn is <span class="math display">\[
 \mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\,,
 \]</span> which is the <strong>affine tangent plane</strong> through <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
 </div></details>
@@ -2194,7 +2278,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 <div id="möbius-strip" class="Example" title="Möbius strip">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 92: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">115</a>.<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 92: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">115</a>.<p></p>
 </div></details>
 </div>
 <div id="Example-93" class="Example">
@@ -2680,7 +2764,7 @@ D =
 {\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,,
 \]</span> with <span class="math display">\[
 {\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
-\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>.<p></p>
+\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-ruled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2689,7 +2773,7 @@ D =
 <img src="../images/surfaces_ruled.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
+Figure&nbsp;4.11: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2702,7 +2786,7 @@ Figure&nbsp;4.8: Unit cylinder is a ruled surface with base curve <span class="m
 \mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right)
-\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>. In particular <span class="math display">\[
+\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. In particular <span class="math display">\[
 {\pmb{\sigma}}(u,v) =  \left(   
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \sin(u),
@@ -2737,7 +2821,7 @@ Figure&nbsp;4.8: Unit cylinder is a ruled surface with base curve <span class="m
 <img src="../images/surfaces_ruled_2.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mobius-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
+Figure&nbsp;4.12: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2769,7 +2853,7 @@ Figure&nbsp;4.9: The Möbius band is a ruled surface with base curve <span class
 </div></details>
 </div>
 <div id="catenoid" class="Example" title="Catenoid">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 118: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>. Recall that the catenary function is defined by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 118: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>. Recall that the catenary function is defined by <span class="math display">\[
 f(u) = \cosh (u) \,.  
 \]</span> Therefore the catenoid is obtained by rotating <span class="math display">\[
 {\pmb{\gamma}}(u) = \left(  \cosh (u), 0 , u \right) \,.
@@ -2787,7 +2871,7 @@ f(u) = \cosh (u) \,.
 <img src="../images/surface_catenoid.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
+Figure&nbsp;4.13: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
 </figcaption>
 </figure>
 </div>
@@ -3847,7 +3931,7 @@ f \colon {\pmb{\pi}}\to \mathcal{S}\,, \quad f(u,v,0) = {\pmb{\sigma}}(u,v) \,,
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
 \]</span> We will call the points <span class="math display">\[
 N = (0,0,1) \,, \quad S  = (0,0,-1)
-\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
+\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
 \pi \colon \mathbb{S}^2 \smallsetminus \{N\} \to \mathbb{R}^2 \,,
 \]</span> where <span class="math display">\[
 \pi(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z}  \right) \,.
@@ -3869,7 +3953,7 @@ EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
 <img src="../images/stereographic_4.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
+Figure&nbsp;4.14: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -3878,7 +3962,7 @@ Figure&nbsp;4.11: Stereographic projection map from the North pole <span class="
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
 \]</span> and the unit cylinder of equation <span class="math display">\[
 x^2 + y^2 = 1 \,.
-\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
+\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
 P = (x,y,z) \,, \quad P' = (X,Y,Z) \,.
 \]</span> Since the line through <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>, we have <span class="math display">\[
 Z = z \,, \quad (X,Y) = \lambda (x,y)
@@ -3905,7 +3989,7 @@ P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,
 <img src="../images/archimedes.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-archimedes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
+Figure&nbsp;4.15: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -3915,7 +3999,7 @@ Figure&nbsp;4.12: Lambert projection map: Let <span class="math inline">\(P \in 
 <img src="../images/stereographic_2.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
+Figure&nbsp;4.16: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
 </figcaption>
 </figure>
 </div>
@@ -3925,7 +4009,7 @@ Figure&nbsp;4.13: Stereographic projection of the Earth. Image from <a href="htt
 <img src="../images/stereographic_3.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.14: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
+Figure&nbsp;4.17: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
 </figcaption>
 </figure>
 </div>
@@ -3987,14 +4071,14 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 {\pmb{\sigma}}( u_0 + \Delta u , v_0 + \Delta v ) \in \mathcal{S}
 \]</span> deviates from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, the deviation is given by <span class="math display">\[
 \delta := \left[  {\pmb{\sigma}}(  u_0 + \Delta u , v_0 + \Delta v  ) - {\pmb{\sigma}}(u_0,v_0)    \right] \cdot \mathbf{N}\,,
-\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>.</p>
+\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>.</p>
 <div id="fig-sff-sketch" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/sff_sketch.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.15: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
+Figure&nbsp;4.18: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4188,12 +4272,12 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <div id="Example-167" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 167</strong></summary><div>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
-\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>.</p></li>
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Then <span class="math display">\[
@@ -4214,7 +4298,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = (\cos(u_0), \sin(u_0), 0) \,,
-\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>.</p></li>
+\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -4224,7 +4308,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <img src="../images/sff_gauss_sphere.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.16: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
+Figure&nbsp;4.19: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
 </figcaption>
 </figure>
 </div>
@@ -4234,7 +4318,7 @@ Figure&nbsp;4.16: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_plane.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
+Figure&nbsp;4.20: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
 </figcaption>
 </figure>
 </div>
@@ -4244,7 +4328,7 @@ Figure&nbsp;4.17: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.18: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
+Figure&nbsp;4.21: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4254,7 +4338,7 @@ Figure&nbsp;4.18: If <span class="math inline">\(\mathcal{S}\)</span> is the uni
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
 T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
-\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>. Therefore <span class="math display">\[
+\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>. Therefore <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <blockquote class="blockquote">
@@ -4274,7 +4358,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 <img src="../images/sff_weingarten.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weingarten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.19: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
+Figure&nbsp;4.22: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4614,7 +4698,7 @@ d &amp; -b \\
 <div id="helicoid" class="Example" title="Helicoid">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 178: </strong>Helicoid</summary><div>The Helicoid is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
-\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
+\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
 \mathcal{W}=
 \left(
 \begin{array}{cc}
@@ -4725,7 +4809,7 @@ M &amp; N
 <img src="chap_4_files/figure-html/fig-helicoid-output-1.png" width="346" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-helicoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.20: Plot of Helicoid.
+Figure&nbsp;4.23: Plot of Helicoid.
 </figcaption>
 </figure>
 </div>
@@ -5200,7 +5284,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 \]</span> and the principal vectors are <span class="math display">\[\begin{align*}
 \mathbf{t}_1 &amp; = {\pmb{\sigma}}_u = (-\sin(u),\cos(v),0) \,,\\
 \mathbf{t}_2 &amp; = {\pmb{\sigma}}_v = (0,0,1)\,,
-\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.<p></p>
+\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-principal" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -5209,7 +5293,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 <img src="../images/sff_principal_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-principal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.21: Principal vectors of the unit cylinder.
+Figure&nbsp;4.24: Principal vectors of the unit cylinder.
 </figcaption>
 </figure>
 </div>
@@ -5660,7 +5744,7 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.22: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
+Figure&nbsp;4.25: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>

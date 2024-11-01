@@ -977,10 +977,22 @@ The homeomorphism $\sss$ is called a **surface chart** at $\pp$.
 :::
 
 
+A visual interpretation of the definition of surface is given in @fig-def-surface.
+
+
 
 ::: Remark
 
-1. A surface chart $\sss$ is a map 
+
+1. $\SSS$ is a topological space with the subspace topology induced by the inclusion $\SSS \subseteq \R^3$. This means that a subset $V \subseteq \SSS$ is open in $\SSS$, if there exists and open set $W \subseteq \R^3$ such that
+$$
+V = W \cap \SSS \,.
+$$
+
+2. $\SSS$ is required to be **connected**, with respect to the subspace topology.
+
+
+3. A surface chart $\sss$ is a map 
 $$
 \sss \colon U  \to \R^3 \,,
 $$
@@ -988,12 +1000,13 @@ with $U \subseteq \R^2$ open.
 Therefore smoothness of $\sss$ is intended in the classical sense.
 
 
-2. Given a chart $\sss \colon U \to \sss(U)$, the set $U$ is open in $\R^2$ while $\sss(U)$ is open in $\SSS$ with the subspace topology. This means that there exists $W \subseteq \R^3$ open such that
+4. Given a chart $\sss \colon U \to \sss(U)$, the set $U$ is open in $\R^2$ while $\sss(U)$ is open in $\SSS$ with the subspace topology. This means there exists and open set $W \subseteq \R^3$ such that
 $$
 \sss(U) = W \cap \SSS \,.
 $$
 
-3. The homeomorphism condition is saying that the surface patch
+
+5. The homeomorphism condition is saying that the surface patch
 $$
 \sss(U) \subseteq \SSS
 $$ 
@@ -1002,11 +1015,12 @@ $$
 U \subseteq \R^2 \,.
 $$
 
+
 :::
 
 
 
-![Sketch of the surface $\SSS$ and chart $\sss \colon U \to \sss(U) \subseteq \SSS$. The set $U \subseteq \R^2$ is open in $\R^2$ and $\sss(U)$ is open in $\SSS$. This means there exists $W$ open in $\R^3$ such that $\sss(U) = \SSS \cap W$.](/images/surfaces_example_3.png){width=70%}
+![Sketch of the surface $\SSS$ and chart $\sss \colon U \to \sss(U) \subseteq \SSS$. The set $U \subseteq \R^2$ is open in $\R^2$ and $\sss(U)$ is open in $\SSS$. This means there exists $W$ open in $\R^3$ such that $\sss(U) = \SSS \cap W$.](/images/surfaces_example_3.png){#fig-def-surface width=70%}
 
 
 ::: Notation
@@ -1068,8 +1082,7 @@ for some $\ww \in \R^3$ and $\lambda \in \R$. Let
 - $\pp,\mathbf{q} \in \R^3$ be orthonormal, and orthogonal to $\ww$.
 - $\mathbf{a} \in \p$ be any point in the plane.
 
-
-Let $\xx \in \p$. Then $\xx-\mathbf{a}$ satisfies
+This construction is represented in @fig-plane-surface. Let $\xx \in \p$. Then $\xx-\mathbf{a}$ satisfies
 $$
  (\xx - \mathbf{a}) \cdot \ww  = 0 \,.
 $$
@@ -1090,7 +1103,7 @@ Observe that:
 
 - $\sss$ is smooth.
 - $\R^2$ is obviously open.
-- $\sss(\R^2)$ is open in $\p$, since $\sss(\R^2) = \p$.
+- $\sss(\R^2)$ is open in $\p$ for the subspace topology, since $\sss(\R^2) = \p$, and $\p$ is open in the subspace topology.
 - Suppose $\xx = \sss(u,v)$. Then
 $$
 (\xx - \mathbf{a}) \cdot \pp =  u \,, \quad 
@@ -1101,7 +1114,9 @@ given that $\pp$ and $\mathbf{q}$ are orthonormal.
 $$
 \sss^{-1} (\xx) = ( (\xx - \mathbf{a}) \cdot \pp , (\xx - \mathbf{a}) \cdot \mathbf{q}  ) \,.
 $$
-- $\sss^{-1}$ is continuous. Thus, $\sss$ is a homeomorphism between $\R^2$ and $\p$. 
+Clearly, $\sss^{-1}$ is continuous.
+
+- Thus, $\sss$ is a homeomorphism between $\R^2$ and $\p$. 
 
 
 Therefore $\sss$ is a chart for $\p$. Since
@@ -1118,7 +1133,7 @@ is an atlas for $\p$, showing that $\p$ is a surface.
 
 
 
-![A plane $\p$ is a surface with atlas containing a single chart $\sss \colon \R^2 \to \p$.](/images/surface_plane.png){width=70%}
+![A plane $\p$ is a surface with atlas containing a single chart $\sss \colon \R^2 \to \p$.](/images/surface_plane.png){#fig-plane-surface width=70%}
 
 
 
@@ -1144,6 +1159,7 @@ $$
 U_1 := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, \quad 
 U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
 $$
+The two charts $\sss_1$ and $\sss_2$ are shown in @fig-cylinder-surface.
 
 > Check:
 >
@@ -1159,7 +1175,7 @@ $$
 :::
 
 
-![Unit cylinder $\SSS$ is a surface with atlas $\mathcal{A} = \{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){width=70%}
+![Unit cylinder $\SSS$ is a surface with atlas $\mathcal{A} = \{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){#fig-cylinder-surface width=70%}
 
 
 
@@ -1192,14 +1208,13 @@ Therefore $\sss$ cannot be an homeomorphism between $U$ and $\SSS$.
 
 **Note:** In general there cannot be a homeomorphism 
 $$
-\sss \colon U \to \SSS
+\sss \colon U \to \SSS \,,
 $$
 where $U$ is open in $\R^2$ and $\SSS$ is the unit cylinder. This is because $U$ is *simply connected* while $\SSS$ is not: Any closed loop in $U$ can be contracted to a point; while if we take the loop 
 $$
 \g(t) = (\cos(t), \sin(t), 0) \,, \quad t \in [0,2\pi] \,,
 $$
-on the cylinder $\SSS$, then $\g$ cannot be contracted to a point.
-
+on the cylinder $\SSS$, then $\g$ cannot be contracted to a point. Since simply connectedness is a topological invariant (it is preserved by homeomorphisms), it follows that $U$ and $\SSS$ cannot be homeomorphic.
 
 
 :::
@@ -1212,9 +1227,9 @@ on the cylinder $\SSS$, then $\g$ cannot be contracted to a point.
 
 Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
 $$
-\Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
+\Gamma_f := \left\{ (u,v,f(u,v)) \divider (u,v) \in U  \right\}  \,.
 $$
-We have that $\Gamma_f$ is a surface with atlas given by
+$\Gamma_f$ is a surface with atlas given by
 $$
 \mathcal{A} = \{ \sss \}
 $$
@@ -1255,7 +1270,7 @@ Consider the circular cone
 $$
 \SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
 $$
-Then $\SSS$ is not a surface. This is essentially consequence of
+Then $\SSS$ is not a surface. This is, essentially, a consequence of
 the fact that
 $$
 \SSS \smallsetminus \{\zero\}
@@ -1305,11 +1320,11 @@ is disconnected, with disconnection given by
 $$
 V = ( V \cap \SSS^- ) \cup (V \cap \SSS^+) \,.
 $$
-However $V$ is homeomorphic to 
+However, $V$ is homeomorphic to 
 $$
 B_{\e} (\xx_0) \smallsetminus \{ \xx_0 \} \,,
 $$
-which is instead connected. Contradiction. Hence $\SSS$ is not a surface.
+which is instead connected. We have obtained a contradiction, and therefore $\SSS$ is not a surface.
 
 :::
 
@@ -1523,17 +1538,28 @@ $$
 We have that $\Gamma_f$ is a regular surface, since $\mathcal{A}$ is a regular atlas.
 
 > Compute the partial derivatives
-
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,.
 $$
-Therefore
+Therefore, the Jacobian matrix is
 $$
-\sss_u \times \sss_v = (-f_u, - f_v, 1 ) \neq \zero \,,
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+1  &  0 \\
+0  &  1 \\
+f_u  & f_v \\
+\end{array} 
+\right) \,.
 $$
-since the last component never vanishes. Therefore $\sss_u$ and $\sss_v$ are
-linearly independent and $\sss$ is a regular chart.
+Notice that the first minor of $J\sss$ is the identity matrix, which has determinant $1$, and is hence invertible. Therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular.
+>
+>An alternative way to prove regularity would have been to compute
+$$
+\sss_u \times \sss_v = (-f_u, - f_v, 1 ) \,.
+$$
+We observe that $\sss_u \times \sss_v \neq 0$ because the last component never vanishes. Thus, $\sss_u$ and $\sss_v$ are linearly independent, and $\sss$ is a regular chart.
 
 :::
 
@@ -1545,17 +1571,17 @@ linearly independent and $\sss$ is a regular chart.
 
 Consider the unit sphere in $\R^3$
 $$
-\sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
+\sphere^2 := \left\{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \right\} \,.
 $$
-We have that $\sphere^2$ is a regular surface, with regular atlas
+Define the collection of charts
 $$
 \mathcal{A} = \{ \sss_i \}_{i=1}^6 \,,
 $$
-defined as follows: Let 
+where $\sss_i$ is defined as follows: Let 
 $$
 U:= \{ (u,v) \in \R^2 \colon u^2 + v^2 < 1  \}
 $$
-be the unit open ball in $\R^2$ and define $\sss_i \colon U \to \R^3$ by
+be the unit open ball in $\R^2$, and define $\sss_i \colon U \to \R^3$ by
 \begin{align*}
 \sss_1 (u,v) & = \left(u,v,\sqrt{1-u^2-v^2}  \right) \\
 \sss_2 (u,v) & = \left(u,v,-\sqrt{1-u^2-v^2}  \right) \\
@@ -1564,38 +1590,90 @@ be the unit open ball in $\R^2$ and define $\sss_i \colon U \to \R^3$ by
 \sss_5 (u,v) & = \left(\sqrt{1-u^2-v^2} , u ,v \right) \\
 \sss_6 (u,v) & = \left(-\sqrt{1-u^2-v^2}, u,v,  \right) \\
 \end{align*}
+We have that $\mathcal{A}$ is a regular atlas, showing that $\sphere^2$ is a regular surface. 
 
-> Exercise: Check that $\sphere^2$ is a regular surface.
+> Let us check that $\sphere^2$ is a surface:
+>
+- $\sss_1$ is smooth, since in $U$ we have $u^2+v^2<1$.
+- $U$ is open, being the open ball of radius $1$ in $\R^2$.
+- $\sss_1(U)$ is clearly open in $\sphere^2$: This is because $\sss_1(U)$ coincides with the northern hemisphere, with the equator line removed.
+- The inverse of $\sss_1$ is given by $\sss^{-1} \colon \sss_1(U) \to U$ defined by
+$$
+\sss^{-1}(u,v,\sqrt{1-u^2-v^2}) := (u,v) \,.
+$$
+- $\sss^{-1}$ is continuous, and thus $\sss_1$ is a homeomorphism of $U$ with $\sss_1(U)$.
+- With similar arguments, we can see that all the maps $\sss_i$ are charts.
+- Note that $\sss_1$ charts the northern hemisphere (without equator), while $\sss_2$ charts the southern hemisphere (without the equator). Thus,
+$$
+\sss_1(U) \cup \sss_2(U) = \sphere^2 \smallsetminus \{z = 0 \} \,.
+$$
+By including the other 4 charts $\sss_3,\sss_4,\sss_5,\sss_6$, we can cover the whole sphere, that is,
+$$
+\sphere^2 = \bigcup_{i=1}^6 \sss_i(U) \,.
+$$
+This shows that $\mathcal{A} = \{ \sss_i\}_{i=1}^6$ is an atlas for $\sphere^2$.
+>
+> Let us now check that $\sphere^2$ is a regular surface:
+>
+- The first chart $\sss_1$ has derivatives
+$$
+(\sss_1)_u = (1,0,f_u) \,, \quad 
+(\sss_1)_v = (0,1,f_v) \,,
+$$
+where $f_u,f_v$ are the partial derivatives of 
+$$
+f(u,v):=\sqrt{1-u^2-v^2} \,.
+$$
+Therefore, the Jacobian matrix of $\sss_1$ is
+$$
+J\sss_1 (u,v) = 
+\left(
+\begin{array}{ccc}
+1  &  0 \\
+0  &  1 \\
+f_u  & f_v \\
+\end{array} 
+\right) \,.
+$$
+The first minor of $J\sss_1$ is the identity matrix, and therefore $J\sss$ has rank 2, showing that $(\sss_1)_u$ and $(\sss_2)_v$ are linearly independent. Hence $\sss_1$ is regular.
+- Clearly, $J\sss_i$ has rank 2 for each of the charts $\sss_i$. Therefore $\sss_i$ is regular.
+- We conclude that $\mathcal{A}$ is a regular atlas, making $\sphere^2$ a regular surface.
+
+
 
 :::
 
 
+Spherical coordinates give an alternative way of charting the sphere $\sphere^2$.
 
-::: Remark 
+::: Definition
 ### Spherical coordinates
 
-The equivalent of polar coordinates in dimension $3$ are spherical coordinates. A point $(x,y,z) \in \R^3 \smallsetminus \{\zero\}$ can
-be represented in spherical coordinates by
+Consider a point
+$$
+\pp := (x,y,z) \in \R^3 \smallsetminus \{\zero\} \,.
+$$ 
+The point $\pp$ is represented in **spherical coordinates** by
 \begin{align*}
-x & = \rho \cos (\theta)  \cos(\phi)  \\
-y & = \rho \cos (\theta)  \sin(\phi) \\
-z & = \rho \sin (\theta) 
+x & = \rho \cos(\theta) \cos (\fi)    \\
+y & = \rho \sin(\theta) \cos (\fi)   \\
+z & = \rho \sin (\fi) 
 \end{align*}
 where 
 $$
-\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \f \in [0,2\pi] \,, \quad \theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
+\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \theta \in [-\pi,\pi] \,, \quad \fi \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
 $$
-with the angles $\f$ and $\theta$ as in Figure @fig-spherical-coordinates.
+with the angles $\theta$ and $\fi$ as in @fig-spherical-coordinates. 
 
-> It is clear that $z = \rho \sin(\theta)$, by basic trigonometry. To compute $x$ and $y$, we note
-that the segment joining $\zero$ to $\pp$ has length 
+> It is clear that $z = \rho \sin(\fi)$. To compute $x$ and $y$, we note
+that the segment joining $\zero$ to $\mathbf{q}$ has length 
 $$
-L = \rho \cos \theta \,.
+L = \rho \cos(\fi) \,.
 $$
 Therefore we get
 \begin{align*}
-x & = L \cos (\phi) = \rho \cos (\theta)  \cos(\phi) \\
-y & = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi) 
+x & = L \cos (\theta) = \rho \cos(\theta) \cos (\fi)   \\
+y & = L \sin (\theta) = \rho \sin(\theta) \cos (\fi)  
 \end{align*}
 concluding.
 
@@ -1614,15 +1692,65 @@ Consider again the unit sphere in $\R^3$
 $$
 \sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
 $$
-We want to give an alternative atlas for $\sphere^2$ based on spherical coordinates. To this end, define
+Spherical coordinates allow us to define an alternative atlas on $\sphere^2$.
+In details, define the set
 $$
-U := \left\{ (\theta,\phi)  \in \R^2 \divider -\frac{\pi}{2} < \theta < \frac{\pi}{2} \,, \,\, 
-0< \phi < 2 \pi    \right\}
+U := \left\{ (\theta,\fi)  \in \R^2 \divider \theta \in ( -\pi,\pi), \, \fi \in \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,,
 $$
-and $\sss \colon U \to \R^3$ by
+and the map $\sss \colon U \to \R^3$ by
 $$
-\sss( \theta , \phi ) :=  ( \cos(\theta) \cos(\phi), \cos(\theta) \sin(\phi), \sin (\theta)  ) \,.
+\sss( \theta , \fi ) :=  ( \cos(\theta) \cos(\fi) , \sin(\theta) \cos(\fi) , \sin (\fi)  ) \,.
 $$
+In order to name some of the parallels and meridians on $\sphere^2$, let us identify $\sphere^2$ with the Earth. We make the following choices:
+
+- The *Equator Line* corresponds to the plane $\{z = 0 \}$, where $\fi = 0$. Therefore, we have the parametrization:
+$$
+\mbox{Equator Line } =  \left\{ (\cos(\theta) , \sin(\theta) , 0 ) \,, \,\, \theta \in   \left(  - \pi, \pi \right)  \right\} \,.
+$$
+
+- The *Greenwich meridian* corresponds to the angle $\theta = 0$. Hence:
+$$
+\mbox{Greenwich } = \left\{ (\cos(\fi) , 0 , \sin (\fi)) \,, \,\, \fi \in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
+$$
+
+- The *Date Line* is the meridian opposite to the Greenwich one. This corresponds to an angle $\theta = \pi$, and is thus parametrized by:
+$$
+\mbox{Date Line } = \left\{ (- \cos(\fi) , 0 , \sin (\fi)) \,, \,\, \fi \in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
+$$
+
+- The *North Pole* and *South Pole* have coordinates
+$$
+N = (0,0,1) \,, \quad S = (0,0,-1) \,. 
+$$
+
+
+Notice that the angles 
+$$
+\theta = \pi \,, \quad \fi = \pm \frac{\pi}{2}  
+$$
+are excluded in the definition of $U$. Therefore the parametrization $\sss$ misses the Date Line, as well as the North and South Poles, see the left picture in @fig-chart-sphere. In formulas:
+\begin{align*}
+\sss(U) & = \sphere^2 \smallsetminus \{\mbox{Date Line, North Pole, South Pole}\} \\
+        & = \sphere^2 \smallsetminus \{ (x,0,z) \in \R^3 \, \colon \, x \leq 0 \} \,.
+\end{align*}
+Since $\sss(U) \neq \sphere^2$, the chart $\sss$ does not form an atlas. We need a second chart. An option is to define $\widetilde{\sss} \colon U \to \R^3$ by
+$$
+\widetilde{\sss} := ( - \cos (\theta)\cos(\fi) , -\sin(\fi) , - \sin(\theta) \cos (\fi) ) \,.
+$$
+Notice that $\widetilde{\sss}$ is obtained by rotating $\sss$ by $\pi$ about the $z$-axis, and by $\pi/2$ about the $y$-axis, see the right picture in @fig-chart-sphere. It is easy to see that
+$$
+\widetilde{\sss} (U) = \sphere^2 \smallsetminus \{ (x,y,0) \in \R^3 \divider x \leq 0  \} \,,
+$$
+it is immediate to see that
+$$
+\sphere^2 = \sss(U) \cup \widetilde{\sss}(U) \,.
+$$
+Hence
+$$
+\mathcal{A} := \{   \sss , \widetilde{\sss} \} 
+$$
+is a regular atlas for $\sphere^2$.
+
 We have:
 
 - $\sss$ is smooth.
@@ -1662,26 +1790,7 @@ $$
 showing that $\sss_{\theta}$ and $\sss_{\phi}$ are linearly independent, and
 $\sss$ is regular.
 
-Since $\sss(U) \neq \sphere^2$, the chart $\sss$ does not form an atlas. We need a second chart. An option is to define $\widetilde{\sss} \colon U \to \R^3$ by
-$$
-\widetilde{\sss} := ( - \cos(\theta) \cos (\phi), -\sin(\theta) , - \cos (\theta) \sin(\phi)) \,.
-$$
-Notice that $\widetilde{\sss}$ is obtained by rotating $\sss$ by $\pi$ about the $z$-axis and by $\pi/2$ about the $y$-axis, as seen in the right picture in @fig-chart-sphere. It is an exercise to check that $\widetilde{\sss}$ is a regular chart. 
-
-Since we have
-$$
-\widetilde{\sss} (U) = \sphere^2 \smallsetminus \{ (x,y,0) \in \R^3 \divider x \leq 0  \} \,,
-$$
-it is immediate to see that
-$$
-\sphere^2 = \sss(U) \cup \widetilde{\sss}(U) \,.
-$$
-Hence
-$$
-\mathcal{A} := \{   \sss , \widetilde{\sss} \} 
-$$
-is a regular atlas for $\sphere^2$.
-
+It is an exercise to check that $\widetilde{\sss}$ is a regular chart. 
 
 :::
 

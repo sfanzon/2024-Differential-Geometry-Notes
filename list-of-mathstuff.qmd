@@ -783,7 +783,7 @@
 
  [**Example 4.56**](#unit-sphere): Unit sphere\Pageref{unit-sphere}
 
- [**Remark 4.57**](#spherical-coordinates): Spherical coordinates\Pageref{spherical-coordinates}
+ [**Definition 4.57**](#spherical-coordinates): Spherical coordinates\Pageref{spherical-coordinates}
 
  [**Example 4.58**](#unit-sphere-in-spherical-coordinates): Unit sphere in spherical coordinates\Pageref{unit-sphere-in-spherical-coordinates}
 

@@ -769,11 +769,11 @@
 
  [**Definition 4.50**](#regular-chart): Regular Chart\Pageref{regular-chart}
 
- [**Proposition 4.51**](#Proposition-4.51)\Pageref{Proposition-4.51}
+ [**Definition 4.51**](#regular-surface): Regular surface\Pageref{regular-surface}
+
+ [**Proposition 4.52**](#Proposition-4.52)\Pageref{Proposition-4.52}
 
  [**Proof**](#Proof*-4.6)\Pageref{Proof*-4.6}
-
- [**Definition 4.52**](#regular-surface): Regular surface\Pageref{regular-surface}
 
  [**Example 4.53**](#d-plane-in-mathbbr3-1): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-1}
 
@@ -789,123 +789,123 @@
 
  [**Example 4.59**](#Example-4.59)\Pageref{Example-4.59}
 
- [**Definition 4.60**](#level-surface): Level surface\Pageref{level-surface}
+ [**Definition 4.60**](#Definition-4.60)\Pageref{Definition-4.60}
 
- [**Theorem 4.61**](#theorem-level-surface)\Pageref{theorem-level-surface}
+ [**Remark 4.61**](#chain-rule): Chain rule\Pageref{chain-rule}
 
- [**Example 4.62**](#Example-4.62)\Pageref{Example-4.62}
-
- [**Example 4.63**](#circular-cone-1): Circular cone\Pageref{circular-cone-1}
-
- [**Definition 4.64**](#Definition-4.64)\Pageref{Definition-4.64}
-
- [**Remark 4.65**](#chain-rule): Chain rule\Pageref{chain-rule}
-
- [**Proposition 4.66**](#proposition-transition-maps)\Pageref{proposition-transition-maps}
+ [**Proposition 4.62**](#proposition-transition-maps)\Pageref{proposition-transition-maps}
 
  [**Proof**](#Proof*-4.7)\Pageref{Proof*-4.7}
 
- [**Definition 4.67**](#transition-map): Transition map\Pageref{transition-map}
+ [**Definition 4.63**](#transition-map): Transition map\Pageref{transition-map}
 
- [**Theorem 4.68**](#theorem-transition-map)\Pageref{theorem-transition-map}
+ [**Theorem 4.64**](#theorem-transition-map)\Pageref{theorem-transition-map}
 
- [**Proposition 4.69**](#proposition-transition-map)\Pageref{proposition-transition-map}
+ [**Proposition 4.65**](#proposition-transition-map)\Pageref{proposition-transition-map}
 
  [**Proof**](#Proof*-4.8)\Pageref{Proof*-4.8}
 
  [**Important**](#Important*-4.9)\Pageref{Important*-4.9}
 
- [**Definition 4.70**](#definition-smooth-map-surface)\Pageref{definition-smooth-map-surface}
+ [**Definition 4.66**](#definition-smooth-map-surface)\Pageref{definition-smooth-map-surface}
 
- [**Remark 4.71**](#Remark-4.71)\Pageref{Remark-4.71}
+ [**Remark 4.67**](#Remark-4.67)\Pageref{Remark-4.67}
 
- [**Proposition 4.72**](#Proposition-4.72)\Pageref{Proposition-4.72}
+ [**Proposition 4.68**](#Proposition-4.68)\Pageref{Proposition-4.68}
 
  [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
 
- [**Definition 4.73**](#Definition-4.73)\Pageref{Definition-4.73}
+ [**Definition 4.69**](#Definition-4.69)\Pageref{Definition-4.69}
 
- [**Proposition 4.74**](#proposition-f-chart)\Pageref{proposition-f-chart}
+ [**Proposition 4.70**](#proposition-f-chart)\Pageref{proposition-f-chart}
 
  [**Proof**](#Proof*-4.11)\Pageref{Proof*-4.11}
 
- [**Definition 4.75**](#local-diffeomorphism-1): Local diffeomorphism\Pageref{local-diffeomorphism-1}
+ [**Definition 4.71**](#local-diffeomorphism-1): Local diffeomorphism\Pageref{local-diffeomorphism-1}
 
- [**Assumption 4.76**](#Assumption-4.76)\Pageref{Assumption-4.76}
+ [**Assumption 4.72**](#Assumption-4.72)\Pageref{Assumption-4.72}
 
- [**Definition 4.77**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
+ [**Definition 4.73**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
 
- [**Example 4.78**](#example-tangent-open-set)\Pageref{example-tangent-open-set}
+ [**Example 4.74**](#example-tangent-open-set)\Pageref{example-tangent-open-set}
 
- [**Lemma 4.79**](#lemma-curve-S)\Pageref{lemma-curve-S}
+ [**Lemma 4.75**](#lemma-curve-S)\Pageref{lemma-curve-S}
 
  [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
 
- [**Theorem 4.80**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
+ [**Theorem 4.76**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
 
  [**Proof**](#Proof*-4.13)\Pageref{Proof*-4.13}
 
- [**Definition 4.81**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
+ [**Definition 4.77**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
 
- [**Remark 4.82**](#remark-affine-plane)\Pageref{remark-affine-plane}
+ [**Remark 4.78**](#remark-affine-plane)\Pageref{remark-affine-plane}
 
- [**Proposition 4.83**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+ [**Proposition 4.79**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
 
  [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
 
- [**Example 4.84**](#Example-4.84)\Pageref{Example-4.84}
+ [**Example 4.80**](#Example-4.80)\Pageref{Example-4.80}
 
- [**Remark 4.85**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+ [**Remark 4.81**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
 
- [**Question 4.86**](#Question-4.86)\Pageref{Question-4.86}
+ [**Question 4.82**](#Question-4.82)\Pageref{Question-4.82}
 
- [**Remark 4.87**](#remark-normal-chart)\Pageref{remark-normal-chart}
+ [**Remark 4.83**](#remark-normal-chart)\Pageref{remark-normal-chart}
 
- [**Definition 4.88**](#standard-unit-normal-of-a-chart): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart}
+ [**Definition 4.84**](#standard-unit-normal-of-a-chart): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart}
 
- [**Definition 4.89**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
+ [**Definition 4.85**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
 
- [**Example 4.90**](#Example-4.90)\Pageref{Example-4.90}
+ [**Example 4.86**](#Example-4.86)\Pageref{Example-4.86}
 
- [**Definition 4.91**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
+ [**Definition 4.87**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
 
- [**Example 4.92**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
+ [**Example 4.88**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
 
- [**Example 4.93**](#Example-4.93)\Pageref{Example-4.93}
+ [**Example 4.89**](#Example-4.89)\Pageref{Example-4.89}
 
  [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
 
- [**Remark 4.94**](#Remark-4.94)\Pageref{Remark-4.94}
+ [**Remark 4.90**](#Remark-4.90)\Pageref{Remark-4.90}
 
- [**Definition 4.95**](#unit-normal-of-a-surface): Unit normal of a surface\Pageref{unit-normal-of-a-surface}
+ [**Definition 4.91**](#unit-normal-of-a-surface): Unit normal of a surface\Pageref{unit-normal-of-a-surface}
 
  [**Warning**](#Warning*-4.16)\Pageref{Warning*-4.16}
 
- [**Proposition 4.96**](#Proposition-4.96)\Pageref{Proposition-4.96}
+ [**Proposition 4.92**](#Proposition-4.92)\Pageref{Proposition-4.92}
 
- [**Definition 4.97**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
+ [**Definition 4.93**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
 
  [**Notation**](#Notation*-4.17)\Pageref{Notation*-4.17}
 
- [**Lemma 4.98**](#lemma-derivative)\Pageref{lemma-derivative}
+ [**Lemma 4.94**](#lemma-derivative)\Pageref{lemma-derivative}
 
  [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
 
- [**Definition 4.99**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
+ [**Definition 4.95**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
 
- [**Remark 4.100**](#computing-d_mathbfp-f): Computing $d_{\mathbf{p}} f$\Pageref{computing-d_mathbfp-f}
+ [**Remark 4.96**](#computing-d_mathbfp-f): Computing $d_{\mathbf{p}} f$\Pageref{computing-d_mathbfp-f}
 
- [**Example 4.101**](#Example-4.101)\Pageref{Example-4.101}
+ [**Example 4.97**](#Example-4.97)\Pageref{Example-4.97}
 
- [**Proposition 4.102**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
+ [**Proposition 4.98**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
 
  [**Proof**](#Proof*-4.19)\Pageref{Proof*-4.19}
 
- [**Example 4.103**](#computing-the-matrix-of-d_mathbfpf): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf}
+ [**Example 4.99**](#computing-the-matrix-of-d_mathbfpf): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf}
 
- [**Proposition 4.104**](#Proposition-4.104)\Pageref{Proposition-4.104}
+ [**Proposition 4.100**](#Proposition-4.100)\Pageref{Proposition-4.100}
 
- [**Theorem 4.105**](#Theorem-4.105)\Pageref{Theorem-4.105}
+ [**Theorem 4.101**](#Theorem-4.101)\Pageref{Theorem-4.101}
+
+ [**Definition 4.102**](#level-surface): Level surface\Pageref{level-surface}
+
+ [**Theorem 4.103**](#theorem-level-surface)\Pageref{theorem-level-surface}
+
+ [**Example 4.104**](#Example-4.104)\Pageref{Example-4.104}
+
+ [**Example 4.105**](#circular-cone-1): Circular cone\Pageref{circular-cone-1}
 
  [**Definition 4.106**](#level-surface-1): Level surface\Pageref{level-surface-1}
 

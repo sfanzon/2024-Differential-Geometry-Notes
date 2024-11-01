@@ -1347,9 +1347,7 @@ $$
 $$
 Regularity allowed us to reparametrize by arc-length and define the Frenet frame, curvature and torsion. We then proved that curvature and torsion completely characterize $\g$, up to rigid motions.
 
-We want to do something similar for surfaces: We look for a condition that eventually will allow us to define tangent vectors to the surface:
-
-
+We want to do something similar for surfaces: We look for a condition that eventually will allow us to define the tangent plane to the surface. Specifically, we require that the partial derivatives $\sss_u$ and $\sss_v$ of a chart $\sss$ are linearly independent. In this case $\sss$ is called a regular chart. In details: 
 
 ::: Definition
 ### Regular Chart
@@ -1366,9 +1364,25 @@ $$
 are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
 :::
 
+We are now ready to define regular surfaces.
 
-The following gives more insight into the regularity condition.
 
+::: Definition
+### Regular surface
+
+Let $\SSS$ be a surface. Let 
+$$
+\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
+$$
+be an atlas for $\SSS$. We say that:
+
+- $\mathcal{A}$ is a **regular atlas** if 
+the map $\sss_i$ is a regular chart for all $i \in I$. 
+- $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
+
+:::
+
+Before making some examples, we highlight give some equivalent methods for checking the regularity condition.
 
 ::: Proposition
 
@@ -1431,26 +1445,6 @@ By standard linear algebra results, $J\sss$ has rank 2 if and only if $d\sss$ is
 
 A $3 \times 2$ matrix has rank 2 if and only if its columns are linearly independent. Since the columns of $J\sss$ are $\sss_u$ and $\sss_v$, we 
 conclude that $\sss_u$ and $\sss_v$ are linearly independent.
-
-:::
-
-
-
-We are now ready to define regular surfaces.
-
-
-::: Definition
-### Regular surface
-
-Let $\SSS$ be a surface. Let 
-$$
-\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
-$$
-be an atlas for $\SSS$. We say that:
-
-- $\mathcal{A}$ is a **regular atlas** if 
-the map $\sss_i$ is a regular chart for all $i \in I$. 
-- $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
 
 :::
 
@@ -1701,7 +1695,7 @@ and the map $\sss \colon U \to \R^3$ by
 $$
 \sss( \theta , \fi ) :=  ( \cos(\theta) \cos(\fi) , \sin(\theta) \cos(\fi) , \sin (\fi)  ) \,.
 $$
-In order to name some of the parallels and meridians on $\sphere^2$, let us identify $\sphere^2$ with the Earth. We make the following choices:
+In order to name some of the parallels and meridians on $\sphere^2$, let us identify $\sphere^2$ with the Earth. With reference to @fig-earth, we make the following choices:
 
 - The *Equator Line* corresponds to the plane $\{z = 0 \}$, where $\fi = 0$. Therefore, we have the parametrization:
 $$
@@ -1713,7 +1707,7 @@ $$
 \mbox{Greenwich } = \left\{ (\cos(\fi) , 0 , \sin (\fi)) \,, \,\, \fi \in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
 $$
 
-- The *Date Line* is the meridian opposite to the Greenwich one. This corresponds to an angle $\theta = \pi$, and is thus parametrized by:
+- The *Date Line* is the meridian opposite to the Greenwich one. This corresponds to $\theta = \pi$, and is parametrized by:
 $$
 \mbox{Date Line } = \left\{ (- \cos(\fi) , 0 , \sin (\fi)) \,, \,\, \fi \in   \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,.
 $$
@@ -1737,63 +1731,68 @@ Since $\sss(U) \neq \sphere^2$, the chart $\sss$ does not form an atlas. We need
 $$
 \widetilde{\sss} := ( - \cos (\theta)\cos(\fi) , -\sin(\fi) , - \sin(\theta) \cos (\fi) ) \,.
 $$
-Notice that $\widetilde{\sss}$ is obtained by rotating $\sss$ by $\pi$ about the $z$-axis, and by $\pi/2$ about the $y$-axis, see the right picture in @fig-chart-sphere. It is easy to see that
+Notice that $\widetilde{\sss}$ is obtained by rotating $\sss$ by $\pi$ about the $z$-axis, and by $\pi/2$ about the $y$-axis, see the right picture in @fig-chart-sphere. Thus,
 $$
-\widetilde{\sss} (U) = \sphere^2 \smallsetminus \{ (x,y,0) \in \R^3 \divider x \leq 0  \} \,,
+\widetilde{\sss} (U) = \sphere^2 \smallsetminus \{ (x,y,0) \in \R^3 \divider x \geq 0   \} \,.
 $$
-it is immediate to see that
+In particular, we have shown that
 $$
 \sphere^2 = \sss(U) \cup \widetilde{\sss}(U) \,.
 $$
-Hence
+It is left as an exercise to check that
 $$
 \mathcal{A} := \{   \sss , \widetilde{\sss} \} 
 $$
 is a regular atlas for $\sphere^2$.
 
-We have:
-
+> *Solution.* Check that $\sss$ and $\widetilde{\sss}$ are charts:
+>
 - $\sss$ is smooth.
-
 - $U$ is open in $\R^2$.
-
 - Moreover
 $$
-\sss (U) = \sphere^2 \smallsetminus \{ (x,0,z) \in \R^3 \divider x \geq 0  \} \,,
+\sss (U) = \sphere^2 \smallsetminus \{ (x,0,z) \in \R^3 \divider x \leq 0  \} \,.
 $$
-as seen also in the left picture in @fig-chart-sphere. 
-
-- The set $\sss(U)$ is evidently open in $\sphere^2$. 
-
-- It is easy to check that $\sss$ is invertible, with continuous inverse. 
-
-- Thus $\sss$ is a homeomorphism from $U$ into $\sss(U)$.
-
-Let us check that $\sss$ is a regular chart:
+This is clearly an open set in $\sphere^2$. 
+- The spherical coordinates on the sphere are invertible. Therefore $\sss$ is invertible, with continuous inverse. 
+- Thus, $\sss$ is a homeomorphism from $U$ into $\sss(U)$.
+- This shows $\sss$ is a chart of $\sphere^2$.
+- Since $\widetilde{\sss}$ is obtained from $\sss$ by composing two rotations, we conclude that also $\widetilde{\sss}$ is a chart.
+>
+Show that $\sss$ is a regular chart:
 \begin{align*}
-\sss_{\theta} & = (-\sin(\theta) \cos(\phi), -\sin(\theta) \sin(\phi), \cos(\theta) ) \\
- \sss_{\phi} & = ( - \cos(\theta) \sin(\phi), \cos(\theta) \cos(\phi), 0 )  \,.
+\sss_{\theta} & = (-\sin(\theta) \cos(\fi), \cos(\theta) \cos(\fi), 0 ) \\
+ \sss_{\fi} & = ( - \cos(\theta) \sin(\fi), -\sin(\theta) \sin(\fi), \cos(\fi) )  \,.
 \end{align*} 
-Therefore 
+Since $(\theta,\fi)\in U$, we have $\fi \in ( -\pi/2, \pi/2 )$. Therefore, the last component of $\sss_\fi$ is non-zero, i.e.,
 $$
-\sss_{\theta} \times \sss_{\phi} = 
-( - \cos^2(\theta) \cos(\phi), - \cos^2(\theta) \sin(\phi), - \sin(\theta) \cos ( \theta ) ) \,,
+\cos(\fi) \neq 0  \,, \quad \forall \, \fi \in \left( -\frac{\pi}{2},\frac{\pi}{2}  \right) \,.
+$$
+Since the last component of $\sss_\theta$ is $0$, we conclude that $\sss_\theta$ and $\sss_{\fi}$ are linearly independent for all $(\theta,\fi) \in U$. Therefore $\sss$ is regular. Alternatively, we could have computed:
+$$
+\sss_{\theta} \times \sss_{\fi} = 
+( \cos(\theta) \cos^2(\fi), \sin(\theta) \cos^2(\fi), \cos(\fi)\sin(\fi) ) \,,
 $$
 from which
 $$
-\norm{ \sss_{\theta} \times \sss_{\phi} } = |\cos (\theta)| \, .
+\norm{ \sss_{\theta} \times \sss_{\fi} } = |\cos (\fi)| \, .
 $$
-Since $(\theta,\phi)\in U$, we have $\theta \in ( -\pi/2, \pi/2 )$, and so
+Since $(\theta,\fi)\in U$, we have $\fi \in ( -\pi/2, \pi/2 )$, and so
 $$
-\norm{ \sss_{\theta} \times \sss_{\phi} } = |\cos (\theta)| \neq 0 \,,
+\norm{ \sss_{\theta} \times \sss_{\fi} } = \cos (\fi)  \neq 0 \,.
 $$
-showing that $\sss_{\theta}$ and $\sss_{\phi}$ are linearly independent, and
-$\sss$ is regular.
-
-It is an exercise to check that $\widetilde{\sss}$ is a regular chart. 
+Thus $\sss_{\theta}$ and $\sss_{\fi}$ are linearly independent, and $\sss$ is regular. 
+>
+Since $\widetilde{\sss}$ is obtained from $\sss$ by applying two rotations, it follows that $\widetilde{\sss}$ is regular. Therefore 
+$$
+\mathcal{A} = \{ \sss, \widetilde{\sss}\}
+$$ 
+is a regular atlas for $\sphere^2$.
 
 :::
 
+
+![Equator Line, Greenwich Meridian, Date Line, North and South Poles on the sphere.](/images/earth.png){#fig-earth width=80%}
 
 
 
@@ -1861,7 +1860,6 @@ ax2.set_zlabel('z', labelpad=10)
 # Showing the plot
 plt.show()
 ```
-
 
 
 
@@ -1952,175 +1950,10 @@ plt.show()
 
 
 
-
-## Level surfaces
-
-
-
-::: Definition
-### Level surface
-
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
-$$
-\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
-$$
-
-
-:::
-
-
-We now give a result concerning regularity of level surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be
-found in Proposition 3.1.25 of [@abate-tovena]. We decide to omit it.
-
-
-::: {.Theorem #theorem-level-surface}
-
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level surface
-$$
-\SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
-$$
-Suppose that 
-$$
-\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
-$$
-Then $\SSS_f$ is a regular surface.
-
-:::
-
-
-
-::: Example
-
-We want to determine if the set defined by the equation
-$$
-\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}  
-$$
-is a regular surface. Note that $\SSS$ is a unit cylinder: From Example \ref{example-unit-cylinder} we already know that $\SSS$ is a regular surface.
-
-Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
-$$
-V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
-$$
-Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
-$$
-f(x,y,z) := x^2 + y^2 -1 \,.
-$$
-We have
-$$
-\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
-\forall \, (x,y,z) \in V \,.
-$$
-Since 
-$$
-\SSS = \SSS_f \,,
-$$
-by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface.
-
-:::
-
-
-
-
-::: Example
-### Circular cone
-
-We saw that the circular cone
-$$
-\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
-$$
-is not a surface. However the positive sheet 
-$$
-\SSS^+ := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
-$$
-is a regular surface, see @fig-positive-cone Indeed, define the open set 
-$$
-V := \{ (x,y,z) \in \R^3 \divider z > 0 \} 
-$$
-and  the function $f \colon V \to \R$ by
-$$
-f(x,y,z) := x^2 + y^2 - z^2 \,.
-$$
-We have
-$$
-\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad 
-\forall \, (x,y,z) \in V \,.
-$$
-Since 
-$$
-\SSS^+ = \SSS_f \,,
-$$
-by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface. 
-
-As a side note, a regular atlas for $\SSS^+$ is given by $\mathcal{A} = \{\sss\}$ where $\sss \colon \R^2 \to \R^3$ is defined by
-$$
-\sss (u,v) := (u,v,\sqrt{u^2 + v^2}) \,.
-$$
-
-:::
-
-
-
-```{python}
-#| echo: false
-#| fig-cap: "Positive sheet of circular cone."
-#| label: fig-positive-cone
-
-# Importing numpy, matplotlib and mplot3d
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-
-# Generates figure object of size 4 x 4
-fig = plt.figure(figsize = (4,4))
-
-# Generates 3D axes
-ax = plt.axes(projection = '3d')
-
-# Shows axes grid
-ax.grid(True)
-
-# Generates coordinates u and v by dividing
-# the intervals (0,1) and (0,2pi) in 100 parts
-u = np.linspace(-1, 1, 100)
-v = np.linspace(-1, 1, 100)
-
-# Generates grid [U,V] from the coordinates u, v
-U, V = np.meshgrid(u, v)
-
-# Computes the surface on grid [U,V]
-x = U 
-y = V
-z = np.sqrt( U ** 2 + V ** 2)
-
-# Plots the cone
-ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
-
-
-
-
-# Setting axes labels
-ax.set_xlabel('x', labelpad=10)
-ax.set_ylabel('y', labelpad=10)
-ax.set_zlabel('z', labelpad=10)
-
-# Setting viewing angle
-ax.view_init(elev = 26, azim = 35)
-
-# Showing the plot
-plt.show()
-```
-
-
-
-
-
-
 ## Reparametrizations
 
 
-We have defined the reparametrization of curves. In a similar way, one can reparametrize surface charts.
+We have already considered reparametrizations when we studied curves. In a similar way, one can reparametrize surface charts.
 
 
 ::: Definition
@@ -2151,7 +1984,7 @@ We call $\Phi$ a **reparametrization map**.
 ![Schematic illustration of surface chart $\sss$ and reparametrization $\widetilde{\sss}$.](/images/surface_reparametrization.png){width=80%}
 
 
-We will show that reparametrizations of regular charts are regular. To prove this, first we need to recall the chain rule for multivariable functions.
+We will show that reparametrizations of regular charts are regular. To prove this, first we need to recall the chain rule for vector valued functions of several variables.
 
 ::: Remark
 ### Chain rule
@@ -2322,14 +2155,12 @@ from which we conclude (@eq-change-chart-1).
 
 
 
-
 ## Transition maps
 
 
 
-Consider the situation in which two regular charts have overlapping image.  
-It is natural to ask wether these maps are reparametrizations of each
-other on the overlapping region, see @fig-transition-maps. If such reparametrization exists, it is called a transition map.
+Consider the situation in which two regular charts overlap on a surface. It is natural to ask whether these charts are reparametrizations of each
+other on the overlapping region, see @fig-transition-maps. If such reparametrization exists, it is called a *transition map*.
 
 
 
@@ -3906,10 +3737,174 @@ The proof is based on the Inverse Function Theorem, see Proposition 4.4.6 in
 
 ## Examples of Surfaces
 
+In this section we discuss a few families of surfaces:
+
+1. Level surfaces
+2. Quadrics
+3. Rules surfaces
+4. Surfaces of revolution
+
+
 
 ### Level surfaces
 
-We have already seen level surfaces. Let us recall the defintion.
+Level surfaces are described as the set of zeros of a scalar function.
+
+::: Definition
+### Level surface
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
+$$
+\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+
+
+:::
+
+
+We now give a result concerning regularity of level surfaces. The proof, rather technical, is based on the Implicit Function Theorem. It can be
+found in Proposition 3.1.25 of [@abate-tovena]. We decide to omit it.
+
+
+::: {.Theorem #theorem-level-surface}
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level surface
+$$
+\SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Then $\SSS_f$ is a regular surface.
+
+:::
+
+
+
+::: Example
+
+We want to determine if the set defined by the equation
+$$
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}  
+$$
+is a regular surface. Note that $\SSS$ is a unit cylinder: From Example \ref{example-unit-cylinder} we already know that $\SSS$ is a regular surface.
+
+Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
+$$
+V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+$$
+Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 -1 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS = \SSS_f \,,
+$$
+by Theorem \ref{theorem-level-surface} we conclude that 
+$\SSS$ is a regular surface.
+
+:::
+
+
+
+
+::: Example
+### Circular cone
+
+We saw that the circular cone
+$$
+\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
+$$
+is not a surface. However the positive sheet 
+$$
+\SSS^+ := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
+$$
+is a regular surface, see @fig-positive-cone Indeed, define the open set 
+$$
+V := \{ (x,y,z) \in \R^3 \divider z > 0 \} 
+$$
+and  the function $f \colon V \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 - z^2 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS^+ = \SSS_f \,,
+$$
+by Theorem \ref{theorem-level-surface} we conclude that 
+$\SSS$ is a regular surface. 
+
+As a side note, a regular atlas for $\SSS^+$ is given by $\mathcal{A} = \{\sss\}$ where $\sss \colon \R^2 \to \R^3$ is defined by
+$$
+\sss (u,v) := (u,v,\sqrt{u^2 + v^2}) \,.
+$$
+
+:::
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Positive sheet of circular cone."
+#| label: fig-positive-cone
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(-1, 1, 100)
+v = np.linspace(-1, 1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = U 
+y = V
+z = np.sqrt( U ** 2 + V ** 2)
+
+# Plots the cone
+ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+
+
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 26, azim = 35)
+
+# Showing the plot
+plt.show()
+```
+
 
 ::: Definition
 ### Level surface

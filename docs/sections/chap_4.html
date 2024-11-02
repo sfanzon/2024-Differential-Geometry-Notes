@@ -92,55 +92,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Problem {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
 }
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Proposition {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -152,10 +112,6 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
@@ -163,6 +119,50 @@ div.csl-indent {
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -1694,38 +1694,20 @@ V := {\pmb{\sigma}}^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{{
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 65</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. The transition maps between regular charts are diffeomorphisms.<p></p>
 </div></details>
 </div>
-<p>We can now use Theorem <a href="chap_4.html#theorem-transition-map">65</a> to show that transition maps are reparametrizations.</p>
+<p>The immediate consequence of Theorem <a href="chap_4.html#theorem-transition-map">65</a> is that transition maps are reparametrizations. To fix notations, let us state this fact precisely.</p>
 <div id="proposition-transition-map" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 66</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
 {\pmb{\sigma}}\colon U \to \mathcal{S}\,, \quad
 \widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to  \mathcal{S}
 \]</span> be regular charts. Suppose the images of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> overlap, that is, <span class="math display">\[
-{\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
-\]</span> Then there exist open sets <span class="math display">\[
-V \subseteq U \,, \quad  \widetilde{V} \subseteq \widetilde{U} \,,
-\]</span> and a diffeomorphism <span class="math display">\[
-\Phi \colon \widetilde{V} \to V
-\]</span> such that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}}\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}|_{V}\)</span>, that is, <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} = ({\pmb{\sigma}}|_{V}) \circ \Phi \,.
+I := {\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
+\]</span> Define the open sets <span class="math display">\[
+V := {\pmb{\sigma}}^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{{\pmb{\sigma}}}^{-1}(I) \subseteq \widetilde{U} \,,
+\]</span> and the transition map <span class="math display">\[
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := {\pmb{\sigma}}^{-1}\circ \widetilde{{\pmb{\sigma}}}\,.
+\]</span> Then <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are reparametrization of each other, with reparametrization map given by <span class="math inline">\(\Phi\)</span>, that is, <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}= {\pmb{\sigma}}\circ \Phi \,, \qquad {\pmb{\sigma}}= \widetilde{{\pmb{\sigma}}}\circ \Phi^{-1} \,.
 \]</span><p></p>
-</div></details>
-</div>
-<div id="Proof*-7" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define <span class="math display">\[
-I:={\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
-\]</span> Note that this set is open in <span class="math inline">\(\mathcal{S}\)</span>, being intersection of open sets. Set <span class="math display">\[
-V := {\pmb{\sigma}}^{-1} (  I  ) \,, \quad
-\widetilde{V} := \widetilde{{\pmb{\sigma}}}^{-1} (   I   ) \,.
-\]</span> The sets <span class="math inline">\(V\)</span> and <span class="math inline">\(\widetilde{V}\)</span> are open, since <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are homeomorphisms, and hence are continuous. By construction we have <span class="math display">\[
-{\pmb{\sigma}}(V) = \widetilde{{\pmb{\sigma}}} (\widetilde{V}) = I \,.
-\]</span> Therefore they are well defined the restrictions <span class="math display">\[
-{\pmb{\sigma}}|_{V} \colon V \to I \,, \quad
-\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
-\]</span> which are homeomorphisms. Consider the transition map <span class="math display">\[
-\Phi \colon \widetilde{V} \to V \,, \quad \Phi := {\pmb{\sigma}}^{-1} \circ \widetilde{{\pmb{\sigma}}} \,.
-\]</span> By Theorem <a href="chap_4.html#theorem-transition-map">65</a> we know that <span class="math inline">\(\Phi\)</span> is a diffeomorphism. Hence <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} = ({\pmb{\sigma}}|_{V}) \circ \Phi \,,
-\]</span> with <span class="math inline">\(\Phi\)</span> diffeomorphism, showing that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}}\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}|_{V}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="example-sphere-reparametrization" class="Example" title="Reparametrization of \mathbb{S}^2">
@@ -1733,7 +1715,7 @@ V := {\pmb{\sigma}}^{-1} (  I  ) \,, \quad
 <ol type="1">
 <li><p>Spherical coordinates: The sphere, excluding the Date Line and the Poles, is charted by <span class="math display">\[
 {\pmb{\sigma}}(\theta,\varphi) =
-( \cos(\theta) \cos(\phi), \sin(\theta) \cos(\varphi), \sin(\varphi) ) \,,
+( \cos(\theta) \cos(\varphi), \sin(\theta) \cos(\varphi), \sin(\varphi) ) \,,
 \]</span> defined over the set <span class="math display">\[
 U = \left\{ (\theta,\varphi) \in \mathbb{R}^2 \, \colon \,    
 \theta \in (-\pi,\pi) \,, \,\, \varphi\in \left( -\frac{\pi}{2},\frac{\pi}{2}  \right) \right\} \,.
@@ -1752,116 +1734,124 @@ V := {\pmb{\sigma}}^{-1} (I) \,, \quad \widetilde{V} := \widetilde{{\pmb{\sigma}
 \Phi \colon \widetilde{V} \to V \,, \quad
 \Phi:= {\pmb{\sigma}}^{-1} \circ \widetilde{{\pmb{\sigma}}} \,.
 \]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are regular, Proposition <a href="chap_4.html#proposition-transition-map">66</a> guarantees that <span class="math inline">\(\Phi\)</span> is a reparametrization map. Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are reparametrization of each other, with <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} = \Phi \circ {\pmb{\sigma}}\,.
+\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,.
 \]</span> Conclusion: the two parametrizations <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> of <span class="math inline">\(\mathbb{S}^2\)</span> are interchangeable!</p>
 </div></details>
 </div>
-<div id="Important*-8" class="Important">
+<div id="Important*-7" class="Important">
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>Proposition <a href="chap_4.html#proposition-transition-map">66</a> demonstrates that there is no single preferred way to parametrize a surface: When two regular charts overlap, they are reparametrizations of each other in the overlapping region.<p></p>
-<p>This observation has a significant consequence: it allows us to introduce new definitions using charts, as long as we ensure that the definition is independent of reparametrization and, therefore, of the specific chart chosen.</p>
+<p>This observation has a significant consequence:</p>
+<p><em>It allows us to define a property of any regular surface by using charts, as long as we ensure that the definition is independent of reparametrization and, therefore, of the specific chart chosen.</em></p>
 </div></details>
 </div>
 </section>
 <section id="functions-between-surfaces" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="functions-between-surfaces"><span class="header-section-number">4.6</span> Functions between surfaces</h2>
-<p>We would like to define a concept of smooth function <span class="math display">\[
+<p>We aim to define the concept of a smooth function <span class="math display">\[
 f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
-\]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces. So far, we only know how to define smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>. The idea is to use surface charts to define smooth functions between surfaces.</p>
-<div id="definition-smooth-map-surface" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 68</strong></summary><div>
+\]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces. Up to this point, we only know how to define smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> to <span class="math inline">\(\mathbb{R}^m\)</span>. The idea is to use surface charts to extend this definition of smoothness to functions between surfaces, see <a href="#fig-smooth-functions" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>.</p>
+<div id="definition-smooth-map-surface" class="Definition" title="Smooth functions between surfaces">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 68: </strong>Smooth functions between surfaces</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces and let <span class="math display">\[
 f \colon \mathcal{S}_1 \to \mathcal{S}_2
 \]</span> be a map. We say that:</p>
-<ul>
-<li><p><span class="math inline">\(f\)</span> is smooth at <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> if there exist charts <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}_i\)</span> for <span class="math inline">\(i=1,2\)</span> such that <span class="math display">\[
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> is <em>smooth at <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span></em>, if there exist charts <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}_i\)</span> for <span class="math inline">\(i=1,2\)</span> such that <span class="math display">\[
 \mathbf{p}\in {\pmb{\sigma}}_1(U_1)\,, \quad f(\mathbf{p}) \in {\pmb{\sigma}}_2(U_2)
 \]</span> and <span class="math display">\[
 ({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1 )  \colon U_1 \to U_2
 \]</span> is smooth.</p></li>
-<li><p><span class="math inline">\(f\)</span> is smooth if it is smooth for each <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span>.</p></li>
-<li><p><span class="math inline">\(f\)</span> is a diffeomorphism if <span class="math inline">\(f\)</span> is smooth and invertible, with smooth inverse.</p></li>
-</ul>
+<li><p><span class="math inline">\(f\)</span> is <em>smooth</em>, if it is smooth for each <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span>.</p></li>
+</ol>
 </div></details>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/surface_smooth_map.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Sketch function <span class="math inline">\(f\)</span> smooth at <span class="math inline">\(\mathbf{p}\)</span> between the surfaces <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span>.</figcaption>
+<div id="fig-smooth-functions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-smooth-functions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/surface_smooth_map.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-smooth-functions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: The function <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> is smooth at <span class="math inline">\(\mathbf{p}\)</span>, if the vector valued function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is smooth.
+</figcaption>
 </figure>
 </div>
 <div id="Remark-69" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 69</strong></summary><div>
-<ul>
+<ol type="1">
 <li><p>Definition <a href="chap_4.html#definition-smooth-map-surface">68</a> makes sense because <span class="math inline">\({\pmb{\sigma}}_2^{-1}\)</span> exists.</p></li>
-<li><p>The map <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is only defined for <span class="math inline">\(\mathbf{x}\in U_1\)</span> such that <span class="math display">\[
+<li><p>The map <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is only defined for the points <span class="math inline">\(\mathbf{x}\in U_1\)</span> such that <span class="math display">\[
 f ( {\pmb{\sigma}}_1 (\mathbf{x}) ) \in {\pmb{\sigma}}_2 (U_2) \,.
 \]</span></p></li>
-<li><p>The function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> maps from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>, therefore differentiability is intended in the classical sense.</p></li>
-<li><p>Definition <a href="chap_4.html#definition-smooth-map-surface">68</a> does not depend on the choice of charts <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span></p>
+<li><p>The function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> maps from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>, therefore smoothness is intended in the classical sense.</p></li>
+<li><p>Definition <a href="chap_4.html#definition-smooth-map-surface">68</a> is well-posed: Smoothness of <span class="math inline">\(f\)</span> does not depend on the specific choice of charts <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span>.</p>
 <blockquote class="blockquote">
 <p>Indeed, suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}_{i} \colon \widetilde{U}_i \to {\mathcal{S}}_i\)</span> are charts such that <span class="math display">\[
 \mathbf{p}\in \widetilde{{\pmb{\sigma}}}_1( \widetilde{U}_1) \,, \quad  f(\mathbf{p}) \in \widetilde{{\pmb{\sigma}}}_2(\widetilde{U}_2) \,.
 \]</span> In particular we have <span class="math display">\[
 {\pmb{\sigma}}_i(U_i) \cap \widetilde{{\pmb{\sigma}}}_i (\widetilde{U}_i) \neq \emptyset \,.
 \]</span> As <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces, by Theorem <a href="chap_4.html#theorem-transition-map">65</a> there exist open sets <span class="math display">\[
-V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
-\]</span> and transition maps <span class="math display">\[
-\Phi_i \colon \widetilde{V}_i \to V_i
-\]</span> which are diffeomorphisms and satisfy <span class="math display">\[
+V_i \subseteq U_i \,, \qquad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
+\]</span> and reparametrization maps <span class="math display">\[
+\Phi_i \colon \widetilde{V}_i \to V_i \,, \qquad
 \widetilde{{\pmb{\sigma}}}_i = {\pmb{\sigma}}_i \circ \Phi_i \,.
 \]</span> Hence <span class="math display">\[\begin{align*}
 \widetilde{{\pmb{\sigma}}}_2^{-1} \circ f \circ \widetilde{{\pmb{\sigma}}}_1 &amp; =
 \widetilde{{\pmb{\sigma}}}_2^{-1} \circ ( {\pmb{\sigma}}_2 \circ {\pmb{\sigma}}_2^{-1} ) \circ f \circ  ( {\pmb{\sigma}}_1 \circ {\pmb{\sigma}}_1^{-1} ) \circ \widetilde{{\pmb{\sigma}}}_1  \\
 &amp; = ( \widetilde{{\pmb{\sigma}}}_2^{-1} \circ  {\pmb{\sigma}}_2 ) \circ ( {\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1 ) \circ ({\pmb{\sigma}}_1^{-1}  \circ \widetilde{{\pmb{\sigma}}}_1 )  \\
-&amp; = \Phi_2^{-1} \circ ( {\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1 )  \circ \Phi_1^{-1} \,.
-\end{align*}\]</span> Since <span class="math inline">\(\Phi_i^{-1}\)</span> and <span class="math inline">\({\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1\)</span> are smooth, we conclude that <span class="math display">\[
+&amp; = \Phi_2^{-1} \circ ( {\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1 )  \circ \Phi_1 \,.
+\end{align*}\]</span> Since <span class="math inline">\(\Phi_1\)</span>, <span class="math inline">\(\Phi_2^{-1}\)</span> and <span class="math inline">\({\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1\)</span> are smooth, we conclude that <span class="math display">\[
 \widetilde{{\pmb{\sigma}}}_2^{-1} \circ f \circ \widetilde{{\pmb{\sigma}}}_1
 \]</span> is smooth. Hence Definition <a href="chap_4.html#definition-smooth-map-surface">68</a> does not depend on the choice of charts.</p>
 </blockquote></li>
-</ul>
+</ol>
 </div></details>
 </div>
 <div id="Proposition-70" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 70</strong></summary><div>If <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> and <span class="math inline">\(g \colon \mathcal{S}_2 \to \mathcal{S}_3\)</span> are smooth maps (resp. diffeomorphisms) between surfaces, then the composition <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 70</strong></summary><div>If <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> and <span class="math inline">\(g \colon \mathcal{S}_2 \to \mathcal{S}_3\)</span> are smooth maps between surfaces, then the composition <span class="math display">\[
 (g \circ f) \colon \mathcal{S}_1 \to \mathcal{S}_3
-\]</span> is smooth (resp. a diffeomorphisms).<p></p>
+\]</span> is smooth.<p></p>
 </div></details>
 </div>
-<div id="Proof*-9" class="Proof">
+<div id="Proof*-8" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Fix <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> and choose charts <span class="math display">\[
 {\pmb{\sigma}}_i \colon U_i \to \mathcal{S}_i
 \]</span> such that <span class="math display">\[
 \mathbf{p}\in {\pmb{\sigma}}_1 (U_1) \,, \quad
 f(\mathbf{p}) \in {\pmb{\sigma}}_2 (U_2) \,, \quad
 g(f(\mathbf{p})) \in {\pmb{\sigma}}_3 (U_3) \,.
-\]</span> Since <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are smooth we have that the maps <span class="math display">\[
-{\pmb{\sigma}}_2^{-1} \circ f  \circ {\pmb{\sigma}}_1 \,, \quad {\pmb{\sigma}}_3^{-1} \circ  g \circ {\pmb{\sigma}}_2  \,,
+\]</span> Since <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are smooth, by definition the maps <span class="math display">\[
+{\pmb{\sigma}}_2^{-1} \circ f  \circ {\pmb{\sigma}}_1 \,, \qquad {\pmb{\sigma}}_3^{-1} \circ  g \circ {\pmb{\sigma}}_2  \,,
 \]</span> are smooth. Hence <span class="math display">\[
 {\pmb{\sigma}}_3^{-1} \circ ( g \circ f ) \circ {\pmb{\sigma}}_1 = ( {\pmb{\sigma}}_3^{-1} \circ  g \circ {\pmb{\sigma}}_2 ) \circ ({\pmb{\sigma}}_2^{-1} \circ f  \circ {\pmb{\sigma}}_1)  
 \]</span> is smooth, ending the proof.<p></p>
 </div></details>
 </div>
-<div id="Definition-71" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 71</strong></summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. We say that <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are diffeomorphic if there exists <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> diffeomorphism.<p></p>
+<div id="diffeomorphism-of-surfaces" class="Definition" title="Diffeomorphism of surfaces">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 71: </strong>Diffeomorphism of surfaces</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces.</p>
+<ol type="1">
+<li><p>A map <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> is a <strong>diffeomorphism</strong>, if <span class="math inline">\(f\)</span> is smooth and admits smooth inverse.</p></li>
+<li><p>We say that <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are <strong>diffeomorphic</strong>, if there exists <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> diffeomorphism.</p></li>
+</ol>
 </div></details>
 </div>
 <p>The key ideas around diffeomorphisms are:</p>
 <ol type="1">
 <li><p>Two diffeomorphic surfaces are essentially the same.</p>
 <blockquote class="blockquote">
-<p>Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces.</p>
+<p>Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. Therefore, two diffeomorphic surfaces can be identified.</p>
 </blockquote></li>
-<li><p>Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.</p></li>
+<li><p>Two diffeomorphic surfaces have essentially the same charts, as shown in the next Proposition.</p></li>
 </ol>
 <div id="proposition-f-chart" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 72</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a diffeomorphism. If <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, then <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} := f \circ {\pmb{\sigma}}\colon U \to \widetilde{\mathcal{S}}
+\widetilde{{\pmb{\sigma}}}   \colon U \to \widetilde{\mathcal{S}} \,, \qquad \widetilde{{\pmb{\sigma}}} := f \circ {\pmb{\sigma}}\,,
 \]</span> is a regular chart for <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-10" class="Proof">
+<div id="Proof*-9" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}_2 \colon U_2 \to \widetilde{\mathcal{S}}\)</span> be a regular chart for <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>. By definition of diffeomorphism between surfaces, the map <span class="math display">\[
-\Phi := {\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}\colon U \to U_2
+\Phi \colon U \to U_2 \,, \qquad \Phi := {\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}\,,
 \]</span> is a diffeomorphism. Therfore <span class="math display">\[
 (f \circ {\pmb{\sigma}}) (u,v) = {\pmb{\sigma}}_2  \left( \Phi(u,v) \right)
 \]</span> with <span class="math inline">\(\Phi\)</span> diffeomorphism, meaning that <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}_2\)</span>. Since <span class="math inline">\({\pmb{\sigma}}_2\)</span> is regular, by Proposition <a href="chap_4.html#proposition-transition-maps">63</a> we deduce that <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> is regular.<p></p>
@@ -1869,28 +1859,48 @@ g(f(\mathbf{p})) \in {\pmb{\sigma}}_3 (U_3) \,.
 </div>
 <p>We conclude with the definition of local diffeomorphism between surfaces.</p>
 <div id="local-diffeomorphism-1" class="Definition" title="Local diffeomorphism">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 73: </strong>Local diffeomorphism</summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. A smooth map <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> is called a <strong>local diffeomorphism</strong> if for each point <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> there exists an open set <span class="math inline">\(V \subseteq \mathcal{S}_1\)</span> with <span class="math inline">\(\mathbf{p}\in V\)</span>, such that <span class="math inline">\(f(V) \subseteq \mathcal{S}_2\)</span> is open and <span class="math display">\[
-f \colon V \to f(V)
-\]</span> is a diffeomorphism between surfaces.<p></p>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 73: </strong>Local diffeomorphism</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces, and <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
+\]</span> be a map.</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is called a <strong>local diffeomorphism</strong> at <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> if:
+<ul>
+<li>There exists An open set <span class="math inline">\(V \subseteq \mathcal{S}_1\)</span> with <span class="math inline">\(\mathbf{p}\in V\)</span>;</li>
+<li><span class="math inline">\(f(V) \subseteq \mathcal{S}_2\)</span> is open;</li>
+<li><span class="math inline">\(f \colon V \to f(V)\)</span> is a diffeomorphism between surfaces.</li>
+</ul></li>
+<li>We say that <span class="math inline">\(\mathcal{S}_1\)</span> is <strong>locally diffeomorphic</strong> to <span class="math inline">\(\mathcal{S}_2\)</span>, if for each <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> there exists <span class="math inline">\(f\)</span> local diffeomorphism at <span class="math inline">\(\mathbf{p}\)</span>.</li>
+</ol>
 </div></details>
 </div>
-<p>The above definition is well posed since open subsets of surfaces are themselves surfaces.</p>
+<p>Two remarks:</p>
+<ol type="1">
+<li>The above definition is well-posed, since open subsets of surfaces are themselves surfaces.</li>
+<li>Being locally diffeomorphic is <strong>not</strong> an equivalence relation: <span class="math inline">\(\mathcal{S}_1\)</span> <strong>locally diffeomorphic</strong> to <span class="math inline">\(\mathcal{S}_2\)</span> does not imply that <span class="math inline">\(\mathcal{S}_2\)</span> is <strong>locally diffeomorphic</strong> to <span class="math inline">\(\mathcal{S}_1\)</span>.</li>
+</ol>
 </section>
 <section id="tangent-space" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="tangent-space"><span class="header-section-number">4.7</span> Tangent space</h2>
-<p>We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. It turns out that also regular surfaces admit tangent vectors. To avoid clumsy terminology, we make the following assumption.</p>
+<p>The tangent vector to a curve <span class="math inline">\({\pmb{\gamma}}\colon \mathbb{R}\to \mathbb{R}^3\)</span> at the point <span class="math inline">\({\pmb{\gamma}}(t)\)</span> is just <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span>, the derivative of the curve at <span class="math inline">\(t\)</span>. Tangent vectors to a surface <span class="math inline">\(\mathcal{S}\)</span> can be defined as the tangent vectors of curves <span class="math inline">\({\pmb{\gamma}}\colon \mathbb{R}\to \mathcal{S}\)</span> with values in <span class="math inline">\(\mathcal{S}\)</span>, see <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>.</p>
+<p>To simplify statements, we make the following assumption.</p>
 <div id="Assumption-74" class="Assumption">
 <p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption 74</strong></summary><div>From now on, all the surfaces will be regular and all the charts will be regular.<p></p>
 </div></details>
 </div>
 <div id="tangent-vectors-and-tangent-space" class="Definition" title="Tangent vectors and tangent space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 75: </strong>Tangent vectors and tangent space</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. A <strong>tangent vector</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is any vector <span class="math inline">\(\mathbf{v}\in \mathbb{R}^3\)</span> such that <span class="math display">\[
-\mathbf{v}= \dot{{\pmb{\gamma}}}(0) \,,
-\]</span> where <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is a smooth curve such that <span class="math display">\[
-{\pmb{\gamma}}(-\varepsilon, \varepsilon) \subseteq \mathcal{S}\,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,,
-\]</span> where <span class="math inline">\(\varepsilon&gt;0\)</span>. The <strong>tangent space</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the set <span class="math display">\[
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 75: </strong>Tangent vectors and tangent space</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
+<ol type="1">
+<li><p>We say that <span class="math inline">\(\mathbf{v}\in \mathbb{R}^3\)</span> is a <strong>tangent vector</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, if there exists a smooth curve <span class="math display">\[
+{\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3 \,,
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon, \varepsilon) \subseteq \mathcal{S}\,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \mathbf{v}= \dot{{\pmb{\gamma}}}(0) \,,
+\]</span> where <span class="math inline">\(\varepsilon&gt;0\)</span>.</p></li>
+<li><p>The <strong>tangent space</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the set <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}:= \{ \mathbf{v}\in \mathbb{R}^3 \, \colon \,\mathbf{v}\, \mbox{ tangent vector of } \, \mathcal{S}\, \mbox{ at } \, \mathbf{p}\} \,.
-\]</span><p></p>
+\]</span></p></li>
+</ol>
 </div></details>
 </div>
 <div id="fig-tangent-plane" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1899,7 +1909,7 @@ T_{\mathbf{p}} \mathcal{S}:= \{ \mathbf{v}\in \mathbb{R}^3 \, \colon \,\mathbf{v
 <img src="../images/tangent_space.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
+Figure&nbsp;4.11: Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> has to satisfy <span class="math inline">\(\mathbf{v}= \dot{{\pmb{\gamma}}}(0)\)</span>, for some smooth curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -1910,11 +1920,13 @@ Figure&nbsp;4.10: Tangent space <span class="math inline">\(T_{\mathbf{p}} \math
 T_{\mathbf{p}} U = \mathbb{R}^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
-<p>Proof. Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} U\)</span>. By definition there exists a smooth curve <span class="math display">\[
+<p>Proof. Suppose first that <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} U\)</span>. By definition of tangent vector, there exists a smooth curve <span class="math display">\[
 \gamma \colon (-\varepsilon,\varepsilon) \to U
-\]</span> such that <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)=\mathbf{v}\)</span>. Since <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>, it follows that <span class="math inline">\({\pmb{\gamma}}\)</span> is a plane curve, so that <span class="math display">\[
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(0) = \mathbf{p}\, \qquad \dot{{\pmb{\gamma}}}(0)=\mathbf{v}\,.
+\]</span> Since <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>, it follows that <span class="math inline">\({\pmb{\gamma}}\)</span> is a plane curve, so that <span class="math display">\[
 \mathbf{v}= \dot{{\pmb{\gamma}}}(0) \in \mathbb{R}^2 \,.
-\]</span> Conversely, let <span class="math inline">\(\mathbf{v}\in \mathbb{R}^2\)</span>. Since <span class="math inline">\(\mathbf{p}\in U\)</span> and <span class="math inline">\(U\)</span> is open, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(p) \subseteq U\)</span>. Define the curve <span class="math display">\[
+\]</span> Conversely, let <span class="math inline">\(\mathbf{v}\in \mathbb{R}^2\)</span>. Since <span class="math inline">\(\mathbf{p}\in U\)</span>, and <span class="math inline">\(U\)</span> is open, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(\mathbf{p}) \subseteq U\)</span>. Define the curve <span class="math display">\[
 {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3 \,, \quad {\pmb{\gamma}}(t):= \mathbf{p}+ t \mathbf{v}\,.  
 \]</span> By construction <span class="math display">\[
 {\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq B_{\varepsilon} (\mathbf{p}) \subseteq U \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0)= \mathbf{v}\,,
@@ -1922,12 +1934,21 @@ T_{\mathbf{p}} U = \mathbb{R}^2 \,.
 </blockquote>
 </div></details>
 </div>
-<p>In the above example we have seen that <span class="math inline">\(T_{\mathbf{p}} U = \mathbb{R}^2\)</span>. This property holds in general for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> with <span class="math inline">\(\mathcal{S}\)</span> regular surface. Before proving this fact, we need a lemma.</p>
+<p>In the above example, we have seen that <span class="math display">\[
+T_{\mathbf{p}} U = \mathbb{R}^2
+\]</span> for any open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>. In general, if <span class="math inline">\(\mathcal{S}\)</span> is a regular surface, then <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a vector space isomorphic to <span class="math inline">\(\mathbb{R}^2\)</span>, in symbols <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}\simeq \mathbb{R}^2 \,.
+\]</span> This means that there exists a map <span class="math display">\[
+\Phi \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}^2
+\]</span> which is an isomorphism of vector spaces, i.e., <span class="math inline">\(\Phi\)</span> is invertible and linear: <span class="math display">\[
+\Phi(\lambda \mathbf{v}+ \mu \mathbf{w}) = \lambda \Phi(\lambda) + \mu \Phi( \mathbf{w})  \,,
+\]</span> for all <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}}\mathcal{S}\)</span> and <span class="math inline">\(\lambda, \mu \in \mathbb{R}\)</span>.</p>
+<p>To prove this result, we need a Lemma concerning curves with values on surfaces.</p>
 <div id="lemma-curve-S" class="Lemma">
 <details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 77</strong></summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math display">\[
-{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
-\]</span> We have:</p>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface, <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote <span class="math display">\[
+(u_0,v_0) = {\pmb{\sigma}}^{-1}(\mathbf{p}) \,.
+\]</span> The following hold:</p>
 <ol type="1">
 <li><p>Suppose <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is a smooth curve such that <span class="math display">\[
 {\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,.
@@ -1948,7 +1969,7 @@ u(0)=u_0 \,, \quad v(0) = v_0 \,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-11" class="Proof">
+<div id="Proof*-10" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Denote the coordinates of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (f(u,v), g(u,v), h(u, v)) \,.
 \]</span> The differential of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
@@ -2024,7 +2045,7 @@ T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-12" class="Proof">
+<div id="Proof*-11" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> be a chart at <span class="math inline">\(p\)</span>. If we show that <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \}
 \]</span> then we deduce <span class="math display">\[
@@ -2081,7 +2102,7 @@ T_{\mathbf{p}} \mathcal{S}
 <blockquote class="blockquote">
 <p>To see this, take the curve <span class="math inline">\({\pmb{\gamma}}(t) \equiv \mathbf{p}\)</span>. Then <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0) = {\pmb{0}}\)</span>, showing that <span class="math inline">\({\pmb{0}}\in T_{\mathbf{p}} \mathcal{S}\)</span>.</p>
 </blockquote>
-<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. In pictures, such as <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>, we draw the tangent plane as if it was touching the surfaces at the point <span class="math inline">\(\mathbf{p}\)</span>, and still denote it by <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span>. This is a slight abuse of notation: to be precise, the plane drawn is <span class="math display">\[
+<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a plane through the origin, no matter where the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is located. In pictures, such as <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>, we draw the tangent plane as if it was touching the surfaces at the point <span class="math inline">\(\mathbf{p}\)</span>, and still denote it by <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span>. This is a slight abuse of notation: to be precise, the plane drawn is <span class="math display">\[
 \mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\,,
 \]</span> which is the <strong>affine tangent plane</strong> through <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
 </div></details>
@@ -2110,7 +2131,7 @@ T_{\mathbf{p}} \mathcal{S}
 </ol>
 </div></details>
 </div>
-<div id="Proof*-13" class="Proof">
+<div id="Proof*-12" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a> we know that <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v (u_0,v_0) \} \,.
 \]</span> By the properties of cross product, the vector <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to both <span class="math inline">\({\pmb{\sigma}}_u (u_0,v_0)\)</span> and <span class="math inline">\({\pmb{\sigma}}_v (u_0,v_0)\)</span>. Therefore it is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
@@ -2280,7 +2301,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 <div id="möbius-strip" class="Example" title="Möbius strip">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 90: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">117</a>.<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 90: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">117</a>.<p></p>
 </div></details>
 </div>
 <div id="Example-91" class="Example">
@@ -2313,7 +2334,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Warning*-15" class="Warning">
+<div id="Warning*-14" class="Warning">
 <p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>We require the function <span class="math inline">\(\mathbf{p}\mapsto \mathbf{N}(\mathbf{p})\)</span> to be globally defined on <span class="math inline">\(\mathcal{S}\)</span> and smooth.<p></p>
 </div></details>
 </div>
@@ -2336,7 +2357,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 \]</span> is the standard unit normal of <span class="math inline">\({\pmb{\sigma}}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Notation*-16" class="Notation">
+<div id="Notation*-15" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>In the following we will denote by <span class="math inline">\(\mathbf{N}\)</span> both the standard unit normal of <span class="math inline">\(\mathcal{S}\)</span> and of a chart.<p></p>
 </div></details>
 </div>
@@ -2362,7 +2383,7 @@ df_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetild
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-17" class="Proof">
+<div id="Proof*-16" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Note that <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}= i \circ f \circ {\pmb{\gamma}}\,,
 \]</span> with <span class="math inline">\(i \colon \widetilde{\mathcal{S}} \to \mathbb{R}^3\)</span> inclusion map. Since <span class="math inline">\(i,f,{\pmb{\gamma}}\)</span> are smooth, we conclude that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is smooth. Moreover <span class="math display">\[
@@ -2452,7 +2473,7 @@ d_{\mathbf{p}} f = J\Psi = \left(
 \{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} , \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\mathbf{p})} \widetilde{\mathcal{S}} \,,
 \]</span> is just the Jacobian of <span class="math inline">\(\Psi\)</span>.</p></li>
 </ol>
-<div id="Proof*-18" class="Proof">
+<div id="Proof*-17" class="Proof">
 <details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
 <p>Let <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> and <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> be fixed. In order to prove the thesis, we need compute <span class="math inline">\(d_{\mathbf{p}} f\)</span>. To this end, let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote by <span class="math inline">\((u_0,v_0) \in U\)</span> the point such that <span class="math display">\[
 {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
@@ -2631,7 +2652,7 @@ f(x,y,z) := x^2 + y^2 -1 \,.
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
 \]</span> is not a surface. However the positive sheet <span class="math display">\[
 \mathcal{S}^+ := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2 \,, \,  z&gt;0  \} \,.
-\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.11</span></a> Indeed, define the open set <span class="math display">\[
+\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.12</span></a> Indeed, define the open set <span class="math display">\[
 V := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,z &gt; 0 \}
 \]</span> and the function <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> by <span class="math display">\[
 f(x,y,z) := x^2 + y^2 - z^2 \,.
@@ -2654,7 +2675,7 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 <img src="chap_4_files/figure-html/fig-positive-cone-output-1.png" width="348" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positive-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: Positive sheet of circular cone.
+Figure&nbsp;4.12: Positive sheet of circular cone.
 </figcaption>
 </figure>
 </div>
@@ -2684,7 +2705,7 @@ Figure&nbsp;4.11: Positive sheet of circular cone.
 \]</span> where <span class="math inline">\(\mathbf{p}= (x_0,y_0,z_0)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-19" class="Proof">
+<div id="Proof*-18" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}_f\)</span>. By definition there exists a smooth curve <span class="math display">\[
 {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}_f \subseteq \mathbb{R}^3
 \]</span> such that <span class="math display">\[
@@ -2823,7 +2844,7 @@ D =
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 115</strong></summary><div>A ruled surface <span class="math inline">\(\mathcal{S}\)</span> is regular if <span class="math inline">\(v\)</span> is sufficiently small.<p></p>
 </div></details>
 </div>
-<div id="Proof*-20" class="Proof">
+<div id="Proof*-19" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>A chart for <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 {\pmb{\sigma}}_u = \dot{{\pmb{\gamma}}}(u) + v \dot{\mathbf{a}}(u) \,, \quad
 {\pmb{\sigma}}_v = \mathbf{a}(u) \,,
@@ -2838,7 +2859,7 @@ D =
 {\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,,
 \]</span> with <span class="math display">\[
 {\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
-\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>.<p></p>
+\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-ruled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2847,7 +2868,7 @@ D =
 <img src="../images/surfaces_ruled.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
+Figure&nbsp;4.13: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2860,7 +2881,7 @@ Figure&nbsp;4.12: Unit cylinder is a ruled surface with base curve <span class="
 \mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right)
-\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>. In particular <span class="math display">\[
+\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. In particular <span class="math display">\[
 {\pmb{\sigma}}(u,v) =  \left(   
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \sin(u),
@@ -2895,7 +2916,7 @@ Figure&nbsp;4.12: Unit cylinder is a ruled surface with base curve <span class="
 <img src="../images/surfaces_ruled_2.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mobius-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
+Figure&nbsp;4.14: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2915,7 +2936,7 @@ Figure&nbsp;4.13: The Möbius band is a ruled surface with base curve <span clas
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 119</strong></summary><div>A surface of revolution is regular if and only if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.<p></p>
 </div></details>
 </div>
-<div id="Proof*-21" class="Proof">
+<div id="Proof*-20" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We have <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = \left(\dot{f}(u) \cos(v), \dot{f}(u) \sin(v), \dot{g}(u) \right) \,, \\
 {\pmb{\sigma}}_v &amp; = \left(-f(u)\sin(v), f(u) \cos(v), 0 \right) \,.
@@ -2927,7 +2948,7 @@ Figure&nbsp;4.13: The Möbius band is a ruled surface with base curve <span clas
 </div></details>
 </div>
 <div id="catenoid" class="Example" title="Catenoid">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 120: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. Recall that the catenary function is defined by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 120: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>. Recall that the catenary function is defined by <span class="math display">\[
 f(u) = \cosh (u) \,.  
 \]</span> Therefore the catenoid is obtained by rotating <span class="math display">\[
 {\pmb{\gamma}}(u) = \left(  \cosh (u), 0 , u \right) \,.
@@ -2945,7 +2966,7 @@ f(u) = \cosh (u) \,.
 <img src="../images/surface_catenoid.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.14: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
+Figure&nbsp;4.15: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
 </figcaption>
 </figure>
 </div>
@@ -3021,7 +3042,7 @@ F &amp; G
 \end{align*}\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>, where <span class="math inline">\(E,F,G\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-22" class="Proof">
+<div id="Proof*-21" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a> we have <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u, {\pmb{\sigma}}_v \} \,.
 \]</span> Therefore, for <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>, there exist <span class="math inline">\(\lambda_1,\lambda_2,\mu_1,\mu_2 \in \mathbb{R}\)</span> such that <span class="math display">\[
@@ -3056,7 +3077,7 @@ F &amp; G
 \tag{4.8}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Notation*-23" class="Notation">
+<div id="Notation*-22" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>We usually omit the dependence on <span class="math inline">\(\mathbf{v}\)</span> in (<a href="#eq-fff-chart" class="quarto-xref"><span>4.8</span></a>), and write <span class="math display">\[
 \mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 \]</span> With a little abuse of notation, we also denote by <span class="math inline">\(\mathscr{F}_1\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
@@ -3239,7 +3260,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 \]</span> where <span class="math inline">\(\dot u, \dot v\)</span> are computed at <span class="math inline">\(t\)</span>, and <span class="math inline">\(E,F,G\)</span> are computed at <span class="math inline">\((u(t),v(t))\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-24" class="Proof">
+<div id="Proof*-23" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\({\pmb{\gamma}}\)</span> takes values into <span class="math inline">\({\pmb{\sigma}}(U)\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">77</a> there exist smooth functions <span class="math inline">\(u,v\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t), v(t)) \,, \quad \forall \, t \in (t_0,t_1) \,.
 \]</span> By chain rule we have <span class="math display">\[
@@ -3313,7 +3334,7 @@ G(u(t),v(t)) &amp; = G(t,t) = t^2  \,.
 <figcaption>Sketch of local isometry <span class="math inline">\(f\)</span> between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The scalar product between tangent vectors <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is preserved by <span class="math inline">\(d_{\mathbf{p}}f\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Notation*-25" class="Notation">
+<div id="Notation*-24" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>For brevity we denote <span class="math display">\[
 \left\langle \mathbf{v},\mathbf{w} \right\rangle := \mathbf{v}\cdot \mathbf{w}\,, \quad
 \left\langle \mathbf{v},\mathbf{w} \right\rangle_f := d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{w}) \,,
@@ -3346,7 +3367,7 @@ G(u(t),v(t)) &amp; = G(t,t) = t^2  \,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-26" class="Proof">
+<div id="Proof*-25" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> Suppose <span class="math inline">\({\pmb{\gamma}}\colon (t_0,t_1) \to \mathcal{S}\)</span> is a smooth curve. Consider the smooth curve <span class="math inline">\(\widetilde{{\pmb{\gamma}}}:= f \circ {\pmb{\gamma}}\colon (t_0,t_1) \to \widetilde{\mathcal{S}}\)</span>. Set <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span>. By definition of differential of a function between surfaces, we have <span class="math display">\[
 \dot{\widetilde{{\pmb{\gamma}}}}(t) = df_{\mathbf{p}} (\dot{{\pmb{\gamma}}}(t)) \,.
 \]</span> Using that <span class="math inline">\(f\)</span> is a local isometry gives: <span class="math display">\[\begin{align*}
@@ -3403,7 +3424,7 @@ G = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,, \\
 </blockquote>
 </div></details>
 </div>
-<div id="Proof*-27" class="Proof">
+<div id="Proof*-26" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> Suppose that <span class="math inline">\(f\)</span> is a local isometry, that is, <span class="math display">\[
 {\mathbf{v}} \cdot {\mathbf{w}} = d_{\mathbf{p}} f ({\mathbf{v}}) \cdot d_{\mathbf{p}} f ({\mathbf{w}}) \,, \quad \forall \, {\mathbf{v}} , {\mathbf{w}} \in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. By Proposition <a href="chap_4.html#proposition-f-chart">72</a>, <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regualar chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>. Now, recall the statement of Proposition <a href="chap_4.html#proposition-differential-smooth">100</a>: if <span class="math display">\[
@@ -3570,7 +3591,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-28" class="Proof">
+<div id="Proof*-27" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is <span id="eq-angle-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
 \tag{4.14}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
@@ -3631,7 +3652,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-29" class="Proof">
+<div id="Proof*-28" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span id="eq-angle-curves-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,.
 \tag{4.15}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">77</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
@@ -3691,7 +3712,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 149</strong></summary><div>Let <span class="math inline">\(f\)</span> be a local isometry. Then <span class="math inline">\(f\)</span> is a conformal map.<p></p>
 </div></details>
 </div>
-<div id="Proof*-30" class="Proof">
+<div id="Proof*-29" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition of local isometry we have <span class="math display">\[
 \left\langle \mathbf{v},\mathbf{w} \right\rangle =  \left\langle \mathbf{v},\mathbf{w} \right\rangle_f  \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> In particular we have <span class="math display">\[
@@ -3716,7 +3737,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 </ol>
 </div></details>
 </div>
-<div id="Proof*-31" class="Proof">
+<div id="Proof*-30" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose <span class="math inline">\(f\)</span> is a conformal map, so that <span id="eq-theorem-conformal-proof"><span class="math display">\[
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
@@ -3900,7 +3921,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-32" class="Proof">
+<div id="Proof*-31" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Proof of Point 1.</em> Define the diffeomorphism <span class="math inline">\(f \colon {\pmb{\pi}}\to \mathcal{S}\)</span> by <span class="math display">\[
 f(u,v,0) = {\pmb{\sigma}}(u,v) \,.
 \]</span> In particular <span class="math display">\[
@@ -4005,7 +4026,7 @@ f \colon {\pmb{\pi}}\to \mathcal{S}\,, \quad f(u,v,0) = {\pmb{\sigma}}(u,v) \,,
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
 \]</span> We will call the points <span class="math display">\[
 N = (0,0,1) \,, \quad S  = (0,0,-1)
-\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
+\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
 \pi \colon \mathbb{S}^2 \smallsetminus \{N\} \to \mathbb{R}^2 \,,
 \]</span> where <span class="math display">\[
 \pi(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z}  \right) \,.
@@ -4027,7 +4048,7 @@ EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
 <img src="../images/stereographic_4.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.15: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
+Figure&nbsp;4.16: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4036,7 +4057,7 @@ Figure&nbsp;4.15: Stereographic projection map from the North pole <span class="
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
 \]</span> and the unit cylinder of equation <span class="math display">\[
 x^2 + y^2 = 1 \,.
-\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
+\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
 P = (x,y,z) \,, \quad P' = (X,Y,Z) \,.
 \]</span> Since the line through <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>, we have <span class="math display">\[
 Z = z \,, \quad (X,Y) = \lambda (x,y)
@@ -4063,7 +4084,7 @@ P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,
 <img src="../images/archimedes.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-archimedes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.16: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
+Figure&nbsp;4.17: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4073,7 +4094,7 @@ Figure&nbsp;4.16: Lambert projection map: Let <span class="math inline">\(P \in 
 <img src="../images/stereographic_2.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
+Figure&nbsp;4.18: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
 </figcaption>
 </figure>
 </div>
@@ -4083,7 +4104,7 @@ Figure&nbsp;4.17: Stereographic projection of the Earth. Image from <a href="htt
 <img src="../images/stereographic_3.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.18: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
+Figure&nbsp;4.19: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
 </figcaption>
 </figure>
 </div>
@@ -4145,14 +4166,14 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 {\pmb{\sigma}}( u_0 + \Delta u , v_0 + \Delta v ) \in \mathcal{S}
 \]</span> deviates from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, the deviation is given by <span class="math display">\[
 \delta := \left[  {\pmb{\sigma}}(  u_0 + \Delta u , v_0 + \Delta v  ) - {\pmb{\sigma}}(u_0,v_0)    \right] \cdot \mathbf{N}\,,
-\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>.</p>
+\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p>
 <div id="fig-sff-sketch" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/sff_sketch.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.19: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
+Figure&nbsp;4.20: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4189,7 +4210,7 @@ N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \tag{4.17}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="chap_4.html#definition-coordinate-functions">122</a>.<p></p>
 </div></details>
 </div>
-<div id="Notation*-33" class="Notation">
+<div id="Notation*-32" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathscr{F}_2\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
 \mathscr{F}_2 =
 \left(
@@ -4346,12 +4367,12 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <div id="Example-169" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 169</strong></summary><div>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
-\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.</p></li>
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Then <span class="math display">\[
@@ -4372,7 +4393,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = (\cos(u_0), \sin(u_0), 0) \,,
-\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>.</p></li>
+\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -4382,7 +4403,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <img src="../images/sff_gauss_sphere.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.20: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
+Figure&nbsp;4.21: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
 </figcaption>
 </figure>
 </div>
@@ -4392,7 +4413,7 @@ Figure&nbsp;4.20: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_plane.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.21: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
+Figure&nbsp;4.22: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
 </figcaption>
 </figure>
 </div>
@@ -4402,7 +4423,7 @@ Figure&nbsp;4.21: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.22: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
+Figure&nbsp;4.23: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4412,7 +4433,7 @@ Figure&nbsp;4.22: If <span class="math inline">\(\mathcal{S}\)</span> is the uni
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
 T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
-\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>. Therefore <span class="math display">\[
+\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>. Therefore <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <blockquote class="blockquote">
@@ -4432,7 +4453,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 <img src="../images/sff_weingarten.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weingarten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.23: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
+Figure&nbsp;4.24: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4442,7 +4463,7 @@ Figure&nbsp;4.23: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\
 \]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Important*-34" class="Important">
+<div id="Important*-33" class="Important">
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>The Gauss map encodes information on the standard unit normal <span class="math inline">\(\mathbf{N}\)</span> to <span class="math inline">\(\mathcal{S}\)</span>. Hence its derivative, the Weingarten map, detects the rate of change of <span class="math inline">\(\mathbf{N}\)</span>.<p></p>
 </div></details>
 </div>
@@ -4528,7 +4549,7 @@ N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \end{align*}\]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-35" class="Proof">
+<div id="Proof*-34" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>The vectors <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> form a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> by definition, it follows that <span class="math display">\[
 \mathbf{N}\cdot {\pmb{\sigma}}_u = 0 \,, \quad
 \mathbf{N}\cdot {\pmb{\sigma}}_v = 0 \,.
@@ -4549,7 +4570,7 @@ N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \]</span> where <span class="math inline">\({\pmb{\sigma}}_u,{\pmb{\sigma}}_v,\mathbf{N}_u,\mathbf{N}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-36" class="Proof">
+<div id="Proof*-35" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is defined as <span class="math inline">\(- d_{\mathbf{p}} \mathcal{G}_{\mathcal{S}}\)</span>, we can compute <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u)\)</span> and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v)\)</span> by using the definition of differential of a smooth function. To this end, consider the curve <span class="math display">\[
 {\pmb{\gamma}}(t) := {\pmb{\sigma}}( u_0 + t , v_0 ) \,.
 \]</span> We have that <span class="math inline">\({\pmb{\gamma}}\)</span> is a smooth curve in <span class="math inline">\(\mathcal{S}\)</span> and <span class="math display">\[
@@ -4647,7 +4668,7 @@ L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\, ,  &amp; M &amp; =  {\pmb{\sigm
 \]</span> with <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-38" class="Proof">
+<div id="Proof*-37" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a> we know that <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> is a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\)</span> is linear, by standard linear algebra results there exist coefficients <span class="math inline">\(a,b,c,d \in \mathbb{R}\)</span> such that <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) =
 \left(
@@ -4730,7 +4751,7 @@ A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 \]</span> concluding the proof.</p>
 </div></details>
 </div>
-<div id="Important*-39" class="Important">
+<div id="Important*-38" class="Important">
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>A matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is invertible if and only if <span class="math inline">\(\det (A) \neq 0\)</span>. In such case the inverse <span class="math inline">\(A^{-1}\)</span> is computed via the formula <span class="math display">\[
 A^{-1} = \frac{1}{\det (A)} \, \operatorname{cof}(A)^T \,,
 \]</span> where <span class="math inline">\(\operatorname{cof}(A)\)</span> is the cofactor matrix of <span class="math inline">\(A\)</span>. For <span class="math inline">\(n=2\)</span> the above formula reads: <span class="math display">\[
@@ -4765,14 +4786,14 @@ d &amp; -b \\
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Notation*-40" class="Notation">
+<div id="Notation*-39" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>In the following we denote the matrix of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> by the symbol <span class="math inline">\(\mathcal{W}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="helicoid" class="Example" title="Helicoid">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 180: </strong>Helicoid</summary><div>The Helicoid is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
-\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
+\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
 \mathcal{W}=
 \left(
 \begin{array}{cc}
@@ -4883,7 +4904,7 @@ M &amp; N
 <img src="chap_4_files/figure-html/fig-helicoid-output-1.png" width="346" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-helicoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.24: Plot of Helicoid.
+Figure&nbsp;4.25: Plot of Helicoid.
 </figcaption>
 </figure>
 </div>
@@ -5028,7 +5049,7 @@ H =
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-42" class="Proof">
+<div id="Proof*-41" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten">179</a> the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is given by <span class="math display">\[
 \mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2 \,.
 \]</span> We have <span class="math display">\[\begin{align*}
@@ -5188,7 +5209,7 @@ A = P^{-1} D P \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-43" class="Proof">
+<div id="Proof*-42" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> is a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Let <span class="math inline">\(\mathcal{W}\)</span> be the matrix of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> with respect to such basis. By Theorem <a href="chap_4.html#theorem-weingarten">179</a> we have <span class="math display">\[
 \mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2 \,.
 \]</span> Recall that <span class="math display">\[
@@ -5237,7 +5258,7 @@ P =
 </ul>
 </div></details>
 </div>
-<div id="Proof*-44" class="Proof">
+<div id="Proof*-43" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Recall that <span class="math inline">\(\mathcal{W}\)</span> is the matrix of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore, by definition of <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span> we get <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) = \mathcal{W}\mathbf{x}_1 \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) = \mathcal{W}\mathbf{x}_2 \,.
@@ -5305,7 +5326,7 @@ K = \kappa_1 \kappa_2 \,, \quad H = \frac{\kappa_1 + \kappa_2}{2} \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-45" class="Proof">
+<div id="Proof*-44" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Corollary <a href="chap_4.html#corollary-weingarten-diagonal">188</a> we have <span class="math display">\[
 \mathcal{W}= P^{-1} D P \,, \quad
 D =
@@ -5336,7 +5357,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 \end{align*}\]</span> concluding the proof.<p></p>
 </div></details>
 </div>
-<div id="Important*-46" class="Important">
+<div id="Important*-45" class="Important">
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>In general <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> are hard to compute, as they require solving a second order equation. Instead <span class="math inline">\(K\)</span> and <span class="math inline">\(H\)</span> are easier to compute, as they are directly expressed in terms of the first and second fundamental form coefficients.<p></p>
 </div></details>
 </div>
@@ -5358,7 +5379,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 \]</span> and the principal vectors are <span class="math display">\[\begin{align*}
 \mathbf{t}_1 &amp; = {\pmb{\sigma}}_u = (-\sin(u),\cos(v),0) \,,\\
 \mathbf{t}_2 &amp; = {\pmb{\sigma}}_v = (0,0,1)\,,
-\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>.<p></p>
+\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-principal" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -5367,7 +5388,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 <img src="../images/sff_principal_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-principal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.25: Principal vectors of the unit cylinder.
+Figure&nbsp;4.26: Principal vectors of the unit cylinder.
 </figcaption>
 </figure>
 </div>
@@ -5508,7 +5529,7 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 \]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\(t \in (a,b)\)</span>, where <span class="math inline">\(\mathbf{N}\)</span> is the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> evaluated at <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-47" class="Proof">
+<div id="Proof*-46" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}\,, \quad \mathbf{p}:= {\pmb{\gamma}}(t) \,,
 \]</span> for all <span class="math inline">\(t \in (a,b)\)</span>. This means <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> is tangent to <span class="math inline">\(\mathcal{S}\)</span>. Thus <span class="math display">\[
@@ -5521,7 +5542,7 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 \]</span> by the properties of vector product.<p></p>
 </div></details>
 </div>
-<div id="Important*-48" class="Important">
+<div id="Important*-47" class="Important">
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>Notice that the basis <span class="math display">\[
 \{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
 \]</span> does not coincide with the Frenet frame of <span class="math inline">\({\pmb{\gamma}}\)</span> in general.<p></p>
@@ -5539,7 +5560,7 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 \tag{4.23}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-49" class="Proof">
+<div id="Proof*-48" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By Proposition <a href="chap_4.html#proposition-surface-frame">197</a> we know that <span class="math display">\[
 \{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
 \]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span>. Hence <span class="math display">\[
@@ -5605,7 +5626,7 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 </ol>
 </div></details>
 </div>
-<div id="Proof*-50" class="Proof">
+<div id="Proof*-49" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By definition we have <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}
 \]</span> when <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>. Set <span id="eq-theorem-normal-curvature-1"><span class="math display">\[
@@ -5676,7 +5697,7 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 \]</span> where <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-51" class="Proof">
+<div id="Proof*-50" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span> and set <span class="math display">\[
 \mathbf{p}:= {\pmb{\gamma}}(t) \,.
 \]</span> By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">187</a> the principal vectors <span class="math inline">\(\{ \mathbf{t}_1, \mathbf{t}_2 \}\)</span> form an orthonormal basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since by definition <span class="math display">\[
@@ -5742,7 +5763,7 @@ z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) 
 \tag{4.30}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-52" class="Proof">
+<div id="Proof*-51" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">187</a> the principal vectors <span class="math inline">\(\{ \mathbf{t}_1, \mathbf{t}_2 \}\)</span> are an orthonormal basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore the standard unit normal <span class="math inline">\(\mathbf{N}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{t}_1\)</span> and <span class="math inline">\(\mathbf{t}_2\)</span>. Up to rotations and translations, we can assume WLOG that <span class="math inline">\(\mathbf{p}= {\pmb{0}}\)</span> and <span id="eq-theorem-local-surface"><span class="math display">\[
 \mathbf{t}_1 = (1,0,0) \,, \quad
 \mathbf{t}_2 = (0,1,0) \,, \quad
@@ -5818,7 +5839,7 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.26: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
+Figure&nbsp;4.27: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -5874,7 +5895,7 @@ Figure&nbsp;4.26: A surface <span class="math inline">\(\mathcal{S}\)</span> is 
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 210</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface such that every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is umbilic. Then <span class="math inline">\(\mathcal{S}\)</span> is an open subset of plane or a sphere.<p></p>
 </div></details>
 </div>
-<div id="Proof*-53" class="Proof">
+<div id="Proof*-52" class="Proof">
 <details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
 <p>By assumption we have <span id="eq-theorem-umbilic"><span class="math display">\[
 \kappa_1 (\mathbf{p}) = \kappa_2 (\mathbf{p}) = \kappa (\mathbf{p}) \,, \quad \forall \, \mathbf{p}\in \mathcal{S}\,.

@@ -2246,9 +2246,8 @@ Let $\SSS$ be a regular surface. The transition maps between regular charts are 
 
 :::
 
-
-We can now use Theorem \ref{theorem-transition-map} to show that
-transition maps are reparametrizations.
+The immediate consequence of Theorem \ref{theorem-transition-map} is that transition maps are reparametrizations. 
+To fix notations, let us state this fact precisely.
 
 
 ::: {.Proposition #proposition-transition-map}
@@ -2260,57 +2259,25 @@ $$
 $$
 be regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
 $$
-\sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
 $$
-Then there exist open sets 
+Define the open sets
 $$
-V \subseteq U \,, \quad  \widetilde{V} \subseteq \widetilde{U} \,,
+V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \wsss^{-1}(I) \subseteq \widetilde{U} \,,
 $$
-and a diffeomorphism 
+and the transition map
 $$
-\Phi \colon \widetilde{V} \to V
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1}\circ \wsss \,.
 $$
-such that $\widetilde{\sss} |_{\widetilde{V}}$ is a reparametrization of $\sss |_{V}$, that is,
+Then $\sss$ and $\wsss$ are reparametrization of each other, with reparametrization map given by $\Phi$, that is,
 $$
-\widetilde{\sss} |_{\widetilde{V}} = (\sss |_{V}) \circ \Phi \,.
+\wsss = \sss \circ \Phi \,, \qquad \sss = \wsss \circ \Phi^{-1} \,.
 $$
+
 
 :::
 
 
-
-::: Proof
-
-Define
-$$
-I:=\sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
-$$
-Note that this set is open in $\SSS$, being intersection of open sets.
-Set 
-$$
-V := \sss^{-1} (  I  ) \,, \quad 
-\widetilde{V} := \widetilde{\sss}^{-1} (   I   ) \,.
-$$
-The sets $V$ and $\widetilde{V}$ are open, since $\sss$ and $\widetilde{\sss}$ are homeomorphisms, and hence are continuous. By construction we have
-$$
-\sss(V) = \widetilde{\sss} (\widetilde{V}) = I \,.
-$$
-Therefore they are well defined the restrictions
-$$
-\sss |_{V} \colon V \to I \,, \quad 
-\widetilde{\sss} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
-$$
-which are homeomorphisms. Consider the transition map
-$$
-\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss} \,.
-$$
-By Theorem \ref{theorem-transition-map} we know that $\Phi$ is a diffeomorphism. Hence 
-$$
-\widetilde{\sss} |_{\widetilde{V}} = (\sss |_{V}) \circ \Phi \,,
-$$
-with $\Phi$ diffeomorphism, showing that $\widetilde{\sss} |_{\widetilde{V}}$ is a reparametrization of $\sss |_{V}$.
-
-:::
 
 
 
@@ -2324,7 +2291,7 @@ In Example \ref{example-sphere-spherical} and Example \ref{example-sphere-cartes
 1. Spherical coordinates: The sphere, excluding the Date Line and the Poles, is charted by
 $$
 \sss(\theta,\fi) = 
-( \cos(\theta) \cos(\f), \sin(\theta) \cos(\fi), \sin(\fi) ) \,, 
+( \cos(\theta) \cos(\fi), \sin(\theta) \cos(\fi), \sin(\fi) ) \,, 
 $$
 defined over the set
 $$
@@ -2357,7 +2324,7 @@ $$
 Since $\sss$ and $\widetilde{\sss}$ are regular, 
 Proposition \ref{proposition-transition-map} guarantees that $\Phi$ is a reparametrization map. Therefore $\sss$ and $\widetilde{\sss}$ are reparametrization of each other, with 
 $$
-\widetilde{\sss} = \Phi \circ \sss \,.
+\widetilde{\sss} = \sss \circ \Phi \,.
 $$
 Conclusion: the two parametrizations $\sss$ and $\widetilde{\sss}$ of $\sphere^2$ are interchangeable!
 
@@ -2368,7 +2335,9 @@ Conclusion: the two parametrizations $\sss$ and $\widetilde{\sss}$ of $\sphere^2
 
 Proposition \ref{proposition-transition-map} demonstrates that there is no single preferred way to parametrize a surface: When two regular charts overlap, they are reparametrizations of each other in the overlapping region.
 
-This observation has a significant consequence: it allows us to introduce new definitions using charts, as long as we ensure that the definition is independent of reparametrization and, therefore, of the specific chart chosen.
+This observation has a significant consequence: 
+
+*It allows us to define a property of any regular surface by using charts, as long as we ensure that the definition is independent of reparametrization and, therefore, of the specific chart chosen.*
 
 :::
 
@@ -2379,15 +2348,15 @@ This observation has a significant consequence: it allows us to introduce new de
 ## Functions between surfaces
 
 
-We would like to define a concept of smooth function 
+We aim to define the concept of a smooth function 
 $$
 f \colon \SSS_1 \to \SSS_2 \,,
 $$
-where $\SSS_1$ and $\SSS_2$ are regular surfaces. So far, we only know how to define smooth functions from $\R^n$ into $\R^m$. The idea is to use surface charts to define smooth functions between surfaces.
+where $\SSS_1$ and $\SSS_2$ are regular surfaces. Up to this point, we only know how to define smooth functions from $\R^n$ to $\R^m$. The idea is to use surface charts to extend this definition of smoothness to functions between surfaces, see @fig-smooth-functions.
 
 
-
-::: {.Definition  #definition-smooth-map-surface}
+::: Definition  
+### Smooth functions between surfaces {#definition-smooth-map-surface}
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces and let 
 $$
@@ -2395,7 +2364,7 @@ f \colon \SSS_1 \to \SSS_2
 $$
 be a map. We say that:
 
-- $f$ is smooth at $\pp \in \SSS_1$ if there exist charts $\sss_i \colon U_i \to \SSS_i$ for $i=1,2$ such that
+1. $f$ is *smooth at $\pp \in \SSS_1$*, if there exist charts $\sss_i \colon U_i \to \SSS_i$ for $i=1,2$ such that
 $$
 \pp \in \sss_1(U_1)\,, \quad f(\pp) \in \sss_2(U_2) 
 $$
@@ -2405,16 +2374,12 @@ $$
 $$
 is smooth.
 
-- $f$ is smooth if it is smooth for each $\pp \in \SSS_1$.
-
-- $f$ is a diffeomorphism if $f$ is smooth and invertible, with smooth inverse.
+2. $f$ is *smooth*, if it is smooth for each $\pp \in \SSS_1$.
 
 :::
 
 
-
-
-![Sketch function $f$ smooth at $\pp$ between the surfaces $\SSS_1$ and $\SSS_2$.](/images/surface_smooth_map.png){width=70%}
+![The function $f \colon \SSS_1 \to \SSS_2$ is smooth at $\pp$, if the vector valued function $\sss_2^{-1} \circ f \circ \sss_1$ is smooth.](/images/surface_smooth_map.png){#fig-smooth-functions width=70%}
 
 
 
@@ -2422,16 +2387,16 @@ is smooth.
 
 ::: Remark
 
-- Definition \ref{definition-smooth-map-surface} makes sense because $\sss_2^{-1}$ exists.
+1. Definition \ref{definition-smooth-map-surface} makes sense because $\sss_2^{-1}$ exists.
 
-- The map $\sss_2^{-1} \circ f \circ \sss_1$ is only defined for $\xx \in U_1$ such that
+2. The map $\sss_2^{-1} \circ f \circ \sss_1$ is only defined for the points $\xx \in U_1$ such that
 $$
 f ( \sss_1 (\xx) ) \in \sss_2 (U_2) \,.
 $$
 
-- The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$, therefore differentiability is intended in the classical sense.
+3. The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$, therefore smoothness is intended in the classical sense.
 
-- Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts $\sss_1$ and $\sss_2$  
+4. Definition \ref{definition-smooth-map-surface} is well-posed: Smoothness of $f$ does not depend on the specific choice of charts $\sss_1$ and $\sss_2$.  
 
     > Indeed, suppose that $\widetilde{\sss}_{i} \colon \widetilde{U}_i \to {\SSS}_i$ are charts such that 
     $$
@@ -2443,14 +2408,11 @@ $$
     $$
     As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-map} there exist open sets
     $$
-    V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
+    V_i \subseteq U_i \,, \qquad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
     $$
-    and transition maps 
+    and reparametrization maps 
     $$
-    \Phi_i \colon \widetilde{V}_i \to V_i
-    $$
-    which are diffeomorphisms and satisfy
-    $$
+    \Phi_i \colon \widetilde{V}_i \to V_i \,, \qquad 
     \widetilde{\sss}_i = \sss_i \circ \Phi_i \,.
     $$
     Hence
@@ -2458,9 +2420,9 @@ $$
     \widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1 & =
     \widetilde{\sss}_2^{-1} \circ ( \sss_2 \circ \sss_2^{-1} ) \circ f \circ  ( \sss_1 \circ \sss_1^{-1} ) \circ \widetilde{\sss}_1  \\
     & = ( \widetilde{\sss}_2^{-1} \circ  \sss_2 ) \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 ) \circ (\sss_1^{-1}  \circ \widetilde{\sss}_1 )  \\
-    & = \Phi_2^{-1} \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 )  \circ \Phi_1^{-1} \,.
+    & = \Phi_2^{-1} \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 )  \circ \Phi_1 \,.
     \end{align*}
-    Since $\Phi_i^{-1}$ and $\sss_2^{-1}  \circ f \circ   \sss_1$ are smooth, we conclude that
+    Since $\Phi_1$, $\Phi_2^{-1}$ and $\sss_2^{-1}  \circ f \circ   \sss_1$ are smooth, we conclude that
     $$
     \widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1
     $$
@@ -2472,11 +2434,11 @@ $$
 
 ::: Proposition
 
-If $f \colon \SSS_1 \to \SSS_2$ and $g \colon \SSS_2 \to \SSS_3$ are smooth maps (resp. diffeomorphisms) between surfaces, then the composition 
+If $f \colon \SSS_1 \to \SSS_2$ and $g \colon \SSS_2 \to \SSS_3$ are smooth maps between surfaces, then the composition 
 $$
 (g \circ f) \colon \SSS_1 \to \SSS_3
 $$
-is smooth (resp. a diffeomorphisms).
+is smooth.
 
 
 :::
@@ -2494,9 +2456,9 @@ $$
 f(\pp) \in \sss_2 (U_2) \,, \quad
 g(f(\pp)) \in \sss_3 (U_3) \,.
 $$
-Since $f$ and $g$ are smooth we have that the maps
+Since $f$ and $g$ are smooth, by definition the maps
 $$
-\sss_2^{-1} \circ f  \circ \sss_1 \,, \quad \sss_3^{-1} \circ  g \circ \sss_2  \,,
+\sss_2^{-1} \circ f  \circ \sss_1 \,, \qquad \sss_3^{-1} \circ  g \circ \sss_2  \,,
 $$
 are smooth. Hence
 $$
@@ -2509,8 +2471,13 @@ is smooth, ending the proof.
 
 
 ::: Definition
+### Diffeomorphism of surfaces
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces. We say that $\SSS_1$ and $\SSS_2$ are diffeomorphic if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. 
+
+1. A map $f \colon \SSS_1 \to \SSS_2$ is a **diffeomorphism**, if $f$ is smooth and admits smooth inverse.
+
+2. We say that $\SSS_1$ and $\SSS_2$ are **diffeomorphic**, if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
 
 :::
 
@@ -2519,9 +2486,9 @@ The key ideas around diffeomorphisms are:
 
 1. Two diffeomorphic surfaces are essentially the same.  
 
-    >Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. 
+    >Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. Therefore, two diffeomorphic surfaces can be identified.
 
-2. Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.
+2. Two diffeomorphic surfaces have essentially the same charts, as shown in the next Proposition.
 
 
 ::: {.Proposition  #proposition-f-chart}
@@ -2529,7 +2496,7 @@ The key ideas around diffeomorphisms are:
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a diffeomorphism. If 
 $\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
 $$
-\widetilde{\sss} := f \circ \sss \colon U \to \widetilde{\SSS}
+\widetilde{\sss}   \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} := f \circ \sss \,,
 $$
 is a regular chart for $\widetilde{\SSS}$ at $f(\pp)$.
 
@@ -2540,7 +2507,7 @@ is a regular chart for $\widetilde{\SSS}$ at $f(\pp)$.
 
 Let $\sss_2 \colon U_2 \to \widetilde{\SSS}$ be a regular chart for $\widetilde{\SSS}$ at $f(\pp)$. By definition of diffeomorphism between surfaces, the map
 $$
-\Phi := \sss_2^{-1} \circ f \circ \sss \colon U \to U_2
+\Phi \colon U \to U_2 \,, \qquad \Phi := \sss_2^{-1} \circ f \circ \sss \,,
 $$
 is a diffeomorphism. Therfore 
 $$
@@ -2558,18 +2525,25 @@ We conclude with the definition of local diffeomorphism between surfaces.
 ::: Definition
 ### Local diffeomorphism
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces. A smooth map $f \colon \SSS_1 \to \SSS_2$ 
-is called a **local diffeomorphism** if for each point $\pp \in \SSS_1$ there exists
-an open set $V \subseteq \SSS_1$ with $\pp \in V$, such that $f(V) \subseteq \SSS_2$ is open and 
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces, and 
 $$
-f \colon V \to f(V)
+f \colon \SSS_1 \to \SSS_2 \,,
 $$
-is a diffeomorphism between surfaces.
+be a map.
+
+1. $f$ is called a **local diffeomorphism** at $\pp \in \SSS_1$ if:
+    * There exists An open set $V \subseteq \SSS_1$ with $\pp \in V$; 
+    * $f(V) \subseteq \SSS_2$ is open;
+    * $f \colon V \to f(V)$ is a diffeomorphism between surfaces.
+
+2. We say that $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for each $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
 
 :::
 
+Two remarks:
 
-The above definition is well posed since open subsets of surfaces are themselves surfaces.
+1. The above definition is well-posed, since open subsets of surfaces are themselves surfaces.
+2. Being locally diffeomorphic is **not** an equivalence relation: $\SSS_1$ **locally diffeomorphic** to $\SSS_2$ does not imply that $\SSS_2$ is **locally diffeomorphic** to $\SSS_1$.
 
 
 
@@ -2577,8 +2551,10 @@ The above definition is well posed since open subsets of surfaces are themselves
 ## Tangent space
 
 
-We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. It turns out that also regular surfaces admit tangent vectors. To avoid clumsy terminology, we 
-make the following assumption.
+The tangent vector to a curve $\g \colon \R \to \R^3$ at the point $\g(t)$ is just $\dg(t)$, the derivative of the curve at $t$. Tangent vectors to a surface $\SSS$ can be defined as the tangent vectors of curves $\g \colon \R \to \SSS$ with values in $\SSS$, see @fig-tangent-plane.
+
+
+To simplify statements, we make the following assumption.
 
 
 ::: Assumption
@@ -2591,16 +2567,20 @@ From now on, all the surfaces will be regular and all the charts will be regular
 ::: Definition
 ### Tangent vectors and tangent space
 
-Let $\SSS$ be a surface and $\pp \in \SSS$. A **tangent vector** to $\SSS$ at 
-$\pp$ is any vector $\vv \in \R^3$ such that
+Let $\SSS$ be a surface and $\pp \in \SSS$. 
+
+1. We say that $\vv \in \R^3$ is 
+a **tangent vector** to $\SSS$ at $\pp$, if there exists a smooth curve
 $$
-\vv = \dg(0) \,,
+\g \colon (-\e,\e) \to \R^3 \,, 
 $$
-where $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that
+such that
 $$
-\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,,
+\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,, \quad \vv = \dg(0) \,,
 $$
-where $\e>0$. The **tangent space** of $\SSS$ at $\pp$ is the set
+where $\e>0$. 
+
+2. The **tangent space** of $\SSS$ at $\pp$ is the set
 $$
 T_{\pp} \SSS := \{ \vv \in \R^3 \divider \vv \, \mbox{ tangent vector of } \, \SSS \, \mbox{ at } \, \pp \} \,.
 $$
@@ -2610,7 +2590,7 @@ $$
 
 
 
-![Tangent space $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ coincides with $\dg(0)$ for some $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){#fig-tangent-plane width=80%}
+![Tangent space $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ has to satisfy $\vv = \dg(0)$, for some smooth curve $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){#fig-tangent-plane width=80%}
 
 
 
@@ -2624,16 +2604,20 @@ $$
 T_{\pp} U = \R^2 \,.
 $$
 
-> Proof. Let $\vv \in T_{\pp} U$. By definition there exists a smooth curve
+> Proof. Suppose first that $\vv \in T_{\pp} U$. By definition of tangent vector, there exists a smooth curve
 $$
 \gamma \colon (-\e,\e) \to U
 $$
-such that $\g(0) = \pp$ and $\dg(0)=\vv$. Since $U \subseteq \R^2$, it follows that $\g$ is a plane curve, so that 
+such that 
+$$
+\g(0) = \pp \, \qquad \dg(0)=\vv \,.
+$$ 
+Since $U \subseteq \R^2$, it follows that $\g$ is a plane curve, so that 
 $$
 \vv = \dg (0) \in \R^2 \,.
 $$
-Conversely, let $\vv \in \R^2$. Since $\pp \in U$ and $U$ is open, there
-exists $\e>0$ such that $B_{\e}(p) \subseteq U$. Define the curve
+Conversely, let $\vv \in \R^2$. Since $\pp \in U$, and $U$ is open, there
+exists $\e>0$ such that $B_{\e}(\pp) \subseteq U$. Define the curve
 $$
 \g \colon (-\e,\e) \to \R^3 \,, \quad \g(t):= \pp + t \vv \,.  
 $$
@@ -2646,17 +2630,34 @@ showing that $\vv \in T_{\pp} U$.
 :::
 
 
-In the above example we have seen that $T_{\pp} U = \R^2$. This property holds in general for $T_{\pp} \SSS$ with $\SSS$ regular surface. 
-Before proving this fact, we need a lemma.
+In the above example, we have seen that 
+$$
+T_{\pp} U = \R^2
+$$
+for any open set $U \subseteq \R^2$. In general, if $\SSS$ is a regular surface, then $T_{\pp} \SSS$ is a vector space isomorphic to $\R^2$, in symbols
+$$
+T_{\pp} \SSS \simeq \R^2 \,.
+$$
+This means that there exists a map
+$$
+\Phi \colon T_{\pp} \SSS \to \R^2
+$$
+which is an isomorphism of vector spaces, i.e., $\Phi$ is invertible and linear:
+$$
+\Phi(\lambda \vv + \mu \ww) = \lambda \Phi(\lambda) + \mu \Phi( \ww)  \,, 
+$$
+for all $\vv , \ww \in T_{\pp}\SSS$ and $\lambda, \mu \in \R$.
+
+To prove this result, we need a Lemma concerning curves with values on surfaces.
 
 
 ::: {.Lemma #lemma-curve-S}
 
-Let $\SSS$ be regular and $\pp \in \SSS$. Let $\sss \colon U \to \sss(U) \subseteq \SSS$ be a regular chart at $\pp$, with
+Let $\SSS$ be a surface, $\pp \in \SSS$, and $\sss \colon U \to \SSS$ a chart at $\pp$. Denote
 $$
-\sss(u_0,v_0) = \pp \,.
+(u_0,v_0) = \sss^{-1}(\pp) \,.
 $$
-We have:
+The following hold:
 
 1. Suppose $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that
 $$

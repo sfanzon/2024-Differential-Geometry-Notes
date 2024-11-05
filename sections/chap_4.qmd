@@ -2467,6 +2467,131 @@ is smooth, ending the proof.
 :::
 
 
+The inverse function of a chart is a differentiable.
+
+:::{.Proposition  #proposition-inverse-diff}
+
+Let $\SSS$ be a regular surface, and $\sss \colon U \to \SSS$ a regular chart. The inverse
+$$
+\sss^{-1} \colon \sss(U) \to U \subseteq \R^2 \,,
+$$
+is a differentiable function.
+
+:::
+
+::: Proof
+
+First of all, note that: 
+
+- $\sss^{-1}$ exists, as $\sss$ is required to be a homeomorphism;
+
+- $\sss(U)$ can be regarded as a surface, being an open subset of the surface $\SSS$.
+
+Let $\pp \in \sss(U)$ and $\wsss \colon \wU \to \SSS$ be a regular chart at $\pp$, that is,
+$$
+p \in \wsss(\wU) \,.
+$$
+In order to prove that $\sss^{-1} \colon \sss(U) \to \R^2$ is a differentiable map, we need to check that the map
+$$
+\sss^{-1} \circ \wsss
+$$
+is differentiable (where it is defined). To this end, define the intersection
+$$
+I :=  \sss(U) \cap \wsss(\wU)\,.
+$$
+Clearly $I \neq \emptyset$, since $\pp \in I$. We can then define the open sets
+$$
+V = \sss^{-1}(I)\,, \quad \widetilde{V} = \wsss^{-1}(I) \,,
+$$
+and the transition map 
+$$
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \wsss \,.
+$$
+By Theorem \ref{theorem-transition-map}, the map $\Phi$ is differentiable. As $\Phi = \sss^{-1} \circ \wsss$, the proof is concluded.
+
+:::
+
+
+The following Proposition gives a very useful sufficient condition to check differentiability.
+
+
+:::{.Proposition  #proposition-diff-check}
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Make the following assumptions:
+
+1. $V \subseteq \R^3$ is an open set such that 
+$$
+\SSS_1 \subseteq V \,,
+$$
+2. $f \colon V \to \R^3$ is a differentiable function such that  
+$$
+f(\SSS_1) \subseteq f(\SSS_2) \,.
+$$
+
+Then the restriction 
+$$
+f |_{\SSS_1} \colon \SSS_1 \to \SSS_2 
+$$
+is a differentiable map between surfaces.
+
+:::
+
+
+::: Proof
+
+Let $\pp \in \SSS_1$ and charts $\sss_1: U_1 \to \SSS_1$, $\sss_2: U_2 \to \SSS_2$, with 
+$$
+p \in \sss_1(U_1) \,, \qquad f(\pp) \in \sss_2(U_2) \,.
+$$
+The map
+$$
+\sss_2^{-1} \circ f \circ \sss_1: U_1 \to U_2 
+$$
+is differentiable because composition of differentiable functions: $\sss_2^{-1}$ is differentiable by Proposition \ref{proposition-inverse-diff}; $f$ is differentiable by assumption; $\sss_1$ is differentiable by definition of chart. 
+
+:::
+
+
+::: Example
+
+Let $\SSS$ be a regular surface.
+
+1. Assume $\SSS$ is symmetric relative to the $\{z=0\}$ plane, that is, 
+$$
+(x, y, z) \in \SSS \quad \iff \quad (x, y,-z) \in \SSS \,.
+$$
+Then the map $f \colon  \SSS \to \SSS$, which takes $p \in S$ into its symmetrical point, is differentiable. This is because $f$ is the restriction to $\SSS$ of the map 
+$$
+f\colon \R^3 \to \R^3, \qquad  f(x, y, z)=(x, y,-z) \,,
+$$
+which is clearly differentiable.
+
+2. Let $\pi \colon \SSS \to \R^2$ be the map which takes each $\pp \in \SSS$ into its orthogonal projection over
+$$
+\R^2 = \{ (x,y,0)  \,\colon  \, x,y \in \R  \} \,.
+$$
+$\pi$ is differentiable because restriction of the differentiable map
+$$
+\pi \colon \R^3 \to \R^3 \,, \quad \pi (x,y,z) = (x,y,0) \,.
+$$
+
+
+3. Let $f \colon \R^3 \to \R^3$ be given by 
+$$
+f(x, y, z)=(x a, y b, z c) \,,
+$$
+where $a, b$, and $c$ are non-zero real numbers. Clearly, $f$ is differentiable. Therefore, the restriction $f|_{\sphere^2}$ is a differentiable map from the Sphere
+$$
+\sphere^2 = \left\{(x, y, z) \in \R^3 \, \colon \, x^2+y^2+z^2=1\right\}
+$$
+into the Ellipsoid
+$$
+\mathbb{E} = \left\{(x, y, z) \in \R^3 \, \colon \, \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1\right\} \,,
+$$
+because $f(\sphere^2) \subseteq \mathbb{E}$.
+
+:::
+
 
 
 ::: Definition
@@ -2481,11 +2606,12 @@ Let $\SSS_1$ and $\SSS_2$ be regular surfaces.
 :::
 
 
+
 The key ideas around diffeomorphisms are:
 
 1. Two diffeomorphic surfaces are essentially the same.  
 
-    >Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. Therefore, two diffeomorphic surfaces can be identified.
+    >It is easy to check that being diffeomorphic is an equivalence relation on the set of regular surfaces. Therefore, two diffeomorphic surfaces can be identified.
 
 2. Two diffeomorphic surfaces have essentially the same charts, as shown in the next Proposition.
 
@@ -2528,9 +2654,9 @@ Let $\SSS_1$ and $\SSS_2$ be regular surfaces, and
 $$
 f \colon \SSS_1 \to \SSS_2 \,,
 $$
-be a map.
+be a differentiable map.
 
-1. $f$ is called a **local diffeomorphism** at $\pp \in \SSS_1$ if:
+1. $f$ is a **local diffeomorphism** at $\pp \in \SSS_1$ if:
     * There exists An open set $V \subseteq \SSS_1$ with $\pp \in V$; 
     * $f(V) \subseteq \SSS_2$ is open;
     * $f \colon V \to f(V)$ is a diffeomorphism between surfaces.
@@ -3430,7 +3556,7 @@ where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
 ::: Warning
 ### Orientability is a global property
 
-Orientability is a global property: To determine wether 
+Orientability is a global property: To determine if 
 a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
 $\mathcal{A}$. 
 
@@ -3438,9 +3564,9 @@ $\mathcal{A}$.
 
 
 ::: Example
-### Möbius strip
+### Möbius band
 
-The classical example of non orientable surface is the Möbius strip, see @fig-mobius-ruled. We will discuss this example in more details when we introduce ruled srufaces, see Example \ref{example-mobius}.
+The classical example of non orientable surface is the Möbius band, see @fig-mobius-ruled. We will discuss this example in more details when we introduce ruled srufaces, see Example \ref{example-mobius}.
 
 :::
 
@@ -3457,8 +3583,6 @@ is a regular surface with atlas $\mathcal{A}=\{\sss\}$. Therefore $\SSS_{\sss}$ 
 so that $\det J \Phi = 1 > 0$.
 
 :::
-
-
 
 
 
@@ -3508,7 +3632,7 @@ We require the function $\pp \mapsto \NN(\pp)$ to be globally defined on $\SSS$ 
 
 
 
-::: Proposition
+::: {.Proposition #proposition-oriented}
 
 Let $\SSS$ be a regular surface. They are equivalent:
 
@@ -3518,11 +3642,11 @@ Let $\SSS$ be a regular surface. They are equivalent:
 
 :::
 
-The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
+The proof follows from the above discussion. For a self-contained proof, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
 
 
 
-In view of the above propostion, for an oriented surface there is a natural choice of unit normal, 
+In view of Propostion \ref{proposition-oriented}, for an oriented surface there is a natural choice of unit normal, 
 which we call **standard unit normal** of $\SSS$. 
 
 
@@ -3536,9 +3660,9 @@ $$
 $$
 for each chart $\sss \in \mathcal{A}$, where 
 $$
-\NN_{\sss} \colon U \to \R^3 \,, \quad  \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
+\NN_{\sss} \colon U \to \R^3 \,, \quad  \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,,
 $$
-is the standard unit normal of $\sss$.
+is the standard unit normal of the chart $\sss$.
 
 :::
 
@@ -3547,9 +3671,48 @@ is the standard unit normal of $\sss$.
 
 ::: Notation
 
-In the following we will denote by $\NN$ both the standard unit normal of $\SSS$ and of a chart. 
+In the following we will often denote by $\NN$ both the standard unit normal of $\SSS$ and of a chart. 
 
 :::
+
+
+
+::: Example
+
+Let $\SSS$ be the surface described by the chart
+$$
+\sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
+$$
+$\SSS$ is regular and orientable, with standard unit normal given by
+$$
+\NN = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
+$$
+
+> *Solution.* Compute the following quantities:
+\begin{align*}
+\sss_{u} & =\left(e^{u}, 1,0\right) \\
+\sss_{v} & =(0,1,1) \\
+\sss_{u} \times \sss_{v} & = \left|\begin{array}{ccc}
+\ii & \jj & \kk \\
+e^{u} & 1 & 0 \\
+0 & 1 & 1
+\end{array}\right| \\
+& = \left(1,-e^{u}, e^{u}\right)
+\end{align*}
+Since 
+$$
+\norm{\sss_u \times \sss_v} =  \sqrt{1+2 e^{2 u}} \geq 1\,,
+$$
+we see that $\sss_u \times \sss_v \neq \zero$, showing that $\SSS$ is regular. Since the atlas of $\SSS$ is formed by one chart, it follows the $\SSS$ is orientable. The standard unit normal is
+$$
+\NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
+     = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
+$$
+
+
+:::
+
+
 
 
 
@@ -3564,28 +3727,31 @@ In the following we will denote by $\NN$ both the standard unit normal of $\SSS$
 
 Let $f \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $f$ is smooth. By definition, the differential of $f$ at $\pp \in U$ is a linear map 
 $$
-df_{\pp} \colon \R^2 \to \R^2 
+d_{\pp}f \colon \R^2 \to \R^2 
 $$
 which approximates $f$ locally at $\pp$. 
 We have seen in Example \ref{example-tangent-open-set} that
 $$
-T_{\pp} U = \R^2 
+T_{\pp} U = \R^2 \,.
 $$
-Therefore we can interpret $df_{\pp}$ as a map between tangent planes:
+Therefore we can interpret $d_{\pp}f$ as a map between tangent planes:
 $$
-df_{\pp} \colon T_{\pp} U \to T_{\pp} U \,.
+d_{\pp}f \colon T_{\pp} U \to T_{\pp} U \,.
 $$
 This reasoning suggests how to define the differential of a smooth map between surfaces: If $f \colon \SSS \to \widetilde{\SSS}$ is smooth, we could define its differential at $\pp \in \SSS$ as a linear map
 $$
-df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
 $$
-How is the above map defined explicitly? To answer this question, we need a lemma.
+How is the above map defined explicitly? To answer this question, we need a Lemma.
 
 
 ::: {.Lemma  #lemma-derivative}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map.
-For $\vv \in T_{\pp} \SSS$, let $\g \colon (-\e,\e) \to \SSS$ be such that
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Let $\vv \in T_{\pp} \SSS$, and 
+$$
+\g \colon (-\e,\e) \to \SSS
+$$
+be a smooth curve such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
 $$
@@ -3595,7 +3761,7 @@ $$
 $$
 Then $\tg$ is a smooth curve into $\R^3$ and 
 $$
-\widetilde{\vv} \in T_{f(\pp)} \widetilde{\SSS} \,, \quad \widetilde{\vv} := \dtg (0) \,.
+\dtg (0)  \in T_{f(\pp)} \widetilde{\SSS} \,.
 $$
 
 :::
@@ -3610,103 +3776,56 @@ $$
 $$
 with $i \colon \widetilde{\SSS} \to \R^3$ inclusion map. Since $i,f,\g$ are smooth, we conclude that $\tg \colon (-\e,\e) \to \R^3$ is smooth. Moreover 
 $$
-\tg(0) = f (\g(0)) = f(\pp) \,,
+\tg(0) = f (\g(0)) = f(\pp) \,.
 $$
-and therefore 
+By definition of tangent plane, we conclude that
 $$
- \widetilde{\vv} := \dtg (0) \in T_{f(\pp)} \widetilde{\SSS} \,,
+\dtg (0) \in T_{f(\pp)} \widetilde{\SSS} \,.
 $$
-by definition of tangent space. 
 
 :::
 
 
+Lemma \ref{lemma-derivative} justifies the following definition of differential.
 
 
 ::: Definition
-### Differential of smooth function
+### Differential of smooth function {#definition-differential-f}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. 
-The differential $df_{\pp}$ of $f$ at $\pp$ is defined as the map
+The differential $d_{\pp}f$ of $f$ at $\pp$ is defined as the map
 $$
-df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad df_{\pp}(\vv) := \widetilde{\vv} \,,
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad d_{\pp}f (\vv) := (f \circ \g)'(0) \,,
 $$
-where $\widetilde{\vv}$ is as in Lemma \ref{lemma-derivative}.
-
-:::
-
-
-::: Remark
-### Computing $d_{\pp} f$
-
-The differential of $f$ can be computed using the definition. Specifically, let $\vv \in T_{\pp} \SSS$ and let $\g$ be a curve on $\SSS$ such that 
+where $\g \colon (-\e,\e) \to \SSS$ is a smooth curve such that
 $$
-\g(0) = \pp \,, \quad \dg(0) = \vv
-$$
-Then 
-$$
-d_{\pp} f (\vv) = (f \circ \gamma)'(0)
-$$
-The problem with this calculation is that one has to produce a curve $\g$ with $\dg(0) = \vv$, in order to compute $d_{\pp} f$ at $\vv$. As you can imagine, finding one curve for each vector is far from ideal.
-
-:::
-
-
-
-::: Example
-
-Let $\SSS = (0,2\pi) \times \R$ and 
-$$
-\widetilde{\SSS} = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} 
-$$
-Note that $\SSS$ is a subset of $\R^2$ (and in particular a regular surface), while $\widetilde{\SSS}$ is a unit cylinder. Define the map 
-$$
-f \colon S \to \widetilde{\SSS} \,, \quad 
-f(u,v) := (\cos u , \sin u, v)
-$$
-Clearly $f \in \widetilde{\SSS}$ since $\cos^2 u + \sin^2 u = 1$. We want to compute the differential of $f$
-$$
-d_{\pp} f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}
-$$
-Since $\SSS$ is a subset of $\R^2$, we have that $T_{\pp} \SSS$ is just $\R^2$. Let $\vv = (a,b) \in \R^2$. We need to find a curve $\g \colon (-\e,\e) \to \SSS$ such that
-$$
-\g(0) = \pp \,, \quad \dg(0) = \vv = (a,b)
-$${#eq-example-differential}
-Since $\SSS$ is a subset of $\R^2$, $\g$ can be chosen as the straight line through $\pp$ of direction $\vv$, e.g.,
-$$
-\g(t) := \pp + t \vv = (u_0 + t a, v_0 + tb)\,,
-$$
-where we denoted $\pp = (u_0,v_0)$. Clearly $\g$ satisfies (@eq-example-differential). We have
-\begin{align*}
-(f \circ \g) (t) & = f(u_0 + t a, v_0 + tb) \\
-                 & = ( \cos(u_0 + ta), \sin(u_0 + ta),v_0 + tb  ) \\
-(f \circ \g)' (t) & = (- a \sin (u_0 + ta), a \cos (u_0 + ta), b)
-\end{align*}
-Therefore the differential at $\pp$ is
-$$
-d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- a \sin (u_0), a \cos (u_0), b) \,.
+\g(0) = \pp \,, \qquad  \dg(0) = \vv \,.
 $$
 
 :::
 
-We need to show that the definition of differential is well-posed, i.e., that $d_{\pp} f (\vv)$ depends only on $\pp$, $f$, $\vv$: This is because there are infinitely many curves $\g$ passing trough $\pp$ and such that $\dg(0) = \vv$, and a priori $d_{\pp} f (\vv)$ could depend on which curve is chosen.
 
-We prove well-posedness of $df_{\pp}$ in the next Proposition. We also show that the map $df_{\pp}$ is linear, and we provide the matrix representation of $df_{\pp}$. The matrix representation, in particular, allows to compute $d_{\pp} f$ without the need to construct suitable curves.
+
+We need to show that Definition \ref{definition-differential-f} is well-posed, i.e., that $d_{\pp} f (\vv)$ depends only on $\pp$, $f$, $\vv$: This is because there are infinitely many curves $\g$ such that
+$$
+\g(0) = \pp \,, \qquad \dg(0) = \vv \,.
+$$
+Therefore, a priori, $d_{\pp} f (\vv)$ could depend on which curve is chosen. This is however, not the case, as shown in the next Proposition. We will also show that the map $df_{\pp}$ is linear, and compute its matrix. 
 
 
 ::: {.Proposition #proposition-differential-smooth}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Denote the differential of $f$ by
 $$
-df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
 $$
 We have:
 
-1. $df_{\pp} (\vv)$ does not depend on the choice of $\g$, but rather only on $f, \pp,\vv$.
+1. $d_{\pp}f (\vv)$ depends only on $f, \pp,\vv$ (and not on $\g$).
 
-2. $df_{\pp}$ is linear, that is,
+2. $d_{\pp} f$ is linear, that is,
 $$
-df_{\pp} (\lambda \vv + \mu \ww) = \lambda df_{\pp} (\vv) + \mu df_{\pp} (\ww) \,, 
+d_{\pp}f (\lambda \vv + \mu \ww) = \lambda d_{\pp}f (\vv) + \mu d_{\pp}f (\ww) \,, 
 $$
 for all $\vv,\ww \in T_{\pp} \SSS$ and $\lambda,\mu \in \R$.
 3. Let 
@@ -3726,7 +3845,7 @@ $$
 \widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
 \quad \forall \, (u,v) \in U \,.
 $$
-The matrix of the linear map $df_{\pp}$ with respect to the basis 
+The matrix of the linear map $d_{\pp}f$ with respect to the basis 
 $$
 \{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
 \{ \widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\pp)} \widetilde{\SSS} \,,
@@ -3745,9 +3864,9 @@ $$
 :::
 
 
-Point 3 in the above proposition seems complicated, but it is saying something really simple:
+Point 3 in the above Proposition seems complicated, but it is saying something really simple:
 
-1. Let $f \colon \SSS \to \widetilde{\SSS}$ be a smooth function between surfaces. Consider local charts $\sss$ at $\pp$ and $\widetilde{\sss}$ at $f(\pp)$. By definition of smooth map, the real map
+1. Let $f \colon \SSS \to \widetilde{\SSS}$ be a smooth function between surfaces. Consider local charts $\sss$ at $\pp$, and $\widetilde{\sss}$ at $f(\pp)$. By definition of smooth map, the real map
 $$
 \Psi \colon \R^2 \to \R^2 \,, \qquad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss
 $$
@@ -3764,9 +3883,9 @@ is just the Jacobian of $\Psi$.
 
 ::: Proof
 
-Let $\pp \in \SSS$ and $\vv \in T_{\pp} \SSS$ be fixed. In order to prove the thesis, we need compute $d_{\pp} f$. To this end, let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote by $(u_0,v_0) \in U$ the point such that
+Let $\pp \in \SSS$. In order to prove the thesis, we need compute $d_{\pp} f$. To this end, let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote
 $$
-\sss(u_0,v_0) = \pp \,.
+(u_0,v_0) = \sss^{-1}(\pp) \,.
 $$
 Let $\widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS}$ a chart at $f(\pp)$. Since $f$ is smooth, the map
 $$
@@ -3781,69 +3900,85 @@ $$
 \widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
 \quad \forall \, (u,v) \in U \,.
 $${#eq-function-transition}
-Denote by
+Let $\vv \in T_{\pp} \SSS$ and denote by $(\lambda,\mu)$ the components of $\vv$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp} \SSS$, that is,
 $$
-\vv = (\lambda,\mu)
+\vv = \lambda \sss_u + \mu \sss_v \,.
 $$
-the components of $\vv$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp} \SSS$. Define the scalar functions
+Define the scalar functions
 $$
 u(t):= u_0 +\lambda t \,, \quad 
-v(t):= v_0 +\mu t \,,
+v(t):= v_0 +\mu t \,.
 $$
-and the curve
+Since $U$ is open in $\R^2$, and $(u_0,v_0) \in U$, there exists a sufficiently small $\e>0$ such that
 $$
-\g(t) := \sss(u(t), v(t)) \,.
+(u(t), v(t)) \in U \,, \quad \forall \, t \in (-\e,\e) \,.
 $$
-Clearly $\g$ is a regular curve on $\SSS$, and it holds
+In particular, it is well defined the curve
+$$
+\g \colon (-\e,\e) \to \SSS \,, \quad \g(t) := \sss(u(t), v(t)) \,.
+$$
+It is immediate to check that
 $$
 \g(0) = \sss(u_0, v_0) = \pp  \,, \quad 
-\dg(0) = (\lambda,\mu) = \vv
+\dg(0) = \lambda \sssu+\mu \sssv = \vv \,.
 $$
-By (@eq-function-transition) we have
+By definition of $\g$, and by (@eq-function-transition), we have
 \begin{align*}
 (f \circ \g)(t) & = f(\g(t)) \\
                 & = f( \sss(u(t), v(t)) ) \\
-                & = \widetilde{\sss} ( \alpha(u(t),v(t)), \beta(u(t),v(t))  )
+                & = \widetilde{\sss} ( \alpha(u(t),v(t)), \beta(u(t),v(t))  ) \,.
 \end{align*}
 By chain rule we obtain
 \begin{align*}
-(f \circ \g)'(t) & = \widetilde{\sss}_{\tilde{u}} \frac{d}{dt}  \alpha(u(t),v(t)) +
-\widetilde{\sss}_{\tilde{v}} \frac{d}{dt}  \beta(u(t),v(t))   \\
-& = \widetilde{\sss}_{\tilde{u}} [ \alpha_u \dot{u}(t) + \alpha_v \dot{v}(t)  ] + 
-\widetilde{\sss}_{\tilde{v}} [ \beta_u \dot{u}(t) + \beta_v \dot{v}(t)  ]
+(f \circ \g)'(t) & = \widetilde{\sss}_{\tilde{u}} \frac{d}{dt}  \left[ \alpha(u(t),v(t)) \right] +
+\widetilde{\sss}_{\tilde{v}} \frac{d}{dt}  \left[  \beta(u(t),v(t)) \right]   \\
+& = \widetilde{\sss}_{\tilde{u}} \left[ \alpha_u \dot{u}(t) + \alpha_v \dot{v}(t)  \right] + 
+\widetilde{\sss}_{\tilde{v}} \left[ \beta_u \dot{u}(t) + \beta_v \dot{v}(t)  \right] \,.
 \end{align*}
-Recalling that $\dot{u}(0) = \lambda$ and $\dot{v}(0) = \mu$, we get
+Noting that 
 $$
-(f \circ \g)'(t) = 
-\widetilde{\sss}_{\tilde{u}} [ \lambda \alpha_u + \mu \alpha_v  ] + 
-\widetilde{\sss}_{\tilde{v}} [ \lambda  \beta_u + \mu \beta_v]
+\dot{u}(0) = \lambda \,, \qquad \dot{v}(0) = \mu \,,
 $$
-As by definition of differential
+we get
 $$
-d_{\pp} f (\vv)  = ( f \circ \g )' (0)
+(f \circ \g)'(0) = 
+\widetilde{\sss}_{\tilde{u}} \left[ \lambda \alpha_u + \mu \alpha_v  \right] + 
+\widetilde{\sss}_{\tilde{v}} \left[ \lambda  \beta_u + \mu \beta_v \right] \,.
+$$
+As, by definition of differential,
+$$
+d_{\pp} f (\vv)  = ( f \circ \g )' (0)\,,
 $$
 we have obtained 
 $$
 d_{\pp} f (\vv) = \widetilde{\sss}_{\tilde{u}} [ \lambda \alpha_u + \mu \alpha_v  ] + 
 \widetilde{\sss}_{\tilde{v}} [ \lambda  \beta_u + \mu \beta_v]
 $${#eq-function-transition-1}
-We can now draw our 3 conclusions:
+We can now prove the 3 points stated in the Proposition:
 
 1. The RHS of (@eq-function-transition-1) depends only on $\lambda,\mu$ (the components of $\vv$), $f$ (via the components $\alpha,\beta$ of $\Psi$), and the point $\pp$. In particular $d_{\pp}f(\vv)$ does not depend on the choice of $\g$, and the definition is well-posed.
 
 2. The RHS of (@eq-function-transition-1) is linear in the components $\lambda,\mu$ of $\vv$. In particular $d_{\pp}f(\vv)$ is linear in $\vv$.
 
-3. The coordinates of $\sssu$ with respect to the basis $\{\sssu,\sssv\}$ are $(\lambda,\mu) = (1,0)$. Using (@eq-function-transition-1), we get
+3. The coordinates of $\sssu$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp} \SSS$ are 
+$$
+(\lambda,\mu) = (1,0)\,.
+$$
+Using (@eq-function-transition-1), we get
 $$
 d_{\pp}f(\sssu) = \widetilde{\sss}_{\tilde{u}}\alpha_u + 
 \widetilde{\sss}_{\tilde{v}} \beta_u 
 $$
-Similarly, the coordinates of $\sssv$ with respect to the basis $\{\sssu,\sssv\}$ are $(\lambda,\mu) = (0,1)$. Therefore
+Similarly, the coordinates of $\sssv$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp} \SSS$ are 
+$$
+(\lambda,\mu) = (0,1) \,.
+$$
+Therefore
 $$
 d_{\pp}f(\sssv) = \widetilde{\sss}_{\tilde{u}}\alpha_v + 
 \widetilde{\sss}_{\tilde{v}} \beta_v 
 $$ 
-This shows that the matrix of the linear application $d_{\pp}f$ with respect to the basis $\{\sssu,\sssv\}$ on $T_{\pp} \SSS$ and the basis $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}}\}$ on $T_{f(\pp)} \widetilde{\SSS}$ is
+This shows that the matrix of the linear application $d_{\pp}f$ with respect to the basis $\{\sssu,\sssv\}$ on $T_{\pp} \SSS$, and the basis $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}}\}$ on $T_{f(\pp)} \widetilde{\SSS}$, is given by
 $$
 \left(
 \begin{array}{cc}
@@ -3854,26 +3989,195 @@ $$
 $$
 :::
 
+Given the above discussion, we have 2 ways of computing the differential of a smooth function
+$$
+f \colon \SSS \to \wSSS
+$$
+
+1. **By using the definition:** Let $\vv \in T_{\pp} \SSS$ and let $\g$ be a curve on $\SSS$ such that 
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv \,.
+$$
+Then 
+$$
+d_{\pp} f (\vv) = (f \circ \g)'(0)\,.
+$$
+Method to construct $\g$: Following the proof of Proposition \ref{proposition-differential-smooth}, one can proceed as follows: 
+    - Find $\sss \colon U \to \SSS$ chart of $\SSS$ at $\pp$.
+    - Compute 
+    $$
+    T_{\pp} \SSS = \operatorname{span} \{ \sssu,\sssv \} \,.
+    $$
+    - For $\vv \in T_{\pp} \SSS$, compute $\lambda,\mu$ such that
+    $$
+    \vv = \lambda \sssu + \mu \sssv \,.
+    $$
+    - Compute $(u_0,v_0) = \sss^{-1}(\pp)$.
+    - Define the curve
+    $$
+    \g(t) = \sss( u_0 + \lambda t, v_0 + \mu t ) \,.
+    $$
+    Such curve satisfies
+    $$
+    \g(0) = \pp \,, \qquad \dg(0) = \vv \,.
+    $$
+    - Compute 
+    $$
+    d_{\pp} f (\vv) = (f \circ \g)'(0)\,.
+    $$
+
+2. **By using the matrix representation:** Let $\vv \in T_{\pp} \SSS$
+    - Find $\sss \colon U \to \SSS$ chart of $\SSS$ at $\pp$.
+    - Find $\wsss \colon \wU \to \wSSS$ chart of $\wSSS$ at $f(\pp)$. 
+    - Compute the components $\alpha,\beta$ of the function
+    $$
+    \wsss^{-1} \circ f \circ \sss \colon U \to \wU \,.
+    $$
+    - The matrix of $d_{\pp}f$ with respect to the basis $\{\sss_u,\sss_v\}$ on $T_{\pp} \SSS$, and the basis $\{\wsssu,\wsssv\}$ on $T_{\pp} \wSSS$, is given by 
+    $$
+    d_{\pp} f = J\Psi = 
+    \left(
+    \begin{array}{cc}
+    \alpha_u & \alpha_v \\
+    \beta_u & \beta_v \\
+    \end{array}
+    \right) \,.
+    $$
+    - Compute $\lambda,\mu$ such that
+    $$
+    \vv = \lambda \sssu + \mu \sssv \,.
+    $$
+    - Compute 
+    $$
+    d_{\pp} f (\vv) = \left(
+    \begin{array}{cc}
+    \alpha_u & \alpha_v \\
+    \beta_u & \beta_v \\
+    \end{array}
+    \right) 
+    \left(
+    \begin{array}{c}
+    \lambda \\
+    \mu \\
+    \end{array}
+    \right) \,.
+    $$
+
+
+Let us give example calculations for both methods.
+
+::: Example
+### Computing $d_{\pp}f$ using the definition
+
+Consider the portion of the plane $\{z=0\}$,
+$$
+\SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
+$$ 
+and the unit cylinder
+$$
+\widetilde{\SSS} = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \}  \,.
+$$
+Define the map 
+$$
+f \colon S \to \widetilde{\SSS} \,, \quad 
+f(x,y,0) := (\cos x , \sin x, y) \,.
+$$
+The differential $d_{\pp}f$ at
+$$
+\pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
+$$
+is given by
+$$
+d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
+$$
+
+> *Solution.* First, notice that $f$ is well defined, because 
+$$
+\cos^2(x) + \sin^2(x) = 1 \quad \implies \quad f \in \widetilde{\SSS} \,.
+$$
+We want to compute the differential of $f$
+$$
+d_{\pp} f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}\,,
+$$
+where
+$$
+\pp = (u_0,v_0,0) \in \SSS \,.
+$$
+First, we need to compute $T_{\pp} \SSS$. To this end, a chart for $\SSS$ is given by
+$$
+\sss(u,v) = (u,v,0) \,.
+$$
+Therefore 
+$$
+\sss_u = (1,0,0) \,, \qquad \sss_v = (0,1,0) \,, 
+$$
+from which
+\begin{align*}
+T_{\pp} \SSS & = \operatorname{span} \{ \sss_u,\sss_v \} \\
+             & = \operatorname{span} \{ (1,0,0), (0,1,0)  \} \\
+             & = \{ (\lambda,\mu,0) \, \colon \, \lambda,\mu \in \R \} \,.
+\end{align*}
+Therefore, let 
+$$
+\vv = (\lambda,\mu,0) \in T_{\pp} \SSS \,. 
+$$
+We need to find a curve $\g \colon (-\e,\e) \to \SSS$ such that
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv = (\lambda,\mu,0)\,.
+$${#eq-example-differential}
+Define $\g$ by setting
+$$
+\g(t) := \sss(u_0 + t \lambda, v_0 + t \mu ) = (u_0 + t \lambda, v_0 + t \mu, 0)\,.
+$$
+Clearly, $\g$ satisfies (@eq-example-differential). We have
+\begin{align*}
+(f \circ \g) (t) & = f(u_0 + t \lambda, v_0 + t \mu,0) \\
+                 & = ( \cos(u_0 + t \lambda), \sin(u_0 + t \lambda),v_0 + t \mu ) \,,\\
+(f \circ \g)' (t) & = (- \lambda \sin (u_0 + t\lambda), \lambda \cos (u_0 + t \lambda), \mu) \,.
+\end{align*}
+Therefore, the differential $d_{\pp}f$ at
+$$
+\pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
+$$
+is given by
+$$
+d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
+$$
+
+:::
+
+
+
+
+
+
+
 
 ::: Example
 ### Computing the matrix of $d_{\pp}f$
 
 Consider the unit cylinder 
 $$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,,
 $$
-and the map
+and the plane
 $$
-f \colon \SSS \to \R^2 \,, \quad 
-f(x,y,z) = (y,xz,0)
+\wSSS = \{ (x,y,z) \in \R^3 \, \colon \, z = 0  \} \,.
 $$
-We want to compute the matrix of $d_{\pp}f$. To this end, a chart of $\SSS$ is given by 
+Define the map
+$$
+f \colon \SSS \to \wSSS \,, \quad 
+f(x,y,z) = (y,xz,0) \,.
+$$
+Give charts of $\SSS$ and $\wSSS$, and compute the matrix of $d_{\pp} f$ with respect to these charts.
+
+> *Solution.* A chart of the cylinder $\SSS$ is given by 
 $$
 \sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
 $$
-A chart of $\widetilde{\SSS} = \R^2$ is given by 
+A chart of the plane $\widetilde{\SSS}$ is given by 
 $$
-\widetilde{\sss}(\tilde{u},\tilde{v}) = (\tilde{u},\tilde{v},0) \,, \quad (\tilde{u},\tilde{v}) \in \tilde{U} = \R^2 \,.
+\widetilde{\sss}(u,v) = (u,v,0) \,, \quad (u,v) \in \wU = \R^2 \,.
 $$
 We need to compute the map
 $$
@@ -3881,19 +4185,23 @@ $$
 $$
 Clearly we have
 $$
-\widetilde{\sss}^{-1} (\tilde{u},\tilde{v},0) =(\tilde{u},\tilde{v}) \,.
+\widetilde{\sss}^{-1} (u,v,0) =(u,v) \,.
 $$
 Therefore
 \begin{align*}
 \Psi(u,v) & = \widetilde{\sss}^{-1} \left( f(\sss(u,v))    \right) \\
           & = \widetilde{\sss}^{-1} \left( f(\cos u, \sin u, v )    \right) \\
           & =  \widetilde{\sss}^{-1} \left( \sin (u), \cos (u) v, 0    \right) \\
-          & = \left( \sin (u), \cos (u) v    \right)
+          & = \left( \sin (u), \cos (u) v    \right) \,.
 \end{align*}
+The components of $\Psi$ are
+$$
+\alpha(u,v) = \sin(u) \,, \qquad \beta (u,v) =  \cos (u) v  \,.
+$$
 Therefore 
 \begin{align*}
-\partial_u \Psi^1 & = \cos (u) \,, & \partial_v & \Psi^1 = 0 \\
-\partial_u \Psi^2 & = -\sin (u) v \,,  & \partial_v & \Psi^2 = \cos(u) 
+\alpha_u & = \cos (u) \,, & \alpha_v &  = 0 \\
+\beta_u  & = -\sin (u) v \,,  & \beta_v &  = \cos(u) 
 \end{align*}
 The matrix of $d_{\pp}f$ is hence
 $$
@@ -3918,11 +4226,11 @@ The following hold:
 
 1. If $\SSS$ is a regular surface and $\pp \in \SSS$, the differential at $\pp$ of the identity map 
 $$
-I \colon \SSS \to \SSS \,, \quad I(x):=x \,,
+I \colon \SSS \to \SSS \,, \quad I(\xx):=\xx \,,
 $$
 is the identity map
 $$
-I \colon T_{\pp} (\SSS) \to T_{\pp} (\SSS) \,, \quad I(v):=v \,.
+I \colon T_{\pp} (\SSS) \to T_{\pp} (\SSS) \,, \quad I(\vv):=\vv \,.
 $$
 
 2. If $\SSS_1$, $\SSS_2$ and $\SSS_3$ are regular surfaces and 
@@ -3932,9 +4240,9 @@ g \colon \SSS_2 \to \SSS_3 \,,
 $$
 are smooth maps, then 
 $$
-d_{\pp} ( g \circ f ) = d_{f(\pp)} g \circ d_{\pp} f \,,
+d_{\pp} ( g \circ f ) = d_{f(\pp)} g \circ d_{\pp} f \,, \quad \forall 
+\pp \in T_{\pp} \SSS_1 \,.
 $$
-for all $\pp \in T_{\pp} \SSS_1$.
 
 3. If $\SSS_1$, $\SSS_2$ are regular surfaces and 
 $$
@@ -3948,7 +4256,7 @@ is invertible for all $\pp \in \SSS_1$.
 
 :::
 
-For a proof see Proposition 4.4.5 in [@pressley]. The above proposition says that the differential of diffeomorphism is invertible. The converse statement is true locally.
+For a proof see Proposition 4.4.5 in [@pressley]. The above Proposition says that the differential of diffeomorphism is invertible. The converse statement is true locally.
 
 
 ::: Theorem
@@ -3957,10 +4265,10 @@ Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Suppose that
 $$
 f \colon \SSS_1 \to \SSS_2 
 $$
-is smooth. They are equivalent:
+is smooth, and let $\pp \in \SSS_1$. They are equivalent:
 
-1. $f$ is a local diffeomorphism.
-2. The differential $d_{\pp} f \colon T_{\pp} \SSS_1 \to T_{f(\pp)} \SSS_2$ is invertible for all $\pp \in \SSS_1$.
+1. $f$ is a local diffeomorphism at $\pp$.
+2. The differential $d_{\pp} f \colon T_{\pp} \SSS_1 \to T_{f(\pp)} \SSS_2$ is invertible at $\pp$.
 
 
 :::

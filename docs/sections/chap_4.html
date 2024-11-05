@@ -92,15 +92,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,23 +100,7 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Warning {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -132,15 +108,19 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -148,7 +128,15 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Lemma {
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -156,13 +144,25 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -303,7 +303,7 @@ window.Quarto = {
   <li><a href="#reparametrizations" id="toc-reparametrizations" class="nav-link" data-scroll-target="#reparametrizations"><span class="header-section-number">4.4</span> Reparametrizations</a></li>
   <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">4.5</span> Transition maps</a></li>
   <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">4.6</span> Functions between surfaces</a></li>
-  <li><a href="#tangent-space" id="toc-tangent-space" class="nav-link" data-scroll-target="#tangent-space"><span class="header-section-number">4.7</span> Tangent space</a></li>
+  <li><a href="#sec-tangent-space" id="toc-sec-tangent-space" class="nav-link" data-scroll-target="#sec-tangent-space"><span class="header-section-number">4.7</span> Tangent space</a></li>
   <li><a href="#unit-normal-and-orientability" id="toc-unit-normal-and-orientability" class="nav-link" data-scroll-target="#unit-normal-and-orientability"><span class="header-section-number">4.8</span> Unit normal and orientability</a></li>
   <li><a href="#differential-of-smooth-functions" id="toc-differential-of-smooth-functions" class="nav-link" data-scroll-target="#differential-of-smooth-functions"><span class="header-section-number">4.9</span> Differential of smooth functions</a></li>
   <li><a href="#examples-of-surfaces" id="toc-examples-of-surfaces" class="nav-link" data-scroll-target="#examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</a>
@@ -819,7 +819,7 @@ J\phi(t_0) = \dot{\phi}(t_0) \,, \quad \det J\phi(t_0) = \dot{\phi}(t_0) \,,
 </div></details>
 </div>
 <p>The condition at (<a href="#eq-non-vanish-det" class="quarto-xref"><span>4.1</span></a>) is sufficient fot <span class="math inline">\(f\)</span> to be a <strong>local diffeomorphism</strong> at <span class="math inline">\(\mathbf{x}_0\)</span>. This is the content of the Inverse Function Theorem.</p>
-<div id="inverse-function-theorem" class="Theorem" title="Inverse Function Theorem">
+<div id="theorem-inverse-function" class="Theorem" title="Inverse Function Theorem">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 41: </strong>Inverse Function Theorem</summary><div>
 <p>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open. Suppose <span class="math inline">\(f\)</span> is a smooth function and <span class="math display">\[
 \det J f(\mathbf{x}_0) \neq 0 \,,
@@ -855,7 +855,7 @@ L_k := \left\{ \left(x, \frac{k \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 U:= \mathbb{R}^n \smallsetminus \bigcup_{k=1}^\infty L_k \,.
 \]</span> In particular, we have <span class="math display">\[
 \det Jf(x,y) \neq 0 \,, \quad \forall \, (x,y) \in U \,.
-\]</span> By the Inverse Function Theorem, <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in U\)</span>.<p></p>
+\]</span> By the Inverse Function Theorem <a href="chap_4.html#theorem-inverse-function">41</a>, <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in U\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Warning*-3" class="Warning">
@@ -880,7 +880,7 @@ Jf(x,y) \neq 0 \quad \forall \, (x,y) \in \mathbb{R}^2 \,.
 \]</span></p>
 <p>We observe the following:</p>
 <ol type="1">
-<li><p>By the Inverse Function Theorem, <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span>.</p></li>
+<li><p>By the Inverse Function Theorem <a href="chap_4.html#theorem-inverse-function">41</a>, <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span>.</p></li>
 <li><p>However <span class="math inline">\(f\)</span> is not injective, since <span class="math display">\[
 f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \mathbb{R}^2 , \,  n \in \mathbb{N}\,.
 \]</span></p></li>
@@ -1689,7 +1689,7 @@ V := {\pmb{\sigma}}^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{{
 \]</span> is called a <strong>transition map</strong> from <span class="math inline">\({\pmb{\sigma}}\)</span> to <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>.<p></p>
 </div></details>
 </div>
-<p>The next Theorem states that transition maps between regular charts are diffeomorphisms. The proof is slightly technical, and is based on the Implicit Function Theorem. We decide to omit it. The interested reader can find a proof at Page 117 of <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<p>The following theorem states that the transition maps between regular charts are diffeomorphisms. The proof is somewhat technical and relies on the Implicit Function Theorem. A similar argument will be used for Lemma <a href="chap_4.html#lemma-curve-S">77</a> in <a href="#sec-tangent-space" class="quarto-xref"><span>Section 4.7</span></a>. We have chosen to omit the proof here, but interested readers can refer to page 117 of <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span> for details.</p>
 <div id="theorem-transition-map" class="Theorem">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 65</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. The transition maps between regular charts are diffeomorphisms.<p></p>
 </div></details>
@@ -1880,8 +1880,8 @@ f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
 <li>Being locally diffeomorphic is <strong>not</strong> an equivalence relation: <span class="math inline">\(\mathcal{S}_1\)</span> <strong>locally diffeomorphic</strong> to <span class="math inline">\(\mathcal{S}_2\)</span> does not imply that <span class="math inline">\(\mathcal{S}_2\)</span> is <strong>locally diffeomorphic</strong> to <span class="math inline">\(\mathcal{S}_1\)</span>.</li>
 </ol>
 </section>
-<section id="tangent-space" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="tangent-space"><span class="header-section-number">4.7</span> Tangent space</h2>
+<section id="sec-tangent-space" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-tangent-space"><span class="header-section-number">4.7</span> Tangent space</h2>
 <p>The tangent vector to a curve <span class="math inline">\({\pmb{\gamma}}\colon \mathbb{R}\to \mathbb{R}^3\)</span> at the point <span class="math inline">\({\pmb{\gamma}}(t)\)</span> is just <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span>, the derivative of the curve at <span class="math inline">\(t\)</span>. Tangent vectors to a surface <span class="math inline">\(\mathcal{S}\)</span> can be defined as the tangent vectors of curves <span class="math inline">\({\pmb{\gamma}}\colon \mathbb{R}\to \mathcal{S}\)</span> with values in <span class="math inline">\(\mathcal{S}\)</span>, see <a href="#fig-tangent-plane" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>.</p>
 <p>To simplify statements, we make the following assumption.</p>
 <div id="Assumption-74" class="Assumption">
@@ -1943,37 +1943,38 @@ T_{\mathbf{p}} \mathcal{S}\simeq \mathbb{R}^2 \,.
 \]</span> which is an isomorphism of vector spaces, i.e., <span class="math inline">\(\Phi\)</span> is invertible and linear: <span class="math display">\[
 \Phi(\lambda \mathbf{v}+ \mu \mathbf{w}) = \lambda \Phi(\lambda) + \mu \Phi( \mathbf{w})  \,,
 \]</span> for all <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}}\mathcal{S}\)</span> and <span class="math inline">\(\lambda, \mu \in \mathbb{R}\)</span>.</p>
-<p>To prove this result, we need a Lemma concerning curves with values on surfaces.</p>
-<div id="lemma-curve-S" class="Lemma">
-<details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 77</strong></summary><div>
+<p>To prove this result, we need a Lemma concerning curves with values on surfaces: The lemma says that when <span class="math inline">\(\mathcal{S}\)</span> is regular, all the smooth curves <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> with values in <span class="math inline">\(\mathcal{S}\)</span>, are of the form <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0)
+\]</span> for a pair of smooth functions <span class="math inline">\(u,v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}\)</span>, and a suitable <span class="math inline">\(\varepsilon_0 \in (0,\varepsilon]\)</span>.</p>
+<div id="lemma-curve-S" class="Lemma" title="Curves with values on surfaces">
+<details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 77: </strong>Curves with values on surfaces</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface, <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote <span class="math display">\[
 (u_0,v_0) = {\pmb{\sigma}}^{-1}(\mathbf{p}) \,.
-\]</span> The following hold:</p>
+\]</span> Let <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> be a smooth curve, and consider the statements:</p>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is a smooth curve such that <span class="math display">\[
-{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,.
-\]</span> Then there exist smooth functions <span class="math display">\[
-u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}
-\]</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,,
-\]</span> and <span class="math display">\[
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
+<li><p>The curve <span class="math inline">\({\pmb{\gamma}}\)</span> satisfies <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math display">\[
+{\pmb{\gamma}}(t) \in \mathcal{S}\,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,.
 \]</span></p></li>
-<li><p>Conversely, assume <span class="math inline">\(u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}\)</span> are smooth functions such that <span class="math display">\[
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
-\]</span> Then <span class="math display">\[
-{\pmb{\gamma}}(t):= {\pmb{\sigma}}(u(t),v(t))
-\]</span> is a smooth curve such that <span class="math display">\[
-{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq \mathcal{S}\,, \quad  {\pmb{\gamma}}(0)=\mathbf{p}\,.
+<li><p>There exist <span class="math inline">\(\varepsilon_0 \in (0,\varepsilon]\)</span> and smooth functions <span class="math display">\[
+u , v \colon (-\varepsilon_0,\varepsilon_0) \to \mathbb{R}\,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0) \,.
 \]</span></p></li>
 </ol>
+<p>We have that:</p>
+<ul>
+<li>Point 1 implies Point 2.</li>
+<li>Point 2 implies Point 1 when <span class="math inline">\(\varepsilon_0 = \varepsilon\)</span>.</li>
+</ul>
 </div></details>
 </div>
 <div id="Proof*-10" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Denote the coordinates of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> To visualize the geometric ideas of this part of the proof, see <a href="#fig-curves-surface" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. Let <span class="math inline">\(\mathbf{p}\)</span> in <span class="math inline">\(\mathcal{S}\)</span>, and assume given a smooth curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math display">\[
+{\pmb{\gamma}}(t) \in \mathcal{S}\,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,.
+\]</span> Denote the coordinates of the chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (f(u,v), g(u,v), h(u, v)) \,.
-\]</span> The differential of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-d{\pmb{\sigma}}=
+\]</span> The Jacobian of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+J{\pmb{\sigma}}=
 \left(   
 \begin{array}{cc}
 f_u &amp; f_v \\
@@ -1981,7 +1982,7 @@ g_u &amp; g_v \\
 h_u &amp; h_v \\
 \end{array}
 \right) \,.
-\]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, by definition <span class="math inline">\(d{\pmb{\sigma}}\)</span> has rank-2 at <span class="math inline">\((u_0,v_0)\)</span>. This means that at least one of the 3 minors <span class="math display">\[
+\]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, by definition <span class="math inline">\(J{\pmb{\sigma}}\)</span> has rank-2 at <span class="math inline">\((u_0,v_0)\)</span>. This means that at least one of the 3 minors <span class="math display">\[
 \left(   
 \begin{array}{cc}
 f_u &amp; f_v \\
@@ -2000,95 +2001,157 @@ g_u &amp; g_v \\
 h_u &amp; h_v \\
 \end{array}
 \right) \,.
-\]</span> is invertible. WLOG assume the first is invertible (the proof in case the other two are invertible is similar.) Define the map <span class="math display">\[
-F \colon U \subseteq \mathbb{R}^2 \to \mathbb{R}^2 \,, \quad F(u,v) = ( f(u,v), g(u,v) ) \,.
-\]</span> We have <span class="math display">\[
-dF =
+\]</span> is invertible. WLOG, assume the first is invertible (the proof in case the other two are invertible is similar). Define the map<br>
+<span class="math display">\[
+F \colon U \subseteq \mathbb{R}^2 \to \mathbb{R}^2 \,, \qquad F(u,v) := ( f(u,v), g(u,v) ) \,.
+\]</span> The Jacobian of <span class="math inline">\(F\)</span> is <span class="math display">\[
+JF =
 \left(   
 \begin{array}{cc}
 f_u &amp; f_v \\
 g_u &amp; g_v
 \end{array}
 \right) \,,
-\]</span> which is invertible at <span class="math inline">\((u_0,v_0)\)</span> by assumption. Hence, by the Inverse Function Theorem, there exist<p></p>
+\]</span> which is invertible at <span class="math inline">\((u_0,v_0)\)</span> by assumption. Hence, by the Inverse Function Theorem <a href="chap_4.html#theorem-inverse-function">41</a>, there exist<p></p>
 <ul>
-<li><span class="math inline">\(W \subseteq U \subseteq \mathbb{R}^2\)</span> open set with <span class="math inline">\((u_0,v_0) \in W\)</span>,</li>
-<li><span class="math inline">\(V \subseteq \mathbb{R}^2\)</span> open set with <span class="math inline">\(F(u_0,v_0) \in V\)</span>,</li>
+<li><span class="math inline">\(U_0 \subseteq U\)</span> open set, with <span class="math inline">\((u_0,v_0) \in U_0\)</span>,</li>
+<li><span class="math inline">\(V \subseteq \mathbb{R}^2\)</span> open set, with <span class="math inline">\(F(u_0,v_0) \in V\)</span>,</li>
 </ul>
 <p>such that <span class="math display">\[
-F \colon W \to V
-\]</span> is a diffeomorphism. Hence <span class="math display">\[
-F^{-1} \colon V \to W
-\]</span> is smooth. Since <span class="math inline">\({\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U)\)</span>, it is well defined the composition <span class="math display">\[
-F^{-1} \circ {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to W \subseteq U \,.
-\]</span> In particular, there exist two functions <span class="math inline">\(u,v\)</span> (the components of <span class="math inline">\(F^{-1} \circ {\pmb{\gamma}}\)</span>) such that <span id="eq-lemma-curve-S"><span class="math display">\[
-(F^{-1} \circ {\pmb{\gamma}}) (t) = (u(t),v(t))
-\tag{4.3}\]</span></span> Note that <span class="math inline">\(u,v\)</span> are smooth, since <span class="math inline">\(F^{-1} \circ {\pmb{\gamma}}\)</span> is smooth, being <span class="math inline">\(F^{-1}\)</span> and <span class="math inline">\({\pmb{\gamma}}\)</span> smooth. As <span class="math inline">\({\pmb{\gamma}}(0)=\mathbf{p}\)</span>, by definition of <span class="math inline">\(F\)</span> we have <span class="math display">\[
-(u(0),v(0)) = (F^{-1} \circ {\pmb{\gamma}}) (0) = F^{-1}(\mathbf{p}) =  (u_0,v_0) \,,
-\]</span> showing that <span class="math display">\[
-u(0) = u_0 \,, \quad
-v(0) = v_0 \,.
-\]</span> Moreover, applying <span class="math inline">\({\pmb{\sigma}}\)</span> to both sides of (<a href="#eq-lemma-curve-S" class="quarto-xref"><span>4.3</span></a>) yields <span class="math display">\[
-{\pmb{\sigma}}(u(t),v(t)) = {\pmb{\sigma}}((F^{-1} \circ {\pmb{\gamma}})) (t) = {\pmb{\gamma}}(t) \,,
-\]</span> as we wanted to show.</p>
-<p>The converse statement is trivial.</p>
+F \colon U_0 \to V
+\]</span> is a diffeomorphism. In particular, the inverse function <span class="math display">\[
+F^{-1} \colon V \to U_0
+\]</span> is smooth. Define the projection map <span class="math display">\[
+\pi \colon \mathbb{R}^3 \to \mathbb{R}^2 \,, \quad \pi(x,y,z) = (x,y) \,,
+\]</span> and notice that, by construction, <span class="math display">\[
+F = \pi \circ {\pmb{\sigma}}\,.
+\]</span> The composition <span class="math display">\[
+\pi \circ {\pmb{\gamma}}\colon (\varepsilon,\varepsilon) \to \mathbb{R}^2
+\]</span> is smooth, and such that <span class="math display">\[\begin{align*}
+(\pi \circ {\pmb{\gamma}}) (0) &amp; = \pi ({\pmb{\gamma}}(0)) \\
+                   &amp; = \pi (\mathbf{p}) \\
+                   &amp; = \pi ( {\pmb{\sigma}}(u_0,v_0) ) \\
+                   &amp; = F(u_0,v_0) \,.
+\end{align*}\]</span> Since <span class="math inline">\(F(u_0,v_0) \in V\)</span>, with <span class="math inline">\(V\)</span> open in <span class="math inline">\(\mathbb{R}^2\)</span>, and since <span class="math inline">\(\pi \circ {\pmb{\gamma}}\)</span> is continuous, there exists <span class="math inline">\(\varepsilon_0 \in (0,\varepsilon]\)</span> such that <span class="math display">\[
+(\pi \circ {\pmb{\gamma}})(t) \in V \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0) \,.
+\]</span> Since <span class="math inline">\(F^{-1}\)</span> maps <span class="math inline">\(V\)</span> into <span class="math inline">\(U_0\)</span>, it is well-defined the composition <span class="math display">\[
+{\pmb{\eta}}\colon (-\varepsilon_0, \varepsilon_0) \to U_0 \,, \qquad {\pmb{\eta}}:= F^{-1} \circ \pi \circ {\pmb{\gamma}}\,.
+\]</span> Notice that <span class="math inline">\({\pmb{\eta}}\)</span> is smooth, since <span class="math inline">\(F^{-1}, \pi\)</span> and <span class="math inline">\({\pmb{\gamma}}\)</span> are smooth. In particular, the componenents of <span class="math inline">\({\pmb{\eta}}\)</span> are two smooth functions <span class="math display">\[
+u,v \colon (-\varepsilon_0,\varepsilon_0) \to \mathbb{R}\,,
+\]</span> such that <span id="eq-lemma-curve-S"><span class="math display">\[
+(u(t),v(t)) = (F^{-1} \circ \pi \circ {\pmb{\gamma}})(t) \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0) \,.
+\tag{4.3}\]</span></span> We are now ready to conclude:</p>
+<ul>
+<li><p>Recalling that <span class="math inline">\(F = \pi \circ {\pmb{\sigma}}\)</span>, and that <span class="math inline">\({\pmb{\sigma}}\)</span> is invertible, we infer that <span class="math display">\[
+F = \pi \circ {\pmb{\sigma}}\,\, \implies \,\,
+F \circ {\pmb{\sigma}}^{-1}  = \pi  \,\, \implies \,\,
+{\pmb{\sigma}}^{-1} = F^{-1} \circ \pi    \,.
+\]</span> Hence, we can substitute <span class="math inline">\(F^{-1} \circ \pi  = {\pmb{\sigma}}^{-1}\)</span> in (<a href="#eq-lemma-curve-S" class="quarto-xref"><span>4.3</span></a>), and obtain <span class="math display">\[
+(u(t),v(t)) = (F^{-1} \circ \pi \circ {\pmb{\gamma}})(t) = ({\pmb{\sigma}}^{-1} \circ {\pmb{\gamma}})(t) \,.
+\]</span> Applying <span class="math inline">\({\pmb{\sigma}}\)</span> to both sides gives the desired equation <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0) \,.
+\]</span></p></li>
+<li><p>We have computed that <span class="math display">\[
+(\pi \circ {\pmb{\gamma}})(0) = F(u_0,v_0) \,.
+\]</span> In particular, substituting <span class="math inline">\(t = 0\)</span> in (<a href="#eq-lemma-curve-S" class="quarto-xref"><span>4.3</span></a>) gives, <span class="math display">\[\begin{align*}
+(u(0),v(0)) &amp; = (F^{-1} \circ \pi \circ {\pmb{\gamma}})(0)  \\
+          &amp; = F^{-1} ((\pi \circ {\pmb{\gamma}})(0) )  \\
+          &amp; = F^{-1}(F(u_0,v_0)) \\
+          &amp; = (u_0,v_0) \,,
+\end{align*}\]</span> showing that <span class="math display">\[
+u(0) = u_0 \,, \qquad v(0) = v_0 \,.
+\]</span></p></li>
+</ul>
+<p><em>Part 2.</em> This part is trivial: Suppose that there exist smooth functions <span class="math display">\[
+u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}\,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,.
+\]</span> Since <span class="math inline">\({\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>, it follows that <span class="math display">\[
+{\pmb{\gamma}}(t) \in \mathcal{S}\,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,.
+\]</span> Moreover, using that <span class="math inline">\(u(0)=u_0\)</span> and <span class="math inline">\(v(0) = v_0\)</span>, we get <span class="math display">\[
+{\pmb{\gamma}}(0) = {\pmb{\sigma}}(u(0),v(0)) = {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
+\]</span></p>
 </div></details>
+</div>
+<div id="fig-curves-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-curves-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/curves_surface.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-curves-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: Image associated with Part 1 of the Proof for Lemma <a href="chap_4.html#lemma-curve-S">77</a>. The smooth coordinates <span class="math inline">\({\pmb{\eta}}(t) = (u(t),v(t))\)</span> are constructed by setting <span class="math inline">\({\pmb{\eta}}:= F^{-1} \circ \pi \circ {\pmb{\gamma}}\)</span>.
+</figcaption>
+</figure>
 </div>
 <p>We are now ready to characterize <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> when <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.</p>
 <div id="theorem-tangent-plane" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 78</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a (regular) surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote by <span class="math inline">\((u_0,v_0) \in U\)</span> a point such that <span class="math display">\[
-{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
-\]</span> Then <span class="math display">\[
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 78</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a (regular) surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote <span class="math display">\[
+(u_0,v_0) = {\pmb{\sigma}}^{-1}(\mathbf{p}) \,.
+\]</span> The following hold:</p>
+<ol type="1">
+<li><p>The tangent space satisfies <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} := \{  \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \, \colon \,\lambda,\mu \in \mathbb{R}\} \,,
-\]</span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>. In particular <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 \,.
-\]</span><p></p>
+\]</span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.</p></li>
+<li><p>The tangent space is a vector space isomorphic to <span class="math inline">\(\mathbb{R}^2\)</span>, that is, <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}\simeq \mathbb{R}^2 \,,
+\]</span> with isomorphism <span class="math inline">\(\Phi \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}^2\)</span> given by <span class="math display">\[
+\Phi\left(  \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v   \right) = (\lambda, \mu) \,.
+\]</span></p></li>
+</ol>
 </div></details>
 </div>
 <div id="Proof*-11" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> be a chart at <span class="math inline">\(p\)</span>. If we show that <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \}
-\]</span> then we deduce <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 \,,
-\]</span> since <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent.<p></p>
-<p><em>Step 1.</em> Suppose <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. By definition there exists a smooth curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a chart at <span class="math inline">\(p\)</span>.<p></p>
+<ul>
+<li><p>First, suppose <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. By definition of tangent space, there exists a smooth curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0) = \mathbf{v}\,.
-\]</span> By continuity, we can take <span class="math inline">\(\varepsilon\)</span> small enough so that <span class="math display">\[
-{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,.
-\]</span> By Lemma <a href="chap_4.html#lemma-curve-S">77</a> there exist smooth functions <span class="math inline">\(u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}\)</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,,
-\]</span> and <span class="math display">\[
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
+\]</span> By Lemma <a href="chap_4.html#lemma-curve-S">77</a>, there exist <span class="math inline">\(\varepsilon_0 \in (0,\varepsilon]\)</span> and smooth functions <span class="math display">\[
+u , v \colon (-\varepsilon_0,\varepsilon_0) \to \mathbb{R}\,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon_0,\varepsilon_0) \,.
 \]</span> Therefore, by chain rule, <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}_u ( u(t),v(t) ) \, \dot{u}(t) +  
 {\pmb{\sigma}}_v ( u(t),v(t) ) \, \dot{v}(t) \,.
 \]</span> Evaluating the above at <span class="math inline">\(t=0\)</span> yields <span class="math display">\[\begin{align*}
 \mathbf{v}&amp; = \dot{{\pmb{\gamma}}}(0) \\
-    &amp; = {\pmb{\sigma}}_u ( u(0),v(0) ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u(0),v(0) ) \, \dot{v}(0) \\
-    &amp; = {\pmb{\sigma}}_u ( u_0,v_0 ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u_0,v_0 ) \, \dot{v}(0)  \,,
+  &amp; = {\pmb{\sigma}}_u ( u(0),v(0) ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u(0),v(0) ) \, \dot{v}(0) \\
+  &amp; = {\pmb{\sigma}}_u ( u_0,v_0 ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u_0,v_0 ) \, \dot{v}(0)  \,,
 \end{align*}\]</span> which shows <span class="math display">\[
 \mathbf{v}\in \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v(u_0,v_0) \} \,.
-\]</span></p>
-<p><em>Step 2.</em> Suppose that <span class="math display">\[
+\]</span></p></li>
+<li><p>Conversely, suppose that <span class="math display">\[
 \mathbf{v}\in \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v(u_0,v_0) \} \,.
-\]</span> Then there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
+\]</span> Then, there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
 \mathbf{v}= \lambda {\pmb{\sigma}}_u (u_0,v_0) + \mu {\pmb{\sigma}}_v (u_0,v_0) \,.
-\]</span> Define the curve <span class="math display">\[
-{\pmb{\gamma}}(t) := {\pmb{\sigma}}(u_0 + \lambda t, v_0 + \mu t) \,, \quad t \in (-\varepsilon,\varepsilon) \,.
-\]</span> We have <span class="math display">\[
-{\pmb{\gamma}}(0) = {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
-\]</span> Therefore, for <span class="math inline">\(\varepsilon\)</span> sufficiently small, we have <span class="math display">\[
-{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,.
+\]</span> The map <span class="math inline">\(s \colon \mathbb{R}\to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+s(t) := (u_0 + \lambda t, v_0 + \mu t) \,.
+\]</span> is continuous, being <span class="math inline">\(s\)</span> is the line through <span class="math inline">\((u_0,v_0)\)</span> in the direction <span class="math inline">\((\lambda,\mu)\)</span>. Moreover, <span class="math display">\[
+s(0) = (u_0,v_0) \in U \,.
+\]</span> Since <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span>, there exists <span class="math inline">\(R&gt;0\)</span> such that <span class="math display">\[
+B_R(s(0)) = B_{R}( (u_0,v_0) )  \subseteq U \,.
+\]</span> In particualar, by continuity of <span class="math inline">\(s\)</span>, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math display">\[
+|t-0| &lt; \varepsilon\quad \implies \quad |s(t)-s(0)| &lt; R \,,
+\]</span> which implies <span class="math display">\[
+s(t) = (u_0 + \lambda t, v_0 + \mu t)  \in U \,,\quad \forall \, t \in (-\varepsilon,\varepsilon) \,.
+\]</span> Therefore, it is well-defined the curve <span class="math display">\[
+{\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,, \qquad {\pmb{\gamma}}:= {\pmb{\sigma}}\circ s \,.
+\]</span> Write down the definition of <span class="math inline">\({\pmb{\gamma}}\)</span> explicitly: <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u_0 + \lambda t, v_0 + \mu t) \,.
 \]</span> By chain rule <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}_u (u_0+ \lambda t , v_0+ \mu t ) \lambda
-+ {\pmb{\sigma}}_v (u_0+ \lambda t , v_0+ \mu t ) \mu \,,
+\dot{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}_u (u_0+ \lambda t , v_0+ \mu t ) \lambda + {\pmb{\sigma}}_v (u_0+ \lambda t , v_0+ \mu t ) \mu \,,
 \]</span> and therefore <span class="math display">\[
-\dot{{\pmb{\gamma}}}(0) = {\pmb{\sigma}}_u (u_0 , v_0 ) \lambda
-+ {\pmb{\sigma}}_v (u_0 ,v_0) \mu = \mathbf{v}\,.
-\]</span> This proves that <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, ending the proof.</p>
+\dot{{\pmb{\gamma}}}(0) = {\pmb{\sigma}}_u (u_0 , v_0 ) \lambda + {\pmb{\sigma}}_v (u_0 ,v_0) \mu = \mathbf{v}\,.
+\]</span> This proves that <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, ending the proof of <em>Part 1</em>.</p></li>
+</ul>
+<p><em>Part 2</em>. We have shown that <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \}
+\]</span> Since <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, we conclude that <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> is a vector space of dimension 2. Therefore <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> is canonically isomorphic to <span class="math inline">\(\mathbb{R}^2\)</span> via the map <span class="math inline">\(\Phi \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}^2\)</span> given by <span class="math display">\[
+\Phi\left(  \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v   \right) = (\lambda, \mu) \,.
+\]</span></p>
 </div></details>
 </div>
-<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is always two-dimensional. This justifies the following definition.</p>
+<p>Therefore, <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is always two-dimensional. This justifies the following definition.</p>
 <div id="tangent-plane" class="Definition" title="Tangent plane">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 79: </strong>Tangent plane</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The set <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}
@@ -2096,7 +2159,7 @@ T_{\mathbf{p}} \mathcal{S}
 </div></details>
 </div>
 <div id="remark-affine-plane" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 80</strong></summary><div>By definition <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a vector subspace of <span class="math inline">\(\mathbb{R}^3\)</span>. As such, it holds that <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 80</strong></summary><div>By definition, <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is a vector subspace of <span class="math inline">\(\mathbb{R}^3\)</span>. As such, it holds that <span class="math display">\[
 {\pmb{0}}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span><p></p>
 <blockquote class="blockquote">
@@ -2107,26 +2170,20 @@ T_{\mathbf{p}} \mathcal{S}
 \]</span> which is the <strong>affine tangent plane</strong> through <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.</p>
 </div></details>
 </div>
-<p>It is possible to give a cartesian equation for the tangent plane <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}
-\]</span> and for the affine tangent plane <span class="math display">\[
-\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\,.
+<p>We can easily compute cartesian equations for the tangent plane <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <div id="equation-of-tangent-plane" class="Proposition" title="Equation of tangent plane">
 <details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 81: </strong>Equation of tangent plane</summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math display">\[
-{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}= (x_0,y_0,z_0) \,.
-\]</span> Let <span class="math display">\[
-\mathbf{n}:= {\pmb{\sigma}}_u (u_0,v_0) \times {\pmb{\sigma}}_v (u_0,v_0)
-\]</span> We have:</p>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Set <span class="math display">\[
+(u_0,v_0) := {\pmb{\sigma}}^{-1}(\mathbf{p}) \,, \quad \mathbf{n}:= {\pmb{\sigma}}_u (u_0,v_0) \times {\pmb{\sigma}}_v (u_0,v_0) \,.
+\]</span> They hold:</p>
 <ol type="1">
 <li><p>The equation of the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is given by <span class="math display">\[
-{\mathbf{n}}_1 x + {\mathbf{n}}_2 y + {\mathbf{n}}_3 z = 0 \,, \quad
-\forall \, (x,y,z) \in \mathbb{R}^3 \,,
-\]</span> where <span class="math inline">\(\mathbf{n}= ({\mathbf{n}}_1,{\mathbf{n}}_2,{\mathbf{n}}_3)\)</span>.</p></li>
+\mathbf{x}\cdot \mathbf{n}= 0 \,, \quad  \forall \, \mathbf{x}\in \mathbb{R}^3 \,.
+\]</span></p></li>
 <li><p>The equation of the affine tangent plane <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span> is given by <span class="math display">\[
-{\mathbf{n}}_1 (x-x_0) + {\mathbf{n}}_2 (y-x_0) + {\mathbf{n}}_3 (z-z_0) = 0 \,, \quad
-\forall \, (x,y,z) \in \mathbb{R}^3 \,.
+(\mathbf{x}- \mathbf{p}) \cdot \mathbf{n}= 0 \,, \quad  \forall \, \mathbf{x}\in \mathbb{R}^3 \,.
 \]</span></p></li>
 </ol>
 </div></details>
@@ -2135,46 +2192,72 @@ T_{\mathbf{p}} \mathcal{S}
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a> we know that <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v (u_0,v_0) \} \,.
 \]</span> By the properties of cross product, the vector <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to both <span class="math inline">\({\pmb{\sigma}}_u (u_0,v_0)\)</span> and <span class="math inline">\({\pmb{\sigma}}_v (u_0,v_0)\)</span>. Therefore it is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
-(x,y,z) \cdot \mathbf{n}= 0 \,, \forall \, (x,y,z) \in \mathbb{R}^3 \,.
+\mathbf{x}\cdot \mathbf{n}= 0 \,, \quad  \forall \, \mathbf{x}\in \mathbb{R}^3 \,.
 \]</span> In particular, the equation for the affine tangent plane <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span> is <span class="math display">\[
-(x,y,z) \cdot \mathbf{n}= k \,, \quad  \forall \, (x,y,z) \in \mathbb{R}^3 \,,
-\]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. To compute <span class="math inline">\(k\)</span>, it is sufficient to evaluate the above equation at <span class="math inline">\(\mathbf{p}\)</span>, since <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span>. We obtain <span class="math display">\[
+\mathbf{x}\cdot \mathbf{n}= k \,, \quad  \forall \, \mathbf{x}\in \mathbb{R}^3 \,,
+\]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. To compute <span class="math inline">\(k\)</span>, it is sufficient to evaluate the above equation at any point in <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span>. Recalling that <span class="math inline">\({\pmb{0}}\in T_{\mathbf{p}} \mathcal{S}\)</span>, we have that <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore, <span class="math display">\[
 k = \mathbf{p}\cdot \mathbf{n}\,.
 \]</span> Hence the equation for <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span> is <span class="math display">\[
-(x-x_0,y-y_0,z-z_0) \cdot \mathbf{n}= 0 \,, \quad  \forall \, (x,y,z) \in \mathbb{R}^3 \,,
+( \mathbf{x}- \mathbf{p}) \cdot \mathbf{n}= 0 \,, \quad  \forall \, \mathbf{x}\in \mathbb{R}^3 \,,
 \]</span> ending the proof.<p></p>
 </div></details>
 </div>
 <div id="Example-82" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 82</strong></summary><div>Consider the surface <span class="math inline">\(\mathcal{S}\)</span> defined by the chart <span class="math display">\[
-{\pmb{\sigma}}(u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v        \right) \,.
-\]</span> We want to compute the equation for the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, and for the affine tangent plane <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
-<p>First, we need to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular. We have <span class="math display">\[\begin{align*}
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 82</strong></summary><div>
+<p>Consider the surface <span class="math inline">\(\mathcal{S}\)</span> defined by the chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
+\]</span> for <span class="math inline">\(u \in (0,2\pi)\)</span>, <span class="math inline">\(v &lt; 1\)</span>.</p>
+<ol type="1">
+<li>Prove that <span class="math inline">\({\pmb{\sigma}}\)</span> parametrizes a paraboloid, see <a href="#fig-paraboloid" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.</li>
+<li>Prove that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</li>
+<li>Compute the vector <span class="math inline">\(\mathbf{n}= {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v}\)</span></li>
+<li>Give a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> at the point <span class="math display">\[
+\mathbf{p}= \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,.
+\]</span></li>
+<li>Compute the cartesian equations of <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}\quad \text{and} \quad \mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> at the point <span class="math inline">\(\mathbf{p}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>Solution</em>.</p>
+<p><em>Point 1.</em> Denote the coordinates of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (x,y,z) \,.
+\]</span> We have <span class="math display">\[\begin{align*}
+x^2 + y^2 &amp; = \left( \sqrt{1-v} \cos(u) \right)^2 + \left( \sqrt{1-v} \cos(u) \right)^2 \\
+&amp; = 1 - v  \\
+&amp; = 1 - z \,,
+\end{align*}\]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> parametrizes the paraboloid <span class="math display">\[
+z = - x^2 - y^2 + 1 \,.
+\]</span></p>
+<p><em>Point 2.</em> Proof that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular: <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
-{\pmb{\sigma}}_v &amp; = \left(    \frac{1}{2} (1-v)^{-1/2}  \cos(u) , \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right)
-\end{align*}\]</span> As the last component of <span class="math inline">\({\pmb{\sigma}}_u\)</span> is <span class="math inline">\(0\)</span> and the last component of <span class="math inline">\({\pmb{\sigma}}_v\)</span> is <span class="math inline">\(1\)</span>, we conclude that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
-<p>Suppose <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is such that <span class="math display">\[
-{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}
-\]</span> for some <span class="math inline">\((u_0,v_0) \in \mathbb{R}^2\)</span>. By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a> we have <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u (u_0,v_0) , {\pmb{\sigma}}_v (u_0,v_0)  \} \,.
-\]</span> To find the equation of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> we compute: <span class="math display">\[\begin{align*}
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v &amp; =
+{\pmb{\sigma}}_v &amp; = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right)
+\end{align*}\]</span> As the last component of <span class="math inline">\({\pmb{\sigma}}_u\)</span> is <span class="math inline">\(0\)</span>, and the last component of <span class="math inline">\({\pmb{\sigma}}_v\)</span> is <span class="math inline">\(1\)</span>, we conclude that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
+<p><em>Point 3.</em> We compute: <span class="math display">\[\begin{align*}
+\mathbf{n}&amp; = {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \\
+&amp; =
 \left|
 \begin{array}{ccc}
 \mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
-- \sqrt{1-v} \sin(u) &amp; \sqrt{1-v} \cos(u) &amp; 0 \\
-\frac{1}{2} (1-v)^{-1/2}  \cos(u) &amp; \frac{1}{2} (1-v)^{-1/2}   \sin(u) &amp; 1
+-\sqrt{1-v} \sin(u) &amp; \sqrt{1-v} \cos(u) &amp; 0 \\
+-\frac{1}{2} (1-v)^{-1/2}  \cos(u) &amp; -\frac{1}{2} (1-v)^{-1/2}   \sin(u) &amp; 1
 \end{array}
 \right| \\
-&amp; = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), - \frac12        \right)
-\end{align*}\]</span> For <span class="math display">\[
-(u_0,v_0) = \left( \frac{\pi}{4}, 0 \right)
-\]</span> we have <span class="math display">\[
-\mathbf{p}= {\pmb{\sigma}}(u_0,v_0)  = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,,
-\]</span> and therefore <span class="math display">\[
-\mathbf{n}= ({\pmb{\sigma}}_u \times {\pmb{\sigma}}_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
+&amp; = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right)
+\end{align*}\]</span></p>
+<p><em>Point 4.</em> Define the point <span class="math display">\[
+\mathbf{p}= \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right)
+\]</span> and notice that <span class="math display">\[
+{\pmb{\sigma}}\left( \frac{\pi}{4}, 0 \right)  = \mathbf{p}\,.
+\]</span> By Theorem <a href="chap_4.html#theorem-tangent-plane">78</a>, we have that a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is given by the vectors <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u  \left( \frac{\pi}{4}, 0 \right) &amp; = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
+{\pmb{\sigma}}_v  \left( \frac{\pi}{4}, 0 \right) &amp; = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
+\end{align*}\]</span></p>
+<p><em>Point 5.</em> Using the calculation for <span class="math inline">\(\mathbf{n}\)</span> in point (iii), we find <span class="math display">\[
+\mathbf{n}\left( \frac{\pi}{4}, 0 \right)
+=  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
 \]</span> The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is therefore <span class="math display">\[
-(x,y,z) \cdot \mathbf{n}= 0 \,, \quad \forall \, (x,y,z) \in \mathbb{R}^3 \,.
+\mathbf{x}\cdot \mathbf{n}= 0 \,, \quad \forall \, \mathbf{x}\in \mathbb{R}^3 \,.
 \]</span> The above reads <span class="math display">\[
 \frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,.
 \]</span> The equation for <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span> is instead <span class="math display">\[
@@ -2184,7 +2267,22 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u (u_0,v_0) , 
 \]</span> The equation for <span class="math inline">\(\mathbf{p}+ T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
 \frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 1 \,.
 \]</span></p>
+</blockquote>
 </div></details>
+</div>
+<div id="cell-fig-paraboloid" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-paraboloid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-paraboloid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chap_4_files/figure-html/fig-paraboloid-output-1.png" width="335" height="317" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paraboloid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.13: Paraboloid.
+</figcaption>
+</figure>
+</div>
+</div>
 </div>
 <div id="tangent-space-and-derivations" class="Remark" title="Tangent space and derivations">
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 83: </strong>Tangent space and derivations</summary><div>The definition of tangent plane depends on the fact that <span class="math inline">\(\mathcal{S}\)</span> is contained in <span class="math inline">\(\mathbb{R}^3\)</span>. This is a serious drawback in many applications, as the surface <span class="math inline">\(\mathcal{S}\)</span> does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an <em>intrinsic</em> definition of tangent plane, depending only on the point <span class="math inline">\(\mathbf{p}\)</span> and the surface <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
@@ -2218,7 +2316,7 @@ T_{\mathbf{p}} U \subseteq (C^{\infty}(U))^* \,,
 <h2 data-number="4.8" class="anchored" data-anchor-id="unit-normal-and-orientability"><span class="header-section-number">4.8</span> Unit normal and orientability</h2>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> passes through the origin. Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is completely determined by giving a unit vector <span class="math inline">\(\mathbf{N}\)</span> perpendicular to it: <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}\cdot \mathbf{N}= 0 \} \,.
-\]</span> In this case we write <span class="math display">\[
+\]</span> We will also write <span class="math display">\[
 \mathbf{N}\perp T_{\mathbf{p}} \mathcal{S}\,,
 \]</span> to denote that <span class="math inline">\(\mathbf{N}\)</span> is <strong>perpendicular</strong> to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Clearly, also <span class="math inline">\(-\mathbf{N}\)</span> is a unit vector, and <span class="math display">\[
 (- \mathbf{N}) \perp T_{\mathbf{p}} \mathcal{S}\,.
@@ -2233,14 +2331,14 @@ T_{\mathbf{p}} \mathcal{S}= \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} \,.
 \]</span> Therefore we can choose the unit normal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> as <span class="math display">\[
 \mathbf{N}_{{\pmb{\sigma}}} :=  \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } \,.
-\]</span> Clearly <span class="math inline">\(\mathbf{N}_{{\pmb{\sigma}}}\)</span> has unit norm. Moreover <span class="math display">\[
+\]</span> Clearly, <span class="math inline">\(\mathbf{N}_{{\pmb{\sigma}}}\)</span> has unit norm. Moreover <span class="math display">\[
 \mathbf{N}_{{\pmb{\sigma}}} \cdot {\pmb{\sigma}}_u = 0 \,, \quad \mathbf{N}_{{\pmb{\sigma}}} \cdot {\pmb{\sigma}}_v = 0
-\]</span> by the properties of cross product, showing that <span class="math inline">\(\mathbf{N}_{{\pmb{\sigma}}}\)</span> is perpendicular to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
+\]</span> by the properties of cross product. Thus, <span class="math inline">\(\mathbf{N}_{{\pmb{\sigma}}}\)</span> is perpendicular to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
 <p>There is however an issue: <span class="math inline">\(\mathbf{N}_{{\pmb{\sigma}}}\)</span> is not independent on the choice of chart <span class="math inline">\({\pmb{\sigma}}\)</span>. Indeed, suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon  \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span>, that is, <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,, \quad \Phi \colon \widetilde{U} \to U \,,
-\]</span> with <span class="math inline">\(\Phi\)</span> diffeomorphism. As shown in the proof of Proposition <a href="chap_4.html#proposition-transition-maps">63</a>, we have <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
+\]</span> with <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> diffeomorphism. As stated in Proposition <a href="chap_4.html#proposition-transition-maps">63</a>, we have <span class="math display">\[
 \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}}
-= \det (J\Phi)  \, {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \,.
+= \det J\Phi \, ( {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v )\,.
 \]</span> Hence <span class="math display">\[
 \mathbf{N}_{\widetilde{{\pmb{\sigma}}}} = \frac{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} }{\left\| \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \right\|} = \frac{\det J\Phi}{|\det J\Phi|} \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|} = \pm \mathbf{N}_{{\pmb{\sigma}}} \,.
 \]</span> Therefore the sign on the right hand side depends on the sign of the Jacobian determinant of the transition map <span class="math inline">\(\Phi\)</span>.</p>
@@ -2260,16 +2358,16 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 \]</span> Denote by <span class="math inline">\(\Phi\)</span> the transition map between <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> and <span class="math inline">\({\pmb{\sigma}}\)</span>. We say that:</p>
 <ol type="1">
 <li><p><span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> determine the <strong>same orientation</strong> if <span class="math display">\[
-\det J \Phi &gt; 0 \,,
-\]</span> where <span class="math inline">\(\Phi\)</span> is defined.</p></li>
-<li><p><span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> determine <strong>opposite orientations</strong> if <span class="math display">\[
-\det J \Phi &lt; 0 \,,
-\]</span> where <span class="math inline">\(\Phi\)</span> is defined.</p></li>
+\det J \Phi &gt; 0 \,.
+\]</span></p></li>
+<li><p><span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> determine the <strong>opposite orientations</strong> if <span class="math display">\[
+\det J \Phi &lt; 0 \,.
+\]</span></p></li>
 </ol>
 </div></details>
 </div>
-<div id="Example-88" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 88</strong></summary><div>Let <span class="math inline">\(\mathbf{a} , \mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> and suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are linearly independent. The plane spanned by <span class="math inline">\(\mathbf{p},\mathbf{q}\)</span> and passing through <span class="math inline">\(\mathbf{a}\)</span> can be parametrized by <span class="math display">\[
+<div id="orientation-of-the-plane" class="Example" title="Orientation of the plane">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 88: </strong>Orientation of the plane</summary><div>Let <span class="math inline">\(\mathbf{a} , \mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span>, and suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are linearly independent. The plane spanned by <span class="math inline">\(\mathbf{p},\mathbf{q}\)</span> and passing through <span class="math inline">\(\mathbf{a}\)</span> is parametrized by <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{p}u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> An alternative parametrization is given by <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} (u,v):= \mathbf{a}  + \mathbf{q} u + \mathbf{p}v  \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
@@ -2291,7 +2389,9 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 89: </strong>Orientable surface</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. Then:</p>
 <ol type="1">
-<li><p>An atlas <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i \in I}\)</span> is <strong>oriented</strong> if the following property holds: <span class="math display">\[
+<li><p>Let <span class="math display">\[
+\mathcal{A} = \{ {\pmb{\sigma}}_i \colon U_i \to \mathcal{S}\}_{i \in I}
+\]</span> be an atlas for <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\(\mathcal{A}\)</span> is <strong>oriented</strong>, if the following property holds: <span class="math display">\[
 {\pmb{\sigma}}_i (U_i) \cap {\pmb{\sigma}}_j (U_j) \neq \emptyset \quad \implies \quad
 \det J \Phi &gt; 0 \,,
 \]</span> where <span class="math inline">\(\Phi\)</span> is the transition map between <span class="math inline">\({\pmb{\sigma}}_i\)</span> and <span class="math inline">\({\pmb{\sigma}}_j\)</span>.</p></li>
@@ -2300,8 +2400,12 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </ol>
 </div></details>
 </div>
+<div id="orientability-is-a-global-property" class="Warning" title="Orientability is a global property">
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning: </strong>Orientability is a global property</summary><div>Orientability is a global property: To determine wether a surface <span class="math inline">\(\mathcal{S}\)</span> is orientable, we need to examine the transition maps for the entire atlas <span class="math inline">\(\mathcal{A}\)</span>.<p></p>
+</div></details>
+</div>
 <div id="möbius-strip" class="Example" title="Möbius strip">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 90: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">117</a>.<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 90: </strong>Möbius strip</summary><div>The classical example of non orientable surface is the Möbius strip, see <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>. We will discuss this example in more details when we introduce ruled srufaces, see Example <a href="chap_4.html#example-mobius">117</a>.<p></p>
 </div></details>
 </div>
 <div id="Example-91" class="Example">
@@ -2312,10 +2416,6 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <blockquote class="blockquote">
 <p>This is because we have only one chart. Therefore any transition map <span class="math inline">\(\Phi\)</span> will be the identity, so that <span class="math inline">\(\det J \Phi = 1 &gt; 0\)</span>.</p>
 </blockquote>
-</div></details>
-</div>
-<div id="orientability-is-a-global-property" class="Warning" title="Orientability is a global property">
-<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning: </strong>Orientability is a global property</summary><div>The above example is saying that orientability is a global property: To determine wether a surface <span class="math inline">\(\mathcal{S}\)</span> is orientable, we need to examine the transition maps for the entire atlas <span class="math inline">\(\mathcal{A}\)</span>. This is because a single local parametrization <span class="math inline">\({\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> is always orientable.<p></p>
 </div></details>
 </div>
 <div id="Remark-92" class="Remark">
@@ -2602,7 +2702,7 @@ f \colon \mathcal{S}_1 \to \mathcal{S}_2
 </ol>
 </div></details>
 </div>
-<p>The proof is based on the Inverse Function Theorem, see Proposition 4.4.6 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<p>The proof is based on the Inverse Function Theorem <a href="chap_4.html#theorem-inverse-function">41</a>, see Proposition 4.4.6 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
 </section>
 <section id="examples-of-surfaces" class="level2" data-number="4.10">
 <h2 data-number="4.10" class="anchored" data-anchor-id="examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</h2>
@@ -2652,7 +2752,7 @@ f(x,y,z) := x^2 + y^2 -1 \,.
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
 \]</span> is not a surface. However the positive sheet <span class="math display">\[
 \mathcal{S}^+ := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2 \,, \,  z&gt;0  \} \,.
-\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.12</span></a> Indeed, define the open set <span class="math display">\[
+\]</span> is a regular surface, see <a href="#fig-positive-cone" class="quarto-xref">Figure&nbsp;<span>4.14</span></a> Indeed, define the open set <span class="math display">\[
 V := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,z &gt; 0 \}
 \]</span> and the function <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> by <span class="math display">\[
 f(x,y,z) := x^2 + y^2 - z^2 \,.
@@ -2667,7 +2767,7 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 \]</span></p>
 </div></details>
 </div>
-<div id="cell-fig-positive-cone" class="cell" data-execution_count="3">
+<div id="cell-fig-positive-cone" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-positive-cone" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2675,7 +2775,7 @@ f(x,y,z) := x^2 + y^2 - z^2 \,.
 <img src="chap_4_files/figure-html/fig-positive-cone-output-1.png" width="348" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positive-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: Positive sheet of circular cone.
+Figure&nbsp;4.14: Positive sheet of circular cone.
 </figcaption>
 </figure>
 </div>
@@ -2859,7 +2959,7 @@ D =
 {\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,,
 \]</span> with <span class="math display">\[
 {\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
-\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.<p></p>
+\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-ruled" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2868,7 +2968,7 @@ D =
 <img src="../images/surfaces_ruled.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
+Figure&nbsp;4.15: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2881,7 +2981,7 @@ Figure&nbsp;4.13: Unit cylinder is a ruled surface with base curve <span class="
 \mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right)
-\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>. In particular <span class="math display">\[
+\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>. In particular <span class="math display">\[
 {\pmb{\sigma}}(u,v) =  \left(   
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \sin(u),
@@ -2916,7 +3016,7 @@ Figure&nbsp;4.13: Unit cylinder is a ruled surface with base curve <span class="
 <img src="../images/surfaces_ruled_2.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mobius-ruled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.14: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
+Figure&nbsp;4.16: The Möbius band is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.
 </figcaption>
 </figure>
 </div>
@@ -2948,7 +3048,7 @@ Figure&nbsp;4.14: The Möbius band is a ruled surface with base curve <span clas
 </div></details>
 </div>
 <div id="catenoid" class="Example" title="Catenoid">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 120: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>. Recall that the catenary function is defined by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 120: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>. Recall that the catenary function is defined by <span class="math display">\[
 f(u) = \cosh (u) \,.  
 \]</span> Therefore the catenoid is obtained by rotating <span class="math display">\[
 {\pmb{\gamma}}(u) = \left(  \cosh (u), 0 , u \right) \,.
@@ -2966,7 +3066,7 @@ f(u) = \cosh (u) \,.
 <img src="../images/surface_catenoid.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catenoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.15: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
+Figure&nbsp;4.17: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.
 </figcaption>
 </figure>
 </div>
@@ -4026,7 +4126,7 @@ f \colon {\pmb{\pi}}\to \mathcal{S}\,, \quad f(u,v,0) = {\pmb{\sigma}}(u,v) \,,
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
 \]</span> We will call the points <span class="math display">\[
 N = (0,0,1) \,, \quad S  = (0,0,-1)
-\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
+\]</span> the north and south pole, respectively. The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map <span class="math display">\[
 \pi \colon \mathbb{S}^2 \smallsetminus \{N\} \to \mathbb{R}^2 \,,
 \]</span> where <span class="math display">\[
 \pi(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z}  \right) \,.
@@ -4048,7 +4148,7 @@ EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
 <img src="../images/stereographic_4.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.16: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
+Figure&nbsp;4.18: Stereographic projection map from the North pole <span class="math inline">\(N = (0,0,1)\)</span>. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span>. The line through <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4057,7 +4157,7 @@ Figure&nbsp;4.16: Stereographic projection map from the North pole <span class="
 \mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
 \]</span> and the unit cylinder of equation <span class="math display">\[
 x^2 + y^2 = 1 \,.
-\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
+\]</span> The sphere is contained inside the cylinder, and the two surfaces touch along the circle <span class="math inline">\(x^2 + y^2 = 1\)</span> in the <span class="math inline">\(\{z=0\}\)</span> plane. Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>, see <a href="#fig-archimedes" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>. To write the projection map explicitly, denote the coordinates of <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> by <span class="math display">\[
 P = (x,y,z) \,, \quad P' = (X,Y,Z) \,.
 \]</span> Since the line through <span class="math inline">\(P\)</span> and <span class="math inline">\(P'\)</span> is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>, we have <span class="math display">\[
 Z = z \,, \quad (X,Y) = \lambda (x,y)
@@ -4084,7 +4184,7 @@ P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,
 <img src="../images/archimedes.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-archimedes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
+Figure&nbsp;4.19: Lambert projection map: Let <span class="math inline">\(P \in \mathbb{S}^2\)</span> except for north or south pole. Draw the line through <span class="math inline">\(P\)</span> and the <span class="math inline">\(z\)</span>-axis which is parallel to the plane <span class="math inline">\(\{z=0\}\)</span>. This line intersects the cylinder in 2 points. Denote by <span class="math inline">\(P'\)</span> the intersection point which is closest to <span class="math inline">\(P\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4094,7 +4194,7 @@ Figure&nbsp;4.17: Lambert projection map: Let <span class="math inline">\(P \in 
 <img src="../images/stereographic_2.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.18: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
+Figure&nbsp;4.20: Stereographic projection of the Earth. Image from <a href="https://en.wikipedia.org/wiki/Stereographic_projection">Wikipedia</a>
 </figcaption>
 </figure>
 </div>
@@ -4104,7 +4204,7 @@ Figure&nbsp;4.18: Stereographic projection of the Earth. Image from <a href="htt
 <img src="../images/stereographic_3.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stereographic-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.19: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
+Figure&nbsp;4.21: Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.
 </figcaption>
 </figure>
 </div>
@@ -4166,14 +4266,14 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 {\pmb{\sigma}}( u_0 + \Delta u , v_0 + \Delta v ) \in \mathcal{S}
 \]</span> deviates from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, the deviation is given by <span class="math display">\[
 \delta := \left[  {\pmb{\sigma}}(  u_0 + \Delta u , v_0 + \Delta v  ) - {\pmb{\sigma}}(u_0,v_0)    \right] \cdot \mathbf{N}\,,
-\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p>
+\]</span> as shown in <a href="#fig-sff-sketch" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>.</p>
 <div id="fig-sff-sketch" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/sff_sketch.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sff-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.20: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
+Figure&nbsp;4.22: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \Delta u, v_0 + \Delta v)\)</span> on <span class="math inline">\(\mathcal{S}\)</span> deviates from <span class="math inline">\(T_{\mathbf{p}}\mathcal{S}\)</span> by a quantity <span class="math inline">\(\delta\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4367,12 +4467,12 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <div id="Example-169" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 169</strong></summary><div>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
-\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.22</span></a>.</p></li>
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Then <span class="math display">\[
@@ -4393,7 +4493,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = (\cos(u_0), \sin(u_0), 0) \,,
-\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.23</span></a>.</p></li>
+\]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -4403,7 +4503,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <img src="../images/sff_gauss_sphere.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.21: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
+Figure&nbsp;4.23: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.
 </figcaption>
 </figure>
 </div>
@@ -4413,7 +4513,7 @@ Figure&nbsp;4.21: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_plane.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.22: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
+Figure&nbsp;4.24: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.
 </figcaption>
 </figure>
 </div>
@@ -4423,7 +4523,7 @@ Figure&nbsp;4.22: The Gauss map <span class="math inline">\({\mathcal{G}}_{\math
 <img src="../images/sff_gauss_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gauss-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.23: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
+Figure&nbsp;4.25: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4433,7 +4533,7 @@ Figure&nbsp;4.23: If <span class="math inline">\(\mathcal{S}\)</span> is the uni
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
 T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
-\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.24</span></a>. Therefore <span class="math display">\[
+\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>. Therefore <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <blockquote class="blockquote">
@@ -4453,7 +4553,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 <img src="../images/sff_weingarten.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weingarten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.24: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
+Figure&nbsp;4.26: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -4793,7 +4893,7 @@ d &amp; -b \\
 <div id="helicoid" class="Example" title="Helicoid">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 180: </strong>Helicoid</summary><div>The Helicoid is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
-\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
+\]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid" class="quarto-xref">Figure&nbsp;<span>4.27</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
 \mathcal{W}=
 \left(
 \begin{array}{cc}
@@ -4896,7 +4996,7 @@ M &amp; N
 \end{align*}\]</span></p>
 </div></details>
 </div>
-<div id="cell-fig-helicoid" class="cell" data-execution_count="4">
+<div id="cell-fig-helicoid" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div id="fig-helicoid" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -4904,7 +5004,7 @@ M &amp; N
 <img src="chap_4_files/figure-html/fig-helicoid-output-1.png" width="346" height="323" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-helicoid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.25: Plot of Helicoid.
+Figure&nbsp;4.27: Plot of Helicoid.
 </figcaption>
 </figure>
 </div>
@@ -5379,7 +5479,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 \]</span> and the principal vectors are <span class="math display">\[\begin{align*}
 \mathbf{t}_1 &amp; = {\pmb{\sigma}}_u = (-\sin(u),\cos(v),0) \,,\\
 \mathbf{t}_2 &amp; = {\pmb{\sigma}}_v = (0,0,1)\,,
-\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.26</span></a>.<p></p>
+\end{align*}\]</span> as shown in <a href="#fig-cylinder-principal" class="quarto-xref">Figure&nbsp;<span>4.28</span></a>.<p></p>
 </div></details>
 </div>
 <div id="fig-cylinder-principal" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -5388,7 +5488,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 <img src="../images/sff_principal_cylinder.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cylinder-principal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.26: Principal vectors of the unit cylinder.
+Figure&nbsp;4.28: Principal vectors of the unit cylinder.
 </figcaption>
 </figure>
 </div>
@@ -5839,7 +5939,7 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.27: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
+Figure&nbsp;4.29: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.
 </figcaption>
 </figure>
 </div>

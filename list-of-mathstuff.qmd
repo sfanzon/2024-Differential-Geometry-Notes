@@ -743,7 +743,7 @@
 
  [**Example 4.40**](#Example-4.40)\Pageref{Example-4.40}
 
- [**Theorem 4.41**](#inverse-function-theorem): Inverse Function Theorem\Pageref{inverse-function-theorem}
+ [**Theorem 4.41**](#theorem-inverse-function): Inverse Function Theorem\Pageref{theorem-inverse-function}
 
  [**Example 4.42**](#Example-4.42)\Pageref{Example-4.42}
 
@@ -829,7 +829,7 @@
 
  [**Example 4.76**](#example-tangent-open-set)\Pageref{example-tangent-open-set}
 
- [**Lemma 4.77**](#lemma-curve-S)\Pageref{lemma-curve-S}
+ [**Lemma 4.77**](#lemma-curve-S): Curves with values on surfaces\Pageref{lemma-curve-S}
 
  [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
 
@@ -857,15 +857,15 @@
 
  [**Definition 4.87**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
 
- [**Example 4.88**](#Example-4.88)\Pageref{Example-4.88}
+ [**Example 4.88**](#orientation-of-the-plane): Orientation of the plane\Pageref{orientation-of-the-plane}
 
  [**Definition 4.89**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
+
+ [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
 
  [**Example 4.90**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
 
  [**Example 4.91**](#Example-4.91)\Pageref{Example-4.91}
-
- [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
 
  [**Remark 4.92**](#Remark-4.92)\Pageref{Remark-4.92}
 

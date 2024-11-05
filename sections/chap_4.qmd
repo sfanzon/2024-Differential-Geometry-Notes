@@ -839,7 +839,7 @@ The condition at (@eq-non-vanish-det) is sufficient fot $f$ to be a **local diff
 
 
 ::: Theorem
-### Inverse Function Theorem
+### Inverse Function Theorem {#theorem-inverse-function}
 
 Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a smooth function and
 $$
@@ -896,7 +896,7 @@ In particular, we have
 $$
 \det Jf(x,y) \neq 0 \,, \quad \forall \, (x,y) \in U \,.
 $$
-By the Inverse Function Theorem, $f$ is a local diffeomorphism at each point $(x,y) \in U$.
+By the Inverse Function Theorem \ref{theorem-inverse-function}, $f$ is a local diffeomorphism at each point $(x,y) \in U$.
 
 :::
 
@@ -931,7 +931,7 @@ $$
 
 We observe the following:
 
-1. By the Inverse Function Theorem, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
+1. By the Inverse Function Theorem \ref{theorem-inverse-function}, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
 
 2. However $f$ is not injective, since 
 $$
@@ -2236,8 +2236,7 @@ is called a **transition map** from $\sss$ to $\widetilde{\sss}$.
 
 
 
-
-The next Theorem states that transition maps between regular charts are diffeomorphisms. The proof is slightly technical, and is based on the Implicit Function Theorem. We decide to omit it. The interested reader can find a proof at Page 117 of [@pressley].
+The following theorem states that the transition maps between regular charts are diffeomorphisms. The proof is somewhat technical and relies on the Implicit Function Theorem. A similar argument will be used for Lemma \ref{lemma-curve-S} in @sec-tangent-space. We have chosen to omit the proof here, but interested readers can refer to page 117 of [@pressley] for details.
 
 
 ::: {.Theorem #theorem-transition-map}
@@ -2548,7 +2547,7 @@ Two remarks:
 
 
 
-## Tangent space
+## Tangent space {#sec-tangent-space}
 
 
 The tangent vector to a curve $\g \colon \R \to \R^3$ at the point $\g(t)$ is just $\dg(t)$, the derivative of the curve at $t$. Tangent vectors to a surface $\SSS$ can be defined as the tangent vectors of curves $\g \colon \R \to \SSS$ with values in $\SSS$, see @fig-tangent-plane.
@@ -2648,60 +2647,58 @@ $$
 $$
 for all $\vv , \ww \in T_{\pp}\SSS$ and $\lambda, \mu \in \R$.
 
-To prove this result, we need a Lemma concerning curves with values on surfaces.
+To prove this result, we need a Lemma concerning curves with values on surfaces: The lemma says that when $\SSS$ is regular, all the smooth curves $\g \colon (-\e,\e) \to \R^3$ with values in $\SSS$, are of the form
+$$
+\g(t) = \sss(u(t),v(t)) \,, \quad \forall \, t \in (-\e_0,\e_0)
+$$
+for a pair of smooth functions $u,v \colon (-\e,\e) \to \R$, and a suitable $\e_0 \in (0,\e]$.
 
 
-::: {.Lemma #lemma-curve-S}
+
+::: Lemma
+### Curves with values on surfaces {#lemma-curve-S}
 
 Let $\SSS$ be a surface, $\pp \in \SSS$, and $\sss \colon U \to \SSS$ a chart at $\pp$. Denote
 $$
 (u_0,v_0) = \sss^{-1}(\pp) \,.
 $$
-The following hold:
+Let $\g \colon (-\e,\e) \to \R^3$ be a smooth curve, and consider the statements:
 
-1. Suppose $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that
+1. The curve $\g$ satisfies $\g(0) = \pp$ and 
 $$
-\g(-\e,\e) \subseteq \sss(U) \,, \quad \g(0) = \pp \,.
+\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
 $$
-Then there exist smooth functions
+
+2. There exist $\e_0 \in (0,\e]$ and smooth functions
 $$
-u , v \colon (-\e,\e) \to \R 
+u , v \colon (-\e_0,\e_0) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
 $$
 such that
 $$
-\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e,\e) \,,
-$$
-and 
-$$
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
+\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
 $$
 
-2. Conversely, assume $u , v \colon (-\e,\e) \to \R$ are smooth functions such that
-$$
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
-$$
-Then
-$$
-\g (t):= \sss (u(t),v(t))
-$$
-is a smooth curve such that 
-$$
-\g(-\e,\e) \subseteq \SSS \,, \quad  \g(0)=\pp \,.
-$$
+We have that:
 
+- Point 1 implies Point 2.
+- Point 2 implies Point 1 when $\e_0 = \e$.
 
 :::
 
 
 ::: Proof
 
-Denote the coordinates of $\sss$ by
+*Part 1.* To visualize the geometric ideas of this part of the proof, see @fig-curves-surface. Let $\pp$ in $\SSS$, and assume given a smooth curve $\g \colon (-\e,\e) \to \R^3$ such that $\g(0) = \pp$ and
+$$
+\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
+$$
+Denote the coordinates of the chart $\sss \colon U \to \SSS$ by
 $$
 \sss(u,v) = (f(u,v), g(u,v), h(u, v)) \,.
 $$
-The differential of $\sss$ is
+The Jacobian of $\sss$ is
 $$
-d\sss = 
+J\sss = 
 \left(   
 \begin{array}{cc}
 f_u & f_v \\
@@ -2710,7 +2707,7 @@ h_u & h_v \\
 \end{array}
 \right) \,.
 $$
-Since $\sss$ is regular, by definition $d\sss$ has rank-2 at $(u_0,v_0)$. This means that at least one of the 3 minors
+Since $\sss$ is regular, by definition $J\sss$ has rank-2 at $(u_0,v_0)$. This means that at least one of the 3 minors
 $$
 \left(   
 \begin{array}{cc}
@@ -2731,13 +2728,13 @@ h_u & h_v \\
 \end{array}
 \right) \,.
 $$
-is invertible. WLOG assume the first is invertible (the proof in case the other two are invertible is similar.) Define the map 
+is invertible. WLOG, assume the first is invertible (the proof in case the other two are invertible is similar). Define the map  
 $$
-F \colon U \subseteq \R^2 \to \R^2 \,, \quad F(u,v) = ( f(u,v), g(u,v) ) \,.
+F \colon U \subseteq \R^2 \to \R^2 \,, \qquad F(u,v) := ( f(u,v), g(u,v) ) \,.
 $$
-We have 
+The Jacobian of $F$ is 
 $$
-dF = 
+JF = 
 \left(   
 \begin{array}{cc}
 f_u & f_v \\
@@ -2745,45 +2742,110 @@ g_u & g_v
 \end{array}
 \right) \,,
 $$
-which is invertible at $(u_0,v_0)$ by assumption. Hence, by the Inverse Function Theorem, there exist 
+which is invertible at $(u_0,v_0)$ by assumption. Hence, by the Inverse Function Theorem \ref{theorem-inverse-function}, there exist 
 
-- $W \subseteq U \subseteq \R^2$ open set with $(u_0,v_0) \in W$,
-- $V \subseteq \R^2$ open set with $F(u_0,v_0) \in V$,
+- $U_0 \subseteq U$ open set, with $(u_0,v_0) \in U_0$,
+- $V \subseteq \R^2$ open set, with $F(u_0,v_0) \in V$,
 
 such that 
 $$
-F \colon W \to V 
+F \colon U_0 \to V 
 $$
-is a diffeomorphism. Hence
+is a diffeomorphism. In particular, the inverse function
 $$
-F^{-1} \colon V \to W
+F^{-1} \colon V \to U_0
 $$
-is smooth. Since $\g(-\e,\e) \subseteq \sss(U)$, it is well defined the composition
+is smooth. Define the projection map
 $$
-F^{-1} \circ \g \colon (-\e,\e) \to W \subseteq U \,.
+\pi \colon \R^3 \to \R^2 \,, \quad \pi(x,y,z) = (x,y) \,,
 $$
-In particular, there exist two functions $u,v$ (the components of $F^{-1} \circ \g$) such that
+and notice that, by construction,
 $$
-(F^{-1} \circ \g) (t) = (u(t),v(t))
+F = \pi \circ \sss \,.
+$$
+The composition
+$$
+\pi \circ \g \colon (\e,\e) \to \R^2
+$$
+is smooth, and such that
+\begin{align*}
+(\pi \circ \g) (0) & = \pi (\g(0)) \\
+                   & = \pi (\pp) \\
+                   & = \pi ( \sss(u_0,v_0) ) \\
+                   & = F(u_0,v_0) \,.
+\end{align*}
+Since $F(u_0,v_0) \in V$, with $V$ open in $\R^2$, and since $\pi \circ \g$ is continuous, there exists $\e_0 \in (0,\e]$ such that
+$$
+(\pi \circ \g)(t) \in V \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
+$$
+Since $F^{-1}$ maps $V$ into $U_0$, it is well-defined the composition
+$$
+\eeta \colon (-\e_0, \e_0) \to U_0 \,, \qquad \eeta := F^{-1} \circ \pi \circ \g \,.
+$$
+Notice that $\eeta$ is smooth, since $F^{-1}, \pi$ and $\g$ are smooth.
+In particular, the componenents of $\eeta$ are two smooth functions
+$$
+u,v \colon (-\e_0,\e_0) \to \R \,,
+$$
+such that
+$$
+(u(t),v(t)) = (F^{-1} \circ \pi \circ \g)(t) \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
 $${#eq-lemma-curve-S}
-Note that $u,v$ are smooth, since $F^{-1} \circ \g$ is smooth, being $F^{-1}$ and $\g$ smooth. As $\g(0)=\pp$, by definition of $F$ we have
+We are now ready to conclude:
+
+- Recalling that $F = \pi \circ \sss$, and that $\sss$ is invertible, we infer that
 $$
-(u(0),v(0)) = (F^{-1} \circ \g) (0) = F^{-1}(\pp) =  (u_0,v_0) \,,
+F = \pi \circ \sss \,\, \implies \,\,
+F \circ \sss^{-1}  = \pi  \,\, \implies \,\,
+\sss^{-1} = F^{-1} \circ \pi    \,.
 $$
+Hence, we can substitute $F^{-1} \circ \pi  = \sss^{-1}$ in (@eq-lemma-curve-S), and obtain
+$$
+(u(t),v(t)) = (F^{-1} \circ \pi \circ \g)(t) = (\sss^{-1} \circ \g)(t) \,.
+$$
+Applying $\sss$ to both sides gives the desired equation
+$$
+\g(t) = \sss(u(t),v(t)) \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
+$$
+
+- We have computed that
+$$
+(\pi \circ \g)(0) = F(u_0,v_0) \,.
+$$
+In particular, substituting $t = 0$ in (@eq-lemma-curve-S) gives,
+\begin{align*}
+(u(0),v(0)) & = (F^{-1} \circ \pi \circ \g )(0)  \\
+            & = F^{-1} ((\pi \circ \g )(0) )  \\
+            & = F^{-1}(F(u_0,v_0)) \\
+            & = (u_0,v_0) \,,
+\end{align*}
 showing that 
 $$
-u(0) = u_0 \,, \quad 
-v(0) = v_0 \,.
+u(0) = u_0 \,, \qquad v(0) = v_0 \,.
 $$
-Moreover, applying $\sss$ to both sides of (@eq-lemma-curve-S) yields
-$$
-\sss(u(t),v(t)) = \sss ((F^{-1} \circ \g)) (t) = \g(t) \,,
-$$
-as we wanted to show.
 
-The converse statement is trivial.
+
+*Part 2.* This part is trivial: Suppose that there exist smooth functions
+$$
+u , v \colon (-\e,\e) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
+$$
+such that
+$$
+\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e,\e) \,.
+$$
+Since $\sss(U) \subseteq \SSS$, it follows that
+$$
+\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
+$$
+Moreover, using that $u(0)=u_0$ and $v(0) = v_0$, we get
+$$
+\g(0) = \sss(u(0),v(0)) = \sss(u_0,v_0) = \pp \,.
+$$
 
 :::
+
+
+![Image associated with Part 1 of the Proof for Lemma \ref{lemma-curve-S}. The smooth coordinates $\eeta(t) = (u(t),v(t))$ are constructed by setting $\eeta := F^{-1} \circ \pi \circ \g$.](/images/curves_surface.png){#fig-curves-surface width=80%}
 
 
 We are now ready to characterize $T_{\pp} \SSS$ when $\SSS$ is a regular surface.
@@ -2792,52 +2854,45 @@ We are now ready to characterize $T_{\pp} \SSS$ when $\SSS$ is a regular surface
 ::: {.Theorem #theorem-tangent-plane}
 
 Let $\SSS$ be a (regular) surface and $\pp \in \SSS$. 
-Let $\sss \colon U \to \R^3$ be a chart at $\pp$. Denote by 
-$(u_0,v_0) \in U$ a point such that
+Let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote
 $$
-\sss(u_0,v_0) = \pp \,.
+(u_0,v_0) = \sss^{-1}(\pp) \,.
 $$
-Then
+The following hold:
+
+1. The tangent space satisfies
 $$
 T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} := \{  \lambda \sss_u + \mu \sss_v \divider \lambda,\mu \in \R \} \,,
 $$
-where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$. In particular
+where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$. 
+
+2. The tangent space is a vector space isomorphic to $\R^2$, that is,
 $$
-T_{\pp} \SSS = \R^2 \,.
+T_{\pp} \SSS \simeq \R^2 \,,
+$$
+with isomorphism $\Phi \colon T_{\pp} \SSS \to \R^2$ given by
+$$
+\Phi\left(  \lambda \sss_u + \mu \sss_v   \right) = (\lambda, \mu) \,.
 $$
 
 :::
 
 ::: Proof
 
-Let $\sss \colon U \to \sss(U) \subseteq \SSS$ be a chart at $p$. If we show that
-$$
-T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \}
-$$
-then we deduce 
-$$
-T_{\pp} \SSS = \R^2 \,,
-$$
-since $\sss_u$ and $\sss_v$ are linearly independent.
+*Part 1.* Let $\sss \colon U \to \SSS$ be a chart at $p$. 
 
-
-*Step 1.* Suppose $\vv \in T_{\pp} \SSS$. By definition there exists 
+- First, suppose $\vv \in T_{\pp} \SSS$. By definition of tangent space, there exists 
 a smooth curve $\g \colon (-\e,\e) \to \SSS$ such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
 $$
-By continuity, we can take $\e$ small enough so that
+By Lemma \ref{lemma-curve-S}, there exist $\e_0 \in (0,\e]$ and smooth functions
 $$
-\g(-\e,\e) \subseteq \sss(U) \,.
+u , v \colon (-\e_0,\e_0) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
 $$
-By Lemma \ref{lemma-curve-S} there exist smooth functions $u , v \colon (-\e,\e) \to \R$
 such that
 $$
-\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e,\e) \,,
-$$
-and 
-$$
-u(0)=u_0 \,, \quad v(0) = v_0 \,.
+\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
 $$
 Therefore, by chain rule,
 $$
@@ -2855,44 +2910,68 @@ $$
 \vv \in \operatorname{span} \{  \sss_u (u_0,v_0), \sss_v(u_0,v_0) \} \,.
 $$
 
-*Step 2.* Suppose that 
+- Conversely, suppose that 
 $$
 \vv \in \operatorname{span} \{  \sss_u (u_0,v_0), \sss_v(u_0,v_0) \} \,.
 $$
-Then there exist $\lambda,\mu \in \R$ such that
+Then, there exist $\lambda,\mu \in \R$ such that
 $$
 \vv = \lambda \sss_u (u_0,v_0) + \mu \sss_v (u_0,v_0) \,.
 $$
-Define the curve
+The map $s \colon \R \to \R^2$ defined by
 $$
-\g (t) := \sss (u_0 + \lambda t, v_0 + \mu t) \,, \quad t \in (-\e,\e) \,.
+s(t) := (u_0 + \lambda t, v_0 + \mu t) \,.
 $$
-We have
+is continuous, being $s$ is the line through $(u_0,v_0)$ in the direction $(\lambda,\mu)$. Moreover, 
 $$
-\g(0) = \sss (u_0,v_0) = \pp \,.
+s(0) = (u_0,v_0) \in U \,.
 $$
-Therefore, for $\e$ sufficiently small, we have
+Since $U$ is open in $\R^2$, there exists $R>0$ such that
 $$
-\g(-\e,\e) \subseteq \sss(U) \,.
+B_R(s(0)) = B_{R}( (u_0,v_0) )  \subseteq U \,.
+$$
+In particualar, by continuity of $s$, there exists $\e>0$ such that
+$$
+|t-0| < \e  \quad \implies \quad |s(t)-s(0)| < R \,,
+$$
+which implies
+$$
+s(t) = (u_0 + \lambda t, v_0 + \mu t)  \in U \,,\quad \forall \, t \in (-\e,\e) \,.
+$$
+Therefore, it is well-defined the curve 
+$$
+\g \colon (-\e,\e) \to \sss(U) \subseteq \SSS \,, \qquad \g := \sss \circ s \,.
+$$
+Write down the definition of $\g$ explicitly:
+$$
+\g (t) = \sss (u_0 + \lambda t, v_0 + \mu t) \,.
 $$
 By chain rule
 $$
-\dg (t) = \sss_u (u_0+ \lambda t , v_0+ \mu t ) \lambda 
-+ \sss_v (u_0+ \lambda t , v_0+ \mu t ) \mu \,,
+\dg (t) = \sss_u (u_0+ \lambda t , v_0+ \mu t ) \lambda + \sss_v (u_0+ \lambda t , v_0+ \mu t ) \mu \,,
 $$
 and therefore 
 $$
-\dg(0) = \sss_u (u_0 , v_0 ) \lambda 
-+ \sss_v (u_0 ,v_0) \mu = \vv \,.
+\dg(0) = \sss_u (u_0 , v_0 ) \lambda + \sss_v (u_0 ,v_0) \mu = \vv \,.
 $$
-This proves that $\vv \in T_{\pp} \SSS$, ending the proof.
+This proves that $\vv \in T_{\pp} \SSS$, ending the proof of *Part 1*.
 
+
+*Part 2*. We have shown that
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \}
+$$
+Since $\sss_u$ and $\sss_v$ are linearly independent, we conclude that $T_{\pp}\SSS$ is a vector space of dimension 2. Therefore $T_{\pp}\SSS$ is canonically isomorphic to $\R^2$ via the map
+$\Phi \colon T_{\pp} \SSS \to \R^2$ given by
+$$
+\Phi\left(  \lambda \sss_u + \mu \sss_v   \right) = (\lambda, \mu) \,.
+$$
 
 :::
 
 
 
-Therefore $T_{\pp} \SSS$ is always two-dimensional. This justifies the following definition.
+Therefore, $T_{\pp} \SSS$ is always two-dimensional. This justifies the following definition.
 
 
 ::: Definition 
@@ -2911,7 +2990,7 @@ is called the **tangent plane** to $\SSS$ at $\pp$.
 
 ::: {.Remark  #remark-affine-plane}
 
-By definition $T_{\pp} \SSS$ is a vector subspace of $\R^3$. 
+By definition, $T_{\pp} \SSS$ is a vector subspace of $\R^3$. 
 As such, it holds that 
 $$
 \zero \in T_{\pp} \SSS \,.
@@ -2928,40 +3007,30 @@ which is the **affine tangent plane** through $\pp \in \SSS$.
 :::
 
 
-It is possible to give a cartesian equation for the tangent plane
+We can easily compute cartesian equations for the tangent plane
 $$
-T_{\pp} \SSS
+T_{\pp} \SSS \,.
 $$
-and for the affine tangent plane
-$$
-\pp + T_{\pp} \SSS \,.
-$$
+
 
 
 ::: Proposition
 ### Equation of tangent plane
 
-Let $\SSS$ be a regular surface and $\pp \in \SSS$. Let $\sss$ be a regular chart at $\pp$, with
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. Let $\sss \colon U \to \SSS$ be a regular chart at $\pp$. Set
 $$
-\sss(u_0,v_0) = \pp = (x_0,y_0,z_0) \,.
+(u_0,v_0) := \sss^{-1}(\pp) \,, \quad \nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
 $$
-Let 
-$$
-\nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0)
-$$
-We have:
+They hold:
 
 1. The equation of the tangent plane $T_{\pp} \SSS$ is given by
 $$
-{\nn}_1 x + {\nn}_2 y + {\nn}_3 z = 0 \,, \quad 
-\forall \, (x,y,z) \in \R^3 \,,
+\xx \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
 $$
-where $\nn = ({\nn}_1,{\nn}_2,{\nn}_3)$.
 
 2. The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
 $$
-{\nn}_1 (x-x_0) + {\nn}_2 (y-x_0) + {\nn}_3 (z-z_0) = 0 \,, \quad 
-\forall \, (x,y,z) \in \R^3 \,.
+(\xx - \pp) \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
 $$
 
 :::
@@ -2977,19 +3046,19 @@ By the properties of cross product, the vector $\nn$ is orthogonal to both
 $\sss_u (u_0,v_0)$ and $\sss_v (u_0,v_0)$. Therefore it is orthogonal to
 $T_{\pp} \SSS$. The equation for $T_{\pp} \SSS$ is then
 $$
-(x,y,z) \cdot \nn = 0 \,, \forall \, (x,y,z) \in \R^3 \,.
+\xx \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
 $$
 In particular, the equation for the affine tangent plane $\pp + T_{\pp} \SSS$ is
 $$
-(x,y,z) \cdot \nn = k \,, \quad  \forall \, (x,y,z) \in \R^3 \,,
+\xx \cdot \nn = k \,, \quad  \forall \, \xx \in \R^3 \,,
 $$
-for some $k \in \R$. To compute $k$, it is sufficient to evaluate the above equation at $\pp$, since $\pp$ belongs to $\pp + T_{\pp} \SSS$. We obtain
+for some $k \in \R$. To compute $k$, it is sufficient to evaluate the above equation at any point in $\pp + T_{\pp} \SSS$. Recalling that $\zero \in T_{\pp} \SSS$, we have that $\pp$ belongs to $\pp + T_{\pp} \SSS$. Therefore,
 $$
 k = \pp \cdot \nn  \,.
 $$
 Hence the equation for $\pp + T_{\pp} \SSS$ is
 $$
-(x-x_0,y-y_0,z-z_0) \cdot \nn = 0 \,, \quad  \forall \, (x,y,z) \in \R^3 \,,
+( \xx - \pp ) \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,,
 $$
 ending the proof.
 
@@ -3002,52 +3071,83 @@ ending the proof.
 
 Consider the surface $\SSS$ defined by the chart
 $$
-\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v        \right) \,.
+\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
 $$
-We want to compute the equation for the tangent plane $T_{\pp} \SSS$, and for the affine tangent plane $\pp + T_{\pp} \SSS$.
+for $u \in (0,2\pi)$, $v < 1$.
 
-First, we need to check that $\sss$ is regular. We have
+1. Prove that $\sss$ parametrizes a paraboloid, see @fig-paraboloid.
+2. Prove that $\sss$ is regular.
+3. Compute the vector $\nn = \sssu \times \sssv$
+4. Give a basis for $T_{\pp} \SSS$ at the point
+$$
+\pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,.
+$$
+5. Compute the cartesian equations of
+$$
+T_{\pp} \SSS \quad \text{and} \quad \pp + T_{\pp} \SSS \,.
+$$
+at the point $\pp$.
+
+> *Solution*.
+>
+> *Point 1.* Denote the coordinates of $\sss$ by
+$$
+\sss(u,v) = (x,y,z) \,.
+$$
+We have
+\begin{align*}
+x^2 + y^2 & = \left( \sqrt{1-v} \cos(u) \right)^2 + \left( \sqrt{1-v} \cos(u) \right)^2 \\
+          & = 1 - v  \\
+          & = 1 - z \,,
+\end{align*}
+showing that $\sss$ parametrizes the paraboloid
+$$
+z = - x^2 - y^2 + 1 \,.
+$$
+>
+>*Point 2.* Proof that $\sss$ is regular:
 \begin{align*}
 \sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
-\sss_v & = \left(    \frac{1}{2} (1-v)^{-1/2}  \cos(u) , \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
+\sss_v & = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
 \end{align*}
-As the last component of $\sss_u$ is $0$ and the last component of $\sss_v$ is $1$, we conclude that $\sss_u$ and $\sss_v$ are linearly independent. Thus $\sss$ is regular. 
-
-Suppose $\pp \in \SSS$ is such that
-$$
-\sss(u_0,v_0) = \pp
-$$
-for some $(u_0,v_0) \in \R^2$. By Theorem \ref{theorem-tangent-plane} we have
-$$
-T_{\pp} \SSS = \operatorname{span} \{ \sss_u (u_0,v_0) , \sss_v (u_0,v_0)  \} \,.
-$$
-To find the equation of $T_{\pp} \SSS$ we compute:
+As the last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, we conclude that $\sss_u$ and $\sss_v$ are linearly independent. Thus $\sss$ is regular. 
+>
+> *Point 3.* We compute:
 \begin{align*}
-\sss_u \times \sss_v & = 
+\nn & = \sss_u \times \sss_v \\
+    & = 
 \left| 
 \begin{array}{ccc}
 \ii & \jj & \kk \\
-- \sqrt{1-v} \sin(u) & \sqrt{1-v} \cos(u) & 0 \\
-\frac{1}{2} (1-v)^{-1/2}  \cos(u) & \frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
+-\sqrt{1-v} \sin(u) & \sqrt{1-v} \cos(u) & 0 \\
+-\frac{1}{2} (1-v)^{-1/2}  \cos(u) & -\frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
 \end{array}
 \right| \\
-& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), - \frac12        \right) 
+& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
 \end{align*}
-For 
+>
+*Point 4.* Define the point 
 $$
-(u_0,v_0) = \left( \frac{\pi}{4}, 0 \right) 
+\pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right)
 $$
-we have
+and notice that 
 $$
-\pp = \sss (u_0,v_0)  = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,,
+\sss \left( \frac{\pi}{4}, 0 \right)  = \pp \,.
 $$
-and therefore 
+By Theorem \ref{theorem-tangent-plane}, we have that a basis for $T_{\pp} \SSS$ is given by the vectors
+\begin{align*}
+\sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
+\sss_v  \left( \frac{\pi}{4}, 0 \right) & = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
+\end{align*}
+>
+>*Point 5.* Using the calculation for $\nn$ in point (iii), we find
 $$
-\nn = (\sss_u \times \sss_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
+\nn  \left( \frac{\pi}{4}, 0 \right) 
+=  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
 $$
 The equation for $T_{\pp} \SSS$ is therefore
 $$
-(x,y,z) \cdot \nn = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
+\xx \cdot \nn = 0 \,, \quad \forall \, \xx \in \R^3 \,.
 $$
 The above reads
 $$
@@ -3068,6 +3168,56 @@ $$
 
 :::
 
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Paraboloid."
+#| label: fig-paraboloid
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(0, 2 * np.pi, 100)
+v = np.linspace(-5, 1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = np.sqrt(1-V) * np.cos(U)
+y = np.sqrt(1-V) * np.sin(U)
+z = V
+
+# Plots the cone
+ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 25, azim = 35)
+
+# Showing the plot
+plt.show()
+```
 
 
 
@@ -3121,7 +3271,7 @@ Let $\SSS$ be a regular surface and $\pp \in \SSS$. The tangent plane $T_{\pp} \
 $$
 T_{\pp} \SSS = \{ \xx \in \R^3 \divider \xx \cdot \NN = 0 \} \,.
 $$
-In this case we write
+We will also write
 $$
 \NN \perp T_{\pp} \SSS \,,
 $$
@@ -3150,20 +3300,20 @@ Therefore we can choose the unit normal to $T_{\pp} \SSS$ as
 $$
 \NN_{\sss} :=  \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
 $$
-Clearly $\NN_{\sss}$ has unit norm. Moreover 
+Clearly, $\NN_{\sss}$ has unit norm. Moreover 
 $$
 \NN_{\sss} \cdot \sss_u = 0 \,, \quad \NN_{\sss} \cdot \sss_v = 0
 $$
-by the properties of cross product, showing that $\NN_{\sss}$ is perpendicular to $T_{\pp} \SSS$.
+by the properties of cross product. Thus, $\NN_{\sss}$ is perpendicular to $T_{\pp} \SSS$.
 
 There is however an issue: $\NN_{\sss}$ is not independent on the choice of chart $\sss$. Indeed, suppose that $\widetilde{\sss} \colon  \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
-\widetilde{\sss} = \sss \circ \Phi \,, \quad \Phi \colon \widetilde{U} \to U \,,
+\widetilde{\sss} = \sss \circ \Phi \,, 
 $$
-with $\Phi$ diffeomorphism. As shown in the proof of Proposition \ref{proposition-transition-maps}, we have
+with $\Phi \colon \widetilde{U} \to U$ diffeomorphism. As stated in Proposition \ref{proposition-transition-maps}, we have
 $$
 \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
-= \det (J\Phi)  \, \sss_u \times \sss_v \,.
+= \det J\Phi \, ( \sss_u \times \sss_v )\,.
 $$
 Hence
 $$
@@ -3193,7 +3343,7 @@ $$
 ::: Definition
 ### Charts with same orientation
 
-Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$, $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ regular charts such that 
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$,  $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ regular charts such that 
 $$
 \sss(U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
 $$
@@ -3201,24 +3351,23 @@ Denote by $\Phi$ the transition map between $\widetilde{\sss}$ and $\sss$. We sa
 
 1. $\sss$ and $\widetilde{\sss}$ determine the **same orientation** if 
 $$
-\det J \Phi > 0 \,,
+\det J \Phi > 0 \,.
 $$
-where $\Phi$ is defined.
 
-2. $\sss$ and $\widetilde{\sss}$ determine **opposite orientations** if 
+2. $\sss$ and $\widetilde{\sss}$ determine the **opposite orientations** if 
 $$
-\det J \Phi < 0 \,,
+\det J \Phi < 0 \,.
 $$
-where $\Phi$ is defined.
 
 :::
 
 
 
 ::: Example
+### Orientation of the plane
 
-Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
-The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
+Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$, and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
+The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ is parametrized by 
 $$
 \sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
 $$
@@ -3260,7 +3409,11 @@ If a surface can be covered by charts with the same orientation, it is called or
 
 Let $\SSS$ be a regular surface. Then:
 
-1. An atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ is **oriented** if the following property holds: 
+1. Let 
+$$
+\mathcal{A} = \{ \sss_i \colon U_i \to \SSS\}_{i \in I}
+$$ 
+be an atlas for $\SSS$. We say that $\mathcal{A}$ is **oriented**, if the following property holds: 
 $$
 \sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset \quad \implies \quad 
 \det J \Phi > 0 \,,
@@ -3273,6 +3426,15 @@ where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
 
 :::
 
+
+::: Warning
+### Orientability is a global property
+
+Orientability is a global property: To determine wether 
+a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
+$\mathcal{A}$. 
+
+:::
 
 
 ::: Example
@@ -3297,14 +3459,7 @@ so that $\det J \Phi = 1 > 0$.
 :::
 
 
-::: Warning
-### Orientability is a global property
 
-The above example is saying that orientability is a global property: To determine wether 
-a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
-$\mathcal{A}$. This is because a single local parametrization $\sss(U) \subseteq \SSS$ is always orientable.
-
-:::
 
 
 
@@ -3810,7 +3965,7 @@ is smooth. They are equivalent:
 
 :::
 
-The proof is based on the Inverse Function Theorem, see Proposition 4.4.6 in
+The proof is based on the Inverse Function Theorem \ref{theorem-inverse-function}, see Proposition 4.4.6 in
 [@pressley].
 
 

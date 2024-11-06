@@ -1689,8 +1689,8 @@ $$
 $$
 is a regular atlas for $\sphere^2$.
 
-> *Solution.* Check that $\sss$ and $\widetilde{\sss}$ are charts:
->
+*Solution.* Check that $\sss$ and $\widetilde{\sss}$ are charts:
+
 - $\sss$ is smooth.
 - $U$ is open in $\R^2$.
 - Moreover
@@ -1702,7 +1702,7 @@ This is clearly an open set in $\sphere^2$.
 - Thus, $\sss$ is a homeomorphism from $U$ into $\sss(U)$.
 - This shows $\sss$ is a chart of $\sphere^2$.
 - Since $\widetilde{\sss}$ is obtained from $\sss$ by composing two rotations, we conclude that also $\widetilde{\sss}$ is a chart.
->
+
 Show that $\sss$ is a regular chart:
 \begin{align*}
 \sss_{\theta} & = (-\sin(\theta) \cos(\fi), \cos(\theta) \cos(\fi), 0 ) \\
@@ -1726,7 +1726,7 @@ $$
 \norm{ \sss_{\theta} \times \sss_{\fi} } = \cos (\fi)  \neq 0 \,.
 $$
 Thus $\sss_{\theta}$ and $\sss_{\fi}$ are linearly independent, and $\sss$ is regular. 
->
+
 Since $\widetilde{\sss}$ is obtained from $\sss$ by applying two rotations, it follows that $\widetilde{\sss}$ is regular. Therefore 
 $$
 \mathcal{A} = \{ \sss, \widetilde{\sss}\}
@@ -2525,7 +2525,7 @@ $$
 $$
 2. $f \colon V \to \R^3$ is a differentiable function such that  
 $$
-f(\SSS_1) \subseteq f(\SSS_2) \,.
+f(\SSS_1) \subseteq \SSS_2 \,.
 $$
 
 Then the restriction 
@@ -2661,7 +2661,9 @@ be a differentiable map.
     * $f(V) \subseteq \SSS_2$ is open;
     * $f \colon V \to f(V)$ is a diffeomorphism between surfaces.
 
-2. We say that $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for each $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
+2. $f$ is a **local diffeomorphism** in $\SSS_1$, if it is a local diffeomorphism at each $\pp \in \SSS_1$.
+
+3. $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for each $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
 
 :::
 
@@ -3214,9 +3216,9 @@ T_{\pp} \SSS \quad \text{and} \quad \pp + T_{\pp} \SSS \,.
 $$
 at the point $\pp$.
 
-> *Solution*.
->
-> *Point 1.* Denote the coordinates of $\sss$ by
+*Solution*.
+
+*Point 1.* Denote the coordinates of $\sss$ by
 $$
 \sss(u,v) = (x,y,z) \,.
 $$
@@ -3230,15 +3232,15 @@ showing that $\sss$ parametrizes the paraboloid
 $$
 z = - x^2 - y^2 + 1 \,.
 $$
->
->*Point 2.* Proof that $\sss$ is regular:
+
+*Point 2.* Proof that $\sss$ is regular:
 \begin{align*}
 \sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
 \sss_v & = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
 \end{align*}
 As the last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, we conclude that $\sss_u$ and $\sss_v$ are linearly independent. Thus $\sss$ is regular. 
->
-> *Point 3.* We compute:
+
+*Point 3.* We compute:
 \begin{align*}
 \nn & = \sss_u \times \sss_v \\
     & = 
@@ -3251,7 +3253,7 @@ As the last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is 
 \right| \\
 & = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
 \end{align*}
->
+
 *Point 4.* Define the point 
 $$
 \pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right)
@@ -3265,8 +3267,8 @@ By Theorem \ref{theorem-tangent-plane}, we have that a basis for $T_{\pp} \SSS$ 
 \sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
 \sss_v  \left( \frac{\pi}{4}, 0 \right) & = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
 \end{align*}
->
->*Point 5.* Using the calculation for $\nn$ in point (iii), we find
+
+*Point 5.* Using the calculation for $\nn$ in Point 3, we find
 $$
 \nn  \left( \frac{\pi}{4}, 0 \right) 
 =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
@@ -3688,7 +3690,7 @@ $$
 \NN = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
 $$
 
-> *Solution.* Compute the following quantities:
+*Solution.* Compute the following quantities:
 \begin{align*}
 \sss_{u} & =\left(e^{u}, 1,0\right) \\
 \sss_{v} & =(0,1,1) \\
@@ -4091,7 +4093,7 @@ $$
 d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 $$
 
-> *Solution.* First, notice that $f$ is well defined, because 
+*Solution.* First, notice that $f$ is well defined, because 
 $$
 \cos^2(x) + \sin^2(x) = 1 \quad \implies \quad f \in \widetilde{\SSS} \,.
 $$
@@ -4171,7 +4173,7 @@ f(x,y,z) = (y,xz,0) \,.
 $$
 Give charts of $\SSS$ and $\wSSS$, and compute the matrix of $d_{\pp} f$ with respect to these charts.
 
-> *Solution.* A chart of the cylinder $\SSS$ is given by 
+*Solution.* A chart of the cylinder $\SSS$ is given by 
 $$
 \sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
 $$
@@ -4259,7 +4261,7 @@ is invertible for all $\pp \in \SSS_1$.
 For a proof see Proposition 4.4.5 in [@pressley]. The above Proposition says that the differential of diffeomorphism is invertible. The converse statement is true locally.
 
 
-::: Theorem
+::: {.Theorem #theorem-df-invertible}
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Suppose that 
 $$
@@ -4283,7 +4285,7 @@ The proof is based on the Inverse Function Theorem \ref{theorem-inverse-function
 
 
 
-## Examples of Surfaces
+## Families of Surfaces
 
 In this section we discuss a few families of surfaces:
 
@@ -4296,7 +4298,7 @@ In this section we discuss a few families of surfaces:
 
 ### Level surfaces
 
-Level surfaces are described as the set of zeros of a scalar function.
+Level surfaces are described as the set of zeros of scalar functions.
 
 ::: Definition
 ### Level surface
@@ -4330,37 +4332,6 @@ Then $\SSS_f$ is a regular surface.
 
 
 
-::: Example
-
-We want to determine if the set defined by the equation
-$$
-\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}  
-$$
-is a regular surface. Note that $\SSS$ is a unit cylinder: From Example \ref{example-unit-cylinder} we already know that $\SSS$ is a regular surface.
-
-Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
-$$
-V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
-$$
-Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
-$$
-f(x,y,z) := x^2 + y^2 -1 \,.
-$$
-We have
-$$
-\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
-\forall \, (x,y,z) \in V \,.
-$$
-Since 
-$$
-\SSS = \SSS_f \,,
-$$
-by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface.
-
-:::
-
-
 
 
 ::: Example
@@ -4368,17 +4339,25 @@ $\SSS$ is a regular surface.
 
 We saw that the circular cone
 $$
-\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
+\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} 
 $$
-is not a surface. However the positive sheet 
+is not a surface. However, the positive sheet 
 $$
 \SSS^+ := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
 $$
-is a regular surface, see @fig-positive-cone Indeed, define the open set 
+is a regular surface, see @fig-positive-cone, with regular atlas given by $\mathcal{A} = \{\sss\}$, where 
 $$
-V := \{ (x,y,z) \in \R^3 \divider z > 0 \} 
+\sss \colon \R^2 \to \R^3 \,, \quad 
+\sss (u,v) = (u,v,\sqrt{u^2 + v^2}) \,.
 $$
-and  the function $f \colon V \to \R$ by
+Use Theorem \ref{theorem-level-surface} to show that $\SSS^+$ is a regular surface.
+
+
+*Solution.* Define the open set 
+$$
+V := \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
+$$
+and the function $f \colon V \to \R$ by
 $$
 f(x,y,z) := x^2 + y^2 - z^2 \,.
 $$
@@ -4392,12 +4371,7 @@ $$
 \SSS^+ = \SSS_f \,,
 $$
 by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface. 
-
-As a side note, a regular atlas for $\SSS^+$ is given by $\mathcal{A} = \{\sss\}$ where $\sss \colon \R^2 \to \R^3$ is defined by
-$$
-\sss (u,v) := (u,v,\sqrt{u^2 + v^2}) \,.
-$$
+$\SSS$ is a regular surface.
 
 :::
 
@@ -4454,62 +4428,41 @@ plt.show()
 ```
 
 
-::: Definition
-### Level surface
 
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
-$$
-\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
-$$
-
-:::
-
-
-The following Theorem gives a sufficient condition for $\SSS_f$ to be
-a regular surface. 
-
-
-
-::: {.Theorem #theorem-level-surface-bis}
-
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
-Suppose that 
-$$
-\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
-$$
-Then $\SSS_f$ is a regular surface.
-
-:::
-
-
-Let us give a characterization of the tangent plane to $\SSS_f$.
+Let us give a characterization of the tangent plane to level surfaces.
 
 
 ::: Proposition
+### Tangent plane of level surfaces
 
 Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
 Suppose that 
 $$
 \nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
 $$
-Then $\nabla f(\pp)$ is orthogonal to $T_{\pp} \SSS_f$. In particular,
-the equation of $T_{\pp} \SSS_f$ is given by
+Let $\pp \in \SSS_f$. We have
 $$
-\partial_{x} f (\pp) x  + \partial_{y} f (\pp) y    + \partial_{z} f (\pp) z = 0 \,, \quad  \forall \, (x,y,z) \in \R^3\,.   
+\nabla f(\pp) \perp T_{\pp} \SSS_f \,.
+$$ 
+In particular, they hold:
+
+1. The cartesian equation of $T_{\pp} \SSS_f$ is given by
 $$
-The equation for $\pp + T_{\pp} \SSS_f$ is given by
+\nabla f (\pp) \cdot \xx = 0    \,, \quad  \forall  \, \xx \in \R^3\,,
 $$
-\partial_{x} f (\pp) (x-x_0)  + \partial_{y} f (\pp) (y-y_0)    + \partial_{z} f (\pp) (z-z_0) = 0 \,, \forall \, (x,y,z) \in \R^3\,,   
+
+2. The cartesian equation for $\pp + T_{\pp} \SSS_f$ is given by
 $$
-where $\pp = (x_0,y_0,z_0)$.
+\nabla f(\pp) \cdot (\xx- \pp) = 0 \,, \quad \forall \, \xx \in \R^3\,.
+$$
 
 :::
 
 ::: Proof
 
-Let $\vv \in T_{\pp} \SSS_f$. By definition there exists a smooth curve 
+Let $\vv \in T_{\pp} \SSS_f$. By definition of tangent plane, there exists a smooth curve 
 $$
-\g \colon (-\e,\e) \to \SSS_f \subseteq \R^3 
+\g \colon (-\e,\e) \to \SSS_f
 $$
 such that
 $$
@@ -4527,25 +4480,25 @@ Evaluating the above at $t=0$ yields
 $$
 0 = \nabla f (\g(0)) \cdot \dg(0) = \nabla f (\pp) \cdot \vv \,,
 $$
-showing that $\vv$ is orthogonal to $\nabla f (\pp)$. Since $\vv$ is arbitrary, we conclude that $\nabla f (\pp)$ is orthogonal to $T_{\pp} \SSS_f$. In particular, the equation for $T_{\pp} \SSS_f$ is
+showing that $\vv$ is orthogonal to $\nabla f (\pp)$. Since $\vv$ is arbitrary, we conclude that 
 $$
-\nabla f(\pp) \cdot (x,y,z) = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
+\nabla f (\pp) \perp T_{\pp} \SSS_f \,.
 $$
-Therefore the equation for $\pp + T_{\pp} \SSS$ is given by
+In particular, the equation for $T_{\pp} \SSS_f$ is
 $$
-\nabla f(\pp) \cdot (x,y,z) = k \,, \quad \forall \, (x,y,z) \in \R^3 \,,
+\nabla f(\pp) \cdot \xx= 0 \,, \quad \forall \, \xx \in \R^3 \,.
 $$
-for some $k \in \R$. Since $\pp \in \pp + T_{\pp} \SSS$, we can substitute 
+Therefore, the equation for $\pp + T_{\pp} \SSS$ is given by
 $$
-(x,y,z)=(x_0,y_0,z_0) = \pp 
+\nabla f(\pp) \cdot \xx = k \,, \quad \forall \, \xx \in \R^3 \,,
 $$
-in the above equation to obtain
+for some $k \in \R$. Since $\pp$ belongs to $\pp + T_{\pp} \SSS$, we can substitute $\pp$ in the above equation to obtain
 $$
-k = \nabla f(\pp) \cdot (x_0,y_0,z_0) \,.
+k = \nabla f(\pp) \cdot \pp \,.
 $$
 Hence the equation for $\pp + T_{\pp} \SSS$ is
 $$
-\nabla f(\pp) \cdot (x-x_0,y-y_0,z-z_0) = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
+\nabla f(\pp) \cdot (\xx - \pp) = 0 \,, \quad \forall \, \xx \in \R^3 \,.
 $$
 
 :::
@@ -4554,10 +4507,73 @@ $$
 
 
 
+::: Example
+## Unit cylinder
+
+Consider the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
+$$
+
+1. Use Theorem \ref{theorem-level-surface} to prove that $\SSS$ is a regular surface. 
+2. Let 
+$$
+\pp = \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) \in \SSS
+$$
+Show that $T_{\pp} \SSS$ has cartesian equation 
+$$
+x + y = 0 \,.
+$$
+
+
+*Solution.* 
+
+1. From Example \ref{example-unit-cylinder}, we already know that $\SSS$ is a regular surface. Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
+$$
+V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+$$
+Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 -1 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS = \SSS_f \,,
+$$
+by Theorem \ref{theorem-level-surface} we conclude that 
+$\SSS$ is a regular surface.
+
+2. Using the expression for $\nabla f$ found in Point 1, we get
+$$
+\nabla f (\pp) = \nabla f \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) = 
+(\sqrt{2},\sqrt{2},0) \,.
+$$
+The equation for $T_{\pp} \SSS$ is
+$$
+\nabla f (\pp) \cdot \xx = 0 \,, \quad \forall \, \xx \in \R^3 \,.
+$$
+Therefore, we find
+\begin{align*}
+\nabla f (\pp) \cdot \xx = 0 \,\, & \iff \,\,
+(\sqrt{2},\sqrt{2},0) \cdot (x,y,z) = 0 \\ 
+\,\, & \iff \,\, 
+x + y = 0 \,.
+\end{align*}
+
+:::
+
+
+
+
 ### Quadrics
 
 
-Quadrics are level surfaces
+Quadrics are special level surfaces
 $$
 S_f = \left\{  (x,y,z) \in \R^3 \divider f(x,y,z) = 0   \right\} \,,
 $$
@@ -4588,7 +4604,7 @@ $$
 The expression $f=0$ is called a **quadric equation**.
 
 
-As stated in the following theorem, there are $14$ quadrics in total. Out of these:
+As stated in the following Theorem, there are $14$ quadrics in total. Out of these:
 
 - 9 are *interesting* surfaces, 
 - 3 are planes,
@@ -4630,11 +4646,27 @@ Then, up to rigid motions, $\SSS$ can be described by one of the following equat
 
 14. Single point: $\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} + \dfrac{z^2}{r^2} = 0$
 
+We refer to @fig-quadrics-1, @fig-quadrics-2, @fig-quadrics-3, @fig-quadrics-4, @fig-quadrics-5, @fig-quadrics-6 for illustrations.
+
 :::
 
 
-The proof of Theorem \ref{theorem-quadrics} follows by diagonalizing 
+The proof of Theorem \ref{theorem-quadrics} follows (quite tediously) by diagonalizing 
 the symmetric matrix $A$, and by studying the eigenvalues, see Theorem 5.5.2 in [@pressley].
+
+
+![Classification of quadrics: Ellipsoid and Hyperboloid of 1 sheet.](/images/quadrics_1.png){#fig-quadrics-1 width=70%}
+
+![Classification of quadrics: Hyperboloid of 2 sheets and Elliptic Paraboiloid.](/images/quadrics_2.png){#fig-quadrics-2 width=70%}
+
+![Classification of quadrics: Hyperbolic Paraboloid and Quadric Cone.](/images/quadrics_3.png){#fig-quadrics-3 width=70%}
+
+![Classification of quadrics: Elliptic Cylinder and Hyperbolic Cylinder.](/images/quadrics_4.png){#fig-quadrics-4 width=70%}
+
+![Classification of quadrics: Parabolic Cylinder and Plane.](/images/quadrics_5.png){#fig-quadrics-5 width=70%}
+
+![Classification of quadrics: 2 parallel planes and 2 intersecting planes.](/images/quadrics_6.png){#fig-quadrics-6 width=70%}
+
 
 
 
@@ -4696,7 +4728,7 @@ D =
 \end{array}
 \right)  \,.
 $$
-Therefore, up to changing basis via the matrix $P$, $S$ can be described 
+Therefore, up to changing basis via the matrix $P$, the surface $S$ can be described 
 by the quadric equation
 $$
 5.51 \widetilde{x}^2 - 1.55 \widetilde{y}^2 - 2.96 \widetilde{z}^2 = 1  \,,
@@ -4710,7 +4742,7 @@ showing that $S$ is a Hyperboloid of two sheets.
 ### Ruled surfaces
 
 
-A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined
+A ruled surface, is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined
 in the following way.
 
 
@@ -4724,8 +4756,8 @@ $$
 $$
 We say that:
 
-- $\g$ is the **base curve**
-- The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**
+- $\g$ is the **base curve**.
+- The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**.
 
 :::
 
@@ -4740,28 +4772,38 @@ A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
 
 A chart for $\SSS$ is
 $$
-\sss_u = \dg(u) + v \dot{\mathbf{a}}(u) \,, \quad
-\sss_v = \mathbf{a}(u) \,,
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
-with $\dg$ and $\mathbf{a}$ linerly independent. Thus $\dg(u) + v \dot{\mathbf{a}}(u)$ and $\mathbf{a}$ are linearly independent for
+with $\dg$ and $\mathbf{a}$ linerly independent Differentiating, we obtain
+$$
+\sss_u = \dg(u) + v \dot{\mathbf{a}}(u) \,, \quad
+\sss_v = \mathbf{a}(u) \,.
+$$
+Thus, $\dg(u) + v \dot{\mathbf{a}}(u)$ and $\mathbf{a}$ are linearly independent for
 $v$ sufficiently small. 
 
 :::
 
 
-The same base curve can yield multiple ruled surfaces.
-For example, if $\g$ is a circle, we can obtain both the unit cylinder
-and the Möbius band. 
+The same base curve can yield multiple ruled surfaces, depending on the choice of rulings. For example, if $\g$ is a circle, 
+$$
+\g(u) = (\cos(u), \sin(u), 0) \,,
+$$
+we can obtain both the unit cylinder, and the Möbius band. 
 
 
 ::: Example
 ### Unit Cylinder
 
-As seen in Example \ref{example-unit-cylinder}, the cylinder is a surface with atlas $\mathcal{A}=\{\sss_1,\sss_2\}$, where $\sss_1$ and $\sss_2$ are suitable restriction of
+Consider the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
+$$
+As seen in Example \ref{example-unit-cylinder}, $\SSS$ is a surface with atlas $\mathcal{A}=\{\sss_1,\sss_2\}$, where $\sss_1$ and $\sss_2$ are suitable restriction of
 $$
 \sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in [0,2\pi) \times \R \,.
 $$
-We have
+Equivalently, we can rewrite $\sss$ as
 $$
 \sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
@@ -4769,12 +4811,16 @@ with
 $$
 \g(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
 $$
-Hence the unit cylinder is a ruled surface, see @fig-cylinder-ruled.
+Note that the vectors
+$$
+\dg = (-\sin(u), \cos(u), 0 ) \,, \quad \mathbf{a} = (0,0,1)
+$$
+are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surface, see @fig-cylinder-ruled.
 
 :::
 
 
-![Unit cylinder is a ruled surface with base curve $\g$ and rulings given by vertical lines.](/images/surfaces_ruled.png){#fig-cylinder-ruled width=70%}
+![The unit cylinder is a ruled surface with base curve the unit circle, and rulings given by vertical lines.](/images/surfaces_ruled.png){#fig-cylinder-ruled width=70%}
 
 
 ::: Example
@@ -4788,7 +4834,7 @@ where
 $$
 \g(u) = (\cos(u), \sin(u), 0) 
 $$
-is the unit circle and
+is the unit circle, and
 $$
 \mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
@@ -4863,12 +4909,13 @@ Surfaces of revolution are obtained by rotating a curve about the $z$-axis.
 
 Let $\g \colon (a,b) \to \R^3$ be a smooth curve in the $(x,z)$-plane, that is,
 $$
-\g(u) = (f(u), 0 , g(u)) \,.
+\g(v) = (f(v), 0 , g(v)) \,.
 $$
 Suppose that $f>0$. The surface obtained by rotating $\g$ about the $z$-axis is called **surface of revolution**. A chart for $\SSS$ is given by
 $$
-\sss (u,v) :=  (f(u) \cos(v), f(u)\sin(v), g(u)) \,, \,\, u \in (a,b) \,, \, v \in [0,2\pi) \,.
+\sss (u,v) :=  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
 $$
+with $u \in [0,2\pi)$ and $v \in (a,b)$.
 
 :::
 
@@ -4884,12 +4931,12 @@ A surface of revolution is regular if and only if $\g$ is regular.
 
 We have
 \begin{align*}
-\sss_u & = \left(\dot{f}(u) \cos(v), \dot{f}(u) \sin(v), \dot{g}(u) \right) \,, \\
-\sss_v & = \left(-f(u)\sin(v), f(u) \cos(v), 0 \right) \,.
+\sss_u & = \left(- \sin(u)f(v),  \cos(u) f(v), 0 \right) \,, \\
+\sss_v & = \left(\cos(u) \dot{f}(v) , \sin(u)\dot{f}(v) , \dot{g}(v) \right) \,.
 \end{align*}
 Therefore
 $$
-\sss_u \times \sss_v = \left( f \dot{g} \cos(v), -\dot{f} g \sin(v), f \dot{f} \right)
+\sss_u \times \sss_v = \left( \cos(u) f \dot{g} ,  \sin(u) f \dot{g} , -f \dot{f} \right) \,,
 $$
 and 
 $$
@@ -4905,24 +4952,24 @@ Therefore $\sss_u$ and $\sss_v$ are linearly independent if and only if $\g$ is 
 ::: Example
 ### Catenoid
 
-The catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis, see @fig-catenoid. Recall that the catenary function is defined by
+The Catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis, see @fig-catenoid. Recall that the catenary function is defined by
 $$
-f(u) = \cosh (u) \,.  
+f(v) = \cosh (v) \,.  
 $$
 Therefore the catenoid is obtained by rotating 
 $$
-\g(u) = \left(  \cosh (u), 0 , u \right) \,.
+\g(v) = \left(  \cosh (v), 0 , v \right) \,.
 $$
 A chart for the catenoid is given by
 $$
-\sss (u,v) = (\cosh (u) \cos(v), \cosh (u)\sin(v), u) \,, 
+\sss (u,v) = (\cos(u) \cosh (v) , \sin(u) \cosh (v), v) \,, 
 $$
-where $u \in \R$ and  $v \in [0,2\pi)$. Note that $f>0$ and 
+where $u \in [0,2\pi)$ and $v \in \R$. Note that $f>0$ and 
 $$
-\dg = \left(  \sinh (u), 0 , 1 \right) \,, \quad 
-\norm{\dg}^2 = 1+ \sinh(u)^2 \geq 1 \,.
+\dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
+\norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
 $$
-Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  conclude that the catenoid is a regular surface.
+Therefore $\g$ is regular. By Proposition \ref{proposition-revolution}, we  conclude that the Catenoid is a regular surface.
 
 
 :::
@@ -4950,29 +4997,28 @@ In this section we introduce the first **fundamental form** of a surface. This w
 
 
 
-### Length and angles between tangent vectors
+### Definition of FFF
 
 Let $\SSS$ be a surface and consider two points $\pp, \mathbf{q} \in \SSS$. The euclidean distance between $\pp$ and $\mathbf{q}$ is 
 $$
 \norm{\pp - \mathbf{q}} \,.
 $$
-However this measures the length of the straight segment which connects $\pp$ to $\mathbf{q}$. We are interested in measuring the distance of $\pp$ and $\mathbf{q}$ on $\SSS$.
+However, this measures the length of the straight segment which connects $\pp$ to $\mathbf{q}$, that is, the planar distance between $\pp$ and $\mathbf{q}$. We are interested in measuring the distance of $\pp$ and $\mathbf{q}$ on $\SSS$.
 A way to measure such distance is the following: Suppose 
 $$
-\g \colon (t_0,t_1) \to \SSS
+\g \colon (a,b) \to \SSS
 $$ 
 is a smooth curve such that
 $$
-\g(t_0) = \pp\,, \quad \g(t_1) = \mathbf{q} \,.
+\g(a) = \pp\,, \quad \g(b) = \mathbf{q} \,.
 $$
-The distance between $\pp$ and $\mathbf{q}$ on $\SSS$ is the length of $\g$, i.e.,
+The distance between $\pp$ and $\mathbf{q}$ on $\SSS$ could be defined as the length of $\g$, i.e.,
 $$
-\int_{t_0}^{t_1} \norm{ \dg (t) } \, dt \,.
+\int_{a}^{b} \norm{ \dg (t) } \, dt \,.
 $$
-Since $\g(t) \in \SSS$, by definition
-we have
+Since $\g(t) \in \SSS$, by definition of tangent plane, we have
 $$
-\dg(t) \in T_{\xx} S \,, \quad \xx := \g(t) \,.
+\dg(t) \in T_{\pp} S \,, \quad \pp := \g(t) \,.
 $$
 Therefore, computing $\norm{\dg(t)}$ is equivalent
 to computing the length of tangent vectors to $\SSS$. This motivates the definition of first fundamental form.
@@ -5005,8 +5051,10 @@ so that $I_{\pp}$ can be used to compute the length of tangent vectors.
 
 
 To use the first fundamental form in practice, we need to express $I_{\pp}$ in terms of local
-charts. To this end, we first define the coordinates functions $du$ and $dv$ on $T_{\pp} S$.
+charts. To this end, we first define:
 
+- The coordinates functions $du$ and $dv$ on $T_{\pp} \SSS$,
+- The first fundamental form of a chart.
 
 ::: Definition
 ### Coordinate functions on tangent plane  {#definition-coordinate-functions}
@@ -5016,9 +5064,9 @@ For each $\pp \in \sss(U)$ we have
 $$
 T_{\pp} \SSS = \operatorname{span} \{\sss_u,\sss_v\} \,,
 $$
-where $\sss_u$ and $\sss_v$ are evaluated at the point $(u_0,v_0) \in U$ such that 
+where $\sss_u$ and $\sss_v$ are evaluated at the point $(u,v) \in U$ such that 
 $$
-\sss(u_0,v_0)=\pp \,.
+\sss(u,v)=\pp \,.
 $$
 Therefore, for each $\vv \in T_{\pp} \SSS$, there exist $\lambda,\mu \in \R$ such that
 $$
@@ -5034,10 +5082,8 @@ $$
 
 
 
-
-
-::: {.Proposition  #proposition-fff-quadratic}
-
+::: Definition
+### First fundamental form of a chart
 
 Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
 $$
@@ -5048,30 +5094,53 @@ $$
 E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
 G := \sss_v \cdot \sss_v \,.
 $$
-Let $\pp \in \sss(U)$ and denote by $(u_0,v_0) \in U$ the point such that
+The **first fundamental form** of $\sss$ is the quadratic form
 $$
-\sss(u_0,v_0) = \pp \,.
+\mathscr{F}_1 \colon T_{\pp} \SSS \to \R
 $$
-The first fundamental form of $\SSS$ at $\pp$ can be written as
-\begin{align*}
-I_{\pp} (\vv,\ww) & = (du (\vv), dv(\vv) )  \, 
+defined by
+$$
+\mathscr{F}_1 (\vv) := E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,,
+$${#eq-fff-chart}
+for all $\vv \in T_{\pp} \SSS$, and $\pp \in \sss(U)$, where $E,F,G$ are evaluated at 
+$$
+(u,v) = \sss^{-1}(\pp) \,.
+$$
+
+:::
+
+
+We usually omit the dependence on $\vv$ in (@eq-fff-chart), and just write
+$$
+\mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,. 
+$$
+We are now ready to write $I_{\pp}$ with respect to the basis $\{\sss_u,\sss_v\} $of $T_{\pp} \SSS$.
+
+
+
+::: {.Proposition  #proposition-fff-quadratic}
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$, and $\pp \in \sss(U)$. Then
+$$
+I_{\pp} (\vv,\ww) = (du (\vv), dv(\vv) )  \, 
 \left( 
 \begin{array}{cc}
 E & F \\
 F & G 
 \end{array}
-\right) \, (du(\ww) , dv(\ww))^T \\
-& = E du (\vv) du(\ww) + F ( du(\vv)dv(\ww) + du(\ww)dv(\vv) ) \\
-& \quad + G dv(\vv) dv(\ww) \,,
-\end{align*}
-for all $\vv,\ww \in T_{\pp} \SSS$, where $E,F,G$ are evaluated at $(u_0,v_0)$. 
+\right) \, (du(\ww) , dv(\ww))^T \,,
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathscr{F}_1$ is the quadratic form associated to the symmetric bilinear form $I_{\pp}$, that is,
+$$
+\mathscr{F}_1 (\vv) = I_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+
 
 :::
 
-
 ::: Proof
 
-By Theorem \ref{theorem-tangent-plane} we have
+By Theorem \ref{theorem-tangent-plane}, we have
 $$
 T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,.
 $$
@@ -5080,7 +5149,7 @@ $$
 \vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
 \ww = \lambda_2 \sss_u + \mu_2 \sss_v \,.
 $$
-We have
+Therefore,
 \begin{align*}
 I_{\pp} (\vv,\ww) & = \vv \cdot \ww \\
 & = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, \sss_u \cdot \sss_v + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
@@ -5094,53 +5163,13 @@ F & G
 \end{array}
 \right) \, (du(\ww) , dv(\ww))^T \,.
 \end{align*}
-
-
-:::
-
-
-
-::: Definition
-### Quadratic form associated to FFF
-
-Let $\SSS$ be a regular surface. The **quadratic form associated to the first fundamental form** of $\SSS$ at $\pp$ is the map $\mathscr{F}_1 \colon T_{\pp} \SSS \to \R$
+The fact that 
 $$
-\mathscr{F}_1 (\vv) := I_{\pp} (\vv,\vv) \,, \quad 
-\forall \, \vv \in T_{\pp} \SSS\,.
-$$
+I_{\pp}(\vv,\vv) = \mathscr{F}_1(\vv)
+$$ 
+follows from the first part of the 
+statement and definition of $\mathscr{F}_1$.
 
-:::
-
-
-As an immediate consequence of Proposition \ref{proposition-fff-quadratic} we get the following representation for $\mathscr{F}_1$. 
-
-::: Proposition
-
-Let $\SSS$ be a regular surface and $\sss$ a chart of $\SSS$ at $\pp$. Then
-$$
-\mathscr{F}_1 (\vv) = E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,,
-$${#eq-fff-chart}
-for all $\vv \in T_{\pp} \SSS$.
-
-:::
-
-
-::: Notation
-
-We usually omit the dependence on $\vv$ in (@eq-fff-chart), and write
-$$
-\mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,. 
-$$
-With a little abuse of notation, we also denote by $\mathscr{F}_1$ the $2 \times 2$ matrix
-$$
-\mathscr{F}_1 := 
-\left(
-\begin{array}{cc}
-E & F \\
-F & G
-\end{array}
-\right) \,.
-$$
 
 :::
 
@@ -5180,22 +5209,39 @@ where we used that $\sss_u \cdot \sss_v = \sss_v \cdot \sss_u$.
 
 
 
+::: Notation
+
+With a little abuse of notation, we also denote by $\mathscr{F}_1$ the $2 \times 2$ matrix
+$$
+\mathscr{F}_1 := 
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+
 
 
 ::: Remark
 ### First fundamental form and reparametrizations  {#remark-fff-reparametrization}
 
 The first fundamental form $I_{\pp}$ depends only on the surface $\SSS$ and the point $\pp$. 
-Instead the representation of $I_{\pp}$
+Instead the local representation of $I_{\pp}$
 $$
-\mathscr{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2
+\mathscr{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2 \,,
 $$
 depends on the choice of chart $\sss \colon U \to \R^3$. Indeed suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
 \widetilde{\sss} = \sss \circ \Phi \,,
 $$
-where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Recall that we denote the components
-$\Phi^1$ and $\Phi^2$ of $\Phi$ by
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Recall the following notation: the components
+$\Phi^1$ and $\Phi^2$ of $\Phi$ are denoted by
 $$
 (\tilde{u}, \tilde{v}) \mapsto u (\tilde{u}, \tilde{v}) \,, \quad 
 (\tilde{u}, \tilde{v}) \mapsto v (\tilde{u}, \tilde{v}) \,,
@@ -5245,7 +5291,7 @@ $${#eq-fff-change-basis-2}
 \widetilde{\sss}_{\tilde{v}}  & = 
 \sss_u  \, \frac{\partial u}{\partial \tilde{v}}  + \sss_v  \frac{\partial v}{\partial \tilde{v}} 
 \end{align*}
-The above shows that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for linear maps and bilinear forms, respectively.
+The above shows that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore, formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for linear maps and bilinear forms, respectively.
 
 
 :::
@@ -5257,30 +5303,26 @@ Let us compute the first fundamental form of a plane and of a cylinder.
 ::: Example
 ### Plane   {#example-fff-plane}
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$. Suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors, that is,
-$$
-\norm{\pp} = \norm{\mathbf{q}} = 1 \,, \quad \pp \cdot \mathbf{q} = 0 \,. 
-$$
-Consider the plane with chart
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, and suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors. Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
-The first fundamental form of $\sss$ is
+Prove that the first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-> We have
+*Solution*. We have
 $$
-\sss_u = \pp \,, \quad \sss_v = \mathbf{q}
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
 $$
-and therefore 
+and therefore, using that $\pp$ and $\mathbf{q}$ are orthonormal,
 \begin{align*}
 E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
 F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
 G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
 \end{align*}
-Then the first fundamental form is
+The first fundamental form of $\sss$ is, therefore
 $$
 \mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 $$
@@ -5288,29 +5330,55 @@ $$
 :::
 
 
-Two remarks concerning Example \ref{example-fff-plane} :
+::: Remark
 
-- The above example should not be surprising, since distances on a plane are the same as Euclidean distances, given that straight segments are contained in the plane.
-- If we drop the assumption of $\pp$ and $\mathbf{q}$ being orthonormal, then 
+In the simple case of Example \ref{example-fff-plane}, the first fundamental form is essentially the Pythagorean Theorem on the plane: In fact, a basis for $T_{\pp} \SSS$ is 
 $$
-\mathscr{F}_1 = \norm{\pp}^2 \, du^2 + \pp \cdot \mathbf{q} \, du \, dv + \norm{\mathbf{q}}^2 \, dv^2 \,.
+T_{\pp}\SSS = \operatorname{span} \{ \sssu , \sssv \} = \{ \lambda \pp + \mu \mathbf{q} \, \colon \, \lambda, \mu \in \R \} \,.
 $$
-Again, this is not surprising, due to Remark \ref{remark-fff-reparametrization}.
+Therefore, for 
+$$
+\vv \in T_{\pp} \SSS \,, \qquad \vv = \lambda \pp + \mu \mathbf{q} \,,
+$$
+we have
+$$
+\| \vv \|^2 = \FF_1 (\vv) = du^2(\vv) +  dv^2(\vv) = \lambda^2 + \mu^2 \,.
+$$
+Hence, the square of the length of the vector $\vv$, which has coordinates $\lambda, \mu$ in the basis $\{ \sssu, \sssv \}$, is equal to $\lambda^2 + \mu^2$.
 
+:::
+
+
+::: Warning
+
+ Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Remark \ref{remark-fff-reparametrization}.
+
+:::
+
+
+
+::: Example
+
+If in Example \ref{example-fff-plane} we drop the assumption of $\pp$ and $\mathbf{q}$ being orthonormal, then 
+$$
+\mathscr{F}_1 = \norm{\pp}^2 \, du^2 + 2 \pp \cdot \mathbf{q} \, du \, dv + \norm{\mathbf{q}}^2 \, dv^2 \,.
+$$
+
+:::
 
 ::: Example
 ### Plane in polar coordinates   {#example-fff-plane-polar}
 
 Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
 $$
-\sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in [0,2\pi] \,.
+\sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
 $$
-The first fundamental form of $\sss$ is
+Prove that the first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
 $$
 
-> We have
+*Solution.* We have
 \begin{align*}
 \sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
 \sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
@@ -5338,12 +5406,12 @@ Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
-The first fundamental form of $\sss$ is
+Prove that the first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-> We have
+*Solution.* We have
 $$
 \sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
 $$
@@ -5379,7 +5447,7 @@ Therefore, lengths, angles and areas are the same on the two surfaces.
 ### Length of curves
 
 
-Let us show how the first fundamental form allows to compute the
+The first fundamental form allows to compute the
 length of curves with values on surfaces.
 
 
@@ -5387,18 +5455,21 @@ length of curves with values on surfaces.
 
 Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
 $$
-\g \colon (t_0,t_1) \to \sss(U) \subseteq \SSS 
+\g \colon (a,b) \to \sss(U) \subseteq \SSS 
 $$
 is a smooth curve. Then
 $$
-\g(t) = \sss (u(t), v(t)) \,,
+\g(t) = \sss (u(t), v(t)) \,, 
 $$
-for some smooth functions $u,v \colon (t_0,t_1) \to \R$ and 
+for some smooth functions $u,v \colon (a,b) \to \R$, and 
 $$
-\int_{t_0}^{t_1} \norm{\dg(t)} \, dt =
-\int_{t_0}^{t_1} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+\int_{a}^{b} \norm{\dg(t)} \, dt =
+\int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
 $$
-where $\dot u, \dot v$ are computed at $t$, and $E,F,G$ are computed at $(u(t),v(t))$.
+where in the above formula:
+
+- $\dot u, \dot v$ are computed at $t$,
+- $E,F,G$ are computed at $(u(t),v(t))$.
 
 :::
 
@@ -5407,7 +5478,7 @@ where $\dot u, \dot v$ are computed at $t$, and $E,F,G$ are computed at $(u(t),v
 
 Since $\g$ takes values into $\sss(U)$, by Lemma \ref{lemma-curve-S} there exist smooth functions $u,v$ such that 
 $$
-\g(t) = \sss (u(t), v(t)) \,, \quad \forall \, t \in (t_0,t_1) \,.
+\g(t) = \sss (u(t), v(t)) \,, \quad \forall \, t \in (a,b) \,.
 $$
 By chain rule we have
 $$
@@ -5417,14 +5488,19 @@ The above means that the coefficients of $\dg$ with respect to the basis $\{\sss
 $$
 du(\dg) = \dot u \,, \quad dv(\dg) = \dot v \,.
 $$
-Since $\dg$ is a tagent vector, by Proposition \ref{proposition-fff-quadratic} we get
+Since $\dg$ is a tangent vector, by Proposition \ref{proposition-fff-quadratic} we get
 \begin{align*}
 \norm{\dg(t)}^2 & = \dg \cdot \dg \\
                 & = I_{\pp} (\dg , \dg ) \\
                 & = E \, du(\dg)^2  + 2F \, du(\dg) dv(\g) + G \, dv(\dg)^2 \\ 
                 & = E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 
-                \,,
+                \,.
 \end{align*}
+Integrating, we obtain the desired formula
+$$
+\int_{a}^{b} \norm{\dg(t)} \, dt =
+\int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+$$
 concluding the proof.
 
 
@@ -5435,13 +5511,13 @@ concluding the proof.
 
 
 ::: Example
-### Cone
+### FFF of the Cone {#example-fff-cone}
 
 Consider the cone with chart
 $$
-\sss (u,v)=(u \cos(v), u \sin (v), u) \,, 
+\sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
 $$
-where $u > 0$ and $v \in [0,2\pi]$.
+where $u  \in (0,2\pi)$ and $v >0$. Prove the following:
 
 1. The first fundamental form of $\sss$ is
 $$
@@ -5450,23 +5526,23 @@ $$
 
 2. Let $\g (t):= \sss(t,t)$. The length of $\g$ is
 $$
-\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
 $$
 
-> We have
+*Solution*. We have
 $$
-\sss_u = (\cos(v), \sin (v), 1) \,, \quad 
-\sss_v = (- u \sin(v), u \cos (v), 0) \,.
+\sss_u = (- \sin(u)v, \cos(u)v,0) \,, \quad 
+\sss_v = (\cos(u), \sin (u), 1) \,.
 $$
 Therefore
 \begin{align*}
-E & = \sss_u \cdot \sss_u = \cos^2(v) + \sin^2 (v) + 1 = 2 \\
-F & = \sss_u \cdot \sss_v = - u \cos(v) \sin(v) + u \cos(v) \sin(v) = 0 \\
-G & = \sss_v \cdot \sss_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2   
+E & = \sss_u \cdot \sss_u = \cos^2(u)v^2 + \sin^2 (u)v^2  = v^2 \\
+F & = \sss_u \cdot \sss_v  = 0 \\
+G & = \sss_v \cdot \sss_v =  \cos^2(u) + \sin^2(u) + 1  = 2
 \end{align*}
 The first fundamental form of $\sss$ is 
 $$
-\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+\mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
 $$
 Concering the curve $\g$, by definition we have
 $$
@@ -5482,15 +5558,15 @@ $$
 $$ 
 and 
 \begin{align*}
-E(u(t),v(t)) & = E(t,t) = 2 \\
+E(u(t),v(t)) & = E(t,t) = t^2 \\
 F(u(t),v(t)) & = F(t,t) = 0 \\
-G(u(t),v(t)) & = G(t,t) = t^2  \,.
+G(u(t),v(t)) & = G(t,t) = 2  \,.
 \end{align*}
 By Proposition \ref{proposition-fff-length} we have
 \begin{align*}
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt & = 
 \int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
-& = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt   \,.
+& = \int_{\pi/2}^{\pi} \sqrt{  t^2 + 2   } \, dt   \,.
 \end{align*}
 
 :::
@@ -5499,58 +5575,70 @@ By Proposition \ref{proposition-fff-length} we have
 
 
 
+### Isometries
 
-
-### Local isometries
-
-Local isometries are an important class of maps between surfaces: They are maps which preserve the first fundamental form.
+Isometries are an important class of maps between surfaces: They are smooth maps which preserve the first fundamental form.
 
 
 ::: Definition 
-### Local isometry
+### Local Isometry and Isometry
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A local diffeomorphism 
-$f \colon \SSS \to \widetilde{\SSS}$ is a **local isometry** if for all $\pp \in \SSS$ the 
-differential $d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}$ satisfies
+Let $\SSS$ and $\wSSS$ be regular surfaces and 
+$$
+f \colon \SSS \to \wSSS
+$$
+be a smooth map. Denote the differential of $f$ by
+$$
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \wSSS \,.
+$$
+
+We say that:
+
+
+1. $f$ is a **local isometry**, if for all $\pp \in \SSS$
 $$
 \vv \cdot \ww  = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
 \forall \, \vv, \ww \in T_{\pp} \SSS \,. 
-$$
-We say that $\SSS$ and $\widetilde{\SSS}$ are **locally isometric** if 
-there exists a local isometry $f \colon \SSS \to \widetilde{\SSS}$.
+$${#eq-loc-iso}
+In this case, $\SSS$ and $\wSSS$ are said to be **locally isometric**.
+
+2. $f$ is an **isometry** if:
+    * $f$ is a local isometry;
+    * $f$ is a diffeomorphism of $\SSS$ into $\wSSS$.  
+    
+   In this case, $\SSS$ and $\wSSS$ are said to be **isometric**.
+    
 
 :::
 
 
-![Sketch of local isometry $f$ between $\SSS$ and $\widetilde{\SSS}$. The scalar product between tangent vectors $\vv$ and $\ww$ is preserved by $d_{\pp}f$.](/images/fff_local_isometry.png){width=70%}
+Recall that the first fundamental form of $\SSS$ is defined by
+$$
+I_{\pp} (\vv, \ww) = \vv \cdot  \ww \,, \quad \vv, \ww \in T_{\pp} \SSS \,.
+$$
+Therefore, condition (@eq-loc-iso) reads
+$$
+I_{\pp} (\vv,\ww) = I_{\pp} (d_{\pp}f(\vv), d_{\pp}f(\ww)) \,, \quad 
+\forall \, \vv, \ww \in T_{\pp} \SSS \,. 
+$$
+In this sense, we see that local isometries preserve the first fundamental form.
 
 
-::: Notation
+![Sketch of a local isometry $f$ between $\SSS$ and $\widetilde{\SSS}$. The scalar product between tangent vectors $\vv$ and $\ww$ is preserved by $d_{\pp}f$.](/images/fff_local_isometry.png){width=70%}
 
-For brevity we denote 
-$$
-\scp{\vv}{\ww} := \vv \cdot \ww  \,, \quad 
-\scp{\vv}{\ww}_f := d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,,
-$$
-and also
-$$
-\| \vv \| := \sqrt{ \scp{v}{v} } \,, \quad  
-\| \vv \|_f := \sqrt{ \scp{v}{v}_f } \,.
-$$
 
-:::
 
 
 ::: {.Remark #remark-local-isometry}
 
-A local diffeomorphism $f \colon \SSS \to \widetilde{\SSS}$ is a local isometry if and only 
+A smooth map $f \colon \SSS \to \widetilde{\SSS}$ is a local isometry if and only 
 if 
 $$
-\scp{\vv}{\vv} = \scp{\vv}{\vv}_f  \,, \quad 
+\vv \cdot \vv = d_{\pp} f (\vv) \cdot d_{\pp} f (\vv) \,, \quad 
 \forall \, \vv \in T_{\pp} \SSS \,. 
 $$
 
-> The proof follows from the elementary identity
+*Proof.* The thesis follows immediately from the elementary identity
 $$
 \vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,, 
 $$
@@ -5559,64 +5647,128 @@ which holds for all $\vv, \ww \in T_{\pp} \SSS$ (and more in general in arbitrar
 :::
 
 
-Local isometries preserve the length of curves, as shown in the following proposition.
+
+Local isometries are automatically local diffeomorphisms.
+
+
+::: {.Proposition #prop-isometry-diffeo}
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and 
+$$
+f \colon \SSS \to \wSSS
+$$
+a local isometry. Then $f$ is a local diffeomorphims.
+
+:::
+
+::: Proof
+
+Let $\pp \in \SSS$. Assume by contradiction that the differential of $f$
+$$
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \wSSS \,,
+$$
+is not invertible. As $d_{\pp}f$ is linear, this implies $d_{\pp}f$ is not injective. Therefore
+$$
+\operatorname{ker} \left(d_{\pp}f \right) \neq \{ \zero \} \,,
+$$
+meaning that there exists $\vv \in T_{\pp} \SSS$ such that
+$$
+d_{\pp}f(\vv) = \zero \,, \qquad \vv \neq \zero \,.
+$$
+Using that $f$ is a local isometry, we get
+$$
+\| \vv \|^2 = \vv \cdot \vv = d_{\pp}f(\vv) \cdot d_{\pp}f (\vv) = 0  \,,
+$$
+which implies $\vv = \zero$. This is a contradiction, and therefore $d_{\pp}f$ has to be invertible. By Theorem \ref{theorem-df-invertible}, we conclude that $f$ is a local diffeomorphism at $\pp$. As $\pp \in \SSS$ is arbitrary, we infer that $f$ is a local diffeomorphism of $\SSS$ into $\wSSS$.
+
+:::
+
+
+
+
+::: Remark
+
+We have just seen that local isometries are also local diffeomorphisms. By definition, isometries are local isometries which are also diffeomorphisms. As such:
+
+1. Isometries are local isometries,
+2. Local isometries are not isometries
+
+This is because, in general, local diffeomorphisms are not global diffeomorphisms, see Example \ref{example-plane-cylinder-2}.
+
+:::
+
+
+
+Local isometries preserve the length of curves, as shown in the following Proposition.
 
 
 ::: Proposition
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+Let $\SSS$ and $\wSSS$ be regular surfaces and $f \colon \SSS \to \wSSS$ be a smooth map. They are equivalent:
 
 1. $f$ is a local isometry.
-2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\widetilde{\SSS}$. Then $\g$ and $\tg$ have the same length.
+2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\wSSS$. Then $\g$ and $\tg$ have the same length.
 
 :::
 
 
 ::: Proof
 
-*Part 1.* Suppose $\g \colon (t_0,t_1) \to \SSS$ is a smooth curve. 
-Consider the smooth curve $\tg := f \circ \g \colon (t_0,t_1) \to \widetilde{\SSS}$. Set $\pp :=\g(t)$. By definition of differential of a function between surfaces, we have
+*Part 1.* Suppose $\g \colon (a,b) \to \SSS$ is a smooth curve. 
+Consider the smooth curve 
 $$
-\dtg(t) = df_{\pp} (\dg(t)) \,.
+\tg \colon (a,b) \to \widetilde{\SSS} \,, \qquad \tg := f \circ \g\,.
+$$
+Set $\pp :=\g(t)$, so that
+$$
+\dg(t) \in T_{\pp} \SSS \,.
+$$
+By definition of differential of a function between surfaces, we have
+$$
+d_{\pp}f (\dg(t))  = \dtg(t)\,.
 $$
 Using that $f$ is a local isometry gives:
 \begin{align*}
 \norm{\dtg(t)}^2 & = \dtg(t) \cdot \dtg(t) \\
-               & = df_{\pp} (\dg(t)) \cdot df_{\pp} (\dg(t)) \\
+               & = d_{\pp}f (\dg(t)) \cdot d_{\pp}f (\dg(t)) \\
                & = \dg(t) \cdot \dg(t) \\
                & = \norm{\dg(t)}^2
 \end{align*}
 Therefore $\g$ and $\tg$ have the same length:
 $$
-\int_{t_0}^{t_1} \norm{\dtg(t)}\, dt 
-= \int_{t_0}^{t_1} \norm{\dg(t)}\, dt \,.
+\int_{a}^{b} \norm{\dtg(t)}\, dt 
+= \int_{a}^{b} \norm{\dg(t)}\, dt \,.
 $$
 
 *Part 2.* 
-We need to prove that $f$ is a local isometry. Thanks to Remark \ref{remark-local-isometry}, it is sufficient to show that
+We need to prove that $f$ is a local isometry. By Remark \ref{remark-local-isometry}, it is sufficient to show that
 $$
-df_{\pp} (\vv) \cdot df_{\pp} (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
+d_{\pp}f (\vv) \cdot d_{\pp}f (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
 $${#eq-proof-loc-iso}
 Therefore, let $\vv \in T_{\pp} \SSS$ be arbitrary. By definition of tangent plane, there exists a curve $\g \colon (-\e,\e) \to \SSS$ such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
 $$
-Define the curve $\tg := f \circ \g \colon (-\e,\e) \to \widetilde{\SSS}$. By assumption $\g$ and $\tg$ have the same length, that is,
+Define the curve 
+$$
+\tg \colon (-\e,\e) \to \widetilde{\SSS}  \,, \qquad \tg := f \circ \g  \,.
+$$
+By assumption, $\g$ and $\tg$ have the same length, that is,
 $$
 \int_{-\e}^{\e} \sqrt{ \dtg(t) \cdot \dtg(t) }\, dt 
 = \int_{-\e}^{\e} \sqrt{ \dg(t) \cdot \dg(t) }\, dt \,.
 $$
-Since the above is true for each $\e>0$, and the functions integrated are continuous, we infer
+Since the above equality is true for each $\e>0$, and the functions being integrated are continuous, we infer
 $$
 \dtg(0) \cdot \dtg(0) = \dg(0) \cdot \dg(0) \,.
 $$
 Recall that by definition of differential we have
 $$
-df_{\pp} (\vv) = \dtg(0) \,.
+d_{\pp}f (\vv) = \dtg(0) \,.
 $$
 Therefore 
 \begin{align*}
-df_{\pp} (\vv) \cdot df_{\pp} (\vv) & = \dtg(0) \cdot \dtg(0) \\
+d_{\pp}f (\vv) \cdot d_{\pp}f (\vv) & = \dtg(0) \cdot \dtg(0) \\
                                     & = \dg(0) \cdot \dg(0) \\
                                     & = \vv \cdot \vv \,.
 \end{align*}
@@ -5625,12 +5777,7 @@ As $\vv$ was arbitrary, we conclude (@eq-proof-loc-iso).
 :::
 
 
-
-We have seen that local isometries preserve the length of curves. Recall that the first fundamental form of $\SSS$ is defined by
-$$
-I_{\pp} (\vv, \ww) = \vv \cdot  \ww \,, \quad \vv, \ww \in T_{\pp} \SSS \,.
-$$
-A natural question is how the first fundamental form changes under local isometries. The result is that local isometries preserve the first fundamental form.
+By definition, local isometries preserve the first fundamental form. The next Theorem gives a practical method to check if a map is a local isometry.
 
 
 ::: {.Theorem  #theorem-local-isometry}
@@ -5640,7 +5787,8 @@ Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \wi
 1. $f$ is a local isometry.
 2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by  
 $$
-\widetilde{\sss} = f \circ \sss \colon U \to \widetilde{\SSS} \,.
+\widetilde{\sss} \colon U \to \widetilde{\SSS} \,, \qquad 
+\widetilde{\sss} = f \circ \sss \,.
 $$
 Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form, that is, 
 $$
@@ -5656,7 +5804,8 @@ G = \sss_v \cdot \sss_v \,, \\
 \widetilde{G}  = \widetilde{\sss}_v \cdot \widetilde{\sss}_v \,.
 \end{align*}
 
-> Note that $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore equality is intended pointwise.
+
+**Note:** $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore, equality is intended pointwise.
 
 :::
 
@@ -5667,7 +5816,11 @@ G = \sss_v \cdot \sss_v \,, \\
 $$
 {\vv} \cdot {\ww} = d_{\pp} f ({\vv}) \cdot d_{\pp} f ({\ww}) \,, \quad \forall \, {\vv} , {\ww} \in T_{\pp} \SSS \,.
 $$
-Let $\sss$ be a chart for $\SSS$ at $\pp$. Define $\widetilde{\sss} = f \circ \sss$. By Proposition \ref{proposition-f-chart}, $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
+Let $\sss$ be a chart for $\SSS$ at $\pp$. Define 
+$$
+\widetilde{\sss} = f \circ \sss \,.
+$$
+Since $f$ is a local isometry, then it is also a local diffeomorhims by Proposition \ref{prop-isometry-diffeo}. In particular, Proposition \ref{proposition-f-chart} ensures that $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
 $$
 \widetilde{\sss} ( \alpha(u,v), \beta(u,v) ) = f ( \sss (u,v) ) \,,
 $$
@@ -5757,7 +5910,7 @@ $$
 d_{\pp} f(\sss_u)  = \widetilde{\sss}_u \,, \quad 
 d_{\pp} f(\sss_v)  = \widetilde{\sss}_v \,.
 $$
-Let $\vv \in T_{\pp} \SSS$. Since $\{\sss_u,\sss_v\}$ is a basis for $T_{\pp} \SSS$ we get
+Let $\vv \in T_{\pp} \SSS$. Since $\{\sss_u,\sss_v\}$ is a basis for $T_{\pp} \SSS$, we get
 $$
 \vv = \lambda \sss_u + \mu \sss_v 
 $$
@@ -5770,7 +5923,7 @@ d_{\pp} f (\vv) & = d_{\pp} f(\lambda \sss_u + \mu \sss_v ) \\
 Hence
 \begin{align*}
 \vv \cdot \vv & = ( \lambda \sss_u + \mu \sss_v ) \cdot  (\lambda \sss_u + \mu \sss_v) \\
-              & = \lambda^2 (\sss_u \cdot \sss_v) + 2 \lambda\mu (\sss_u \cdot \sss_v) + \mu^2 (\sss_v \cdot \sss_v) \\ 
+              & = \lambda^2 (\sss_u \cdot \sss_u) + 2 \lambda\mu (\sss_u \cdot \sss_v) + \mu^2 (\sss_v \cdot \sss_v) \\ 
               & = \lambda^2 ( \widetilde{\sss}_u \cdot \widetilde{\sss}_u) +
               2\lambda \mu ( \widetilde{\sss}_u \cdot \widetilde{\sss}_v) + 
               \mu^2 ( \widetilde{\sss}_v \cdot \widetilde{\sss}_v) \\
@@ -5791,13 +5944,13 @@ By Remark \ref{remark-local-isometry} we conclude that $f$ is a local isometry.
 
 ::: {.Remark #remark-local-isometry-chart}
 
-To prove that a diffeomorphism 
+To prove that a smooth map
 $$
 f \colon \SSS \to \widetilde{\SSS}
 $$
-is a local isometry, it is sufficient to verify condition 2 in Theorem \ref{theorem-local-isometry} on one atlas of $\SSS$. Then, automatically, all other atlases will verify the condition, ensuring that $f$ is a local isometry.
+is a local isometry, it is sufficient to verify Condition 2 in Theorem \ref{theorem-local-isometry} on one atlas of $\SSS$. Then, automatically, all other atlases will verify the condition, ensuring that $f$ is a local isometry.
 
-To see this, suppose we can verify condition 2 on the chart $\sss \colon U \to \SSS$, that is, suppose we have proven
+To see this, suppose we can verify Condition 2 on the chart $\sss \colon U \to \SSS$, that is, suppose we have proven
 $$
 \widetilde{\mathscr{F}}_1 = \mathscr{F}_1 \,,
 $${#eq-local-isometry-chart-1}
@@ -5823,77 +5976,245 @@ Recalling (@eq-local-isometry-chart-1) and (@eq-local-isometry-chart-2), we get
 & =  (J\Phi)^T \mathscr{F}_1 J\Phi  \\
 & = \hat{\mathscr{F}}_1 \,.
 \end{align*}
-We have therefore proven that $\hat{\sss}$ and $\sss^\dagger = f \circ \hat{\sss}$ have the same first fundamental form. Thus $\hat{\sss}$ satisfies condition 2 in Theorem \ref{theorem-local-isometry}.
+We have therefore proven that $\hat{\sss}$ and $\sss^\dagger = f \circ \hat{\sss}$ have the same first fundamental form. Thus $\hat{\sss}$ satisfies Condition 2 in Theorem \ref{theorem-local-isometry}.
 
 :::
+
+
+
+Sometimes, we wish to determine if two surfaces $\SSS$ and 
+$\wSSS$ are locally isometric, but it is not clear how to construct a map 
+$$
+f \colon \SSS \to \wSSS \,.
+$$
+As an alternative, we can shift the problem of finding $f$, to the problem of finding suitable charts $\sss$ of $\SSS$, and $\wsss$ of $\wSSS$, such that $\sss$ and $\wsss$ have the same first fundamntal form. This is detailed in the next Theorem.
+
+
+
+::: {.Theorem  #theorem-local-isometry-2}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
+$$
+\sss \colon U \to \SSS \,, \qquad 
+\wsss \colon U \to \wSSS \,.
+$$
+Assume that $\sss$ and $\wsss$ have the same first fundamental form: 
+$$
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
+$$
+We have:
+
+1. The surfaces $\sss(U)$ and $\wSSS$ are locally isometric.
+2. A local isometry is given by
+$$
+f \colon \sss(U) \to \wSSS \,, \qquad 
+f = \wsss \circ \sss^{-1} \,.
+$$
+
+
+**Note:** $\sss$ and $\wsss$ are defined on the same open set $U$. Therefore, $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on $U$, and the equality is intended pointwise.
+
+:::
+
+
+::: Proof
+
+Define $f = \wsss \circ \sss^{-1}$, and notice that
+$$
+f \circ \sss = \wsss \circ \sss^{-1} \circ \sss = \wsss \,.
+$$
+Therefore, by assumption, $\sss$ and $\wsss$ have the same first fundamental form. Note that the chart $\sss$ gives an atlas for the surface $\sss(U)$. Hence, by Theorem \ref{theorem-local-isometry-2}, we conclude that $f$ is a local isometry between $\sss(U)$ and $\wSSS$.
+
+:::
+
 
 
 ::: Example
-### Plane and cylinder are locally isometric
+### Plane and Cylinder are locally isometric {#example-plane-cylinder}
 
-
-
-We have computed that the first fudamental form of plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ are
-We have seen that the plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ have the same first fundamental form
+Consider the plane
 $$
-\mathscr{F}_1 = du^2 + dv^2 \,.
+\SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
+$$
+and the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \,  x^2 + y^2 = 1 \} \,.
+$$
+Define the function
+$$
+f \colon \SSS \to \wSSS \,, \qquad f(0,y,z) = (\cos(y),\sin(y),z) \,.
 $$
 
+1. Prove that $f$ is smooth.
+2. Prove that $f$ is a local isometry.
 
-  have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that 
-$\pmb{\pi}$ and $\mathcal{C}$ are locally isometric. Let us give a general definition of such concept.
+**Note:** This shows that the Plane and the Cylinder are locally isometric.
+
+*Solution.*
+
+1. Note that $f \in \wSSS$ because
+$$
+\cos(y)^2 + \sin(y)^2 = 1\,,
+$$
+therefore $f$ is well-defined. Moreover, $f$ is the restriction to $\SSS$ of the function
+$$
+g \colon \R^3 \to \R^3 \,, \qquad g(x,y,z) = (\cos(y),\sin(y),z) \,.
+$$
+Since $g$ is smooth, and $g(\SSS) = \wSSS$, 
+by Proposition \ref{proposition-diff-check} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
+
+2. Define the chart of $\SSS$:
+$$
+\sss(u,v) = (0,u,v) \,, \quad u,v \in \R \,.
+$$
+We already know that $\sss$ is regular, with first fundamental form coefficients given by
+$$
+E = 1 \,, \quad F = 1 \,, \quad G = 1 \,,
+$$
+and corresponding first fundamental form
+$$
+{\FF}_1 = du^2 + dv^2 \,.
+$$
+Define $\wsss = f \circ \sss$. Therefore,
+$$
+\wsss(u,v) = f(0,u,v) = (\cos(u),\sin(u),v) \,.
+$$
+We have that
+\begin{align*}
+\wsssu & = ( -\sin(u),\cos(u),0 ) \\
+\wsssv & = (0,0,1) \\
+\wE & = \wsssu \cdot \wsssu = 1 \\  
+\wF & = \wsssu \cdot \wsssv = 0 \\
+\wG & = \wsssv \cdot \wsssv = 1 
+\end{align*}
+Therefore, the first fundamental form of $\wsss = f \circ \sss$ is
+$$
+{\wFF}_1 =  du^2 + dv^2 \,.
+$$
+In particular, we have shown that $\sss$ and $\wsss$ have the same first fundamental form:
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
 
 :::
 
-
-We close this section by briefly talking about (global) isometries.
-
-
-::: Definition
-### Isometry
-
-
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. An **isometry** between $\SSS$ and $\widetilde{\SSS}$ is map $f \colon \SSS \to \widetilde{\SSS}$ such that
-
-1. $f$ is a diffeomorphism;
-2. $f$ is a local isometry.
-
-
-$\SSS$ and $\widetilde{\SSS}$ are **isometric** if there exists an isometry $f \colon \SSS \to \widetilde{\SSS}$.
-
-:::
-
-
-Therefore, isometries are local isometries which are also diffeomorphisms. As such:
-
-1. Isometries are local isometries,
-2. Local isometries are not isometries (in general).
 
 
 ::: Example
-### Plane and cylinder are locally isometric
+### Plane and Cylinder are not isometric {#example-plane-cylinder-2}
 
-We have computed that the first fudamental form of plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ are
-We have seen that the plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ have the same first fundamental form
+Consider again the plane
 $$
-\mathscr{F}_1 = du^2 + dv^2 \,.
+\SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
 $$
+and the unit cylinder 
+$$
+\wSSS = \{ (x,y,z) \in \R^3 \, \colon \,  x^2 + y^2 = 1 \} \,.
+$$
+We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are locally isometric. However, $\SSS$ and $\wSSS$ are **not isometric**.
 
+*Proof.* The surfaces $\SSS$ and $\wSSS$ are nor homeomorphic, and therefore they cannot be isometric (and hence diffeomorphic). We cannot rigorously prove this claim with our current knowledge of topology. However, to give some intuition, here is a sketch of the argument, see @fig-simply-connected:
 
-  have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that 
-$\pmb{\pi}$ and $\mathcal{C}$ are locally isometric. Let us give a general definition of such concept.
+- Any simple closed curve $\g$ in the plane $\SSS$ can be shrunk continuously into a point without leaving $\SSS$. In this case we say that $\SSS$ is **simply connected**.
+- If $\SSS$ and $\wSSS$ were to be homeomorphic, then $\wSSS$ would be simply connected.
+- However, a parallel $\g$ of the Cylinder $\wSSS$ cannot be shrunk continuously into a point without leaving the Cylinder. Thus, $\wSSS$ is not simply connected.
+- Hence, the Plane and the Cylinder cannot be homeomorphic.
 
 :::
+
+
+![A simple closed curve $\g$ in the plane $\SSS$ can be shrunk continuously into a point without leaving $\SSS$. A parallel $\g$ of the Cylinder $\wSSS$ cannot be shrunk continuously into a point without leaving $\wSSS$.](/images/simply_connected.png){#fig-simply-connected width=70%}
+
+
+
+
 ::: Example
-### Plane and cylinder
+### Plane and Cone are locally isometric
 
-We have seen that the plane $\p$ and the cylinder are locally isometric, because they have the same first fundamental form
+Consider the cone without tip
 $$
-\mathscr{F}_1 = du^2 + dv^2 \,.
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z > 0 \} \,,
 $$
-However they are **not isometric**, because 
+and the plane
+$$
+\SSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
+$$
+It is possible to directly construct a local isometry between $\SSS$ and $\wSSS$, see Example 3 at page 226 of [@do-carmo]. However, we proceed in an alternative way.
+
+1. Let $\sss \colon U \to \SSS$ be the chart of the Cone
+$$
+\sss(\rho,\theta) = (\rho \cos(\theta), \rho \sin(\theta), \rho ) \,,
+$$
+where we define
+$$
+U:= \left\{ (\rho,\theta) \in \R^2 \, \colon \, \rho > 0 , \, \theta \in (0,2\pi) \right\} \,. 
+$$ 
+Compute the first fundamental form ${\FF}_1$ of $\sss$.
+
+2. Let $\wsss \colon U \to \wSSS$ be the chart of the Plane
+$$
+\wsss(\rho,\theta) = (a\rho \cos(b\theta), a\rho \sin(b\theta), 0 )
+$$
+where $a>0$ and $b \in (0,1]$ are constants. Compute the first fundamental form ${\wFF}_1$ of $\wsss$.
+
+
+3. Find coefficients $a,b$ such that 
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+
+4. Conclude that $\SSS$ and $\wSSS$ are locally isometric.
+
+
+*Solution*.
+
+1. We have already computed in Example \ref{example-fff-cone}, that the first fundamental form of $\sss$ is
+$$
+{\FF}_1 = 2 d\rho^2 + \rho^2 d\theta^2 \,.
+$$
+
+
+2. First of all, note that 
+$$
+\theta \in (0,2\pi), \quad b \in (0,1] \quad \implies \quad 
+b \theta \in (0,2\pi) \,,
+$$
+showing that $\wsss$ is well defined for all $(\rho,\theta) \in U$. We compute
+\begin{align*}
+{\wsss}_{\rho} & = ( a \cos(b\theta), a \sin(b\theta), 0 ) \\
+{\wsss}_{\theta} & = ( - ab \rho \sin(b \theta), ab\rho \cos(b\theta), 0 ) \\
+\wE & = {\wsss}_{\rho} \cdot {\wsss}_{\rho} = a^2 \\  
+\wF & = {\wsss}_{\rho} \cdot {\wsss}_{\theta} = 0 \\
+\wG & = {\wsss}_{\theta} \cdot {\wsss}_{\theta} = a^2b^2 \rho^2
+\end{align*}
+from which we conclude that the first fundamental form of $\wsss$ is
+$$
+{\wFF}_1 = a^2 d\rho^2 + a^2b^2 \rho^2 d\rho^2 \,.
+$$
+
+
+3. Equating ${\FF}_1$ and ${\wFF}_1$ we obtain
+$$
+a^2 = 2 , \,\, a^2b^2 = 1 \quad \implies \quad a = \sqrt{2} \,, \,\, b = \frac{1}{\sqrt{2}} \,.
+$$
+Note that $a>0$ and $0<b<1$, showing that $a,b$ are admissible.
+
+
+4. For $a = \sqrt{2}$ and $b = 1/\sqrt{2}$ we have that 
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+Since $\sss$ and $\wsss$ are regular charts for $\SSS$ and $\wSSS$, respectively, from Theorem \ref{theorem-local-isometry} we conclude that $\SSS$ and $\wSSS$ are locally isometric. Furthermore, the local isometry is given by
+$$
+f \colon \SSS \to \wSSS \,, \qquad f = \wsss \circ \sss^{-1} \,.
+$$
+
 
 :::
+
+
+
 
 
 
@@ -6108,6 +6429,22 @@ with $\theta$, $\tilde{\theta}$ the angles between $\vv, \ww$ and $d_{\pp} f(\vv
 
 
 ![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=70%}
+
+
+::: Notation
+
+For brevity we denote 
+$$
+\scp{\vv}{\ww} := \vv \cdot \ww  \,, \quad 
+\scp{\vv}{\ww}_f := d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,,
+$$
+and also
+$$
+\| \vv \| := \sqrt{ \scp{v}{v} } \,, \quad  
+\| \vv \|_f := \sqrt{ \scp{v}{v}_f } \,.
+$$
+
+:::
 
 
 

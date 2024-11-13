@@ -257,6 +257,12 @@
 
  [**Example 1.127**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
 
+ [**Example 1.128**](#Example-1.128)\Pageref{Example-1.128}
+
+ [**Theorem 1.129**](#Theorem-1.129)\Pageref{Theorem-1.129}
+
+ [**Example 1.130**](#the-cone): The Cone\Pageref{the-cone}
+
  [**Goal**](#Goal*-2.1)\Pageref{Goal*-2.1}
 
  [**Question**](#Question*-2.2)\Pageref{Question*-2.2}

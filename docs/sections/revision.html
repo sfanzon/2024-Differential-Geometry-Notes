@@ -72,14 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -88,23 +80,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -112,15 +104,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
 }
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Theorem {
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,21 +132,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -299,6 +299,7 @@ window.Quarto = {
   <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">1.5.9</span> Ruled surfaces</a></li>
   <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">1.5.10</span> Surfaces of Revolution</a></li>
   <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">1.5.11</span> First fundamental form</a></li>
+  <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves"><span class="header-section-number">1.5.12</span> Length of curves</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -365,6 +366,7 @@ window.Quarto = {
 <li><p>Calculating the first fundamental form of a surface chart</p></li>
 <li><p>Proving that a given map is a local isometries / conformal</p></li>
 <li><p>Prove that a given parametrization is conformal</p></li>
+<li><p>Calculating length and angles of curves on surfaces</p></li>
 <li><p>Calculating the second fundamental form of a surface chart</p></li>
 <li><p>Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart</p></li>
 <li><p>Calculating Gaussian and mean curvature of a surface chart</p></li>
@@ -2455,12 +2457,12 @@ G &amp; = {\pmb{\sigma}}_{\theta} \cdot {\pmb{\sigma}}_{\theta} = r^2 \\
 </div></details>
 </div>
 <div id="unit-cylinder-2" class="Example" title="Unit cylinder">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 127: </strong>Unit cylinder</summary><div>Consider the unit cylinder with chart <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 127: </strong>Unit cylinder</summary><div><strong>Question.</strong> Consider the unit cylinder with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span><p></p>
-<p><em>Solution.</em> We have <span class="math display">\[
+<p><strong>Solution.</strong> We have <span class="math display">\[
 {\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
 \]</span> and therefore <span class="math display">\[\begin{align*}
 E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = 1 \\
@@ -2469,6 +2471,89 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
 \mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 \]</span></p>
+</div></details>
+</div>
+<div id="Example-128" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 128</strong></summary><div><strong>Question.</strong> Find the first fundamental form of the surface chart <span class="math display">\[
+{\pmb{\sigma}}(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
+\]</span><p></p>
+<p><strong>Solution.</strong> We compute <span class="math display">\[
+\begin{aligned}
+{{\pmb{\sigma}}}_{u}&amp; =(1,1,2 u) \\
+{{\pmb{\sigma}}}_{v}&amp; =(-1,1,2 v) \\
+E &amp; = {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 2\left(1+2 u^{2}\right) \\
+F &amp; ={{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 4 u v \\
+G &amp; = {{\pmb{\sigma}}}_{v}\cdot {{\pmb{\sigma}}}_{v}= \left(1+2 v^{2}\right)
+\end{aligned}
+\]</span> so that <span class="math display">\[
+\mathscr{F}_{1}=\left(\begin{array}{cc}
+2\left(1+2 u^{2}\right) &amp; 4 u v \\
+4 u v &amp; 2\left(1+2 v^{2}\right)
+\end{array}\right) \,.
+\]</span></p>
+</div></details>
+</div>
+</section>
+<section id="length-of-curves" class="level3" data-number="1.5.12">
+<h3 data-number="1.5.12" class="anchored" data-anchor-id="length-of-curves"><span class="header-section-number">1.5.12</span> Length of curves</h3>
+<div id="Theorem-129" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 129</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface with chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Suppose <span class="math display">\[
+{\pmb{\gamma}}\colon (a,b) \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}
+\]</span> is a smooth curve. Then <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t), v(t)) \,,
+\]</span> for some smooth functions <span class="math inline">\(u,v \colon (a,b) \to \mathbb{R}\)</span>, and <span class="math display">\[
+\int_{a}^{b} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt =
+\int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+\]</span> where in the above formula:</p>
+<ul>
+<li><span class="math inline">\(\dot u, \dot v\)</span> are computed at <span class="math inline">\(t\)</span>,</li>
+<li><span class="math inline">\(E,F,G\)</span> are computed at <span class="math inline">\((u(t),v(t))\)</span>.</li>
+</ul>
+</div></details>
+</div>
+<div id="the-cone" class="Example" title="The Cone">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 130: </strong>The Cone</summary><div>
+<p><strong>Question.</strong> Consider the cone with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v)=(\cos(u) v, \sin (u) v, v) \,,
+\]</span> where <span class="math inline">\(u  \in (0,2\pi)\)</span> and <span class="math inline">\(v &gt;0\)</span>. Prove the following:</p>
+<ol type="1">
+<li><p>The first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\({\pmb{\gamma}}(t):= {\pmb{\sigma}}(t,t)\)</span>. The length of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
+\]</span></p></li>
+</ol>
+<p><strong>Solution.</strong></p>
+<ol type="1">
+<li><p>We have <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = (- \sin(u)v, \cos(u)v,0) \\
+{\pmb{\sigma}}_v &amp; = (\cos(u), \sin (u), 1) \\
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = v^2 \\
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v  = 0 \\
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 2
+\end{align*}\]</span> The first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
+\]</span></p></li>
+<li><p>By definition we have <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(t,t) \,,
+\]</span> so that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t))
+\]</span> with <span class="math display">\[
+u(t) = t \,, \quad v(t) = t \,.
+\]</span> In particular <span class="math display">\[
+\dot u = 1\,, \quad \dot v = 1
+\]</span> and <span class="math display">\[\begin{align*}
+E(u(t),v(t)) &amp; = E(t,t) = t^2 \\
+F(u(t),v(t)) &amp; = F(t,t) = 0 \\
+G(u(t),v(t)) &amp; = G(t,t) = 2  \,.
+\end{align*}\]</span> Therefore, <span class="math display">\[\begin{align*}
+\int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt &amp; =
+\int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
+&amp; = \int_{\pi/2}^{\pi} \sqrt{  t^2 + 2   } \, dt   \,.
+\end{align*}\]</span></p></li>
+</ol>
 </div></details>
 </div>
 

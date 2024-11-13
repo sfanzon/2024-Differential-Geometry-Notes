@@ -76,6 +76,8 @@ Overall, you should be comfortable with the following topics/taks:
 
 - Prove that a given parametrization is conformal
 
+- Calculating length and angles of curves on surfaces
+
 - Calculating the second fundamental form of a surface chart
 
 - Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart
@@ -3571,7 +3573,7 @@ $$
 ::: Example
 ### Unit cylinder
 
-Consider the unit cylinder with chart
+**Question.** Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
@@ -3580,7 +3582,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-*Solution.* We have
+**Solution.** We have
 $$
 \sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
 $$
@@ -3594,6 +3596,134 @@ Then the first fundamental form is
 $$
 \mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 $$
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Find the first fundamental form of the surface chart
+$$
+\sss(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
+$$
+
+**Solution.** We compute
+$$
+\begin{aligned}
+\sssu & =(1,1,2 u) \\
+\sssv & =(-1,1,2 v) \\
+E & = \sssu \cdot \sssv = 2\left(1+2 u^{2}\right) \\
+F & =\sssu \cdot \sssv = 4 u v \\
+G & = \sssv \cdot \sssv = \left(1+2 v^{2}\right)
+\end{aligned}
+$$
+so that
+$$
+\mathscr{F}_{1}=\left(\begin{array}{cc}
+2\left(1+2 u^{2}\right) & 4 u v \\
+4 u v & 2\left(1+2 v^{2}\right)
+\end{array}\right) \,.
+$$
+
+
+:::
+
+
+
+
+### Length of curves
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
+$$
+\g \colon (a,b) \to \sss(U) \subseteq \SSS 
+$$
+is a smooth curve. Then
+$$
+\g(t) = \sss (u(t), v(t)) \,, 
+$$
+for some smooth functions $u,v \colon (a,b) \to \R$, and 
+$$
+\int_{a}^{b} \norm{\dg(t)} \, dt =
+\int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+$$
+where in the above formula:
+
+- $\dot u, \dot v$ are computed at $t$,
+- $E,F,G$ are computed at $(u(t),v(t))$.
+
+:::
+
+
+
+
+
+::: Example
+### The Cone
+
+**Question.** Consider the cone with chart
+$$
+\sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
+$$
+where $u  \in (0,2\pi)$ and $v >0$. Prove the following:
+
+1. The first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+$$
+
+2. Let $\g (t):= \sss(t,t)$. The length of $\g$ is
+$$
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
+$$
+
+**Solution.**
+
+1. We have
+\begin{align*}
+\sss_u & = (- \sin(u)v, \cos(u)v,0) \\
+\sss_v & = (\cos(u), \sin (u), 1) \\
+E & = \sss_u \cdot \sss_u = v^2 \\
+F & = \sss_u \cdot \sss_v  = 0 \\
+G & = \sss_v \cdot \sss_v = 2
+\end{align*}
+The first fundamental form of $\sss$ is 
+$$
+\mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
+$$
+
+2. By definition we have
+$$
+\g(t) = \sss(t,t) \,,
+$$
+so that 
+$$
+\g (t) = \sss(u(t),v(t))
+$$ 
+with 
+$$
+u(t) = t \,, \quad v(t) = t \,.
+$$
+In particular
+$$
+\dot u = 1\,, \quad \dot v = 1
+$$ 
+and 
+\begin{align*}
+E(u(t),v(t)) & = E(t,t) = t^2 \\
+F(u(t),v(t)) & = F(t,t) = 0 \\
+G(u(t),v(t)) & = G(t,t) = 2  \,.
+\end{align*}
+Therefore,
+\begin{align*}
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt & = 
+\int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
+& = \int_{\pi/2}^{\pi} \sqrt{  t^2 + 2   } \, dt   \,.
+\end{align*}
 
 :::
 

@@ -1743,6 +1743,21 @@ plt.show()
 
 
 
+It is of course possible to derive formulas to compute the Frenet frame of a regular curve. These are obtained by using the arc-length reparametrization. We give the formulas without proof.
+
+::: Theorem
+### Frenet frame formulas for regular curves
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The Frenet-Frame of $\g$ is
+\begin{align*}
+\ttt & = \frac{\dg}{\norm{\dg}} \\
+\bb & = \frac{ \dg \times \ddg }{ \norm{\dg \times \ddg} } \\
+\nn & = \bb \times \ttt  = \frac{(\dg \times \ddg )\times \dg}{\norm{\dg \times \ddg} \norm{\dg}} 
+\end{align*}
+
+:::
+
+
 
 
 ## Torsion

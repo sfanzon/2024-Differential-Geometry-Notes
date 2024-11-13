@@ -43,6 +43,7 @@ book:
     
   chapters:
     - index.qmd
+    - sections/revision.qmd
     - sections/chap_1.qmd
     - sections/chap_2.qmd
     - sections/chap_3.qmd

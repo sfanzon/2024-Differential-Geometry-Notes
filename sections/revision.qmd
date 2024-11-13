@@ -1,0 +1,3609 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+:::
+
+
+
+# Revision Guide
+
+## Recommended revision strategy
+
+1. Make sure you are very comfortable with the Definitions, Theorems, and Examples contained in this Revision Guide.
+
+2. Make sure you are comfortable with the Homework questions.
+
+3. Make sure you are comfortable with the 2022/23 and 2023/24  Exam Papers questions.
+
+4. Make sure you are comfortable with the Checklist in @sec-checklist.
+
+
+## Checklist {#sec-checklist}
+
+Overall, you should be comfortable with the following topics/taks:
+
+
+**Curves**
+
+- Regularity of curves
+
+- Computing length and arc-length of curves
+
+- Computing arc-length reparametrization
+
+- Calculating the curvature and torsion of unit speed curves from the definitions
+
+- Calculating the curvature and torsion of (possibly not unit speed) curves from the formulae
+
+- Calculating the Frenet frame of a unit speed curve
+
+- Applying the Fundamental Theorem of Space Curves to determine if two curves coincide, up to a ridig motion
+
+- Proving that a curve is contained in a plane, and computing the equation of such plane
+
+- Proving that a curve is part of a circle
+
+
+**Topology:** To be completed
+
+
+**Surfaces:**
+
+- Definition of surface
+
+- Discussing whether a given function is a diffeomorphism / local diffeomorphism of $\R^n$
+
+- Regularity of surface charts
+
+- Computing reparametrizations
+
+- Proving that a given function between surfaces is smooth
+
+- Computing a basis and the equation of the tangent plane
+
+- Calculating the standard unit normal of a surface chart
+
+- Calculating the differential of a smooth function between surfaces
+
+- Proving that a given level surface is regular, and computing its tangent plane
+
+- Proving that a given surface is ruled
+
+- Calculating the first fundamental form of a surface chart
+
+- Proving that a given map is a local isometries / conformal
+
+- Prove that a given parametrization is conformal
+
+- Calculating the second fundamental form of a surface chart
+
+- Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart
+
+- Calculating Gaussian and mean curvature of a surface chart
+
+- Calculating normal and geodesic curvature of a curve on a surface
+
+- Classifying points of a surface as elliptic, parabolic, hyperbolic, planar
+
+
+
+
+
+
+
+## Curves
+
+
+
+::: Definition
+### Length
+
+The **length** of the curve $\g \ \colon (a,b) \to \R^3$ is
+$$
+L(\g) = \int_a^b  \norm{\dg(u)} \, du \,. 
+$$
+
+:::
+
+
+
+::: Example
+### Length of Helix
+
+**Question.** Consider the Helix
+$$
+\g(t) = (R\cos(t), R\sin(t) ,Ht)
+$$
+for $t \in (0,2\pi)$ and $R>0$. Compute $L(\g)$.
+
+**Solution.** We compute
+\begin{align*}
+\dg(t) & = (-R\sin(t), R\cos(t) , H) \\
+\norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} 
+\end{align*}
+Therefore 
+$$
+L(\g) = \int_0^{2\pi} \norm{ \dg(u) } \, du = 2 \pi \sqrt{R^2 + H^2}
+$$
+
+:::
+
+
+
+::: Definition 
+### Arc-Length
+
+The **arc-length** along $\g$ from $t_{0}$ to $t$ is
+
+$$
+s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u
+$$
+
+The function $s(t)$ is known as the arc-length function.
+:::
+
+
+
+::: Example
+### Arc-length of Logarithmic Spiral
+
+**Question.** The Logarithmic Spiral is defined by $\g \ \colon (0,2\pi) \to \R^2$ with
+$$
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t))
+$$
+where $k \in \R$, $k \neq 0$. Compute the arc-length function of $\g$. 
+
+**Solution.** Direct calculation gives
+$$
+\norm{\dg(t)}^2   = (k^2 + 1) e^{2kt} 
+$$
+The arc-length starting from $t_0$ is
+\begin{align*}
+s(t) = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} )
+\end{align*}
+:::
+
+
+
+::: Definition
+### Unit-speed curve
+
+A curve $\g \ \colon (a,b) \to \R^3$ is **unit-speed** if
+$$
+\norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b)
+$$
+
+:::
+
+
+::: Theorem
+
+Let $\g \ \colon (a,b) \to \R^n$ be a unit-speed curve. Then
+$$
+\dg \cdot \ddg = 0  \,, \quad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+::: Proof
+Since $\g$ is unit-speed
+$$
+1 = \norm{\dg(t)}^2 = \dg(t) \cdot \dg(t) \quad \forall \, t \in (a,b) \,.
+$$
+Differentiating, we get the thesis:
+$$
+0 = \frac{d}{dt} (\dg \cdot \dg) = \ddg \cdot \dg
++  \dg \cdot \ddg = 2 \dg \cdot \ddg
+$$
+:::
+
+
+::: Definition
+### Reparametrization
+
+
+Let $\g \ \colon (a,b) \to \R^3$ be a curve. A **reparametrization** of $\g$ is a curve $\tilde{\g} \ \colon (\tilde{a},\tilde{b}) \to \R^3$ such that
+$$
+\tg (t) = \g (\f(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})
+$$
+for $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ diffeomorphism.
+:::
+
+
+
+
+::: Definition 
+### Unit-speed reparametrization
+
+Let $\g \colon (a,b) \to \R^3$ be a curve. A **unit-speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^3$ which is unit-speed, that is,
+$$
+\norm{ \dtg(t) } = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b})
+$$
+
+:::
+
+
+
+::: Definition
+### Regular curve
+
+A curve $\g \ \colon (a,b) \to \R^3$ is **regular** if
+$$
+\norm{\dg (t)}  \neq 0 \,, \quad \forall \, t \in (a,b)
+$$
+
+:::
+
+
+::: Theorem
+### Existence of unit-speed reparametrization  
+
+Let $\g$ be a curve. They are equivalent:
+
+1. $\g$ is regular
+2. $\g$ admits unit-speed reparametrization
+:::
+
+
+
+::: Theorem
+### Arc-length and unit-speed reparametrization
+
+Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^3$ be a reparametrization of $\g$, that is,
+$$
+\g(t) = \tg ( \phi(t) )  , \quad \forall \, t \in (a,b)
+$$
+for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. Denote by
+$$
+s(t) = \int_{t_0}^t  \norm{\dg(\tau)} \, d \tau 
+$$
+the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
+
+1. If $\tg$ is unit-speed, there exists $c \in \R$ such that
+$$
+\f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
+$$ {#eq-proposition-unit-speed}
+
+2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit-speed.
+
+:::
+
+
+::: Definition
+### Arc-length reparametrization
+
+Let $\g$ be regular. The **arc-length reparametrization** of $\g$ is the curve
+$$
+\tg = \g  \circ s^{-1}
+$$
+with $s^{-1}$ inverse of the arc-length function of $\g$.
+
+:::
+
+
+
+::: Example 
+### Arc-length reparametrization of the Circle
+
+**Question.** Let $\g \colon (0,2\pi) \to \R^2$ be the circle
+with center $(x_0,y_0)$ and radius $R>0$
+$$
+\g(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
+$$
+Reparametrize $\g$ by arc-length.
+
+**Solution.** The arc-length of $\g$ starting from $t_0 = 0$ is
+$$
+s(t) = \int_0^t \norm{ \dg(u) } \, d u = Rt
+$$
+The inverse $s^{-1}$ is
+$$
+t(s) = \frac{s}{R} 
+$$
+The arc-length reparametrization of $\g$ is
+$$
+\tg(s) = \g(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) 
+$$
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Consider the curve
+$$
+\g(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
+$$
+
+1. Prove that $\g$ is regular.
+2. Reparametrize $\g$ by arc-length.
+
+
+**Solution.**
+
+1. $\g$ is regular because
+\begin{align*}
+\dg(t) & =(-5 \sin (t), 5 \cos (t), 12) \\
+ \|\dg(t)\| & = 13 \neq 0
+ \end{align*}
+
+2. The arc-length of $\g$ starting from $t_0 = 0$ is
+$$
+s(t) = \int_0^t \norm{ \dg(u) } \, d u = 13 t \,.
+$$
+The inverse $s^{-1}$ is
+$$
+t(s) = \frac{s}{13}  \,.
+$$
+The arc-length reparametrization of $\g$ is
+$$
+\tg(s)= \g(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
+$$
+
+
+:::
+
+
+
+
+### Curvature
+
+::: Definition 
+### Curvature of unit-speed curve
+
+Let $\g \ \colon (a,b) \to \R^3$ be a unit-speed curve. The **curvature** of $\g$ is
+$$
+\kappa(t) = \norm{\ddg (t)}
+$$
+
+:::
+
+
+
+::: Example
+### Curvature of the circle
+
+**Question.** Consider the circle of center
+$(x_0,y_0)$ and radius $R>0$
+$$
+\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) , 0\right) 
+$$
+Compute the curvature of $\g$.
+
+**Solution.** First, check that $\g$ is unit-speed:
+\begin{align*}
+\dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right), 0\right) \\
+\norm{\dg(t)} & = 1 
+\end{align*}
+Now, compute second derivative and curvature
+\begin{align*}
+\ddg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right) ,0\right) \\
+\kappa(t) & = \norm{ \ddg (t) } = \frac{1}{R}
+\end{align*}
+
+:::
+
+
+
+
+::: Definition 
+### Curvature of regular curve
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve and $\tg$ be a unit-speed reparametrization of 
+$\g$, with 
+$$
+\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b}) 
+$$
+Denote the curvature of $\tg$ by
+$$
+\tkappa \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tkappa(t) =   \norm{\ddtg (t)}
+$$
+The **curvature** of $\g$ is
+$$
+\kappa(t) = \tkappa(\f(t))
+$$
+
+:::
+
+
+
+::: Remark 
+### Method for computing curvature
+
+Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. To compute the curvature of $\g$ we do the following: 
+
+1. Compute the arc-length $s$ of $\g$
+
+2. Find $t(s)$, the inverse of $s$
+
+3. Compute the arc-length reparametrization
+$$
+\tg (s) = \g (t(s))
+$$
+
+4. Compute the curvature of $\tg$
+$$
+\tkappa(s) = \norm{\ddtg (s)}
+$$
+
+5. The curvature of $\g$ is
+$$
+\kappa (t)= \tkappa (s(t)) 
+$$
+
+:::
+
+
+
+::: Definition
+### Hyperbolic functions
+
+The **hyperbolic functions** are defined by:
+
+- Hyperbolic cosine: The **even part** of the function $e^t$, that is, 
+$$
+\cosh (t) = \frac {e^t + e^{-t}} {2} = \frac {e^{2t} + 1} {2e^t} = \frac {1 + e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic sine: The **odd part** of the function $e^t$, that is, 
+$$
+\sinh (t) = \frac {e^t - e^{-t}} {2} = \frac {e^{2t} - 1} {2e^t} = \frac {1 - e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic tangent: Defined by
+$$
+\tanh(t) = \frac{\sinh t}{\cosh t} = \frac {e^t - e^{-t}} {e^t + e^{-t}}
+= \frac{e^{2t} - 1} {e^{2t} + 1} \,.
+$$
+
+- Hyperbolic cotangent: The reciprocal of $\tanh$ for $t \neq 0$,
+$$
+\coth (t) = \frac{\cosh t}{\sinh t} = \frac {e^t + e^{-t}} {e^t - e^{-t}}
+= \frac{e^{2t} + 1} {e^{2t} - 1} \,.
+$$
+
+- Hyperbolic secant: The reciprocal of $\cosh$
+$$
+\sech (t) = \frac{1}{\cosh t} = \frac {2} {e^t + e^{-t}}
+= \frac{2e^t} {e^{2t} + 1} \,.
+$$
+
+* Hyperbolic cosecant: The reciprocal of $\sinh$ for $t \neq 0$,
+$$
+\csch (t) = \frac{1}{\sinh t} = \frac {2} {e^t - e^{-t}}
+= \frac{2e^t} {e^{2t} - 1} \,.
+$$
+
+:::
+
+
+::: Theorem
+### Notable properties of Hyperbolic Functions
+
+Identities: 
+\begin{align*}
+&\cosh^2(t) - \sinh^2(t)  = 1 \\
+&{\sech}^2(t) - \tanh^2(t)  = 1  
+\end{align*}
+
+Derivatives: 
+\begin{align*}
+\frac{d}{dt} \left[ \sinh(t) \right] & = \cosh (t) \\
+\frac{d}{dt} \left[ \cosh(t) \right] & = \sinh (t) \\
+\frac{d}{dt} \left[ \tanh(t) \right] & = 1 - \tanh^2 (t) = - {\csch}^2(t) 
+\end{align*}
+
+Integrals: 
+\begin{align*}
+\int_{t_0}^t \sinh(u) \, du & = \cosh (t) - \cosh( t_0 ) \\
+\int_{t_0}^t \cosh(u) \, du & = \sinh (t) - \sinh( t_0 ) \\
+\int_{t_0}^t \tanh(u) \, du & = \log ( \cosh (t) ) - \log ( \cosh (t_0) )
+\end{align*}
+
+:::
+
+
+
+::: Example
+### Curvature of the Catenary
+
+**Question.** Consider the Catenary curve
+$$
+\g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
+$$
+
+1. Prove that $\g$ is regular
+2. Compute the arc-length function of $\g$ starting at $t_0 = 0$
+3. Compute the arc-length reparametrization of $\g$
+4. Compute the curvature of $\tg$
+5. Compute the curvature of $\g$
+
+**Solution.**
+
+1. Check that $\g$ is regular:
+\begin{align*}
+\dg (t) & = (1 , \sinh(t))  \\
+\norm{ \dg }^2 & = 1 + {\sinh}^2 (t) = \cosh^2 (t) \\
+\norm{ \dg } & = \cosh (t) 
+\end{align*}
+Note that 
+$$
+\cosh(t) \geq 1
+$$
+showing that $\g$ is regular.
+
+2. The arc-length of $\g$ starting at $t_0 = 0$ is
+$$
+s(t) = \int_0^t \norm{ \dg (u) } \, du =  \int_0^t \cosh (u) \, du = \sinh (t)
+$$
+where we used that $\sinh(0) = 0$
+
+3. We need to invert $s$. We have
+\begin{align*}
+s = \sinh(t) \quad & \iff \quad s = \frac{e^t - e^{-t}}{2} \\
+             \quad & \iff \quad e^{2t} - 2s e^{t} - 1 = 0
+\end{align*}
+where the last equation was obtained by rearranging and multiplying both sides by $e^t$. Now we substitute
+$$
+y = e^t
+$$
+and obtain
+\begin{align*}
+e^{2t} - 2s e^{t} - 1 = 0 \quad & \iff \quad y^{2} - 2s y - 1 = 0 \\
+                           \quad & \iff \quad y_{\pm} = s \pm \sqrt{1+s^2} \,.
+\end{align*}
+Notice that
+$$
+y_{+} = s + \sqrt{1 + s^2} \geq s + \sqrt{s^2} = s + |s| \geq 0
+$$
+by definition of absolute value. As we were looking for $y$ in the form $y=e^t$, we only consider the positive solution $y_+$. Then
+$$
+e^t = y_+ = s + \sqrt{1 + s^2 }
+$$
+so that
+$$
+t(s) = \log \left( s + \sqrt{1 + s^2} \right)
+$$
+The arc-length reparametrization of $\g$ is
+$$
+\tg (s) = \g( t(s) ) = \left(  \log \left( s + \sqrt{ 1+ s^2} \right) , \sqrt{1 + s^2}  \right)
+$$
+
+4. Compute the curvature of $\tg$
+\begin{align*}
+\dtg (s) &  = \left(  \frac{1}{ \sqrt{1 + s^2} } , \frac{s}{ \sqrt{1 + s^2}}   \right) \\
+\ddtg (s) & = \left( - \frac{s}{ (1 + s^2)^{3/2} } , \frac{1}{(1 + s^2)^{3/2} }   \right) \\
+\norm{\ddtg (s)}^2 & = \frac{1}{(1+s^2)^2} \\
+\tkappa(s) & = \norm{\ddtg (s)}= \frac{1}{1+s^2} 
+\end{align*}
+
+6. Recalling that $s(t) = \sinh(t)$, the curvature of $\g$ is
+$$
+\kappa (t) = \tkappa(s(t)) = \frac{1}{1+ \sinh^2(t)} = 
+\frac{1}{\cosh^2(t)}
+$$
+where we used the identity $1 + \sinh^2(t) = \cosh^2(t)$
+
+:::
+
+
+
+
+
+
+::: Definition
+### Vector product
+
+The **vector product** of two vectors $\uu,\vv \in \R^3$ is
+$$
+\uu \times \vv = 
+\left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right| \ee_1 -
+\left|
+\begin{array}{cc}
+u_1 & u_3  \\
+v_1 & v_3 
+\end{array}
+\right| \ee_2 +
+\left|
+\begin{array}{cc}
+u_1 & u_2  \\
+v_1 & v_2 
+\end{array}
+\right| \ee_3  \, 
+$$ {#eq-formula-cross-product}
+with $\ee_1,\ee_2,\ee_3$ vectors of the standard basis of $R^3$. Formula (@eq-formula-cross-product) is usually denoted by
+$$
+\uu \times \vv = 
+\left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+u_1 & u_2 & u_2 \\
+v_1 & v_2 & v_3 
+\end{array} 
+\right| \,.
+$$
+
+:::
+
+
+::: Theorem
+### Geometric Properties of vector product 
+
+Let $\uu,\vv \in \R^3$ be linearly independent. Then
+
+- $\uu \times \vv$ is orthogonal to the plane spanned by $\uu,\vv$
+- $\| \uu \times \vv \|$ is equal to the area of the parallelogram with sides $\uu,\vv$
+- The triple
+$$
+(\uu,\vv,\uu \times \vv)
+$$
+is a positive (right-handed) basis of $\R^3$
+
+:::
+
+
+
+
+::: Theorem
+
+For all $\uu, \vv, \ww \in \R^3$ it holds:
+$$
+(\uu \times \vv) \times \ww = ( \uu \cdot \ww ) \vv - ( \vv \cdot \ww ) \uu 
+$$
+
+:::
+
+
+
+::: Theorem
+
+Suppose $\g,\eeta \ \colon (a,b) \to \R^3$ are parametrized curves. Then
+the curve 
+$$
+\g \times \eeta \ \colon (a,b) \to \R^3
+$$
+is smooth, and
+$$
+\frac{d}{dt} ( \g \times \eeta ) = \dg \times \eeta + \g \times \dot{\eeta} 
+$$
+
+:::
+
+
+
+::: Theorem
+### Curvature formula
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature of $\g$ is
+$$
+\kappa(t) = \frac{ \norm{\dg(t) \times \ddg(t)} }{ \norm{\dg(t)}^3 } 
+$$
+
+:::
+
+
+
+
+::: Example
+### Curvature of the Helix 
+
+**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
+$$
+\g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
+$$
+Compute the curvature of $\g$.
+
+**Solution.** First, ensure that $\g$ is regular
+\begin{align*}
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\norm{\dg (t)} & = \sqrt{R^2 + H^2} \geq R > 0
+\end{align*}
+showing that $\g$ is regular. Further, compute
+\begin{align*}
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dg \times \ddg & = \left(   
+RH\sin(t),    
+-RH\cos(t),
+R^2
+\right) \\
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \\
+\end{align*}
+By the formula we have
+$$
+\kappa (t)= \frac{ \norm{ \dg(t) \times \ddg(t) } }{ \norm{\dg(t)}^3 } =
+\frac{ R }{  R^2 + H^2   } 
+$$
+
+:::
+
+
+
+::: {.Example #example-curvature}
+
+**Question.** Compute the curvature of 
+$$
+\gamma(t)=\left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
+$$
+
+**Solution.** First, ensure $\gamma$ is regular:
+$$
+\begin{aligned}
+\dot{\gamma}(t) & =\left(-\frac{8}{5} \sin (t),-2 \cos (t),-\frac{6}{5} \sin (t)\right) \\
+\|\dot{\gamma}(t)\| & =2 \neq 0
+\end{aligned}
+$$
+Further compute
+$$
+\begin{aligned}
+& \ddot{\gamma}(t) =\left(-\frac{8}{5} \cos (t), 2 \sin (t),-\frac{6}{5} \cos (t)\right) \\
+& \ddot{\gamma}(t) \times \dot{\gamma}(t)=\left(-\frac{12}{5}, 0, \frac{16}{5}\right) \\
+& \|\ddot{\gamma}(t) \times \dot{\gamma}(t)\|=4
+\end{aligned}
+$$
+The curvature formula yields
+$$
+\kappa(t)  = \frac{1}{2} \,.
+$$
+
+:::
+
+
+
+
+::: Example
+### Different curves having the same curvature
+
+**Question.** Let $\g$ be a circle
+$$
+\g(t) = (2\cos(t),2\sin(t),0) \,,
+$$
+and $\eeta$ be a helix of radius $S>0$ and rise $H>0$
+$$
+\eeta(t) = (S\cos(t),S\sin(t),Ht) \,.
+$$
+Find $S$ and $H$ such that $\g$ and $\eeta$ have the same curvature.
+
+**Solution.** We have already computed that the curvature of $\g$ and $\eeta$ are, respectively
+$$
+\kappa^\g = \frac{1}{2}\,, \quad 
+\kappa^\eeta = \frac{S}{S^2 + H^2} \,.
+$$
+Imposing that $\kappa^\g = \kappa^\eeta$, we get
+$$
+\frac12 = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
+$$
+Choosing $S=1$ and $H=1$ yields 
+$$
+\kappa^\g = \kappa^\eeta \,.
+$$
+:::
+
+
+
+### Frenet frame and torsion
+
+::: Definition
+### Frenet frame of unit-speed curve with $\kappa \neq 0$
+
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with 
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+The **tangent vector** to $\g$ is
+$$
+\ttt (t)= \dg(t) \,.
+$$
+The **principal normal vector** to $\g$ is 
+$$
+\nn(t) = \frac{1}{\kappa (t)} \, \ddg(t) \,.
+$$
+The **binormal vector** to $\g$ is 
+$$
+\bb(t) = \dg (t) \times \nn(t) \,.
+$$
+The triple 
+$$
+\{ \ttt, \nn, \bb\}
+$$
+is the **Frenet frame** of $\g$.
+
+:::
+
+
+::: Theorem
+
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with 
+$$
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+$$
+The Frenet frame
+$$
+\{ \ttt(t), \nn(t), \bb(t)\}
+$$
+is a positive orthonomal basis of $\R^3$ for each $t \in (a,b)$.
+:::
+
+
+
+::: Definition
+### Torsion of unit-speed curve with $\kappa \neq 0$
+
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. The **torsion** of $\g$ is the unique scalar $\tau (t)$ such that
+$$
+\dot{\bb} (t) = - \tau(t) \nn(t) \,.
+$$
+In particular,
+$$
+\tau(t) = - \dot{\bb} (t) \cdot \nn (t) \,.
+$$
+
+:::
+
+
+
+
+::: Definition
+### Torsion of regular curve with $\kappa \neq 0$
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with $\kappa \neq 0$. Let $\tg$ be a unit-speed reparametrization of 
+$\g$ with 
+$$
+\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
+$$
+Denote by $\ttau \colon (\tilde{a},\tilde{b}) \to \R$ the torsion of $\tg$. The **torsion** of $\g$ is
+$$
+\tau(t) = \ttau(\f(t)) \,.
+$$
+
+:::
+
+
+
+
+::: Example
+### Curvature, torsion and Frenet frame of Helix
+
+**Question.** Consider the helix of radius $R>0$ and rise $H$ given by
+$$
+\g (t) = ( R\cos(t), R\sin(t),t H)\,, \quad \, t \in \R \,.
+$$
+
+1. Prove that $\g$ is regular.
+2. Compute the arc-length function of $\g$.
+3. Compute the arc-length reparametrization $\tg$ of $\g$.
+4. Compute the Frenet frame, curvature and torsion of $\tg$.
+5. Compute curvature and torsion $\g$.
+
+**Solution.** 
+
+1. We have
+$$
+\dg (t) = ( -R\sin(t), R\cos(t), H ) \,,
+$$
+which implies
+$$
+\norm{ \dg } = \rho, \qquad \rho := \sqrt{R^2 + H^2} \,.
+$$
+Therefore, $\g$ is regular, since
+$$
+\norm{ \dg } = \sqrt{R^2 + H^2} \geq \sqrt{R^2} = R > 0 \,.
+$$
+
+2. The arc-length of $\g$ starting at $t_0 = 0$ is
+$$
+s(t) = \int_0^t \norm{ \dg(u) } \, du = \rho  t \,.  
+$$
+
+3. The arc-length function $s$ is invertible with inverse 
+$$
+t(s) = \frac{s}{\rho} \,.
+$$
+The arc-length reparametrization $\tg$ of $\g$ is given by
+$$
+\tg(s) = \g( t(s)) = \left( R \cos \left( \frac{s}{\rho}  \right) ,R \sin \left( \frac{s}{\rho}  \right) , \frac{H s }{\rho}    \right) \,.
+$$
+
+3. Compute the tangent vector to $\tg$ and its derivative
+\begin{align*}
+\tttt(s) & = \dtg  = \frac{1}{\rho}
+ \left(  - R \sin \left( \frac{s}{\rho}  \right) , 
+ R \cos \left( \frac{s}{\rho}  \right) 
+ , H    \right) \\
+\dot{\tttt}(s) & = \frac{R}{\rho^2} \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)
+\end{align*}
+The curvature of $\tg$ is
+\begin{align*}
+\tkappa (s) & = \| \ddtg(s) \| = \| \dot{\tttt}(s) \| \\
+            & = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}\,.
+\end{align*}
+The principal normal vector and binormal are
+\begin{align*}
+\tnn (s) & = \frac{1}{\tkappa(s)} \, \dot{\tttt}(s) \\
+         & = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)  \\
+\tbb (s)& = \tttt(s) \times \tnn(s)  \\
+    & = \frac{1}{\rho} \left( H \sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
+\end{align*}
+We are left to compute the torsion:
+\begin{align*}
+\dot{\tbb}(s) & = \frac{H}{\rho^2} \left(  \cos \left( \frac{s}{\rho}  \right) , \sin \left( \frac{s}{\rho}  \right) , 0   \right) \\
+\dot{\tbb}(s) & \cdot \tnn(s)  = - \frac{H}{\rho^2} \\
+\ttau (s) & = - \dot{\tbb}(s) \cdot \tnn (s) \\
+          & = \frac{H}{\rho^2} = \frac{H}{R^2 + H^2} 
+\end{align*}
+
+5. The curvature and torsion of $\g$ are 
+\begin{align*}
+\kappa(t) & = \tkappa(s(t)) = \frac{R}{R^2 + H^2} \\
+\tau(t) & = \ttau(s(t)) = \frac{H}{R^2 + H^2} 
+\end{align*}
+
+:::
+
+
+
+
+
+
+
+::: Theorem
+### Torsion formula
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with $\kappa \neq 0$. The torsion of $\g$ is
+$$
+\tau (t) = \frac{ ( \dg(t) \times \ddg(t) ) \cdot \dddg(t) }{ \norm{ \dg(t) \times \ddg(t) }^2 } \,. 
+$$
+
+:::
+
+
+
+::: Example
+### Torsion of Helix with formula
+
+**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
+$$
+\g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
+$$
+
+1. Prove that $\g$ is regular with non-vanishing curvature.
+2. Compute the torsion of $\g$.
+
+
+**Solution.** 
+
+1. We have already shown that
+$$
+\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
+$$
+Therefore $\g$ is regular with non-vanishing curvature.
+
+2. We compute
+\begin{align*}
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dddg (t) & = ( R\sin(t) , -R\cos(t) , 0)  \\
+\dg \times \ddg & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \\
+(\dg \times \ddg) \cdot \dddg & = R^2 H 
+\end{align*}
+Using the formula
+$$
+\tau (t)= \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 }
+       = \frac{ H }{ R^2 + H^2 } \,.
+$$
+:::
+
+
+::: Example
+
+**Question.** Consider again the curve from Example \ref{example-curvature}
+$$
+\g(t) = \left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
+$$
+Compute the torsion of $\g$.
+
+**Solution.** Resuming calculations from Example \ref{example-curvature}, we get
+$$
+\begin{aligned}
+\dddg(t) & =\left(\frac{8}{5} \sin (t), 2 \cos (t), \frac{6}{5} \sin (t)\right) \\
+( \dg (t) \times \ddg(t)) \cdot \dddg(t) & = \frac{96}{25} \sin (t)-\frac{96}{25} \sin (t) = 0 
+\end{aligned}
+$$
+The torsion formula yields
+$$
+\tau(t)= \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } =  0 \,.
+$$
+
+:::
+
+
+
+![How to compute $\kappa$ and $\tau$ for a regular curve $\g$.](/images/diagram_curvature_torsion.png){#fig-diagram width=80%}
+
+
+
+
+::: Theorem
+### Frenet frame formulas for regular curves
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The Frenet frame of $\g$ is
+\begin{align*}
+\ttt & = \frac{\dg}{\norm{\dg}} \\
+\bb & = \frac{ \dg \times \ddg }{ \norm{\dg \times \ddg} } \\
+\nn & = \bb \times \ttt  = \frac{(\dg \times \ddg )\times \dg}{\norm{\dg \times \ddg} \norm{\dg}} 
+\end{align*}
+
+:::
+
+
+
+
+
+::: Example
+
+**Question.** Let $\g \colon \R \to \R^3$ be the curve defined by
+$$
+\g(t) = (t,t^2,t^3 ) \,.
+$$
+$\g$ is known as the *twisted cubic*.
+
+1. Is $\g$ regular? Justify your answer.
+2. Is $\g$ unit-speed? Justify your answer.
+3. Compute the curvature of $\g$.
+4. Compute the torsion of $\g$.
+5. Compute the Frenet frame of $\g$.
+
+
+**Solution.**
+
+1. $\g$ is regular because
+	$$
+	\dot \g(t) = (1 , 2t , 3t^2)\,, 
+	$$
+	so that $\dot \g(t) \neq 0$ for all $t \in \R$, since the first component is constantly $1$.
+	
+2. $\g$ is not unit-speed, since
+	\begin{align*}
+	\norm{\dot \g (t)} & = \sqrt{1 + 4t^2 + 9t^4} \\
+    \norm{\dot\g(1)} & = \sqrt{14} \neq 1 \,.
+	\end{align*}
+	
+3. We have
+	\begin{align*}
+	\ddot \g (t) & = (0,2,6t) \\
+	\dot \g (t) \times \ddot \g(t) & = (6t^2, -6t, 2 ) \\
+	\norm{\dot \g (t) \times \ddot \g(t)} & = 2 \sqrt{ 1 + 9t^2 + 9t^4  } 
+	\end{align*}
+	The curvature is
+	$$
+	\kappa(t) = \frac{ \norm{\dot \g  \times \ddot \g } }{\norm{ \dot \g  }^3}
+			  = \frac{ 2 \sqrt{ 1 + 9t^2 + 9t^4  }  }{ (1 + 4t^2 + 9t^4)^{3/2}   } \,.
+	$$
+	
+4. We have
+	$$
+	\dddot \g (t) = (0,0,6)
+	$$
+	and thus
+	$$
+		(\dot \g  \times \ddot \g ) \cdot \dddot \g  = \left|
+		\begin{array}{ccc}
+			1 & 2t & 3t^2 \\
+			0 & 2 & 6t \\
+		    0 & 0 & 6 
+		\end{array} \right|  = 12\,,
+	$$
+	obtaining that the torsion is
+	$$
+	\tau(t) = \frac{ (\dot \g  \times \ddot \g ) \cdot \dddot \g  }{ \norm{\dot \g  \times \ddot \g }^2  } = \frac{3}{1 + 9t^2 + 9t^4} \,.
+	$$
+
+
+5. Using the formulas and the above calculations, we have
+\begin{align*}
+\ttt & = \frac{\dg}{\norm{\dg}} = \frac{1}{\sqrt{1 + 4t^2 + 9t^4}} \  (1 , 2t , 3t^2) \\   
+\bb & = \frac{ \dg \times \ddg }{ \norm{\dg \times \ddg} } 
+ = \frac{1}{\sqrt{ 1 + 9t^2 + 9t^4}}  (3t^2, -3t, 1 ) \\
+\nn & = \bb \times \ttt \\
+    & = \frac{(−9t^3 − 2t,1 − 9t^4,6t^3 + 3t)}{\sqrt{ 1 + 9t^2 + 9t^4} \, \sqrt{1 + 4t^2 + 9t^4}} 
+\end{align*}
+
+
+:::
+
+
+
+
+
+### Frenet-Serret equations
+
+
+
+::: Theorem
+### Frenet frame is right-handed
+
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. Then
+$$
+\bb = \ttt \times \nn \,, \quad
+\nn = \bb \times \ttt \,, \quad
+\ttt = \nn \times \bb \,.
+$$
+
+:::
+
+
+
+::: Theorem
+### Frenet-Serret equations
+
+Let $\g \colon (a,b) \to \R^3$ be unit-speed with $\kappa \neq 0$. The Frenet frame of $\g$ solves the **Frenet-Serret** equations
+\begin{align*}  
+\dot{\ttt} & = \kappa \nn \\
+\dot{\nn} & = - \kappa \ttt + \tau \bb \\
+\dot{\bb} & = -\tau \nn
+\end{align*}
+In vectorial form, the Frenet-Serret equations read
+$$
+\left(
+\begin{array}{c}
+\dot{\ttt}  \\
+\dot{\nn}  \\
+\dot{\bb}
+\end{array}
+\right) = 
+\left(
+\begin{array}{ccc}
+0 & \kappa  & 0 \\
+- \kappa  & 0 & \tau  \\
+0 & -\tau  & 0
+\end{array}
+\right) 
+\left(
+\begin{array}{c}
+\ttt  \\
+\nn  \\
+\bb
+\end{array}
+\right) \,.
+$$
+:::
+
+
+
+::: Definition
+### Rigid motion
+
+A *rigid motion* of $\R^3$ is a map $M \colon \R^3 \to \R^3$ of the form
+$$
+M(\vv) = R \vv + \pp \,, \qquad \vv \in \R^3 \,,
+$$
+where $\pp \in \R^3$ is a vector and $R \in \R^{3 \times 3}$ is
+a **rotation matrix**, i.e.,
+$$
+R \in \mathrm{SO}(3) := \{ R \in \R^{3 \times 3} \ \colon \ R^T R = I \,, \,\, \det(R) = 1 \} \,.
+$$
+In the above definition, $I$ is the identity matrix in $\R^3$
+$$
+I = 
+\left(
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}
+\right)\,.
+$$
+:::
+
+
+
+
+::: Theorem
+### Fundamental Theorem of Space Curves 
+
+Let $\kappa, \tau \ \colon (a,b) \to \R$ be smooth functions, with $\kappa>0$. Then:
+
+1. There exists a unit-speed curve $\g \ \colon (a,b) \to \R^3$ with curvature $\kappa(t)$ and torsion $\tau(t)$.
+
+2. Suppose that $\tg \ \colon (a,b) \to \R^3$ is a unit-speed curve whose curvature $\tkappa$ and torsion $\ttau$ satisfy
+$$
+\tkappa(t) = \kappa(t) \,, \quad 
+\ttau(t) = \tau(t) 
+  \,, \quad \forall \, t \in (a,b) \,.
+$$
+Then there exists a rigid motion $M \colon \R^3 \to \R^3$ such that
+$$
+\tg(t) = M (\g(t)) \,, \qquad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+::: Example
+### Application of Fundamental Theorem of Curves
+
+**Question.** Consider the curve
+$$
+	\g ( t ) = \left( \sqrt{3}\, t - \sin ( t ) , \sqrt{3} \sin ( t ) + t , 2 \cos ( t ) \right)\,, \quad t \in \R \,.
+$$
+
+1. Calculate the curvature and torsion of $\g$.
+
+2. The helix of radius $R$ and rise $H$ is parametrized by 
+	$$
+	\eeta (t) = (R \cos(t), R\sin(t), Ht) \,.
+	$$
+	Recall that $\eeta$ has curvature and torsion 
+	$$
+	\kappa^{\eeta} = \frac{R}{R^2 + H^2} \,, \qquad	\tau^{\eeta} = \frac{H}{R^2 + H^2} \,.
+	$$
+    Prove that there exist a rigid motion $M \colon \R^3 \to \R^3$ such that
+    $$
+    \g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
+    $$
+
+**Solution.** 
+
+1. We have
+$$
+	\begin{aligned}
+		& \dot \g (t)  = \left( \sqrt{3} - \cos ( t ), \sqrt{3}\cos ( t ) + 1, -2 \sin ( t ) \right) \\
+		& \ddot \g (t) = \left( \sin ( t ),-\sqrt{3}\sin ( t ), -2 \cos ( t ) \right) \\
+		& \dddot \g (t) = \left( \cos ( t ),-\sqrt{3}\cos ( t ), 2 \sin ( t ) \right) \\
+		& \dot \g (t)  \times \ddot \g (t)  = \left( -2 \left( \sqrt{3} + \cos ( t ) \right), 2 \left( \sqrt{3} \cos ( t ) - 1 \right), -4 \sin ( t ) \right) \\
+		 & \norm{\dot \g (t)  \times \ddot \g (t) }^2 = 32 \\
+		& \norm{\dot \g (t)  }^2 = 8 \\
+		& \left( \dot \g (t)  \times \ddot \g (t)  \right) \cdot \dddot \g ( t ) = -8
+	\end{aligned}
+$$
+Therefore the curvature is
+$$
+\kappa ( t )  =  \frac{ \norm{ \dot\g \times \ddot \g  } }{ \norm{ \dot\g  }^3  } =  \dfrac{\sqrt{32}}{8^{\frac{3}{2}}} = \dfrac{1}{4} \,,
+$$
+and the torsion is
+$$
+		\tau ( t ) =   \frac{ \left(\dot\g \times \ddot\g \right)  \cdot \dddot \g  }{ \norm{\dot\g \times \ddot\g}^2 } = \dfrac{-8}{32} = -\dfrac{1}{4} \, .
+$$
+
+2. As given by the exercise, denote by $\eeta$ the Helix of radius $R$ and rise $H$, which has curvature and torsion 
+$$
+		\kappa^{\eeta} = \frac{R}{R^2 + H^2} \,, \qquad	\tau^{\eeta} = \frac{H}{R^2 + H^2} \,.
+$$
+Equating $\kappa = \kappa^{\eeta}$ and $\tau = \tau^{\eeta}$ we obtain
+$$
+			\frac{R}{R^2 + H^2} = \frac{1}{4} \,, \qquad 
+				\frac{H}{R^2 + H^2} = - \frac{1}{4} 
+$$
+Rearranging both equalities we get
+$$
+R^2 + H^2 = 4 R \,, \qquad 
+				R^2 + H^2 = -4 H
+$$
+from which we find the relation
+$$
+4 R = - 4 H \quad \implies \quad R = -  H
+$$
+Substituting $R = - H$ into $R^2 + H^2 = -4 H$, and simplifying, we get
+$$
+H = - 2 \,.
+$$
+Therefore 
+$$
+R = - H = 2 \,.
+$$
+For these values of $R$ and $H$ we have 
+$$
+\kappa = \kappa^{\eeta} \,, \qquad \tau = \tau^{\eeta} \,.
+$$
+By the Fundamental Theorem of Space Curves, we conclude the existence of a rigid motion $M \colon \R^3 \to \R^3$ such that
+$$
+\g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
+$$
+
+:::
+
+
+
+::: Theorem
+### Curves contained in a plane
+
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. They are equivalent:
+
+
+1. The torsion of $\g$ satisfies 
+$$
+\tau(t) = 0 \,, \quad \forall  \, t \in (a,b) \,.
+$$
+
+2. The image of $\g$ is contained in a plane: There exists a vector $\mathbf{P} \in \R^3$ and a scalar $d \in \R$ such that
+$$
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
+$$
+
+
+:::
+
+
+
+
+
+::: Theorem
+### Curves contained in a plane
+
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. Suppose that
+$$
+\tau(t) = 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Then the binormal $\bb$ is a constant vector, and the image of $\g$ is contained in the plane of equation
+$$
+(\xx - \g(t_0)) \cdot \bb = 0 \,,
+$$
+where $t_0$ is any point in $(a,b)$.
+
+:::
+
+
+
+::: Example 
+
+**Question.** Consider the curve
+$$
+\g(t) = ( t,2t,t^4) \,,
+$$
+for $t >0$.
+
+1. Prove that $\g$ is regular. 
+
+2. Compute the curvature and torsion of $\g$.
+
+3. Prove that $\g$ is contained in a plane. Compute the equation of such plane, giving your answer in the form
+$$
+ax+by+cz = d \,,
+$$
+for suitable $a,b,c,d \in \R$.
+
+
+
+**Solution.** 
+
+1. We compute
+$$
+\dg (t) = (1,2,4t^3)  \,.
+$$
+As the first component of $\dg$ is $1 \neq 0$, we conclude that $\dg \neq 0$, showing that $\g$ is regular.
+
+2. We compute
+\begin{align*}
+& \norm{\dg(t)} = \sqrt{5 + 16 t^4} \\
+& \ddg(t)   = 12 \, (0,0,t^2) \\
+& \dddg(t) = 24 \, (0,0,t) \\
+& \dg(t) \times \ddg(t) = 12 \,(2t^2, -t^2, 0) \\
+& \norm{\dg(t) \times \ddg(t)} = 12 \sqrt{5} \, t^2 \\
+& (\dg(t) \times \ddg(t) ) \cdot \dddg(t) = 0
+\end{align*}
+Therefore, curvature and torsion are
+\begin{align*}
+\kappa(t) & = \frac{\dg \times \ddg}{\norm{\dg}^3} = 
+\frac{12 \sqrt{5} \, t^2}{\sqrt{ 5 + 16 t^4 }} \\
+\tau(t) & = \frac{(\dg \times \ddg ) \cdot \dddg }{ \norm{\dg \times \ddg} } = 0 \,.
+\end{align*}
+
+3. Since the torsion of $\g$ is zero, we conclude that $\g$ lies in a plane. The equation of the plane contaning $\g$ is
+$$
+(\xx - \g(t_0)) \cdot \bb = 0 \,, \quad \xx \in \R^3 \,.
+$$
+We compute the binormal vector
+$$
+\bb = \frac{\dg \times \ddg}{\norm{\dg \times \ddg}} = \frac{1}{\sqrt{5}} \, (2,-1,0) \,.
+$$
+At $t_0 = 0$ we have
+$$
+\g\left( 0 \right) = \zero  \,.
+$$
+The equation of the plane containing $\g$ is then
+$$
+\frac{2}{\sqrt5} x -  \frac{1}{\sqrt5} y = 0 \quad \implies \quad 
+2x - y = 0 \,.
+$$
+:::
+
+
+
+::: Theorem
+### Curves contained in a circle
+
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve. They are equivalent:
+
+
+1. The image of $\g$ is contained in a circle of radius $R>0$.
+
+
+2. The curvature and torsion of $\g$ satisfy
+$$
+\kappa (t) = \frac{1}{R} \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+$$
+for some constant $R > 0$.
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Consider the curve
+$$
+\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,, \quad t \in \R \,.
+$$
+
+1. Prove that $\g$ is unit-speed.
+2. Compute the Frenet frame, curvature and torsion of $\g$.
+3. Prove that $\g$ is part of a circle.
+
+**Solution.** 
+
+1. $\g$ is unit-speed because
+\begin{align*}
+\dg(t) & = \left( -\frac45 \sin(t),  - \cos(t) , \frac35 \sin(t)  \right) \\
+\norm{ \dg(t) }^2 & = \frac{16}{25} \sin^2(t) + \cos^2(t) + \frac{9}{25} \sin^2(t) = 1
+\end{align*} 
+
+2. As computed in Point 1, the tangent vector to $\g$ is
+$$
+\ttt (t) = \dg(t) =  \left( -\frac45 \sin(t),  - \cos(t) , \frac35 \sin(t)  \right) \,.
+$$
+Further,
+$$
+\dot{\ttt} (t)  =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
+$$
+As $\g$ is unit-speed, the curvature, principal normal and binormal are
+\begin{align*}
+\kappa(t) & = \norm{ \dot{\ttt}(t) } = \frac{16}{25} \cos^2(t) + \sin^2(t) + \frac{9}{25} \cos^2(t) = 1 \\
+\nn (t)& = \frac{1}{\kappa(t)}  \ddg(t) =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \\
+\bb(t) & = \dg(t) \times \nn(t)  = \left( -\frac35, 0 ,-\frac45  \right) 
+\end{align*}
+In particular
+$$
+\dot{\bb} = 0\,,
+$$
+and we obtain that the torsion is
+$$
+\tau = - \dot{\bb} \cdot \nn = 0 \,.
+$$
+
+3. We have shown that the curvature of $\g$ is constant, and the torsion is zero. Therefore $\g$ is contained in a circle of radius 
+$$
+R = \frac{1}{\kappa} = 1 \,.
+$$
+
+:::
+
+
+
+
+
+
+## Topology
+
+To be completed
+
+
+
+
+
+
+## Surfaces
+
+### Preliminaries
+
+::: Definition 
+### Topology of $\R^n$
+
+The Euclidean norm on $\R^n$ is denoted by 
+$$
+\| \xx \| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \xx = (x_1 , \ldots, x_n) \in \R^n \,.
+$$
+The Euclidean norm induces the distance
+$$
+d(\xx,\yy) := \| \xx - \yy \| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
+$$
+
+In particular, we have:
+
+1. The pair $(\R^n,d)$ is a metric space. 
+2. The topology induced by the metric $d$ is called the Euclidean topology, denoted by $\TT$. 
+3. A set $U \subseteq \R^n$ is **open** if for all $\xx \in U$ there exists $\e>0$ such that $B_{\e}(\xx) \subseteq U$, where
+$$
+B_{\e}(\xx) := \{  \yy \in \R^n \divider \| \xx - \yy  \| < \e   \}
+$$
+is the open ball of radius $\e>0$ and centered at $\xx$. In this case we write $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
+
+4. A set $V \subseteq \R^n$ is **closed** if $V^c := \R^n \smallsetminus U$ is open. 
+
+:::
+
+
+::: Definition 
+### Subspace Topology
+
+Given a subset $A \subseteq \R^n$ the **subspace topology** on $A$ is the family of sets
+$$
+\TT_A := \{  U \subseteq A \divider \exists \,\, W \in \TT \st U = A \cap W  \} \,.
+$$
+If $U \in \TT_A$, we say that $U$ is open in $A$.
+
+:::
+
+
+
+::: Definition
+### Continuous Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is **continuous** at $\xx \in U$ if $\forall \, \e>0$,  $\exists \, \delta > 0$ such that 
+$$
+\|  \xx - \yy  \| < \delta \quad \implies \quad 
+\| f(\xx) - f (\yy) \| < \e \,.
+$$
+We say that $f$ is continuous in $U$ if it is continuous for all $\xx \in U$.
+:::
+
+::: Theorem
+### Continuity: Topological definition
+
+Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
+
+:::
+
+
+::: Definition
+### Homeomorphism
+
+Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a **homeomorphism** if: 
+
+1. $f$ is continuous; 
+2. There exists inverse $f^{-1} \colon V \to U$ which is continuous.
+
+:::
+
+
+::: Definition
+### Differentiable Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is **differentiable** at $\xx \in U$ if there exists a linear map $d_{\xx} f \colon \R^n \to \R^m$ such that
+$$
+d_{\xx}f (\mathbf{h}) = \lim_{\e \to 0} \   \frac{ f(\xx + \e \mathbf{h} )  - f(\xx)  }{ \e } \,,
+$$
+for all $\mathbf{h} \in \R^n$, where the limit is taken in $\R^m$. The linear map $d_{\xx} f$ is called the **differential** of $f$ at $\xx$. 
+
+:::
+
+
+
+::: Definition
+### Partial Derivative
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The **partial derivative** of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
+$$
+\frac{\partial f}{\partial x_i}(\xx) := d_{\xx} f (\ee_i) =  \lim_{\e \to 0}  \frac{ f( \xx + \e \ee_i ) - f(\xx) }{ \e } \,.
+$$
+
+:::
+
+
+
+::: Definition
+### Jacobian Matrix
+
+Let $f \colon U \subset \R^n \to \R^m$ be differentiable. The **Jacobian** of 
+$f$ at $\xx$ is the $m \times n$ matrix of partial derivatives:
+$$
+Jf(\xx):= \left( \frac{\partial f_i}{\partial x_j}(\xx) \right)_{i,j}  \in \R^{m \times n} \,.
+$$
+If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its determinant, denoted by
+$$
+\det (Jf) \,.
+$$
+:::
+
+
+::: Proposition
+### Matrix representation of the differential
+
+Let $f \colon U \subseteq \R^n \to \R^m$ be differentiable. The matrix of the linear map $d_{\xx} f \colon \R^n \to \R^m$ with respect to the standard basis is given by the Jacobian matrix $Jf(\xx)$.
+
+:::
+
+
+
+
+::: Definition
+### Smooth Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is smooth if the derivatives 
+$$
+\frac{\partial^{|\alpha|} f}{d\xx^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
+$$
+exist for each multi-index $\alpha \in \N^n$. Note that in this case all the derivatives of $f$ are automatically continuous.
+
+:::
+
+
+
+
+::: Notation
+### Gradient and partial derivatives
+
+Let $f \colon U \subseteq \R^n \to \R$ be smooth. We denote the partial derivatives by 
+$$
+\begin{aligned}
+\partial_{x_i} f & = f_{x_i} =  \frac{\partial f}{\partial x_i} \\
+\partial_{x_i x_j} f & = f_{x_i x_j} = \frac{\partial^2 f}{\partial x_i \partial x_j} \\
+\partial_{x_i x_j x_k} f & = f_{x_i x_j x_k} =  \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} 
+\end{aligned}
+$$
+
+For $f \colon U \subseteq \R^n \to \R$ smooth we denote the **gradient** by
+$$
+\nabla f (\xx) = \left(  f_{x_1}(\xx) , \ldots ,  f_{x_n}(\xx) \right) \,.
+$$
+Note that $\nabla f(\xx)$ coincides with $Jf(\xx)$.
+
+
+:::
+
+
+
+::: Definition
+### Diffeomorphism
+  
+Let $f \colon U \to V$, with $U,V \subseteq \R^n$ open. We say that $f$ is a **diffeomorphism** between $U$ and $V$ if:
+
+1. $f$ is smooth,
+2. There exists the inverse $f^{-1} \colon V \to U$, 
+3. $f^{-1}$ is smooth.
+
+:::
+
+
+::: Definition
+### Local diffeomorphism
+
+A function $f \colon \R^n \to \R^n$ is a **local diffeomorphism** at 
+$\xx_0 \in \R^n$ if:
+
+1. There exists an open set $U \subseteq \R^n$ such that $\xx_0 \in U$,
+2. There exists an open set $V \subseteq \R^n$ such that $f(\xx_0) \in V$,
+3. $f \colon U \to V$ is a diffeomorphism.
+
+:::
+
+
+::: Theorem
+
+If $f \colon U \to V$ is a diffeomorphism, then $f$ is a local diffeomorphism at each $\xx_0 \in U$.
+
+:::
+
+
+
+::: Theorem
+
+Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a local diffeomorhism at $\xx_0 \in U$. Then 
+$$
+\det Jf (\xx_0) \neq 0 \,.
+$$
+
+:::
+
+
+
+
+::: Theorem
+### Inverse Function Theorem
+
+Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open, $f$ smooth. Assume
+$$
+\det J f(\xx_0) \neq 0 \,,
+$$
+for some $\xx_0 \in U$. Then:
+
+1. There exists an open set $U_0 \subseteq U$ such that $\xx_0 \in U_0$,
+2. There exists an open set $V$ such that $f(\xx_0) \in V$
+3. $f \colon U_0 \to V$ is a diffeomorphism.
+
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Consider the function $f \colon \R^2 \to \R^2$ defined by
+$$
+f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
+$$
+
+1. Prove that $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$.
+
+2. Prove that $f$ is not a diffeomorphism.
+
+
+**Solution.** 
+
+1. We compute
+\begin{align*}
+& J f (x,y) = 
+e^x \left(
+\begin{array}{cc}
+  \cos(y)  &    \sin(y) \\
+  -\sin(y)    &  \cos(y) 
+\end{array}
+\right)  \\
+& \det Jf(x,y) = e^{2x} 
+\end{align*}
+Therefore 
+$$
+Jf(x,y) \neq 0 \quad \forall \, (x,y) \in \R^2 \,.
+$$
+By the Inverse Function Theorem, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
+
+2. $f$ is not injective, since 
+$$
+f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \R^2 , \,  n \in \N  \,.
+$$
+Therefore $f$ is not invertible from $\R^2$ into $\R^2$. This implies $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
+
+
+
+:::
+
+
+
+
+
+
+### Regular surfaces
+
+
+::: Definition
+### Surface
+
+Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **surface** if for every point $\pp \in \SSS$ there exist 
+
+1. An open set $U \subseteq \R^2$,
+2. A smooth map
+$$
+\sss \colon U \to  \sss(U) \subseteq \SSS \,
+$$
+such that 
+    - $\pp \in \sss(U)$
+    - $\sss(U)$ is open in $\SSS$
+    - $\sss$ is a homeomorphism between $U$ and $\sss(U)$
+
+The homeomorphism $\sss$ is called a **surface chart** at $\pp$.
+
+:::
+
+
+
+
+
+::: Definition
+### Atlas of a surface
+
+Let $\SSS$ be a surface. Assume there exists a collection of **charts** 
+$$
+\mathcal{A} = \{ \sss_i\}_{i \in I} \,, \qquad 
+\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,,
+$$
+for some family of indices $I$. The family $\mathcal{A}$ is an **atlas** of $\SSS$ if 
+$$
+\SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
+$$
+
+:::
+
+
+
+::: Definition
+### Regular Chart
+
+Let $U \subseteq \R^2$ be open. A map
+$$
+\sss = \sss(u,v)  \colon U \to \R^3
+$$
+is called a **regular chart** if the partial derivatives
+$$
+\sss_u(u,v) = \frac{d\sss}{du}(u,v) \,, \quad
+\sss_v(u,v) = \frac{d\sss}{dv}(u,v) 
+$$
+are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
+:::
+
+
+
+::: Definition
+### Regular surface
+
+Let $\SSS$ be a surface. Let 
+$$
+\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
+$$
+be an atlas for $\SSS$. We say that:
+
+- $\mathcal{A}$ is a **regular atlas** if 
+the map $\sss_i$ is a regular chart for all $i \in I$. 
+- $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
+
+:::
+
+
+
+::: Theorem
+
+Let $U \subseteq \R^2$ be open and consider a map
+$$
+\sss  \colon U \to \R^3 \,.
+$$
+They are equivalent:
+
+1. $\sss$ is a regular chart.
+2. The differential $d_{\xx} \sss \colon \R^2 \to \R^3$ is injective for all $\xx \in U$.
+3. The Jacobian matrix
+$$
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+\sigma^1_{u}  &  \sigma^1_{v} \\
+\sigma^2_{u}  &  \sigma^2_{v} \\
+\sigma^3_{u}  &  \sigma^3_{v} \\
+\end{array} 
+\right)
+$$
+has rank $2$ for all $(u,v) \in U$.
+4. It holds
+$$
+\sss_u \times \sss_v \neq 0 \, \quad  \forall \, (u,v) \in U \,.
+$$
+
+
+:::
+
+
+
+::: Example
+### 2D Plane in $\R^3$
+
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
+$$
+\p = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} 
+$$
+is a surface with atlas $\mathcal{A} = \{\sss\}$, where
+$$
+\sss \colon \R^2 \to \p \,, \quad \sss(u,v):= \mathbf{a} + u \pp + v \mathbf{q} \,.
+$$
+Prove that $\p$ is a regular surface.
+
+**Solution.** $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
+$$
+\sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,,
+$$
+showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ and $\mathbf{q}$ are orthonormal.
+
+:::
+
+
+
+
+::: Example
+### Unit cylinder
+
+**Question.** Consider the infinite unit cylinder
+$$
+\SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
+$$
+$\SSS$ is a surface with atlas 
+$$
+\mathcal{A} = \{ \sss_1,\sss_2\} \,,
+$$ 
+where we define
+$$
+\sss \colon \R^2 \to \R^3   \,, \quad 
+\sss(u,v):= (\cos(u),\sin(u),v)
+$$
+and 
+\begin{align*}
+\sss_1 & := \sss |_{U_1} \,,   & \sss_2 & := \sss |_{U_2} \,, \\
+U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, 
+& U_2 & := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
+\end{align*}
+Prove that $\SSS$ is a regular surface.
+
+**Solution.** Compute the partial derivatives
+$$
+\sss_u = (-\sin(u),\cos(u),0) \,, \quad 
+\sss_v = (0,0,1) \,.
+$$
+Therefore
+$$
+\sss_u \times \sss_v = (\cos (u), \sin(u), 0)  \,, \quad \norm{\sss_u \times \sss_v} = 1 \,.
+$$
+This implies
+$$
+\sss_u \times \sss_v \neq 0 \,, \quad \forall \, (u,v) \in \R^2 \,,
+$$
+showing that $\sss_u$ and $\sss_v$ are linearly independent. Therefore
+$\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas, making $\SSS$ a regular surface.
+
+:::
+
+
+
+
+::: Example
+### Graph of a function
+
+**Question.** Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+$$
+\Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
+$$
+$\Gamma_f$ is surface with atlas given by
+$\mathcal{A} = \{ \sss \}$, where
+$$
+\sss \colon U \to \Gamma_f \,, \quad 
+\sss(u,v):=(u,v,f(u,v)) \,.
+$$
+Prove that $\Gamma_f$ is a regular surface.
+
+
+**Solution.** Compute the partial derivatives
+$$
+\sss_u = (1,0,f_u) \,, \quad 
+\sss_v = (0,1,f_v) \,.
+$$
+Therefore, the Jacobian matrix is
+$$
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+1  &  0 \\
+0  &  1 \\
+f_u  & f_v \\
+\end{array} 
+\right) \,.
+$$
+Notice that the first minor of $J\sss$ is the identity matrix, which has determinant $1$, and is hence invertible. Therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. This implies $\mathcal{A}$ is a regular atlas, and $\SSS$ is a regular surface.
+
+:::
+
+
+
+::: Definition
+### Spherical coordinates
+
+Consider a point
+$$
+\pp := (x,y,z) \in \R^3 \smallsetminus \{\zero\} \,.
+$$ 
+The point $\pp$ is represented in **spherical coordinates** by
+\begin{align*}
+x & = \rho \cos(\theta) \cos (\fi)    \\
+y & = \rho \sin(\theta) \cos (\fi)   \\
+z & = \rho \sin (\fi) 
+\end{align*}
+where 
+$$
+\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \theta \in [-\pi,\pi] \,, \quad \fi \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
+$$
+with the angles $\theta$ and $\fi$ as in @fig-spherical-coordinates. 
+
+:::
+
+
+![Spherical coordinates in $\R^3$.](/images/spherical_coordinates.png){#fig-spherical-coordinates width=80%}
+
+
+
+
+::: Example
+### Unit sphere in spherical coordinates 
+
+**Question.** Consider the unit sphere in $\R^3$
+$$
+\sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
+$$
+Define the set
+$$
+U := \left\{ (\theta,\fi)  \in \R^2 \divider \theta \in ( -\pi,\pi), \, \fi \in \left(  -\frac{\pi}{2} , \frac{\pi}{2} \right)  \right\} \,,
+$$
+and the chart $\sss \colon U \to \R^3$ by
+$$
+\sss( \theta , \fi ) :=  ( \cos(\theta) \cos(\fi) , \sin(\theta) \cos(\fi) , \sin (\fi)  ) \,.
+$$
+Prove that $\sss$ is regular.
+
+**Solution.** We compute
+\begin{align*}
+\sss_{\theta} & = (-\sin(\theta) \cos(\fi), \cos(\theta) \cos(\fi), 0 ) \\
+ \sss_{\fi} & = ( - \cos(\theta) \sin(\fi), -\sin(\theta) \sin(\fi), \cos(\fi) )  \,.
+\end{align*} 
+Since $(\theta,\fi)\in U$, we have $\fi \in ( -\pi/2, \pi/2 )$. Therefore, the last component of $\sss_\fi$ is non-zero, i.e.,
+$$
+\cos(\fi) \neq 0  \,, \quad \forall \, \fi \in \left( -\frac{\pi}{2},\frac{\pi}{2}  \right) \,.
+$$
+Since the last component of $\sss_\theta$ is $0$, we conclude that $\sss_\theta$ and $\sss_{\fi}$ are linearly independent for all $(\theta,\fi) \in U$. Therefore $\sss$ is regular. Alternatively, we could have computed:
+$$
+\sss_{\theta} \times \sss_{\fi} = 
+( \cos(\theta) \cos^2(\fi), \sin(\theta) \cos^2(\fi), \cos(\fi)\sin(\fi) ) \,,
+$$
+from which
+$$
+\norm{ \sss_{\theta} \times \sss_{\fi} } = |\cos (\fi)| \, .
+$$
+Since $(\theta,\fi)\in U$, we have $\fi \in ( -\pi/2, \pi/2 )$, and so
+$$
+\norm{ \sss_{\theta} \times \sss_{\fi} } = \cos (\fi)  \neq 0 \,.
+$$
+Thus $\sss_{\theta}$ and $\sss_{\fi}$ are linearly independent, and $\sss$ is regular.
+
+:::
+
+
+
+
+::: Example
+### Unit sphere in Cartesian coordinates
+
+**Question.** Consider the unit sphere in $\R^3$
+$$
+\sphere^2 := \left\{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \right\} \,.
+$$
+Define the set
+$$
+U:= \{ (u,v) \in \R^2 \colon u^2 + v^2 < 1  \}\,,
+$$
+and the chart $\sss \colon U \to \R^3$ by
+$$
+\sss (u,v) = \left(u,v,\sqrt{1-u^2-v^2}  \right)
+$$
+Prove that $\sss$ is regular.
+
+**Solution.** Compute
+$$
+\sss_u = (1,0,f_u) \,, \quad 
+\sss_v = (0,1,f_v) \,,
+$$
+where $f_u,f_v$ are the partial derivatives of 
+$$
+f(u,v):=\sqrt{1-u^2-v^2} \,.
+$$
+Therefore, the Jacobian matrix of $\sss$ is
+$$
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+1  &  0 \\
+0  &  1 \\
+f_u  & f_v \\
+\end{array} 
+\right) \,.
+$$
+The first minor of $J\sss$ is the identity matrix, and therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular.
+
+
+:::
+
+
+::: Example
+
+**Question.**
+Consider the surface chart
+$$
+\sss(u,v) = (u,v^2,v^3) \,.
+$$
+Prove that $\sss$ is not regular.
+
+**Solution.** We have
+$$
+\sss_u = (1,0,0) \,, \quad
+\sss_v = (0,2v,3v^2) \,,
+$$
+and therefore 
+$$
+\sss_v(u,0) = (0,0,0) \,, 
+$$
+showing that $\sss_u$ and $\sss_v$ are linearly dependent along the line
+$$
+L = \{ (u,0) \divider u \in \R \} \,.
+$$
+Hence $\sss$ is not a regular chart.
+
+:::
+
+
+::: Example
+
+**Question.** Consider the chart
+$$
+\sss (u,v) = (uf(v),ug(v),v) \,,
+$$
+for $f,g$ smooth functions and $u,v \in \R$. Show that $\sss$ is regular.
+
+
+
+**Solution.**  We compute
+\begin{align*}
+\sss_u & = (f(v), g(v), 0 ) \\
+\sss_v & = (uf'(v), ug'(v), 1)
+\end{align*}
+The vectors $\sss_u$ and $\sss_v$ are clearly linearly independent, since the third components are $1$ and $0$. Therefore $\sss$ is regular.
+
+:::
+
+
+### Reparametrizations
+
+
+::: Definition
+### Reparametrization
+
+Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
+$$
+\sss \colon U \to \R^3 \,, \quad 
+\widetilde{\sss} \colon \widetilde{U} \to \R^3 \,,
+$$ 
+are surface charts. We say that $\widetilde{\sss}$ is a **reparametrization** of $\sss$ if there exists a diffeomorphism
+$$
+\Phi \colon \widetilde{U} \to U \,,
+$$
+such that 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,,
+$$
+that is,
+$$
+\widetilde{\sss}( \tilde{u},\tilde{v} ) = \sss (  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in 
+\widetilde{U} \,.
+$$
+We call $\Phi$ a **reparametrization map**.
+:::
+
+
+
+
+
+::: Theorem
+
+Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
+$$
+\sss \colon U \to \R^3 
+$$ 
+is a regular chart. Assume given a diffeomorphism
+$$
+\Phi \colon \widetilde{U} \to U \,.
+$$
+The reparametrization $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ defined by 
+$$
+\widetilde{\sss} = \sss \circ \Phi
+$$
+is a regular chart, and it holds
+$$
+ \widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} =\det  J \Phi \,  \left( \sssu \times \sssv  \right)
+$$
+
+:::
+
+
+
+::: Definition
+### Transition map
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U \to  \SSS \,, \quad
+\widetilde{\sss} \colon \widetilde{U} \to  \SSS
+$$
+be regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
+$$
+I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+The set $I$ is open in $\SSS$, being intersection of open sets. Define the sets
+$$
+V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{\sss}^{-1} (I) \subseteq \widetilde{U} \,.
+$$
+Note that $V$ and $\widetilde{V}$ are open, by continuity of $\sss$ and $\widetilde{\sss}$. Since $\sss$ and $\widetilde{\sss}$ are homeomorphisms, by construction
+$$
+\sss(V) = \widetilde{\sss} (\widetilde{V} ) = I \,.
+$$
+Therefore, they are well defined the restrictions
+$$
+\sss |_{V} \colon V \to I \,, \quad 
+\widetilde{\sss} |_{\widetilde{V}} \colon \widetilde{V} \to I \,.
+$$
+The maps $\sss |_{V}$ and $\widetilde{\sss} |_{\widetilde{V}}$ are homeomorphisms, being restrictions of homeomorphisms. The composition homeomorphism
+$$
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss}
+$$
+is called a **transition map** from $\sss$ to $\widetilde{\sss}$.
+
+:::
+
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface. The transition maps between regular charts are diffeomorphisms. 
+
+:::
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U \to \SSS \,, \quad
+\widetilde{\sss} \colon \widetilde{U} \to  \SSS
+$$
+be regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
+$$
+I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+Define the open sets
+$$
+V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \wsss^{-1}(I) \subseteq \widetilde{U} \,,
+$$
+and the transition map
+$$
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1}\circ \wsss \,.
+$$
+Then $\sss$ and $\wsss$ are reparametrization of each other, with reparametrization map given by $\Phi$, that is,
+$$
+\wsss = \sss \circ \Phi \,, \qquad \sss = \wsss \circ \Phi^{-1} \,.
+$$
+
+
+:::
+
+
+
+
+
+### Functions between surfaces
+
+
+
+::: Definition  
+### Smooth functions between surfaces
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces and let 
+$$
+f \colon \SSS_1 \to \SSS_2 
+$$
+be a map. We say that:
+
+1. $f$ is *smooth at $\pp \in \SSS_1$*, if there exist charts $\sss_i \colon U_i \to \SSS_i$ for $i=1,2$ such that
+$$
+\pp \in \sss_1(U_1)\,, \quad f(\pp) \in \sss_2(U_2) 
+$$
+and 
+$$
+(\sss_2^{-1} \circ f \circ \sss_1 )  \colon U_1 \to U_2
+$$
+is smooth.
+
+2. $f$ is *smooth*, if it is smooth for each $\pp \in \SSS_1$.
+
+:::
+
+
+
+::: Theorem
+
+If $f \colon \SSS_1 \to \SSS_2$ and $g \colon \SSS_2 \to \SSS_3$ are smooth maps between surfaces, then the composition 
+$$
+(g \circ f) \colon \SSS_1 \to \SSS_3
+$$
+is smooth.
+
+
+:::
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface, and $\sss \colon U \to \SSS$ a regular chart. The inverse
+$$
+\sss^{-1} \colon \sss(U) \to U \subseteq \R^2 \,,
+$$
+is a differentiable function.
+
+:::
+
+
+
+
+::: Theorem
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Make the following assumptions:
+
+1. $V \subseteq \R^3$ is an open set such that 
+$$
+\SSS_1 \subseteq V \,,
+$$
+2. $f \colon V \to \R^3$ is a differentiable function such that  
+$$
+f(\SSS_1) \subseteq \SSS_2 \,.
+$$
+
+Then the restriction 
+$$
+f |_{\SSS_1} \colon \SSS_1 \to \SSS_2 
+$$
+is a differentiable map between surfaces.
+
+:::
+
+
+
+::: Definition
+### Diffeomorphism of surfaces
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. 
+
+1. A map $f \colon \SSS_1 \to \SSS_2$ is a **diffeomorphism**, if $f$ is smooth and admits smooth inverse.
+
+2. We say that $\SSS_1$ and $\SSS_2$ are **diffeomorphic**, if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
+
+:::
+
+
+
+::: Theorem
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a diffeomorphism. If 
+$\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
+$$
+\widetilde{\sss}   \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} := f \circ \sss \,,
+$$
+is a regular chart for $\widetilde{\SSS}$ at $f(\pp)$.
+
+:::
+
+
+::: Definition
+### Local diffeomorphism
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces, and 
+$$
+f \colon \SSS_1 \to \SSS_2 \,,
+$$
+be a differentiable map.
+
+1. $f$ is a **local diffeomorphism** at $\pp \in \SSS_1$ if:
+    * There exists An open set $V \subseteq \SSS_1$ with $\pp \in V$; 
+    * $f(V) \subseteq \SSS_2$ is open;
+    * $f \colon V \to f(V)$ is a diffeomorphism between surfaces.
+
+2. $f$ is a **local diffeomorphism** in $\SSS_1$, if it is a local diffeomorphism at each $\pp \in \SSS_1$.
+
+3. $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for each $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
+
+:::
+
+
+
+
+### Tangent plane
+
+
+::: Definition
+### Tangent vectors and tangent plane
+
+Let $\SSS$ be a surface and $\pp \in \SSS$. 
+
+1. We say that $\vv \in \R^3$ is 
+a **tangent vector** to $\SSS$ at $\pp$, if there exists a smooth curve
+$$
+\g \colon (-\e,\e) \to \R^3 \,, 
+$$
+such that
+$$
+\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,, \quad \vv = \dg(0) \,,
+$$
+where $\e>0$. 
+
+2. The **tangent plane** of $\SSS$ at $\pp$ is the set
+$$
+T_{\pp} \SSS := \{ \vv \in \R^3 \divider \vv \, \mbox{ tangent vector of } \, \SSS \, \mbox{ at } \, \pp \} \,.
+$$
+
+
+:::
+
+
+::: Theorem
+### Curves with values on surfaces
+
+Let $\SSS$ be a regular surface, $\pp \in \SSS$, and $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote
+$$
+(u_0,v_0) = \sss^{-1}(\pp) \,.
+$$
+Suppose $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that 
+$$
+\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
+$$
+Then, there exist smooth functions
+$$
+u , v \colon (\e_0,\e_0) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
+$$
+such that
+$$
+\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e,\e) \,.
+$$
+
+:::
+
+
+
+
+::: Theorem
+### Characterization of Tangent Plane
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. 
+Let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote
+$$
+(u_0,v_0) = \sss^{-1}(\pp) \,.
+$$
+The tangent plane satisfies
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} := \{  \lambda \sss_u + \mu \sss_v \divider \lambda,\mu \in \R \} \,,
+$$
+where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$. 
+
+
+:::
+
+
+
+
+
+
+::: Theorem
+### Equation of tangent plane
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. Let $\sss \colon U \to \SSS$ be a regular chart at $\pp$. Set
+$$
+(u_0,v_0) := \sss^{-1}(\pp) \,, \quad \nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
+$$
+They hold:
+
+1. The equation of the tangent plane $T_{\pp} \SSS$ is given by
+$$
+\xx \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
+$$
+
+2. The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
+$$
+(\xx - \pp) \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
+$$
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Consider the surface $\SSS$ defined by the chart
+$$
+\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
+$$
+for $u \in (0,2\pi)$, $v < 1$.
+
+1. Prove that $\sss$ parametrizes a paraboloid.
+2. Prove that $\sss$ is regular.
+3. Compute the vector $\nn = \sssu \times \sssv$
+4. Consider the point
+$$
+\pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,.
+$$
+Give a basis for $T_{\pp} \SSS$ at the point
+
+5. Compute the cartesian equation of $T_{\pp} \SSS$. Give your answer in the form
+$$
+ax + by + cz = d\,,
+$$
+for suitable $a,b,c,d \in \R$.
+
+
+**Solution.**
+
+1. Denote the coordinates of $\sss$ by
+$$
+\sss(u,v) = (x,y,z) \,.
+$$
+We have
+\begin{align*}
+x^2 + y^2 & = \left( \sqrt{1-v} \cos(u) \right)^2 + \left( \sqrt{1-v} \cos(u) \right)^2 \\
+          & = 1 - v  \\
+          & = 1 - z \,,
+\end{align*}
+showing that $\sss$ parametrizes the paraboloid
+$$
+z = - x^2 - y^2 + 1 \,.
+$$
+
+2. Proof that $\sss$ is regular:
+\begin{align*}
+\sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
+\sss_v & = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
+\end{align*}
+The last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, thus $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. 
+
+3. We compute:
+\begin{align*}
+\nn & = \sss_u \times \sss_v \\
+    & = 
+\left| 
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\sqrt{1-v} \sin(u) & \sqrt{1-v} \cos(u) & 0 \\
+-\frac{1}{2} (1-v)^{-1/2}  \cos(u) & -\frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
+\end{array}
+\right| \\
+& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
+\end{align*}
+
+4. Notice that 
+$$
+\sss \left( \frac{\pi}{4}, 0 \right)  = \pp \,.
+$$
+A basis for $T_{\pp} \SSS$ is given by the vectors
+\begin{align*}
+\sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
+\sss_v  \left( \frac{\pi}{4}, 0 \right) & = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
+\end{align*}
+
+5. Using the calculation for $\nn$ in Point 3, we find
+$$
+\nn  \left( \frac{\pi}{4}, 0 \right) 
+=  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
+$$
+The equation for $T_{\pp} \SSS$ is therefore
+$$
+\xx \cdot \nn = 0 \,, \quad \forall \, \xx \in \R^3 \,.
+$$
+The above reads
+$$
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,,
+$$
+which implies 
+$$
+\sqrt{2} \, x + \sqrt{2} \, y -  z = 0 \,,
+$$
+
+:::
+
+
+
+### Unit normal and orientability
+
+::: Definition
+### Standard unit normal of a chart
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. The **standard unit normal** of $\sss$ is the smooth function
+$$
+\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+$$
+
+:::
+
+
+
+
+::: Example
+### Standard unit normal of the plane
+
+**Question.** Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ linearly independent. Consider the plane charted by
+$$
+\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+Compute the standard unit normal to $\sss$.
+
+**Solution.** We have
+$$
+\sss_u = \pp \,, \quad 
+\sss_v = \mathbf{q} \,, \quad 
+$$
+and therefore
+$$
+\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
+$$
+
+
+:::
+
+
+
+::: Definition
+### Unit normal of a surface
+
+Let $\SSS$ be a regular surface. A **standard unit normal** to $\SSS$ is a smooth function
+$\NN \colon \SSS \to \R^3$ such that
+$$
+\NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
+$$
+
+:::
+
+
+
+
+::: Definition
+### Orientable surface
+
+Let $\SSS$ be a regular surface. We say that $\SSS$ is **orientable** if there exists a standard unit normal $\NN \colon \SSS \to \R^3$ and an atlas $\mathcal{A}$ such that 
+$$
+\NN \circ \sss = \NN_{\sss} \,, \qquad \forall \, \sss \in \mathcal{A} \,.
+$$
+
+:::
+
+
+
+
+
+::: Example
+
+**Question.** Let $\SSS$ be the surface described by the chart
+$$
+\sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
+$$
+
+1. Prove that $\sss$ is regular.
+2. Compute the standard unit normal to $\sss$.
+
+
+**Solution.**
+
+1. Compute the following quantities:
+\begin{align*}
+\sss_{u} & =\left(e^{u}, 1,0\right) \\
+\sss_{v} & =(0,1,1) \\
+\sss_{u} \times \sss_{v} & = \left|\begin{array}{ccc}
+\ii & \jj & \kk \\
+e^{u} & 1 & 0 \\
+0 & 1 & 1
+\end{array}\right| \\
+& = \left(1,-e^{u}, e^{u}\right)
+\end{align*}
+Since 
+$$
+\norm{\sss_u \times \sss_v} =  \sqrt{1+2 e^{2 u}} \geq 1\,,
+$$
+we see that $\sss_u \times \sss_v \neq \zero$, showing that $\sss$ is regular. 
+
+2. The standard unit normal to $\sss$ is
+$$
+\NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
+     = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
+$$
+
+
+:::
+
+
+
+
+
+### Differential of smooth functions
+
+
+::: Definition
+### Differential of smooth function
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. 
+The differential $d_{\pp}f$ of $f$ at $\pp$ is defined as the map
+$$
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad d_{\pp}f (\vv) := (f \circ \g)'(0) \,,
+$$
+where $\g \colon (-\e,\e) \to \SSS$ is any smooth curve such that
+$$
+\g(0) = \pp \,, \qquad  \dg(0) = \vv \,.
+$$
+
+:::
+
+
+
+
+
+
+
+::: Example
+### Computing $d_{\pp}f$ using the definition
+
+**Question.** Consider the portion of the plane $\{z=0\}$,
+$$
+\SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
+$$ 
+and the unit cylinder
+$$
+\widetilde{\SSS} = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \}  \,.
+$$
+Define the map 
+$$
+f \colon S \to \widetilde{\SSS} \,, \quad 
+f(x,y,0) := (\cos x , \sin x, y) \,.
+$$
+
+1. Compute $T_{\pp}\SSS$.
+
+2. Prove that the differential $d_{\pp}f$ at
+$$
+\pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
+$$
+is given by
+$$
+d_{\pp} f (\vv) =   (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
+$$
+
+
+**Solution.** 
+
+1. A chart for $\SSS$ is given by
+$$
+\sss(u,v) = (u,v,0) \,.
+$$
+Therefore 
+$$
+\sss_u = (1,0,0) \,, \qquad \sss_v = (0,1,0) \,, 
+$$
+from which
+\begin{align*}
+T_{\pp} \SSS & = \operatorname{span} \{ \sss_u,\sss_v \} \\
+             & = \operatorname{span} \{ (1,0,0), (0,1,0)  \} \\
+             & = \{ (\lambda,\mu,0) \, \colon \, \lambda,\mu \in \R \} \,.
+\end{align*}
+
+2. From the answer to Point 1, we see that 
+$$
+\vv = (\lambda,\mu,0) \in T_{\pp} \SSS \,. 
+$$
+Define the curve $\g \colon (-\e,\e) \to \SSS$ by setting
+$$
+\g(t) := \sss(u_0 + t \lambda, v_0 + t \mu ) = (u_0 + t \lambda, v_0 + t \mu, 0)\,.
+$$
+Clearly,
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv = (\lambda,\mu,0)\,.
+$$
+We have
+\begin{align*}
+(f \circ \g) (t) & = f(u_0 + t \lambda, v_0 + t \mu,0) \\
+                 & = ( \cos(u_0 + t \lambda), \sin(u_0 + t \lambda),v_0 + t \mu ) \,,\\
+(f \circ \g)' (t) & = (- \lambda \sin (u_0 + t\lambda), \lambda \cos (u_0 + t \lambda), \mu) \,.
+\end{align*}
+Therefore, the differential is given by
+$$
+d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
+$$
+
+:::
+
+
+
+
+
+::: Theorem
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Denote the differential of $f$ by
+$$
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
+$$
+We have:
+
+1. $d_{\pp}f (\vv)$ depends only on $f, \pp,\vv$ (and not on $\g$).
+
+2. $d_{\pp} f$ is linear, that is,
+$$
+d_{\pp}f (\lambda \vv + \mu \ww) = \lambda d_{\pp}f (\vv) + \mu d_{\pp}f (\ww) \,, 
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$ and $\lambda,\mu \in \R$.
+3. Let 
+$$
+\sss \colon U \to \SSS \,, \quad \widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS} \,,
+$$
+be regular charts at $\pp$ and $f(\pp)$, respectively. Denote by 
+$$
+(u,v)  \mapsto ( \alpha(u,v), \beta(u,v) ) 
+$$
+the components of the smooth map
+$$
+\Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
+$$
+In particular it holds
+$$
+\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
+\quad \forall \, (u,v) \in U \,.
+$$
+The matrix of the linear map $d_{\pp}f$ with respect to the basis 
+$$
+\{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
+\{ \widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\pp)} \widetilde{\SSS} \,,
+$$
+is given by the Jacobian of the map $\Psi$, that is,
+$$
+d_{\pp} f = J\Psi = \left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u & \beta_v \\
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+
+::: Example
+### Computing the matrix of $d_{\pp}f$
+
+**Question.** Consider the unit cylinder, charted by
+$$
+\sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
+$$
+Consider the plane $\widetilde{\SSS}$ charted by
+$$
+\widetilde{\sss}(u,v) = (u,v,0) \,, \quad (u,v) \in \wU = \R^2 \,.
+$$
+Define the map
+$$
+f \colon \SSS \to \wSSS \,, \quad 
+f(x,y,z) = (y,xz,0) \,.
+$$
+Compute the matrix of $d_{\pp} f$ with respect to these charts.
+
+**Solution.** We need to compute the map
+$$
+\Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
+$$
+Clearly, we have
+$$
+\widetilde{\sss}^{-1} (u,v,0) =(u,v) \,.
+$$
+Therefore
+\begin{align*}
+\Psi(u,v) & = \widetilde{\sss}^{-1} \left( f(\sss(u,v))    \right) \\
+          & = \widetilde{\sss}^{-1} \left( f(\cos u, \sin u, v )    \right) \\
+          & =  \widetilde{\sss}^{-1} \left( \sin (u), \cos (u) v, 0    \right) \\
+          & = \left( \sin (u), \cos (u) v    \right) \,.
+\end{align*}
+The components of $\Psi$ are
+$$
+\alpha(u,v) = \sin(u) \,, \qquad \beta (u,v) =  \cos (u) v  \,.
+$$
+Therefore 
+\begin{align*}
+\alpha_u & = \cos (u) \,, & \alpha_v &  = 0 \\
+\beta_u  & = -\sin (u) v \,,  & \beta_v &  = \cos(u) 
+\end{align*}
+The matrix of $d_{\pp}f$ is hence
+$$
+d_{\pp}f = J\Psi = 
+\left(
+\begin{array}{cc}
+\cos (u) & 0 \\
+-\sin (u) v  & \cos(u) \\
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+
+::: Theorem
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Suppose that 
+$$
+f \colon \SSS_1 \to \SSS_2 
+$$
+is smooth, and let $\pp \in \SSS_1$. They are equivalent:
+
+1. $f$ is a local diffeomorphism at $\pp$.
+2. The differential $d_{\pp} f \colon T_{\pp} \SSS_1 \to T_{f(\pp)} \SSS_2$ is invertible at $\pp$.
+
+
+:::
+
+
+
+
+### Level surfaces
+
+::: Definition
+### Level surface
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
+$$
+\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+
+
+:::
+
+
+
+::: Theorem
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level surface
+$$
+\SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Then $\SSS_f$ is a regular surface.
+
+:::
+
+
+
+
+::: Example
+### Circular cone
+
+**Question.** Consider the circular cone
+$$
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
+$$
+Prove that $\SSS$ is a regular surface.
+
+**Solution.** Define the open set 
+$$
+V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
+$$
+and the function $f \colon V \to \R$ by
+$$
+f(x,y,z) = x^2 + y^2 - z^2 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS = \SSS_f \,,
+$$
+we conclude that $\SSS$ is a regular surface.
+
+:::
+
+
+
+
+::: Theorem
+### Tangent plane of level surfaces
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Let $\pp \in \SSS_f$. We have
+$$
+\nabla f(\pp) \perp T_{\pp} \SSS_f \,.
+$$ 
+In particular, they hold:
+
+1. The cartesian equation of $T_{\pp} \SSS_f$ is given by
+$$
+\nabla f (\pp) \cdot \xx = 0    \,, \quad  \forall  \, \xx \in \R^3\,,
+$$
+
+2. The cartesian equation for $\pp + T_{\pp} \SSS_f$ is given by
+$$
+\nabla f(\pp) \cdot (\xx- \pp) = 0 \,, \quad \forall \, \xx \in \R^3\,.
+$$
+
+:::
+
+
+
+
+::: Example
+## Unit cylinder
+
+**Question.** Consider the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
+$$
+
+1. Prove that $\SSS$ is a regular surface. 
+2. Let 
+$$
+\pp = \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) \in \SSS
+$$
+Show that $T_{\pp} \SSS$ has cartesian equation 
+$$
+x + y = 0 \,.
+$$
+
+
+**Solution.**
+
+1. Define the open set
+$$
+V = \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+$$
+Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 -1 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS = \SSS_f \,,
+$$
+we conclude that $\SSS$ is a regular surface.
+
+2. Using the expression for $\nabla f$ found in Point 1, we get
+$$
+\nabla f (\pp) = \nabla f \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) = 
+(\sqrt{2},\sqrt{2},0) \,.
+$$
+The equation for $T_{\pp} \SSS$ is
+$$
+\nabla f (\pp) \cdot \xx = 0 \,, \quad \forall \, \xx \in \R^3 \,.
+$$
+Therefore, we find
+\begin{align*}
+\nabla f (\pp) \cdot \xx = 0 \,\, & \iff \,\,
+(\sqrt{2},\sqrt{2},0) \cdot (x,y,z) = 0 \\ 
+\,\, & \iff \,\, 
+x + y = 0 \,.
+\end{align*}
+
+:::
+
+
+
+
+### Ruled surfaces
+
+
+::: Definition
+### Ruled surface
+
+A **ruled surface** is a surface with 
+chart
+$$
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
+$$
+where
+
+1. $\g \colon (a,b) \to \R^3$ is a smooth curve,
+2. $\mathbf{a} \colon (a,b) \to \R^3$ is a smooth curve,
+3. $\dg(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. 
+
+We say that:
+
+1. $\g$ is the **base curve**.
+2. The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**.
+
+:::
+
+
+::: Theorem
+
+A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
+
+:::
+
+
+
+
+::: Example
+### Unit Cylinder is ruled surface
+
+**Question.** Prove that the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
+$$
+is a ruled surface.
+
+
+**Solution.** 
+We know that the unit cylinder is charted by
+$$
+\sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+We can rewrite $\sss$ as
+$$
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
+$$
+with
+$$
+\g(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
+$$
+Note that the vectors
+$$
+\dg = (-\sin(u), \cos(u), 0 ) \,, \quad \mathbf{a} = (0,0,1)
+$$
+are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surface.
+
+:::
+
+
+
+
+::: Example
+### Möbius band
+
+**Question.** The Möbius band is a ruled surface with chart
+$$
+\sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
+$$
+where 
+$$
+\g(u) = (\cos(u), \sin(u), 0) 
+$$
+is the unit circle, and
+$$
+\mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
+                  -\sin \left( \frac{u}{2} \right) \sin(u),
+                   \cos \left( \frac{u}{2} \right)   \right) 
+$$
+is a vector which does a half rotation while going around the unit
+circle $\g$. In particular 
+$$
+\sss (u,v) =  \left(   
+  \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
+  \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \sin(u),
+  v \cos \left( \frac{u}{2} \right)   \right) \,.
+$$
+
+1. Compute the standard unit normal to $\sss$.
+2. Prove that $\SSS$ is **non orientable**. 
+
+
+**Solution.** 
+
+1. From the formula for $\sss$, it is easy to compute that 
+$$
+\sssu \times \sssv = \left( - \cos(u) \cos \left(  \frac{u}{2} \right),   - \sin(u) \cos \left(  \frac{u}{2} \right) , - \sin \left(  \frac{u}{2} \right) \right) \,.
+$$
+It is also immediate to check that $\norm{\sssu \times \sssv} = 1$, and therefore the principal unit normal of $\sss$ is
+$$
+\NN_{\sss} = \sss_u \times \sssv \,.
+$$
+
+2. Suppose by contradiction that $\SSS$ is orientable. This means there exists a globally defined principal unit normal vector
+$$
+\NN \colon \SSS \to \R^3 \,.
+$$
+By definition of principal normal, we have either 
+$$
+\NN \circ \sss = \NN_{\sss}  \,.
+$$
+Consider the point $\pp = (1,0,0)$ on $\SSS$. Notice that, by continuity, $\pp$ can be obtained via $\sss$ through the limits
+$$
+\pp = \lim_{u \to 0^+} \sss(u,0) = \lim_{u \to 2\pi^-} \sss(u,0) \,.
+$$
+Since $\NN$ is continuous, the above implies
+$$
+\NN(\pp) = \lim_{u \to 0^+} \NN \circ \sss(u,0) = \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) \,.
+$${#eq-mobius-not-orientable-bis}
+However, by direct calculation:
+\begin{align*}
+\lim_{u \to 0^+} \NN \circ \sss(u,0) & =
+\lim_{u \to 0^+} \NN_{\sss} (u,0) = (-1,0,0) \\
+\lim_{u \to 2\pi^-} \NN \circ \sss(u,0) & =
+\lim_{u \to 2\pi^-} \NN_{\sss} (u,0) = (1,0,0)
+\end{align*}
+This clearly contradicts (@eq-mobius-not-orientable-bis). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
+
+
+:::
+
+
+::: Example
+
+**Question.** Show that the surface 
+$$
+S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\}
+$$ 
+is a ruled surface.
+
+**Solution.** We shall make a change of variables. Notice that we can rearrange
+$$
+\begin{aligned}
+x^{2}+10 x y+16 x^{2}-z & =0 \\
+(x+8 y)(x+2 y) & = z .
+\end{aligned}
+$$
+Let 
+$$
+u=x+8 y, \qquad  v=x+2 y \,.
+$$ 
+Then $u v=z$ and
+$$
+\begin{aligned}
+u-v & =6 y \quad \implies \quad  y=\frac{u-v}{6} \\
+x & =u-8 y \\
+& =u-\frac{8(u-v)}{6} \\
+& =\frac{4 v-u}{3} .
+\end{aligned}
+$$
+It follows that if $(x, y, z) \in S$ then
+$$
+\begin{aligned}
+(x, y, z) & =\left(\frac{4 v-u}{3}, \frac{u-v}{6}, u v\right) \\
+& =\left(-\frac{u}{3}, \frac{u}{6}, 0\right)+v\left(\frac{4}{3},-\frac{1}{6}, u\right) \\
+& = \g(u) + v \mathbf{a}(u) \,,
+\end{aligned}
+$$
+where we have set
+\begin{align*}
+\g (u) & = \left(-\frac{u}{3}, \frac{u}{6}, 0\right) \\
+\mathbf{a}(u) & = \left(\frac{4}{3},-\frac{1}{6}, u\right) \,.
+\end{align*}
+Notice that 
+$$
+\dg(u) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,.
+$$
+For $u \neq 0$, we clearly have that $\mathbf{a}(u)$ and $\dg(u)$ are linearly independent (the last component of $\dg(u)$ is $0$). For $u = 0$ we have
+$$
+\dg(0) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,, \qquad 
+ \mathbf{a}(0) = \left(\frac{4}{3},-\frac{1}{6}, 0\right) \,,
+$$
+which are clearly linearly independent. Therefore, $S$ is a ruled surface.
+
+:::
+
+
+
+### Surfaces of Revolution
+
+
+::: Definition
+### Surface of revolution
+
+Let $\g \colon (a,b) \to \R^3$ be a smooth curve in the $(x,z)$-plane, that is,
+$$
+\g(v) = (f(v), 0 , g(v)) \,.
+$$
+Suppose that $f>0$. The surface $\SSS$ obtained by rotating $\g$ about the $z$-axis is called **surface of revolution**. A chart for $\SSS$ is given by
+$$
+\sss (u,v) :=  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
+$$
+with $u \in [0,2\pi)$ and $v \in (a,b)$.
+
+:::
+
+
+::: Theorem
+
+A surface of revolution is regular if and only if $\g$ is regular.
+
+:::
+
+
+
+
+::: Example
+### Catenoid
+
+**Question.** The catenary function is defined by
+$$
+f(v) = \cosh (v) \,.  
+$$
+The Catenoid $\SSS$ is the surface of revolution obtained by rotating the catenary about the $z$-axis, that is, by rotating the curve
+$$
+\g(v) = \left(  \cosh (v), 0 , v \right) \,.
+$$
+A chart $\SSS$ is given by
+$$
+\sss (u,v) = (\cos(u) \cosh (v) , \sin(u) \cosh (v), v) \,, 
+$$
+where $u \in [0,2\pi)$ and $v \in \R$. Prove that $\SSS$ is a regular surface.
+
+**Solution.** Note that $f>0$ and 
+$$
+\dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
+\norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
+$$
+Therefore $\g$ is regular. As $\SSS$ is a surface of revolution, we conclude that $\SSS$ is regular.
+
+
+:::
+
+
+
+
+
+
+
+### First fundamental form
+
+
+
+::: Definition
+### First fundamental form
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. The 
+**first fundamental form** of $\SSS$ at $\pp$ is the bilinear symmetric map
+$$
+I_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R \,, \quad I_{\pp} (\vv,\ww) := \vv \cdot \ww \,.
+$$
+
+
+:::
+
+
+
+::: Definition
+### Coordinate functions on tangent plane  {#definition-coordinate-functions}
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. 
+For each $\pp \in \sss(U)$ we have
+$$
+T_{\pp} \SSS = \operatorname{span} \{\sss_u,\sss_v\} \,,
+$$
+where $\sss_u$ and $\sss_v$ are evaluated at the point $(u,v) \in U$ such that 
+$$
+\sss(u,v)=\pp \,.
+$$
+Therefore, for each $\vv \in T_{\pp} \SSS$, there exist $\lambda,\mu \in \R$ such that
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,.
+$$
+The **coordinate functions** on $T_{\pp} \SSS$ are the linear maps
+$$
+du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
+\quad dv(\vv) := \mu \,.
+$$
+
+:::
+
+
+
+::: Definition
+### First fundamental form of a chart
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
+$$
+E , F , G \colon U \to \R 
+$$
+by setting
+$$
+E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
+G := \sss_v \cdot \sss_v \,.
+$$
+The **first fundamental form** of $\sss$ is the quadratic form
+$$
+\mathscr{F}_1 \colon T_{\pp} \SSS \to \R
+$$
+defined by
+$$
+\mathscr{F}_1 (\vv) := E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,,
+$$
+for all $\vv \in T_{\pp} \SSS$, and $\pp \in \sss(U)$, where $E,F,G$ are evaluated at 
+$$
+(u,v) = \sss^{-1}(\pp) \,.
+$$
+
+:::
+
+
+
+
+::: Theorem
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$, and $\pp \in \sss(U)$. Then
+$$
+I_{\pp} (\vv,\ww) = (du (\vv), dv(\vv) )  \, 
+\left( 
+\begin{array}{cc}
+E & F \\
+F & G 
+\end{array}
+\right) \, (du(\ww) , dv(\ww))^T \,,
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathscr{F}_1$ is the quadratic form associated to the symmetric bilinear form $I_{\pp}$, that is,
+$$
+\mathscr{F}_1 (\vv) = I_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+
+
+:::
+
+
+
+
+::: Definition
+
+With a little abuse of notation, we also denote by $\mathscr{F}_1$ the $2 \times 2$ matrix
+$$
+\mathscr{F}_1 := 
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+
+
+
+::: Theorem
+### First fundamental form and reparametrizations
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,,
+$$
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the first fundamental forms of $\sss$ and $\wsss$ by, respectively,
+\begin{align*}
+\mathscr{F}_1 & = E \, du^2 + 2F \, du dv + G \, dv^2 \,, \\
+\widetilde{\mathscr{F}}_1 & = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
+\end{align*}
+Then, the matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
+$$
+\left(
+\begin{array}{cc}
+\widetilde{E} & \widetilde{F} \\
+\widetilde{F} & \widetilde{G}
+\end{array}
+\right)  
+= 
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)
+\, 
+J \Phi  \,,
+$$ 
+where $J\Phi$ is the Jacobian of $\Phi$
+$$
+J\Phi = \left(   
+\begin{array}{cc}
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,.
+$$
+
+
+
+:::
+
+
+
+::: Example
+### Plane
+
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
+$$
+\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = du^2 + dv^2 \,.
+$$
+
+**Solution.** We have
+$$
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
+$$
+and therefore, using that $\pp$ and $\mathbf{q}$ are orthonormal,
+\begin{align*}
+E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
+F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
+G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
+\end{align*}
+The first fundamental form of $\sss$ is, therefore
+$$
+\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
+
+:::
+
+
+
+::: Example
+### Plane in polar coordinates
+
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
+$$
+\sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
+$$
+
+**Solution.** We have
+\begin{align*}
+\sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
+\sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
+\end{align*}
+and therefore 
+\begin{align*}
+E & = \sss_r \cdot \sss_r \\
+    & = \cos^2(\theta)\norm{\pp}^2 + \sin^2(\theta)\norm{\mathbf{q}}^2 + 2 \cos(\theta) \sin(\theta) \pp \cdot \mathbf{q} \\
+    & = 1 \\
+F & = \sss_r \cdot \sss_{\theta} = 0 \\
+G & = \sss_{\theta} \cdot \sss_{\theta} = r^2 \\
+\end{align*}
+Then the first fundamental form is
+$$
+\mathscr{F}_1 = E \, dr^2 + 2 F\, dr \, d\theta + G \, d\theta^2 = dr^2 + r^2 d\theta^2 \,.  
+$$
+
+:::
+
+
+::: Example
+### Unit cylinder
+
+Consider the unit cylinder with chart
+$$
+\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = du^2 + dv^2 \,.
+$$
+
+*Solution.* We have
+$$
+\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
+$$
+and therefore 
+\begin{align*}
+E & = \sss_u \cdot \sss_u = 1 \\
+F & = \sss_u \cdot \sss_v = 0 \\
+G & = \sss_v \cdot \sss_v = 1 \\
+\end{align*}
+Then the first fundamental form is
+$$
+\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
+
+:::
+
+
+
+
+
+
+
+
+
+
+

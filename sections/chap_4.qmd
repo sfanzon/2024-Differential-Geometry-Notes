@@ -4285,7 +4285,7 @@ The proof is based on the Inverse Function Theorem \ref{theorem-inverse-function
 
 
 
-## Families of Surfaces
+## Examples of Surfaces
 
 In this section we discuss a few families of surfaces:
 
@@ -4749,15 +4749,21 @@ in the following way.
 ::: Definition
 ### Ruled surface
 
-Let $\g \colon (a,b) \to \R^3$ be a smooth curve and $\mathbf{a} \colon (a,b) \to \R^3$ a vector, such that $\dg(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. A **ruled surface** is a surface with 
+A **ruled surface** is a surface with 
 chart
 $$
-\sss(u,v) = \g(u) + v \mathbf{a}(u) \,.
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
+where
+
+1. $\g \colon (a,b) \to \R^3$ is a smooth curve,
+2. $\mathbf{a} \colon (a,b) \to \R^3$ is a smooth curve,
+3. $\dg(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. 
+
 We say that:
 
-- $\g$ is the **base curve**.
-- The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**.
+1. $\g$ is the **base curve**.
+2. The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**.
 
 :::
 
@@ -6228,7 +6234,11 @@ We want to define the notion of angle between tangent vectors.
 ### Angle between tangent vectors
 
 Let $\SSS$ be a regular surface and $\pp \in \SSS$. The angle between
-two vectors $\vv , \ww \in T_{\pp} \SSS$ is defined as the number $\theta$ such that
+two vectors $\vv , \ww \in T_{\pp} \SSS$ is defined as the number 
+$$
+\theta(\vv,\ww) \in [0,\pi]\,,
+$$ 
+such that
 $$
 \cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \ww \| } \,.
 $$
@@ -6327,7 +6337,7 @@ The angle $\theta$ between $\g$ and $\tg$ is the angle between $\dg(t_0)$ and $\
 $$
 \cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,,
 $$
-where $\tg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
+where $\dg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
 
 :::
 
@@ -6352,7 +6362,7 @@ The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-where $u,v,\tilde{u},\tilde{v}$ are smooth functions such that
+where $u,v,\tilde{u},\tilde{v} \colon (a,b) \to \R$ are smooth functions such that
 $$
 \g(t) = \sss (u(t),v(t)) \,, \quad 
 \tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
@@ -6418,13 +6428,20 @@ vectors. These will be called **conformal maps**.
 ::: Definition
 ### Conformal map
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A local diffeomorphism $f \colon \SSS \to \widetilde{\SSS}$ is a **conformal mapping** if for all $\pp \in \SSS$ and $\vv , \ww \in T_{\pp} \SSS$ is holds
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces, and 
 $$
-\theta = \tilde{\theta} \,,
+f \colon \SSS \to \wSSS
 $$
-with $\theta$, $\tilde{\theta}$ the angles between $\vv, \ww$ and $d_{\pp} f(\vv)$, $d_{\pp} f(\ww)$, respectively.
+a local diffeomorphism. We say that $f$ is a **conformal map** if for all $\pp \in \SSS$ and $\vv , \ww \in T_{\pp} \SSS$ is holds
+$$
+\theta = \widetilde{\theta} \,,
+$$
+where:
 
+- $\theta$ is the angle between $\vv$ and $\ww$,
+- $\widetilde{\theta}$ is the angle between $d_{\pp} f(\vv)$ and $d_{\pp} f(\ww)$.
 
+In this case, we say that $\SSS$ and $\wSSS$ are **conformal**.
 :::
 
 
@@ -6457,7 +6474,7 @@ $$
 $$
 
 
-> This follows immediately by the definition of angle between tangent vectors.
+*Proof.* Follows immediately by the definition of angle between vectors.
 
 :::
 
@@ -6495,7 +6512,7 @@ showing that $f$ is a conformal map.
 :::
 
 
-Therefore every local isometry is a conformal map. The converse is false,
+Therefore, every local isometry is a conformal map. The converse is false,
 as we will show in Example \ref{example-conformal} below. 
 Before giving the example, let us provide a characterization of conformal
 maps in terms of the first fundamental form.
@@ -6512,6 +6529,8 @@ $$
 $$
 
 :::
+
+
 
 
 ::: Proof
@@ -6628,6 +6647,8 @@ showing that $f$ is a conformal map.
 :::
 
 
+The following result gives a practical necessary and sufficient condition to check if a map is conformal.
+
 
 ::: {.Theorem #theorem-conformal-fff}
 
@@ -6636,9 +6657,9 @@ Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \wi
 1. $f$ is a conformal map.
 2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by 
 $$
-\widetilde{\sss} = f \circ \sss \colon U \to \widetilde{\SSS} \,.
+\widetilde{\sss}  \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} = f \circ \sss \,.
 $$ 
-There exists $\lambda \colon U \to \R$ such that 
+Then, there exists $\lambda \colon U \to \R$ such that 
 $$
 \widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
 $$
@@ -6660,90 +6681,189 @@ f \colon \SSS \to \widetilde{\SSS}
 $$
 is a conformal map, it is sufficient to verify Condition 2 in Theorem \ref{theorem-conformal-fff} on one atlas of $\SSS$. Then, automatically, all other atlases will verify the condition, ensuring that $f$ is a conformal map. 
 
-> Proof. This can be seen by replicating the same argument found in Remark \ref{remark-local-isometry-chart}.
+*Proof.* This can be seen by adapting the argument found in Remark \ref{remark-local-isometry-chart}.
 
 :::
 
 
+The following result gives a sufficient condition to prove that two regular surfaces are conformal.
+
+
+
+::: {.Theorem  #theorem-conformal-fff-2}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
+$$
+\sss \colon U \to \SSS \,, \qquad 
+\wsss \colon U \to \wSSS \,.
+$$
+Assume there exists $\lambda \colon U \to \R$ such that 
+$$
+\widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+$$
+where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\sss$ and $\widetilde{\sss}$, respectively. We have:
+
+1. The surfaces $\sss(U)$ and $\wSSS$ are conformal.
+2. A conformal map is given by
+$$
+f \colon \sss(U) \to \wSSS \,, \qquad 
+f = \wsss \circ \sss^{-1} \,.
+$$
+
+:::
+
+
+The proof follows by adapting the argument in the proof of Theorem \ref{theorem-local-isometry-2}, and by applying Theorem \ref{theorem-conformal-fff}. This is left as an exercise.
+
+
+
+
+
+::: Example
+### Stereographic Projection {#example-conformal}
+
+Denote the unit sphere by 
+$$
+\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
+$$
+and consider the surface
+$$
+\SSS = \sphere^2 \smallsetminus \{N\} \,,
+$$
+where the point $N = (0,0,1)$ is the North Pole. Denote the plane $\{z = 0\}$ by
+$$
+\wSSS = \{ (x,y,z) \in \R^3 \, \colon \, z = 0 \} \,,
+$$ 
+The plane $\{z=0\}$ slices through the equator of the sphere. Let $P=(x,y,z)$ be any point on $\sphere^2$ except the north pole. The line joining the north pole to $P$ intersects the plane $\{z=0\}$ at the point $P'$, see @fig-stereographic-4. The point $P'$ defines the *Stereographic Projection* map, which is easily computed to be:
+$$
+f \colon \SSS \to \wSSS \,, \quad 
+f(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z},0  \right) \,.
+$$
+Prove that:
+
+1. $f$ is a conformal map.
+2. $f$ is not a local isometry.
+
+**Note**: In particular, the Sphere and the Plane are conformal.
+
+::: {.content-hidden}
+Notice that $\pi$ is slightly different from the map described in @fig-stereographic: there the projection is done onto the plane $\{z=-1\}$, while in this example we project on the plane $\{z=0\}$. This is just because calculations are more convenient when projecting on $\{z=0\}$. 
+
+:::
+
+
+*Solution.* It is not difficult to prove that $f$ is invertible, with inverse given by 
+$$
+\sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
+$$
+We have that $\sss$ is a regular chart for $\SSS$, forming an altas of one chart. It is straightforward to compute that the coefficients of the first fundamental form of $\sss$ are
+$$
+E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
+$$
+In particualar the fisrt fundamental form is
+$$
+\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,.
+$$
+Define the chart of $\wSSS$: 
+$$
+\wsss = f \circ \sss \,.
+$$
+Since $\sss$ is the inverse of $f$, we have that
+$$
+\wsss(u,v) = (u,v,0) \,.
+$$
+As already computed, the first fundamental form of $\wsss$ is 
+$$
+{\wFF}_1 = du^2 + dv^2 \,.
+$$
+We can now conclude:
+
+1. We have that
+$$
+{\wFF}_1 = \frac{1}{\lambda} {\FF}_1  \,.
+$$
+Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-conformal-fff} we conclude that $f$ is a conformal map.
+
+2. Since ${\lambda}$ is not always equal to $1$, we have that 
+$$
+{\wFF}_1 \neq {\FF}_1 \,.
+$$
+Therefore, by Theorem \ref{theorem-local-isometry}, we conclude that $f$ cannot be a 
+local isometry.
+
+::: {.content-hidden}
+However, $\sss$ is not equi-areal. Indeed, recall that the first fundamental form of the plane is $du^2 + dv^2$. Therefore the area element of the plane is $1$. 
+The area element for $\sss$ is
+$$
+EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
+$$
+showing that $\sss$ is not equi-areal. 
+:::
+
+:::
+
+
+![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
+
+
+Let us give another example, showing once again that Sphere and Plane are conformal.
 
 ::: Example 
-### Conformal maps are not local isometries {#example-conformal}
+### Sphere and Plane are conformal
 
-Consider the plane $\SSS$ with chart 
+Consider the plane 
 $$
-\sss(u,v) := (u,v,0) \,.
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x = 0 \} \,,
+$$ 
+with chart
 $$
-Let $\widetilde{\SSS}$ be the sphere with parametrization
+\sss(u,v) := (u,v,0) \,, \quad u,v \in \R \,.
 $$
-\widetilde{\sss}(u,v) := \left(  \sech(u) \cos(v), \sech(u) \sin(v) , \tanh (u) \right) \,.
+Let $\widetilde{\SSS}$ be the sphere $\sphere^2$ with parametrization
 $$
-We have
+\widetilde{\sss}(u,v) := \left(  \cos(u) \sech(v), \sin(u) \sech(v) , \tanh (v) \right) \,.
 $$
-\sss_u = (1,0,0) \,, \quad 
-\sss_v = (0,1,0) \,,
-$$
-so that 
-\begin{align*}
-E & = \sss_u \cdot \sss_u =  1 \\ 
-F & = \sss_u \cdot \sss_v =  0 \\ 
-G & = \sss_v \cdot \sss_v =  1 \\ 
-\end{align*}
-Therefore the first fundamental form of $\SSS$ is
+
+1. Compute the first fundamental forms of $\sss$ and $\wsss$.
+2. Use Theorem \ref{theorem-conformal-fff-2} to show that $\SSS$ and $\wSSS$ are conformal.
+
+
+*Solution.* 
+
+1. As already computed, the first fundamental form of $\sss$ is 
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 Using the identitities
 \begin{align*}
-\frac{d}{du} \left( \sech (u)  \right) & = - \sech (u) \tanh (u) \,, \\
-\frac{d}{du} \left( \tanh (u) \right)  & = {\sech}^2 (u) \,,
+\frac{d}{dv} \left( \sech (v)  \right) & = - \sech (v) \tanh (v) \,, \\
+\frac{d}{dv} \left( \tanh (v) \right)  & = {\sech}^2 (v) \,,
 \end{align*}
 we obtain
 \begin{align*}
-\widetilde{\sss}_u & = ( -\sech(u) \tanh(u) \cos(v), -\sech(u) \tanh(u) \sin(v), {\sech}^2(u) ) \\
-\widetilde{\sss}_v & = ( -\sech(u) \sin(v), \sech(u) \cos(v), 0 ) 
+\widetilde{\sss}_u & = ( -\sin(u) \sech(v) , \cos(u)\sech(v) , 0 )  \\
+\widetilde{\sss}_v & = ( -\cos(v) \sech(v) \tanh(v) , -\sin(u) \sech(v) \tanh(v) , {\sech}^2(v) )
 \end{align*}
 By recalling that
 $$
-{\sech}^2 (u) + {\tanh}^2 (u) = 1 \,,
+{\sech}^2 (v) + {\tanh}^2 (v) = 1 \,,
 $$
 we compute
 \begin{align*}
-\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(u) ({\tanh}^2(u) + {\sech}^2(u)) = {\sech}^2(u) \\ 
+\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
 \widetilde{F} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v =  0 \\ 
-\widetilde{G} & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v =  {\sech}^2(u) (\cos^2(v) + \sin^2(v)) = {\sech}^2(u) \\ 
+\widetilde{G} & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(u) \\ 
 \end{align*}
 Hence the first fundamental form of $\widetilde{\SSS}$ is
 $$
-\widetilde{\mathscr{F}}_1 = {\sech}^2(u) \, \left(  du^2 + dv^2 \right) \,.
-$$
-Now, consider the map $f \colon \SSS \to \widetilde{\SSS}$ defined by
-$$
-f(u,v,0) = \widetilde{\sss} (u,v) \,.
-$$
-In particular $f$ satisfies
-$$
-f( \sss( u,v) ) = \widetilde{\sss} (u,v) \,.
-$$
-We have:
-
-1. $f$ is not a local isometry.
-2. $f$ is a conformal map.
-
-*Proof.*
-
-1. If $f$ was a local isometry, by Theorem \ref{theorem-local-isometry} we would conclude that $\sss$ and $\widetilde{\sss} = f \circ \sss$ have the same first fundamental form. However 
-$$
-\mathscr{F}_1 = du^2 + dv^2 \neq {\sech}^2(u) \, \left(  du^2 + dv^2 \right) 
-= \widetilde{\mathscr{F}}_1  \,.
+\widetilde{\mathscr{F}}_1 = {\sech}^2(v) \, \left(  du^2 + dv^2 \right) \,.
 $$
 
-2. The first fundamental forms of $\sss$ and $\widetilde{\sss} = f \circ \sss$ satisfy
+2. We have computed that
 $$
-\widetilde{\mathscr{F}}_1  = \lambda(u,v) \, \mathscr{F}_1  \,, \quad 
-\lambda(u,v) := {\sech}(u) \,.
+\widetilde{\mathscr{F}}_1 =  {\sech}^2(v) \, \left(  du^2 + dv^2 \right) =  {\sech}^2(v) \,\mathscr{F}_1 \,.
 $$
-Therefore $f$ is a conformal map by Theorem \ref{theorem-conformal-fff}.
-
+Since $\sss(U) = \SSS$, by Theorem \ref{theorem-conformal-fff-2}, we conclude that $\SSS$ and $\wSSS$ are conformal.
 
 :::
 
@@ -6757,16 +6877,7 @@ In the previous section we defined conformal maps between surfaces
 $$
 f \colon \SSS \to \widetilde{\SSS}\,.
 $$
-As a special case, consider a surface chart
-$$
-\sss \colon U \to \SSS \,.
-$$
-The open set $U$ of $\R^2$ can be interpreted as a surface, parametrized by 
-$$
-(u,v) \to (u,v,0) \,.
-$$
-Hence $\sss$ can be seen as a map between surfaces, and it makes sense to discuss whether it is conformal or not.
-
+It is also useful to define conformal parametrizations.
 
 ::: Definition
 ### Conformal parametrization {#definition-conformal-parametrization}
@@ -6779,33 +6890,33 @@ be a regular chart of $\SSS$. We say that $\sss$ is a **conformal parametrizatio
 $$
 \mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
 $$
-for some smooth function $\lambda \colon U \to \R$. 
+for some function $\lambda \colon U \to \R$. 
 
 
 :::
 
 
-The following Theorem states that, if $\sss$ is a conformal parametrization of $\SSS$, then angles on $\SSS$ look like angles on a plane.
+The above definition is motivated by the following result, stating that $\SSS$ admits a conformal parametrization if and only if $\SSS$ is conformal to a plane.
 
 
 ::: Theorem
 
 Let $\SSS$ be a regular surface and
 $$
-\sss \colon U  \to  \sss(U) \subseteq \SSS
+\sss \colon U  \to  \SSS
 $$ 
 be a regular chart of $\SSS$. Define the plane $\p$ charted by
 $$
 \widetilde{\sss} (u,v) = (u,v,0) \,, \quad \forall \, (u,v) \in U \,.
 $$
 
-1. They are equivalent:
+They are equivalent:
 
-    - $\sss$ is a conformal parametrization.
+1. $\sss$ is a conformal parametrization.
 
-    - There exists a conformal map $f \colon \p \to \sss(U) \subseteq \SSS$.
+2. There exists a conformal map $f \colon \p \to \sss(U)$.
 
-2. Angles on $\SSS$ look like angles on the plane, 
+In particular, angles on $\SSS$ look like angles on the plane, 
 in the following sense: Suppose $\g_1, \g_2$ are curves in $\mathbb{R}^{2}$ such that
 $$
 \g_1 (t_0) = \g_2 (t_0) \,.
@@ -6816,10 +6927,12 @@ $$
 $$
 Then 
 $$
-\theta = \widetilde{\theta}
+\theta = \widetilde{\theta} \,,
 $$
-where $\theta$ is the angle between 
-$\dg_1 (t_0), \dg_2(t_0)$ and $\widetilde{\theta}$ the angle between $\dtg_1 (t_0), \dtg_2(t_0)$
+where 
+
+- $\theta$ is the angle between $\dg_1 (t_0)$ and $\dg_2(t_0)$,
+- $\widetilde{\theta}$ is the angle between $\dtg_1 (t_0)$ and $\dtg_2(t_0)$.
 
 
 :::
@@ -6828,22 +6941,21 @@ $\dg_1 (t_0), \dg_2(t_0)$ and $\widetilde{\theta}$ the angle between $\dtg_1 (t_
 
 ::: Proof
 
-*Proof of Point 1.*
-Define the diffeomorphism $f \colon \p \to \SSS$ by
+*Part 1.*
+Define the diffeomorphism $f \colon \p \to \SSS$ by setting
 $$
 f(u,v,0) = \sss(u,v) \,.
 $$
-In particular 
+In particular, by definition of $\wsss$, 
 $$
 f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
 $$
 By Theorem \ref{theorem-conformal-fff} we have that $f$ is a conformal map
 if and only if there exists $\lambda \colon \p \to \R$ such that 
 $$
-\mathscr{F}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
+{\FF}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
 $$
-where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\SSS$ and $\p$, respectively. Since $\p$ is a plane,
-the first fundamental form is given by 
+where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\sss$ and $\wsss$, respectively. The first fundamental form of $\wsss$ is
 $$
 \widetilde{\mathscr{F}}_1 = du^2 + dv^2 \,.
 $$
@@ -6859,14 +6971,29 @@ Suppose $\sss$ is a conformal parametrization. By the proof of Point 1 we have t
 $$
 f \colon \p \to \SSS  \,, \quad f(u,v,0) = \sss(u,v) \,,
 $$
-is a conformal map. Since $T_{\pp} \p = \R^2$ and $f = \sss$, it follows by the definition of
-differential and $f$ being conformal that the angle between $\g_1$ and $\g_2$ is the same as 
-the angle between $\tg_1$ and $\tg_2$.
+is a conformal map. Since $T_{\pp} \p = \R^2$ and $f = \sss$, the thesis follows from the fact that $d_{\pp}f$ preserves angles, since $f$ is a conformal map.
 
 :::
 
 
+It turns out that all regular surfaces admit an atlas formed by conformal charts.
 
+
+::: Theorem
+
+Let $\SSS$ be a regular surface. There exists an atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ such that each chart $\sss_i \colon U_i \to \SSS$ is conformal, that is, there exists $\lambda_i \colon U \to \R$ such that the first fundamental form of $\sss_i$ is
+$$
+({{\FF}_i})_1 = \lambda_i(u,v) (du^2 + dv^2 ) \,.
+$$
+The coordinates $(u,v)$ are called **isothermal**.
+
+:::
+
+
+The proof of this result is quite technical. For example, a proof is given in the paper [@chern], you can read it [here](https://www.ams.org/journals/proc/1955-006-05/S0002-9939-1955-0074856-1/S0002-9939-1955-0074856-1.pdf). The proof in not constructive, and it involeves showing the existence of solutions to a certain PDE. If $\SSS$ is a minimial surface, existence of isothermal coordinates is easier to prove, see for example Theorem 12.4.1 in [@pressley].
+
+
+We have already seen conformal parametrizations for both Sphere and Cylinder. we admit conformal parametrizations. Therefore, angles on the Sphere and the Cylinder (with respect to the conformal parametrization) are the same as angles on the plane.
 
 
 ::: Example
@@ -6874,7 +7001,7 @@ the angle between $\tg_1$ and $\tg_2$.
 
 Consider the unit cylinder $\SSS$ charted by
 $$
-\sss (u,v) = (\cos(u), \sin(u), v) \,.
+\sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi), \, v \in \R \,.
 $$
 We have proven that the first fundamental form of $\sss$ is
 $$
@@ -6906,17 +7033,56 @@ Therefore $\sss$ is a conformal parametrization of the sphere.
 
 
 
-### Equiareal maps
+::: Example
+### Sphere: Stereographic projection
+
+Consider the parametrization of the sphere
+$$
+\SSS = \sphere^2 \smallsetminus \{ (1,0,0) \} \,,
+$$
+given by 
+$$
+\sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
+$$
+We have seen in Example \ref{example-conformal} that $\sss$ can be defined via the stereographic projection. We have also mentioned that the first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = \frac{4}{(u^2+v^2+1)^2} (du^2 + dv^2) \,.
+$$
+Therefore, $\sss$ is a conformal parametrization of the sphere.
+
+:::
 
 
 
 
-![The area of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){width=70%}
+
+### Areas
+
+
+Suppose given a regular surface $\SSS$, and consider a region 
+$$
+R \subseteq \SSS \,.
+$$ 
+We would like to define the area of $R$, denoted by $\AA(R)$. Recall that, to define length of curves, we approximated the length of $\g$ with the length of piecewise affine approximations $\g_{\e}$ of $\g$. Since $\g_{\e}$ is piecewise affine, we know how to define the length $L(\g_{\e})$ of $\g_{\e}$. We then define the length of $\g$ as
+$$
+L(\g) = \lim_{\e \to 0} L(\g_\e) \,.
+$$
+To compute surface areas we could proceed in a similar way: Approximate $R$ with flat regions $R_{\e}$ of which we know how to compute the area, and then define
+$$
+A(R) = \lim_{\e \to 0} A(R_{\e}) \,.
+$$
+
+Theorem 4.2.5 in [@abate-tovena].
+
+
+![The area $A$ of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){#fig-area width=70%}
 
 
 
 
-![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same of the area of $f(R)$.](/images/fff_equiareal.png){width=70%}
+### Equiarea Maps
+
+![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same of the area of $f(R)$.](/images/fff_equiareal.png){#fig-equiareal-map width=70%}
 
 
 
@@ -6980,51 +7146,6 @@ These types of distorsion can all be present at the same time. There are 2 main 
 
 The above mentioned projections admit explicit formulations, and one can actually prove that the corresponding maps are/are not conformal/equi-areal. We will discuss these 3 projections below. Details are left as an exercise. 
 
-
-::: Example
-### Stereographic Projection
-
-Denote the unit sphere by 
-$$
-\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
-$$
-We will call the points 
-$$
-N = (0,0,1) \,, \quad S  = (0,0,-1)
-$$
-the north and south pole, respectively. The plane $\{z=0\}$ slices through the equator of the sphere. Let $P=(x,y,z)$ be any point on $\sphere^2$ except the north pole. The line joining the north pole to $P$ intersects the plane $\{z=0\}$ at the point $P'$, see @fig-stereographic-4. The point $P'$ defines the *Stereographic Projection* map 
-$$
-\pi \colon \sphere^2 \smallsetminus \{N\} \to \R^2 \,,
-$$
-where
-$$
-\pi(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z}  \right) \,.
-$$
-Notice that $\pi$ is slightly different from the map described in @fig-stereographic: there the projection is done onto the plane $\{z=-1\}$, while in this example we project on the plane $\{z=0\}$. This is just because calculations are more convenient when projecting on $\{z=0\}$. It is not difficult to prove that $\pi$ is invertible, with inverse given by 
-$$
-\sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
-$$
-We have that $\sss$ is a regular chart for $\sphere^2 \smallsetminus \{N\}$. It can be computed that the coefficients of the first fundamental form associated of $\sss$ are
-$$
-E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
-$$
-In particualar the fisrt fundamental form is of type
-$$
-\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2)
-$$
-showing that $\sss$ is a conformal parametrization of the sphere. 
-
-However, $\sss$ is not equi-areal. Indeed, recall that the first fundamental form of the plane is $du^2 + dv^2$. Therefore the area element of the plane is $1$. 
-The area element for $\sss$ is
-$$
-EG - F^2 =  \frac{16}{(u^2+v^2+1)^4} \neq 1 \,,
-$$
-showing that $\sss$ is not equi-areal. 
-
-:::
-
-
-![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
 
 
 
@@ -7262,7 +7383,7 @@ $$
 
 
 ::: Remark
-### Second fundamental form and reparametrizations {#remark-fff-reparametrization}
+### SFF and reparametrizations {#remark-sff-reparametrization}
 
 The second fundamental form
 $$

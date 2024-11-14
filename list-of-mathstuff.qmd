@@ -1,1474 +1,1500 @@
 \providecommand{\Pageref}[1]{\hfill p.\pageref{#1}}
- [**Definition 1.1**](#length): Length\Pageref{length}
+ [**Goal**](#Goal*-1.1)\Pageref{Goal*-1.1}
 
- [**Example 1.2**](#length-of-helix): Length of Helix\Pageref{length-of-helix}
+ [**Question**](#Question*-1.2)\Pageref{Question*-1.2}
 
- [**Definition 1.3**](#arc-length): Arc-Length\Pageref{arc-length}
+ [**Problem**](#Problem*-1.3)\Pageref{Problem*-1.3}
 
- [**Example 1.4**](#arc-length-of-logarithmic-spiral): Arc-length of Logarithmic Spiral\Pageref{arc-length-of-logarithmic-spiral}
+ [**Definition 1.1**](#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
 
- [**Definition 1.5**](#unit-speed-curve): Unit-speed curve\Pageref{unit-speed-curve}
+ [**Definition 1.2**](#level-curve): Level curve\Pageref{level-curve}
 
- [**Theorem 1.6**](#Theorem-1.6)\Pageref{Theorem-1.6}
+ [**Definition 1.3**](#Definition-1.3)\Pageref{Definition-1.3}
 
- [**Proof**](#Proof*-1.1)\Pageref{Proof*-1.1}
+ [**Question**](#Question*-1.4)\Pageref{Question*-1.4}
 
- [**Definition 1.7**](#reparametrization): Reparametrization\Pageref{reparametrization}
+ [**Example 1.4**](#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
 
- [**Definition 1.8**](#unit-speed-reparametrization): Unit-speed reparametrization\Pageref{unit-speed-reparametrization}
+ [**Remark 1.5**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
 
- [**Definition 1.9**](#regular-curve): Regular curve\Pageref{regular-curve}
+ [**Example 1.6**](#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
 
- [**Theorem 1.10**](#existence-of-unit-speed-reparametrization): Existence of unit-speed reparametrization\Pageref{existence-of-unit-speed-reparametrization}
+ [**Example 1.7**](#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
 
- [**Theorem 1.11**](#arc-length-and-unit-speed-reparametrization): Arc-length and unit-speed reparametrization\Pageref{arc-length-and-unit-speed-reparametrization}
+ [**Definition 1.8**](#parametrized-curve-1): Parametrized curve\Pageref{parametrized-curve-1}
 
- [**Definition 1.12**](#arc-length-reparametrization): Arc-length reparametrization\Pageref{arc-length-reparametrization}
+ [**Definition 1.9**](#smooth-functions): Smooth functions\Pageref{smooth-functions}
 
- [**Example 1.13**](#arc-length-reparametrization-of-the-circle): Arc-length reparametrization of the Circle\Pageref{arc-length-reparametrization-of-the-circle}
+ [**Example 1.10**](#Example-1.10)\Pageref{Example-1.10}
 
- [**Example 1.14**](#Example-1.14)\Pageref{Example-1.14}
+ [**Definition 1.11**](#Definition-1.11)\Pageref{Definition-1.11}
 
- [**Definition 1.15**](#curvature-of-unit-speed-curve): Curvature of unit-speed curve\Pageref{curvature-of-unit-speed-curve}
+ [**Assumption**](#Assumption*-1.5)\Pageref{Assumption*-1.5}
 
- [**Example 1.16**](#curvature-of-the-circle): Curvature of the circle\Pageref{curvature-of-the-circle}
+ [**Example 1.12**](#Example-1.12)\Pageref{Example-1.12}
 
- [**Definition 1.17**](#curvature-of-regular-curve): Curvature of regular curve\Pageref{curvature-of-regular-curve}
+ [**Definition 1.13**](#definition-tangent): Tangent vector\Pageref{definition-tangent}
 
- [**Remark 1.18**](#method-for-computing-curvature): Method for computing curvature\Pageref{method-for-computing-curvature}
+ [**Example 1.14**](#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
 
- [**Definition 1.19**](#hyperbolic-functions): Hyperbolic functions\Pageref{hyperbolic-functions}
+ [**Remark 1.15**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
 
- [**Theorem 1.20**](#notable-properties-of-hyperbolic-functions): Notable properties of Hyperbolic Functions\Pageref{notable-properties-of-hyperbolic-functions}
+ [**Example 1.16**](#the-lemniscate-a-self-intersecting-curve): The Lemniscate, a self intersecting curve\Pageref{the-lemniscate-a-self-intersecting-curve}
 
- [**Example 1.21**](#curvature-of-the-catenary): Curvature of the Catenary\Pageref{curvature-of-the-catenary}
+ [**Definition 1.17**](#partition): Partition\Pageref{partition}
 
- [**Definition 1.22**](#vector-product): Vector product\Pageref{vector-product}
+ [**Definition 1.18**](#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
 
- [**Theorem 1.23**](#geometric-properties-of-vector-product): Geometric Properties of vector product\Pageref{geometric-properties-of-vector-product}
+ [**Definition 1.19**](#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
 
- [**Theorem 1.24**](#Theorem-1.24)\Pageref{Theorem-1.24}
+ [**Question 1.20**](#Question-1.20)\Pageref{Question-1.20}
 
- [**Theorem 1.25**](#Theorem-1.25)\Pageref{Theorem-1.25}
+ [**Theorem 1.21**](#theorem-length): Characterizing the length of ${\pmb{\gamma}}$\Pageref{theorem-length}
 
- [**Theorem 1.26**](#curvature-formula): Curvature formula\Pageref{curvature-formula}
+ [**Proof**](#Proof*-1.6)\Pageref{Proof*-1.6}
 
- [**Example 1.27**](#curvature-of-the-helix): Curvature of the Helix\Pageref{curvature-of-the-helix}
+ [**Example 1.22**](#length-of-circle): Length of Circle\Pageref{length-of-circle}
 
- [**Example 1.28**](#example-curvature)\Pageref{example-curvature}
+ [**Example 1.23**](#length-of-helix): Length of helix\Pageref{length-of-helix}
 
- [**Example 1.29**](#different-curves-having-the-same-curvature): Different curves having the same curvature\Pageref{different-curves-having-the-same-curvature}
+ [**Definition 1.24**](#arc-length-1): Arc-length\Pageref{arc-length-1}
 
- [**Definition 1.30**](#frenet-frame-of-unit-speed-curve-with-kappa-neq-0): Frenet frame of unit-speed curve with $\kappa \neq 0$\Pageref{frenet-frame-of-unit-speed-curve-with-kappa-neq-0}
+ [**Remark 1.25**](#Remark-1.25)\Pageref{Remark-1.25}
 
- [**Theorem 1.31**](#Theorem-1.31)\Pageref{Theorem-1.31}
+ [**Example 1.26**](#circle): Circle\Pageref{circle}
 
- [**Definition 1.32**](#torsion-of-unit-speed-curve-with-kappa-neq-0): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0}
+ [**Example 1.27**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
 
- [**Definition 1.33**](#torsion-of-regular-curve-with-kappa-neq-0): Torsion of regular curve with $\kappa \neq 0$\Pageref{torsion-of-regular-curve-with-kappa-neq-0}
+ [**Definition 1.28**](#definition-scalar): Scalar product in $\mathbb{R}^2$\Pageref{definition-scalar}
 
- [**Example 1.34**](#curvature-torsion-and-frenet-frame-of-helix): Curvature, torsion and Frenet frame of Helix\Pageref{curvature-torsion-and-frenet-frame-of-helix}
+ [**Remark 1.29**](#Remark-1.29)\Pageref{Remark-1.29}
 
- [**Theorem 1.35**](#torsion-formula): Torsion formula\Pageref{torsion-formula}
+ [**Definition 1.30**](#orthogonal-vectors): Orthogonal vectors\Pageref{orthogonal-vectors}
 
- [**Example 1.36**](#torsion-of-helix-with-formula): Torsion of Helix with formula\Pageref{torsion-of-helix-with-formula}
+ [**Proposition 1.31**](#bilinearity-and-symmetry-of-scalar-product): Bilinearity and symmetry of scalar product\Pageref{bilinearity-and-symmetry-of-scalar-product}
 
- [**Example 1.37**](#Example-1.37)\Pageref{Example-1.37}
+ [**Proposition 1.32**](#scalar-products-written-wrt-euclidean-coordinates): Scalar products written wrt euclidean coordinates\Pageref{scalar-products-written-wrt-euclidean-coordinates}
 
- [**Theorem 1.38**](#frenet-frame-formulas-for-regular-curves): Frenet frame formulas for regular curves\Pageref{frenet-frame-formulas-for-regular-curves}
+ [**Proof**](#Proof*-1.7)\Pageref{Proof*-1.7}
 
- [**Example 1.39**](#Example-1.39)\Pageref{Example-1.39}
+ [**Definition 1.33**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
 
- [**Theorem 1.40**](#frenet-frame-is-right-handed): Frenet frame is right-handed\Pageref{frenet-frame-is-right-handed}
+ [**Proposition 1.34**](#bilinearity-and-symmetry-of-scalar-product-in-mathbbrn): Bilinearity and symmetry of scalar product in $\mathbb{R}^n$\Pageref{bilinearity-and-symmetry-of-scalar-product-in-mathbbrn}
 
- [**Theorem 1.41**](#frenet-serret-equations-1): Frenet-Serret equations\Pageref{frenet-serret-equations-1}
+ [**Definition 1.35**](#Definition-1.35)\Pageref{Definition-1.35}
 
- [**Definition 1.42**](#rigid-motion): Rigid motion\Pageref{rigid-motion}
+ [**Proposition 1.36**](#proposition-diff-scalar): Differentiating the scalar product\Pageref{proposition-diff-scalar}
 
- [**Theorem 1.43**](#fundamental-theorem-of-space-curves): Fundamental Theorem of Space Curves\Pageref{fundamental-theorem-of-space-curves}
+ [**Proof**](#Proof*-1.8)\Pageref{Proof*-1.8}
 
- [**Example 1.44**](#application-of-fundamental-theorem-of-curves): Application of Fundamental Theorem of Curves\Pageref{application-of-fundamental-theorem-of-curves}
+ [**Definition 1.37**](#speed-of-a-curve-1): Speed of a curve\Pageref{speed-of-a-curve-1}
 
- [**Theorem 1.45**](#curves-contained-in-a-plane): Curves contained in a plane\Pageref{curves-contained-in-a-plane}
+ [**Remark 1.38**](#Remark-1.38)\Pageref{Remark-1.38}
 
- [**Theorem 1.46**](#curves-contained-in-a-plane-1): Curves contained in a plane\Pageref{curves-contained-in-a-plane-1}
+ [**Definition 1.39**](#unit-speed-curve): unit-speed curve\Pageref{unit-speed-curve}
 
- [**Example 1.47**](#Example-1.47)\Pageref{Example-1.47}
+ [**Proposition 1.40**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
 
- [**Theorem 1.48**](#curves-contained-in-a-circle): Curves contained in a circle\Pageref{curves-contained-in-a-circle}
+ [**Proof**](#Proof*-1.9)\Pageref{Proof*-1.9}
 
- [**Example 1.49**](#Example-1.49)\Pageref{Example-1.49}
+ [**Remark 1.41**](#Remark-1.41)\Pageref{Remark-1.41}
 
- [**Definition 1.50**](#topology-of-mathbbrn): Topology of $\mathbb{R}^n$\Pageref{topology-of-mathbbrn}
+ [**Notation**](#Notation*-1.10)\Pageref{Notation*-1.10}
 
- [**Definition 1.51**](#subspace-topology): Subspace Topology\Pageref{subspace-topology}
+ [**Definition 1.42**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
 
- [**Definition 1.52**](#continuous-function): Continuous Function\Pageref{continuous-function}
+ [**Definition 1.43**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
 
- [**Theorem 1.53**](#continuity-topological-definition): Continuity: Topological definition\Pageref{continuity-topological-definition}
+ [**Remark 1.44**](#Remark-1.44)\Pageref{Remark-1.44}
 
- [**Definition 1.54**](#homeomorphism): Homeomorphism\Pageref{homeomorphism}
+ [**Remark 1.45**](#Remark-1.45)\Pageref{Remark-1.45}
 
- [**Definition 1.55**](#differentiable-function): Differentiable Function\Pageref{differentiable-function}
+ [**Example 1.46**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
 
- [**Definition 1.56**](#partial-derivative): Partial Derivative\Pageref{partial-derivative}
+ [**Example 1.47**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
 
- [**Definition 1.57**](#jacobian-matrix): Jacobian Matrix\Pageref{jacobian-matrix}
+ [**Example 1.48**](#change-of-speed): Change of speed\Pageref{change-of-speed}
 
- [**Proposition 1.58**](#matrix-representation-of-the-differential): Matrix representation of the differential\Pageref{matrix-representation-of-the-differential}
+ [**Example 1.49**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
 
- [**Definition 1.59**](#smooth-function): Smooth Function\Pageref{smooth-function}
+ [**Definition 1.50**](#definition-regular): Regular points\Pageref{definition-regular}
 
- [**Notation**](#gradient-and-partial-derivatives): Gradient and partial derivatives\Pageref{gradient-and-partial-derivatives}
+ [**Lemma 1.51**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
 
- [**Definition 1.60**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+ [**Proof**](#Proof*-1.11)\Pageref{Proof*-1.11}
 
- [**Definition 1.61**](#local-diffeomorphism): Local diffeomorphism\Pageref{local-diffeomorphism}
+ [**Example 1.52**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
 
- [**Theorem 1.62**](#Theorem-1.62)\Pageref{Theorem-1.62}
+ [**Proposition 1.53**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
 
- [**Theorem 1.63**](#Theorem-1.63)\Pageref{Theorem-1.63}
+ [**Proof**](#Proof*-1.12)\Pageref{Proof*-1.12}
 
- [**Theorem 1.64**](#inverse-function-theorem): Inverse Function Theorem\Pageref{inverse-function-theorem}
+ [**Example 1.54**](#Example-1.54)\Pageref{Example-1.54}
 
- [**Example 1.65**](#Example-1.65)\Pageref{Example-1.65}
+ [**Definition 1.55**](#unit-speed-reparametrization-1): unit-speed reparametrization\Pageref{unit-speed-reparametrization-1}
 
- [**Definition 1.66**](#surface): Surface\Pageref{surface}
+ [**Theorem 1.56**](#theorem-regular-unit-speed): Existence of unit-speed reparametrization\Pageref{theorem-regular-unit-speed}
 
- [**Definition 1.67**](#atlas-of-a-surface): Atlas of a surface\Pageref{atlas-of-a-surface}
+ [**Proof**](#Proof*-1.13)\Pageref{Proof*-1.13}
 
- [**Definition 1.68**](#regular-chart): Regular Chart\Pageref{regular-chart}
+ [**Proposition 1.57**](#proposition-arc-length-unit): Arc-length and unit-speed reparametrization\Pageref{proposition-arc-length-unit}
 
- [**Definition 1.69**](#regular-surface): Regular surface\Pageref{regular-surface}
+ [**Proof**](#Proof*-1.14)\Pageref{Proof*-1.14}
 
- [**Theorem 1.70**](#Theorem-1.70)\Pageref{Theorem-1.70}
-
- [**Example 1.71**](#d-plane-in-mathbbr3): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3}
-
- [**Example 1.72**](#unit-cylinder): Unit cylinder\Pageref{unit-cylinder}
-
- [**Example 1.73**](#graph-of-a-function): Graph of a function\Pageref{graph-of-a-function}
-
- [**Definition 1.74**](#spherical-coordinates): Spherical coordinates\Pageref{spherical-coordinates}
-
- [**Example 1.75**](#unit-sphere-in-spherical-coordinates): Unit sphere in spherical coordinates\Pageref{unit-sphere-in-spherical-coordinates}
-
- [**Example 1.76**](#unit-sphere-in-cartesian-coordinates): Unit sphere in Cartesian coordinates\Pageref{unit-sphere-in-cartesian-coordinates}
-
- [**Example 1.77**](#Example-1.77)\Pageref{Example-1.77}
-
- [**Example 1.78**](#Example-1.78)\Pageref{Example-1.78}
-
- [**Definition 1.79**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
-
- [**Theorem 1.80**](#Theorem-1.80)\Pageref{Theorem-1.80}
-
- [**Definition 1.81**](#transition-map): Transition map\Pageref{transition-map}
-
- [**Theorem 1.82**](#Theorem-1.82)\Pageref{Theorem-1.82}
-
- [**Theorem 1.83**](#Theorem-1.83)\Pageref{Theorem-1.83}
-
- [**Definition 1.84**](#smooth-functions-between-surfaces): Smooth functions between surfaces\Pageref{smooth-functions-between-surfaces}
-
- [**Theorem 1.85**](#Theorem-1.85)\Pageref{Theorem-1.85}
-
- [**Theorem 1.86**](#Theorem-1.86)\Pageref{Theorem-1.86}
-
- [**Theorem 1.87**](#Theorem-1.87)\Pageref{Theorem-1.87}
-
- [**Definition 1.88**](#diffeomorphism-of-surfaces): Diffeomorphism of surfaces\Pageref{diffeomorphism-of-surfaces}
-
- [**Theorem 1.89**](#Theorem-1.89)\Pageref{Theorem-1.89}
-
- [**Definition 1.90**](#local-diffeomorphism-1): Local diffeomorphism\Pageref{local-diffeomorphism-1}
-
- [**Definition 1.91**](#tangent-vectors-and-tangent-plane): Tangent vectors and tangent plane\Pageref{tangent-vectors-and-tangent-plane}
-
- [**Theorem 1.92**](#curves-with-values-on-surfaces): Curves with values on surfaces\Pageref{curves-with-values-on-surfaces}
-
- [**Theorem 1.93**](#characterization-of-tangent-plane): Characterization of Tangent Plane\Pageref{characterization-of-tangent-plane}
-
- [**Theorem 1.94**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
-
- [**Example 1.95**](#Example-1.95)\Pageref{Example-1.95}
-
- [**Definition 1.96**](#standard-unit-normal-of-a-chart): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart}
-
- [**Example 1.97**](#standard-unit-normal-of-the-plane): Standard unit normal of the plane\Pageref{standard-unit-normal-of-the-plane}
-
- [**Definition 1.98**](#unit-normal-of-a-surface): Unit normal of a surface\Pageref{unit-normal-of-a-surface}
-
- [**Definition 1.99**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
-
- [**Example 1.100**](#Example-1.100)\Pageref{Example-1.100}
-
- [**Definition 1.101**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
-
- [**Example 1.102**](#computing-d_mathbfpf-using-the-definition): Computing $d_{\mathbf{p}}f$ using the definition\Pageref{computing-d_mathbfpf-using-the-definition}
-
- [**Theorem 1.103**](#Theorem-1.103)\Pageref{Theorem-1.103}
-
- [**Example 1.104**](#computing-the-matrix-of-d_mathbfpf): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf}
-
- [**Theorem 1.105**](#Theorem-1.105)\Pageref{Theorem-1.105}
-
- [**Definition 1.106**](#level-surface): Level surface\Pageref{level-surface}
-
- [**Theorem 1.107**](#Theorem-1.107)\Pageref{Theorem-1.107}
-
- [**Example 1.108**](#circular-cone): Circular cone\Pageref{circular-cone}
-
- [**Theorem 1.109**](#tangent-plane-of-level-surfaces): Tangent plane of level surfaces\Pageref{tangent-plane-of-level-surfaces}
-
- [**Example 1.110**](#unit-cylinder-1): Unit cylinder\Pageref{unit-cylinder-1}
-
- [**Definition 1.111**](#ruled-surface): Ruled surface\Pageref{ruled-surface}
-
- [**Theorem 1.112**](#Theorem-1.112)\Pageref{Theorem-1.112}
-
- [**Example 1.113**](#unit-cylinder-is-ruled-surface): Unit Cylinder is ruled surface\Pageref{unit-cylinder-is-ruled-surface}
-
- [**Example 1.114**](#möbius-band): Möbius band\Pageref{möbius-band}
-
- [**Example 1.115**](#Example-1.115)\Pageref{Example-1.115}
-
- [**Definition 1.116**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
-
- [**Theorem 1.117**](#Theorem-1.117)\Pageref{Theorem-1.117}
-
- [**Example 1.118**](#catenoid): Catenoid\Pageref{catenoid}
-
- [**Definition 1.119**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
-
- [**Definition 1.120**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
-
- [**Definition 1.121**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
-
- [**Theorem 1.122**](#Theorem-1.122)\Pageref{Theorem-1.122}
-
- [**Definition 1.123**](#Definition-1.123)\Pageref{Definition-1.123}
-
- [**Theorem 1.124**](#first-fundamental-form-and-reparametrizations): First fundamental form and reparametrizations\Pageref{first-fundamental-form-and-reparametrizations}
-
- [**Example 1.125**](#plane): Plane\Pageref{plane}
-
- [**Example 1.126**](#plane-in-polar-coordinates): Plane in polar coordinates\Pageref{plane-in-polar-coordinates}
-
- [**Example 1.127**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
-
- [**Example 1.128**](#Example-1.128)\Pageref{Example-1.128}
-
- [**Theorem 1.129**](#Theorem-1.129)\Pageref{Theorem-1.129}
-
- [**Example 1.130**](#the-cone): The Cone\Pageref{the-cone}
-
- [**Goal**](#Goal*-2.1)\Pageref{Goal*-2.1}
-
- [**Question**](#Question*-2.2)\Pageref{Question*-2.2}
-
- [**Problem**](#Problem*-2.3)\Pageref{Problem*-2.3}
-
- [**Definition 2.1**](#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
-
- [**Definition 2.2**](#level-curve): Level curve\Pageref{level-curve}
-
- [**Definition 2.3**](#Definition-2.3)\Pageref{Definition-2.3}
-
- [**Question**](#Question*-2.4)\Pageref{Question*-2.4}
-
- [**Example 2.4**](#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
-
- [**Remark 2.5**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
-
- [**Example 2.6**](#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
-
- [**Example 2.7**](#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
-
- [**Definition 2.8**](#parametrized-curve-1): Parametrized curve\Pageref{parametrized-curve-1}
-
- [**Definition 2.9**](#smooth-functions): Smooth functions\Pageref{smooth-functions}
-
- [**Example 2.10**](#Example-2.10)\Pageref{Example-2.10}
-
- [**Definition 2.11**](#Definition-2.11)\Pageref{Definition-2.11}
-
- [**Assumption**](#Assumption*-2.5)\Pageref{Assumption*-2.5}
-
- [**Example 2.12**](#Example-2.12)\Pageref{Example-2.12}
-
- [**Definition 2.13**](#definition-tangent): Tangent vector\Pageref{definition-tangent}
-
- [**Example 2.14**](#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
-
- [**Remark 2.15**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
-
- [**Example 2.16**](#the-lemniscate-a-self-intersecting-curve): The Lemniscate, a self intersecting curve\Pageref{the-lemniscate-a-self-intersecting-curve}
-
- [**Definition 2.17**](#partition): Partition\Pageref{partition}
-
- [**Definition 2.18**](#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
-
- [**Definition 2.19**](#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
-
- [**Question 2.20**](#Question-2.20)\Pageref{Question-2.20}
-
- [**Theorem 2.21**](#theorem-length): Characterizing the length of ${\pmb{\gamma}}$\Pageref{theorem-length}
-
- [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
-
- [**Example 2.22**](#length-of-circle): Length of Circle\Pageref{length-of-circle}
-
- [**Example 2.23**](#length-of-helix-1): Length of helix\Pageref{length-of-helix-1}
-
- [**Definition 2.24**](#arc-length-2): Arc-length\Pageref{arc-length-2}
-
- [**Remark 2.25**](#Remark-2.25)\Pageref{Remark-2.25}
-
- [**Example 2.26**](#circle): Circle\Pageref{circle}
-
- [**Example 2.27**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
-
- [**Definition 2.28**](#definition-scalar): Scalar product in $\mathbb{R}^2$\Pageref{definition-scalar}
-
- [**Remark 2.29**](#Remark-2.29)\Pageref{Remark-2.29}
-
- [**Definition 2.30**](#orthogonal-vectors): Orthogonal vectors\Pageref{orthogonal-vectors}
-
- [**Proposition 2.31**](#bilinearity-and-symmetry-of-scalar-product): Bilinearity and symmetry of scalar product\Pageref{bilinearity-and-symmetry-of-scalar-product}
-
- [**Proposition 2.32**](#scalar-products-written-wrt-euclidean-coordinates): Scalar products written wrt euclidean coordinates\Pageref{scalar-products-written-wrt-euclidean-coordinates}
-
- [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
-
- [**Definition 2.33**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
-
- [**Proposition 2.34**](#bilinearity-and-symmetry-of-scalar-product-in-mathbbrn): Bilinearity and symmetry of scalar product in $\mathbb{R}^n$\Pageref{bilinearity-and-symmetry-of-scalar-product-in-mathbbrn}
-
- [**Definition 2.35**](#Definition-2.35)\Pageref{Definition-2.35}
-
- [**Proposition 2.36**](#proposition-diff-scalar): Differentiating the scalar product\Pageref{proposition-diff-scalar}
-
- [**Proof**](#Proof*-2.8)\Pageref{Proof*-2.8}
-
- [**Definition 2.37**](#speed-of-a-curve-1): Speed of a curve\Pageref{speed-of-a-curve-1}
-
- [**Remark 2.38**](#Remark-2.38)\Pageref{Remark-2.38}
-
- [**Definition 2.39**](#unit-speed-curve-1): unit-speed curve\Pageref{unit-speed-curve-1}
-
- [**Proposition 2.40**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
-
- [**Proof**](#Proof*-2.9)\Pageref{Proof*-2.9}
-
- [**Remark 2.41**](#Remark-2.41)\Pageref{Remark-2.41}
-
- [**Notation**](#Notation*-2.10)\Pageref{Notation*-2.10}
-
- [**Definition 2.42**](#diffeomorphism-1): Diffeomorphism\Pageref{diffeomorphism-1}
-
- [**Definition 2.43**](#reparametrization-3): Reparametrization\Pageref{reparametrization-3}
-
- [**Remark 2.44**](#Remark-2.44)\Pageref{Remark-2.44}
-
- [**Remark 2.45**](#Remark-2.45)\Pageref{Remark-2.45}
-
- [**Example 2.46**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
-
- [**Example 2.47**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
-
- [**Example 2.48**](#change-of-speed): Change of speed\Pageref{change-of-speed}
-
- [**Example 2.49**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
-
- [**Definition 2.50**](#definition-regular): Regular points\Pageref{definition-regular}
-
- [**Lemma 2.51**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
-
- [**Proof**](#Proof*-2.11)\Pageref{Proof*-2.11}
-
- [**Example 2.52**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
-
- [**Proposition 2.53**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
-
- [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
-
- [**Example 2.54**](#Example-2.54)\Pageref{Example-2.54}
-
- [**Definition 2.55**](#unit-speed-reparametrization-2): unit-speed reparametrization\Pageref{unit-speed-reparametrization-2}
-
- [**Theorem 2.56**](#theorem-regular-unit-speed): Existence of unit-speed reparametrization\Pageref{theorem-regular-unit-speed}
-
- [**Proof**](#Proof*-2.13)\Pageref{Proof*-2.13}
-
- [**Proposition 2.57**](#proposition-arc-length-unit): Arc-length and unit-speed reparametrization\Pageref{proposition-arc-length-unit}
-
- [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
-
- [**Definition 2.58**](#arc-length-reparametrization-1): Arc-length reparametrization\Pageref{arc-length-reparametrization-1}
+ [**Definition 1.58**](#arc-length-reparametrization): Arc-length reparametrization\Pageref{arc-length-reparametrization}
 
  [**Notation**](#arc-length-parameter): Arc-length parameter\Pageref{arc-length-parameter}
 
- [**Notation**](#arc-length-reparametrization-2): Arc-length reparametrization\Pageref{arc-length-reparametrization-2}
+ [**Notation**](#arc-length-reparametrization-1): Arc-length reparametrization\Pageref{arc-length-reparametrization-1}
 
- [**Example 2.59**](#example-circle-arc): Arc-length reparametrization of the Circle\Pageref{example-circle-arc}
+ [**Example 1.59**](#example-circle-arc): Arc-length reparametrization of the Circle\Pageref{example-circle-arc}
 
- [**Warning**](#Warning*-2.17)\Pageref{Warning*-2.17}
+ [**Warning**](#Warning*-1.17)\Pageref{Warning*-1.17}
 
- [**Example 2.60**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
+ [**Example 1.60**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
 
- [**Example 2.61**](#example-curve-loop)\Pageref{example-curve-loop}
+ [**Example 1.61**](#example-curve-loop)\Pageref{example-curve-loop}
 
- [**Definition 2.62**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
+ [**Definition 1.62**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
 
- [**Definition 2.63**](#closed-curve): Closed curve\Pageref{closed-curve}
+ [**Definition 1.63**](#closed-curve): Closed curve\Pageref{closed-curve}
 
- [**Remark 2.64**](#remark-closed)\Pageref{remark-closed}
+ [**Remark 1.64**](#remark-closed)\Pageref{remark-closed}
 
- [**Definition 2.65**](#Definition-2.65)\Pageref{Definition-2.65}
+ [**Definition 1.65**](#Definition-1.65)\Pageref{Definition-1.65}
 
- [**Proposition 2.66**](#Proposition-2.66)\Pageref{Proposition-2.66}
+ [**Proposition 1.66**](#Proposition-1.66)\Pageref{Proposition-1.66}
 
- [**Proof**](#Proof*-2.18)\Pageref{Proof*-2.18}
+ [**Proof**](#Proof*-1.18)\Pageref{Proof*-1.18}
 
- [**Example 2.67**](#examples-of-closed-curves): Examples of closed curves\Pageref{examples-of-closed-curves}
+ [**Example 1.67**](#examples-of-closed-curves): Examples of closed curves\Pageref{examples-of-closed-curves}
 
- [**Definition 2.68**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+ [**Definition 1.68**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
 
- [**Remark 2.69**](#Remark-2.69)\Pageref{Remark-2.69}
+ [**Remark 1.69**](#Remark-1.69)\Pageref{Remark-1.69}
 
- [**Example 2.70**](#Example-2.70)\Pageref{Example-2.70}
+ [**Example 1.70**](#Example-1.70)\Pageref{Example-1.70}
 
- [**Example 2.71**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+ [**Example 1.71**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
 
- [**Important**](#Important*-3.1)\Pageref{Important*-3.1}
+ [**Important**](#Important*-2.1)\Pageref{Important*-2.1}
 
- [**Definition 3.1**](#curvature-of-unit-speed-curve-1): Curvature of unit-speed curve\Pageref{curvature-of-unit-speed-curve-1}
+ [**Definition 2.1**](#curvature-of-unit-speed-curve): Curvature of unit-speed curve\Pageref{curvature-of-unit-speed-curve}
 
- [**Example 3.2**](#curvature-of-the-circle-1): Curvature of the circle\Pageref{curvature-of-the-circle-1}
+ [**Example 2.2**](#curvature-of-the-circle): Curvature of the circle\Pageref{curvature-of-the-circle}
 
- [**Definition 3.3**](#definition-curvature): Curvature of regular curve\Pageref{definition-curvature}
+ [**Definition 2.3**](#definition-curvature): Curvature of regular curve\Pageref{definition-curvature}
 
- [**Proposition 3.4**](#proposition-curvature-invariant): $\kappa$ is invariant for unit-speed reparametrization\Pageref{proposition-curvature-invariant}
+ [**Proposition 2.4**](#proposition-curvature-invariant): $\kappa$ is invariant for unit-speed reparametrization\Pageref{proposition-curvature-invariant}
 
- [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
+ [**Proof**](#Proof*-2.2)\Pageref{Proof*-2.2}
 
- [**Remark 3.5**](#method-for-computing-curvature-1): Method for computing curvature\Pageref{method-for-computing-curvature-1}
+ [**Remark 2.5**](#method-for-computing-curvature): Method for computing curvature\Pageref{method-for-computing-curvature}
 
- [**Important**](#Important*-3.3)\Pageref{Important*-3.3}
+ [**Important**](#Important*-2.3)\Pageref{Important*-2.3}
 
- [**Remark 3.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
+ [**Remark 2.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
 
- [**Example 3.7**](#the-catenary): The Catenary\Pageref{the-catenary}
+ [**Example 2.7**](#the-catenary): The Catenary\Pageref{the-catenary}
 
- [**Definition 3.8**](#same-orientation): Same orientation\Pageref{same-orientation}
+ [**Definition 2.8**](#same-orientation): Same orientation\Pageref{same-orientation}
 
- [**Definition 3.9**](#orientation): Orientation\Pageref{orientation}
+ [**Definition 2.9**](#orientation): Orientation\Pageref{orientation}
 
- [**Definition 3.10**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
+ [**Definition 2.10**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
 
- [**Example 3.11**](#Example-3.11)\Pageref{Example-3.11}
+ [**Example 2.11**](#Example-2.11)\Pageref{Example-2.11}
 
- [**Definition 3.12**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+ [**Definition 2.12**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
 
- [**Proposition 3.13**](#Proposition-3.13)\Pageref{Proposition-3.13}
+ [**Proposition 2.13**](#Proposition-2.13)\Pageref{Proposition-2.13}
 
- [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
+ [**Proof**](#Proof*-2.4)\Pageref{Proof*-2.4}
 
- [**Notation**](#Notation*-3.5)\Pageref{Notation*-3.5}
+ [**Notation**](#Notation*-2.5)\Pageref{Notation*-2.5}
 
- [**Proposition 3.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
+ [**Proposition 2.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
- [**Proof**](#Proof*-3.6)\Pageref{Proof*-3.6}
+ [**Proof**](#Proof*-2.6)\Pageref{Proof*-2.6}
 
- [**Remark 3.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
+ [**Remark 2.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
 
- [**Theorem 3.16**](#theorem-vector-product): Geometric Properties of vector product\Pageref{theorem-vector-product}
+ [**Theorem 2.16**](#theorem-vector-product): Geometric Properties of vector product\Pageref{theorem-vector-product}
 
- [**Proposition 3.17**](#Proposition-3.17)\Pageref{Proposition-3.17}
+ [**Proposition 2.17**](#Proposition-2.17)\Pageref{Proposition-2.17}
 
- [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
+ [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
 
- [**Proposition 3.18**](#Proposition-3.18)\Pageref{Proposition-3.18}
+ [**Proposition 2.18**](#Proposition-2.18)\Pageref{Proposition-2.18}
 
- [**Proposition 3.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
+ [**Proposition 2.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
 
- [**Example 3.20**](#curvature-of-the-straight-line): Curvature of the straight line\Pageref{curvature-of-the-straight-line}
+ [**Example 2.20**](#curvature-of-the-straight-line): Curvature of the straight line\Pageref{curvature-of-the-straight-line}
 
- [**Example 3.21**](#example-curvature-helix): Curvature of Helix\Pageref{example-curvature-helix}
+ [**Example 2.21**](#example-curvature-helix): Curvature of Helix\Pageref{example-curvature-helix}
 
- [**Definition 3.22**](#Definition-3.22)\Pageref{Definition-3.22}
+ [**Definition 2.22**](#Definition-2.22)\Pageref{Definition-2.22}
 
- [**Definition 3.23**](#Definition-3.23)\Pageref{Definition-3.23}
+ [**Definition 2.23**](#Definition-2.23)\Pageref{Definition-2.23}
 
- [**Remark 3.24**](#Remark-3.24)\Pageref{Remark-3.24}
+ [**Remark 2.24**](#Remark-2.24)\Pageref{Remark-2.24}
 
- [**Remark 3.25**](#Remark-3.25)\Pageref{Remark-3.25}
+ [**Remark 2.25**](#Remark-2.25)\Pageref{Remark-2.25}
 
- [**Definition 3.26**](#Definition-3.26)\Pageref{Definition-3.26}
+ [**Definition 2.26**](#Definition-2.26)\Pageref{Definition-2.26}
 
- [**Theorem 3.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
+ [**Theorem 2.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
 
- [**Example 3.28**](#different-curves-with-same-curvature): Different curves with same curvature\Pageref{different-curves-with-same-curvature}
+ [**Example 2.28**](#different-curves-with-same-curvature): Different curves with same curvature\Pageref{different-curves-with-same-curvature}
 
- [**Definition 3.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
+ [**Definition 2.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
 
- [**Remark 3.30**](#Remark-3.30)\Pageref{Remark-3.30}
+ [**Remark 2.30**](#Remark-2.30)\Pageref{Remark-2.30}
 
- [**Question 3.31**](#Question-3.31)\Pageref{Question-3.31}
+ [**Question 2.31**](#Question-2.31)\Pageref{Question-2.31}
 
- [**Definition 3.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+ [**Definition 2.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
 
- [**Definition 3.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+ [**Definition 2.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
 
- [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
+ [**Proposition 2.34**](#Proposition-2.34)\Pageref{Proposition-2.34}
 
- [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
+ [**Proof**](#Proof*-2.8)\Pageref{Proof*-2.8}
 
- [**Definition 3.35**](#frenet-frame): Frenet frame\Pageref{frenet-frame}
+ [**Definition 2.35**](#frenet-frame): Frenet frame\Pageref{frenet-frame}
 
- [**Notation**](#Notation*-3.9)\Pageref{Notation*-3.9}
+ [**Notation**](#Notation*-2.9)\Pageref{Notation*-2.9}
 
- [**Warning**](#Warning*-3.10)\Pageref{Warning*-3.10}
+ [**Warning**](#Warning*-2.10)\Pageref{Warning*-2.10}
 
- [**Definition 3.36**](#Definition-3.36)\Pageref{Definition-3.36}
+ [**Definition 2.36**](#Definition-2.36)\Pageref{Definition-2.36}
 
- [**Proposition 3.37**](#proposition-frenet-reparametrization): Frenet frame of reparametrization\Pageref{proposition-frenet-reparametrization}
+ [**Proposition 2.37**](#proposition-frenet-reparametrization): Frenet frame of reparametrization\Pageref{proposition-frenet-reparametrization}
 
- [**Proof**](#Proof*-3.11)\Pageref{Proof*-3.11}
+ [**Proof**](#Proof*-2.11)\Pageref{Proof*-2.11}
 
- [**Example 3.38**](#example-helix-frenet): Frenet frame of Helix\Pageref{example-helix-frenet}
+ [**Example 2.38**](#example-helix-frenet): Frenet frame of Helix\Pageref{example-helix-frenet}
 
- [**Theorem 3.39**](#frenet-frame-formulas-for-regular-curves-1): Frenet frame formulas for regular curves\Pageref{frenet-frame-formulas-for-regular-curves-1}
+ [**Theorem 2.39**](#frenet-frame-formulas-for-regular-curves): Frenet frame formulas for regular curves\Pageref{frenet-frame-formulas-for-regular-curves}
 
- [**Proposition 3.40**](#proposition-binormal)\Pageref{proposition-binormal}
+ [**Proposition 2.40**](#proposition-binormal)\Pageref{proposition-binormal}
 
- [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
+ [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
 
- [**Definition 3.41**](#torsion-of-unit-speed-curve-with-kappa-neq-0-1): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0-1}
+ [**Definition 2.41**](#torsion-of-unit-speed-curve-with-kappa-neq-0): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0}
 
- [**Remark 3.42**](#remark-torsion-formula): Formula for torsion\Pageref{remark-torsion-formula}
+ [**Remark 2.42**](#remark-torsion-formula): Formula for torsion\Pageref{remark-torsion-formula}
 
- [**Warning**](#Warning*-3.13)\Pageref{Warning*-3.13}
+ [**Warning**](#Warning*-2.13)\Pageref{Warning*-2.13}
 
- [**Definition 3.43**](#definition-torsion-regular): Torsion of regular curve with $\kappa \neq 0$\Pageref{definition-torsion-regular}
+ [**Definition 2.43**](#definition-torsion-regular): Torsion of regular curve with $\kappa \neq 0$\Pageref{definition-torsion-regular}
 
- [**Proposition 3.44**](#tau-is-invariant-for-unit-speed-reparametrization): $\tau$ is invariant for unit-speed reparametrization\Pageref{tau-is-invariant-for-unit-speed-reparametrization}
+ [**Proposition 2.44**](#tau-is-invariant-for-unit-speed-reparametrization): $\tau$ is invariant for unit-speed reparametrization\Pageref{tau-is-invariant-for-unit-speed-reparametrization}
 
- [**Proof**](#Proof*-3.14)\Pageref{Proof*-3.14}
+ [**Proof**](#Proof*-2.14)\Pageref{Proof*-2.14}
 
- [**Proposition 3.45**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
+ [**Proposition 2.45**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
- [**Example 3.46**](#example-torsion-helix): Torsion Helix\Pageref{example-torsion-helix}
+ [**Example 2.46**](#example-torsion-helix): Torsion Helix\Pageref{example-torsion-helix}
 
- [**Example 3.47**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
+ [**Example 2.47**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
 
- [**Example 3.48**](#example-circle-rotated)\Pageref{example-circle-rotated}
+ [**Example 2.48**](#example-circle-rotated)\Pageref{example-circle-rotated}
 
  [**Important**](#summary): Summary\Pageref{summary}
 
- [**Example 3.49**](#curvature-and-torsion-of-helix-with-frenet-frame): Curvature and torsion of Helix with Frenet frame\Pageref{curvature-and-torsion-of-helix-with-frenet-frame}
+ [**Example 2.49**](#curvature-and-torsion-of-helix-with-frenet-frame): Curvature and torsion of Helix with Frenet frame\Pageref{curvature-and-torsion-of-helix-with-frenet-frame}
 
- [**Proposition 3.50**](#proposition-positive-basis): Frenet frame is right-handed\Pageref{proposition-positive-basis}
+ [**Proposition 2.50**](#proposition-positive-basis): Frenet frame is right-handed\Pageref{proposition-positive-basis}
 
- [**Proof**](#Proof*-3.16)\Pageref{Proof*-3.16}
+ [**Proof**](#Proof*-2.16)\Pageref{Proof*-2.16}
 
- [**Theorem 3.51**](#frenet-serret-equations-3): Frenet-Serret equations\Pageref{frenet-serret-equations-3}
+ [**Theorem 2.51**](#frenet-serret-equations-1): Frenet-Serret equations\Pageref{frenet-serret-equations-1}
 
- [**Proof**](#Proof*-3.17)\Pageref{Proof*-3.17}
+ [**Proof**](#Proof*-2.17)\Pageref{Proof*-2.17}
 
- [**Remark 3.52**](#remark-vector-frenet): Vectorial form of Frenet-Serret equations\Pageref{remark-vector-frenet}
+ [**Remark 2.52**](#remark-vector-frenet): Vectorial form of Frenet-Serret equations\Pageref{remark-vector-frenet}
 
- [**Definition 3.53**](#rigid-motion-1): Rigid motion\Pageref{rigid-motion-1}
+ [**Definition 2.53**](#rigid-motion): Rigid motion\Pageref{rigid-motion}
 
- [**Theorem 3.54**](#theorem-characterization-space): Fundamental Theorem of Space Curves\Pageref{theorem-characterization-space}
+ [**Theorem 2.54**](#theorem-characterization-space): Fundamental Theorem of Space Curves\Pageref{theorem-characterization-space}
 
- [**Example 3.55**](#application-of-fundamental-theorem-of-curves-1): Application of Fundamental Theorem of Curves\Pageref{application-of-fundamental-theorem-of-curves-1}
+ [**Example 2.55**](#application-of-fundamental-theorem-of-curves): Application of Fundamental Theorem of Curves\Pageref{application-of-fundamental-theorem-of-curves}
 
- [**Remark 3.56**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+ [**Remark 2.56**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
 
- [**Proposition 3.57**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+ [**Proposition 2.57**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
 
- [**Proof**](#Proof*-3.18)\Pageref{Proof*-3.18}
+ [**Proof**](#Proof*-2.18)\Pageref{Proof*-2.18}
 
- [**Corollary 3.58**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
+ [**Corollary 2.58**](#corollary-zero-torsion)\Pageref{corollary-zero-torsion}
 
- [**Proof**](#Proof*-3.19)\Pageref{Proof*-3.19}
+ [**Proof**](#Proof*-2.19)\Pageref{Proof*-2.19}
 
- [**Example 3.59**](#Example-3.59)\Pageref{Example-3.59}
+ [**Example 2.59**](#Example-2.59)\Pageref{Example-2.59}
 
- [**Proposition 3.60**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Proposition 2.60**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
 
- [**Proof**](#Proof*-3.20)\Pageref{Proof*-3.20}
+ [**Proof**](#Proof*-2.20)\Pageref{Proof*-2.20}
 
- [**Proposition 3.61**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+ [**Proposition 2.61**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
- [**Proof**](#Proof*-3.21)\Pageref{Proof*-3.21}
+ [**Proof**](#Proof*-2.21)\Pageref{Proof*-2.21}
 
- [**Theorem 3.62**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
+ [**Theorem 2.62**](#theorem-FTSC): Fundamental Theorem of Space Curves\Pageref{theorem-FTSC}
 
- [**Theorem 3.63**](#theorem-ODE): Existence and uniqueness for linear ODE systems\Pageref{theorem-ODE}
+ [**Theorem 2.63**](#theorem-ODE): Existence and uniqueness for linear ODE systems\Pageref{theorem-ODE}
 
- [**Proposition 3.64**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
+ [**Proposition 2.64**](#orthogonal-matrices-preserve-scalar-product-and-length): Orthogonal matrices preserve scalar product and length\Pageref{orthogonal-matrices-preserve-scalar-product-and-length}
 
- [**Proof**](#Proof*-3.22)\Pageref{Proof*-3.22}
+ [**Proof**](#Proof*-2.22)\Pageref{Proof*-2.22}
 
- [**Proposition 3.65**](#linear-transformations-of-cross-product): Linear transformations of cross product\Pageref{linear-transformations-of-cross-product}
+ [**Proposition 2.65**](#linear-transformations-of-cross-product): Linear transformations of cross product\Pageref{linear-transformations-of-cross-product}
 
- [**Proof**](#Proof*-3.23)\Pageref{Proof*-3.23}
+ [**Proof**](#Proof*-2.23)\Pageref{Proof*-2.23}
 
- [**Proposition 3.66**](#proposition-curve-rotation): Frenet Frame under rigid motions\Pageref{proposition-curve-rotation}
+ [**Proposition 2.66**](#proposition-curve-rotation): Frenet Frame under rigid motions\Pageref{proposition-curve-rotation}
 
- [**Proof**](#Proof*-3.24)\Pageref{Proof*-3.24}
+ [**Proof**](#Proof*-2.24)\Pageref{Proof*-2.24}
 
- [**Proposition 3.67**](#proposition-ODE-orthonormal): Evolution of orthonormal systems of vectors\Pageref{proposition-ODE-orthonormal}
+ [**Proposition 2.67**](#proposition-ODE-orthonormal): Evolution of orthonormal systems of vectors\Pageref{proposition-ODE-orthonormal}
 
- [**Proof**](#Proof*-3.25)\Pageref{Proof*-3.25}
+ [**Proof**](#Proof*-2.25)\Pageref{Proof*-2.25}
 
  [**Proof**](#proof-of-theorem): Proof of Theorem 3.62\Pageref{proof-of-theorem}
 
- [**Definition 4.1**](#definition-topology): Topological space\Pageref{definition-topology}
+ [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
- [**Remark 4.2**](#remark-intersection)\Pageref{remark-intersection}
+ [**Remark 3.2**](#remark-intersection)\Pageref{remark-intersection}
 
- [**Warning**](#Warning*-4.1)\Pageref{Warning*-4.1}
+ [**Warning**](#Warning*-3.1)\Pageref{Warning*-3.1}
 
- [**Definition 4.3**](#trivial-topology): Trivial topology\Pageref{trivial-topology}
+ [**Definition 3.3**](#trivial-topology): Trivial topology\Pageref{trivial-topology}
 
- [**Definition 4.4**](#discrete-topology): Discrete topology\Pageref{discrete-topology}
+ [**Definition 3.4**](#discrete-topology): Discrete topology\Pageref{discrete-topology}
 
- [**Definition 4.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
+ [**Definition 3.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
 
- [**Definition 4.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
+ [**Definition 3.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
 
- [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 4.6\Pageref{well-posedness-of-definition}
+ [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition}
 
- [**Proposition 4.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
+ [**Proposition 3.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
- [**Proof**](#Proof*-4.3)\Pageref{Proof*-4.3}
+ [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
 
- [**Definition 4.8**](#closed-set): Closed set\Pageref{closed-set}
+ [**Definition 3.8**](#closed-set): Closed set\Pageref{closed-set}
 
- [**Warning**](#Warning*-4.4)\Pageref{Warning*-4.4}
+ [**Warning**](#Warning*-3.4)\Pageref{Warning*-3.4}
 
- [**Proposition 4.9**](#Proposition-4.9)\Pageref{Proposition-4.9}
+ [**Proposition 3.9**](#Proposition-3.9)\Pageref{Proposition-3.9}
 
- [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
+ [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
- [**Example 4.10**](#the-zariski-topology): The Zariski topology\Pageref{the-zariski-topology}
+ [**Example 3.10**](#the-zariski-topology): The Zariski topology\Pageref{the-zariski-topology}
 
- [**Definition 4.11**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
+ [**Definition 3.11**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
 
- [**Example 4.12**](#Example-4.12)\Pageref{Example-4.12}
+ [**Example 3.12**](#Example-3.12)\Pageref{Example-3.12}
 
- [**Example 4.13**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
+ [**Example 3.13**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
 
- [**Definition 4.14**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+ [**Definition 3.14**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
 
- [**Notation**](#Notation*-4.6)\Pageref{Notation*-4.6}
+ [**Notation**](#Notation*-3.6)\Pageref{Notation*-3.6}
 
- [**Proposition 4.15**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
+ [**Proposition 3.15**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
 
- [**Proof**](#Proof*-4.7)\Pageref{Proof*-4.7}
+ [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
- [**Warning**](#Warning*-4.8)\Pageref{Warning*-4.8}
+ [**Warning**](#Warning*-3.8)\Pageref{Warning*-3.8}
 
- [**Proposition 4.16**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+ [**Proposition 3.16**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
 
- [**Proof**](#Proof*-4.9)\Pageref{Proof*-4.9}
+ [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
- [**Definition 4.17**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
+ [**Definition 3.17**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
 
- [**Proposition 4.18**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
+ [**Proposition 3.18**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
 
- [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
+ [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
 
- [**Notation**](#Notation*-4.11)\Pageref{Notation*-4.11}
+ [**Notation**](#Notation*-3.11)\Pageref{Notation*-3.11}
 
- [**Proposition 4.19**](#Proposition-4.19)\Pageref{Proposition-4.19}
+ [**Proposition 3.19**](#Proposition-3.19)\Pageref{Proposition-3.19}
 
- [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
+ [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
 
- [**Definition 4.20**](#distance): Distance\Pageref{distance}
+ [**Definition 3.20**](#distance): Distance\Pageref{distance}
 
- [**Definition 4.21**](#metric-space): Metric space\Pageref{metric-space}
+ [**Definition 3.21**](#metric-space): Metric space\Pageref{metric-space}
 
- [**Example 4.22**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
+ [**Example 3.22**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
 
- [**Example 4.23**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
+ [**Example 3.23**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
 
- [**Definition 4.24**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
+ [**Definition 3.24**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
 
- [**Example 4.25**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
+ [**Example 3.25**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
 
- [**Example 4.26**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
+ [**Example 3.26**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
 
- [**Proposition 4.27**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
+ [**Proposition 3.27**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
 
- [**Definition 4.28**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
+ [**Definition 3.28**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
 
- [**Proposition 4.29**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
+ [**Proposition 3.29**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
 
- [**Example 4.30**](#Example-4.30)\Pageref{Example-4.30}
+ [**Example 3.30**](#Example-3.30)\Pageref{Example-3.30}
 
- [**Warning**](#Warning*-4.13)\Pageref{Warning*-4.13}
+ [**Warning**](#Warning*-3.13)\Pageref{Warning*-3.13}
 
- [**Proposition 4.31**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
+ [**Proposition 3.31**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
 
- [**Definition 4.32**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
+ [**Definition 3.32**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
 
- [**Remark 4.33**](#Remark-4.33)\Pageref{Remark-4.33}
+ [**Remark 3.33**](#Remark-3.33)\Pageref{Remark-3.33}
 
- [**Proposition 4.34**](#Proposition-4.34)\Pageref{Proposition-4.34}
+ [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
 
- [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
+ [**Proof**](#Proof*-3.14)\Pageref{Proof*-3.14}
 
- [**Definition 4.35**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
+ [**Definition 3.35**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
 
- [**Remark 4.36**](#Remark-4.36)\Pageref{Remark-4.36}
+ [**Remark 3.36**](#Remark-3.36)\Pageref{Remark-3.36}
 
- [**Proposition 4.37**](#Proposition-4.37)\Pageref{Proposition-4.37}
+ [**Proposition 3.37**](#Proposition-3.37)\Pageref{Proposition-3.37}
 
- [**Proof**](#Proof*-4.15)\Pageref{Proof*-4.15}
+ [**Proof**](#Proof*-3.15)\Pageref{Proof*-3.15}
 
- [**Lemma 4.38**](#lemma-closure-intersection)\Pageref{lemma-closure-intersection}
+ [**Lemma 3.38**](#lemma-closure-intersection)\Pageref{lemma-closure-intersection}
 
- [**Proof**](#Proof*-4.16)\Pageref{Proof*-4.16}
+ [**Proof**](#Proof*-3.16)\Pageref{Proof*-3.16}
 
- [**Definition 4.39**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
+ [**Definition 3.39**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
 
- [**Proposition 4.40**](#Proposition-4.40)\Pageref{Proposition-4.40}
+ [**Proposition 3.40**](#Proposition-3.40)\Pageref{Proposition-3.40}
 
- [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
+ [**Proof**](#Proof*-3.17)\Pageref{Proof*-3.17}
 
- [**Definition 4.41**](#Definition-4.41)\Pageref{Definition-4.41}
+ [**Definition 3.41**](#Definition-3.41)\Pageref{Definition-3.41}
 
- [**Proposition 4.42**](#proposition-closure-sequence)\Pageref{proposition-closure-sequence}
+ [**Proposition 3.42**](#proposition-closure-sequence)\Pageref{proposition-closure-sequence}
 
- [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
+ [**Proof**](#Proof*-3.18)\Pageref{Proof*-3.18}
 
- [**Warning**](#Warning*-4.19)\Pageref{Warning*-4.19}
+ [**Warning**](#Warning*-3.19)\Pageref{Warning*-3.19}
 
- [**Example 4.43**](#example-closure-counter): Co-countable topology\Pageref{example-closure-counter}
+ [**Example 3.43**](#example-closure-counter): Co-countable topology\Pageref{example-closure-counter}
 
- [**Proposition 4.44**](#proposition-closure-metric)\Pageref{proposition-closure-metric}
+ [**Proposition 3.44**](#proposition-closure-metric)\Pageref{proposition-closure-metric}
 
- [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
+ [**Proof**](#Proof*-3.20)\Pageref{Proof*-3.20}
 
- [**Example 4.45**](#Example-4.45)\Pageref{Example-4.45}
+ [**Example 3.45**](#Example-3.45)\Pageref{Example-3.45}
 
- [**Definition 4.46**](#density-1): Density\Pageref{density-1}
+ [**Definition 3.46**](#density-1): Density\Pageref{density-1}
 
- [**Proposition 4.47**](#Proposition-4.47)\Pageref{Proposition-4.47}
+ [**Proposition 3.47**](#Proposition-3.47)\Pageref{Proposition-3.47}
 
- [**Proof**](#Proof*-4.21)\Pageref{Proof*-4.21}
+ [**Proof**](#Proof*-3.21)\Pageref{Proof*-3.21}
 
- [**Example 4.48**](#Example-4.48)\Pageref{Example-4.48}
+ [**Example 3.48**](#Example-3.48)\Pageref{Example-3.48}
 
- [**Example 4.49**](#Example-4.49)\Pageref{Example-4.49}
+ [**Example 3.49**](#Example-3.49)\Pageref{Example-3.49}
 
- [**Definition 4.50**](#Definition-4.50)\Pageref{Definition-4.50}
+ [**Definition 3.50**](#Definition-3.50)\Pageref{Definition-3.50}
 
- [**Proposition 4.51**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
+ [**Proposition 3.51**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
 
- [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
+ [**Proof**](#Proof*-3.22)\Pageref{Proof*-3.22}
 
- [**Definition 4.52**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
+ [**Definition 3.52**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
 
- [**Corollary 4.53**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
+ [**Corollary 3.53**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
 
- [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
+ [**Proof**](#Proof*-3.23)\Pageref{Proof*-3.23}
 
- [**Example 4.54**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
+ [**Example 3.54**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
 
- [**Example 4.55**](#cofinite-topology-is-not-hausdorff): Cofinite topology is not Hausdorff\Pageref{cofinite-topology-is-not-hausdorff}
+ [**Example 3.55**](#cofinite-topology-is-not-hausdorff): Cofinite topology is not Hausdorff\Pageref{cofinite-topology-is-not-hausdorff}
 
- [**Example 4.56**](#Example-4.56)\Pageref{Example-4.56}
+ [**Example 3.56**](#Example-3.56)\Pageref{Example-3.56}
 
- [**Proposition 4.57**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
+ [**Proposition 3.57**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
 
- [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+ [**Proof**](#Proof*-3.24)\Pageref{Proof*-3.24}
 
- [**Definition 4.58**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
+ [**Definition 3.58**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
 
- [**Warning**](#Warning*-4.25)\Pageref{Warning*-4.25}
+ [**Warning**](#Warning*-3.25)\Pageref{Warning*-3.25}
 
- [**Proposition 4.59**](#Proposition-4.59)\Pageref{Proposition-4.59}
+ [**Proposition 3.59**](#Proposition-3.59)\Pageref{Proposition-3.59}
 
- [**Definition 4.60**](#continuous-function-1): Continuous function\Pageref{continuous-function-1}
+ [**Definition 3.60**](#continuous-function): Continuous function\Pageref{continuous-function}
 
- [**Proposition 4.61**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
+ [**Proposition 3.61**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
 
- [**Important**](#Important*-4.26)\Pageref{Important*-4.26}
+ [**Important**](#Important*-3.26)\Pageref{Important*-3.26}
 
- [**Example 4.62**](#Example-4.62)\Pageref{Example-4.62}
+ [**Example 3.62**](#Example-3.62)\Pageref{Example-3.62}
 
- [**Definition 4.63**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
+ [**Definition 3.63**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
 
- [**Proposition 4.64**](#Proposition-4.64)\Pageref{Proposition-4.64}
+ [**Proposition 3.64**](#Proposition-3.64)\Pageref{Proposition-3.64}
 
- [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
+ [**Proof**](#Proof*-3.27)\Pageref{Proof*-3.27}
 
- [**Proposition 4.65**](#Proposition-4.65)\Pageref{Proposition-4.65}
+ [**Proposition 3.65**](#Proposition-3.65)\Pageref{Proposition-3.65}
 
- [**Example 4.66**](#Example-4.66)\Pageref{Example-4.66}
+ [**Example 3.66**](#Example-3.66)\Pageref{Example-3.66}
 
- [**Example 4.67**](#Example-4.67)\Pageref{Example-4.67}
+ [**Example 3.67**](#Example-3.67)\Pageref{Example-3.67}
 
- [**Definition 4.68**](#sequential-continuity): Sequential continuity\Pageref{sequential-continuity}
+ [**Definition 3.68**](#sequential-continuity): Sequential continuity\Pageref{sequential-continuity}
 
- [**Proposition 4.69**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
+ [**Proposition 3.69**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
 
- [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}
+ [**Proof**](#Proof*-3.28)\Pageref{Proof*-3.28}
 
- [**Warning**](#Warning*-4.29)\Pageref{Warning*-4.29}
+ [**Warning**](#Warning*-3.29)\Pageref{Warning*-3.29}
 
- [**Proposition 4.70**](#proposition-sequential-continuity)\Pageref{proposition-sequential-continuity}
+ [**Proposition 3.70**](#proposition-sequential-continuity)\Pageref{proposition-sequential-continuity}
 
- [**Proof**](#Proof*-4.30)\Pageref{Proof*-4.30}
+ [**Proof**](#Proof*-3.30)\Pageref{Proof*-3.30}
 
- [**Example 4.71**](#example-sequential-continuity): Sequential continuity does not imply continuity\Pageref{example-sequential-continuity}
+ [**Example 3.71**](#example-sequential-continuity): Sequential continuity does not imply continuity\Pageref{example-sequential-continuity}
 
- [**Proposition 4.72**](#Proposition-4.72)\Pageref{Proposition-4.72}
+ [**Proposition 3.72**](#Proposition-3.72)\Pageref{Proposition-3.72}
 
- [**Proof**](#Proof*-4.31)\Pageref{Proof*-4.31}
+ [**Proof**](#Proof*-3.31)\Pageref{Proof*-3.31}
 
- [**Definition 4.73**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Definition 3.73**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
 
- [**Definition 4.74**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
+ [**Definition 3.74**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
  [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.74\Pageref{well-posedness-of-definition-1}
 
- [**Proposition 4.75**](#Proposition-4.75)\Pageref{Proposition-4.75}
+ [**Proposition 3.75**](#Proposition-3.75)\Pageref{Proposition-3.75}
 
- [**Proof**](#Proof*-4.33)\Pageref{Proof*-4.33}
+ [**Proof**](#Proof*-3.33)\Pageref{Proof*-3.33}
 
- [**Warning**](#Warning*-4.34)\Pageref{Warning*-4.34}
+ [**Warning**](#Warning*-3.34)\Pageref{Warning*-3.34}
 
- [**Example 4.76**](#Example-4.76)\Pageref{Example-4.76}
+ [**Example 3.76**](#Example-3.76)\Pageref{Example-3.76}
 
- [**Definition 4.77**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
+ [**Definition 3.77**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
 
- [**Example 4.78**](#Example-4.78)\Pageref{Example-4.78}
+ [**Example 3.78**](#Example-3.78)\Pageref{Example-3.78}
 
- [**Proposition 4.79**](#proposition-basis)\Pageref{proposition-basis}
+ [**Proposition 3.79**](#proposition-basis)\Pageref{proposition-basis}
 
- [**Proof**](#Proof*-4.35)\Pageref{Proof*-4.35}
+ [**Proof**](#Proof*-3.35)\Pageref{Proof*-3.35}
 
- [**Proposition 4.80**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
+ [**Proposition 3.80**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
 
- [**Proof**](#Proof*-4.36)\Pageref{Proof*-4.36}
+ [**Proof**](#Proof*-3.36)\Pageref{Proof*-3.36}
 
- [**Proposition 4.81**](#Proposition-4.81)\Pageref{Proposition-4.81}
+ [**Proposition 3.81**](#Proposition-3.81)\Pageref{Proposition-3.81}
 
- [**Definition 4.82**](#product-topology-1): Product topology\Pageref{product-topology-1}
+ [**Definition 3.82**](#product-topology-1): Product topology\Pageref{product-topology-1}
 
- [**Example 4.83**](#Example-4.83)\Pageref{Example-4.83}
+ [**Example 3.83**](#Example-3.83)\Pageref{Example-3.83}
 
- [**Proposition 4.84**](#Proposition-4.84)\Pageref{Proposition-4.84}
+ [**Proposition 3.84**](#Proposition-3.84)\Pageref{Proposition-3.84}
 
- [**Proof**](#Proof*-4.37)\Pageref{Proof*-4.37}
+ [**Proof**](#Proof*-3.37)\Pageref{Proof*-3.37}
 
- [**Proposition 4.85**](#Proposition-4.85)\Pageref{Proposition-4.85}
+ [**Proposition 3.85**](#Proposition-3.85)\Pageref{Proposition-3.85}
 
- [**Definition 4.86**](#connected-space): Connected space\Pageref{connected-space}
+ [**Definition 3.86**](#connected-space): Connected space\Pageref{connected-space}
 
- [**Definition 4.87**](#proper-subset): Proper subset\Pageref{proper-subset}
+ [**Definition 3.87**](#proper-subset): Proper subset\Pageref{proper-subset}
 
- [**Proposition 4.88**](#proposition-connected-equivalent): Equivalent definition for connectedness\Pageref{proposition-connected-equivalent}
+ [**Proposition 3.88**](#proposition-connected-equivalent): Equivalent definition for connectedness\Pageref{proposition-connected-equivalent}
 
- [**Proof**](#Proof*-4.38)\Pageref{Proof*-4.38}
+ [**Proof**](#Proof*-3.38)\Pageref{Proof*-3.38}
 
- [**Example 4.89**](#Example-4.89)\Pageref{Example-4.89}
+ [**Example 3.89**](#Example-3.89)\Pageref{Example-3.89}
 
- [**Example 4.90**](#example-R-minus-p)\Pageref{example-R-minus-p}
+ [**Example 3.90**](#example-R-minus-p)\Pageref{example-R-minus-p}
 
- [**Example 4.91**](#example-Rn-minus-p)\Pageref{example-Rn-minus-p}
+ [**Example 3.91**](#example-Rn-minus-p)\Pageref{example-Rn-minus-p}
 
- [**Theorem 4.92**](#theorem-connected)\Pageref{theorem-connected}
+ [**Theorem 3.92**](#theorem-connected)\Pageref{theorem-connected}
 
- [**Proof**](#Proof*-4.39)\Pageref{Proof*-4.39}
+ [**Proof**](#Proof*-3.39)\Pageref{Proof*-3.39}
 
- [**Corollary 4.93**](#corollary-invariant-connected)\Pageref{corollary-invariant-connected}
+ [**Corollary 3.93**](#corollary-invariant-connected)\Pageref{corollary-invariant-connected}
 
- [**Example 4.94**](#example-dimension)\Pageref{example-dimension}
+ [**Example 3.94**](#example-dimension)\Pageref{example-dimension}
 
- [**Theorem 4.95**](#theorem-dimension): Topological invariance of dimension\Pageref{theorem-dimension}
+ [**Theorem 3.95**](#theorem-dimension): Topological invariance of dimension\Pageref{theorem-dimension}
 
- [**Example 4.96**](#Example-4.96)\Pageref{Example-4.96}
+ [**Example 3.96**](#Example-3.96)\Pageref{Example-3.96}
 
- [**Definition 4.97**](#interval): Interval\Pageref{interval}
+ [**Definition 3.97**](#interval): Interval\Pageref{interval}
 
- [**Theorem 4.98**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
+ [**Theorem 3.98**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
 
- [**Proof**](#Proof*-4.40)\Pageref{Proof*-4.40}
+ [**Proof**](#Proof*-3.40)\Pageref{Proof*-3.40}
 
- [**Theorem 4.99**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
+ [**Theorem 3.99**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
 
- [**Proof**](#Proof*-4.41)\Pageref{Proof*-4.41}
+ [**Proof**](#Proof*-3.41)\Pageref{Proof*-3.41}
 
- [**Definition 4.100**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
+ [**Definition 3.100**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
 
- [**Example 4.101**](#Example-4.101)\Pageref{Example-4.101}
+ [**Example 3.101**](#Example-3.101)\Pageref{Example-3.101}
 
- [**Theorem 4.102**](#theorem-path-connected)\Pageref{theorem-path-connected}
+ [**Theorem 3.102**](#theorem-path-connected)\Pageref{theorem-path-connected}
 
- [**Proof**](#Proof*-4.42)\Pageref{Proof*-4.42}
+ [**Proof**](#Proof*-3.42)\Pageref{Proof*-3.42}
 
- [**Lemma 4.103**](#lemma-connected-open-closed)\Pageref{lemma-connected-open-closed}
+ [**Lemma 3.103**](#lemma-connected-open-closed)\Pageref{lemma-connected-open-closed}
 
- [**Proof**](#Proof*-4.43)\Pageref{Proof*-4.43}
+ [**Proof**](#Proof*-3.43)\Pageref{Proof*-3.43}
 
- [**Proposition 4.104**](#proposition-topologist-curve): Topologist curve\Pageref{proposition-topologist-curve}
+ [**Proposition 3.104**](#proposition-topologist-curve): Topologist curve\Pageref{proposition-topologist-curve}
 
- [**Proof**](#Proof*-4.44)\Pageref{Proof*-4.44}
+ [**Proof**](#Proof*-3.44)\Pageref{Proof*-3.44}
 
- [**Theorem 4.105**](#Theorem-4.105)\Pageref{Theorem-4.105}
+ [**Theorem 3.105**](#Theorem-3.105)\Pageref{Theorem-3.105}
 
- [**Question 5.1**](#Question-5.1)\Pageref{Question-5.1}
+ [**Question 4.1**](#Question-4.1)\Pageref{Question-4.1}
 
- [**Definition 5.2**](#bilinear-form): Bilinear form\Pageref{bilinear-form}
+ [**Definition 4.2**](#bilinear-form): Bilinear form\Pageref{bilinear-form}
 
- [**Notation**](#Notation*-5.1)\Pageref{Notation*-5.1}
+ [**Notation**](#Notation*-4.1)\Pageref{Notation*-4.1}
 
- [**Remark 5.3**](#matrix-representation-for-bilinear-forms): Matrix representation for bilinear forms\Pageref{matrix-representation-for-bilinear-forms}
+ [**Remark 4.3**](#matrix-representation-for-bilinear-forms): Matrix representation for bilinear forms\Pageref{matrix-representation-for-bilinear-forms}
 
- [**Definition 5.4**](#quadratic-form): Quadratic form\Pageref{quadratic-form}
+ [**Definition 4.4**](#quadratic-form): Quadratic form\Pageref{quadratic-form}
 
- [**Proposition 5.5**](#Proposition-5.5)\Pageref{Proposition-5.5}
+ [**Proposition 4.5**](#Proposition-4.5)\Pageref{Proposition-4.5}
 
- [**Definition 5.6**](#inner-product): Inner product\Pageref{inner-product}
+ [**Definition 4.6**](#inner-product): Inner product\Pageref{inner-product}
 
- [**Example 5.7**](#Example-5.7)\Pageref{Example-5.7}
+ [**Example 4.7**](#Example-4.7)\Pageref{Example-4.7}
 
- [**Proposition 5.8**](#Proposition-5.8)\Pageref{Proposition-5.8}
+ [**Proposition 4.8**](#Proposition-4.8)\Pageref{Proposition-4.8}
 
- [**Definition 5.9**](#linear-map): Linear map\Pageref{linear-map}
+ [**Definition 4.9**](#linear-map): Linear map\Pageref{linear-map}
 
- [**Remark 5.10**](#matrix-representation-of-linear-maps): Matrix representation of linear maps\Pageref{matrix-representation-of-linear-maps}
+ [**Remark 4.10**](#matrix-representation-of-linear-maps): Matrix representation of linear maps\Pageref{matrix-representation-of-linear-maps}
 
- [**Definition 5.11**](#eigenvalues-and-eigenvectors): Eigenvalues and eigenvectors\Pageref{eigenvalues-and-eigenvectors}
+ [**Definition 4.11**](#eigenvalues-and-eigenvectors): Eigenvalues and eigenvectors\Pageref{eigenvalues-and-eigenvectors}
 
- [**Definition 5.12**](#self-adjoint-map): Self-adjoint map\Pageref{self-adjoint-map}
+ [**Definition 4.12**](#self-adjoint-map): Self-adjoint map\Pageref{self-adjoint-map}
 
- [**Theorem 5.13**](#theorem-spectral): Spectral Theorem\Pageref{theorem-spectral}
+ [**Theorem 4.13**](#theorem-spectral): Spectral Theorem\Pageref{theorem-spectral}
 
- [**Definition 5.14**](#Definition-5.14)\Pageref{Definition-5.14}
+ [**Definition 4.14**](#Definition-4.14)\Pageref{Definition-4.14}
 
- [**Remark 5.15**](#remark-self-adoint)\Pageref{remark-self-adoint}
+ [**Remark 4.15**](#remark-self-adoint)\Pageref{remark-self-adoint}
 
- [**Definition 5.16**](#matrix-eigenvalues): Matrix eigenvalues\Pageref{matrix-eigenvalues}
+ [**Definition 4.16**](#matrix-eigenvalues): Matrix eigenvalues\Pageref{matrix-eigenvalues}
 
- [**Remark 5.17**](#Remark-5.17)\Pageref{Remark-5.17}
+ [**Remark 4.17**](#Remark-4.17)\Pageref{Remark-4.17}
 
- [**Remark 5.18**](#Remark-5.18)\Pageref{Remark-5.18}
+ [**Remark 4.18**](#Remark-4.18)\Pageref{Remark-4.18}
 
- [**Theorem 5.19**](#theorem-spectral-matrix): Spectral Theorem for matrices\Pageref{theorem-spectral-matrix}
+ [**Theorem 4.19**](#theorem-spectral-matrix): Spectral Theorem for matrices\Pageref{theorem-spectral-matrix}
 
- [**Remark 5.20**](#Remark-5.20)\Pageref{Remark-5.20}
+ [**Remark 4.20**](#Remark-4.20)\Pageref{Remark-4.20}
 
- [**Definition 5.21**](#euclidean-topology): Euclidean Topology\Pageref{euclidean-topology}
+ [**Definition 4.21**](#euclidean-topology): Euclidean Topology\Pageref{euclidean-topology}
 
- [**Definition 5.22**](#open-sets): Open Sets\Pageref{open-sets}
+ [**Definition 4.22**](#open-sets): Open Sets\Pageref{open-sets}
 
- [**Definition 5.23**](#closed-sets-1): Closed Sets\Pageref{closed-sets-1}
+ [**Definition 4.23**](#closed-sets-1): Closed Sets\Pageref{closed-sets-1}
 
- [**Example 5.24**](#Example-5.24)\Pageref{Example-5.24}
+ [**Example 4.24**](#Example-4.24)\Pageref{Example-4.24}
 
- [**Definition 5.25**](#subspace-topology-2): Subspace Topology\Pageref{subspace-topology-2}
+ [**Definition 4.25**](#subspace-topology-1): Subspace Topology\Pageref{subspace-topology-1}
 
- [**Definition 5.26**](#continuous-function-2): Continuous Function\Pageref{continuous-function-2}
+ [**Definition 4.26**](#continuous-function-1): Continuous Function\Pageref{continuous-function-1}
 
- [**Proposition 5.27**](#continuity-topological-definition-1): Continuity: Topological definition\Pageref{continuity-topological-definition-1}
+ [**Proposition 4.27**](#continuity-topological-definition): Continuity: Topological definition\Pageref{continuity-topological-definition}
 
- [**Definition 5.28**](#homeomorphism-1): Homeomorphism\Pageref{homeomorphism-1}
+ [**Definition 4.28**](#homeomorphism): Homeomorphism\Pageref{homeomorphism}
 
- [**Definition 5.29**](#differentiable-function-1): Differentiable Function\Pageref{differentiable-function-1}
+ [**Definition 4.29**](#differentiable-function): Differentiable Function\Pageref{differentiable-function}
 
- [**Definition 5.30**](#partial-derivative-1): Partial Derivative\Pageref{partial-derivative-1}
+ [**Definition 4.30**](#partial-derivative): Partial Derivative\Pageref{partial-derivative}
 
- [**Definition 5.31**](#jacobian-matrix-1): Jacobian Matrix\Pageref{jacobian-matrix-1}
+ [**Definition 4.31**](#jacobian-matrix): Jacobian Matrix\Pageref{jacobian-matrix}
 
- [**Proposition 5.32**](#matrix-representation-of-the-differential-1): Matrix representation of the differential\Pageref{matrix-representation-of-the-differential-1}
+ [**Proposition 4.32**](#matrix-representation-of-the-differential): Matrix representation of the differential\Pageref{matrix-representation-of-the-differential}
 
- [**Definition 5.33**](#multi-index-notation): Multi-index notation\Pageref{multi-index-notation}
+ [**Definition 4.33**](#multi-index-notation): Multi-index notation\Pageref{multi-index-notation}
 
- [**Definition 5.34**](#smooth-function-1): Smooth Function\Pageref{smooth-function-1}
+ [**Definition 4.34**](#smooth-function): Smooth Function\Pageref{smooth-function}
 
- [**Notation**](#gradient-and-partial-derivatives-1): Gradient and partial derivatives\Pageref{gradient-and-partial-derivatives-1}
+ [**Notation**](#gradient-and-partial-derivatives): Gradient and partial derivatives\Pageref{gradient-and-partial-derivatives}
 
- [**Example 5.35**](#Example-5.35)\Pageref{Example-5.35}
+ [**Example 4.35**](#Example-4.35)\Pageref{Example-4.35}
 
- [**Definition 5.36**](#diffeomorphism-2): Diffeomorphism\Pageref{diffeomorphism-2}
+ [**Definition 4.36**](#diffeomorphism-1): Diffeomorphism\Pageref{diffeomorphism-1}
 
- [**Definition 5.37**](#local-diffeomorphism-2): Local diffeomorphism\Pageref{local-diffeomorphism-2}
+ [**Definition 4.37**](#local-diffeomorphism): Local diffeomorphism\Pageref{local-diffeomorphism}
 
- [**Remark 5.38**](#Remark-5.38)\Pageref{Remark-5.38}
+ [**Remark 4.38**](#Remark-4.38)\Pageref{Remark-4.38}
 
- [**Proposition 5.39**](#proposition-jacobian-zero)\Pageref{proposition-jacobian-zero}
+ [**Proposition 4.39**](#proposition-jacobian-zero)\Pageref{proposition-jacobian-zero}
 
- [**Example 5.40**](#Example-5.40)\Pageref{Example-5.40}
+ [**Example 4.40**](#Example-4.40)\Pageref{Example-4.40}
 
- [**Theorem 5.41**](#theorem-inverse-function): Inverse Function Theorem\Pageref{theorem-inverse-function}
+ [**Theorem 4.41**](#theorem-inverse-function): Inverse Function Theorem\Pageref{theorem-inverse-function}
 
- [**Example 5.42**](#Example-5.42)\Pageref{Example-5.42}
+ [**Example 4.42**](#Example-4.42)\Pageref{Example-4.42}
 
- [**Warning**](#Warning*-5.3)\Pageref{Warning*-5.3}
+ [**Warning**](#Warning*-4.3)\Pageref{Warning*-4.3}
 
- [**Definition 5.43**](#surface-1): Surface\Pageref{surface-1}
+ [**Definition 4.43**](#surface): Surface\Pageref{surface}
 
- [**Remark 5.44**](#Remark-5.44)\Pageref{Remark-5.44}
+ [**Remark 4.44**](#Remark-4.44)\Pageref{Remark-4.44}
 
- [**Notation**](#Notation*-5.4)\Pageref{Notation*-5.4}
+ [**Notation**](#Notation*-4.4)\Pageref{Notation*-4.4}
 
- [**Definition 5.45**](#atlas-of-a-surface-1): Atlas of a surface\Pageref{atlas-of-a-surface-1}
+ [**Definition 4.45**](#atlas-of-a-surface): Atlas of a surface\Pageref{atlas-of-a-surface}
 
- [**Example 5.46**](#d-plane-in-mathbbr3-1): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-1}
+ [**Example 4.46**](#d-plane-in-mathbbr3): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3}
 
- [**Example 5.47**](#example-cylinder-chart): Unit cylinder\Pageref{example-cylinder-chart}
+ [**Example 4.47**](#example-cylinder-chart): Unit cylinder\Pageref{example-cylinder-chart}
 
- [**Example 5.48**](#graph-of-a-function-1): Graph of a function\Pageref{graph-of-a-function-1}
+ [**Example 4.48**](#graph-of-a-function): Graph of a function\Pageref{graph-of-a-function}
 
- [**Example 5.49**](#circular-cone-1): Circular cone\Pageref{circular-cone-1}
+ [**Example 4.49**](#circular-cone): Circular cone\Pageref{circular-cone}
 
- [**Definition 5.50**](#regular-chart-1): Regular Chart\Pageref{regular-chart-1}
+ [**Definition 4.50**](#regular-chart): Regular Chart\Pageref{regular-chart}
 
- [**Definition 5.51**](#regular-surface-1): Regular surface\Pageref{regular-surface-1}
+ [**Definition 4.51**](#regular-surface): Regular surface\Pageref{regular-surface}
 
- [**Proposition 5.52**](#Proposition-5.52)\Pageref{Proposition-5.52}
+ [**Proposition 4.52**](#Proposition-4.52)\Pageref{Proposition-4.52}
 
- [**Proof**](#Proof*-5.5)\Pageref{Proof*-5.5}
+ [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
 
- [**Example 5.53**](#d-plane-in-mathbbr3-2): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-2}
+ [**Example 4.53**](#d-plane-in-mathbbr3-1): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-1}
 
- [**Example 5.54**](#example-unit-cylinder): Unit cylinder\Pageref{example-unit-cylinder}
+ [**Example 4.54**](#example-unit-cylinder): Unit cylinder\Pageref{example-unit-cylinder}
 
- [**Example 5.55**](#example-cylinder-single): Unit cylinder: Single chart atlas\Pageref{example-cylinder-single}
+ [**Example 4.55**](#example-cylinder-single): Unit cylinder: Single chart atlas\Pageref{example-cylinder-single}
 
- [**Example 5.56**](#graph-of-a-function-2): Graph of a function\Pageref{graph-of-a-function-2}
+ [**Example 4.56**](#graph-of-a-function-1): Graph of a function\Pageref{graph-of-a-function-1}
 
- [**Definition 5.57**](#spherical-coordinates-1): Spherical coordinates\Pageref{spherical-coordinates-1}
+ [**Definition 4.57**](#spherical-coordinates): Spherical coordinates\Pageref{spherical-coordinates}
 
- [**Example 5.58**](#example-sphere-spherical): Unit sphere in spherical coordinates\Pageref{example-sphere-spherical}
+ [**Example 4.58**](#example-sphere-spherical): Unit sphere in spherical coordinates\Pageref{example-sphere-spherical}
 
- [**Example 5.59**](#example-sphere-cartesian): Unit sphere in Cartesian coordinates\Pageref{example-sphere-cartesian}
+ [**Example 4.59**](#example-sphere-cartesian): Unit sphere in Cartesian coordinates\Pageref{example-sphere-cartesian}
 
- [**Example 5.60**](#Example-5.60)\Pageref{Example-5.60}
+ [**Example 4.60**](#Example-4.60)\Pageref{Example-4.60}
 
- [**Definition 5.61**](#Definition-5.61)\Pageref{Definition-5.61}
+ [**Definition 4.61**](#Definition-4.61)\Pageref{Definition-4.61}
 
- [**Remark 5.62**](#chain-rule): Chain rule\Pageref{chain-rule}
+ [**Remark 4.62**](#chain-rule): Chain rule\Pageref{chain-rule}
 
- [**Proposition 5.63**](#proposition-transition-maps)\Pageref{proposition-transition-maps}
+ [**Proposition 4.63**](#proposition-transition-maps)\Pageref{proposition-transition-maps}
 
- [**Proof**](#Proof*-5.6)\Pageref{Proof*-5.6}
+ [**Proof**](#Proof*-4.6)\Pageref{Proof*-4.6}
 
- [**Definition 5.64**](#transition-map-1): Transition map\Pageref{transition-map-1}
+ [**Definition 4.64**](#transition-map): Transition map\Pageref{transition-map}
 
- [**Theorem 5.65**](#theorem-transition-map)\Pageref{theorem-transition-map}
+ [**Theorem 4.65**](#theorem-transition-map)\Pageref{theorem-transition-map}
 
- [**Proposition 5.66**](#proposition-transition-map)\Pageref{proposition-transition-map}
+ [**Proposition 4.66**](#proposition-transition-map)\Pageref{proposition-transition-map}
 
- [**Example 5.67**](#example-sphere-reparametrization): Reparametrization of $\mathbb{S}^2$\Pageref{example-sphere-reparametrization}
+ [**Example 4.67**](#example-sphere-reparametrization): Reparametrization of $\mathbb{S}^2$\Pageref{example-sphere-reparametrization}
 
- [**Important**](#Important*-5.7)\Pageref{Important*-5.7}
+ [**Important**](#Important*-4.7)\Pageref{Important*-4.7}
 
- [**Definition 5.68**](#definition-smooth-map-surface): Smooth functions between surfaces\Pageref{definition-smooth-map-surface}
+ [**Definition 4.68**](#definition-smooth-map-surface): Smooth functions between surfaces\Pageref{definition-smooth-map-surface}
 
- [**Remark 5.69**](#Remark-5.69)\Pageref{Remark-5.69}
+ [**Remark 4.69**](#Remark-4.69)\Pageref{Remark-4.69}
 
- [**Proposition 5.70**](#Proposition-5.70)\Pageref{Proposition-5.70}
+ [**Proposition 4.70**](#Proposition-4.70)\Pageref{Proposition-4.70}
 
- [**Proof**](#Proof*-5.8)\Pageref{Proof*-5.8}
+ [**Proof**](#Proof*-4.8)\Pageref{Proof*-4.8}
 
- [**Proposition 5.71**](#proposition-inverse-diff)\Pageref{proposition-inverse-diff}
+ [**Proposition 4.71**](#proposition-inverse-diff)\Pageref{proposition-inverse-diff}
 
- [**Proof**](#Proof*-5.9)\Pageref{Proof*-5.9}
+ [**Proof**](#Proof*-4.9)\Pageref{Proof*-4.9}
 
- [**Proposition 5.72**](#proposition-diff-check)\Pageref{proposition-diff-check}
+ [**Proposition 4.72**](#proposition-diff-check)\Pageref{proposition-diff-check}
 
- [**Proof**](#Proof*-5.10)\Pageref{Proof*-5.10}
+ [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
 
- [**Example 5.73**](#Example-5.73)\Pageref{Example-5.73}
+ [**Example 4.73**](#Example-4.73)\Pageref{Example-4.73}
 
- [**Definition 5.74**](#diffeomorphism-of-surfaces-1): Diffeomorphism of surfaces\Pageref{diffeomorphism-of-surfaces-1}
+ [**Definition 4.74**](#diffeomorphism-of-surfaces): Diffeomorphism of surfaces\Pageref{diffeomorphism-of-surfaces}
 
- [**Proposition 5.75**](#proposition-f-chart)\Pageref{proposition-f-chart}
+ [**Proposition 4.75**](#proposition-f-chart)\Pageref{proposition-f-chart}
 
- [**Proof**](#Proof*-5.11)\Pageref{Proof*-5.11}
+ [**Proof**](#Proof*-4.11)\Pageref{Proof*-4.11}
 
- [**Definition 5.76**](#local-diffeomorphism-3): Local diffeomorphism\Pageref{local-diffeomorphism-3}
+ [**Definition 4.76**](#local-diffeomorphism-1): Local diffeomorphism\Pageref{local-diffeomorphism-1}
 
- [**Assumption 5.77**](#Assumption-5.77)\Pageref{Assumption-5.77}
+ [**Assumption 4.77**](#Assumption-4.77)\Pageref{Assumption-4.77}
 
- [**Definition 5.78**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
+ [**Definition 4.78**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
 
- [**Example 5.79**](#example-tangent-open-set)\Pageref{example-tangent-open-set}
+ [**Example 4.79**](#example-tangent-open-set)\Pageref{example-tangent-open-set}
 
- [**Lemma 5.80**](#lemma-curve-S): Curves with values on surfaces\Pageref{lemma-curve-S}
+ [**Lemma 4.80**](#lemma-curve-S): Curves with values on surfaces\Pageref{lemma-curve-S}
 
- [**Proof**](#Proof*-5.12)\Pageref{Proof*-5.12}
+ [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
 
- [**Theorem 5.81**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
+ [**Theorem 4.81**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
 
- [**Proof**](#Proof*-5.13)\Pageref{Proof*-5.13}
+ [**Proof**](#Proof*-4.13)\Pageref{Proof*-4.13}
 
- [**Definition 5.82**](#tangent-plane-1): Tangent plane\Pageref{tangent-plane-1}
+ [**Definition 4.82**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
 
- [**Remark 5.83**](#remark-affine-plane)\Pageref{remark-affine-plane}
+ [**Remark 4.83**](#remark-affine-plane)\Pageref{remark-affine-plane}
 
- [**Proposition 5.84**](#equation-of-tangent-plane-1): Equation of tangent plane\Pageref{equation-of-tangent-plane-1}
+ [**Proposition 4.84**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
 
- [**Proof**](#Proof*-5.14)\Pageref{Proof*-5.14}
+ [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
 
- [**Example 5.85**](#Example-5.85)\Pageref{Example-5.85}
+ [**Example 4.85**](#Example-4.85)\Pageref{Example-4.85}
 
- [**Remark 5.86**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+ [**Remark 4.86**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
 
- [**Question 5.87**](#Question-5.87)\Pageref{Question-5.87}
+ [**Question 4.87**](#Question-4.87)\Pageref{Question-4.87}
 
- [**Remark 5.88**](#remark-normal-chart)\Pageref{remark-normal-chart}
+ [**Remark 4.88**](#remark-normal-chart)\Pageref{remark-normal-chart}
 
- [**Definition 5.89**](#standard-unit-normal-of-a-chart-1): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart-1}
+ [**Definition 4.89**](#standard-unit-normal-of-a-chart): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart}
 
- [**Definition 5.90**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
+ [**Definition 4.90**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
 
- [**Example 5.91**](#orientation-of-the-plane): Orientation of the plane\Pageref{orientation-of-the-plane}
+ [**Example 4.91**](#orientation-of-the-plane): Orientation of the plane\Pageref{orientation-of-the-plane}
 
- [**Definition 5.92**](#orientable-surface-1): Orientable surface\Pageref{orientable-surface-1}
+ [**Definition 4.92**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
 
  [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
 
- [**Example 5.93**](#möbius-band-1): Möbius band\Pageref{möbius-band-1}
+ [**Example 4.93**](#möbius-band): Möbius band\Pageref{möbius-band}
 
- [**Example 5.94**](#Example-5.94)\Pageref{Example-5.94}
+ [**Example 4.94**](#Example-4.94)\Pageref{Example-4.94}
 
- [**Remark 5.95**](#Remark-5.95)\Pageref{Remark-5.95}
+ [**Remark 4.95**](#Remark-4.95)\Pageref{Remark-4.95}
 
- [**Definition 5.96**](#unit-normal-of-a-surface-1): Unit normal of a surface\Pageref{unit-normal-of-a-surface-1}
+ [**Definition 4.96**](#unit-normal-of-a-surface): Unit normal of a surface\Pageref{unit-normal-of-a-surface}
 
- [**Warning**](#Warning*-5.16)\Pageref{Warning*-5.16}
+ [**Warning**](#Warning*-4.16)\Pageref{Warning*-4.16}
 
- [**Proposition 5.97**](#proposition-oriented)\Pageref{proposition-oriented}
+ [**Proposition 4.97**](#proposition-oriented)\Pageref{proposition-oriented}
 
- [**Definition 5.98**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
+ [**Definition 4.98**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
 
- [**Notation**](#Notation*-5.17)\Pageref{Notation*-5.17}
+ [**Notation**](#Notation*-4.17)\Pageref{Notation*-4.17}
 
- [**Example 5.99**](#Example-5.99)\Pageref{Example-5.99}
+ [**Example 4.99**](#Example-4.99)\Pageref{Example-4.99}
 
- [**Lemma 5.100**](#lemma-derivative)\Pageref{lemma-derivative}
+ [**Lemma 4.100**](#lemma-derivative)\Pageref{lemma-derivative}
 
- [**Proof**](#Proof*-5.18)\Pageref{Proof*-5.18}
+ [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
 
- [**Definition 5.101**](#definition-differential-f): Differential of smooth function\Pageref{definition-differential-f}
+ [**Definition 4.101**](#definition-differential-f): Differential of smooth function\Pageref{definition-differential-f}
 
- [**Proposition 5.102**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
+ [**Proposition 4.102**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
 
- [**Proof**](#Proof*-5.19)\Pageref{Proof*-5.19}
+ [**Proof**](#Proof*-4.19)\Pageref{Proof*-4.19}
 
- [**Example 5.103**](#computing-d_mathbfpf-using-the-definition-1): Computing $d_{\mathbf{p}}f$ using the definition\Pageref{computing-d_mathbfpf-using-the-definition-1}
+ [**Example 4.103**](#computing-d_mathbfpf-using-the-definition): Computing $d_{\mathbf{p}}f$ using the definition\Pageref{computing-d_mathbfpf-using-the-definition}
 
- [**Example 5.104**](#computing-the-matrix-of-d_mathbfpf-1): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf-1}
+ [**Example 4.104**](#computing-the-matrix-of-d_mathbfpf): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf}
 
- [**Proposition 5.105**](#Proposition-5.105)\Pageref{Proposition-5.105}
+ [**Proposition 4.105**](#Proposition-4.105)\Pageref{Proposition-4.105}
 
- [**Theorem 5.106**](#theorem-df-invertible)\Pageref{theorem-df-invertible}
+ [**Theorem 4.106**](#theorem-df-invertible)\Pageref{theorem-df-invertible}
 
- [**Definition 5.107**](#level-surface-1): Level surface\Pageref{level-surface-1}
+ [**Definition 4.107**](#level-surface): Level surface\Pageref{level-surface}
 
- [**Theorem 5.108**](#theorem-level-surface)\Pageref{theorem-level-surface}
+ [**Theorem 4.108**](#theorem-level-surface)\Pageref{theorem-level-surface}
 
- [**Example 5.109**](#circular-cone-2): Circular cone\Pageref{circular-cone-2}
+ [**Example 4.109**](#circular-cone-1): Circular cone\Pageref{circular-cone-1}
 
- [**Proposition 5.110**](#tangent-plane-of-level-surfaces-1): Tangent plane of level surfaces\Pageref{tangent-plane-of-level-surfaces-1}
+ [**Proposition 4.110**](#tangent-plane-of-level-surfaces): Tangent plane of level surfaces\Pageref{tangent-plane-of-level-surfaces}
 
- [**Proof**](#Proof*-5.20)\Pageref{Proof*-5.20}
+ [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
 
- [**Example 5.111**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.111**](#unit-cylinder): Unit cylinder\Pageref{unit-cylinder}
 
- [**Theorem 5.112**](#theorem-quadrics)\Pageref{theorem-quadrics}
+ [**Theorem 4.112**](#theorem-quadrics)\Pageref{theorem-quadrics}
 
- [**Example 5.113**](#Example-5.113)\Pageref{Example-5.113}
+ [**Example 4.113**](#Example-4.113)\Pageref{Example-4.113}
 
- [**Example 5.114**](#Example-5.114)\Pageref{Example-5.114}
+ [**Example 4.114**](#Example-4.114)\Pageref{Example-4.114}
 
- [**Definition 5.115**](#ruled-surface-1): Ruled surface\Pageref{ruled-surface-1}
+ [**Definition 4.115**](#ruled-surface): Ruled surface\Pageref{ruled-surface}
 
- [**Proposition 5.116**](#Proposition-5.116)\Pageref{Proposition-5.116}
+ [**Proposition 4.116**](#Proposition-4.116)\Pageref{Proposition-4.116}
 
- [**Proof**](#Proof*-5.21)\Pageref{Proof*-5.21}
+ [**Proof**](#Proof*-4.21)\Pageref{Proof*-4.21}
 
- [**Example 5.117**](#unit-cylinder-4): Unit Cylinder\Pageref{unit-cylinder-4}
+ [**Example 4.117**](#unit-cylinder-1): Unit Cylinder\Pageref{unit-cylinder-1}
 
- [**Example 5.118**](#example-mobius): Möbius band\Pageref{example-mobius}
+ [**Example 4.118**](#example-mobius): Möbius band\Pageref{example-mobius}
 
- [**Definition 5.119**](#surface-of-revolution-1): Surface of revolution\Pageref{surface-of-revolution-1}
+ [**Definition 4.119**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
 
- [**Proposition 5.120**](#proposition-revolution)\Pageref{proposition-revolution}
+ [**Proposition 4.120**](#proposition-revolution)\Pageref{proposition-revolution}
 
- [**Proof**](#Proof*-5.22)\Pageref{Proof*-5.22}
+ [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
 
- [**Example 5.121**](#catenoid-1): Catenoid\Pageref{catenoid-1}
+ [**Example 4.121**](#catenoid): Catenoid\Pageref{catenoid}
 
- [**Definition 5.122**](#first-fundamental-form-3): First fundamental form\Pageref{first-fundamental-form-3}
+ [**Definition 4.122**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
 
- [**Definition 5.123**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
+ [**Definition 4.123**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
 
- [**Definition 5.124**](#first-fundamental-form-of-a-chart-1): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart-1}
+ [**Definition 4.124**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
 
- [**Proposition 5.125**](#proposition-fff-quadratic)\Pageref{proposition-fff-quadratic}
+ [**Proposition 4.125**](#proposition-fff-quadratic)\Pageref{proposition-fff-quadratic}
 
- [**Proof**](#Proof*-5.23)\Pageref{Proof*-5.23}
+ [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
 
- [**Remark 5.126**](#linear-algebra-interpretation): Linear algebra interpretation\Pageref{linear-algebra-interpretation}
+ [**Remark 4.126**](#linear-algebra-interpretation): Linear algebra interpretation\Pageref{linear-algebra-interpretation}
 
- [**Notation**](#Notation*-5.24)\Pageref{Notation*-5.24}
+ [**Notation**](#Notation*-4.24)\Pageref{Notation*-4.24}
 
- [**Remark 5.127**](#remark-fff-reparametrization): First fundamental form and reparametrizations\Pageref{remark-fff-reparametrization}
+ [**Remark 4.127**](#remark-fff-reparametrization): First fundamental form and reparametrizations\Pageref{remark-fff-reparametrization}
 
- [**Example 5.128**](#example-fff-plane): Plane\Pageref{example-fff-plane}
+ [**Example 4.128**](#example-fff-plane): Plane\Pageref{example-fff-plane}
 
- [**Remark 5.129**](#Remark-5.129)\Pageref{Remark-5.129}
+ [**Remark 4.129**](#Remark-4.129)\Pageref{Remark-4.129}
 
- [**Warning**](#Warning*-5.25)\Pageref{Warning*-5.25}
+ [**Warning**](#Warning*-4.25)\Pageref{Warning*-4.25}
 
- [**Example 5.130**](#Example-5.130)\Pageref{Example-5.130}
+ [**Example 4.130**](#Example-4.130)\Pageref{Example-4.130}
 
- [**Example 5.131**](#example-fff-plane-polar): Plane in polar coordinates\Pageref{example-fff-plane-polar}
+ [**Example 4.131**](#example-fff-plane-polar): Plane in polar coordinates\Pageref{example-fff-plane-polar}
 
- [**Example 5.132**](#example-cylinder-fff): Unit cylinder\Pageref{example-cylinder-fff}
+ [**Example 4.132**](#example-cylinder-fff): Unit cylinder\Pageref{example-cylinder-fff}
 
- [**Remark 5.133**](#Remark-5.133)\Pageref{Remark-5.133}
+ [**Remark 4.133**](#Remark-4.133)\Pageref{Remark-4.133}
 
- [**Proposition 5.134**](#proposition-fff-length)\Pageref{proposition-fff-length}
+ [**Proposition 4.134**](#proposition-fff-length)\Pageref{proposition-fff-length}
 
- [**Proof**](#Proof*-5.26)\Pageref{Proof*-5.26}
+ [**Proof**](#Proof*-4.26)\Pageref{Proof*-4.26}
 
- [**Example 5.135**](#example-fff-cone): FFF of the Cone\Pageref{example-fff-cone}
+ [**Example 4.135**](#example-fff-cone): FFF of the Cone\Pageref{example-fff-cone}
 
- [**Definition 5.136**](#local-isometry-and-isometry): Local Isometry and Isometry\Pageref{local-isometry-and-isometry}
+ [**Definition 4.136**](#local-isometry-and-isometry): Local Isometry and Isometry\Pageref{local-isometry-and-isometry}
 
- [**Remark 5.137**](#remark-local-isometry)\Pageref{remark-local-isometry}
+ [**Remark 4.137**](#remark-local-isometry)\Pageref{remark-local-isometry}
 
- [**Proposition 5.138**](#prop-isometry-diffeo)\Pageref{prop-isometry-diffeo}
+ [**Proposition 4.138**](#prop-isometry-diffeo)\Pageref{prop-isometry-diffeo}
 
- [**Proof**](#Proof*-5.27)\Pageref{Proof*-5.27}
+ [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
 
- [**Remark 5.139**](#Remark-5.139)\Pageref{Remark-5.139}
+ [**Remark 4.139**](#Remark-4.139)\Pageref{Remark-4.139}
 
- [**Proposition 5.140**](#Proposition-5.140)\Pageref{Proposition-5.140}
+ [**Proposition 4.140**](#Proposition-4.140)\Pageref{Proposition-4.140}
 
- [**Proof**](#Proof*-5.28)\Pageref{Proof*-5.28}
+ [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}
 
- [**Theorem 5.141**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
+ [**Theorem 4.141**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
 
- [**Proof**](#Proof*-5.29)\Pageref{Proof*-5.29}
+ [**Proof**](#Proof*-4.29)\Pageref{Proof*-4.29}
 
- [**Remark 5.142**](#remark-local-isometry-chart)\Pageref{remark-local-isometry-chart}
+ [**Remark 4.142**](#remark-local-isometry-chart)\Pageref{remark-local-isometry-chart}
 
- [**Theorem 5.143**](#theorem-local-isometry-2)\Pageref{theorem-local-isometry-2}
+ [**Theorem 4.143**](#theorem-local-isometry-2)\Pageref{theorem-local-isometry-2}
 
- [**Proof**](#Proof*-5.30)\Pageref{Proof*-5.30}
+ [**Proof**](#Proof*-4.30)\Pageref{Proof*-4.30}
 
- [**Example 5.144**](#example-plane-cylinder): Plane and Cylinder are locally isometric\Pageref{example-plane-cylinder}
+ [**Example 4.144**](#example-plane-cylinder): Plane and Cylinder are locally isometric\Pageref{example-plane-cylinder}
 
- [**Example 5.145**](#example-plane-cylinder-2): Plane and Cylinder are not isometric\Pageref{example-plane-cylinder-2}
+ [**Example 4.145**](#example-plane-cylinder-2): Plane and Cylinder are not isometric\Pageref{example-plane-cylinder-2}
 
- [**Example 5.146**](#plane-and-cone-are-locally-isometric): Plane and Cone are locally isometric\Pageref{plane-and-cone-are-locally-isometric}
+ [**Example 4.146**](#plane-and-cone-are-locally-isometric): Plane and Cone are locally isometric\Pageref{plane-and-cone-are-locally-isometric}
 
- [**Definition 5.147**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
+ [**Definition 4.147**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
 
- [**Proposition 5.148**](#Proposition-5.148)\Pageref{Proposition-5.148}
+ [**Proposition 4.148**](#Proposition-4.148)\Pageref{Proposition-4.148}
 
- [**Proof**](#Proof*-5.31)\Pageref{Proof*-5.31}
+ [**Proof**](#Proof*-4.31)\Pageref{Proof*-4.31}
 
- [**Definition 5.149**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+ [**Definition 4.149**](#angle-between-curves): Angle between curves\Pageref{angle-between-curves}
 
- [**Proposition 5.150**](#Proposition-5.150)\Pageref{Proposition-5.150}
+ [**Proposition 4.150**](#Proposition-4.150)\Pageref{Proposition-4.150}
 
- [**Proof**](#Proof*-5.32)\Pageref{Proof*-5.32}
+ [**Proof**](#Proof*-4.32)\Pageref{Proof*-4.32}
 
- [**Definition 5.151**](#conformal-map): Conformal map\Pageref{conformal-map}
+ [**Example 4.151**](#Example-4.151)\Pageref{Example-4.151}
 
- [**Notation**](#Notation*-5.33)\Pageref{Notation*-5.33}
+ [**Definition 4.152**](#conformal-map): Conformal map\Pageref{conformal-map}
 
- [**Remark 5.152**](#Remark-5.152)\Pageref{Remark-5.152}
+ [**Notation**](#Notation*-4.33)\Pageref{Notation*-4.33}
 
- [**Proposition 5.153**](#Proposition-5.153)\Pageref{Proposition-5.153}
+ [**Remark 4.153**](#Remark-4.153)\Pageref{Remark-4.153}
 
- [**Proof**](#Proof*-5.34)\Pageref{Proof*-5.34}
+ [**Proposition 4.154**](#Proposition-4.154)\Pageref{Proposition-4.154}
 
- [**Theorem 5.154**](#theorem-conformal)\Pageref{theorem-conformal}
+ [**Proof**](#Proof*-4.34)\Pageref{Proof*-4.34}
 
- [**Proof**](#Proof*-5.35)\Pageref{Proof*-5.35}
+ [**Theorem 4.155**](#theorem-conformal)\Pageref{theorem-conformal}
 
- [**Theorem 5.155**](#theorem-conformal-fff)\Pageref{theorem-conformal-fff}
+ [**Proof**](#Proof*-4.35)\Pageref{Proof*-4.35}
 
- [**Remark 5.156**](#remark-conformal-chart)\Pageref{remark-conformal-chart}
+ [**Theorem 4.156**](#theorem-conformal-fff)\Pageref{theorem-conformal-fff}
 
- [**Theorem 5.157**](#theorem-conformal-fff-2)\Pageref{theorem-conformal-fff-2}
+ [**Remark 4.157**](#remark-conformal-chart)\Pageref{remark-conformal-chart}
 
- [**Example 5.158**](#example-conformal): Stereographic Projection\Pageref{example-conformal}
+ [**Theorem 4.158**](#theorem-conformal-fff-2)\Pageref{theorem-conformal-fff-2}
 
- [**Example 5.159**](#sphere-and-plane-are-conformal): Sphere and Plane are conformal\Pageref{sphere-and-plane-are-conformal}
+ [**Example 4.159**](#example-conformal): Stereographic Projection\Pageref{example-conformal}
 
- [**Definition 5.160**](#definition-conformal-parametrization): Conformal parametrization\Pageref{definition-conformal-parametrization}
+ [**Example 4.160**](#sphere-and-plane-are-conformal): Sphere and Plane are conformal\Pageref{sphere-and-plane-are-conformal}
 
- [**Theorem 5.161**](#Theorem-5.161)\Pageref{Theorem-5.161}
+ [**Definition 4.161**](#definition-conformal-parametrization): Conformal parametrization\Pageref{definition-conformal-parametrization}
 
- [**Proof**](#Proof*-5.36)\Pageref{Proof*-5.36}
+ [**Theorem 4.162**](#Theorem-4.162)\Pageref{Theorem-4.162}
 
- [**Theorem 5.162**](#Theorem-5.162)\Pageref{Theorem-5.162}
+ [**Proof**](#Proof*-4.36)\Pageref{Proof*-4.36}
 
- [**Example 5.163**](#unit-cylinder-5): Unit cylinder\Pageref{unit-cylinder-5}
+ [**Theorem 4.163**](#Theorem-4.163)\Pageref{Theorem-4.163}
 
- [**Example 5.164**](#sphere): Sphere\Pageref{sphere}
+ [**Example 4.164**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
 
- [**Example 5.165**](#sphere-stereographic-projection): Sphere: Stereographic projection\Pageref{sphere-stereographic-projection}
+ [**Example 4.165**](#sphere): Sphere\Pageref{sphere}
 
- [**Example 5.166**](#lambert-cylindrical-projection): Lambert cylindrical projection\Pageref{lambert-cylindrical-projection}
+ [**Example 4.166**](#sphere-stereographic-projection): Sphere: Stereographic projection\Pageref{sphere-stereographic-projection}
 
- [**Example 5.167**](#mercator-projection): Mercator projection\Pageref{mercator-projection}
+ [**Example 4.167**](#lambert-cylindrical-projection): Lambert cylindrical projection\Pageref{lambert-cylindrical-projection}
 
- [**Definition 5.168**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+ [**Example 4.168**](#mercator-projection): Mercator projection\Pageref{mercator-projection}
 
- [**Notation**](#Notation*-5.37)\Pageref{Notation*-5.37}
+ [**Definition 4.169**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
 
- [**Remark 5.169**](#remark-sff-reparametrization): SFF and reparametrizations\Pageref{remark-sff-reparametrization}
+ [**Notation**](#Notation*-4.37)\Pageref{Notation*-4.37}
 
- [**Example 5.170**](#example-sff-plane): Plane\Pageref{example-sff-plane}
+ [**Remark 4.170**](#remark-sff-reparametrization): SFF and reparametrizations\Pageref{remark-sff-reparametrization}
 
- [**Example 5.171**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
+ [**Example 4.171**](#example-sff-plane): Plane\Pageref{example-sff-plane}
 
- [**Remark 5.172**](#Remark-5.172)\Pageref{Remark-5.172}
+ [**Example 4.172**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
 
- [**Remark 5.173**](#Remark-5.173)\Pageref{Remark-5.173}
+ [**Remark 4.173**](#Remark-4.173)\Pageref{Remark-4.173}
 
- [**Definition 5.174**](#gauss-map): Gauss map\Pageref{gauss-map}
+ [**Remark 4.174**](#Remark-4.174)\Pageref{Remark-4.174}
 
- [**Remark 5.175**](#remark-gauss-coordinates)\Pageref{remark-gauss-coordinates}
+ [**Definition 4.175**](#gauss-map): Gauss map\Pageref{gauss-map}
 
- [**Example 5.176**](#Example-5.176)\Pageref{Example-5.176}
+ [**Remark 4.176**](#remark-gauss-coordinates)\Pageref{remark-gauss-coordinates}
 
- [**Remark 5.177**](#Remark-5.177)\Pageref{Remark-5.177}
+ [**Example 4.177**](#Example-4.177)\Pageref{Example-4.177}
 
- [**Definition 5.178**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
+ [**Remark 4.178**](#Remark-4.178)\Pageref{Remark-4.178}
 
- [**Important**](#Important*-5.38)\Pageref{Important*-5.38}
+ [**Definition 4.179**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
 
- [**Remark 5.179**](#Remark-5.179)\Pageref{Remark-5.179}
+ [**Important**](#Important*-4.38)\Pageref{Important*-4.38}
 
- [**Definition 5.180**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
+ [**Remark 4.180**](#Remark-4.180)\Pageref{Remark-4.180}
 
- [**Remark 5.181**](#Remark-5.181)\Pageref{Remark-5.181}
+ [**Definition 4.181**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
 
- [**Remark 5.182**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
+ [**Remark 4.182**](#Remark-4.182)\Pageref{Remark-4.182}
 
- [**Theorem 5.183**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
+ [**Remark 4.183**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
 
- [**Lemma 5.184**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
+ [**Theorem 4.184**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
 
- [**Proof**](#Proof*-5.39)\Pageref{Proof*-5.39}
+ [**Lemma 4.185**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
 
- [**Lemma 5.185**](#lemma-weingarten)\Pageref{lemma-weingarten}
+ [**Proof**](#Proof*-4.39)\Pageref{Proof*-4.39}
 
- [**Proof**](#Proof*-5.40)\Pageref{Proof*-5.40}
+ [**Lemma 4.186**](#lemma-weingarten)\Pageref{lemma-weingarten}
 
- [**Proof**](#proof-of-theorem-1): Proof of Theorem 5.183\Pageref{proof-of-theorem-1}
+ [**Proof**](#Proof*-4.40)\Pageref{Proof*-4.40}
 
- [**Theorem 5.186**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
+ [**Proof**](#proof-of-theorem-1): Proof of Theorem 4.184\Pageref{proof-of-theorem-1}
 
- [**Proof**](#Proof*-5.42)\Pageref{Proof*-5.42}
+ [**Theorem 4.187**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
 
- [**Important**](#Important*-5.43)\Pageref{Important*-5.43}
+ [**Proof**](#Proof*-4.42)\Pageref{Proof*-4.42}
 
- [**Notation**](#Notation*-5.44)\Pageref{Notation*-5.44}
+ [**Important**](#Important*-4.43)\Pageref{Important*-4.43}
 
- [**Example 5.187**](#helicoid): Helicoid\Pageref{helicoid}
+ [**Notation**](#Notation*-4.44)\Pageref{Notation*-4.44}
 
- [**Example 5.188**](#example-weingarten-2)\Pageref{example-weingarten-2}
+ [**Example 4.188**](#helicoid): Helicoid\Pageref{helicoid}
 
- [**Definition 5.189**](#gaussian-and-mean-curvature-1): Gaussian and mean curvature\Pageref{gaussian-and-mean-curvature-1}
+ [**Example 4.189**](#example-weingarten-2)\Pageref{example-weingarten-2}
+
+ [**Definition 4.190**](#gaussian-and-mean-curvature-1): Gaussian and mean curvature\Pageref{gaussian-and-mean-curvature-1}
 
  [**Notation**](#trace-of-a-2-times-2-matrix): Trace of a $2 \times 2$ matrix\Pageref{trace-of-a-2-times-2-matrix}
 
- [**Remark 5.190**](#Remark-5.190)\Pageref{Remark-5.190}
+ [**Remark 4.191**](#Remark-4.191)\Pageref{Remark-4.191}
 
- [**Proposition 5.191**](#Proposition-5.191)\Pageref{Proposition-5.191}
+ [**Proposition 4.192**](#Proposition-4.192)\Pageref{Proposition-4.192}
 
- [**Proof**](#Proof*-5.46)\Pageref{Proof*-5.46}
+ [**Proof**](#Proof*-4.46)\Pageref{Proof*-4.46}
 
- [**Example 5.192**](#plane-1): Plane\Pageref{plane-1}
+ [**Example 4.193**](#plane): Plane\Pageref{plane}
 
- [**Example 5.193**](#example-cylinder-curvatures): Unit cylinder\Pageref{example-cylinder-curvatures}
+ [**Example 4.194**](#example-cylinder-curvatures): Unit cylinder\Pageref{example-cylinder-curvatures}
 
- [**Theorem 5.194**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
+ [**Theorem 4.195**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
 
- [**Proof**](#Proof*-5.47)\Pageref{Proof*-5.47}
+ [**Proof**](#Proof*-4.47)\Pageref{Proof*-4.47}
 
- [**Corollary 5.195**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
+ [**Corollary 4.196**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
 
- [**Proof**](#Proof*-5.48)\Pageref{Proof*-5.48}
+ [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
 
- [**Definition 5.196**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
+ [**Definition 4.197**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
 
- [**Remark 5.197**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
+ [**Remark 4.198**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
 
- [**Remark 5.198**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
+ [**Remark 4.199**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
 
- [**Proposition 5.199**](#Proposition-5.199)\Pageref{Proposition-5.199}
+ [**Proposition 4.200**](#Proposition-4.200)\Pageref{Proposition-4.200}
 
- [**Proof**](#Proof*-5.49)\Pageref{Proof*-5.49}
+ [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Important**](#Important*-5.50)\Pageref{Important*-5.50}
+ [**Important**](#Important*-4.50)\Pageref{Important*-4.50}
 
- [**Example 5.200**](#unit-cylinder-6): Unit Cylinder\Pageref{unit-cylinder-6}
+ [**Example 4.201**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
 
- [**Example 5.201**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
+ [**Example 4.202**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
 
- [**Example 5.202**](#torus): Torus\Pageref{torus}
+ [**Example 4.203**](#torus): Torus\Pageref{torus}
 
- [**Question 5.203**](#Question-5.203)\Pageref{Question-5.203}
+ [**Question 4.204**](#Question-4.204)\Pageref{Question-4.204}
 
- [**Proposition 5.204**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Proposition 4.205**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
- [**Proof**](#Proof*-5.51)\Pageref{Proof*-5.51}
+ [**Proof**](#Proof*-4.51)\Pageref{Proof*-4.51}
 
- [**Important**](#Important*-5.52)\Pageref{Important*-5.52}
+ [**Important**](#Important*-4.52)\Pageref{Important*-4.52}
 
- [**Proposition 5.205**](#Proposition-5.205)\Pageref{Proposition-5.205}
+ [**Proposition 4.206**](#Proposition-4.206)\Pageref{Proposition-4.206}
 
- [**Proof**](#Proof*-5.53)\Pageref{Proof*-5.53}
+ [**Proof**](#Proof*-4.53)\Pageref{Proof*-4.53}
 
- [**Definition 5.206**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+ [**Definition 4.207**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 5.207**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.208**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
- [**Proof**](#Proof*-5.54)\Pageref{Proof*-5.54}
+ [**Proof**](#Proof*-4.54)\Pageref{Proof*-4.54}
 
- [**Example 5.208**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
+ [**Example 4.209**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Theorem 5.209**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
+ [**Theorem 4.210**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
 
- [**Proof**](#Proof*-5.55)\Pageref{Proof*-5.55}
+ [**Proof**](#Proof*-4.55)\Pageref{Proof*-4.55}
 
- [**Corollary 5.210**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+ [**Corollary 4.211**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
 
- [**Example 5.211**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+ [**Example 4.212**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
 
- [**Theorem 5.212**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
+ [**Theorem 4.213**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
- [**Proof**](#Proof*-5.56)\Pageref{Proof*-5.56}
+ [**Proof**](#Proof*-4.56)\Pageref{Proof*-4.56}
 
- [**Definition 5.213**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Definition 4.214**](#local-shape-types): Local shape types\Pageref{local-shape-types}
 
- [**Example 5.214**](#Example-5.214)\Pageref{Example-5.214}
+ [**Example 4.215**](#Example-4.215)\Pageref{Example-4.215}
 
- [**Definition 5.215**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+ [**Definition 4.216**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
 
- [**Remark 5.216**](#Remark-5.216)\Pageref{Remark-5.216}
+ [**Remark 4.217**](#Remark-4.217)\Pageref{Remark-4.217}
 
- [**Theorem 5.217**](#Theorem-5.217)\Pageref{Theorem-5.217}
+ [**Theorem 4.218**](#Theorem-4.218)\Pageref{Theorem-4.218}
 
- [**Proof**](#Proof*-5.57)\Pageref{Proof*-5.57}
+ [**Proof**](#Proof*-4.57)\Pageref{Proof*-4.57}
+
+ [**Definition 6.1**](#length): Length\Pageref{length}
+
+ [**Example 6.2**](#length-of-helix-1): Length of Helix\Pageref{length-of-helix-1}
+
+ [**Definition 6.3**](#arc-length-2): Arc-Length\Pageref{arc-length-2}
+
+ [**Example 6.4**](#arc-length-of-logarithmic-spiral): Arc-length of Logarithmic Spiral\Pageref{arc-length-of-logarithmic-spiral}
+
+ [**Definition 6.5**](#unit-speed-curve-1): Unit-speed curve\Pageref{unit-speed-curve-1}
+
+ [**Theorem 6.6**](#Theorem-6.6)\Pageref{Theorem-6.6}
+
+ [**Proof**](#Proof*-6.1)\Pageref{Proof*-6.1}
+
+ [**Definition 6.7**](#reparametrization-2): Reparametrization\Pageref{reparametrization-2}
+
+ [**Definition 6.8**](#unit-speed-reparametrization-2): Unit-speed reparametrization\Pageref{unit-speed-reparametrization-2}
+
+ [**Definition 6.9**](#regular-curve): Regular curve\Pageref{regular-curve}
+
+ [**Theorem 6.10**](#existence-of-unit-speed-reparametrization): Existence of unit-speed reparametrization\Pageref{existence-of-unit-speed-reparametrization}
+
+ [**Theorem 6.11**](#arc-length-and-unit-speed-reparametrization): Arc-length and unit-speed reparametrization\Pageref{arc-length-and-unit-speed-reparametrization}
+
+ [**Definition 6.12**](#arc-length-reparametrization-2): Arc-length reparametrization\Pageref{arc-length-reparametrization-2}
+
+ [**Example 6.13**](#arc-length-reparametrization-of-the-circle): Arc-length reparametrization of the Circle\Pageref{arc-length-reparametrization-of-the-circle}
+
+ [**Example 6.14**](#Example-6.14)\Pageref{Example-6.14}
+
+ [**Definition 6.15**](#curvature-of-unit-speed-curve-1): Curvature of unit-speed curve\Pageref{curvature-of-unit-speed-curve-1}
+
+ [**Example 6.16**](#curvature-of-the-circle-1): Curvature of the circle\Pageref{curvature-of-the-circle-1}
+
+ [**Definition 6.17**](#curvature-of-regular-curve): Curvature of regular curve\Pageref{curvature-of-regular-curve}
+
+ [**Remark 6.18**](#method-for-computing-curvature-1): Method for computing curvature\Pageref{method-for-computing-curvature-1}
+
+ [**Definition 6.19**](#hyperbolic-functions): Hyperbolic functions\Pageref{hyperbolic-functions}
+
+ [**Theorem 6.20**](#notable-properties-of-hyperbolic-functions): Notable properties of Hyperbolic Functions\Pageref{notable-properties-of-hyperbolic-functions}
+
+ [**Example 6.21**](#curvature-of-the-catenary): Curvature of the Catenary\Pageref{curvature-of-the-catenary}
+
+ [**Definition 6.22**](#vector-product): Vector product\Pageref{vector-product}
+
+ [**Theorem 6.23**](#geometric-properties-of-vector-product): Geometric Properties of vector product\Pageref{geometric-properties-of-vector-product}
+
+ [**Theorem 6.24**](#Theorem-6.24)\Pageref{Theorem-6.24}
+
+ [**Theorem 6.25**](#Theorem-6.25)\Pageref{Theorem-6.25}
+
+ [**Theorem 6.26**](#curvature-formula): Curvature formula\Pageref{curvature-formula}
+
+ [**Example 6.27**](#curvature-of-the-helix): Curvature of the Helix\Pageref{curvature-of-the-helix}
+
+ [**Example 6.28**](#example-curvature)\Pageref{example-curvature}
+
+ [**Example 6.29**](#different-curves-having-the-same-curvature): Different curves having the same curvature\Pageref{different-curves-having-the-same-curvature}
+
+ [**Definition 6.30**](#frenet-frame-of-unit-speed-curve-with-kappa-neq-0): Frenet frame of unit-speed curve with $\kappa \neq 0$\Pageref{frenet-frame-of-unit-speed-curve-with-kappa-neq-0}
+
+ [**Theorem 6.31**](#Theorem-6.31)\Pageref{Theorem-6.31}
+
+ [**Definition 6.32**](#torsion-of-unit-speed-curve-with-kappa-neq-0-1): Torsion of unit-speed curve with $\kappa \neq 0$\Pageref{torsion-of-unit-speed-curve-with-kappa-neq-0-1}
+
+ [**Definition 6.33**](#torsion-of-regular-curve-with-kappa-neq-0): Torsion of regular curve with $\kappa \neq 0$\Pageref{torsion-of-regular-curve-with-kappa-neq-0}
+
+ [**Example 6.34**](#curvature-torsion-and-frenet-frame-of-helix): Curvature, torsion and Frenet frame of Helix\Pageref{curvature-torsion-and-frenet-frame-of-helix}
+
+ [**Theorem 6.35**](#torsion-formula): Torsion formula\Pageref{torsion-formula}
+
+ [**Example 6.36**](#torsion-of-helix-with-formula): Torsion of Helix with formula\Pageref{torsion-of-helix-with-formula}
+
+ [**Example 6.37**](#Example-6.37)\Pageref{Example-6.37}
+
+ [**Theorem 6.38**](#frenet-frame-formulas-for-regular-curves-1): Frenet frame formulas for regular curves\Pageref{frenet-frame-formulas-for-regular-curves-1}
+
+ [**Example 6.39**](#Example-6.39)\Pageref{Example-6.39}
+
+ [**Theorem 6.40**](#frenet-frame-is-right-handed): Frenet frame is right-handed\Pageref{frenet-frame-is-right-handed}
+
+ [**Theorem 6.41**](#frenet-serret-equations-3): Frenet-Serret equations\Pageref{frenet-serret-equations-3}
+
+ [**Definition 6.42**](#rigid-motion-1): Rigid motion\Pageref{rigid-motion-1}
+
+ [**Theorem 6.43**](#fundamental-theorem-of-space-curves-1): Fundamental Theorem of Space Curves\Pageref{fundamental-theorem-of-space-curves-1}
+
+ [**Example 6.44**](#application-of-fundamental-theorem-of-curves-1): Application of Fundamental Theorem of Curves\Pageref{application-of-fundamental-theorem-of-curves-1}
+
+ [**Theorem 6.45**](#curves-contained-in-a-plane): Curves contained in a plane\Pageref{curves-contained-in-a-plane}
+
+ [**Theorem 6.46**](#curves-contained-in-a-plane-1): Curves contained in a plane\Pageref{curves-contained-in-a-plane-1}
+
+ [**Example 6.47**](#Example-6.47)\Pageref{Example-6.47}
+
+ [**Theorem 6.48**](#curves-contained-in-a-circle): Curves contained in a circle\Pageref{curves-contained-in-a-circle}
+
+ [**Example 6.49**](#Example-6.49)\Pageref{Example-6.49}
+
+ [**Definition 6.50**](#topology-of-mathbbrn-1): Topology of $\mathbb{R}^n$\Pageref{topology-of-mathbbrn-1}
+
+ [**Definition 6.51**](#subspace-topology-2): Subspace Topology\Pageref{subspace-topology-2}
+
+ [**Definition 6.52**](#continuous-function-2): Continuous Function\Pageref{continuous-function-2}
+
+ [**Theorem 6.53**](#continuity-topological-definition-1): Continuity: Topological definition\Pageref{continuity-topological-definition-1}
+
+ [**Definition 6.54**](#homeomorphism-1): Homeomorphism\Pageref{homeomorphism-1}
+
+ [**Definition 6.55**](#differentiable-function-1): Differentiable Function\Pageref{differentiable-function-1}
+
+ [**Definition 6.56**](#partial-derivative-1): Partial Derivative\Pageref{partial-derivative-1}
+
+ [**Definition 6.57**](#jacobian-matrix-1): Jacobian Matrix\Pageref{jacobian-matrix-1}
+
+ [**Proposition 6.58**](#matrix-representation-of-the-differential-1): Matrix representation of the differential\Pageref{matrix-representation-of-the-differential-1}
+
+ [**Definition 6.59**](#smooth-function-1): Smooth Function\Pageref{smooth-function-1}
+
+ [**Notation**](#gradient-and-partial-derivatives-1): Gradient and partial derivatives\Pageref{gradient-and-partial-derivatives-1}
+
+ [**Definition 6.60**](#diffeomorphism-2): Diffeomorphism\Pageref{diffeomorphism-2}
+
+ [**Definition 6.61**](#local-diffeomorphism-2): Local diffeomorphism\Pageref{local-diffeomorphism-2}
+
+ [**Theorem 6.62**](#Theorem-6.62)\Pageref{Theorem-6.62}
+
+ [**Theorem 6.63**](#Theorem-6.63)\Pageref{Theorem-6.63}
+
+ [**Theorem 6.64**](#inverse-function-theorem): Inverse Function Theorem\Pageref{inverse-function-theorem}
+
+ [**Example 6.65**](#Example-6.65)\Pageref{Example-6.65}
+
+ [**Definition 6.66**](#surface-1): Surface\Pageref{surface-1}
+
+ [**Definition 6.67**](#atlas-of-a-surface-1): Atlas of a surface\Pageref{atlas-of-a-surface-1}
+
+ [**Definition 6.68**](#regular-chart-1): Regular Chart\Pageref{regular-chart-1}
+
+ [**Definition 6.69**](#regular-surface-1): Regular surface\Pageref{regular-surface-1}
+
+ [**Theorem 6.70**](#Theorem-6.70)\Pageref{Theorem-6.70}
+
+ [**Example 6.71**](#d-plane-in-mathbbr3-2): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-2}
+
+ [**Example 6.72**](#unit-cylinder-4): Unit cylinder\Pageref{unit-cylinder-4}
+
+ [**Example 6.73**](#graph-of-a-function-2): Graph of a function\Pageref{graph-of-a-function-2}
+
+ [**Definition 6.74**](#spherical-coordinates-1): Spherical coordinates\Pageref{spherical-coordinates-1}
+
+ [**Example 6.75**](#unit-sphere-in-spherical-coordinates): Unit sphere in spherical coordinates\Pageref{unit-sphere-in-spherical-coordinates}
+
+ [**Example 6.76**](#unit-sphere-in-cartesian-coordinates): Unit sphere in Cartesian coordinates\Pageref{unit-sphere-in-cartesian-coordinates}
+
+ [**Example 6.77**](#Example-6.77)\Pageref{Example-6.77}
+
+ [**Example 6.78**](#Example-6.78)\Pageref{Example-6.78}
+
+ [**Definition 6.79**](#reparametrization-3): Reparametrization\Pageref{reparametrization-3}
+
+ [**Theorem 6.80**](#Theorem-6.80)\Pageref{Theorem-6.80}
+
+ [**Definition 6.81**](#transition-map-1): Transition map\Pageref{transition-map-1}
+
+ [**Theorem 6.82**](#Theorem-6.82)\Pageref{Theorem-6.82}
+
+ [**Theorem 6.83**](#Theorem-6.83)\Pageref{Theorem-6.83}
+
+ [**Definition 6.84**](#smooth-functions-between-surfaces): Smooth functions between surfaces\Pageref{smooth-functions-between-surfaces}
+
+ [**Theorem 6.85**](#Theorem-6.85)\Pageref{Theorem-6.85}
+
+ [**Theorem 6.86**](#Theorem-6.86)\Pageref{Theorem-6.86}
+
+ [**Theorem 6.87**](#theorem-diff-check-2)\Pageref{theorem-diff-check-2}
+
+ [**Definition 6.88**](#diffeomorphism-of-surfaces-1): Diffeomorphism of surfaces\Pageref{diffeomorphism-of-surfaces-1}
+
+ [**Theorem 6.89**](#Theorem-6.89)\Pageref{Theorem-6.89}
+
+ [**Definition 6.90**](#local-diffeomorphism-3): Local diffeomorphism\Pageref{local-diffeomorphism-3}
+
+ [**Definition 6.91**](#tangent-vectors-and-tangent-plane): Tangent vectors and tangent plane\Pageref{tangent-vectors-and-tangent-plane}
+
+ [**Theorem 6.92**](#curves-with-values-on-surfaces): Curves with values on surfaces\Pageref{curves-with-values-on-surfaces}
+
+ [**Theorem 6.93**](#characterization-of-tangent-plane): Characterization of Tangent Plane\Pageref{characterization-of-tangent-plane}
+
+ [**Theorem 6.94**](#equation-of-tangent-plane-1): Equation of tangent plane\Pageref{equation-of-tangent-plane-1}
+
+ [**Example 6.95**](#Example-6.95)\Pageref{Example-6.95}
+
+ [**Definition 6.96**](#standard-unit-normal-of-a-chart-1): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart-1}
+
+ [**Example 6.97**](#standard-unit-normal-of-the-plane): Standard unit normal of the plane\Pageref{standard-unit-normal-of-the-plane}
+
+ [**Definition 6.98**](#unit-normal-of-a-surface-1): Unit normal of a surface\Pageref{unit-normal-of-a-surface-1}
+
+ [**Definition 6.99**](#orientable-surface-1): Orientable surface\Pageref{orientable-surface-1}
+
+ [**Example 6.100**](#Example-6.100)\Pageref{Example-6.100}
+
+ [**Definition 6.101**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
+
+ [**Example 6.102**](#computing-d_mathbfpf-using-the-definition-1): Computing $d_{\mathbf{p}}f$ using the definition\Pageref{computing-d_mathbfpf-using-the-definition-1}
+
+ [**Theorem 6.103**](#Theorem-6.103)\Pageref{Theorem-6.103}
+
+ [**Example 6.104**](#computing-the-matrix-of-d_mathbfpf-1): Computing the matrix of $d_{\mathbf{p}}f$\Pageref{computing-the-matrix-of-d_mathbfpf-1}
+
+ [**Theorem 6.105**](#Theorem-6.105)\Pageref{Theorem-6.105}
+
+ [**Definition 6.106**](#level-surface-1): Level surface\Pageref{level-surface-1}
+
+ [**Theorem 6.107**](#Theorem-6.107)\Pageref{Theorem-6.107}
+
+ [**Example 6.108**](#circular-cone-2): Circular cone\Pageref{circular-cone-2}
+
+ [**Theorem 6.109**](#tangent-plane-of-level-surfaces-1): Tangent plane of level surfaces\Pageref{tangent-plane-of-level-surfaces-1}
+
+ [**Example 6.110**](#unit-cylinder-5): Unit cylinder\Pageref{unit-cylinder-5}
+
+ [**Definition 6.111**](#ruled-surface-1): Ruled surface\Pageref{ruled-surface-1}
+
+ [**Theorem 6.112**](#Theorem-6.112)\Pageref{Theorem-6.112}
+
+ [**Example 6.113**](#unit-cylinder-is-ruled-surface): Unit Cylinder is ruled surface\Pageref{unit-cylinder-is-ruled-surface}
+
+ [**Example 6.114**](#möbius-band-1): Möbius band\Pageref{möbius-band-1}
+
+ [**Example 6.115**](#Example-6.115)\Pageref{Example-6.115}
+
+ [**Definition 6.116**](#surface-of-revolution-1): Surface of revolution\Pageref{surface-of-revolution-1}
+
+ [**Theorem 6.117**](#Theorem-6.117)\Pageref{Theorem-6.117}
+
+ [**Example 6.118**](#catenoid-1): Catenoid\Pageref{catenoid-1}
+
+ [**Definition 6.119**](#first-fundamental-form-3): First fundamental form\Pageref{first-fundamental-form-3}
+
+ [**Definition 6.120**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
+
+ [**Definition 6.121**](#first-fundamental-form-of-a-chart-1): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart-1}
+
+ [**Theorem 6.122**](#Theorem-6.122)\Pageref{Theorem-6.122}
+
+ [**Definition 6.123**](#Definition-6.123)\Pageref{Definition-6.123}
+
+ [**Theorem 6.124**](#first-fundamental-form-and-reparametrizations): First fundamental form and reparametrizations\Pageref{first-fundamental-form-and-reparametrizations}
+
+ [**Example 6.125**](#plane-1): Plane\Pageref{plane-1}
+
+ [**Example 6.126**](#plane-in-polar-coordinates): Plane in polar coordinates\Pageref{plane-in-polar-coordinates}
+
+ [**Example 6.127**](#unit-cylinder-6): Unit cylinder\Pageref{unit-cylinder-6}
+
+ [**Example 6.128**](#Example-6.128)\Pageref{Example-6.128}
+
+ [**Theorem 6.129**](#Theorem-6.129)\Pageref{Theorem-6.129}
+
+ [**Example 6.130**](#example-fff-cone-bis): The Cone\Pageref{example-fff-cone-bis}
+
+ [**Definition 6.131**](#local-isometry-and-isometry-1): Local Isometry and Isometry\Pageref{local-isometry-and-isometry-1}
+
+ [**Theorem 6.132**](#Theorem-6.132)\Pageref{Theorem-6.132}
+
+ [**Theorem 6.133**](#Theorem-6.133)\Pageref{Theorem-6.133}
+
+ [**Theorem 6.134**](#theorem-local-isometry-bis)\Pageref{theorem-local-isometry-bis}
+
+ [**Theorem 6.135**](#theorem-local-isometry-2-bis)\Pageref{theorem-local-isometry-2-bis}
+
+ [**Example 6.136**](#example-plane-cylinder): Plane and Cylinder are locally isometric\Pageref{example-plane-cylinder}
+
+ [**Example 6.137**](#plane-and-cone-are-locally-isometric-1): Plane and Cone are locally isometric\Pageref{plane-and-cone-are-locally-isometric-1}
+
+ [**Definition 6.138**](#angle-between-tangent-vectors-1): Angle between tangent vectors\Pageref{angle-between-tangent-vectors-1}
+
+ [**Theorem 6.139**](#Theorem-6.139)\Pageref{Theorem-6.139}
+
+ [**Definition 6.140**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+
+ [**Theorem 6.141**](#Theorem-6.141)\Pageref{Theorem-6.141}
+
+ [**Example 6.142**](#Example-6.142)\Pageref{Example-6.142}

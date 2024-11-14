@@ -10,7 +10,7 @@ $$
 
 ## Recommended revision strategy
 
-1. Make sure you are very comfortable with the Definitions, Theorems, and Examples contained in this Revision Guide.
+1. Make sure you are very comfortable with the Definitions, Theorems, Proofs, and Examples contained in this Revision Guide.
 
 2. Make sure you are comfortable with the Homework questions.
 
@@ -113,13 +113,13 @@ $$
 ::: Example
 ### Length of Helix
 
-**Question.** Consider the Helix
+Consider the Helix
 $$
 \g(t) = (R\cos(t), R\sin(t) ,Ht)
 $$
 for $t \in (0,2\pi)$ and $R>0$. Compute $L(\g)$.
 
-**Solution.** We compute
+*Solution.* We compute
 \begin{align*}
 \dg(t) & = (-R\sin(t), R\cos(t) , H) \\
 \norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} 
@@ -150,13 +150,13 @@ The function $s(t)$ is known as the arc-length function.
 ::: Example
 ### Arc-length of Logarithmic Spiral
 
-**Question.** The Logarithmic Spiral is defined by $\g \ \colon (0,2\pi) \to \R^2$ with
+The Logarithmic Spiral is defined by $\g \ \colon (0,2\pi) \to \R^2$ with
 $$
 \g(t) = (e^{kt} \cos(t), e^{kt} \sin(t))
 $$
 where $k \in \R$, $k \neq 0$. Compute the arc-length function of $\g$. 
 
-**Solution.** Direct calculation gives
+*Solution.* Direct calculation gives
 $$
 \norm{\dg(t)}^2   = (k^2 + 1) e^{2kt} 
 $$
@@ -289,14 +289,14 @@ with $s^{-1}$ inverse of the arc-length function of $\g$.
 ::: Example 
 ### Arc-length reparametrization of the Circle
 
-**Question.** Let $\g \colon (0,2\pi) \to \R^2$ be the circle
+ Let $\g \colon (0,2\pi) \to \R^2$ be the circle
 with center $(x_0,y_0)$ and radius $R>0$
 $$
 \g(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
 $$
 Reparametrize $\g$ by arc-length.
 
-**Solution.** The arc-length of $\g$ starting from $t_0 = 0$ is
+*Solution.* The arc-length of $\g$ starting from $t_0 = 0$ is
 $$
 s(t) = \int_0^t \norm{ \dg(u) } \, d u = Rt
 $$
@@ -316,7 +316,7 @@ $$
 
 ::: Example
 
-**Question.** Consider the curve
+ Consider the curve
 $$
 \g(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
 $$
@@ -325,7 +325,7 @@ $$
 2. Reparametrize $\g$ by arc-length.
 
 
-**Solution.**
+*Solution.*
 
 1. $\g$ is regular because
 \begin{align*}
@@ -369,14 +369,14 @@ $$
 ::: Example
 ### Curvature of the circle
 
-**Question.** Consider the circle of center
+ Consider the circle of center
 $(x_0,y_0)$ and radius $R>0$
 $$
 \g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) , 0\right) 
 $$
 Compute the curvature of $\g$.
 
-**Solution.** First, check that $\g$ is unit-speed:
+*Solution.* First, check that $\g$ is unit-speed:
 \begin{align*}
 \dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right), 0\right) \\
 \norm{\dg(t)} & = 1 
@@ -513,7 +513,7 @@ Integrals:
 ::: Example
 ### Curvature of the Catenary
 
-**Question.** Consider the Catenary curve
+ Consider the Catenary curve
 $$
 \g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
 $$
@@ -524,7 +524,7 @@ $$
 4. Compute the curvature of $\tg$
 5. Compute the curvature of $\g$
 
-**Solution.**
+*Solution.*
 
 1. Check that $\g$ is regular:
 \begin{align*}
@@ -698,13 +698,13 @@ $$
 ::: Example
 ### Curvature of the Helix 
 
-**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
+Consider the Helix of radius $R>0$ and rise $H>0$
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
 Compute the curvature of $\g$.
 
-**Solution.** First, ensure that $\g$ is regular
+*Solution.* First, ensure that $\g$ is regular
 \begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
 \norm{\dg (t)} & = \sqrt{R^2 + H^2} \geq R > 0
@@ -731,12 +731,12 @@ $$
 
 ::: {.Example #example-curvature}
 
-**Question.** Compute the curvature of 
+Compute the curvature of 
 $$
 \gamma(t)=\left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
 $$
 
-**Solution.** First, ensure $\gamma$ is regular:
+*Solution.* First, ensure $\gamma$ is regular:
 $$
 \begin{aligned}
 \dot{\gamma}(t) & =\left(-\frac{8}{5} \sin (t),-2 \cos (t),-\frac{6}{5} \sin (t)\right) \\
@@ -764,7 +764,7 @@ $$
 ::: Example
 ### Different curves having the same curvature
 
-**Question.** Let $\g$ be a circle
+Let $\g$ be a circle
 $$
 \g(t) = (2\cos(t),2\sin(t),0) \,,
 $$
@@ -774,7 +774,7 @@ $$
 $$
 Find $S$ and $H$ such that $\g$ and $\eeta$ have the same curvature.
 
-**Solution.** We have already computed that the curvature of $\g$ and $\eeta$ are, respectively
+*Solution.* We have already computed that the curvature of $\g$ and $\eeta$ are, respectively
 $$
 \kappa^\g = \frac{1}{2}\,, \quad 
 \kappa^\eeta = \frac{S}{S^2 + H^2} \,.
@@ -874,7 +874,7 @@ $$
 ::: Example
 ### Curvature, torsion and Frenet frame of Helix
 
-**Question.** Consider the helix of radius $R>0$ and rise $H$ given by
+Consider the helix of radius $R>0$ and rise $H$ given by
 $$
 \g (t) = ( R\cos(t), R\sin(t),t H)\,, \quad \, t \in \R \,.
 $$
@@ -885,7 +885,7 @@ $$
 4. Compute the Frenet frame, curvature and torsion of $\tg$.
 5. Compute curvature and torsion $\g$.
 
-**Solution.** 
+*Solution.* 
 
 1. We have
 $$
@@ -971,7 +971,7 @@ $$
 ::: Example
 ### Torsion of Helix with formula
 
-**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
+Consider the Helix of radius $R>0$ and rise $H>0$
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
@@ -980,7 +980,7 @@ $$
 2. Compute the torsion of $\g$.
 
 
-**Solution.** 
+*Solution.* 
 
 1. We have already shown that
 $$
@@ -1007,13 +1007,13 @@ $$
 
 ::: Example
 
-**Question.** Consider again the curve from Example \ref{example-curvature}
+Consider again the curve from Example \ref{example-curvature}
 $$
 \g(t) = \left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
 $$
 Compute the torsion of $\g$.
 
-**Solution.** Resuming calculations from Example \ref{example-curvature}, we get
+*Solution.* Resuming calculations from Example \ref{example-curvature}, we get
 $$
 \begin{aligned}
 \dddg(t) & =\left(\frac{8}{5} \sin (t), 2 \cos (t), \frac{6}{5} \sin (t)\right) \\
@@ -1052,7 +1052,7 @@ Let $\g \colon (a,b) \to \R^3$ be a regular curve. The Frenet frame of $\g$ is
 
 ::: Example
 
-**Question.** Let $\g \colon \R \to \R^3$ be the curve defined by
+Let $\g \colon \R \to \R^3$ be the curve defined by
 $$
 \g(t) = (t,t^2,t^3 ) \,.
 $$
@@ -1065,7 +1065,7 @@ $\g$ is known as the *twisted cubic*.
 5. Compute the Frenet frame of $\g$.
 
 
-**Solution.**
+*Solution.*
 
 1. $\g$ is regular because
 	$$
@@ -1233,7 +1233,7 @@ $$
 ::: Example
 ### Application of Fundamental Theorem of Curves
 
-**Question.** Consider the curve
+Consider the curve
 $$
 	\g ( t ) = \left( \sqrt{3}\, t - \sin ( t ) , \sqrt{3} \sin ( t ) + t , 2 \cos ( t ) \right)\,, \quad t \in \R \,.
 $$
@@ -1253,7 +1253,7 @@ $$
     \g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
     $$
 
-**Solution.** 
+*Solution.* 
 
 1. We have
 $$
@@ -1357,7 +1357,7 @@ where $t_0$ is any point in $(a,b)$.
 
 ::: Example 
 
-**Question.** Consider the curve
+Consider the curve
 $$
 \g(t) = ( t,2t,t^4) \,,
 $$
@@ -1375,7 +1375,7 @@ for suitable $a,b,c,d \in \R$.
 
 
 
-**Solution.** 
+*Solution.* 
 
 1. We compute
 $$
@@ -1442,7 +1442,7 @@ for some constant $R > 0$.
 
 ::: Example
 
-**Question.** Consider the curve
+Consider the curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,, \quad t \in \R \,.
 $$
@@ -1451,7 +1451,7 @@ $$
 2. Compute the Frenet frame, curvature and torsion of $\g$.
 3. Prove that $\g$ is part of a circle.
 
-**Solution.** 
+*Solution.* 
 
 1. $\g$ is unit-speed because
 \begin{align*}
@@ -1730,7 +1730,7 @@ for some $\xx_0 \in U$. Then:
 
 ::: Example
 
-**Question.** Consider the function $f \colon \R^2 \to \R^2$ defined by
+Consider the function $f \colon \R^2 \to \R^2$ defined by
 $$
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 $$
@@ -1740,7 +1740,7 @@ $$
 2. Prove that $f$ is not a diffeomorphism.
 
 
-**Solution.** 
+*Solution.* 
 
 1. We compute
 \begin{align*}
@@ -1886,7 +1886,7 @@ $$
 ::: Example
 ### 2D Plane in $\R^3$
 
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
 $$
 \p = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} 
 $$
@@ -1896,7 +1896,7 @@ $$
 $$
 Prove that $\p$ is a regular surface.
 
-**Solution.** $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
+*Solution.* $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
 $$
 \sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,,
 $$
@@ -1910,7 +1910,7 @@ showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ an
 ::: Example
 ### Unit cylinder
 
-**Question.** Consider the infinite unit cylinder
+Consider the infinite unit cylinder
 $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
@@ -1931,7 +1931,7 @@ U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,,
 \end{align*}
 Prove that $\SSS$ is a regular surface.
 
-**Solution.** Compute the partial derivatives
+*Solution.* Compute the partial derivatives
 $$
 \sss_u = (-\sin(u),\cos(u),0) \,, \quad 
 \sss_v = (0,0,1) \,.
@@ -1955,7 +1955,7 @@ $\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\
 ::: Example
 ### Graph of a function
 
-**Question.** Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
 $$
 \Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
 $$
@@ -1968,7 +1968,7 @@ $$
 Prove that $\Gamma_f$ is a regular surface.
 
 
-**Solution.** Compute the partial derivatives
+*Solution.* Compute the partial derivatives
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,.
@@ -2020,7 +2020,7 @@ with the angles $\theta$ and $\fi$ as in @fig-spherical-coordinates.
 ::: Example
 ### Unit sphere in spherical coordinates 
 
-**Question.** Consider the unit sphere in $\R^3$
+Consider the unit sphere in $\R^3$
 $$
 \sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
 $$
@@ -2034,7 +2034,7 @@ $$
 $$
 Prove that $\sss$ is regular.
 
-**Solution.** We compute
+*Solution.* We compute
 \begin{align*}
 \sss_{\theta} & = (-\sin(\theta) \cos(\fi), \cos(\theta) \cos(\fi), 0 ) \\
  \sss_{\fi} & = ( - \cos(\theta) \sin(\fi), -\sin(\theta) \sin(\fi), \cos(\fi) )  \,.
@@ -2066,7 +2066,7 @@ Thus $\sss_{\theta}$ and $\sss_{\fi}$ are linearly independent, and $\sss$ is re
 ::: Example
 ### Unit sphere in Cartesian coordinates
 
-**Question.** Consider the unit sphere in $\R^3$
+Consider the unit sphere in $\R^3$
 $$
 \sphere^2 := \left\{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \right\} \,.
 $$
@@ -2080,7 +2080,7 @@ $$
 $$
 Prove that $\sss$ is regular.
 
-**Solution.** Compute
+*Solution.* Compute
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,,
@@ -2108,14 +2108,13 @@ The first minor of $J\sss$ is the identity matrix, and therefore $J\sss$ has ran
 
 ::: Example
 
-**Question.**
 Consider the surface chart
 $$
 \sss(u,v) = (u,v^2,v^3) \,.
 $$
 Prove that $\sss$ is not regular.
 
-**Solution.** We have
+*Solution.* We have
 $$
 \sss_u = (1,0,0) \,, \quad
 \sss_v = (0,2v,3v^2) \,,
@@ -2135,7 +2134,7 @@ Hence $\sss$ is not a regular chart.
 
 ::: Example
 
-**Question.** Consider the chart
+Consider the chart
 $$
 \sss (u,v) = (uf(v),ug(v),v) \,,
 $$
@@ -2143,7 +2142,7 @@ for $f,g$ smooth functions and $u,v \in \R$. Show that $\sss$ is regular.
 
 
 
-**Solution.**  We compute
+*Solution.*  We compute
 \begin{align*}
 \sss_u & = (f(v), g(v), 0 ) \\
 \sss_v & = (uf'(v), ug'(v), 1)
@@ -2334,7 +2333,7 @@ is a differentiable function.
 
 
 
-::: Theorem
+::: {.Theorem #theorem-diff-check-2}
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Make the following assumptions:
 
@@ -2506,7 +2505,7 @@ $$
 
 ::: Example
 
-**Question.** Consider the surface $\SSS$ defined by the chart
+Consider the surface $\SSS$ defined by the chart
 $$
 \sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
 $$
@@ -2528,7 +2527,7 @@ $$
 for suitable $a,b,c,d \in \R$.
 
 
-**Solution.**
+*Solution.*
 
 1. Denote the coordinates of $\sss$ by
 $$
@@ -2616,13 +2615,13 @@ $$
 ::: Example
 ### Standard unit normal of the plane
 
-**Question.** Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ linearly independent. Consider the plane charted by
+Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ linearly independent. Consider the plane charted by
 $$
 \sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
 $$
 Compute the standard unit normal to $\sss$.
 
-**Solution.** We have
+*Solution.* We have
 $$
 \sss_u = \pp \,, \quad 
 \sss_v = \mathbf{q} \,, \quad 
@@ -2667,7 +2666,7 @@ $$
 
 ::: Example
 
-**Question.** Let $\SSS$ be the surface described by the chart
+Let $\SSS$ be the surface described by the chart
 $$
 \sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
 $$
@@ -2676,7 +2675,7 @@ $$
 2. Compute the standard unit normal to $\sss$.
 
 
-**Solution.**
+*Solution.*
 
 1. Compute the following quantities:
 \begin{align*}
@@ -2735,7 +2734,7 @@ $$
 ::: Example
 ### Computing $d_{\pp}f$ using the definition
 
-**Question.** Consider the portion of the plane $\{z=0\}$,
+Consider the portion of the plane $\{z=0\}$,
 $$
 \SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
 $$ 
@@ -2761,7 +2760,7 @@ d_{\pp} f (\vv) =   (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 $$
 
 
-**Solution.** 
+*Solution.* 
 
 1. A chart for $\SSS$ is given by
 $$
@@ -2861,7 +2860,7 @@ $$
 ::: Example
 ### Computing the matrix of $d_{\pp}f$
 
-**Question.** Consider the unit cylinder, charted by
+Consider the unit cylinder, charted by
 $$
 \sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
 $$
@@ -2876,7 +2875,7 @@ f(x,y,z) = (y,xz,0) \,.
 $$
 Compute the matrix of $d_{\pp} f$ with respect to these charts.
 
-**Solution.** We need to compute the map
+*Solution.* We need to compute the map
 $$
 \Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
 $$
@@ -2967,13 +2966,13 @@ Then $\SSS_f$ is a regular surface.
 ::: Example
 ### Circular cone
 
-**Question.** Consider the circular cone
+Consider the circular cone
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
 $$
 Prove that $\SSS$ is a regular surface.
 
-**Solution.** Define the open set 
+*Solution.* Define the open set 
 $$
 V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
 $$
@@ -3029,7 +3028,7 @@ $$
 ::: Example
 ## Unit cylinder
 
-**Question.** Consider the unit cylinder 
+Consider the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
 $$
@@ -3045,7 +3044,7 @@ x + y = 0 \,.
 $$
 
 
-**Solution.**
+*Solution.*
 
 1. Define the open set
 $$
@@ -3125,14 +3124,14 @@ A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
 ::: Example
 ### Unit Cylinder is ruled surface
 
-**Question.** Prove that the unit cylinder 
+Prove that the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
 $$
 is a ruled surface.
 
 
-**Solution.** 
+*Solution.* 
 We know that the unit cylinder is charted by
 $$
 \sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in (0,2\pi) \times \R \,.
@@ -3159,7 +3158,7 @@ are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surf
 ::: Example
 ### Möbius band
 
-**Question.** The Möbius band is a ruled surface with chart
+The Möbius band is a ruled surface with chart
 $$
 \sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 $$
@@ -3186,7 +3185,7 @@ $$
 2. Prove that $\SSS$ is **non orientable**. 
 
 
-**Solution.** 
+*Solution.* 
 
 1. From the formula for $\sss$, it is easy to compute that 
 $$
@@ -3228,13 +3227,13 @@ This clearly contradicts (@eq-mobius-not-orientable-bis). Therefore $\NN$ cannot
 
 ::: Example
 
-**Question.** Show that the surface 
+Show that the surface 
 $$
 S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\}
 $$ 
 is a ruled surface.
 
-**Solution.** We shall make a change of variables. Notice that we can rearrange
+*Solution.* We shall make a change of variables. Notice that we can rearrange
 $$
 \begin{aligned}
 x^{2}+10 x y+16 x^{2}-z & =0 \\
@@ -3313,7 +3312,7 @@ A surface of revolution is regular if and only if $\g$ is regular.
 ::: Example
 ### Catenoid
 
-**Question.** The catenary function is defined by
+The catenary function is defined by
 $$
 f(v) = \cosh (v) \,.  
 $$
@@ -3327,7 +3326,7 @@ $$
 $$
 where $u \in [0,2\pi)$ and $v \in \R$. Prove that $\SSS$ is a regular surface.
 
-**Solution.** Note that $f>0$ and 
+*Solution.* Note that $f>0$ and 
 $$
 \dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
 \norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
@@ -3509,7 +3508,7 @@ $$
 ::: Example
 ### Plane
 
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
@@ -3518,7 +3517,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-**Solution.** We have
+*Solution.* We have
 $$
 \sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
 $$
@@ -3540,7 +3539,7 @@ $$
 ::: Example
 ### Plane in polar coordinates
 
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
 $$
 \sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
 $$
@@ -3549,7 +3548,7 @@ $$
 \mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
 $$
 
-**Solution.** We have
+*Solution.* We have
 \begin{align*}
 \sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
 \sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
@@ -3573,7 +3572,7 @@ $$
 ::: Example
 ### Unit cylinder
 
-**Question.** Consider the unit cylinder with chart
+Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
@@ -3582,7 +3581,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-**Solution.** We have
+*Solution.* We have
 $$
 \sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
 $$
@@ -3604,12 +3603,12 @@ $$
 
 ::: Example
 
-**Question.** Find the first fundamental form of the surface chart
+Find the first fundamental form of the surface chart
 $$
 \sss(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
 $$
 
-**Solution.** We compute
+*Solution.* We compute
 $$
 \begin{aligned}
 \sssu & =(1,1,2 u) \\
@@ -3663,9 +3662,9 @@ where in the above formula:
 
 
 ::: Example
-### The Cone
+### The Cone {#example-fff-cone-bis}
 
-**Question.** Consider the cone with chart
+Consider the cone with chart
 $$
 \sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
 $$
@@ -3681,7 +3680,7 @@ $$
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
 $$
 
-**Solution.**
+*Solution.*
 
 1. We have
 \begin{align*}
@@ -3731,6 +3730,424 @@ Therefore,
 
 
 
+### Isometries
+
+
+::: Definition 
+### Local Isometry and Isometry
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and 
+$$
+f \colon \SSS \to \wSSS
+$$
+be a smooth map. Denote the differential of $f$ by
+$$
+d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \wSSS \,.
+$$
+
+We say that:
+
+
+1. $f$ is a **local isometry**, if for all $\pp \in \SSS$
+$$
+\vv \cdot \ww  = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
+\forall \, \vv, \ww \in T_{\pp} \SSS \,. 
+$${#eq-loc-iso}
+In this case, $\SSS$ and $\wSSS$ are said to be **locally isometric**.
+
+2. $f$ is an **isometry** if:
+    * $f$ is a local isometry;
+    * $f$ is a diffeomorphism of $\SSS$ into $\wSSS$.  
+    
+   In this case, $\SSS$ and $\wSSS$ are said to be **isometric**.
+    
+
+:::
+
+
+
+::: Theorem
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and 
+$$
+f \colon \SSS \to \wSSS
+$$
+a local isometry. Then $f$ is a local diffeomorphims.
+
+:::
+
+
+::: Theorem
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and $f \colon \SSS \to \wSSS$ be a smooth map. They are equivalent:
+
+1. $f$ is a local isometry.
+2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\wSSS$. Then $\g$ and $\tg$ have the same length.
+
+:::
+
+
+
+
+::: {.Theorem #theorem-local-isometry-bis}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+
+1. $f$ is a local isometry.
+2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by  
+$$
+\widetilde{\sss} \colon U \to \widetilde{\SSS} \,, \qquad 
+\widetilde{\sss} = f \circ \sss \,.
+$$
+Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form, that is, 
+$$
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,,
+$$
+where 
+\begin{align*}
+E & = \sss_u \cdot \sss_u \,, \quad
+F = \sss_u \cdot \sss_v \,, \quad
+G = \sss_v \cdot \sss_v \,, \\
+\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u \,, \quad
+\widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \,, \quad
+\widetilde{G}  = \widetilde{\sss}_v \cdot \widetilde{\sss}_v \,.
+\end{align*}
+
+
+**Note:** $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore, equality is intended pointwise.
+
+:::
+
+
+
+
+::: {.Theorem #theorem-local-isometry-2-bis}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
+$$
+\sss \colon U \to \SSS \,, \qquad 
+\wsss \colon U \to \wSSS \,.
+$$
+Assume that $\sss$ and $\wsss$ have the same first fundamental form: 
+$$
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
+$$
+We have:
+
+1. The surfaces $\sss(U)$ and $\wSSS$ are locally isometric.
+2. A local isometry is given by
+$$
+f \colon \sss(U) \to \wSSS \,, \qquad 
+f = \wsss \circ \sss^{-1} \,.
+$$
+
+:::
+
+
+
+::: Example
+### Plane and Cylinder are locally isometric {#example-plane-cylinder}
+
+**Question:** Consider the plane
+$$
+\SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
+$$
+and the unit cylinder 
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \,  x^2 + y^2 = 1 \} \,.
+$$
+Define the function
+$$
+f \colon \SSS \to \wSSS \,, \qquad f(0,y,z) = (\cos(y),\sin(y),z) \,.
+$$
+
+1. Prove that $f$ is smooth.
+2. Prove that $f$ is a local isometry.
+
+*Note:* This shows that the Plane and the Cylinder are locally isometric.
+
+*Solution.*
+
+1. Note that $f \in \wSSS$ because
+$$
+\cos(y)^2 + \sin(y)^2 = 1\,,
+$$
+therefore $f$ is well-defined. Moreover, $f$ is the restriction to $\SSS$ of the function
+$$
+g \colon \R^3 \to \R^3 \,, \qquad g(x,y,z) = (\cos(y),\sin(y),z) \,.
+$$
+Since $g$ is smooth, and $g(\SSS) = \wSSS$, 
+by Theorem \ref{theorem-diff-check-2} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
+
+2. Define the chart of $\SSS$:
+$$
+\sss(u,v) = (0,u,v) \,, \quad u,v \in \R \,.
+$$
+We already know that $\sss$ is regular, with first fundamental form coefficients given by
+$$
+E = 1 \,, \quad F = 1 \,, \quad G = 1 \,,
+$$
+and corresponding first fundamental form
+$$
+{\FF}_1 = du^2 + dv^2 \,.
+$$
+Define $\wsss = f \circ \sss$. Therefore,
+$$
+\wsss(u,v) = f(0,u,v) = (\cos(u),\sin(u),v) \,.
+$$
+We have that
+\begin{align*}
+\wsssu & = ( -\sin(u),\cos(u),0 ) \\
+\wsssv & = (0,0,1) \\
+\wE & = \wsssu \cdot \wsssu = 1 \\  
+\wF & = \wsssu \cdot \wsssv = 0 \\
+\wG & = \wsssv \cdot \wsssv = 1 
+\end{align*}
+Therefore, the first fundamental form of $\wsss = f \circ \sss$ is
+$$
+{\wFF}_1 =  du^2 + dv^2 \,.
+$$
+In particular, we have shown that $\sss$ and $\wsss$ have the same first fundamental form:
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2-bis} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
+
+:::
+
+
+
+
+
+::: Example
+### Plane and Cone are locally isometric
+
+Consider the cone without tip
+$$
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z > 0 \} \,,
+$$
+and the plane
+$$
+\SSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
+$$
+
+1. Let $\sss \colon U \to \SSS$ be the chart of the Cone
+$$
+\sss(\rho,\theta) = (\rho \cos(\theta), \rho \sin(\theta), \rho ) \,,
+$$
+where we define
+$$
+U:= \left\{ (\rho,\theta) \in \R^2 \, \colon \, \rho > 0 , \, \theta \in (0,2\pi) \right\} \,. 
+$$ 
+Compute the first fundamental form ${\FF}_1$ of $\sss$.
+
+2. Let $\wsss \colon U \to \wSSS$ be the chart of the Plane
+$$
+\wsss(\rho,\theta) = (a\rho \cos(b\theta), a\rho \sin(b\theta), 0 )
+$$
+where $a>0$ and $b \in (0,1]$ are constants. Compute the first fundamental form ${\wFF}_1$ of $\wsss$.
+
+
+3. Find coefficients $a,b$ such that 
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+
+4. Conclude that $\SSS$ and $\wSSS$ are locally isometric.
+
+
+*Solution.*
+
+1. We have already computed in Example \ref{example-fff-cone-bis}, that the first fundamental form of $\sss$ is
+$$
+{\FF}_1 = 2 d\rho^2 + \rho^2 d\theta^2 \,.
+$$
+
+
+2. First of all, note that 
+$$
+\theta \in (0,2\pi), \quad b \in (0,1] \quad \implies \quad 
+b \theta \in (0,2\pi) \,,
+$$
+showing that $\wsss$ is well defined for all $(\rho,\theta) \in U$. We compute
+\begin{align*}
+{\wsss}_{\rho} & = ( a \cos(b\theta), a \sin(b\theta), 0 ) \\
+{\wsss}_{\theta} & = ( - ab \rho \sin(b \theta), ab\rho \cos(b\theta), 0 ) \\
+\wE & = {\wsss}_{\rho} \cdot {\wsss}_{\rho} = a^2 \\  
+\wF & = {\wsss}_{\rho} \cdot {\wsss}_{\theta} = 0 \\
+\wG & = {\wsss}_{\theta} \cdot {\wsss}_{\theta} = a^2b^2 \rho^2
+\end{align*}
+from which we conclude that the first fundamental form of $\wsss$ is
+$$
+{\wFF}_1 = a^2 d\rho^2 + a^2b^2 \rho^2 d\rho^2 \,.
+$$
+
+
+3. Equating ${\FF}_1$ and ${\wFF}_1$ we obtain
+$$
+a^2 = 2 , \,\, a^2b^2 = 1 \quad \implies \quad a = \sqrt{2} \,, \,\, b = \frac{1}{\sqrt{2}} \,.
+$$
+Note that $a>0$ and $0<b<1$, showing that $a,b$ are admissible.
+
+
+4. For $a = \sqrt{2}$ and $b = 1/\sqrt{2}$ we have that 
+$$
+{\FF}_1 = {\wFF}_1 \,.
+$$
+Since $\sss$ and $\wsss$ are regular charts for $\SSS$ and $\wSSS$, respectively, from Theorem \ref{theorem-local-isometry-bis} we conclude that $\SSS$ and $\wSSS$ are locally isometric. Furthermore, the local isometry is given by
+$$
+f \colon \SSS \to \wSSS \,, \qquad f = \wsss \circ \sss^{-1} \,.
+$$
+
+
+:::
+
+
+
+
+
+
+
+
+### Angles between curves
+
+
+
+::: Definition
+### Angle between tangent vectors
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. The angle between
+two vectors $\vv , \ww \in T_{\pp} \SSS$ is defined as the number 
+$$
+\theta(\vv,\ww) \in [0,\pi]\,,
+$$ 
+such that
+$$
+\cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \ww \| } \,.
+$$
+
+:::
+
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
+Let $\vv, \ww \in T_{\pp} \SSS$. Then 
+$$
+\cos(\theta) = \frac{ E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ \tilde \lambda \mu) + G  \mu \tilde \mu }{ (E  \lambda^2 + 2 F  \lambda \mu + G \mu^2 )^{1/2} (E  \tilde{\lambda}^2 + 2 F  {\tilde{\lambda}} {\tilde{\mu}} + G {\tilde{\mu}}^2 )^{1/2} } \,,
+$$
+where $\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \R$ are such that 
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,, \quad  
+\ww = \tilde{\lambda} \sss_u + \tilde{\mu} \sss_v \,.
+$$
+
+:::
+
+
+
+::: Definition
+### Angle between curves
+
+Let $\SSS$ be a regular surface and suppose to have two curves
+$$
+\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+$$
+such that 
+$$
+\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
+$$
+Then 
+$$
+\dg(t_0) \,, \, \dtg( \tilde{t}_0 )  \in T_{\pp} \SSS \,.
+$$
+The angle $\theta$ between $\g$ and $\tg$ is the angle between $\dg(t_0)$ and $\dtg( \tilde{t}_0 )$, that is,
+$$
+\cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,,
+$$
+where $\dg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
+
+:::
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
+Suppose given two curves
+$$
+\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+$$
+such that 
+$$
+\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
+$$
+The angle between $\g$ and $\tg$ is
+$$
+\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
+$$
+where $u,v,\tilde{u},\tilde{v} \colon (a,b) \to \R$ are smooth functions such that
+$$
+\g(t) = \sss (u(t),v(t)) \,, \quad 
+\tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
+$$
+
+:::
+
+
+
+::: Example
+
+Let $S$ be a surface with surface chart 
+$$
+\sss(u, v) = \left(u, v, e^{u v}\right) \,.
+$$
+
+1. Calculate its first fundamental form.
+2. Calculate $\cos (\theta)$ where $\theta$ is the angle between the two curves
+\begin{align*}
+\g(t) & =\sss(u(t), v(t)), \quad u(t)=t,\, v(t)=t \,, \\
+\tg(t) & = \sss( \tilde{u}(t),\tilde{v}(t) ) \,, \quad \tilde{u}(t) = 1 , \, \tilde{v}(t) = t \,.
+\end{align*}
+
+
+*Solution.*
+
+1. We calculate
+$$
+\sss_u = \left(1,0, e^{u v} v\right), \quad \sss_v=\left(0,1, e^{u v} u\right) \,.
+$$
+Therefore, the coefficients of the first fundamental form are
+\begin{align*}
+E(u,v) & =1+e^{2 u v} v^2 \\
+F(u,v) & = e^{2 u v} u v \\
+G(u,v) & = 1+e^{2 u v} u^2
+\end{align*}
+
+
+2. The curves $\g$ and $\tg$ intersect at
+$$
+\g(1)=\tg(1)=\sss(1,1) \,.
+$$
+We calculate
+$$
+\dot{u}(1)=1, \quad \dot{v}(1)=1, \quad \dot{\tilde{u}}(1)=0, \quad \dot{\tilde{v}}(1) = 1 \,,
+$$
+and
+\begin{align*}
+E(1,1) & = 1+e^2 \\
+F(1,1) & =e^2 \\
+G(1,1) & =1+e^2
+\end{align*}
+Therefore
+$$
+\begin{aligned}
+\cos \theta & =\frac{E \dot{u} \dot{\tilde{u}} + F \left(\dot{u} \dot{\tilde{v}}+ \dot{\tilde{u}}  \dot{v}\right)+G \dot{v} \dot{\tilde{v}}}{\sqrt{E \dot{u}^2 + 2 F \dot{u} \dot{v} + G \dot{v}^2} \sqrt{E \dot{\tilde{u}}^2 + 2 F\dot{\tilde{u}} \dot{\tilde{v}}+ G \dot{\tilde{v}}^2}} \\
+& =\frac{1+2 e^2}{\sqrt{2+4 e^2} \sqrt{1+e^2}}=\sqrt{\frac{1+2 e^2}{2+2 e^2}} \,.
+\end{aligned}
+$$
+
+:::
 
 
 

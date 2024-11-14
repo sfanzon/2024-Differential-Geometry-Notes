@@ -43,12 +43,12 @@ book:
     
   chapters:
     - index.qmd
-    - sections/revision.qmd
     - sections/chap_1.qmd
     - sections/chap_2.qmd
     - sections/chap_3.qmd
     - sections/chap_4.qmd
     - sections/chap_5.qmd
+    - sections/revision.qmd
     - sections/license.qmd
     - sections/references.qmd
 

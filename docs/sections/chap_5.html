@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Plots with Python – Differential Geometry</title>
+<title>5&nbsp; Plots with Python – Differential Geometry</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/license.html" rel="next">
+<link href="../sections/revision.html" rel="next">
 <link href="../sections/chap_4.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -125,39 +125,15 @@ require(['plotly'], function(Plotly) {
 </script>
 
 <style>
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -165,37 +141,61 @@ require(['plotly'], function(Plotly) {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Theorem {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
 }
 </style>
 
@@ -254,7 +254,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plots with Python</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -274,38 +274,38 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/revision.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Revision Guide</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sections/chap_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Revision Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -330,17 +330,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-plot-curves" id="toc-sec-plot-curves" class="nav-link active" data-scroll-target="#sec-plot-curves"><span class="header-section-number">6.1</span> Curves in Python</a>
+  <li><a href="#sec-plot-curves" id="toc-sec-plot-curves" class="nav-link active" data-scroll-target="#sec-plot-curves"><span class="header-section-number">5.1</span> Curves in Python</a>
   <ul class="collapse">
-  <li><a href="#sec-plot-2d-curves" id="toc-sec-plot-2d-curves" class="nav-link" data-scroll-target="#sec-plot-2d-curves"><span class="header-section-number">6.1.1</span> Curves in 2D</a></li>
-  <li><a href="#implicit-curves-2d" id="toc-implicit-curves-2d" class="nav-link" data-scroll-target="#implicit-curves-2d"><span class="header-section-number">6.1.2</span> Implicit curves 2D</a></li>
-  <li><a href="#curves-in-3d" id="toc-curves-in-3d" class="nav-link" data-scroll-target="#curves-in-3d"><span class="header-section-number">6.1.3</span> Curves in 3D</a></li>
-  <li><a href="#sec-plot-2d-interactive" id="toc-sec-plot-2d-interactive" class="nav-link" data-scroll-target="#sec-plot-2d-interactive"><span class="header-section-number">6.1.4</span> Interactive plots</a></li>
+  <li><a href="#sec-plot-2d-curves" id="toc-sec-plot-2d-curves" class="nav-link" data-scroll-target="#sec-plot-2d-curves"><span class="header-section-number">5.1.1</span> Curves in 2D</a></li>
+  <li><a href="#implicit-curves-2d" id="toc-implicit-curves-2d" class="nav-link" data-scroll-target="#implicit-curves-2d"><span class="header-section-number">5.1.2</span> Implicit curves 2D</a></li>
+  <li><a href="#curves-in-3d" id="toc-curves-in-3d" class="nav-link" data-scroll-target="#curves-in-3d"><span class="header-section-number">5.1.3</span> Curves in 3D</a></li>
+  <li><a href="#sec-plot-2d-interactive" id="toc-sec-plot-2d-interactive" class="nav-link" data-scroll-target="#sec-plot-2d-interactive"><span class="header-section-number">5.1.4</span> Interactive plots</a></li>
   </ul></li>
-  <li><a href="#surfaces-in-python" id="toc-surfaces-in-python" class="nav-link" data-scroll-target="#surfaces-in-python"><span class="header-section-number">6.2</span> Surfaces in Python</a>
+  <li><a href="#surfaces-in-python" id="toc-surfaces-in-python" class="nav-link" data-scroll-target="#surfaces-in-python"><span class="header-section-number">5.2</span> Surfaces in Python</a>
   <ul class="collapse">
-  <li><a href="#plots-with-matplotlib" id="toc-plots-with-matplotlib" class="nav-link" data-scroll-target="#plots-with-matplotlib"><span class="header-section-number">6.2.1</span> Plots with Matplotlib</a></li>
-  <li><a href="#plots-with-plotly" id="toc-plots-with-plotly" class="nav-link" data-scroll-target="#plots-with-plotly"><span class="header-section-number">6.2.2</span> Plots with Plotly</a></li>
+  <li><a href="#plots-with-matplotlib" id="toc-plots-with-matplotlib" class="nav-link" data-scroll-target="#plots-with-matplotlib"><span class="header-section-number">5.2.1</span> Plots with Matplotlib</a></li>
+  <li><a href="#plots-with-plotly" id="toc-plots-with-plotly" class="nav-link" data-scroll-target="#plots-with-plotly"><span class="header-section-number">5.2.2</span> Plots with Plotly</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -350,7 +350,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plots with Python</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></h1>
 </div>
 
 
@@ -367,10 +367,10 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-plot-curves" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="sec-plot-curves"><span class="header-section-number">6.1</span> Curves in Python</h2>
-<section id="sec-plot-2d-curves" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-plot-2d-curves"><span class="header-section-number">6.1.1</span> Curves in 2D</h3>
+<section id="sec-plot-curves" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-plot-curves"><span class="header-section-number">5.1</span> Curves in Python</h2>
+<section id="sec-plot-2d-curves" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-plot-2d-curves"><span class="header-section-number">5.1.1</span> Curves in 2D</h3>
 <p>Suppose we want to plot the parabola <span class="math inline">\(y=t^2\)</span> for <span class="math inline">\(t\)</span> in the interval <span class="math inline">\([-3,3]\)</span>. In our language, this is the two-dimensional curve <span class="math display">\[
 \pmb{\gamma}(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
 \]</span> The two Python libraries we use to plot <span class="math inline">\(\pmb{\gamma}\)</span> are <strong>numpy</strong> and <strong>matplotlib</strong>. In short, <strong>numpy</strong> handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available <a href="https://numpy.org/doc/stable/index.html">here</a>. Instead <strong>matplotlib</strong> is a plotting library, with documentation <a href="https://matplotlib.org">here</a>. Python libraries need to be imported every time you want to use them. In our case we will import:</p>
@@ -410,10 +410,10 @@ x=[x_1, \ldots, x_n]\,, \quad  y=[y_1,\ldots,y_n]\,.
 </div>
 <p>Let us comment the above code. The variable <code>t</code> is a numpy array containing the ordered values <span id="eq-numpy-array-t"><span class="math display">\[
 t = [-3,-2,-1,0,1,2,3]\,.
-\tag{6.1}\]</span></span> This array is then squared entry-by-entry via the operation <span class="math inline">\(t\ast\!\ast 2\)</span> and saved in the new numpy array <code>f</code>, that is, <span class="math display">\[
+\tag{5.1}\]</span></span> This array is then squared entry-by-entry via the operation <span class="math inline">\(t\ast\!\ast 2\)</span> and saved in the new numpy array <code>f</code>, that is, <span class="math display">\[
 f = [9,4,1,0,1,4,9] \,.
 \]</span> The arrays <code>t</code> and <code>f</code> are then passed to <code>plot(t,f)</code>, which produces the above linear interpolation, with <code>t</code> on the <em>x-axis</em> and <code>f</code> on the <em>y-axis</em>. The command <code>plot(t,f,'ko')</code> instead plots a black dot at each point <span class="math inline">\((t_i,f_i)\)</span>. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that <code>plot</code> is actually producing a linear interpolation between points. Finally <code>plt.show()</code> displays the figure in the user window<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.<br>
-Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\pmb{\gamma}(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="#eq-numpy-array-t" class="quarto-xref"><span>6.1</span></a>, as shown below</p>
+Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\pmb{\gamma}(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="#eq-numpy-array-t" class="quarto-xref"><span>5.1</span></a>, as shown below</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying output of np.linspace</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -476,7 +476,7 @@ Of course one can refine the plot so that it resembles the continuous curve <spa
 <p>We use the above code to plot the 2D curve known as the <a href="https://en.wikipedia.org/wiki/Fermat%27s_spiral">Fermat’s spiral</a> <span id="eq-Fermat-Spiral"><span class="math display">\[
 \pmb{\gamma}(t) = ( \sqrt{t}  \cos(t) , \sqrt{t}  \sin(t) ) \quad
 \text{ for } \quad t \in [0,50] \,.
-\tag{6.2}\]</span></span></p>
+\tag{5.2}\]</span></span></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Fermat's spiral</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -594,8 +594,8 @@ Generating arrays
 </div>
 </div>
 </section>
-<section id="implicit-curves-2d" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="implicit-curves-2d"><span class="header-section-number">6.1.2</span> Implicit curves 2D</h3>
+<section id="implicit-curves-2d" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="implicit-curves-2d"><span class="header-section-number">5.1.2</span> Implicit curves 2D</h3>
 <p>A curve <span class="math inline">\(\pmb{\gamma}\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span> can also be defined as the set of points <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> satisfying <span class="math display">\[
 f(x,y)=0
 \]</span> for some given <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}\)</span>. For example let us plot the curve <span class="math inline">\(\pmb{\gamma}\)</span> implicitly defined by <span class="math display">\[
@@ -619,7 +619,7 @@ A = \left(
 <img src="chap_5_files/figure-html/fig-grid-example-output-1.png" width="347" height="337" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grid-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: The 5 x 5 grid corresponding to the matrix A
+Figure&nbsp;5.1: The 5 x 5 grid corresponding to the matrix A
 </figcaption>
 </figure>
 </div>
@@ -663,7 +663,7 @@ Y =
 \]</span></p>
 <p>If now we plot <span class="math inline">\(X\)</span> against <span class="math inline">\(Y\)</span> via the command</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.plot(X, Y, <span class="st">'k.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>we obtain <a href="#fig-grid-example" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>. In the above command the style <code>'k.'</code> represents black dots. This procedure would be impossible with large vectors. Thankfully there is a function in numpy doing exactly what we need: <code>np.meshgrid</code>.</p>
+<p>we obtain <a href="#fig-grid-example" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>. In the above command the style <code>'k.'</code> represents black dots. This procedure would be impossible with large vectors. Thankfully there is a function in numpy doing exactly what we need: <code>np.meshgrid</code>.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrating np.meshgrid</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -737,8 +737,8 @@ Y = [[0. 0. 0. 0. 0.]
 </div>
 </div>
 </section>
-<section id="curves-in-3d" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="curves-in-3d"><span class="header-section-number">6.1.3</span> Curves in 3D</h3>
+<section id="curves-in-3d" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="curves-in-3d"><span class="header-section-number">5.1.3</span> Curves in 3D</h3>
 <p>Plotting in 3D with matplotlib requires the <code>mplot3d</code> toolkit, see <a href="https://matplotlib.org/3.5.3/tutorials/toolkits/mplot3d.html">here</a> for documentation. Therefore our first lines will always be</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Packages for 3D plots</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -843,7 +843,7 @@ Y = [[0. 0. 0. 0. 0.]
 x(t) = \cos(t) \,, \quad
 y(t) = \sin(t) \,, \quad
 z(t) = t
-\tag{6.3}\]</span></span> for <span class="math inline">\(t \in [0,6\pi]\)</span>.</p>
+\tag{5.3}\]</span></span> for <span class="math inline">\(t \in [0,6\pi]\)</span>.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting 3D Helix</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -943,11 +943,11 @@ z(t) = t
 </div>
 </div>
 </section>
-<section id="sec-plot-2d-interactive" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="sec-plot-2d-interactive"><span class="header-section-number">6.1.4</span> Interactive plots</h3>
+<section id="sec-plot-2d-interactive" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="sec-plot-2d-interactive"><span class="header-section-number">5.1.4</span> Interactive plots</h3>
 <p><code>Matplotlib</code> produces beautiful static plots; however it lacks built in interactivity. For this reason I would also like to show you how to plot curves with <code>Plotly</code>, a very popular Python graphic library which has built in interactivity. Documentation for <code>Plotly</code> and lots of examples can be found <a href="https://plotly.com/python/">here</a>.</p>
-<section id="sec-plot-2d-curves-interactive" class="level4" data-number="6.1.4.1">
-<h4 data-number="6.1.4.1" class="anchored" data-anchor-id="sec-plot-2d-curves-interactive"><span class="header-section-number">6.1.4.1</span> 2D Plots</h4>
+<section id="sec-plot-2d-curves-interactive" class="level4" data-number="5.1.4.1">
+<h4 data-number="5.1.4.1" class="anchored" data-anchor-id="sec-plot-2d-curves-interactive"><span class="header-section-number">5.1.4.1</span> 2D Plots</h4>
 <p>Say we want to plot the 2D curve <span class="math inline">\(\pmb{\gamma} \colon (a,b) \to \mathbb{R}^2\)</span> parametrized by <span class="math display">\[
 \pmb{\gamma}(t) = ( x(t) , y(t) ) \,.
 \]</span> The <code>Plotly</code> module needed is called <code>graph_objects</code>, usually imported as <code>go</code>. The function for line plots is called <code>Scatter</code>. For documentation and examples see <a href="https://plotly.com/python/line-and-scatter/">link</a>. The code for plotting <span class="math inline">\(\pmb{\gamma}\)</span> is as follows.</p>
@@ -985,7 +985,7 @@ z(t) = t
 <li><code>add_trace</code>: adds a plot to a figure</li>
 <li><code>show</code>: displays a figure</li>
 </ul>
-<p>As an example, let us plot the Fermat’s Spiral defined at <a href="#eq-Fermat-Spiral" class="quarto-xref"><span>6.2</span></a>. Compared to the above code, we also add a bit of styling.</p>
+<p>As an example, let us plot the Fermat’s Spiral defined at <a href="#eq-Fermat-Spiral" class="quarto-xref"><span>5.2</span></a>. Compared to the above code, we also add a bit of styling.</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Fermat's Spiral</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1070,8 +1070,8 @@ if (outputEl) {{
 <div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>fig.update_layout(template <span class="op">=</span> template_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>template_name</code> can be <code>"plotly"</code>, <code>"plotly_white"</code>, <code>"plotly_dark"</code>, <code>"ggplot2"</code>, <code>"seaborn"</code>, <code>"simple_white</code>“.</p>
 </section>
-<section id="sec-plot-3d-curves-interactive" class="level4" data-number="6.1.4.2">
-<h4 data-number="6.1.4.2" class="anchored" data-anchor-id="sec-plot-3d-curves-interactive"><span class="header-section-number">6.1.4.2</span> 3D Plots</h4>
+<section id="sec-plot-3d-curves-interactive" class="level4" data-number="5.1.4.2">
+<h4 data-number="5.1.4.2" class="anchored" data-anchor-id="sec-plot-3d-curves-interactive"><span class="header-section-number">5.1.4.2</span> 3D Plots</h4>
 <p>We now want to plot a 3D curve <span class="math inline">\(\pmb{\gamma} \colon (a,b) \to \mathbb{R}^3\)</span> parametrized by <span class="math display">\[
 \pmb{\gamma}(t) = ( x(t) , y(t) , z(t)) \,.
 \]</span> Again we use the <code>Plotly</code> module <code>graph_objects</code>, imported as <code>go</code>. The function for 3D line plots is called <code>Scatter3d</code>, and documentation and examples can be found at <a href="https://plotly.com/python/3d-scatter-plots/">link</a>. The code for plotting <span class="math inline">\(\pmb{\gamma}\)</span> is as follows.</p>
@@ -1104,7 +1104,7 @@ if (outputEl) {{
 <span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the figure</span></span>
 <span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The functions <code>go.Figure</code>, <code>add_trace</code> and <code>show</code> appearing above are described in the previous Section. The new addition is <code>go.Scatter3d</code>, which generates a 3D scatter plot of the points stored in the array <code>[x,y,z]</code>. Setting <code>mode = 'lines'</code> results in a linear interpolation of such points. As before, the curve can be labeled by setting <code>name = "string"</code>.</p>
-<p>As an example, we plot the 3D Helix defined at <a href="#eq-helix-curve" class="quarto-xref"><span>6.3</span></a>. We also add some styling. We can also use the same pre-defined templates descirbed for <code>go.Scatter</code> in the previous section, see <a href="https://plotly.com/python/templates/">here</a> for official documentation.</p>
+<p>As an example, we plot the 3D Helix defined at <a href="#eq-helix-curve" class="quarto-xref"><span>5.3</span></a>. We also add some styling. We can also use the same pre-defined templates descirbed for <code>go.Scatter</code> in the previous section, see <a href="https://plotly.com/python/templates/">here</a> for official documentation.</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting 3D Helix</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1186,11 +1186,11 @@ if (outputEl) {{
 </section>
 </section>
 </section>
-<section id="surfaces-in-python" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="surfaces-in-python"><span class="header-section-number">6.2</span> Surfaces in Python</h2>
-<section id="plots-with-matplotlib" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="plots-with-matplotlib"><span class="header-section-number">6.2.1</span> Plots with Matplotlib</h3>
-<p>I will take for granted all the commands explained in <a href="#sec-plot-curves" class="quarto-xref"><span>Section 6.1</span></a>. Suppose we want to plot a surface <span class="math inline">\(S\)</span> which is defined by the parametric equations <span class="math display">\[
+<section id="surfaces-in-python" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="surfaces-in-python"><span class="header-section-number">5.2</span> Surfaces in Python</h2>
+<section id="plots-with-matplotlib" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="plots-with-matplotlib"><span class="header-section-number">5.2.1</span> Plots with Matplotlib</h3>
+<p>I will take for granted all the commands explained in <a href="#sec-plot-curves" class="quarto-xref"><span>Section 5.1</span></a>. Suppose we want to plot a surface <span class="math inline">\(S\)</span> which is defined by the parametric equations <span class="math display">\[
 x = x(u,v) \,, \quad
 y = y(u,v) \,, \quad
 z = z(u,v)
@@ -1309,7 +1309,7 @@ z = u
 </div>
 </div>
 </div>
-<p>As discussed in <a href="#sec-plot-curves" class="quarto-xref"><span>Section 6.1</span></a>, we can have multiple plots in the same figure. For example let us plot the torus viewed from 2 angles. The parametric equations are: <span class="math display">\[
+<p>As discussed in <a href="#sec-plot-curves" class="quarto-xref"><span>Section 5.1</span></a>, we can have multiple plots in the same figure. For example let us plot the torus viewed from 2 angles. The parametric equations are: <span class="math display">\[
 \begin{aligned}
 x &amp; = (R + r \cos(u)) \cos(v)  \\
 y &amp; = (R + r \cos(u)) \sin(v)  \\
@@ -1457,9 +1457,9 @@ z &amp; = - u^2 - v^2
 100/10 = 10
 \]</span> samples in each direction. This is why in the fourth figure you see a <code>10x10</code> grid.</p>
 </section>
-<section id="plots-with-plotly" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="plots-with-plotly"><span class="header-section-number">6.2.2</span> Plots with Plotly</h3>
-<p>As done in <a href="#sec-plot-2d-interactive" class="quarto-xref"><span>Section 6.1.4</span></a>, we now see how to use <code>Plotly</code> to generate an interactive 3D plot of a surface. This can be done by means of functions contained in the <code>Plotly</code> module <code>graph_objects</code>, usually imported as <code>go</code>. Specifically, we will use the function <code>go.Surface</code>. The code will look similar to the one used to plot surfaces with <code>matplotlib</code>:</p>
+<section id="plots-with-plotly" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="plots-with-plotly"><span class="header-section-number">5.2.2</span> Plots with Plotly</h3>
+<p>As done in <a href="#sec-plot-2d-interactive" class="quarto-xref"><span>Section 5.1.4</span></a>, we now see how to use <code>Plotly</code> to generate an interactive 3D plot of a surface. This can be done by means of functions contained in the <code>Plotly</code> module <code>graph_objects</code>, usually imported as <code>go</code>. Specifically, we will use the function <code>go.Surface</code>. The code will look similar to the one used to plot surfaces with <code>matplotlib</code>:</p>
 <ul>
 <li>generate meshgrid on which to compute the parametric surface,</li>
 <li>store such surface in the numpy array <code>[x,y,z]</code>,</li>
@@ -2202,12 +2202,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../sections/chap_4.html" class="pagination-link" aria-label="Surfaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/license.html" class="pagination-link" aria-label="License">
-        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/revision.html" class="pagination-link" aria-label="Revision Guide">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Revision Guide</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6312,7 +6312,7 @@ Substituting in (@eq-angle-proof) we conclude.
 
 
 
-### Angle between curves
+### Angles between curves
 
 Since tangent vectors are derivatives of curves with values in $\SSS$, it also makes sense to define the angle between two intersecting curves.
 
@@ -6412,6 +6412,61 @@ Similarly, we obtain
 \| \dtg \|^2 & = \dtg \cdot \dtg = E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
 \end{align*}
 Substituting in (@eq-angle-curves-proof) we conclude.
+
+:::
+
+
+
+::: Example
+
+Let $S$ be a surface with surface chart 
+$$
+\sss(u, v) = \left(u, v, e^{u v}\right) \,.
+$$
+
+1. Calculate its first fundamental form.
+2. Calculate $\cos (\theta)$ where $\theta$ is the angle between the two curves
+\begin{align*}
+\g(t) & =\sss(u(t), v(t)), \quad u(t)=t,\, v(t)=t \,, \\
+\tg(t) & = \sss( \tilde{u}(t),\tilde{v}(t) ) \,, \quad \tilde{u}(t) = 1 , \, \tilde{v}(t) = t \,.
+\end{align*}
+
+
+*Solution.*
+
+1. We calculate
+$$
+\sss_u = \left(1,0, e^{u v} v\right), \quad \sss_v=\left(0,1, e^{u v} u\right) \,.
+$$
+Therefore, the coefficients of the first fundamental form are
+\begin{align*}
+E(u,v) & =1+e^{2 u v} v^2 \\
+F(u,v) & = e^{2 u v} u v \\
+G(u,v) & = 1+e^{2 u v} u^2
+\end{align*}
+
+
+2. The curves $\g$ and $\tg$ intersect at
+$$
+\g(1)=\tg(1)=\sss(1,1) \,.
+$$
+We calculate
+$$
+\dot{u}(1)=1, \quad \dot{v}(1)=1, \quad \dot{\tilde{u}}(1)=0, \quad \dot{\tilde{v}}(1) = 1 \,,
+$$
+and
+\begin{align*}
+E(1,1) & = 1+e^2 \\
+F(1,1) & =e^2 \\
+G(1,1) & =1+e^2
+\end{align*}
+Therefore
+$$
+\begin{aligned}
+\cos \theta & =\frac{E \dot{u} \dot{\tilde{u}} + F \left(\dot{u} \dot{\tilde{v}}+ \dot{\tilde{u}}  \dot{v}\right)+G \dot{v} \dot{\tilde{v}}}{\sqrt{E \dot{u}^2 + 2 F \dot{u} \dot{v} + G \dot{v}^2} \sqrt{E \dot{\tilde{u}}^2 + 2 F\dot{\tilde{u}} \dot{\tilde{v}}+ G \dot{\tilde{v}}^2}} \\
+& =\frac{1+2 e^2}{\sqrt{2+4 e^2} \sqrt{1+e^2}}=\sqrt{\frac{1+2 e^2}{2+2 e^2}} \,.
+\end{aligned}
+$$
 
 :::
 

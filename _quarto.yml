@@ -76,7 +76,6 @@ format:
   
   pdf:
     documentclass: scrreprt
-    fontfamily: libertinus
     fontfamilyoptions:
       - osf
       - p

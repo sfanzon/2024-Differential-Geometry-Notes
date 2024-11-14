@@ -72,27 +72,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -100,7 +84,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Warning {
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,15 +112,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Corollary {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,17 +124,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Problem {
   --color1: #f4cce0;
@@ -316,7 +316,7 @@ window.Quarto = {
 <p>Curves are 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates: respectively <span class="math display">\[
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 \]</span></p>
-<div id="afa8ed95" class="cell" data-execution_count="1">
+<div id="0d99ccce" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -326,7 +326,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="3ba65d59" class="cell" data-execution_count="2">
+<div id="9671de23" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -336,7 +336,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="1caf8622" class="cell" data-execution_count="3">
+<div id="04262c73" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -369,7 +369,7 @@ f(x,y) = x^2 + y^2  \,\,, c = 1 \,.
 \]</span> But what about for example a helix in 3 dimensions? It would be more difficult to find an equation of the form <span class="math display">\[
 f(x,y,z) = 0
 \]</span> to describe such object.</p>
-<div id="2c3dd712" class="cell" data-execution_count="4">
+<div id="70bd8ead" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -530,7 +530,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </ul>
 </div></details>
 </div>
-<div id="6c3c8630" class="cell" data-execution_count="5">
+<div id="71048f0f" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -540,7 +540,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="2824785a" class="cell" data-execution_count="6">
+<div id="18585107" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -550,7 +550,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="8df77722" class="cell" data-execution_count="7">
+<div id="95e78ff7" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -560,7 +560,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="6fb94bb2" class="cell" data-execution_count="8">
+<div id="f5e8ef57" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -947,29 +947,30 @@ Putting together (<a href="#eq-length-formula-2" class="quarto-xref"><span>1.8</
 </div>
 <p>Thanks to the above theorem we have now a way to compute <span class="math inline">\(L({\pmb{\gamma}})\)</span>. Let us check that we have given a meaningful definition of length by computing <span class="math inline">\(L({\pmb{\gamma}})\)</span> on known examples.</p>
 <div id="length-of-circle" class="Example" title="Length of Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of Circle</summary><div>The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of Circle</summary><div><strong>Question.</strong> The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t)) \,.
-\]</span> Then <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t))
-\]</span> and <span class="math display">\[\begin{align*}
+\]</span> Prove that <span class="math inline">\(L({\pmb{\gamma}}) = 2\pi R\)</span>.<p></p>
+<p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t)) \\
 \left\| \dot{{\pmb{\gamma}}}(t) \right\| &amp; = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      } \\
                 &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
 \end{align*}\]</span> Therefore <span class="math display">\[
-L({\pmb{\gamma}}) = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
-\]</span> as expected.<p></p>
+L({\pmb{\gamma}})  = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| \, dt
+       = \int_0^{2\pi} R \, dt  
+      = 2 \pi R \,.
+\]</span></p>
 </div></details>
 </div>
-<div id="length-of-helix" class="Example" title="Length of helix">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of helix</summary><div>Let us consider one full turn of the Helix of radius <span class="math inline">\(R\)</span> and rise <span class="math inline">\(H\)</span>. This is parametrized by <span class="math display">\[
+<div id="length-of-helix" class="Example" title="Length of Helix">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of Helix</summary><div><strong>Question.</strong> Consider one full turn of the Helix of radius <span class="math inline">\(R &gt;0\)</span> and rise <span class="math inline">\(H\)</span>. This is parametrized by <span class="math display">\[
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t) ,Ht)
-\]</span> for <span class="math inline">\(t \in [0,2\pi]\)</span>. Then <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t) , H) \,,
-\]</span> and <span class="math display">\[\begin{align*}
-\left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp; = \sqrt{  {\dot{\gamma}}_1^2 + {\dot{\gamma}}_2^2 + {\dot{\gamma}}_3^2 } \\
-                    &amp; = \sqrt{ R^2\sin^2(t) + R^2\cos^2(t) + H^2 } = \sqrt{R^2 + H^2} \,.
+\]</span> for <span class="math inline">\(t \in (0,2\pi)\)</span>. Compute <span class="math inline">\(L({\pmb{\gamma}})\)</span>.<p></p>
+<p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t) , H) \\
+\left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp;  = \sqrt{R^2 + H^2}
 \end{align*}\]</span> Therefore <span class="math display">\[
-L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| \, dt = 2 \pi \sqrt{R^2 + H^2} \,.
-\]</span><p></p>
+L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = 2 \pi \sqrt{R^2 + H^2}
+\]</span></p>
 </div></details>
 </div>
 <p>Note that if <span class="math inline">\(H&gt;0\)</span> then <span class="math display">\[
@@ -982,9 +983,9 @@ L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| \, 
 L({\pmb{\gamma}}) = \int_a^b \left\|  \dot{{\pmb{\gamma}}}(t) \right\| \,dt \,.
 \]</span> Using this formula, we introduce the notion of length of a portion of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
 <div id="arc-length-1" class="Definition" title="Arc-length">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-length</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\, \colon (a,b) \to \mathbb{R}^n\)</span> be a curve, with <span class="math inline">\((a,b)\)</span> possibly unbounded. We define the <strong>arc-length</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> starting at the point <span class="math inline">\({\pmb{\gamma}}(t_0)\)</span> as the function <span class="math inline">\(s \colon \mathbb{R}\to \mathbb{R}\)</span> defined by <span class="math display">\[
-s(t) := \int_{t_0}^t  \left\|   \dot{{\pmb{\gamma}}}(\tau)  \right\|\, d\tau \,.
-\]</span><p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-length</summary><div>The <strong>arc-length</strong> along <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> from <span class="math inline">\(t_{0}\)</span> to <span class="math inline">\(t\)</span> is <span class="math display">\[
+s(t)=\int_{t_{0}}^{t}\|\dot{{\pmb{\gamma}}}(u)\| d u \,.
+\]</span> The function <span class="math inline">\(s(t)\)</span> is known as the arc-length function.<p></p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -1036,30 +1037,29 @@ c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d
 </ul>
 </div></details>
 </div>
-<div id="circle" class="Example" title="Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26: </strong>Circle</summary><div>The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
-{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t)) \,.
-\]</span> Then <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t)) \,, \quad \left\| \dot{{\pmb{\gamma}}}(t) \right\| = R \,.
-\]</span> Therefore, for any fixed <span class="math inline">\(t_0 \in [0,2\pi]\)</span> we have <span class="math display">\[
+<div id="arc-length-of-the-circle" class="Example" title="Arc-length of the Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26: </strong>Arc-length of the Circle</summary><div><strong>Question.</strong> Consider the circle of radius <span class="math inline">\(R\)</span>, parametrized by <span class="math display">\[
+{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t),0) \,, \quad  t \in [0,2\pi] \,.
+\]</span> Compute the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+<p><strong>Solution.</strong> We have <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t),0) \,, \quad \left\| \dot{{\pmb{\gamma}}}(t) \right\| = R \,.
+\]</span> Therefore, for any fixed <span class="math inline">\(t_0 \in [0,2\pi]\)</span>, we have <span class="math display">\[
 s(t) = \int_{t_0}^{t}  \left\|   \dot{{\pmb{\gamma}}}(\tau) \right\| \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
-\]</span> In particular we see that <span class="math inline">\(\dot s = R\)</span> is constant.<p></p>
+\]</span> In particular we see that <span class="math inline">\(\dot s = R\)</span> is constant.</p>
 </div></details>
 </div>
-<div id="logarithmic-spiral" class="Example" title="Logarithmic spiral">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 27: </strong>Logarithmic spiral</summary><div>The Logarithmic spiral is defined by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> with <span class="math display">\[
+<div id="arc-length-of-logarithmic-spiral" class="Example" title="Arc-length of Logarithmic Spiral">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 27: </strong>Arc-length of Logarithmic Spiral</summary><div><strong>Question.</strong> The Logarithmic spiral is defined by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> with <span class="math display">\[
 {\pmb{\gamma}}(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
-\]</span> where <span class="math inline">\(k \in \mathbb{R}\)</span>, <span class="math inline">\(k \neq 0\)</span>, is called the <strong>growth factor</strong>. Then <span class="math display">\[
-{\dot \gamma}_1(t) = e^{kt} ( k \cos(t) - \sin(t) )
-\]</span> <span class="math display">\[
-{\dot \gamma}_2(t) = e^{kt} ( k \sin(t) + \cos(t) )
-\]</span> and so, after some calculations, <span class="math display">\[
-\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2   =  {\dot{\gamma}}_1^2 + {\dot{\gamma}}_2^2 = (k^2 + 1) e^{2kt} \,.
-\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
+\]</span> where <span class="math inline">\(k \in \mathbb{R}\)</span>, <span class="math inline">\(k \neq 0\)</span>, is called the <strong>growth factor</strong>. Compute the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+<p><strong>Solution.</strong> We have <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}(t) &amp; = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ) \\
+\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2  &amp; =  (k^2 + 1) e^{2kt} \,.
+\end{align*}\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
 s(t) &amp; = \int_{t_0}^t \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau \\
      &amp; = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
      &amp; = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
-\end{align*}\]</span><p></p>
+\end{align*}\]</span></p>
 </div></details>
 </div>
 <div id="cell-fig-log-spiral" class="cell" data-execution_count="12">
@@ -1236,7 +1236,7 @@ s(t) := \int_{t_0}^t \left\|   \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau  \,
 </div></details>
 </div>
 <div id="unit-speed-curve" class="Definition" title="unit-speed curve">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>unit-speed curve</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. We say that <span class="math inline">\({\pmb{\gamma}}\)</span> is a <strong>unit-speed</strong> curve if <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>unit-speed curve</summary><div>A curve <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> is <strong>unit-speed</strong> if <span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(t) \right\|  = 1 \,, \quad \forall \, t \in (a,b) \,.
 \]</span><p></p>
 </div></details>
@@ -1315,11 +1315,9 @@ g:= f^{-1} \,.
 </div></details>
 </div>
 <div id="reparametrization-1" class="Definition" title="Reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. A <strong>reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is another parametrized curve <span class="math inline">\(\tilde{{\pmb{\gamma}}} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> such that <span id="eq-reparametrization"><span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. A <strong>reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a curve <span class="math inline">\(\tilde{{\pmb{\gamma}}} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> such that <span id="eq-reparametrization"><span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\gamma}}(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
-\tag{1.18}\]</span></span> for a suitable diffeomorphism <span class="math display">\[
-\phi\colon (\tilde{a},\tilde{b}) \to (a,b) \,.
-\]</span> We call both <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\phi^{-1}\)</span> <strong>reparametrization maps</strong>.<p></p>
+\tag{1.18}\]</span></span> for <span class="math inline">\(\phi\colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> diffeomorphism. We call both <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\phi^{-1}\)</span> <strong>reparametrization maps</strong>.<p></p>
 </div></details>
 </div>
 <div id="Remark-44" class="Remark">
@@ -1540,8 +1538,8 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div>
 <p>We now define unit-speed reparametrizations:</p>
 <div id="unit-speed-reparametrization-1" class="Definition" title="unit-speed reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, i.e., <span class="math display">\[
-\left\|  \dot{\widetilde{{\pmb{\gamma}}}}(t)  \right\| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> be a curve. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, that is, <span class="math display">\[
+\left\|  \dot{\widetilde{{\pmb{\gamma}}}}(t)  \right\| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b})
 \]</span><p></p>
 </div></details>
 </div>
@@ -1557,10 +1555,10 @@ s(t):=\int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \,,
 \]</span> The above statements will be proved in Theorem <a href="chap_1.html#theorem-regular-unit-speed">56</a> and Proposition <a href="chap_1.html#proposition-arc-length-unit">57</a> below.</p>
 <div id="theorem-regular-unit-speed" class="Theorem" title="Existence of unit-speed reparametrization">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 56: </strong>Existence of unit-speed reparametrization</summary><div>
-<p>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a parametrized curve. They are equivalent:</p>
+<p>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a curve. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\({\pmb{\gamma}}\)</span> is regular,</li>
-<li><span class="math inline">\({\pmb{\gamma}}\)</span> has a unit-speed reparametrization.</li>
+<li><span class="math inline">\({\pmb{\gamma}}\)</span> admits unit-speed reparametrization.</li>
 </ol>
 </div></details>
 </div>
@@ -1613,13 +1611,13 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 \]</span> is a unit-speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>. In the next proposition we show that the arc-length <span class="math inline">\(s\)</span> is essentially the only unit-speed reparametrization of a regular curve.</p>
 <div id="proposition-arc-length-unit" class="Proposition" title="Arc-length and unit-speed reparametrization">
 <details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57: </strong>Arc-length and unit-speed reparametrization</summary><div>
-<p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, so that <span class="math display">\[
-{\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}( \phi(t) )  , \quad \forall \, t \in (a,b)\,.
+<p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^3\)</span> be a reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, that is, <span class="math display">\[
+{\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}( \phi(t) )  , \quad \forall \, t \in (a,b)
 \]</span> for some diffeomorphism <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. Denote by <span class="math display">\[
-s(t):= \int_{t_0}^t  \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau \,, \quad t \in (a,b)
+s(t) = \int_{t_0}^t  \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau
 \]</span> the arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. We have:</p>
 <ol type="1">
-<li><p>If <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
+<li><p>If <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
 \phi(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 \tag{1.24}\]</span></span></p></li>
 <li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="revision.html#eq-proposition-unit-speed" class="quarto-xref"><span>6.1</span></a>) for some <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
@@ -1674,9 +1672,9 @@ s(t) = \int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau =  \i
 </div></details>
 </div>
 <div id="arc-length-reparametrization" class="Definition" title="Arc-length reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Arc-length reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be regular. Proposition <a href="chap_1.html#proposition-arc-length-unit">57</a> tells us that a unit speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is given by <span class="math display">\[
-\widetilde{{\pmb{\gamma}}}:= {\pmb{\gamma}}\circ s^{-1}
-\]</span> with <span class="math inline">\(s^{-1}\)</span> inverse of the arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span>. We call <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> the <strong>arc-length reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Arc-length reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be regular. The <strong>arc-length reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is the curve <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ s^{-1}
+\]</span> with <span class="math inline">\(s^{-1}\)</span> inverse of the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="arc-length-parameter" class="Notation" title="Arc-length parameter">
@@ -1706,21 +1704,41 @@ t = t(s)
 </div></details>
 </div>
 <div id="example-circle-arc" class="Example" title="Arc-length reparametrization of the Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>Arc-length reparametrization of the Circle</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon [0,2\pi] \to \mathbb{R}^2\)</span> be the parametrization of the circle with center <span class="math inline">\((x_0,y_0)\)</span> and radius <span class="math inline">\(R&gt;0\)</span> <span class="math display">\[
-{\pmb{\gamma}}(t) = ( x_0 + R \cos (t), t_0 + \sin (t))
-\]</span> The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
-s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau = Rt
-\]</span> Rearranging we obtain <span class="math display">\[
-s = Rt \quad \implies \quad t = \frac{s}{R}
-\]</span> The inverse <span class="math inline">\(\psi = s^{-1}\)</span> is therefore <span class="math display">\[
-\psi(s) = \frac{s}{R}
-\]</span> According to our notation <span class="math inline">\(\psi\)</span> can also be denoted as <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>Arc-length reparametrization of the Circle</summary><div><strong>Question.</strong> Let <span class="math inline">\({\pmb{\gamma}}\colon (0,2\pi) \to \mathbb{R}^2\)</span> be the circle with center <span class="math inline">\((x_0,y_0)\)</span> and radius <span class="math inline">\(R&gt;0\)</span> <span class="math display">\[
+{\pmb{\gamma}}(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
+\]</span> Reparametrize <span class="math inline">\({\pmb{\gamma}}\)</span> by arc-length.<p></p>
+<p><strong>Solution.</strong> The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
+s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = Rt
+\]</span> The inverse <span class="math inline">\(s^{-1}\)</span> is <span class="math display">\[
 t(s) = \frac{s}{R}
-\]</span> By Proposition <a href="chap_1.html#proposition-arc-length-unit">57</a> <span class="math display">\[
-\widetilde{{\pmb{\gamma}}}:= {\pmb{\gamma}}\circ s^{-1}
-\]</span> is a unit-speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>. Plugging the formula for <span class="math inline">\(s^{-1}\)</span> into the expression for <span class="math inline">\({\pmb{\gamma}}\)</span> yields the explicit formula for <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> <span class="math display">\[
-\widetilde{{\pmb{\gamma}}}(s) = {\pmb{\gamma}}(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right) \right)
-\]</span><p></p>
+\]</span> The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}(s) = {\pmb{\gamma}}(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) \,.
+\]</span></p>
+</div></details>
+</div>
+<div id="Example-60" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 60</strong></summary><div>
+<p><strong>Question.</strong> Consider the curve <span class="math display">\[
+{\pmb{\gamma}}(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
+\]</span></p>
+<ol type="1">
+<li>Prove that <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.</li>
+<li>Reparametrize <span class="math inline">\({\pmb{\gamma}}\)</span> by arc-length.</li>
+</ol>
+<p><strong>Solution.</strong></p>
+<ol type="1">
+<li><p><span class="math inline">\({\pmb{\gamma}}\)</span> is regular because <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}(t) &amp; =(-5 \sin (t), 5 \cos (t), 12) \\
+\|\dot{{\pmb{\gamma}}}(t)\| &amp; = 13 \neq 0
+\end{align*}\]</span></p></li>
+<li><p>The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
+s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = 13 t \,.
+\]</span> The inverse <span class="math inline">\(s^{-1}\)</span> is <span class="math display">\[
+t(s) = \frac{s}{13}  \,.
+\]</span> The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}(s)= {\pmb{\gamma}}(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
+\]</span></p></li>
+</ol>
 </div></details>
 </div>
 <div id="Warning*-17" class="Warning">
@@ -1728,7 +1746,7 @@ t(s) = \frac{s}{R}
 </div></details>
 </div>
 <div id="twisted-cubic" class="Example" title="Twisted cubic">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 60: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 61: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
 {\pmb{\gamma}}(t) = (t,t^2,t^3)\,.
 \]</span> Therefore <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = (1,2t,3t^2)\,,
@@ -1743,7 +1761,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 \]</span> with <span class="math inline">\(s^{-1}\)</span> the inverse of the arc-length function. It can be shown that the integral at (<a href="#eq-twisted-arc" class="quarto-xref"><span>1.27</span></a>) cannot be written in terms of elementary functions. Therefore there are not explicit formulas for <span class="math inline">\(s\)</span> and <span class="math inline">\(s^{-1}\)</span>. As a consequence the unit-speed parametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> cannot be computed explicitly in this case.<p></p>
 </div></details>
 </div>
-<div id="9a9feb6e" class="cell" data-execution_count="13">
+<div id="4847564a" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1770,7 +1788,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </ol>
 <p>However there are examples of curves which are in between the above types.</p>
 <div id="example-curve-loop" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 61</strong></summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 62</strong></summary><div>
 <p>For example consider the curve <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^2\)</span> <span class="math display">\[
 {\pmb{\gamma}}(t) := (t^2-1, t^3 -t) \,\quad  \forall \, t \in \mathbb{R}\,.
 \]</span> This curve has two main properties:</p>
@@ -1788,14 +1806,14 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </div>
 <p>The aim of this section is to make precise the concept of <strong>looping curve</strong>. To do that, we need to define <strong>periodic curves</strong>.</p>
 <div id="periodic-curve" class="Definition" title="Periodic curve">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 62: </strong>Periodic curve</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve, and let <span class="math inline">\(T \in \mathbb{R}\)</span>. We say that <span class="math inline">\({\pmb{\gamma}}\)</span> is <strong>T-periodic</strong> if <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 63: </strong>Periodic curve</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve, and let <span class="math inline">\(T \in \mathbb{R}\)</span>. We say that <span class="math inline">\({\pmb{\gamma}}\)</span> is <strong>T-periodic</strong> if <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\gamma}}(t+T) \,, \quad \forall \, t \in \mathbb{R}\,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>Note that every curve is <span class="math inline">\(0\)</span>-periodic. Therefore to define a closed curve we need to rule out this case.</p>
 <div id="closed-curve" class="Definition" title="Closed curve">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 63: </strong>Closed curve</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 64: </strong>Closed curve</summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve. We say that <span class="math inline">\({\pmb{\gamma}}\)</span> is <strong>closed</strong> if they hold</p>
 <ol type="1">
 <li><span class="math inline">\({\pmb{\gamma}}\)</span> is not constant,</li>
@@ -1804,7 +1822,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </div></details>
 </div>
 <div id="remark-closed" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 64</strong></summary><div>
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 65</strong></summary><div>
 <p>The following basic observations hold:</p>
 <ol type="1">
 <li><p>If <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic, then a point moving around <span class="math inline">\({\pmb{\gamma}}\)</span> returns to its starting point after time <span class="math inline">\(T\)</span>.</p>
@@ -1869,18 +1887,18 @@ By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/periodic_extension.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_1.html#remark-closed">64</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
+<figcaption>The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_1.html#remark-closed">65</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Definition-65" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 65</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is the smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic, that is <span class="math display">\[
+<div id="Definition-66" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 66</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is the smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic, that is <span class="math display">\[
 \mbox{Period of ${\pmb{\gamma}}$} := \min \{ T \, \colon \, T &gt; 0 \,, \,\, {\pmb{\gamma}}\, \mbox{ is T-periodic}    \} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>We need to show that the above definition is well-posed, i.e., that there exists such smallest <span class="math inline">\(T&gt;0\)</span>.</p>
-<div id="Proposition-66" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 66</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic. In other words, the set <span class="math display">\[
+<div id="Proposition-67" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 67</strong></summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic. In other words, the set <span class="math display">\[
 S := \{ T  \, \colon \, T &gt; 0 \,, \,\, {\pmb{\gamma}}\, \mbox{ is T-periodic} \} \,.
 \]</span> admits positive minumum <span class="math display">\[
 P = \min S \,, \quad P &gt; 0 \,.
@@ -1890,7 +1908,7 @@ P = \min S \,, \quad P &gt; 0 \,.
 <div id="Proof*-18" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We make 2 observations about the set <span class="math inline">\(S\)</span>:<p></p>
 <ul>
-<li>Since <span class="math inline">\({\pmb{\gamma}}\)</span> is closed, we have that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By Remark <a href="chap_1.html#remark-closed">64</a> Point 5, we know that <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
+<li>Since <span class="math inline">\({\pmb{\gamma}}\)</span> is closed, we have that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By Remark <a href="chap_1.html#remark-closed">65</a> Point 5, we know that <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
 S \neq \emptyset \,.
 \]</span></li>
 <li><span class="math inline">\(S\)</span> is bounded below by <span class="math inline">\(0\)</span>. This is by definition of <span class="math inline">\(S\)</span>.</li>
@@ -1926,7 +1944,7 @@ t_n \in [0,T_n] \,, \quad k_n \in \mathbb{Z}\,,
 t = t_n + k_n T_n \,,
 \]</span> as shown in the figure below. Indeed, it is sufficient to define <span class="math display">\[
 k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n := t - k_n T_n \,.
-\]</span> Since <span class="math inline">\(T_n \in S\)</span>, we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Remark <a href="chap_1.html#remark-closed">64</a> Point 6 implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is also <span class="math inline">\(k_nT_n\)</span>-periodic, since <span class="math inline">\(k_n \in \mathbb{Z}\)</span>. Thus <span class="math display">\[\begin{align*}
+\]</span> Since <span class="math inline">\(T_n \in S\)</span>, we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Remark <a href="chap_1.html#remark-closed">65</a> Point 6 implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is also <span class="math inline">\(k_nT_n\)</span>-periodic, since <span class="math inline">\(k_n \in \mathbb{Z}\)</span>. Thus <span class="math display">\[\begin{align*}
 {\pmb{\gamma}}(t) &amp; = {\pmb{\gamma}}( t_n + k_nT_n )   &amp;   \mbox{(definition of $t_n$)} \\
        &amp; = {\pmb{\gamma}}(t_n)             &amp; \mbox{(by $k_nT_n$-periodicity)} \,.
 \end{align*}\]</span> Therefore <span id="eq-period-exists-1"><span class="math display">\[
@@ -1949,7 +1967,7 @@ t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
 </figure>
 </div>
 <div id="examples-of-closed-curves" class="Example" title="Examples of closed curves">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 67: </strong>Examples of closed curves</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 68: </strong>Examples of closed curves</summary><div>
 <ol type="1">
 <li><p>The circumference <span class="math display">\[
 {\pmb{\gamma}}(t) = (\cos(t), \sin(t)) \,, \quad t \in \mathbb{R}
@@ -1957,7 +1975,7 @@ t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
 <li><p>The Lemniscate <span class="math display">\[
 {\pmb{\gamma}}(t) = (\sin(t), \sin(t) \cos(t)) \,, \quad t \in \mathbb{R}
 \]</span> is not costant and is <span class="math inline">\(2\pi\)</span>-periodic. Thus <span class="math inline">\({\pmb{\gamma}}\)</span> is closed. The period of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(2 \pi\)</span>.</p></li>
-<li><p>Consider again the curve from Example <a href="chap_1.html#example-curve-loop">61</a> <span class="math display">\[
+<li><p>Consider again the curve from Example <a href="chap_1.html#example-curve-loop">62</a> <span class="math display">\[
 {\pmb{\gamma}}(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \mathbb{R}\,.
 \]</span> According to our definition, <span class="math inline">\({\pmb{\gamma}}\)</span> is not periodic. Therefore <span class="math inline">\({\pmb{\gamma}}\)</span> is not closed. However there is a point of <strong>self-intersection</strong> on <span class="math inline">\({\pmb{\gamma}}\)</span>, namely <span class="math display">\[
 p := (0,0) \,,
@@ -1969,7 +1987,7 @@ p = {\pmb{\gamma}}(-1) = {\pmb{\gamma}}(1) \,.
 </div>
 <p>The last curve in the above example motivates the definition of <strong>self-intersecting</strong> curve.</p>
 <div id="self-intersecting-curve" class="Definition" title="Self-intersecting curve">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 68: </strong>Self-intersecting curve</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 69: </strong>Self-intersecting curve</summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve. We say that <span class="math inline">\({\pmb{\gamma}}\)</span> is <strong>self-intersecting</strong> at a point <span class="math inline">\(p\)</span> on the curve if</p>
 <ol type="1">
 <li>There exist two times <span class="math inline">\(a \neq b\)</span> such that <span class="math display">\[
@@ -1979,16 +1997,16 @@ p = {\pmb{\gamma}}(a)={\pmb{\gamma}}(b)  \,,
 </ol>
 </div></details>
 </div>
-<div id="Remark-69" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 69</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 6 in Remark <a href="chap_1.html#remark-closed">64</a> we have <span class="math display">\[
+<div id="Remark-70" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 70</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 6 in Remark <a href="chap_1.html#remark-closed">65</a> we have <span class="math display">\[
 {\pmb{\gamma}}(a) = {\pmb{\gamma}}(a + kT) \,, \quad \forall \ a \in \mathbb{R}, \, k \in \mathbb{Z}\,.
 \]</span> Therefore every point <span class="math inline">\({\pmb{\gamma}}(a)\)</span> would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set <span class="math inline">\(b:=a + kT\)</span>, then <span class="math display">\[
 b - a = k T \,,
 \]</span> meaning that <span class="math inline">\(b-a\)</span> is an integer multiple of <span class="math inline">\(T\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Example-70" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 70</strong></summary><div>Let us go back to the curve of Example <a href="chap_1.html#example-curve-loop">61</a>, that is, <span class="math display">\[
+<div id="Example-71" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71</strong></summary><div>Let us go back to the curve of Example <a href="chap_1.html#example-curve-loop">62</a>, that is, <span class="math display">\[
 {\pmb{\gamma}}(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \mathbb{R}\,.
 \]</span> We have that <span class="math inline">\({\pmb{\gamma}}\)</span> is not periodic, and therefore not closed. However <span class="math inline">\(p = (0,0)\)</span> is a point of <strong>self-intersection</strong> on <span class="math inline">\({\pmb{\gamma}}\)</span>, since we have <span class="math display">\[
 p = {\pmb{\gamma}}(-1) = {\pmb{\gamma}}(1) \,.
@@ -1996,7 +2014,7 @@ p = {\pmb{\gamma}}(-1) = {\pmb{\gamma}}(1) \,.
 </div></details>
 </div>
 <div id="the-limaçon" class="Example" title="The Limaçon">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71: </strong>The Limaçon</summary><div>Define the parametrized curve <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^2\)</span> by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 72: </strong>The Limaçon</summary><div>Define the parametrized curve <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^2\)</span> by <span class="math display">\[
 {\pmb{\gamma}}(t) = ( (1+2\cos(t)) \cos(t) ,  (1 + 2 \cos(t)) \sin(t)   ) \,,
 \quad \forall \, t \in \mathbb{R}\,.
 \]</span> Such curve, plotted bolow, is called limaçon (French for snail). This curve is non constant and <span class="math inline">\(2\pi\)</span>-periodic. Therefore it is closed. The period of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(2 \pi\)</span>. Moreover we have <span class="math display">\[

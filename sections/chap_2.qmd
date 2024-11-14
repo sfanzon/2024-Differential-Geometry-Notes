@@ -110,9 +110,9 @@ We take this as definition of curvature for a general unit-speed curve in $\R^n$
 ::: Definition 
 ### Curvature of unit-speed curve
 
-Let $\g \ \colon (a,b) \to \R^n$ be a unit-speed curve. The **curvature** of $\g$ at $\g(t)$ is
+Let $\g \ \colon (a,b) \to \R^3$ be a unit-speed curve. The **curvature** of $\g$ is
 $$
-\kappa(t) := \norm{\ddg (t)} \,.
+\kappa(t) = \norm{\ddg (t)}
 $$
 
 :::
@@ -124,25 +124,25 @@ Note that $\kappa(t)$ is a function of the parameter $t$: The curvature of $\g$ 
 
 
 ::: Example
-### Curvature of the circle
+### Curvature of the Circle
 
-We have seen that the arc-length parametrization of the circle of center
-$(x_0,y_0)$ and radius $R>0$ is
+**Question.** Consider the circle of center
+$(x_0,y_0)$ and radius $R>0$
 $$
-\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) \right) 
+\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) , 0\right)  \,.
 $$
-As $\g$ is parametrized by arc-length, we have that $\g$ is unit-speed.
-To compute the curvature we need the second derivative $\ddg$
+Compute the curvature of $\g$.
+
+**Solution.** First, check that $\g$ is unit-speed:
 \begin{align*}
-\dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
-\ddg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right), 0\right) \\
+\norm{\dg(t)} & = 1 
 \end{align*}
-Therefore the curvature of $\g$ is
-$$
-\kappa(t) = \norm{ \ddg (t) } = \frac{1}{R} \,.
-$$
-In this case $\kappa$ is constant. The above formula also tells us that
-the curvature is inversely proportional to the radius of the circle: A large circle will look (locally) almost like a straight line.
+Now, compute second derivative and curvature
+\begin{align*}
+\ddg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right) ,0\right) \\
+\kappa(t) & = \norm{ \ddg (t) } = \frac{1}{R}
+\end{align*}
 
 :::
 
@@ -160,15 +160,15 @@ the curvature is inversely proportional to the radius of the circle: A large cir
 Let $\g \colon (a,b) \to \R^3$ be a regular curve and $\tg$ be a unit-speed reparametrization of 
 $\g$, with 
 $$
-\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
+\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b}) 
 $$
-Denote by
+Denote the curvature of $\tg$ by
 $$
-\tkappa \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tkappa(t) :=   \norm{\ddtg (t)}
+\tkappa \colon (\tilde{a},\tilde{b}) \to \R \,, \qquad \tkappa(t) =   \norm{\ddtg (t)}
 $$
-the curvature of $\tg$. The **curvature** of $\g$ at $\g(t)$ is defined by
+The **curvature** of $\g$ is
 $$
-\kappa(t) := \tkappa(\f(t))
+\kappa(t) = \tkappa(\f(t))
 $$
 
 :::
@@ -241,31 +241,28 @@ $$
 :::
 
 
-
 ::: Remark 
 ### Method for computing curvature
 
-In summary, the curvature of a regular curve 
-$$
-\g \ \colon (a,b) \to \R^n
-$$ 
-is defined via unit-speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
+Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. To compute the curvature of $\g$ we do the following: 
 
-1. Find a unit-speed reparametrization $\tg$ of the regular curve $\g$
+1. Compute the arc-length $s$ of $\g$.
 
-2. This can be done by computing $s$ the arc-length of $\g$, and then defining the arc-length reparametrization
+2. Find $t(s)$, the inverse of $s$.
+
+3. Compute the arc-length reparametrization
 $$
-\tg:= \g \circ s^{-1}
+\tg (s) = \g (t(s)) \,.
 $$
 
-3. Compute curvature of $\tg$
+4. Compute the curvature of $\tg$
 $$
-\tkappa(s) = \norm{\ddtg (s)}
+\tkappa(s) = \norm{\ddtg (s)}\,.
 $$
 
-4. The curvature of $\g$ at $\g(t)$ is
+5. The curvature of $\g$ is
 $$
-\kappa (t)= \tkappa (s(t)) 
+\kappa (t)= \tkappa (s(t)) \,.
 $$
 
 :::
@@ -283,11 +280,12 @@ When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa
 Before proceeding with the next example, let us give a short overview of the **Hyperbolic functions**.
  
 
-::: Remark 
-### Hyperbolic functions    {#remark-hyperbolic-functions}
 
-The Hyperbloic functions are the analogous of the trigonometric functions, but defined using the hyperbola rather than the circle. Their formulas can be obtained by means of the exponential function $e^t$. We have:
 
+::: Definition
+### Hyperbolic functions
+
+The **hyperbolic functions** are defined by:
 
 - Hyperbolic cosine: The **even part** of the function $e^t$, that is, 
 $$
@@ -307,7 +305,7 @@ $$
 
 - Hyperbolic cotangent: The reciprocal of $\tanh$ for $t \neq 0$,
 $$
-\coth t = \frac{\cosh t}{\sinh t} = \frac {e^t + e^{-t}} {e^t - e^{-t}}
+\coth (t) = \frac{\cosh t}{\sinh t} = \frac {e^t + e^{-t}} {e^t - e^{-t}}
 = \frac{e^{2t} + 1} {e^{2t} - 1} \,.
 $$
 
@@ -323,25 +321,29 @@ $$
 = \frac{2e^t} {e^{2t} - 1} \,.
 $$
 
-For a plot $\cosh, \sinh, \tanh$ see @fig-hyperbolic-functions below. The properties of the
-hyperbolic functions which are of interest to us are:
+:::
 
-1. Identities: 
+For a plot $\cosh, \sinh, \tanh$, see @fig-hyperbolic-functions below. 
+![Plot of $\cosh, \sinh, \tanh$.](/images/hyperbolic_functions.png){#fig-hyperbolic-functions width=70%}
+
+
+::: Theorem
+### Notable properties of Hyperbolic Functions
+
+Identities: 
 \begin{align*}
-&\cosh(t) + \sinh(t) = e^t \\
-&\cosh(t) - \sinh(t) = e^{-t} \\
 &\cosh^2(t) - \sinh^2(t)  = 1 \\
 &{\sech}^2(t) - \tanh^2(t)  = 1  
 \end{align*}
 
-2. Derivatives: 
+Derivatives: 
 \begin{align*}
 \frac{d}{dt} \left[ \sinh(t) \right] & = \cosh (t) \\
 \frac{d}{dt} \left[ \cosh(t) \right] & = \sinh (t) \\
 \frac{d}{dt} \left[ \tanh(t) \right] & = 1 - \tanh^2 (t) = - {\csch}^2(t) 
 \end{align*}
 
-3. Integrals: 
+Integrals: 
 \begin{align*}
 \int_{t_0}^t \sinh(u) \, du & = \cosh (t) - \cosh( t_0 ) \\
 \int_{t_0}^t \cosh(u) \, du & = \sinh (t) - \sinh( t_0 ) \\
@@ -351,42 +353,57 @@ hyperbolic functions which are of interest to us are:
 :::
 
 
-![Plot of $\cosh, \sinh, \tanh$.](/images/hyperbolic_functions.png){#fig-hyperbolic-functions width=70%}
-
-
-::: Example
-### The Catenary
+::: Definition
 
 The **catenary** is the shape of a heavy chain suspended at its ends. The chain is only subjected to gravity, see @fig-catenary. This shape looks similar to a parabola, but it is not a parabola. This was first noted by Galilei, see this [Wikipedia page](https://en.wikipedia.org/wiki/Catenary). The profile of the hanging chain can be obtained via a minimization problem, and one can show it is of the form 
 $$
 \g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
 $$
-See @fig-catenary-plot for a plot of $\g$. Let us check if $\g$ is regular. We have
+See @fig-catenary-plot for a plot of $\g$.
+
+:::
+
+
+
+
+::: Example
+### Curvature of the Catenary
+
+**Question.** Consider the Catenary curve
 $$
-\dg (t) = (1 , \sinh(t)) 
+\g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
 $$
-so that
-$$
-\norm{ \dg }^2 = 1 + {\sinh}^2 (t) = \cosh^2 (t) 
-\quad \implies \quad
-\norm{ \dg } = \cosh (t) \,. 
-$$
+
+1. Prove that $\g$ is regular
+2. Compute the arc-length function of $\g$ starting at $t_0 = 0$
+3. Compute the arc-length reparametrization of $\g$
+4. Compute the curvature of $\tg$
+5. Compute the curvature of $\g$
+
+**Solution.**
+
+1. Check that $\g$ is regular:
+\begin{align*}
+\dg (t) & = (1 , \sinh(t))  \\
+\norm{ \dg }^2 & = 1 + {\sinh}^2 (t) = \cosh^2 (t) \\
+\norm{ \dg } & = \cosh (t) 
+\end{align*}
 Note that 
 $$
 \cosh(t) \geq 1
 $$
-showing that $\g$ is regular. However
-$$
-\norm{\dg(1)} = \cosh (1) = \frac{e + e^{-1}}{2} \approx 1.54 \,, 
-$$
-proving that $\g$ is not unit-speed. Let us then compute the arc-length of $\g$ starting at $t_0 = 0$
+showing that $\g$ is regular.
+
+2. The arc-length of $\g$ starting at $t_0 = 0$ is
 $$
 s(t) = \int_0^t \norm{ \dg (u) } \, du =  \int_0^t \cosh (u) \, du = \sinh (t)
 $$
-where we used that $\sinh(0) = 0$. We need to invert $s$. We have
+where we used that $\sinh(0) = 0$
+
+3. We need to invert $s$. We have
 \begin{align*}
 s = \sinh(t) \quad & \iff \quad s = \frac{e^t - e^{-t}}{2} \\
-             \quad & \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
+             \quad & \iff \quad e^{2t} - 2s e^{t} - 1 = 0
 \end{align*}
 where the last equation was obtained by rearranging and multiplying both sides by $e^t$. Now we substitute
 $$
@@ -403,38 +420,33 @@ y_{+} = s + \sqrt{1 + s^2} \geq s + \sqrt{s^2} = s + |s| \geq 0
 $$
 by definition of absolute value. As we were looking for $y$ in the form $y=e^t$, we only consider the positive solution $y_+$. Then
 $$
-e^t = y_+ = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
+e^t = y_+ = s + \sqrt{1 + s^2 }
 $$
-We have proven that the inverse of the arc-length $s(t)$ is 
+so that
 $$
-\psi(s) = t(s) = \log \left( s + \sqrt{ 1+ s^2} \right) \,.
+t(s) = \log \left( s + \sqrt{1 + s^2} \right)
 $$
-Therefore the arc-length reparametrization of $\g$ is
+The arc-length reparametrization of $\g$ is
 $$
-\tg (s) := \g( t(s) ) = \left(  \log \left( s + \sqrt{ 1+ s^2} \right) , \sqrt{1 + s^2}  \right) \,.
+\tg (s) = \g( t(s) ) = \left(  \log \left( s + \sqrt{ 1+ s^2} \right) , \sqrt{1 + s^2}  \right)
 $$
-We can now compute the curvature. We have:
+
+4. Compute the curvature of $\tg$
 \begin{align*}
 \dtg (s) &  = \left(  \frac{1}{ \sqrt{1 + s^2} } , \frac{s}{ \sqrt{1 + s^2}}   \right) \\
-\ddtg (s) & = \left( - \frac{s}{ (1 + s^2)^{3/2} } , \frac{1}{(1 + s^2)^{3/2} }   \right)
+\ddtg (s) & = \left( - \frac{s}{ (1 + s^2)^{3/2} } , \frac{1}{(1 + s^2)^{3/2} }   \right) \\
+\norm{\ddtg (s)}^2 & = \frac{1}{(1+s^2)^2} \\
+\tkappa(s) & = \norm{\ddtg (s)}= \frac{1}{1+s^2} 
 \end{align*}
-Hence
+
+6. Recalling that $s(t) = \sinh(t)$, the curvature of $\g$ is
 $$
-\norm{\ddtg (s)}^2 = \frac{s^2}{(1+s^2)^3} + \frac{1}{(1+s^2)^3} = \frac{1}{(1+s^2)^2} \,.
+\kappa (t) = \tkappa(s(t)) = \frac{1}{1+ \sinh^2(t)} = 
+\frac{1}{\cosh^2(t)}
 $$
-Therefore the curvature of $\tg$ is
-$$
-\tkappa(s) = \norm{\ddtg (s)}= \frac{1}{1+s^2} \,.
-$$
-Recalling that $s(t) = \sinh(t)$, we conclude that the curvature of $\g$ is
-$$
-\kappa (t) = \tkappa(s(t)) = \frac{1}{1+ \sinh(t)^2} = 
-\frac{1}{\cosh(t)^2}
-$$
-where we used the identity $1 + \sinh^2 = \cosh^2$.
+where we used the identity $1 + \sinh^2(t) = \cosh^2(t)$
 
 :::
-
 
 ![The catenary is the shape of a heavy chain suspended at its ends. Image from [Wikipedia](https://en.wikipedia.org/wiki/Catenary).](/images/catenary.png){#fig-catenary width=70%}
 
@@ -941,9 +953,9 @@ If $\g$ is a regular curve in $\R^3$ the following formula can be used to comput
 ::: Proposition
 ### Curvature formula {#proposition-curvature-formula}
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature of $\g$ is
 $$
-\kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
+\kappa(t) = \frac{ \norm{\dg(t) \times \ddg(t)} }{ \norm{\dg(t)}^3 }  \,.
 $${#eq-curvature}
 
 :::
@@ -957,11 +969,18 @@ For now we use (@eq-curvature) to compute the curvature of specific curves.
 ::: Example
 ### Curvature of the straight line
 
-Consider the straight line
+**Question.** Consider the straight line
 $$
-\g(t) = \mathbf{a} + t \mathbf{v}
+\g(t) = \mathbf{a} + t \mathbf{v} \,,
 $$
-for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq \zero$. Then
+for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq \zero$. 
+
+1. Prove that $\g$ is regular.
+2. Compute the curvature of $\g$.
+
+**Solution.** 
+
+1. We have
 $$
 \dg (t) = \mathbf{v} \,, \quad \ddg(t) = \zero \,. 
 $$
@@ -969,7 +988,9 @@ Therefore
 $$
 \norm{\dg (t)} = \| \mathbf{v} \| \neq 0
 $$
-showing that $\g$ is regular. We have
+showing that $\g$ is regular. 
+
+2. We have
 $$
 \dg \times \ddg = \mathbf{v} \times \zero = \zero \,.
 $$
@@ -985,82 +1006,47 @@ as expected.
 ::: Example
 ### Curvature of Helix {#example-curvature-helix}
 
-Consider the Helix of radius $R>0$ and rise $H>0$
+
+**Question.** Consider the Helix of radius $R>0$ and rise $H$,
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
-Then
+
+1. Prove that $\g$ is regular.
+2. Prove that 
+$$
+\kappa(t)= \frac{ R }{  R^2 + H^2   }\,.
+$$
+
+**Solution.** 
+
+1. We have
 \begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
-\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) 
+\norm{\dg (t)} & = \sqrt{R^2 + H^2} \geq R > 0
 \end{align*}
-From this we deduce that
-$$
-\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,
-$$
-showing that $\g$ is regular. Finally
+showing that $\g$ is regular. 
+
+2. Compute
 \begin{align*}
-\dg \times \ddg & = 
-\left|
-\begin{array}{cc}
-{\dot\gamma}_2 & {\dot\gamma}_3  \\
-{\ddot\gamma}_2 & {\ddot\gamma}_3
-\end{array}
-\right| \ee_1 -
-\left|
-\begin{array}{cc}
-{\dot\gamma}_1 & {\dot\gamma}_3  \\
-{\ddot\gamma}_1 & {\ddot\gamma}_3
-\end{array}
-\right| \ee_2 +
-\left|
-\begin{array}{cc}
-{\dot\gamma}_1 & {\dot\gamma}_2  \\
-{\ddot\gamma}_1 & {\ddot\gamma}_2
-\end{array}
-\right| \ee_3 \\
-& = 
-\left|
-\begin{array}{cc}
-R\cos(t) & H \\
--R\sin(t) & 0
-\end{array}
-\right| \ee_1 -
-\left|
-\begin{array}{cc}
--R\sin(t) & H \\
--R\cos(t) & 0 
-\end{array}
-\right| \ee_2 +
-\left|
-\begin{array}{cc}
--R\sin(t) & R\cos(t) \\
--R\cos(t) & -R\sin(t)  
-\end{array}
-\right| \ee_3 \\
-& = 
-\left(   
-RH\sin(t),    
--RH\cos(t),
- R^2\cos^2(t) + R^2\sin^2(t)
-\right) \\
-& = 
-\left(   
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dg \times \ddg & = \left(   
 RH\sin(t),    
 -RH\cos(t),
 R^2
-\right) 
+\right) \\
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \\
 \end{align*}
-and therefore
+By the curvature formula we have
 $$
-\norm{ \dg \times \ddg } =  R\sqrt{R^2 + H^2   } \,.
-$$
-By the general formula we have
-$$
-\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } =
-\frac{ R (R^2 + H^2)^{\frac12} }{  (R^2 + H^2)^{\frac32}    } =
+\kappa (t)= \frac{ \norm{ \dg(t) \times \ddg(t) } }{ \norm{\dg(t)}^3 } =
 \frac{ R }{  R^2 + H^2   } 
 $$
+
+:::
+
+
+::: Remark 
 
 We notice the following:
 
@@ -1079,6 +1065,42 @@ which agrees with the curvature of a straight line.
 :::
 
 
+
+::: {.Example #example-curvature}
+
+**Question.** Define the curve
+$$
+\g(t)=\left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
+$$
+
+1. Prove that $\g$ is regular.
+2. Compute the curvature of $\g$.
+
+**Solution.** 
+
+1. We have
+$$
+\begin{aligned}
+\dg(t) & =\left(-\frac{8}{5} \sin (t),-2 \cos (t),-\frac{6}{5} \sin (t)\right) \\
+\|\dg(t)\| & =2 \neq 0
+\end{aligned}
+$$
+showing that $\g$ is regular.
+
+2. Compute
+$$
+\begin{aligned}
+& \ddg(t) =\left(-\frac{8}{5} \cos (t), 2 \sin (t),-\frac{6}{5} \cos (t)\right) \\
+& \dg(t) \times \ddg(t)=\left(-\frac{12}{5}, 0, \frac{16}{5}\right) \\
+& \|\dg(t) \times \ddg(t)\|=4
+\end{aligned}
+$$
+The curvature formula yields
+$$
+\kappa(t)  = \frac{1}{2} \,.
+$$
+
+:::
 
 
 
@@ -1192,28 +1214,30 @@ that is, $\g$ and $\eeta$ have same curvature but are different curves.
 
 
 ::: Example
-### Different curves with same curvature
+### Different curves having the same curvature
 
-Let $\g$ be a circle of radius $R>0$
+Let $\g$ be a circle
 $$
-\g(t) = (R\cos(t),R\sin(t),0) \,,
+\g(t) = (2\cos(t),2\sin(t),0) \,,
 $$
 and $\eeta$ be a helix of radius $S>0$ and rise $H>0$
 $$
 \eeta(t) = (S\cos(t),S\sin(t),Ht) \,.
 $$
-We have computed that 
+Find $S$ and $H$ such that $\g$ and $\eeta$ have the same curvature.
+
+*Solution.* We have already computed that the curvature of $\g$ and $\eeta$ are, respectively
 $$
-\kappa^\g = \frac{1}{R}\,, \quad 
+\kappa^\g = \frac{1}{2}\,, \quad 
 \kappa^\eeta = \frac{S}{S^2 + H^2} \,.
 $$
-If we now choose $R=2$ and we impose that $\kappa^\g = \kappa^\eeta$ we get
+Imposing that $\kappa^\g = \kappa^\eeta$, we get
 $$
 \frac12 = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
 $$
 Choosing $S=1$ and $H=1$ yields 
 $$
-\kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,.
+\kappa^\g = \kappa^\eeta \,.
 $$
 :::
 
@@ -1536,7 +1560,7 @@ $$
 2. If $\tg$ is orientation reversing then $\dot \f < 0$. By (@eq-chain-unit-speed-2) we infer $\dot \f \equiv - 1$, so that the equations at (@eq-chain-unit-speed-8) read
 $$
 \ttt = - \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
-\bb = - \tbb \circ \f
+\bb = - \tbb \circ \f \,.
 $$
 
 :::
@@ -1544,11 +1568,11 @@ $$
 
 In conclusion, the Frenet frame is not invariant under 
 reparametrization. However the Frenet vectors stay the same,
-up to changing the sign of tangent and binormal.
+up to changing the sign of tangent and binormal:
 
 $$
 \ttt = \pm \tttt \circ \f , \quad \nn = \tnn \circ \f, \quad 
-\bb = \pm \tbb \circ \f
+\bb = \pm \tbb \circ \f \,.
 $$
 
 
@@ -1561,81 +1585,76 @@ the Frenet frame of the Helix.
 ::: Example
 ### Frenet frame of Helix {#example-helix-frenet}
 
-Consider the helix of radius $R>0$ and rise $H$ given by
+**Question.** Consider the Helix of radius $R>0$ and rise $H$ given by
 $$
-\g (t) = ( R\cos(t), R\sin(t),t H)\,,
+\g (t) = ( R\cos(t), R\sin(t),t H)\,, \quad \, t \in \R \,.
 $$
-for $t \in \R$. We have that
+
+1. Prove that $\g$ is regular.
+2. Compute the arc-length function of $\g$.
+3. Compute the arc-length reparametrization $\tg$ of $\g$.
+4. Compute the Frenet frame of $\tg$.
+
+
+**Solution.** 
+
+1. We have
 $$
-\dg (t) = ( -R\sin(t), R\cos(t), H )
+\dg (t) = ( -R\sin(t), R\cos(t), H ) \,,
 $$
 which implies
 $$
 \norm{ \dg } = \rho, \qquad \rho := \sqrt{R^2 + H^2} \,.
 $$
-This shows that $\g$ is regular, since
+Therefore, $\g$ is regular, since
 $$
-\norm{ \dg } = \rho = \sqrt{R^2 + H^2} \geq \sqrt{R^2} = R > 0
+\norm{ \dg } = \sqrt{R^2 + H^2} \geq \sqrt{R^2} = R > 0 \,.
 $$
-However $\g$ is not unit-speed in general. 
-We know that all unit-speed reparametrizations are of the form
+
+2. The arc-length of $\g$ starting at $t_0 = 0$ is
 $$
-\f = \pm s + c \,,
+s(t) = \int_0^t \norm{ \dg(u) } \, du = \rho  t \,.  
 $$
-where $s$ is the arc-length and $c \in \R$. Therefore we compute the arc-length of $\g$ starting at $t_0 = 0$
+
+3. The arc-length function $s$ is invertible with inverse 
 $$
-s(t) := \int_0^t \norm{ \dg(u) } \, du = \rho  t \,.  
+t(s) = \frac{s}{\rho} \,.
 $$
-The arc-length function is invertible with inverse 
+The arc-length reparametrization $\tg$ of $\g$ is given by
 $$
-\psi(s) := t(s) = \frac{s}{\rho} \,.
+\tg(s) = \g( t(s)) = \left( R \cos \left( \frac{s}{\rho}  \right) ,R \sin \left( \frac{s}{\rho}  \right) , \frac{H s }{\rho}    \right) \,.
 $$
-Therefore a unit-speed reparametrization of $\g$ is given by
-$$
-\tg(s):= \g( t(s)) = \left( R \cos \left( \frac{s}{\rho}  \right) ,R \sin \left( \frac{s}{\rho}  \right) , \frac{H s }{\rho}    \right) \,.
-$$
-We compute the tangent vector to $\tg$ and its derivative
+
+4. Compute the tangent vector to $\tg$ and its derivative
 \begin{align*}
-\tttt & = \dtg  = \frac{1}{\rho}
+\tttt(s) & = \dtg  = \frac{1}{\rho}
  \left(  - R \sin \left( \frac{s}{\rho}  \right) , 
  R \cos \left( \frac{s}{\rho}  \right) 
  , H    \right) \\
-\dot{\tttt} & = \frac{R}{\rho^2} \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)
+\dot{\tttt}(s) & = \frac{R}{\rho^2} \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)
 \end{align*}
-We have already computed the curvature of the Helix in 
-Example \ref{example-curvature-helix} by using the general 
-formula. We now compute it again, but this time by using the
-unit-speed reparametrization just obtained:
-$$
-\tkappa (s) = \norm{ \dot{\tttt} } = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}\,.
-$$
-The principal normal vector is then
-$$
-\tnn = \frac{1}{\tkappa(t)} \, \dot{\tttt} = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right) \,.
-$$
-We can now compute the binormal
+The curvature of $\tg$ is
 \begin{align*}
-\tbb& = \tttt \times \tnn  \\
-    & = \frac{1}{\rho}
-    \left|
-    \begin{array}{ccc}
-    \ii & \jj & \kk \\
-    - R \sin \left( \frac{s}{\rho}  \right)  & R \cos \left( \frac{s}{\rho}  \right) & H \\
-    - \cos \left( \frac{s}{\rho}  \right) & - \sin \left( \frac{s}{ \rho }  \right) & 0 
-    \end{array}
-    \right| \\
-    & =  \frac{1}{\rho} \left( H \sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
+\tkappa (s) & = \| \ddtg(s) \| = \| \dot{\tttt}(s) \| \\
+            & = \frac{R}{\rho^2} = \frac{R}{R^2 + H^2}\,.
 \end{align*}
-This concludes the calculation of the Frenet frame of $\tg$. 
+The principal normal vector and binormal are
+\begin{align*}
+\tnn (s) & = \frac{1}{\tkappa(s)} \, \dot{\tttt}(s) \\
+         & = \left(  -\cos \left( \frac{s}{\rho}  \right) , -\sin \left( \frac{s}{\rho}  \right) , 0    \right)  \\
+\tbb (s)& = \tttt(s) \times \tnn(s)  \\
+    & = \frac{1}{\rho} \left( H \sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
+\end{align*}
+
+:::
+ 
 For the choice of $R = 1$ and $H = 1$ the Frenet frame is plotted in @fig-helix-frenet.
 
 **Note:** If we had reparametrized $\g$ by $-s$ instead of $s$, we would have obtained the Frenet frame
 $$
 (- \tttt , \tnn, - \tbb)
 $$
-in accordance with Proposition \ref{proposition-frenet-reparametrization}. 
-
-:::
+in accordance with Proposition \ref{proposition-frenet-reparametrization}.
 
 
 ```{python}
@@ -1830,11 +1849,7 @@ The scalar $\tau$ in equation (@eq-binormal-derivative) is called the torsion of
 ::: Definition
 ### Torsion of unit-speed curve with $\kappa \neq 0$
 
-Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve, with $\kappa \neq 0$. The **torsion** of $\g$ at $\g(t)$ is the unique scalar
-$$
-\tau (t) \in \R
-$$
-such that
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. The **torsion** of $\g$ is the unique scalar $\tau (t)$ such that
 $$
 \dot{\bb} (t) = - \tau(t) \nn(t) \,.
 $$
@@ -1875,14 +1890,14 @@ As we did for curvature, we can extend the definition of torsion to regular curv
 ### Torsion of regular curve with $\kappa \neq 0$ {#definition-torsion-regular}
 
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve, with $\kappa \neq 0$. Let $\tg$ be a unit-speed reparametrization of 
-$\g$, with 
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with $\kappa \neq 0$. Let $\tg$ be a unit-speed reparametrization of 
+$\g$ with 
 $$
 \g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
 $$
-Denote by $\ttau \colon (\tilde{a},\tilde{b}) \to \R$ the torsion of $\tg$. The **torsion** of $\g$ at $\g(t)$ is defined by
+Denote by $\ttau \colon (\tilde{a},\tilde{b}) \to \R$ the torsion of $\tg$. The **torsion** of $\g$ is
 $$
-\tau(t) := \ttau(\f(t))
+\tau(t) = \ttau(\f(t)) \,.
 $$
 
 :::
@@ -1958,9 +1973,6 @@ as required.
 
 
 
-
-
-
 As with the curvature, there is a general 
 formula to compute the torsion without having to reparametrize.
 
@@ -1968,9 +1980,9 @@ formula to compute the torsion without having to reparametrize.
 ::: Proposition 
 ### Torsion formula   {#proposition-torsion-formula}
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with $\kappa \neq 0$. The torsion of $\g$ is
 $$
-\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
+\tau (t) = \frac{ ( \dg(t) \times \ddg(t) ) \cdot \dddg(t) }{ \norm{ \dg(t) \times \ddg(t) }^2 } \,. 
 $${#eq-torsion-formula}
 
 :::
@@ -1985,41 +1997,39 @@ For now we use (@eq-torsion-formula) to compute the curvature of specific curves
 ::: Example
 ### Torsion Helix {#example-torsion-helix}
 
-
-Consider the Helix of radius $R>0$ and rise $H>0$
+**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
-We have already shown that
+
+1. Prove that $\g$ is regular with non-vanishing curvature.
+2. Compute the torsion of $\g$.
+
+
+**Solution.**
+
+1. We have already shown that
 $$
 \norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
 $$
-Therefore the Helix is regular with non-vanishing curvature. The torsion can be then
-computed via the formula 
-$$
-\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
-$$
-Let us compute the quantities appearing in the formula for $\tau$
+Therefore $\g$ is regular with non-vanishing curvature.
+
+2. We compute
 \begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
 \ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
-\dddg (t) & = ( R\sin(t) , -R\cos(t) , 0) 
-\end{align*}
-Moreover we had already computed that
-\begin{align*}
+\dddg (t) & = ( R\sin(t) , -R\cos(t) , 0)  \\
 \dg \times \ddg & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
-\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \,.
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \\
+(\dg \times \ddg) \cdot \dddg & = R^2 H 
 \end{align*}
-Finally we compute
+Using the formula
 $$
-(\dg \times \ddg) \cdot \dddg = R^2 H \,.
-$$
-We are ready to find the torsion:
-$$
-\tau = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 }
+\tau (t)= \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 }
        = \frac{ H }{ R^2 + H^2 } \,.
 $$
 :::
+
 
 
 As a consequence of the above example, we can immediately
@@ -2167,7 +2177,7 @@ $$
 \kappa = \frac{\norm{ \dg \times \ddg }}{ \norm{ \dg }^2 } \,, \qquad
 \tau = \frac{ (\dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,.
 $$
-We conclude the section by providing an example where we compute curvature and torsion by making use of the Frenet frame.
+We provide an example where we compute curvature and torsion by making use of the Frenet frame.
 
 
 
@@ -2234,6 +2244,81 @@ which of course agrees with the calculation for $\tau$ in Example \ref{example-t
 
 
 
+::: Example
+### Twisted cubic
+
+**Question.** Let $\g \colon \R \to \R^3$ be the curve defined by
+$$
+\g(t) = (t,t^2,t^3 ) \,.
+$$
+$\g$ is known as the *twisted cubic*.
+
+1. Is $\g$ regular? Justify your answer.
+2. Is $\g$ unit-speed? Justify your answer.
+3. Compute the curvature of $\g$.
+4. Compute the torsion of $\g$.
+5. Compute the Frenet frame of $\g$.
+
+
+**Solution.**
+
+1. $\g$ is regular because
+	$$
+	\dot \g(t) = (1 , 2t , 3t^2)\,, 
+	$$
+	so that $\dot \g(t) \neq 0$ for all $t \in \R$, since the first component is constantly $1$.
+	
+2. $\g$ is not unit-speed, since
+	\begin{align*}
+	\norm{\dot \g (t)} & = \sqrt{1 + 4t^2 + 9t^4} \\
+    \norm{\dot\g(1)} & = \sqrt{14} \neq 1 \,.
+	\end{align*}
+	
+3. We have
+	\begin{align*}
+	\ddot \g (t) & = (0,2,6t) \\
+	\dot \g (t) \times \ddot \g(t) & = (6t^2, -6t, 2 ) \\
+	\norm{\dot \g (t) \times \ddot \g(t)} & = 2 \sqrt{ 1 + 9t^2 + 9t^4  } 
+	\end{align*}
+	The curvature is
+	$$
+	\kappa(t) = \frac{ \norm{\dot \g  \times \ddot \g } }{\norm{ \dot \g  }^3}
+			  = \frac{ 2 \sqrt{ 1 + 9t^2 + 9t^4  }  }{ (1 + 4t^2 + 9t^4)^{3/2}   } \,.
+	$$
+	
+4. We have
+	$$
+	\dddot \g (t) = (0,0,6)
+	$$
+	and thus
+	$$
+		(\dot \g  \times \ddot \g ) \cdot \dddot \g  = \left|
+		\begin{array}{ccc}
+			1 & 2t & 3t^2 \\
+			0 & 2 & 6t \\
+		    0 & 0 & 6 
+		\end{array} \right|  = 12\,,
+	$$
+	obtaining that the torsion is
+	$$
+	\tau(t) = \frac{ (\dot \g  \times \ddot \g ) \cdot \dddot \g  }{ \norm{\dot \g  \times \ddot \g }^2  } = \frac{3}{1 + 9t^2 + 9t^4} \,.
+	$$
+
+
+5. Using the formulas and the above calculations, we have
+\begin{align*}
+\ttt & = \frac{\dg}{\norm{\dg}} = \frac{1}{\sqrt{1 + 4t^2 + 9t^4}} \  (1 , 2t , 3t^2) \\   
+\bb & = \frac{ \dg \times \ddg }{ \norm{\dg \times \ddg} } 
+ = \frac{1}{\sqrt{ 1 + 9t^2 + 9t^4}}  (3t^2, -3t, 1 ) \\
+\nn & = \bb \times \ttt \\
+    & = \frac{(−9t^3 − 2t,1 − 9t^4,6t^3 + 3t)}{\sqrt{ 1 + 9t^2 + 9t^4} \, \sqrt{1 + 4t^2 + 9t^4}} 
+\end{align*}
+
+
+:::
+
+
+
 ## Frenet-Serret equations
 
 For unit-speed curves $\g \colon (a,b) \to \R^3$ with non-vanishing curvature we introduced the Frenet frame
@@ -2262,12 +2347,12 @@ $$
 ::: Proposition
 ### Frenet frame is right-handed {#proposition-positive-basis}
 
-Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. The Frenet frame is *right-handed*, in the sense that
+Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve with $\kappa \neq 0$. Then
 $$
 \bb = \ttt \times \nn \,, \quad
 \nn = \bb \times \ttt \,, \quad
 \ttt = \nn \times \bb \,.
-$$ {#eq-frenet-positive-basis}
+$${#eq-frenet-positive-basis}
 
 :::
 
@@ -2316,7 +2401,7 @@ obtaining the last equation in (@eq-frenet-positive-basis).
 ::: Theorem
 ### Frenet-Serret equations
 
-Let $\g \colon (a,b) \to \R^3$ be unit-speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
+Let $\g \colon (a,b) \to \R^3$ be unit-speed with $\kappa \neq 0$. The Frenet frame of $\g$ solves the **Frenet-Serret** equations
 \begin{align*}  
 \dot{\ttt} & = \kappa \nn \\
 \dot{\nn} & = - \kappa \ttt + \tau \bb \\
@@ -2452,7 +2537,7 @@ Let us give the analytic definition of rigid motion.
 ::: Definition
 ### Rigid motion
 
-A *rigid motion* of $\R^3$ is a map $M \colon \R^3 \to \R^3$ of the form
+A **rigid motion** of $\R^3$ is a map $M \colon \R^3 \to \R^3$ of the form
 $$
 M(\vv) = R \vv + \pp \,, \qquad \vv \in \R^3 \,,
 $$
@@ -2530,32 +2615,85 @@ For now, let us show a simple application of Theorem \ref{theorem-characterizati
 ::: Example
 ### Application of Fundamental Theorem of Curves
 
-In Example \ref{example-circle-rotated} we have considered the unit-speed curve
+
+**Question.** Consider the curve
 $$
-\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+	\g ( t ) = \left( \sqrt{3}\, t - \sin ( t ) , \sqrt{3} \sin ( t ) + t , 2 \cos ( t ) \right)\,, \quad t \in \R \,.
 $$
-for $t \in [0,2\pi]$. We have computed that 
+
+1. Calculate the curvature and torsion of $\g$.
+
+2. The helix of radius $R$ and rise $H$ is parametrized by 
+	$$
+	\eeta (t) = (R \cos(t), R\sin(t), Ht) \,.
+	$$
+	Recall that $\eeta$ has curvature and torsion 
+	$$
+	\kappa^{\eeta} = \frac{R}{R^2 + H^2} \,, \qquad	\tau^{\eeta} = \frac{H}{R^2 + H^2} \,.
+	$$
+    Prove that there exist a rigid motion $M \colon \R^3 \to \R^3$ such that
+    $$
+    \g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
+    $$
+
+**Solution.** 
+
+1. We have
 $$
-\kappa = 1 \,, \quad \tau = 0 \,. 
+	\begin{aligned}
+		& \dot \g (t)  = \left( \sqrt{3} - \cos ( t ), \sqrt{3}\cos ( t ) + 1, -2 \sin ( t ) \right) \\
+		& \ddot \g (t) = \left( \sin ( t ),-\sqrt{3}\sin ( t ), -2 \cos ( t ) \right) \\
+		& \dddot \g (t) = \left( \cos ( t ),-\sqrt{3}\cos ( t ), 2 \sin ( t ) \right) \\
+		& \dot \g (t)  \times \ddot \g (t)  = \left( -2 \left( \sqrt{3} + \cos ( t ) \right), 2 \left( \sqrt{3} \cos ( t ) - 1 \right), -4 \sin ( t ) \right) \\
+		 & \norm{\dot \g (t)  \times \ddot \g (t) }^2 = 32 \\
+		& \norm{\dot \g (t)  }^2 = 8 \\
+		& \left( \dot \g (t)  \times \ddot \g (t)  \right) \cdot \dddot \g ( t ) = -8
+	\end{aligned}
 $$
-If we plot $\g$, we clearly see that $\g$ is just obtained by translating and 
-rotating a unit circle, see plot in @fig-circle-rigid. Theorem \ref{theorem-characterization-space} enables
-us to rigorously prove this claim. Indeed, consider the unit-speed circle
+Therefore the curvature is
 $$
-\tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
+\kappa ( t )  =  \frac{ \norm{ \dot\g \times \ddot \g  } }{ \norm{ \dot\g  }^3  } =  \dfrac{\sqrt{32}}{8^{\frac{3}{2}}} = \dfrac{1}{4} \,,
 $$
-for $t \in [0,2\pi]$. In Example \ref{example-circle-curvature-torsion} we have proven that curvature and torsion are  
+and the torsion is
 $$
-\tkappa = 1 \,, \quad \ttau = 0 \,. 
+		\tau ( t ) =   \frac{ \left(\dot\g \times \ddot\g \right)  \cdot \dddot \g  }{ \norm{\dot\g \times \ddot\g}^2 } = \dfrac{-8}{32} = -\dfrac{1}{4} \, .
+$$
+
+2. As given by the exercise, denote by $\eeta$ the Helix of radius $R$ and rise $H$, which has curvature and torsion 
+$$
+		\kappa^{\eeta} = \frac{R}{R^2 + H^2} \,, \qquad	\tau^{\eeta} = \frac{H}{R^2 + H^2} \,.
+$$
+Equating $\kappa = \kappa^{\eeta}$ and $\tau = \tau^{\eeta}$ we obtain
+$$
+			\frac{R}{R^2 + H^2} = \frac{1}{4} \,, \qquad 
+				\frac{H}{R^2 + H^2} = - \frac{1}{4} 
+$$
+Rearranging both equalities we get
+$$
+R^2 + H^2 = 4 R \,, \qquad 
+				R^2 + H^2 = -4 H
+$$
+from which we find the relation
+$$
+4 R = - 4 H \quad \implies \quad R = -  H
+$$
+Substituting $R = - H$ into $R^2 + H^2 = -4 H$, and simplifying, we get
+$$
+H = - 2 \,.
 $$
 Therefore 
 $$
-\kappa = \tkappa\,, \quad \tau = \ttau  \,,
+R = - H = 2 \,.
 $$
-and by Theorem  \ref{theorem-characterization-space} we conclude that there exist a rigid motion $M \colon \R^3 \to \R^3$ such that
+For these values of $R$ and $H$ we have 
 $$
-\g(t) = M(\tg(t))  \,, \quad \forall \,  t \in [0,2\pi] \,.
+\kappa = \kappa^{\eeta} \,, \qquad \tau = \tau^{\eeta} \,.
 $$
+By the Fundamental Theorem of Space Curves, we conclude the existence of a rigid motion $M \colon \R^3 \to \R^3$ such that
+$$
+\g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
+$$
+
 :::
 
 
@@ -2605,7 +2743,7 @@ is saying that the plane $\pmb{\pi}_0$ contains all the points $\xx$ in $\R^3$ w
 
 ::: {.Proposition  #proposition-zero-torsion}
 
-Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. They are equivalent:
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. They are equivalent:
 
 
 1. The torsion of $\g$ satisfies 
@@ -2613,9 +2751,9 @@ $$
 \tau(t) = 0 \,, \quad \forall  \, t \in (a,b) \,.
 $$
 
-2. The image of $\g$ is contained in a plane, that is, there exists a vector $\mathbf{P} \in \R^3$ and a scalar $d \in \R$ such that
+2. The image of $\g$ is contained in a plane: There exists a vector $\mathbf{P} \in \R^3$ and a scalar $d \in \R$ such that
 $$
-\g(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
 $$
 
 
@@ -2728,8 +2866,7 @@ we obtain the following statement.
 
 ::: {.Corollary  #corollary-zero-torsion}
 
-Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. Suppose that
-the torsion
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. Suppose that
 $$
 \tau(t) = 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
@@ -2737,7 +2874,7 @@ Then the binormal $\bb$ is a constant vector, and the image of $\g$ is contained
 $$
 (\xx - \g(t_0)) \cdot \bb = 0 \,,
 $$
-where $t_0 \in (a,b)$ is arbitrarily chosen. Note that such plane is orthogonal to the binormal $\bb$.
+where $t_0$ is any point in $(a,b)$.
 
 :::
 
@@ -2801,6 +2938,69 @@ $$
 
 
 
+::: Example 
+
+**Question.** Consider the curve
+$$
+\g(t) = ( t,2t,t^4) \,,
+$$
+for $t >0$.
+
+1. Prove that $\g$ is regular. 
+
+2. Compute the curvature and torsion of $\g$.
+
+3. Prove that $\g$ is contained in a plane. Compute the equation of such plane, giving your answer in the form
+$$
+ax+by+cz = d \,,
+$$
+for suitable $a,b,c,d \in \R$.
+
+
+
+**Solution.**
+
+1. We compute
+$$
+\dg (t) = (1,2,4t^3)  \,.
+$$
+As the first component of $\dg$ is $1 \neq 0$, we conclude that $\dg \neq 0$, showing that $\g$ is regular.
+
+2. We compute
+\begin{align*}
+& \norm{\dg(t)} = \sqrt{5 + 16 t^4} \\
+& \ddg(t)   = 12 \, (0,0,t^2) \\
+& \dddg(t) = 24 \, (0,0,t) \\
+& \dg(t) \times \ddg(t) = 12 \,(2t^2, -t^2, 0) \\
+& \norm{\dg(t) \times \ddg(t)} = 12 \sqrt{5} \, t^2 \\
+& (\dg(t) \times \ddg(t) ) \cdot \dddg(t) = 0
+\end{align*}
+Therefore, curvature and torsion are
+\begin{align*}
+\kappa(t) & = \frac{\dg \times \ddg}{\norm{\dg}^3} = 
+\frac{12 \sqrt{5} \, t^2}{\sqrt{ 5 + 16 t^4 }} \\
+\tau(t) & = \frac{(\dg \times \ddg ) \cdot \dddg }{ \norm{\dg \times \ddg} } = 0 \,.
+\end{align*}
+
+3. Since the torsion of $\g$ is zero, we conclude that $\g$ lies in a plane. The equation of the plane contaning $\g$ is
+$$
+(\xx - \g(t_0)) \cdot \bb = 0 \,, \quad \xx \in \R^3 \,.
+$$
+We compute the binormal vector
+$$
+\bb = \frac{\dg \times \ddg}{\norm{\dg \times \ddg}} = \frac{1}{\sqrt{5}} \, (2,-1,0) \,.
+$$
+At $t_0 = 0$ we have
+$$
+\g\left( 0 \right) = \zero  \,.
+$$
+The equation of the plane containing $\g$ is then
+$$
+\frac{2}{\sqrt5} x -  \frac{1}{\sqrt5} y = 0 \quad \implies \quad 
+2x - y = 0 \,.
+$$
+:::
+
 
 
 
@@ -2808,18 +3008,17 @@ We now state and prove the second result anticipated at the beginning of this se
 
 
 ::: {.Proposition #proposition-constant-k-zero-t}
-
 Let $\g \colon (a,b) \to \R^3$ be a unit-speed curve. They are equivalent:
 
 
-1. The image of $\g$ is contained in a circle of radius $1/c$.
+1. The image of $\g$ is contained in a circle of radius $R>0$.
 
 
 2. The curvature and torsion of $\g$ satisfy
 $$
-\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+\kappa (t) = \frac{1}{R} \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
 $$
-for some constant $c > 0$.
+for some constant $R > 0$.
 
 
 :::
@@ -2839,50 +3038,50 @@ to show yet another explicit application of the Frenet-Serret equations.
 
 
 ::: Proof
-*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $1/c$. Then, up to a rotation and translation, $\g$ is parametrized by 
+*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $R$. Then, up to a rotation and translation, $\g$ is parametrized by 
 $$
-\g(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right) \,.
+\g(t) = \left( R\cos(t) ,   R \sin(t) , 0 \right) \,.
 $$
 We have already seen that in this case
 $$
-\kappa = c  \,, \quad \tau = 0 \,,
+\kappa = \frac{1}{R}  \,, \quad \tau = 0 \,,
 $$
 concluding the proof.
 
 
 *Step 2.* Suppose that 
 $$
-\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+\kappa (t) = \frac{1}{R} \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
 $$
-for some constant $c \in \R$. Since $\g$ is unit-speed, it is well defined the 
+for some constant $R > 0$. Since $\g$ is unit-speed, it is well defined the 
 Frenet frame 
 $$
 \{ \ttt, \nn ,\bb \} \,.
 $$
 Due to the assumptions on $\kappa$ and $\tau$ the Frenet-Serret equations read
 \begin{align*}
-\dot{\ttt} & = \kappa \nn = c \nn \\
-\dot{\nn} & = - \kappa \ttt + \tau \bb = -c \ttt \\
+\dot{\ttt} & = \kappa \nn = \frac{1}{R} \, \nn \\
+\dot{\nn} & = - \kappa \ttt + \tau \bb = - \frac{1}{R} \ttt \\
 \dot{\bb} & = -\tau \nn = \zero  
 \end{align*}
 In particular $\dot{\bb}=\zero$ and so $\bb$ is a constant vector. As seen in the proof Proposition \ref{proposition-zero-torsion}, this implies that $\g$ is contained in a plane $\p$ orthogonal to $\bb$, see @fig-proof-plane. As $c$ is constant we get
 $$
-\frac{d}{dt} \left(  \g  + \frac1c \nn   \right)  = \dg + \frac{1}{c} \dot{\nn} = \ttt - \frac1c 
-\, c \ttt = 0 \,,
+\frac{d}{dt} \left(  \g  + R \nn   \right)  = \dg + R \dot{\nn} = \ttt - R
+\, \frac{1}{R} \ttt = 0 \,,
 $$
 where we used that $\dg = \ttt$ and the second Frenet-Serret equation. Therefore 
 $$ 
-\g(t)  + \frac1c \nn(t) = \pp \,, \quad  t \in (a,b) \,,
+\g(t)  + R \nn(t) = \pp \,, \quad  t \in (a,b) \,,
 $$
 for some constant point $\pp \in \R^3$. In particular
 $$
-\norm{ \g(t) - \pp } =   \norm{  -\frac1c \nn(t) } =  \frac{1}{|c|} = \frac1c \,,
+\norm{ \g(t) - \pp } =   \norm{  -R \nn(t) } =  R \,,
 $$
-since $\nn$ is a unit vector and $c>0$. The above shows that $\g$ is contained in a sphere of radius $1/c$ and center $\pp$. In formulas:
+since $\nn$ is a unit vector and $R>0$. The above shows that $\g$ is contained in a sphere of radius $R$ and center $\pp$. In formulas:
 $$
-\g(t) \in \SSS := \{  \xx \in \R^3 \, \colon \,  \norm{\xx - \pp} = 1/c    \} \,.
+\g(t) \in \SSS := \{  \xx \in \R^3 \, \colon \,  \norm{\xx - \pp} = R    \} \,.
 $$
-The intersection of $\SSS$ with the plane $\p$ is a circle $\mathcal{C}$ with some radius $R \geq 0$ (note that $\mathcal{C}$ might be a single point, in which case $R = 0$).
+The intersection of $\SSS$ with the plane $\p$ is a circle $\mathcal{C}$ with some radius $r \geq 0$ (note that $\mathcal{C}$ might be a single point, in which case $r = 0$).
 As we have shown 
 $$
 \g \in  \p \,, \quad \g \in \SSS \,,
@@ -2892,15 +3091,15 @@ $$
 \g \in   \p  \cap \SSS  = \mathcal{C} \,.
 $${#eq-proof-contained-circle}
 Therefore $\g$ parametrizes part of $\mathcal{C}$. This immediately implies that
-$R > 0$.
+$r > 0$.
 
-> Proof. If $R = 0$ then $\mathcal{C}$ is a single point, meaning that $\g$ is constant. But then $\dg = 0$ which contradicts the assumption that $\g$ is unit speed.
+> Proof. If $r = 0$ then $\mathcal{C}$ is a single point, meaning that $\g$ is constant. But then $\dg = 0$ which contradicts the assumption that $\g$ is unit speed.
 
-Since $\mathcal{C}$ is a circle of radius $R>0$, Step 1 of the proof implies that the curvature and torsion of $\g$ satisfy
+Since $\mathcal{C}$ is a circle of radius $r>0$, Step 1 of the proof implies that the curvature and torsion of $\g$ satisfy
 $$
-\kappa = \frac1R \,, \quad \tau = 0 \,.
+\kappa = \frac1r \,, \quad \tau = 0 \,.
 $$
-As by assumption $\kappa=c$, we conclude that $R=1/c$. Therefore the circle $\mathcal{C}$ has radius $1/c$ and the thesis follows by (@eq-proof-contained-circle).
+As by assumption $\kappa=1/R$, we conclude that $R=r$. Therefore the circle $\mathcal{C}$ has radius $R$ and the thesis follows by (@eq-proof-contained-circle).
 
 :::
 

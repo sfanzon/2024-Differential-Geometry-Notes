@@ -109,17 +109,40 @@ $$
 :::
 
 
+::: Example
+### Length of Circle
+
+**Question.** The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+$$
+\g(t) = (R\cos(t), R\sin(t)) \,.
+$$
+Prove that $L(\g) = 2\pi R$.
+
+**Solution.** We compute
+\begin{align*}
+\dg(t) & = (-R\sin(t), R\cos(t)) \\
+\norm{\dg(t)} & = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      } \\
+                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
+\end{align*}
+Therefore 
+$$
+L(\g)  = \int_{0}^{2\pi}  \norm{  \dg(t)} \, dt 
+       = \int_0^{2\pi} R \, dt  
+      = 2 \pi R \,.
+$$
+:::
+
 
 ::: Example
 ### Length of Helix
 
-Consider the Helix
+**Question.** Consider one full turn of the Helix of radius $R >0$ and rise $H$. This is parametrized by
 $$
 \g(t) = (R\cos(t), R\sin(t) ,Ht)
 $$
-for $t \in (0,2\pi)$ and $R>0$. Compute $L(\g)$.
+for $t \in (0,2\pi)$. Compute $L(\g)$.
 
-*Solution.* We compute
+**Solution.** We compute
 \begin{align*}
 \dg(t) & = (-R\sin(t), R\cos(t) , H) \\
 \norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} 
@@ -136,13 +159,12 @@ $$
 ::: Definition 
 ### Arc-Length
 
-The **arc-length** along $\g$ from $t_{0}$ to $t$ is
-
+The **arc-length** along $\g \colon (a,b) \to \R^3$ from $t_{0}$ to $t$ is
 $$
-s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u
+s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u \,.
 $$
-
 The function $s(t)$ is known as the arc-length function.
+
 :::
 
 
@@ -150,20 +172,24 @@ The function $s(t)$ is known as the arc-length function.
 ::: Example
 ### Arc-length of Logarithmic Spiral
 
-The Logarithmic Spiral is defined by $\g \ \colon (0,2\pi) \to \R^2$ with
+**Question.** The Logarithmic spiral is defined by $\g \ \colon [0,2\pi] \to \R^2$ with
 $$
-\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t))
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
 $$
-where $k \in \R$, $k \neq 0$. Compute the arc-length function of $\g$. 
+where $k \in \R$, $k \neq 0$, is called the **growth factor**. Compute the arc-length function of $\g$. 
 
-*Solution.* Direct calculation gives
-$$
-\norm{\dg(t)}^2   = (k^2 + 1) e^{2kt} 
-$$
+**Solution.** We have
+\begin{align*}
+\dg(t) & = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ) \\
+\norm{\dg(t)}^2  & =  (k^2 + 1) e^{2kt} \,.
+\end{align*}
 The arc-length starting from $t_0$ is
 \begin{align*}
-s(t) = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} )
+s(t) & = \int_{t_0}^t \norm{\dg(\tau)} \, d \tau \\
+     & = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
+     & = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
 \end{align*}
+
 :::
 
 
@@ -173,7 +199,7 @@ s(t) = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} )
 
 A curve $\g \ \colon (a,b) \to \R^3$ is **unit-speed** if
 $$
-\norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b)
+\norm{\dg (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
 $$
 
 :::
@@ -244,8 +270,8 @@ $$
 
 Let $\g$ be a curve. They are equivalent:
 
-1. $\g$ is regular
-2. $\g$ admits unit-speed reparametrization
+1. $\g$ is regular,
+2. $\g$ admits unit-speed reparametrization.
 :::
 
 
@@ -289,14 +315,14 @@ with $s^{-1}$ inverse of the arc-length function of $\g$.
 ::: Example 
 ### Arc-length reparametrization of the Circle
 
- Let $\g \colon (0,2\pi) \to \R^2$ be the circle
+**Question.** Let $\g \colon (0,2\pi) \to \R^2$ be the circle
 with center $(x_0,y_0)$ and radius $R>0$
 $$
 \g(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
 $$
 Reparametrize $\g$ by arc-length.
 
-*Solution.* The arc-length of $\g$ starting from $t_0 = 0$ is
+**Solution.** The arc-length of $\g$ starting from $t_0 = 0$ is
 $$
 s(t) = \int_0^t \norm{ \dg(u) } \, d u = Rt
 $$
@@ -306,17 +332,16 @@ t(s) = \frac{s}{R}
 $$
 The arc-length reparametrization of $\g$ is
 $$
-\tg(s) = \g(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) 
+\tg(s) = \g(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) \,.
 $$
 
 :::
 
 
 
-
 ::: Example
 
- Consider the curve
+**Question.** Consider the curve
 $$
 \g(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
 $$
@@ -325,7 +350,7 @@ $$
 2. Reparametrize $\g$ by arc-length.
 
 
-*Solution.*
+**Solution.**
 
 1. $\g$ is regular because
 \begin{align*}
@@ -367,16 +392,16 @@ $$
 
 
 ::: Example
-### Curvature of the circle
+### Curvature of the Circle
 
- Consider the circle of center
+**Question.** Consider the circle of center
 $(x_0,y_0)$ and radius $R>0$
 $$
-\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) , 0\right) 
+\g(t) =  \left( x_0 + R \cos \left( \frac{t}{R} \right), y_0 + \sin \left( \frac{t}{R} \right) , 0\right)  \,.
 $$
 Compute the curvature of $\g$.
 
-*Solution.* First, check that $\g$ is unit-speed:
+**Solution.** First, check that $\g$ is unit-speed:
 \begin{align*}
 \dg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right), 0\right) \\
 \norm{\dg(t)} & = 1 
@@ -418,23 +443,23 @@ $$
 
 Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. To compute the curvature of $\g$ we do the following: 
 
-1. Compute the arc-length $s$ of $\g$
+1. Compute the arc-length $s$ of $\g$.
 
-2. Find $t(s)$, the inverse of $s$
+2. Find $t(s)$, the inverse of $s$.
 
 3. Compute the arc-length reparametrization
 $$
-\tg (s) = \g (t(s))
+\tg (s) = \g (t(s)) \,.
 $$
 
 4. Compute the curvature of $\tg$
 $$
-\tkappa(s) = \norm{\ddtg (s)}
+\tkappa(s) = \norm{\ddtg (s)}\,.
 $$
 
 5. The curvature of $\g$ is
 $$
-\kappa (t)= \tkappa (s(t)) 
+\kappa (t)= \tkappa (s(t)) \,.
 $$
 
 :::
@@ -510,10 +535,11 @@ Integrals:
 
 
 
+
 ::: Example
 ### Curvature of the Catenary
 
- Consider the Catenary curve
+**Question.** Consider the Catenary curve
 $$
 \g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
 $$
@@ -524,7 +550,7 @@ $$
 4. Compute the curvature of $\tg$
 5. Compute the curvature of $\g$
 
-*Solution.*
+**Solution.**
 
 1. Check that $\g$ is regular:
 \begin{align*}
@@ -687,7 +713,7 @@ $$
 
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature of $\g$ is
 $$
-\kappa(t) = \frac{ \norm{\dg(t) \times \ddg(t)} }{ \norm{\dg(t)}^3 } 
+\kappa(t) = \frac{ \norm{\dg(t) \times \ddg(t)} }{ \norm{\dg(t)}^3 } \,.
 $$
 
 :::
@@ -698,18 +724,27 @@ $$
 ::: Example
 ### Curvature of the Helix 
 
-Consider the Helix of radius $R>0$ and rise $H>0$
+**Question.** Consider the Helix of radius $R>0$ and rise $H$,
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
-Compute the curvature of $\g$.
 
-*Solution.* First, ensure that $\g$ is regular
+1. Prove that $\g$ is regular.
+2. Prove that 
+$$
+\kappa(t)= \frac{ R }{  R^2 + H^2   }\,.
+$$
+
+**Solution.** 
+
+1. We have
 \begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
 \norm{\dg (t)} & = \sqrt{R^2 + H^2} \geq R > 0
 \end{align*}
-showing that $\g$ is regular. Further, compute
+showing that $\g$ is regular. 
+
+2. Compute
 \begin{align*}
 \ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
 \dg \times \ddg & = \left(   
@@ -719,7 +754,7 @@ R^2
 \right) \\
 \norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \\
 \end{align*}
-By the formula we have
+By the curvature formula we have
 $$
 \kappa (t)= \frac{ \norm{ \dg(t) \times \ddg(t) } }{ \norm{\dg(t)}^3 } =
 \frac{ R }{  R^2 + H^2   } 
@@ -731,24 +766,31 @@ $$
 
 ::: {.Example #example-curvature}
 
-Compute the curvature of 
+**Question.** Define the curve
 $$
-\gamma(t)=\left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
+\g(t)=\left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
 $$
 
-*Solution.* First, ensure $\gamma$ is regular:
+1. Prove that $\g$ is regular.
+2. Compute the curvature of $\g$.
+
+**Solution.** 
+
+1. We have
 $$
 \begin{aligned}
-\dot{\gamma}(t) & =\left(-\frac{8}{5} \sin (t),-2 \cos (t),-\frac{6}{5} \sin (t)\right) \\
-\|\dot{\gamma}(t)\| & =2 \neq 0
+\dg(t) & =\left(-\frac{8}{5} \sin (t),-2 \cos (t),-\frac{6}{5} \sin (t)\right) \\
+\|\dg(t)\| & =2 \neq 0
 \end{aligned}
 $$
-Further compute
+showing that $\g$ is regular.
+
+2. Compute
 $$
 \begin{aligned}
-& \ddot{\gamma}(t) =\left(-\frac{8}{5} \cos (t), 2 \sin (t),-\frac{6}{5} \cos (t)\right) \\
-& \ddot{\gamma}(t) \times \dot{\gamma}(t)=\left(-\frac{12}{5}, 0, \frac{16}{5}\right) \\
-& \|\ddot{\gamma}(t) \times \dot{\gamma}(t)\|=4
+& \ddg(t) =\left(-\frac{8}{5} \cos (t), 2 \sin (t),-\frac{6}{5} \cos (t)\right) \\
+& \dg(t) \times \ddg(t)=\left(-\frac{12}{5}, 0, \frac{16}{5}\right) \\
+& \|\dg(t) \times \ddg(t)\|=4
 \end{aligned}
 $$
 The curvature formula yields
@@ -874,7 +916,7 @@ $$
 ::: Example
 ### Curvature, torsion and Frenet frame of Helix
 
-Consider the helix of radius $R>0$ and rise $H$ given by
+**Question.** Consider the Helix of radius $R>0$ and rise $H$ given by
 $$
 \g (t) = ( R\cos(t), R\sin(t),t H)\,, \quad \, t \in \R \,.
 $$
@@ -885,7 +927,7 @@ $$
 4. Compute the Frenet frame, curvature and torsion of $\tg$.
 5. Compute curvature and torsion $\g$.
 
-*Solution.* 
+**Solution.** 
 
 1. We have
 $$
@@ -914,7 +956,7 @@ $$
 \tg(s) = \g( t(s)) = \left( R \cos \left( \frac{s}{\rho}  \right) ,R \sin \left( \frac{s}{\rho}  \right) , \frac{H s }{\rho}    \right) \,.
 $$
 
-3. Compute the tangent vector to $\tg$ and its derivative
+4. Compute the tangent vector to $\tg$ and its derivative
 \begin{align*}
 \tttt(s) & = \dtg  = \frac{1}{\rho}
  \left(  - R \sin \left( \frac{s}{\rho}  \right) , 
@@ -934,7 +976,7 @@ The principal normal vector and binormal are
 \tbb (s)& = \tttt(s) \times \tnn(s)  \\
     & = \frac{1}{\rho} \left( H \sin \left( \frac{s}{\rho}  \right) , - H \cos \left( \frac{s}{\rho}  \right) ,  R \right) \,.
 \end{align*}
-We are left to compute the torsion:
+We are left to compute the torsion of $\tg$:
 \begin{align*}
 \dot{\tbb}(s) & = \frac{H}{\rho^2} \left(  \cos \left( \frac{s}{\rho}  \right) , \sin \left( \frac{s}{\rho}  \right) , 0   \right) \\
 \dot{\tbb}(s) & \cdot \tnn(s)  = - \frac{H}{\rho^2} \\
@@ -971,7 +1013,7 @@ $$
 ::: Example
 ### Torsion of Helix with formula
 
-Consider the Helix of radius $R>0$ and rise $H>0$
+**Question.** Consider the Helix of radius $R>0$ and rise $H>0$
 $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
@@ -980,7 +1022,7 @@ $$
 2. Compute the torsion of $\g$.
 
 
-*Solution.* 
+**Solution.**
 
 1. We have already shown that
 $$
@@ -1007,13 +1049,13 @@ $$
 
 ::: Example
 
-Consider again the curve from Example \ref{example-curvature}
+**Question.** Consider again the curve from Example \ref{example-curvature}
 $$
 \g(t) = \left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
 $$
 Compute the torsion of $\g$.
 
-*Solution.* Resuming calculations from Example \ref{example-curvature}, we get
+**Solution.** Resuming calculations from Example \ref{example-curvature}, we get
 $$
 \begin{aligned}
 \dddg(t) & =\left(\frac{8}{5} \sin (t), 2 \cos (t), \frac{6}{5} \sin (t)\right) \\
@@ -1051,8 +1093,9 @@ Let $\g \colon (a,b) \to \R^3$ be a regular curve. The Frenet frame of $\g$ is
 
 
 ::: Example
+### Twisted cubic
 
-Let $\g \colon \R \to \R^3$ be the curve defined by
+**Question.** Let $\g \colon \R \to \R^3$ be the curve defined by
 $$
 \g(t) = (t,t^2,t^3 ) \,.
 $$
@@ -1065,7 +1108,7 @@ $\g$ is known as the *twisted cubic*.
 5. Compute the Frenet frame of $\g$.
 
 
-*Solution.*
+**Solution.**
 
 1. $\g$ is regular because
 	$$
@@ -1184,7 +1227,7 @@ $$
 ::: Definition
 ### Rigid motion
 
-A *rigid motion* of $\R^3$ is a map $M \colon \R^3 \to \R^3$ of the form
+A **rigid motion** of $\R^3$ is a map $M \colon \R^3 \to \R^3$ of the form
 $$
 M(\vv) = R \vv + \pp \,, \qquad \vv \in \R^3 \,,
 $$
@@ -1233,7 +1276,7 @@ $$
 ::: Example
 ### Application of Fundamental Theorem of Curves
 
-Consider the curve
+**Question.** Consider the curve
 $$
 	\g ( t ) = \left( \sqrt{3}\, t - \sin ( t ) , \sqrt{3} \sin ( t ) + t , 2 \cos ( t ) \right)\,, \quad t \in \R \,.
 $$
@@ -1253,7 +1296,7 @@ $$
     \g(t) = M(\eeta(t)) \,, \quad \forall \, t \in \R \,.
     $$
 
-*Solution.* 
+**Solution.** 
 
 1. We have
 $$
@@ -1357,7 +1400,7 @@ where $t_0$ is any point in $(a,b)$.
 
 ::: Example 
 
-Consider the curve
+**Question.** Consider the curve
 $$
 \g(t) = ( t,2t,t^4) \,,
 $$
@@ -1375,7 +1418,7 @@ for suitable $a,b,c,d \in \R$.
 
 
 
-*Solution.* 
+**Solution.**
 
 1. We compute
 $$
@@ -1442,7 +1485,7 @@ for some constant $R > 0$.
 
 ::: Example
 
-Consider the curve
+**Question.** Consider the curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,, \quad t \in \R \,.
 $$
@@ -1451,7 +1494,7 @@ $$
 2. Compute the Frenet frame, curvature and torsion of $\g$.
 3. Prove that $\g$ is part of a circle.
 
-*Solution.* 
+**Solution.** 
 
 1. $\g$ is unit-speed because
 \begin{align*}
@@ -1719,7 +1762,7 @@ $$
 for some $\xx_0 \in U$. Then:
 
 1. There exists an open set $U_0 \subseteq U$ such that $\xx_0 \in U_0$,
-2. There exists an open set $V$ such that $f(\xx_0) \in V$
+2. There exists an open set $V$ such that $f(\xx_0) \in V$,
 3. $f \colon U_0 \to V$ is a diffeomorphism.
 
 
@@ -1730,7 +1773,7 @@ for some $\xx_0 \in U$. Then:
 
 ::: Example
 
-Consider the function $f \colon \R^2 \to \R^2$ defined by
+**Question.** Consider the function $f \colon \R^2 \to \R^2$ defined by
 $$
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 $$
@@ -1740,7 +1783,7 @@ $$
 2. Prove that $f$ is not a diffeomorphism.
 
 
-*Solution.* 
+**Solution.** 
 
 1. We compute
 \begin{align*}
@@ -1837,14 +1880,9 @@ are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
 ::: Definition
 ### Regular surface
 
-Let $\SSS$ be a surface. Let 
-$$
-\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
-$$
-be an atlas for $\SSS$. We say that:
+Let $\SSS$ be a surface. We say that:
 
-- $\mathcal{A}$ is a **regular atlas** if 
-the map $\sss_i$ is a regular chart for all $i \in I$. 
+- $\mathcal{A}$ is a **regular atlas** if $\sss$ is a regular chart for all $\sss \in \mathcal{A}$. 
 - $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
 
 :::
@@ -1886,7 +1924,7 @@ $$
 ::: Example
 ### 2D Plane in $\R^3$
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
 $$
 \p = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} 
 $$
@@ -1896,7 +1934,7 @@ $$
 $$
 Prove that $\p$ is a regular surface.
 
-*Solution.* $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
+**Solution.** $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
 $$
 \sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,,
 $$

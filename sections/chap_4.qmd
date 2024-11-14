@@ -497,6 +497,8 @@ $$
 
 ### Topology of $\R^n$
 
+::: Definition 
+### Topology of $\R^n$
 
 The Euclidean norm on $\R^n$ is denoted by 
 $$
@@ -507,35 +509,19 @@ $$
 d(\xx,\yy) := \| \xx - \yy \| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
 $$
 
+In particular, we have:
 
-::: Definition
-### Euclidean Topology 
-
-The pair $(\R^n,d)$ is a metric space. The topology induced by the metric $d$ is called the Euclidean topology, denoted by $\TT$. In this chapter we will always assume that $\R^n$ is equipped with the Euclidean topology $\TT$.
-
-:::
-
-
-::: Definition 
-### Open Sets
-
-A set $U \subseteq \R^n$ is open if for all $\xx \in U$ there exists $\e>0$ such that $B_{\e}(\xx) \subseteq U$, where
+1. The pair $(\R^n,d)$ is a metric space. 
+2. The topology induced by the metric $d$ is called the Euclidean topology, denoted by $\TT$. 
+3. A set $U \subseteq \R^n$ is **open** if for all $\xx \in U$ there exists $\e>0$ such that $B_{\e}(\xx) \subseteq U$, where
 $$
 B_{\e}(\xx) := \{  \yy \in \R^n \divider \| \xx - \yy  \| < \e   \}
 $$
-is the open ball of radius $\e>0$ and centered at $\xx$. In this case we denote $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
+is the open ball of radius $\e>0$ and centered at $\xx$. In this case we write $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
+
+4. A set $V \subseteq \R^n$ is **closed** if $V^c := \R^n \smallsetminus U$ is open. 
 
 :::
-
-
-
-::: Definition 
-### Closed Sets 
-
-A set $V \subseteq \R^n$ is closed if $V^c := \R^n \smallsetminus U$ is open. 
-
-:::
-
 
 
 
@@ -583,11 +569,11 @@ is closed, since $V^c = C$ is the unit cube, which is open.
 ::: Definition 
 ### Subspace Topology
 
-Given a subset $A \subseteq \R^n$ the subspace topology on $A$ is the family of sets
+Given a subset $A \subseteq \R^n$ the **subspace topology** on $A$ is the family of sets
 $$
 \TT_A := \{  U \subseteq A \divider \exists \,\, W \in \TT \st U = A \cap W  \} \,.
 $$
-If $U \in \TT_A$ we say that $U$ is open in $A$.
+If $U \in \TT_A$, we say that $U$ is open in $A$.
 
 :::
 
@@ -607,7 +593,7 @@ $$
 ::: Definition
 ### Continuous Function
 
-Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is continuous at $\xx \in U$ if $\forall \, \e>0$, \, $\exists \, \delta > 0$ such that 
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is **continuous** at $\xx \in U$ if $\forall \, \e>0$,  $\exists \, \delta > 0$ such that 
 $$
 \|  \xx - \yy  \| < \delta \quad \implies \quad 
 \| f(\xx) - f (\yy) \| < \e \,.
@@ -628,7 +614,7 @@ Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have t
 ::: Definition
 ### Homeomorphism
 
-Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a homeomorphism if: 
+Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a **homeomorphism** if: 
 
 1. $f$ is continuous; 
 2. There exists inverse $f^{-1} \colon V \to U$ which is continuous.
@@ -640,7 +626,7 @@ Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say tha
 ::: Definition
 ### Differentiable Function
 
-Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is differentiable at $\xx \in U$ if there exists a linear map $d_{\xx} f \colon \R^n \to \R^m$ such that
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is **differentiable** at $\xx \in U$ if there exists a linear map $d_{\xx} f \colon \R^n \to \R^m$ such that
 $$
 d_{\xx}f (\mathbf{h}) = \lim_{\e \to 0} \   \frac{ f(\xx + \e \mathbf{h} )  - f(\xx)  }{ \e } \,,
 $$
@@ -656,7 +642,7 @@ We denote by $\{\ee_i\}_{i=1}^n$ the standard basis of $\R^n$. When $f$ is diffe
 ::: Definition
 ### Partial Derivative
 
-Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The partial derivative of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The **partial derivative** of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
 $$
 \frac{\partial f}{\partial x_i}(\xx) := d_{\xx} f (\ee_i) =  \lim_{\e \to 0}  \frac{ f( \xx + \e \ee_i ) - f(\xx) }{ \e } \,.
 $$
@@ -677,6 +663,7 @@ If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its
 $$
 \det (Jf) \,.
 $$
+
 :::
 
 The differential $d_{\xx} f \colon \R^n \to \R^m$ is a linear map. As such, it must have a matrix representation with respect to the Euclidean basis. Since the partial derivative is defined as 
@@ -848,7 +835,7 @@ $$
 for some $\xx_0 \in U$. Then:
 
 1. There exists an open set $U_0 \subseteq U$ such that $\xx_0 \in U_0$,
-2. There exists an open set $V$ such that $f(\xx_0) \in V$
+2. There exists an open set $V$ such that $f(\xx_0) \in V$,
 3. $f \colon U_0 \to V$ is a diffeomorphism.
 
 
@@ -910,37 +897,47 @@ Condition (@eq-non-vanish-det) is **not sufficient** for $f$ to be a global diff
 1. $\det J f(\xx) \neq 0$ for all $\xx \in U$,
 2. $f$ is not a diffeomorphism between $U$ and $f(U)$.
 
-For example, consider the function $f \colon \R^2 \to \R^2$ defined by
+We will show this in the next Example.
+
+:::
+
+
+::: Example
+
+**Question.** Consider the function $f \colon \R^2 \to \R^2$ defined by
 $$
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 $$
-Then
-$$
-J f (x,y) = 
+
+1. Prove that $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$.
+
+2. Prove that $f$ is not a diffeomorphism.
+
+
+**Solution.** 
+
+1. We compute
+\begin{align*}
+& J f (x,y) = 
 e^x \left(
 \begin{array}{cc}
   \cos(y)  &    \sin(y) \\
   -\sin(y)    &  \cos(y) 
 \end{array}
-\right) \,, \quad \det Jf(x,y)  = e^{2x} \,.
-$$
+\right)  \\
+& \det Jf(x,y) = e^{2x} 
+\end{align*}
 Therefore 
 $$
 Jf(x,y) \neq 0 \quad \forall \, (x,y) \in \R^2 \,.
 $$
+By the Inverse Function Theorem, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
 
-We observe the following:
-
-1. By the Inverse Function Theorem \ref{theorem-inverse-function}, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
-
-2. However $f$ is not injective, since 
+2. $f$ is not injective, since 
 $$
 f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \R^2 , \,  n \in \N  \,.
 $$
-
-3. Therefore $f$ is not invertible from $\R^2$ into $\R^2$.
-
-4. This implies $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
+Therefore $f$ is not invertible from $\R^2$ into $\R^2$. This implies $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
 
 
 
@@ -1350,14 +1347,9 @@ We are now ready to define regular surfaces.
 ::: Definition
 ### Regular surface
 
-Let $\SSS$ be a surface. Let 
-$$
-\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
-$$
-be an atlas for $\SSS$. We say that:
+Let $\SSS$ be a surface. We say that:
 
-- $\mathcal{A}$ is a **regular atlas** if 
-the map $\sss_i$ is a regular chart for all $i \in I$. 
+- $\mathcal{A}$ is a **regular atlas** if $\sss$ is a regular chart for all $\sss \in \mathcal{A}$. 
 - $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
 
 :::
@@ -1434,7 +1426,7 @@ conclude that $\sss_u$ and $\sss_v$ are linearly independent.
 ::: Example
 ### 2D Plane in $\R^3$
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. We have shown that the plane
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. The plane
 $$
 \p = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} 
 $$
@@ -1442,9 +1434,9 @@ is a surface with atlas $\mathcal{A} = \{\sss\}$, where
 $$
 \sss \colon \R^2 \to \p \,, \quad \sss(u,v):= \mathbf{a} + u \pp + v \mathbf{q} \,.
 $$
-We have that $\p$ is a regular surface.
+Prove that $\p$ is a regular surface.
 
-> This is because $\sss$ is a regular chart. To see it, compute
+**Solution.** $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
 $$
 \sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,,
 $$

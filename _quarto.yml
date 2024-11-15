@@ -79,7 +79,7 @@ format:
     fontfamilyoptions:
       - osf
       - p
-    fontsize: 12pt
+    fontsize: 11pt
     template-partials:
       - before-body.tex
     geometry:

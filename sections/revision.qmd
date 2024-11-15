@@ -6,7 +6,7 @@ $$
 
 
 
-# Revision Guide
+# Revision Guide {.unnumbered}
 
 ## Recommended revision strategy
 
@@ -1948,7 +1948,7 @@ showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ an
 ::: Example
 ### Unit cylinder
 
-Consider the infinite unit cylinder
+**Question.** Consider the infinite unit cylinder
 $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
@@ -1969,7 +1969,7 @@ U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,,
 \end{align*}
 Prove that $\SSS$ is a regular surface.
 
-*Solution.* Compute the partial derivatives
+**Solution.** Compute the partial derivatives
 $$
 \sss_u = (-\sin(u),\cos(u),0) \,, \quad 
 \sss_v = (0,0,1) \,.
@@ -1993,7 +1993,7 @@ $\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\
 ::: Example
 ### Graph of a function
 
-Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+**Question.** Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
 $$
 \Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
 $$
@@ -2006,7 +2006,7 @@ $$
 Prove that $\Gamma_f$ is a regular surface.
 
 
-*Solution.* Compute the partial derivatives
+**Solution.** Compute the partial derivatives
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,.
@@ -2058,7 +2058,7 @@ with the angles $\theta$ and $\fi$ as in @fig-spherical-coordinates.
 ::: Example
 ### Unit sphere in spherical coordinates 
 
-Consider the unit sphere in $\R^3$
+**Question.** Consider the unit sphere in $\R^3$
 $$
 \sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
 $$
@@ -2072,7 +2072,7 @@ $$
 $$
 Prove that $\sss$ is regular.
 
-*Solution.* We compute
+**Solution.** We compute
 \begin{align*}
 \sss_{\theta} & = (-\sin(\theta) \cos(\fi), \cos(\theta) \cos(\fi), 0 ) \\
  \sss_{\fi} & = ( - \cos(\theta) \sin(\fi), -\sin(\theta) \sin(\fi), \cos(\fi) )  \,.
@@ -2104,7 +2104,7 @@ Thus $\sss_{\theta}$ and $\sss_{\fi}$ are linearly independent, and $\sss$ is re
 ::: Example
 ### Unit sphere in Cartesian coordinates
 
-Consider the unit sphere in $\R^3$
+**Question.** Consider the unit sphere in $\R^3$
 $$
 \sphere^2 := \left\{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \right\} \,.
 $$
@@ -2118,7 +2118,7 @@ $$
 $$
 Prove that $\sss$ is regular.
 
-*Solution.* Compute
+**Solution.** Compute
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,,
@@ -2146,13 +2146,13 @@ The first minor of $J\sss$ is the identity matrix, and therefore $J\sss$ has ran
 
 ::: Example
 
-Consider the surface chart
+**Question.** Consider the surface chart
 $$
 \sss(u,v) = (u,v^2,v^3) \,.
 $$
 Prove that $\sss$ is not regular.
 
-*Solution.* We have
+**Solution.** We have
 $$
 \sss_u = (1,0,0) \,, \quad
 \sss_v = (0,2v,3v^2) \,,
@@ -2172,7 +2172,7 @@ Hence $\sss$ is not a regular chart.
 
 ::: Example
 
-Consider the chart
+**Question.** Consider the chart
 $$
 \sss (u,v) = (uf(v),ug(v),v) \,,
 $$
@@ -2180,7 +2180,7 @@ for $f,g$ smooth functions and $u,v \in \R$. Show that $\sss$ is regular.
 
 
 
-*Solution.*  We compute
+**Solution.**  We compute
 \begin{align*}
 \sss_u & = (f(v), g(v), 0 ) \\
 \sss_v & = (uf'(v), ug'(v), 1)
@@ -2188,6 +2188,8 @@ for $f,g$ smooth functions and $u,v \in \R$. Show that $\sss$ is regular.
 The vectors $\sss_u$ and $\sss_v$ are clearly linearly independent, since the third components are $1$ and $0$. Therefore $\sss$ is regular.
 
 :::
+
+
 
 
 ### Reparametrizations
@@ -2543,7 +2545,7 @@ $$
 
 ::: Example
 
-Consider the surface $\SSS$ defined by the chart
+**Question.** Consider the surface $\SSS$ defined by the chart
 $$
 \sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
 $$
@@ -2565,7 +2567,7 @@ $$
 for suitable $a,b,c,d \in \R$.
 
 
-*Solution.*
+**Solution.**
 
 1. Denote the coordinates of $\sss$ by
 $$
@@ -2704,7 +2706,7 @@ $$
 
 ::: Example
 
-Let $\SSS$ be the surface described by the chart
+**Question.** Let $\SSS$ be the surface described by the chart
 $$
 \sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
 $$
@@ -2713,7 +2715,7 @@ $$
 2. Compute the standard unit normal to $\sss$.
 
 
-*Solution.*
+**Solution.**
 
 1. Compute the following quantities:
 \begin{align*}
@@ -2772,7 +2774,7 @@ $$
 ::: Example
 ### Computing $d_{\pp}f$ using the definition
 
-Consider the portion of the plane $\{z=0\}$,
+**Question.** Consider the portion of the plane $\{z=0\}$,
 $$
 \SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
 $$ 
@@ -2798,7 +2800,7 @@ d_{\pp} f (\vv) =   (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 $$
 
 
-*Solution.* 
+**Solution.**
 
 1. A chart for $\SSS$ is given by
 $$
@@ -2898,7 +2900,7 @@ $$
 ::: Example
 ### Computing the matrix of $d_{\pp}f$
 
-Consider the unit cylinder, charted by
+**Question.** Consider the unit cylinder, charted by
 $$
 \sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
 $$
@@ -2913,7 +2915,7 @@ f(x,y,z) = (y,xz,0) \,.
 $$
 Compute the matrix of $d_{\pp} f$ with respect to these charts.
 
-*Solution.* We need to compute the map
+**Solution.** We need to compute the map
 $$
 \Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
 $$
@@ -3004,13 +3006,13 @@ Then $\SSS_f$ is a regular surface.
 ::: Example
 ### Circular cone
 
-Consider the circular cone
+**Question.** Consider the circular cone
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
 $$
 Prove that $\SSS$ is a regular surface.
 
-*Solution.* Define the open set 
+**Solution.** Define the open set 
 $$
 V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
 $$
@@ -3066,7 +3068,7 @@ $$
 ::: Example
 ## Unit cylinder
 
-Consider the unit cylinder 
+**Question.** Consider the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
 $$
@@ -3082,7 +3084,7 @@ x + y = 0 \,.
 $$
 
 
-*Solution.*
+**Solution.**
 
 1. Define the open set
 $$
@@ -3162,14 +3164,14 @@ A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
 ::: Example
 ### Unit Cylinder is ruled surface
 
-Prove that the unit cylinder 
+**Question.** Prove that the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
 $$
 is a ruled surface.
 
 
-*Solution.* 
+**Solution.** 
 We know that the unit cylinder is charted by
 $$
 \sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in (0,2\pi) \times \R \,.
@@ -3196,7 +3198,7 @@ are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surf
 ::: Example
 ### Möbius band
 
-The Möbius band is a ruled surface with chart
+**Question.** The Möbius band is a ruled surface with chart
 $$
 \sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 $$
@@ -3223,7 +3225,7 @@ $$
 2. Prove that $\SSS$ is **non orientable**. 
 
 
-*Solution.* 
+**Solution.**
 
 1. From the formula for $\sss$, it is easy to compute that 
 $$
@@ -3265,13 +3267,13 @@ This clearly contradicts (@eq-mobius-not-orientable-bis). Therefore $\NN$ cannot
 
 ::: Example
 
-Show that the surface 
+**Question.** Show that the surface 
 $$
 S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\}
 $$ 
 is a ruled surface.
 
-*Solution.* We shall make a change of variables. Notice that we can rearrange
+**Solution.** We shall make a change of variables. Notice that we can rearrange
 $$
 \begin{aligned}
 x^{2}+10 x y+16 x^{2}-z & =0 \\
@@ -3331,9 +3333,9 @@ $$
 $$
 Suppose that $f>0$. The surface $\SSS$ obtained by rotating $\g$ about the $z$-axis is called **surface of revolution**. A chart for $\SSS$ is given by
 $$
-\sss (u,v) :=  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
+\sss (u,v) =  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
 $$
-with $u \in [0,2\pi)$ and $v \in (a,b)$.
+with $u \in (0,2\pi)$ and $v \in (a,b)$.
 
 :::
 
@@ -3350,7 +3352,7 @@ A surface of revolution is regular if and only if $\g$ is regular.
 ::: Example
 ### Catenoid
 
-The catenary function is defined by
+**Question.** The catenary function is defined by
 $$
 f(v) = \cosh (v) \,.  
 $$
@@ -3364,7 +3366,7 @@ $$
 $$
 where $u \in [0,2\pi)$ and $v \in \R$. Prove that $\SSS$ is a regular surface.
 
-*Solution.* Note that $f>0$ and 
+**Solution.** Note that $f>0$ and 
 $$
 \dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
 \norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
@@ -3495,9 +3497,9 @@ $$
 
 
 
+::: Proposition
+### First fundamental form and reparametrizations  {#proposition-fff-reparametrization}
 
-::: Theorem
-### First fundamental form and reparametrizations
 
 Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
@@ -3508,7 +3510,8 @@ where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the first fu
 \mathscr{F}_1 & = E \, du^2 + 2F \, du dv + G \, dv^2 \,, \\
 \widetilde{\mathscr{F}}_1 & = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
 \end{align*}
-Then, the matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
+
+1. The matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
 $$
 \left(
 \begin{array}{cc}
@@ -3526,7 +3529,7 @@ F & G
 \right)
 \, 
 J \Phi  \,,
-$$ 
+$${#eq-fff-change-basis-1}
 where $J\Phi$ is the Jacobian of $\Phi$
 $$
 J\Phi = \left(   
@@ -3538,15 +3541,24 @@ J\Phi = \left(
 $$
 
 
+2. The linear maps $du, dv$ and $d\tilde{u}, d\tilde{v}$ are related by
+$$
+\begin{aligned}
+du & = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \\ 
+dv & = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v} 
+\end{aligned}
+$${#eq-fff-change-basis-2}
 
 :::
 
 
 
-::: Example
-### Plane
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
+
+::: Example
+### FFF of Plane {#example-fff-plane}
+
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
@@ -3555,7 +3567,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-*Solution.* We have
+**Solution.** We have
 $$
 \sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
 $$

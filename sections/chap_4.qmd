@@ -1450,7 +1450,8 @@ showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ an
 ::: Example
 ### Unit cylinder {#example-unit-cylinder}
 
-Consider the infinite unit cylinder
+
+**Question.** Consider the infinite unit cylinder
 $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
@@ -1469,9 +1470,9 @@ and
 U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, 
 & U_2 & := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
 \end{align*}
-$\SSS$ is a regular surface because $\mathcal{A}$ is a regular atlas.
+Prove that $\SSS$ is a regular surface.
 
-> To see it, compute the partial derivatives
+**Solution.** Compute the partial derivatives
 $$
 \sss_u = (-\sin(u),\cos(u),0) \,, \quad 
 \sss_v = (0,0,1) \,.
@@ -1485,9 +1486,10 @@ $$
 \sss_u \times \sss_v \neq 0 \,, \quad \forall \, (u,v) \in \R^2 \,,
 $$
 showing that $\sss_u$ and $\sss_v$ are linearly independent. Therefore
-$\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$.
+$\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas, making $\SSS$ a regular surface.
 
 :::
+
 
 
 
@@ -1512,7 +1514,7 @@ $$
 Then $\sss$ is regular and $\mathcal{A} = \{\sss\}$ is a regular atlas for $\SSS$.
 
 
-> Proof: Left as an exercise.
+**Proof:** Left as an exercise.
 
 :::
 
@@ -1521,19 +1523,20 @@ Then $\sss$ is regular and $\mathcal{A} = \{\sss\}$ is a regular atlas for $\SSS
 ::: Example
 ### Graph of a function
 
-Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+**Question.** Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
 $$
 \Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
 $$
-We have seen that $\Gamma_f$ is surface with atlas given by
+$\Gamma_f$ is surface with atlas given by
 $\mathcal{A} = \{ \sss \}$, where
 $$
 \sss \colon U \to \Gamma_f \,, \quad 
 \sss(u,v):=(u,v,f(u,v)) \,.
 $$
-We have that $\Gamma_f$ is a regular surface, since $\mathcal{A}$ is a regular atlas.
+Prove that $\Gamma_f$ is a regular surface.
 
-> Compute the partial derivatives
+
+**Solution.** Compute the partial derivatives
 $$
 \sss_u = (1,0,f_u) \,, \quad 
 \sss_v = (0,1,f_v) \,.
@@ -1549,13 +1552,7 @@ f_u  & f_v \\
 \end{array} 
 \right) \,.
 $$
-Notice that the first minor of $J\sss$ is the identity matrix, which has determinant $1$, and is hence invertible. Therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular.
->
->An alternative way to prove regularity would have been to compute
-$$
-\sss_u \times \sss_v = (-f_u, - f_v, 1 ) \,.
-$$
-We observe that $\sss_u \times \sss_v \neq 0$ because the last component never vanishes. Thus, $\sss_u$ and $\sss_v$ are linearly independent, and $\sss$ is a regular chart.
+Notice that the first minor of $J\sss$ is the identity matrix, which has determinant $1$, and is hence invertible. Therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. This implies $\mathcal{A}$ is a regular atlas, and $\SSS$ is a regular surface.
 
 :::
 
@@ -1830,8 +1827,8 @@ be the unit open ball in $\R^2$, and define $\sss_i \colon U \to \R^3$ by
 \end{align*}
 We have that $\mathcal{A}$ is a regular atlas, showing that $\sphere^2$ is a regular surface. 
 
-> Let us check that $\sphere^2$ is a surface:
->
+**Proof.** Let us check that $\sphere^2$ is a surface:
+
 - $\sss_1$ is smooth, since in $U$ we have $u^2+v^2<1$.
 - $U$ is open, being the open ball of radius $1$ in $\R^2$.
 - $\sss_1(U)$ is clearly open in $\sphere^2$: This is because $\sss_1(U)$ coincides with the Northern Hemisphere, with the Equator Line removed.
@@ -1850,9 +1847,9 @@ $$
 \sphere^2 = \bigcup_{i=1}^6 \sss_i(U) \,.
 $$
 This shows that $\mathcal{A} = \{ \sss_i\}_{i=1}^6$ is an atlas for $\sphere^2$.
->
-> Let us now check that $\sphere^2$ is a regular surface:
->
+
+Let us now check that $\sphere^2$ is a regular surface:
+
 - The first chart $\sss_1$ has derivatives
 $$
 (\sss_1)_u = (1,0,f_u) \,, \quad 
@@ -1888,14 +1885,16 @@ Let us conclude the section with the example of a non-regular surface.
 
 ::: Example
 
-The surface parametrized by 
+**Question.** Consider the surface chart
 $$
-\sss(u,v) = (u,v^2,v^3) \,, \quad \forall (u,v) \in \R^2
+\sss(u,v) = (u,v^2,v^3) \,.
 $$
-is not regular. This is because
+Prove that $\sss$ is not regular.
+
+**Solution.** We have
 $$
 \sss_u = (1,0,0) \,, \quad
-\sss_v = (0,2v,3v^2)
+\sss_v = (0,2v,3v^2) \,,
 $$
 and therefore 
 $$
@@ -1907,10 +1906,9 @@ L = \{ (u,0) \divider u \in \R \} \,.
 $$
 Hence $\sss$ is not a regular chart.
 
-Looking at Figure @fig-plot-cusp, it is clear that $\SSS$ is not regular, since $\SSS$ has a cusp along the line $\sss(L)$.
-
 :::
 
+Looking at Figure @fig-plot-cusp, it is clear that $\SSS$ is not regular, since $\SSS$ has a cusp along the line $\sss(L)$.
 
 
 
@@ -1997,6 +1995,7 @@ $$
 \widetilde{U} \,.
 $$
 We call $\Phi$ a **reparametrization map**.
+
 :::
 
 
@@ -2723,7 +2722,7 @@ $$
 T_{\pp} U = \R^2 \,.
 $$
 
-> Proof. Suppose first that $\vv \in T_{\pp} U$. By definition of tangent vector, there exists a smooth curve
+**Proof.** Suppose first that $\vv \in T_{\pp} U$. By definition of tangent vector, there exists a smooth curve
 $$
 \gamma \colon (-\e,\e) \to U
 $$
@@ -3189,7 +3188,8 @@ ending the proof.
 
 ::: Example
 
-Consider the surface $\SSS$ defined by the chart
+
+**Question.** Consider the surface $\SSS$ defined by the chart
 $$
 \sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
 $$
@@ -3198,19 +3198,22 @@ for $u \in (0,2\pi)$, $v < 1$.
 1. Prove that $\sss$ parametrizes a paraboloid, see @fig-paraboloid.
 2. Prove that $\sss$ is regular.
 3. Compute the vector $\nn = \sssu \times \sssv$
-4. Give a basis for $T_{\pp} \SSS$ at the point
+4. Consider the point
 $$
 \pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,.
 $$
-5. Compute the cartesian equations of
-$$
-T_{\pp} \SSS \quad \text{and} \quad \pp + T_{\pp} \SSS \,.
-$$
-at the point $\pp$.
+Give a basis for $T_{\pp} \SSS$ at the point
 
-*Solution*.
+5. Compute the cartesian equation of $T_{\pp} \SSS$. Give your answer in the form
+$$
+ax + by + cz = d\,,
+$$
+for suitable $a,b,c,d \in \R$.
 
-*Point 1.* Denote the coordinates of $\sss$ by
+
+**Solution.**
+
+1. Denote the coordinates of $\sss$ by
 $$
 \sss(u,v) = (x,y,z) \,.
 $$
@@ -3225,14 +3228,14 @@ $$
 z = - x^2 - y^2 + 1 \,.
 $$
 
-*Point 2.* Proof that $\sss$ is regular:
+2. Proof that $\sss$ is regular:
 \begin{align*}
 \sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
 \sss_v & = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
 \end{align*}
-As the last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, we conclude that $\sss_u$ and $\sss_v$ are linearly independent. Thus $\sss$ is regular. 
+The last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, thus $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. 
 
-*Point 3.* We compute:
+3. We compute:
 \begin{align*}
 \nn & = \sss_u \times \sss_v \\
     & = 
@@ -3246,21 +3249,17 @@ As the last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is 
 & = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
 \end{align*}
 
-*Point 4.* Define the point 
-$$
-\pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right)
-$$
-and notice that 
+4. Notice that 
 $$
 \sss \left( \frac{\pi}{4}, 0 \right)  = \pp \,.
 $$
-By Theorem \ref{theorem-tangent-plane}, we have that a basis for $T_{\pp} \SSS$ is given by the vectors
+A basis for $T_{\pp} \SSS$ is given by the vectors
 \begin{align*}
 \sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
 \sss_v  \left( \frac{\pi}{4}, 0 \right) & = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
 \end{align*}
 
-*Point 5.* Using the calculation for $\nn$ in Point 3, we find
+5. Using the calculation for $\nn$ in Point 3, we find
 $$
 \nn  \left( \frac{\pi}{4}, 0 \right) 
 =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
@@ -3271,20 +3270,18 @@ $$
 $$
 The above reads
 $$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,,
 $$
-The equation for $\pp + T_{\pp} \SSS$ is instead
+which implies 
 $$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = k \,,
+\sqrt{2} \, x + \sqrt{2} \, y -  z = 0 \,,
 $$
-for some $k \in \R$. To compute $k$, note that $\pp \in \pp + T_{\pp} \SSS$, and therefore 
+Consider the surface $\SSS$ defined by the chart
 $$
-\frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} = k \quad \implies \quad k = 1 \,.
+\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
 $$
-The equation for $\pp + T_{\pp} \SSS$ is then
-$$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 1 \,.
-$$
+for $u \in (0,2\pi)$, $v < 1$.
+
 
 :::
 
@@ -3673,16 +3670,18 @@ In the following we will often denote by $\NN$ both the standard unit normal of 
 
 ::: Example
 
-Let $\SSS$ be the surface described by the chart
+**Question.** Let $\SSS$ be the surface described by the chart
 $$
 \sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
 $$
-$\SSS$ is regular and orientable, with standard unit normal given by
-$$
-\NN = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
-$$
 
-*Solution.* Compute the following quantities:
+1. Prove that $\sss$ is regular.
+2. Compute the standard unit normal to $\sss$.
+
+
+**Solution.**
+
+1. Compute the following quantities:
 \begin{align*}
 \sss_{u} & =\left(e^{u}, 1,0\right) \\
 \sss_{v} & =(0,1,1) \\
@@ -3697,18 +3696,15 @@ Since
 $$
 \norm{\sss_u \times \sss_v} =  \sqrt{1+2 e^{2 u}} \geq 1\,,
 $$
-we see that $\sss_u \times \sss_v \neq \zero$, showing that $\SSS$ is regular. Since the atlas of $\SSS$ is formed by one chart, it follows the $\SSS$ is orientable. The standard unit normal is
+we see that $\sss_u \times \sss_v \neq \zero$, showing that $\sss$ is regular. 
+
+2. The standard unit normal to $\sss$ is
 $$
 \NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
      = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
 $$
 
-
 :::
-
-
-
-
 
 
 
@@ -3791,7 +3787,7 @@ The differential $d_{\pp}f$ of $f$ at $\pp$ is defined as the map
 $$
 d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad d_{\pp}f (\vv) := (f \circ \g)'(0) \,,
 $$
-where $\g \colon (-\e,\e) \to \SSS$ is a smooth curve such that
+where $\g \colon (-\e,\e) \to \SSS$ is any smooth curve such that
 $$
 \g(0) = \pp \,, \qquad  \dg(0) = \vv \,.
 $$
@@ -4063,7 +4059,7 @@ Let us give example calculations for both methods.
 ::: Example
 ### Computing $d_{\pp}f$ using the definition
 
-Consider the portion of the plane $\{z=0\}$,
+**Question.** Consider the portion of the plane $\{z=0\}$,
 $$
 \SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
 $$ 
@@ -4076,28 +4072,22 @@ $$
 f \colon S \to \widetilde{\SSS} \,, \quad 
 f(x,y,0) := (\cos x , \sin x, y) \,.
 $$
-The differential $d_{\pp}f$ at
+
+1. Compute $T_{\pp}\SSS$.
+
+2. Prove that the differential $d_{\pp}f$ at
 $$
 \pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
 $$
 is given by
 $$
-d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
+d_{\pp} f (\vv) =   (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 $$
 
-*Solution.* First, notice that $f$ is well defined, because 
-$$
-\cos^2(x) + \sin^2(x) = 1 \quad \implies \quad f \in \widetilde{\SSS} \,.
-$$
-We want to compute the differential of $f$
-$$
-d_{\pp} f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}\,,
-$$
-where
-$$
-\pp = (u_0,v_0,0) \in \SSS \,.
-$$
-First, we need to compute $T_{\pp} \SSS$. To this end, a chart for $\SSS$ is given by
+
+**Solution.**
+
+1. A chart for $\SSS$ is given by
 $$
 \sss(u,v) = (u,v,0) \,.
 $$
@@ -4111,29 +4101,26 @@ T_{\pp} \SSS & = \operatorname{span} \{ \sss_u,\sss_v \} \\
              & = \operatorname{span} \{ (1,0,0), (0,1,0)  \} \\
              & = \{ (\lambda,\mu,0) \, \colon \, \lambda,\mu \in \R \} \,.
 \end{align*}
-Therefore, let 
+
+2. From the answer to Point 1, we see that 
 $$
 \vv = (\lambda,\mu,0) \in T_{\pp} \SSS \,. 
 $$
-We need to find a curve $\g \colon (-\e,\e) \to \SSS$ such that
-$$
-\g(0) = \pp \,, \quad \dg(0) = \vv = (\lambda,\mu,0)\,.
-$${#eq-example-differential}
-Define $\g$ by setting
+Define the curve $\g \colon (-\e,\e) \to \SSS$ by setting
 $$
 \g(t) := \sss(u_0 + t \lambda, v_0 + t \mu ) = (u_0 + t \lambda, v_0 + t \mu, 0)\,.
 $$
-Clearly, $\g$ satisfies (@eq-example-differential). We have
+Clearly,
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv = (\lambda,\mu,0)\,.
+$$
+We have
 \begin{align*}
 (f \circ \g) (t) & = f(u_0 + t \lambda, v_0 + t \mu,0) \\
                  & = ( \cos(u_0 + t \lambda), \sin(u_0 + t \lambda),v_0 + t \mu ) \,,\\
 (f \circ \g)' (t) & = (- \lambda \sin (u_0 + t\lambda), \lambda \cos (u_0 + t \lambda), \mu) \,.
 \end{align*}
-Therefore, the differential $d_{\pp}f$ at
-$$
-\pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
-$$
-is given by
+Therefore, the differential is given by
 $$
 d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 $$
@@ -4150,34 +4137,26 @@ $$
 ::: Example
 ### Computing the matrix of $d_{\pp}f$
 
-Consider the unit cylinder 
+**Question.** Consider the unit cylinder, charted by
 $$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,,
+\sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
 $$
-and the plane
+Consider the plane $\widetilde{\SSS}$ charted by
 $$
-\wSSS = \{ (x,y,z) \in \R^3 \, \colon \, z = 0  \} \,.
+\widetilde{\sss}(u,v) = (u,v,0) \,, \quad (u,v) \in \wU = \R^2 \,.
 $$
 Define the map
 $$
 f \colon \SSS \to \wSSS \,, \quad 
 f(x,y,z) = (y,xz,0) \,.
 $$
-Give charts of $\SSS$ and $\wSSS$, and compute the matrix of $d_{\pp} f$ with respect to these charts.
+Compute the matrix of $d_{\pp} f$ with respect to these charts.
 
-*Solution.* A chart of the cylinder $\SSS$ is given by 
-$$
-\sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
-$$
-A chart of the plane $\widetilde{\SSS}$ is given by 
-$$
-\widetilde{\sss}(u,v) = (u,v,0) \,, \quad (u,v) \in \wU = \R^2 \,.
-$$
-We need to compute the map
+**Solution.** We need to compute the map
 $$
 \Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
 $$
-Clearly we have
+Clearly, we have
 $$
 \widetilde{\sss}^{-1} (u,v,0) =(u,v) \,.
 $$
@@ -4324,11 +4303,6 @@ Then $\SSS_f$ is a regular surface.
 
 
 
-
-
-::: Example
-### Circular cone
-
 We saw that the circular cone
 $$
 \SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} 
@@ -4342,16 +4316,25 @@ $$
 \sss \colon \R^2 \to \R^3 \,, \quad 
 \sss (u,v) = (u,v,\sqrt{u^2 + v^2}) \,.
 $$
-Use Theorem \ref{theorem-level-surface} to show that $\SSS^+$ is a regular surface.
+We can also show that $\SSS^+$ is a regular surface by using Theorem \ref{theorem-level-surface}.
 
 
-*Solution.* Define the open set 
+::: Example
+### Circular cone
+
+**Question.** Consider the circular cone
 $$
-V := \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
+$$
+Prove that $\SSS$ is a regular surface.
+
+**Solution.** Define the open set 
+$$
+V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
 $$
 and the function $f \colon V \to \R$ by
 $$
-f(x,y,z) := x^2 + y^2 - z^2 \,.
+f(x,y,z) = x^2 + y^2 - z^2 \,.
 $$
 We have
 $$
@@ -4360,10 +4343,10 @@ $$
 $$
 Since 
 $$
-\SSS^+ = \SSS_f \,,
+\SSS = \SSS_f \,,
 $$
-by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface.
+we conclude that $\SSS$ is a regular surface.
+
 
 :::
 
@@ -4502,12 +4485,12 @@ $$
 ::: Example
 ## Unit cylinder
 
-Consider the unit cylinder 
+**Question.** Consider the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
 $$
 
-1. Use Theorem \ref{theorem-level-surface} to prove that $\SSS$ is a regular surface. 
+1. Prove that $\SSS$ is a regular surface. 
 2. Let 
 $$
 \pp = \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) \in \SSS
@@ -4518,11 +4501,11 @@ x + y = 0 \,.
 $$
 
 
-*Solution.* 
+**Solution.**
 
-1. From Example \ref{example-unit-cylinder}, we already know that $\SSS$ is a regular surface. Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
+1. Define the open set
 $$
-V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+V = \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
 $$
 Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
 $$
@@ -4537,8 +4520,7 @@ Since
 $$
 \SSS = \SSS_f \,,
 $$
-by Theorem \ref{theorem-level-surface} we conclude that 
-$\SSS$ is a regular surface.
+we conclude that $\SSS$ is a regular surface.
 
 2. Using the expression for $\nabla f$ found in Point 1, we get
 $$
@@ -4793,15 +4775,19 @@ we can obtain both the unit cylinder, and the Möbius band.
 ::: Example
 ### Unit Cylinder
 
-Consider the unit cylinder 
+**Question.** Prove that the unit cylinder 
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
 $$
-As seen in Example \ref{example-unit-cylinder}, $\SSS$ is a surface with atlas $\mathcal{A}=\{\sss_1,\sss_2\}$, where $\sss_1$ and $\sss_2$ are suitable restriction of
+is a ruled surface.
+
+
+**Solution.** 
+We know that the unit cylinder is charted by
 $$
-\sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in [0,2\pi) \times \R \,.
+\sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
-Equivalently, we can rewrite $\sss$ as
+We can rewrite $\sss$ as
 $$
 \sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
@@ -4813,7 +4799,7 @@ Note that the vectors
 $$
 \dg = (-\sin(u), \cos(u), 0 ) \,, \quad \mathbf{a} = (0,0,1)
 $$
-are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surface, see @fig-cylinder-ruled.
+are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surface.
 
 :::
 
@@ -4824,7 +4810,7 @@ are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surf
 ::: Example
 ### Möbius band  {#example-mobius}
 
-The Möbius band is a ruled surface with chart
+**Question.** The Möbius band is a ruled surface with chart
 $$
 \sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 $$
@@ -4838,8 +4824,8 @@ $$
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right) 
 $$
-is a vector which does a full rotation while going around the unit
-circle $\g$. This is shown in @fig-mobius-ruled. In particular 
+is a vector which does a half rotation while going around the unit
+circle $\g$. In particular 
 $$
 \sss (u,v) =  \left(   
   \left[ 1 - v \sin \left( \frac{u}{2} \right) \right] \cos(u),
@@ -4847,7 +4833,13 @@ $$
   v \cos \left( \frac{u}{2} \right)   \right) \,.
 $$
 
-We want to prove that $\SSS$ is **non orientable**. From the above formula for $\sss$, it is easy to compute that 
+1. Compute the standard unit normal to $\sss$.
+2. Prove that $\SSS$ is **non orientable**. 
+
+
+**Solution.**
+
+1. From the formula for $\sss$, it is easy to compute that 
 $$
 \sssu \times \sssv = \left( - \cos(u) \cos \left(  \frac{u}{2} \right),   - \sin(u) \cos \left(  \frac{u}{2} \right) , - \sin \left(  \frac{u}{2} \right) \right) \,.
 $$
@@ -4855,18 +4847,14 @@ It is also immediate to check that $\norm{\sssu \times \sssv} = 1$, and therefor
 $$
 \NN_{\sss} = \sss_u \times \sssv \,.
 $$
-Suppose by contradiction that $\SSS$ is orientable. This means there exists a globally defined principal unit normal vector
+
+2. Suppose by contradiction that $\SSS$ is orientable. This means there exists a globally defined principal unit normal vector
 $$
 \NN \colon \SSS \to \R^3 \,.
 $$
 By definition of principal normal, we have either 
 $$
-\NN \circ \sss = \NN_{\sss} \quad \text{ or } \quad
-\NN \circ \sss = - \NN_{\sss} \,.
-$$
-Without loss of generality assume that 
-$$
-\NN \circ \sss = \NN_{\sss} \,.
+\NN \circ \sss = \NN_{\sss}  \,.
 $$
 Consider the point $\pp = (1,0,0)$ on $\SSS$. Notice that, by continuity, $\pp$ can be obtained via $\sss$ through the limits
 $$
@@ -4875,7 +4863,7 @@ $$
 Since $\NN$ is continuous, the above implies
 $$
 \NN(\pp) = \lim_{u \to 0^+} \NN \circ \sss(u,0) = \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) \,.
-$${#eq-mobius-not-orientable}
+$${#eq-mobius-not-orientable-bis}
 However, by direct calculation:
 \begin{align*}
 \lim_{u \to 0^+} \NN \circ \sss(u,0) & =
@@ -4883,7 +4871,7 @@ However, by direct calculation:
 \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) & =
 \lim_{u \to 2\pi^-} \NN_{\sss} (u,0) = (1,0,0)
 \end{align*}
-This clearly contradicts (@eq-mobius-not-orientable). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
+This clearly contradicts (@eq-mobius-not-orientable-bis). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
 
 
 :::
@@ -4892,6 +4880,61 @@ This clearly contradicts (@eq-mobius-not-orientable). Therefore $\NN$ cannot exi
 
 ![The Möbius band is a ruled surface with base curve $\g$ and rulings given by rotating vertical lines.](/images/surfaces_ruled_2.png){#fig-mobius-ruled width=70%}
 
+
+
+::: Example
+
+**Question.** Show that the surface 
+$$
+S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\}
+$$ 
+is a ruled surface.
+
+**Solution.** We shall make a change of variables. Notice that we can rearrange
+$$
+\begin{aligned}
+x^{2}+10 x y+16 x^{2}-z & =0 \\
+(x+8 y)(x+2 y) & = z .
+\end{aligned}
+$$
+Let 
+$$
+u=x+8 y, \qquad  v=x+2 y \,.
+$$ 
+Then $u v=z$ and
+$$
+\begin{aligned}
+u-v & =6 y \quad \implies \quad  y=\frac{u-v}{6} \\
+x & =u-8 y \\
+& =u-\frac{8(u-v)}{6} \\
+& =\frac{4 v-u}{3} .
+\end{aligned}
+$$
+It follows that if $(x, y, z) \in S$ then
+$$
+\begin{aligned}
+(x, y, z) & =\left(\frac{4 v-u}{3}, \frac{u-v}{6}, u v\right) \\
+& =\left(-\frac{u}{3}, \frac{u}{6}, 0\right)+v\left(\frac{4}{3},-\frac{1}{6}, u\right) \\
+& = \g(u) + v \mathbf{a}(u) \,,
+\end{aligned}
+$$
+where we have set
+\begin{align*}
+\g (u) & = \left(-\frac{u}{3}, \frac{u}{6}, 0\right) \\
+\mathbf{a}(u) & = \left(\frac{4}{3},-\frac{1}{6}, u\right) \,.
+\end{align*}
+Notice that 
+$$
+\dg(u) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,.
+$$
+For $u \neq 0$, we clearly have that $\mathbf{a}(u)$ and $\dg(u)$ are linearly independent (the last component of $\dg(u)$ is $0$). For $u = 0$ we have
+$$
+\dg(0) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,, \qquad 
+ \mathbf{a}(0) = \left(\frac{4}{3},-\frac{1}{6}, 0\right) \,,
+$$
+which are clearly linearly independent. Therefore, $S$ is a ruled surface.
+
+:::
 
 
 
@@ -4911,9 +4954,9 @@ $$
 $$
 Suppose that $f>0$. The surface obtained by rotating $\g$ about the $z$-axis is called **surface of revolution**. A chart for $\SSS$ is given by
 $$
-\sss (u,v) :=  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
+\sss (u,v) =  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
 $$
-with $u \in [0,2\pi)$ and $v \in (a,b)$.
+with $u \in (0,2\pi)$ and $v \in (a,b)$.
 
 :::
 
@@ -4950,24 +4993,26 @@ Therefore $\sss_u$ and $\sss_v$ are linearly independent if and only if $\g$ is 
 ::: Example
 ### Catenoid
 
-The Catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis, see @fig-catenoid. Recall that the catenary function is defined by
+**Question.** The catenary function is defined by
 $$
 f(v) = \cosh (v) \,.  
 $$
-Therefore the catenoid is obtained by rotating 
+The Catenoid $\SSS$ is the surface of revolution obtained by rotating the catenary about the $z$-axis, that is, by rotating the curve
 $$
 \g(v) = \left(  \cosh (v), 0 , v \right) \,.
 $$
-A chart for the catenoid is given by
+A chart $\SSS$ is given by
 $$
 \sss (u,v) = (\cos(u) \cosh (v) , \sin(u) \cosh (v), v) \,, 
 $$
-where $u \in [0,2\pi)$ and $v \in \R$. Note that $f>0$ and 
+where $u \in [0,2\pi)$ and $v \in \R$. Prove that $\SSS$ is a regular surface.
+
+**Solution.** Note that $f>0$ and 
 $$
 \dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
 \norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
 $$
-Therefore $\g$ is regular. By Proposition \ref{proposition-revolution}, we  conclude that the Catenoid is a regular surface.
+Therefore $\g$ is regular. As $\SSS$ is a surface of revolution, we conclude that $\SSS$ is regular.
 
 
 :::
@@ -5112,7 +5157,7 @@ We usually omit the dependence on $\vv$ in (@eq-fff-chart), and just write
 $$
 \mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,. 
 $$
-We are now ready to write $I_{\pp}$ with respect to the basis $\{\sss_u,\sss_v\} $of $T_{\pp} \SSS$.
+We are now ready to write $I_{\pp}$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$.
 
 
 
@@ -5223,46 +5268,30 @@ $$
 :::
 
 
-
-
-
-::: Remark
-### First fundamental form and reparametrizations  {#remark-fff-reparametrization}
-
 The first fundamental form $I_{\pp}$ depends only on the surface $\SSS$ and the point $\pp$. 
 Instead the local representation of $I_{\pp}$
 $$
 \mathscr{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2 \,,
 $$
-depends on the choice of chart $\sss \colon U \to \R^3$. Indeed suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
+depends on the choice of chart $\sss \colon U \to \R^3$. The next result explains how $\mathscr{F}_1$ changes when we change chart.
+
+
+
+::: Proposition
+### First fundamental form and reparametrizations  {#proposition-fff-reparametrization}
+
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
 \widetilde{\sss} = \sss \circ \Phi \,,
 $$
-where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Recall the following notation: the components
-$\Phi^1$ and $\Phi^2$ of $\Phi$ are denoted by
-$$
-(\tilde{u}, \tilde{v}) \mapsto u (\tilde{u}, \tilde{v}) \,, \quad 
-(\tilde{u}, \tilde{v}) \mapsto v (\tilde{u}, \tilde{v}) \,,
-$$
-respectively. The Jacobian of $\Phi$ is then
-$$
-J\Phi = \left(   
-\begin{array}{cc}
- \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
- \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
-\end{array}
-\right) \,.
-$$
-Denote the first fundamental form of $\widetilde{\sss}$ by
-$$
-\widetilde{\mathscr{F}}_1 = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
-$$
-The linear maps $du, dv$ and $d\tilde{u}, d\tilde{v}$ are related by
-$$
-du = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \,, \quad 
-dv = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v} 
-$${#eq-fff-change-basis-1}
-Moreover the matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the first fundamental forms of $\sss$ and $\wsss$ by, respectively,
+\begin{align*}
+\mathscr{F}_1 & = E \, du^2 + 2F \, du dv + G \, dv^2 \,, \\
+\widetilde{\mathscr{F}}_1 & = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
+\end{align*}
+
+1. The matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
 $$
 \left(
 \begin{array}{cc}
@@ -5279,17 +5308,39 @@ F & G
 \end{array}
 \right)
 \, 
-J \Phi  \,.
+J \Phi  \,,
+$${#eq-fff-change-basis-1}
+where $J\Phi$ is the Jacobian of $\Phi$
+$$
+J\Phi = \left(   
+\begin{array}{cc}
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,.
+$$
+
+
+2. The linear maps $du, dv$ and $d\tilde{u}, d\tilde{v}$ are related by
+$$
+\begin{aligned}
+du & = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \\ 
+dv & = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v} 
+\end{aligned}
 $${#eq-fff-change-basis-2}
 
-> The proof of the above statements follows by basic linear algebra: The pairs $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ are bases for the vector space $T_{\pp} \SSS$. By the chain rule, we have
+:::
+
+::: Proof
+
+The pairs $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ are both bases for the vector space $T_{\pp} \SSS$. By the chain rule, we have
 \begin{align*}
 \widetilde{\sss}_{\tilde{u}}  & = 
 \sss_u  \frac{\partial u}{\partial \tilde{u}} + \sss_v  \frac{\partial v}{\partial \tilde{u}} \\ 
 \widetilde{\sss}_{\tilde{v}}  & = 
 \sss_u  \, \frac{\partial u}{\partial \tilde{v}}  + \sss_v  \frac{\partial v}{\partial \tilde{v}} 
 \end{align*}
-The above shows that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore, formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for linear maps and bilinear forms, respectively.
+The above show that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore, formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for bilinear forms and linear maps, respectively.
 
 
 :::
@@ -5299,9 +5350,9 @@ Let us compute the first fundamental form of a plane and of a cylinder.
 
 
 ::: Example
-### Plane   {#example-fff-plane}
+### FFF of Plane {#example-fff-plane}
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, and suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors. Consider the plane with chart
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
@@ -5310,7 +5361,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-*Solution*. We have
+**Solution.** We have
 $$
 \sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
 $$
@@ -5349,7 +5400,7 @@ Hence, the square of the length of the vector $\vv$, which has coordinates $\lam
 
 ::: Warning
 
- Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Remark \ref{remark-fff-reparametrization}.
+ Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Proposition \ref{proposition-fff-reparametrization}.
 
 :::
 
@@ -5364,19 +5415,49 @@ $$
 
 :::
 
+
+
 ::: Example
 ### Plane in polar coordinates   {#example-fff-plane-polar}
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
 $$
 \sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
 $$
-Prove that the first fundamental form of $\sss$ is
+
+1. By direct calculation, show that the first fundamental form of $\sss$ is
 $$
 \mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
 $$
 
-*Solution.* We have
+2. The first fundamental form of the plane in cartesian coordinates is 
+$$
+{\wFF}_1 = du^2 + dv^2 \,.
+$$
+Verify that 
+$$
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)  
+= 
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+\, 
+J \Phi  \,,
+$$
+where $\Phi$ is the change of variables from polar to cartesian coordinates.
+
+**Solution.** 
+
+1. Compute $\mathscr{F}_1$ directly:
 \begin{align*}
 \sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
 \sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
@@ -5393,6 +5474,77 @@ Then the first fundamental form is
 $$
 \mathscr{F}_1 = E \, dr^2 + 2 F\, dr \, d\theta + G \, d\theta^2 = dr^2 + r^2 d\theta^2 \,.  
 $$
+
+2. The change of variables from polar to cartesian coordinates is
+$$
+\Psi(r,\theta) = ( r \cos(\theta), r \sin (\theta) )\,.
+$$
+The Jacobian of $\Psi$ is
+$$
+J\Phi = \left(   
+\begin{array}{cc}
+ \cos(\theta) & - r \sin(\theta)  \\
+ \sin(\theta)  &  r \cos(\theta) 
+\end{array}
+\right) \,.
+$$
+The matrix of ${\wFF}_1$ is just the identity:
+$$
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}
+\right) \,.
+$$
+Therefore, we have
+\begin{align*}
+(J \Phi)^T
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+\, 
+J \Phi
+& = (J \Phi)^T \, J \Phi \\
+& = 
+\left(
+\begin{array}{cc}
+\cos(\theta) &  \sin(\theta) \\
+-r \sin(\theta) & r \cos(\theta)
+\end{array}
+\right)
+\left(   
+\begin{array}{cc}
+ \cos(\theta) & - r \sin(\theta)  \\
+ \sin(\theta)  &  r \cos(\theta) 
+\end{array}
+\right) \\
+& = 
+\left(   
+\begin{array}{cc}
+ 1 & 0  \\
+ 0  &  r^2 \cos(\theta) 
+\end{array}
+\right) \\
+& = 
+\left(   
+\begin{array}{cc}
+ E & F  \\
+ F  &  G \cos(\theta) 
+\end{array}
+\right) \,.
+\end{align*}
+
 
 :::
 
@@ -5952,7 +6104,7 @@ To see this, suppose we can verify Condition 2 on the chart $\sss \colon U \to \
 $$
 \widetilde{\mathscr{F}}_1 = \mathscr{F}_1 \,,
 $${#eq-local-isometry-chart-1}
-where $\widetilde{\mathscr{F}}_1$ is the first fundamental form of $\widetilde{\sss} = f \circ \sss$. Assume that $\hat{\sss} \colon \hat{U} \to \SSS$ is another chart of $\SSS$. By Remark \ref{remark-fff-reparametrization}, the fundamental forms of $\hat{\sss}$ and $\sss$ are related by
+where $\widetilde{\mathscr{F}}_1$ is the first fundamental form of $\widetilde{\sss} = f \circ \sss$. Assume that $\hat{\sss} \colon \hat{U} \to \SSS$ is another chart of $\SSS$. By Remark \ref{proposition-fff-reparametrization}, the fundamental forms of $\hat{\sss}$ and $\sss$ are related by
 $$
 \hat{\mathscr{F}}_1 = (J\Phi)^T \mathscr{F}_1 J\Phi
 $${#eq-local-isometry-chart-2}
@@ -5964,7 +6116,7 @@ Applying $f$ to $\hat{\sss}$ gives
 $$
 \sss^{\dagger} := f \circ \hat{\sss} = f \circ \sss \circ \Phi = \widetilde{\sss} \circ \Phi \,,
 $$
-showing that $\sss^{\dagger}$ is a reparametrization of $\widetilde{\sss}$ with transition map $\Phi$. Therefore, by Remark \ref{remark-fff-reparametrization}, the fundamental forms of $\sss^{\dagger}$ and $\widetilde{\sss}$ are related by
+showing that $\sss^{\dagger}$ is a reparametrization of $\widetilde{\sss}$ with transition map $\Phi$. Therefore, by Proposition \ref{proposition-fff-reparametrization}, the fundamental forms of $\sss^{\dagger}$ and $\widetilde{\sss}$ are related by
 $$
 \mathscr{F}^\dagger_1 = (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi
 $$
@@ -7437,7 +7589,7 @@ $$
 \mathscr{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
 $$
 depends on the choice of chart $\sss \colon U \to \R^3$. Indeed, let us adopt the same notations 
-as Remark \ref{remark-fff-reparametrization}. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$ with 
+as Proposition \ref{proposition-fff-reparametrization}. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$ with 
 $$
 \widetilde{\sss} = \sss \circ \Phi \,,
 $$

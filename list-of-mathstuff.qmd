@@ -987,151 +987,153 @@
 
  [**Example 4.130**](#Example-4.130)\Pageref{Example-4.130}
 
- [**Example 4.131**](#example-fff-plane-polar): Plane in polar coordinates\Pageref{example-fff-plane-polar}
+ [**Example 4.131**](#example-fff-plane-polar): FFF of Plane in polar coordinates\Pageref{example-fff-plane-polar}
 
- [**Example 4.132**](#example-cylinder-fff): Unit cylinder\Pageref{example-cylinder-fff}
+ [**Example 4.132**](#example-cylinder-fff): FFF of Unit cylinder\Pageref{example-cylinder-fff}
 
  [**Remark 4.133**](#Remark-4.133)\Pageref{Remark-4.133}
 
- [**Proposition 4.134**](#proposition-fff-length)\Pageref{proposition-fff-length}
+ [**Example 4.134**](#Example-4.134)\Pageref{Example-4.134}
+
+ [**Proposition 4.135**](#proposition-fff-length)\Pageref{proposition-fff-length}
 
  [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
 
- [**Example 4.135**](#example-fff-cone): FFF of the Cone\Pageref{example-fff-cone}
+ [**Example 4.136**](#example-fff-cone): Curves on the Cone\Pageref{example-fff-cone}
 
- [**Definition 4.136**](#local-isometry-and-isometry): Local Isometry and Isometry\Pageref{local-isometry-and-isometry}
+ [**Definition 4.137**](#local-isometry-and-isometry): Local Isometry and Isometry\Pageref{local-isometry-and-isometry}
 
- [**Remark 4.137**](#remark-local-isometry)\Pageref{remark-local-isometry}
+ [**Remark 4.138**](#remark-local-isometry)\Pageref{remark-local-isometry}
 
- [**Proposition 4.138**](#prop-isometry-diffeo)\Pageref{prop-isometry-diffeo}
+ [**Proposition 4.139**](#prop-isometry-diffeo)\Pageref{prop-isometry-diffeo}
 
  [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}
 
- [**Remark 4.139**](#Remark-4.139)\Pageref{Remark-4.139}
+ [**Remark 4.140**](#Remark-4.140)\Pageref{Remark-4.140}
 
- [**Proposition 4.140**](#Proposition-4.140)\Pageref{Proposition-4.140}
+ [**Proposition 4.141**](#Proposition-4.141)\Pageref{Proposition-4.141}
 
  [**Proof**](#Proof*-4.29)\Pageref{Proof*-4.29}
 
- [**Theorem 4.141**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
+ [**Theorem 4.142**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
 
  [**Proof**](#Proof*-4.30)\Pageref{Proof*-4.30}
 
- [**Remark 4.142**](#remark-local-isometry-chart)\Pageref{remark-local-isometry-chart}
+ [**Remark 4.143**](#remark-local-isometry-chart)\Pageref{remark-local-isometry-chart}
 
- [**Theorem 4.143**](#theorem-local-isometry-2)\Pageref{theorem-local-isometry-2}
+ [**Theorem 4.144**](#theorem-local-isometry-2)\Pageref{theorem-local-isometry-2}
 
  [**Proof**](#Proof*-4.31)\Pageref{Proof*-4.31}
 
- [**Example 4.144**](#example-plane-cylinder): Plane and Cylinder are locally isometric\Pageref{example-plane-cylinder}
+ [**Example 4.145**](#example-plane-cylinder): Plane and Cylinder are locally isometric\Pageref{example-plane-cylinder}
 
- [**Example 4.145**](#example-plane-cylinder-2): Plane and Cylinder are not isometric\Pageref{example-plane-cylinder-2}
+ [**Example 4.146**](#example-plane-cylinder-2): Plane and Cylinder are not isometric\Pageref{example-plane-cylinder-2}
 
- [**Example 4.146**](#plane-and-cone-are-locally-isometric): Plane and Cone are locally isometric\Pageref{plane-and-cone-are-locally-isometric}
+ [**Example 4.147**](#plane-and-cone-are-locally-isometric): Plane and Cone are locally isometric\Pageref{plane-and-cone-are-locally-isometric}
 
- [**Definition 4.147**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
+ [**Definition 4.148**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
 
- [**Proposition 4.148**](#Proposition-4.148)\Pageref{Proposition-4.148}
+ [**Proposition 4.149**](#Proposition-4.149)\Pageref{Proposition-4.149}
 
  [**Proof**](#Proof*-4.32)\Pageref{Proof*-4.32}
 
- [**Definition 4.149**](#angle-between-curves): Angle between curves\Pageref{angle-between-curves}
+ [**Definition 4.150**](#angle-between-curves): Angle between curves\Pageref{angle-between-curves}
 
- [**Proposition 4.150**](#Proposition-4.150)\Pageref{Proposition-4.150}
+ [**Theorem 4.151**](#Theorem-4.151)\Pageref{Theorem-4.151}
 
  [**Proof**](#Proof*-4.33)\Pageref{Proof*-4.33}
 
- [**Example 4.151**](#Example-4.151)\Pageref{Example-4.151}
+ [**Example 4.152**](#Example-4.152)\Pageref{Example-4.152}
 
- [**Definition 4.152**](#conformal-map): Conformal map\Pageref{conformal-map}
+ [**Definition 4.153**](#conformal-map): Conformal map\Pageref{conformal-map}
 
  [**Notation**](#Notation*-4.34)\Pageref{Notation*-4.34}
 
- [**Remark 4.153**](#Remark-4.153)\Pageref{Remark-4.153}
+ [**Remark 4.154**](#Remark-4.154)\Pageref{Remark-4.154}
 
- [**Proposition 4.154**](#Proposition-4.154)\Pageref{Proposition-4.154}
+ [**Proposition 4.155**](#Proposition-4.155)\Pageref{Proposition-4.155}
 
  [**Proof**](#Proof*-4.35)\Pageref{Proof*-4.35}
 
- [**Theorem 4.155**](#theorem-conformal)\Pageref{theorem-conformal}
+ [**Theorem 4.156**](#theorem-conformal)\Pageref{theorem-conformal}
 
  [**Proof**](#Proof*-4.36)\Pageref{Proof*-4.36}
 
- [**Theorem 4.156**](#theorem-conformal-fff)\Pageref{theorem-conformal-fff}
+ [**Theorem 4.157**](#theorem-conformal-fff)\Pageref{theorem-conformal-fff}
 
- [**Remark 4.157**](#remark-conformal-chart)\Pageref{remark-conformal-chart}
+ [**Remark 4.158**](#remark-conformal-chart)\Pageref{remark-conformal-chart}
 
- [**Theorem 4.158**](#theorem-conformal-fff-2)\Pageref{theorem-conformal-fff-2}
+ [**Theorem 4.159**](#theorem-conformal-fff-2)\Pageref{theorem-conformal-fff-2}
 
- [**Example 4.159**](#example-conformal): Stereographic Projection\Pageref{example-conformal}
+ [**Example 4.160**](#example-conformal): Stereographic Projection\Pageref{example-conformal}
 
- [**Example 4.160**](#sphere-and-plane-are-conformal): Sphere and Plane are conformal\Pageref{sphere-and-plane-are-conformal}
+ [**Example 4.161**](#sphere-and-plane-are-conformal): Sphere and Plane are conformal\Pageref{sphere-and-plane-are-conformal}
 
- [**Definition 4.161**](#definition-conformal-parametrization): Conformal parametrization\Pageref{definition-conformal-parametrization}
-
- [**Theorem 4.162**](#Theorem-4.162)\Pageref{Theorem-4.162}
-
- [**Proof**](#Proof*-4.37)\Pageref{Proof*-4.37}
+ [**Definition 4.162**](#definition-conformal-parametrization): Conformal parametrization\Pageref{definition-conformal-parametrization}
 
  [**Theorem 4.163**](#Theorem-4.163)\Pageref{Theorem-4.163}
 
- [**Example 4.164**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
+ [**Proof**](#Proof*-4.37)\Pageref{Proof*-4.37}
 
- [**Example 4.165**](#sphere): Sphere\Pageref{sphere}
+ [**Theorem 4.164**](#Theorem-4.164)\Pageref{Theorem-4.164}
 
- [**Example 4.166**](#sphere-stereographic-projection): Sphere: Stereographic projection\Pageref{sphere-stereographic-projection}
+ [**Example 4.165**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
 
- [**Example 4.167**](#lambert-cylindrical-projection): Lambert cylindrical projection\Pageref{lambert-cylindrical-projection}
+ [**Example 4.166**](#sphere): Sphere\Pageref{sphere}
 
- [**Example 4.168**](#mercator-projection): Mercator projection\Pageref{mercator-projection}
+ [**Example 4.167**](#sphere-stereographic-projection): Sphere: Stereographic projection\Pageref{sphere-stereographic-projection}
 
- [**Definition 4.169**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+ [**Example 4.168**](#lambert-cylindrical-projection): Lambert cylindrical projection\Pageref{lambert-cylindrical-projection}
+
+ [**Example 4.169**](#mercator-projection): Mercator projection\Pageref{mercator-projection}
+
+ [**Definition 4.170**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
 
  [**Notation**](#Notation*-4.38)\Pageref{Notation*-4.38}
 
- [**Remark 4.170**](#remark-sff-reparametrization): SFF and reparametrizations\Pageref{remark-sff-reparametrization}
+ [**Remark 4.171**](#remark-sff-reparametrization): SFF and reparametrizations\Pageref{remark-sff-reparametrization}
 
- [**Example 4.171**](#example-sff-plane): Plane\Pageref{example-sff-plane}
+ [**Example 4.172**](#example-sff-plane): Plane\Pageref{example-sff-plane}
 
- [**Example 4.172**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
-
- [**Remark 4.173**](#Remark-4.173)\Pageref{Remark-4.173}
+ [**Example 4.173**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
 
  [**Remark 4.174**](#Remark-4.174)\Pageref{Remark-4.174}
 
- [**Definition 4.175**](#gauss-map): Gauss map\Pageref{gauss-map}
+ [**Remark 4.175**](#Remark-4.175)\Pageref{Remark-4.175}
 
- [**Remark 4.176**](#remark-gauss-coordinates)\Pageref{remark-gauss-coordinates}
+ [**Definition 4.176**](#gauss-map): Gauss map\Pageref{gauss-map}
 
- [**Example 4.177**](#Example-4.177)\Pageref{Example-4.177}
+ [**Remark 4.177**](#remark-gauss-coordinates)\Pageref{remark-gauss-coordinates}
 
- [**Remark 4.178**](#Remark-4.178)\Pageref{Remark-4.178}
+ [**Example 4.178**](#Example-4.178)\Pageref{Example-4.178}
 
- [**Definition 4.179**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
+ [**Remark 4.179**](#Remark-4.179)\Pageref{Remark-4.179}
+
+ [**Definition 4.180**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
 
  [**Important**](#Important*-4.39)\Pageref{Important*-4.39}
 
- [**Remark 4.180**](#Remark-4.180)\Pageref{Remark-4.180}
+ [**Remark 4.181**](#Remark-4.181)\Pageref{Remark-4.181}
 
- [**Definition 4.181**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
+ [**Definition 4.182**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
 
- [**Remark 4.182**](#Remark-4.182)\Pageref{Remark-4.182}
+ [**Remark 4.183**](#Remark-4.183)\Pageref{Remark-4.183}
 
- [**Remark 4.183**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
+ [**Remark 4.184**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
 
- [**Theorem 4.184**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
+ [**Theorem 4.185**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
 
- [**Lemma 4.185**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
+ [**Lemma 4.186**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
 
  [**Proof**](#Proof*-4.40)\Pageref{Proof*-4.40}
 
- [**Lemma 4.186**](#lemma-weingarten)\Pageref{lemma-weingarten}
+ [**Lemma 4.187**](#lemma-weingarten)\Pageref{lemma-weingarten}
 
  [**Proof**](#Proof*-4.41)\Pageref{Proof*-4.41}
 
- [**Proof**](#proof-of-theorem-1): Proof of Theorem 4.184\Pageref{proof-of-theorem-1}
+ [**Proof**](#proof-of-theorem-1): Proof of Theorem 4.185\Pageref{proof-of-theorem-1}
 
- [**Theorem 4.187**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
+ [**Theorem 4.188**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
 
  [**Proof**](#Proof*-4.43)\Pageref{Proof*-4.43}
 
@@ -1139,91 +1141,91 @@
 
  [**Notation**](#Notation*-4.45)\Pageref{Notation*-4.45}
 
- [**Example 4.188**](#helicoid): Helicoid\Pageref{helicoid}
+ [**Example 4.189**](#helicoid): Helicoid\Pageref{helicoid}
 
- [**Example 4.189**](#example-weingarten-2)\Pageref{example-weingarten-2}
+ [**Example 4.190**](#example-weingarten-2)\Pageref{example-weingarten-2}
 
- [**Definition 4.190**](#gaussian-and-mean-curvature-1): Gaussian and mean curvature\Pageref{gaussian-and-mean-curvature-1}
+ [**Definition 4.191**](#gaussian-and-mean-curvature-1): Gaussian and mean curvature\Pageref{gaussian-and-mean-curvature-1}
 
  [**Notation**](#trace-of-a-2-times-2-matrix): Trace of a $2 \times 2$ matrix\Pageref{trace-of-a-2-times-2-matrix}
 
- [**Remark 4.191**](#Remark-4.191)\Pageref{Remark-4.191}
+ [**Remark 4.192**](#Remark-4.192)\Pageref{Remark-4.192}
 
- [**Proposition 4.192**](#Proposition-4.192)\Pageref{Proposition-4.192}
+ [**Proposition 4.193**](#Proposition-4.193)\Pageref{Proposition-4.193}
 
  [**Proof**](#Proof*-4.47)\Pageref{Proof*-4.47}
 
- [**Example 4.193**](#plane): Plane\Pageref{plane}
+ [**Example 4.194**](#plane): Plane\Pageref{plane}
 
- [**Example 4.194**](#example-cylinder-curvatures): Unit cylinder\Pageref{example-cylinder-curvatures}
+ [**Example 4.195**](#example-cylinder-curvatures): Unit cylinder\Pageref{example-cylinder-curvatures}
 
- [**Theorem 4.195**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
+ [**Theorem 4.196**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
 
  [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
 
- [**Corollary 4.196**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
+ [**Corollary 4.197**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
 
  [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Definition 4.197**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
+ [**Definition 4.198**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
 
- [**Remark 4.198**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
+ [**Remark 4.199**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
 
- [**Remark 4.199**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
+ [**Remark 4.200**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
 
- [**Proposition 4.200**](#Proposition-4.200)\Pageref{Proposition-4.200}
+ [**Proposition 4.201**](#Proposition-4.201)\Pageref{Proposition-4.201}
 
  [**Proof**](#Proof*-4.50)\Pageref{Proof*-4.50}
 
  [**Important**](#Important*-4.51)\Pageref{Important*-4.51}
 
- [**Example 4.201**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.202**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
 
- [**Example 4.202**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
+ [**Example 4.203**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
 
- [**Example 4.203**](#torus): Torus\Pageref{torus}
+ [**Example 4.204**](#torus): Torus\Pageref{torus}
 
- [**Question 4.204**](#Question-4.204)\Pageref{Question-4.204}
+ [**Question 4.205**](#Question-4.205)\Pageref{Question-4.205}
 
- [**Proposition 4.205**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Proposition 4.206**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
  [**Proof**](#Proof*-4.52)\Pageref{Proof*-4.52}
 
  [**Important**](#Important*-4.53)\Pageref{Important*-4.53}
 
- [**Proposition 4.206**](#Proposition-4.206)\Pageref{Proposition-4.206}
+ [**Proposition 4.207**](#Proposition-4.207)\Pageref{Proposition-4.207}
 
  [**Proof**](#Proof*-4.54)\Pageref{Proof*-4.54}
 
- [**Definition 4.207**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+ [**Definition 4.208**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.208**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.209**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.55)\Pageref{Proof*-4.55}
 
- [**Example 4.209**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
+ [**Example 4.210**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Theorem 4.210**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
+ [**Theorem 4.211**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
 
  [**Proof**](#Proof*-4.56)\Pageref{Proof*-4.56}
 
- [**Corollary 4.211**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+ [**Corollary 4.212**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
 
- [**Example 4.212**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+ [**Example 4.213**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
 
- [**Theorem 4.213**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
+ [**Theorem 4.214**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
  [**Proof**](#Proof*-4.57)\Pageref{Proof*-4.57}
 
- [**Definition 4.214**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Definition 4.215**](#local-shape-types): Local shape types\Pageref{local-shape-types}
 
- [**Example 4.215**](#Example-4.215)\Pageref{Example-4.215}
+ [**Example 4.216**](#Example-4.216)\Pageref{Example-4.216}
 
- [**Definition 4.216**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+ [**Definition 4.217**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
 
- [**Remark 4.217**](#Remark-4.217)\Pageref{Remark-4.217}
+ [**Remark 4.218**](#Remark-4.218)\Pageref{Remark-4.218}
 
- [**Theorem 4.218**](#Theorem-4.218)\Pageref{Theorem-4.218}
+ [**Theorem 4.219**](#Theorem-4.219)\Pageref{Theorem-4.219}
 
  [**Proof**](#Proof*-4.58)\Pageref{Proof*-4.58}
 
@@ -1483,13 +1485,13 @@
 
  [**Example 126**](#example-fff-plane): FFF of Plane\Pageref{example-fff-plane}
 
- [**Example 127**](#plane-in-polar-coordinates): Plane in polar coordinates\Pageref{plane-in-polar-coordinates}
+ [**Example 127**](#example-fff-plane-polar): FFF of Plane in polar coordinates\Pageref{example-fff-plane-polar}
 
- [**Example 128**](#unit-cylinder-6): Unit cylinder\Pageref{unit-cylinder-6}
+ [**Example 128**](#example-cylinder-fff): FFF of Unit cylinder\Pageref{example-cylinder-fff}
 
  [**Example 129**](#Example-129)\Pageref{Example-129}
 
- [**Theorem 130**](#Theorem-130)\Pageref{Theorem-130}
+ [**Proposition 130**](#Proposition-130)\Pageref{Proposition-130}
 
  [**Example 131**](#example-fff-cone-bis): The Cone\Pageref{example-fff-cone-bis}
 

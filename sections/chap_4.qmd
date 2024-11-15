@@ -4863,7 +4863,7 @@ $$
 Since $\NN$ is continuous, the above implies
 $$
 \NN(\pp) = \lim_{u \to 0^+} \NN \circ \sss(u,0) = \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) \,.
-$${#eq-mobius-not-orientable-bis}
+$${#eq-mobius-not-orientable}
 However, by direct calculation:
 \begin{align*}
 \lim_{u \to 0^+} \NN \circ \sss(u,0) & =
@@ -4871,7 +4871,7 @@ However, by direct calculation:
 \lim_{u \to 2\pi^-} \NN \circ \sss(u,0) & =
 \lim_{u \to 2\pi^-} \NN_{\sss} (u,0) = (1,0,0)
 \end{align*}
-This clearly contradicts (@eq-mobius-not-orientable-bis). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
+This clearly contradicts (@eq-mobius-not-orientable). Therefore $\NN$ cannot exist, and $\SSS$ is not orientable.
 
 
 :::
@@ -5418,16 +5418,16 @@ $$
 
 
 ::: Example
-### Plane in polar coordinates   {#example-fff-plane-polar}
+### FFF of Plane in polar coordinates   {#example-fff-plane-polar}
 
 **Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
 $$
-\sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
+\sss(\rho,\theta) = \mathbf{a} + \rho \cos(\theta) \pp + \rho \sin(\theta) \mathbf{q} \,, \quad \rho>0 , \, \theta \in (0,2\pi) \,.
 $$
 
 1. By direct calculation, show that the first fundamental form of $\sss$ is
 $$
-\mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
+\mathscr{F}_1 = d\rho^2 + \rho^2 d\theta^2 \,.
 $$
 
 2. The first fundamental form of the plane in cartesian coordinates is 
@@ -5459,32 +5459,32 @@ where $\Phi$ is the change of variables from polar to cartesian coordinates.
 
 1. Compute $\mathscr{F}_1$ directly:
 \begin{align*}
-\sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
-\sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
+\sss_{\rho} & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
+\sss_{\theta} & = - \rho \sin(\theta) \pp + \rho \cos(\theta) \mathbf{q}
 \end{align*}
 and therefore 
 \begin{align*}
-E & = \sss_r \cdot \sss_r \\
+E & = \sss_{\rho} \cdot \sss_{\rho} \\
     & = \cos^2(\theta)\norm{\pp}^2 + \sin^2(\theta)\norm{\mathbf{q}}^2 + 2 \cos(\theta) \sin(\theta) \pp \cdot \mathbf{q} \\
     & = 1 \\
-F & = \sss_r \cdot \sss_{\theta} = 0 \\
+F & = \sss_{\rho} \cdot \sss_{\theta} = 0 \\
 G & = \sss_{\theta} \cdot \sss_{\theta} = r^2 \\
 \end{align*}
 Then the first fundamental form is
 $$
-\mathscr{F}_1 = E \, dr^2 + 2 F\, dr \, d\theta + G \, d\theta^2 = dr^2 + r^2 d\theta^2 \,.  
+\mathscr{F}_1 = E \, d{\rho}^2 + 2 F\, d{\rho} \, d\theta + G \, d\theta^2 = d{\rho}^2 + {\rho}^2 d\theta^2 \,.  
 $$
 
 2. The change of variables from polar to cartesian coordinates is
 $$
-\Psi(r,\theta) = ( r \cos(\theta), r \sin (\theta) )\,.
+\Psi({\rho},\theta) = ( {\rho} \cos(\theta), {\rho} \sin (\theta) )\,.
 $$
 The Jacobian of $\Psi$ is
 $$
 J\Phi = \left(   
 \begin{array}{cc}
- \cos(\theta) & - r \sin(\theta)  \\
- \sin(\theta)  &  r \cos(\theta) 
+ \cos(\theta) & - {\rho} \sin(\theta)  \\
+ \sin(\theta)  & {\rho} \cos(\theta) 
 \end{array}
 \right) \,.
 $$
@@ -5506,7 +5506,7 @@ $$
 $$
 Therefore, we have
 \begin{align*}
-(J \Phi)^T
+(J \Phi)^T &
 \left(
 \begin{array}{cc}
 \wE & \wF \\
@@ -5515,32 +5515,32 @@ Therefore, we have
 \right)
 \, 
 J \Phi
-& = (J \Phi)^T \, J \Phi \\
-& = 
+= (J \Phi)^T \, J \Phi \\
+&= 
 \left(
 \begin{array}{cc}
 \cos(\theta) &  \sin(\theta) \\
--r \sin(\theta) & r \cos(\theta)
+-\rho \sin(\theta) & \rho \cos(\theta)
 \end{array}
 \right)
 \left(   
 \begin{array}{cc}
- \cos(\theta) & - r \sin(\theta)  \\
- \sin(\theta)  &  r \cos(\theta) 
+ \cos(\theta) & - \rho \sin(\theta)  \\
+ \sin(\theta)  & \rho \cos(\theta) 
 \end{array}
 \right) \\
-& = 
+&= 
 \left(   
 \begin{array}{cc}
- 1 & 0  \\
- 0  &  r^2 \cos(\theta) 
+1 & 0  \\
+0  & \rho^2  
 \end{array}
-\right) \\
-& = 
+\right) 
+ = 
 \left(   
 \begin{array}{cc}
  E & F  \\
- F  &  G \cos(\theta) 
+ F  & G  
 \end{array}
 \right) \,.
 \end{align*}
@@ -5550,9 +5550,9 @@ J \Phi
 
 
 ::: Example
-### Unit cylinder  {#example-cylinder-fff}
+### FFF of Unit cylinder  {#example-cylinder-fff}
 
-Consider the unit cylinder with chart
+**Question.** Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
@@ -5561,7 +5561,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-*Solution.* We have
+**Solution.** We have
 $$
 \sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
 $$
@@ -5590,6 +5590,35 @@ Therefore, lengths, angles and areas are the same on the two surfaces.
 :::
 
 
+
+
+::: Example
+
+**Question.** Find the first fundamental form of the surface chart
+$$
+\sss(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
+$$
+
+**Solution.** We compute
+$$
+\begin{aligned}
+\sssu & =(1,1,2 u) \\
+\sssv & =(-1,1,2 v) \\
+E & = \sssu \cdot \sssv = 2\left(1+2 u^{2}\right) \\
+F & =\sssu \cdot \sssv = 4 u v \\
+G & = \sssv \cdot \sssv = \left(1+2 v^{2}\right)
+\end{aligned}
+$$
+so that
+$$
+\mathscr{F}_{1}=\left(\begin{array}{cc}
+2\left(1+2 u^{2}\right) & 4 u v \\
+4 u v & 2\left(1+2 v^{2}\right)
+\end{array}\right) \,.
+$$
+
+
+:::
 
 
 
@@ -5661,9 +5690,9 @@ concluding the proof.
 
 
 ::: Example
-### FFF of the Cone {#example-fff-cone}
+### Curves on the Cone {#example-fff-cone}
 
-Consider the cone with chart
+**Question.** Consider the cone with chart
 $$
 \sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
 $$
@@ -5679,26 +5708,30 @@ $$
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
 $$
 
-*Solution*. We have
-$$
-\sss_u = (- \sin(u)v, \cos(u)v,0) \,, \quad 
-\sss_v = (\cos(u), \sin (u), 1) \,.
-$$
-Therefore
+**Solution.** 
+
+1. We have
 \begin{align*}
-E & = \sss_u \cdot \sss_u = \cos^2(u)v^2 + \sin^2 (u)v^2  = v^2 \\
+\sss_u & = (- \sin(u)v, \cos(u)v,0) \\
+\sss_v & = (\cos(u), \sin (u), 1) \\
+E & = \sss_u \cdot \sss_u = v^2 \\
 F & = \sss_u \cdot \sss_v  = 0 \\
-G & = \sss_v \cdot \sss_v =  \cos^2(u) + \sin^2(u) + 1  = 2
+G & = \sss_v \cdot \sss_v = 2
 \end{align*}
 The first fundamental form of $\sss$ is 
 $$
 \mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
 $$
-Concering the curve $\g$, by definition we have
+
+2. By definition we have
 $$
-\g(t) := \sss(t,t) \,,
+\g(t) = \sss(t,t) \,,
 $$
 so that 
+$$
+\g (t) = \sss(u(t),v(t))
+$$ 
+with 
 $$
 u(t) = t \,, \quad v(t) = t \,.
 $$
@@ -5712,7 +5745,7 @@ E(u(t),v(t)) & = E(t,t) = t^2 \\
 F(u(t),v(t)) & = F(t,t) = 0 \\
 G(u(t),v(t)) & = G(t,t) = 2  \,.
 \end{align*}
-By Proposition \ref{proposition-fff-length} we have
+Therefore,
 \begin{align*}
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt & = 
 \int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
@@ -5788,7 +5821,7 @@ $$
 \forall \, \vv \in T_{\pp} \SSS \,. 
 $$
 
-*Proof.* The thesis follows immediately from the elementary identity
+**Proof.** The thesis follows immediately from the elementary identity
 $$
 \vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,, 
 $$
@@ -6182,7 +6215,7 @@ Therefore, by assumption, $\sss$ and $\wsss$ have the same first fundamental for
 ::: Example
 ### Plane and Cylinder are locally isometric {#example-plane-cylinder}
 
-Consider the plane
+**Question.** Consider the plane
 $$
 \SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
 $$
@@ -6198,9 +6231,9 @@ $$
 1. Prove that $f$ is smooth.
 2. Prove that $f$ is a local isometry.
 
-**Note:** This shows that the Plane and the Cylinder are locally isometric.
+*Note:* This shows that the Plane and the Cylinder are locally isometric.
 
-*Solution.*
+**Solution.**
 
 1. Note that $f \in \wSSS$ because
 $$
@@ -6211,7 +6244,7 @@ $$
 g \colon \R^3 \to \R^3 \,, \qquad g(x,y,z) = (\cos(y),\sin(y),z) \,.
 $$
 Since $g$ is smooth, and $g(\SSS) = \wSSS$, 
-by Proposition \ref{proposition-diff-check} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
+by Theorem \ref{theorem-diff-check-2} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
 
 2. Define the chart of $\SSS$:
 $$
@@ -6250,7 +6283,6 @@ Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-l
 :::
 
 
-
 ::: Example
 ### Plane and Cylinder are not isometric {#example-plane-cylinder-2}
 
@@ -6264,7 +6296,7 @@ $$
 $$
 We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are locally isometric. However, $\SSS$ and $\wSSS$ are **not isometric**.
 
-*Proof.* The surfaces $\SSS$ and $\wSSS$ are nor homeomorphic, and therefore they cannot be isometric (and hence diffeomorphic). We cannot rigorously prove this claim with our current knowledge of topology. However, to give some intuition, here is a sketch of the argument, see @fig-simply-connected:
+**Proof.** The surfaces $\SSS$ and $\wSSS$ are nor homeomorphic, and therefore they cannot be isometric (and hence diffeomorphic). We cannot rigorously prove this claim with our current knowledge of topology. However, to give some intuition, here is a sketch of the argument, see @fig-simply-connected:
 
 - Any simple closed curve $\g$ in the plane $\SSS$ can be shrunk continuously into a point without leaving $\SSS$. In this case we say that $\SSS$ is **simply connected**.
 - If $\SSS$ and $\wSSS$ were to be homeomorphic, then $\wSSS$ would be simply connected.
@@ -6279,10 +6311,11 @@ We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are
 
 
 
+
 ::: Example
 ### Plane and Cone are locally isometric
 
-Consider the cone without tip
+**Question.** Consider the cone without tip
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z > 0 \} \,,
 $$
@@ -6290,7 +6323,6 @@ and the plane
 $$
 \SSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
 $$
-It is possible to directly construct a local isometry between $\SSS$ and $\wSSS$, see Example 3 at page 226 of [@do-carmo]. However, we proceed in an alternative way.
 
 1. Let $\sss \colon U \to \SSS$ be the chart of the Cone
 $$
@@ -6317,7 +6349,7 @@ $$
 4. Conclude that $\SSS$ and $\wSSS$ are locally isometric.
 
 
-*Solution*.
+**Solution.**
 
 1. We have already computed in Example \ref{example-fff-cone}, that the first fundamental form of $\sss$ is
 $$
@@ -6362,7 +6394,6 @@ $$
 
 
 :::
-
 
 
 
@@ -6491,7 +6522,7 @@ where $\dg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
 
 
 
-::: Proposition
+::: Theorem
 
 Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
 Suppose given two curves
@@ -6563,7 +6594,7 @@ Substituting in (@eq-angle-curves-proof) we conclude.
 
 ::: Example
 
-Let $S$ be a surface with surface chart 
+**Question.** Let $S$ be a surface with surface chart 
 $$
 \sss(u, v) = \left(u, v, e^{u v}\right) \,.
 $$
@@ -6576,7 +6607,7 @@ $$
 \end{align*}
 
 
-*Solution.*
+**Solution.**
 
 1. We calculate
 $$
@@ -6613,6 +6644,7 @@ $$
 $$
 
 :::
+
 
 
 

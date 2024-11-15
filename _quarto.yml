@@ -101,7 +101,7 @@ format:
       - text: |
           \usepackage{scrlayer-scrpage}
           \lohead{Differential Geometry}
-          \cohead{}
+          \cohead{Lecture Notes}
           \rohead{Page \pagemark}
           \lofoot{Dr. Silvio Fanzon}
           \cofoot{}

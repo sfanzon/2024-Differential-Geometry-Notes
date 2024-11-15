@@ -10,25 +10,24 @@ $$
 
 ## Recommended revision strategy
 
-1. Make sure you are very comfortable with the Definitions, Theorems, Proofs, and Examples contained in this Revision Guide.
+Make sure you are very comfortable with:
 
-2. Make sure you are comfortable with the Homework questions.
-
-3. Make sure you are comfortable with the 2022/23 and 2023/24  Exam Papers questions.
-
-4. Make sure you are comfortable with the Checklist in @sec-checklist.
+1. The Definitions, Theorems, Proofs, and Examples contained in this Revision Guide
+2. The Homework questions
+3. The 2022/23 and 2023/24 Exam Papers questions.
+4. The Checklist below
 
 
 ## Checklist {#sec-checklist}
 
-Overall, you should be comfortable with the following topics/taks:
+You should be comfortable with the following topics/tasks:
 
 
 **Curves**
 
 - Regularity of curves
 
-- Computing length and arc-length of curves
+- Length, arc-length, and arc-length reparametrization
 
 - Computing arc-length reparametrization
 
@@ -49,10 +48,6 @@ Overall, you should be comfortable with the following topics/taks:
 
 
 **Surfaces:**
-
-- Definition of surface
-
-- Discussing whether a given function is a diffeomorphism / local diffeomorphism of $\R^n$
 
 - Regularity of surface charts
 
@@ -3587,42 +3582,142 @@ $$
 
 
 ::: Example
-### Plane in polar coordinates
+### FFF of Plane in polar coordinates   {#example-fff-plane-polar}
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
 $$
-\sss(r,\theta) = \mathbf{a} + r \cos(\theta) \pp + r \sin(\theta) \mathbf{q} \,, \quad r>0 , \, \theta \in (0,2\pi) \,.
-$$
-Prove that the first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1 = dr^2 + r^2 d\theta^2 \,.
+\sss(\rho,\theta) = \mathbf{a} + \rho \cos(\theta) \pp + \rho \sin(\theta) \mathbf{q} \,, \quad \rho>0 , \, \theta \in (0,2\pi) \,.
 $$
 
-*Solution.* We have
+1. By direct calculation, show that the first fundamental form of $\sss$ is
+$$
+\mathscr{F}_1 = d\rho^2 + \rho^2 d\theta^2 \,.
+$$
+
+2. The first fundamental form of the plane in cartesian coordinates is 
+$$
+{\wFF}_1 = du^2 + dv^2 \,.
+$$
+Verify that 
+$$
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)  
+= 
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+\, 
+J \Phi  \,,
+$$
+where $\Phi$ is the change of variables from polar to cartesian coordinates.
+
+**Solution.** 
+
+1. Compute $\mathscr{F}_1$ directly:
 \begin{align*}
-\sss_r & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
-\sss_{\theta} & = - r \sin(\theta) \pp + r \cos(\theta) \mathbf{q}
+\sss_{\rho} & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
+\sss_{\theta} & = - \rho \sin(\theta) \pp + \rho \cos(\theta) \mathbf{q}
 \end{align*}
 and therefore 
 \begin{align*}
-E & = \sss_r \cdot \sss_r \\
+E & = \sss_{\rho} \cdot \sss_{\rho} \\
     & = \cos^2(\theta)\norm{\pp}^2 + \sin^2(\theta)\norm{\mathbf{q}}^2 + 2 \cos(\theta) \sin(\theta) \pp \cdot \mathbf{q} \\
     & = 1 \\
-F & = \sss_r \cdot \sss_{\theta} = 0 \\
+F & = \sss_{\rho} \cdot \sss_{\theta} = 0 \\
 G & = \sss_{\theta} \cdot \sss_{\theta} = r^2 \\
 \end{align*}
 Then the first fundamental form is
 $$
-\mathscr{F}_1 = E \, dr^2 + 2 F\, dr \, d\theta + G \, d\theta^2 = dr^2 + r^2 d\theta^2 \,.  
+\mathscr{F}_1 = E \, d{\rho}^2 + 2 F\, d{\rho} \, d\theta + G \, d\theta^2 = d{\rho}^2 + {\rho}^2 d\theta^2 \,.  
 $$
+
+2. The change of variables from polar to cartesian coordinates is
+$$
+\Psi({\rho},\theta) = ( {\rho} \cos(\theta), {\rho} \sin (\theta) )\,.
+$$
+The Jacobian of $\Psi$ is
+$$
+J\Phi = \left(   
+\begin{array}{cc}
+ \cos(\theta) & - {\rho} \sin(\theta)  \\
+ \sin(\theta)  & {\rho} \cos(\theta) 
+\end{array}
+\right) \,.
+$$
+The matrix of ${\wFF}_1$ is just the identity:
+$$
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}
+\right) \,.
+$$
+Therefore, we have
+\begin{align*}
+(J \Phi)^T &
+\left(
+\begin{array}{cc}
+\wE & \wF \\
+\wF & \wG
+\end{array}
+\right)
+\, 
+J \Phi
+= (J \Phi)^T \, J \Phi \\
+&= 
+\left(
+\begin{array}{cc}
+\cos(\theta) &  \sin(\theta) \\
+-\rho \sin(\theta) & \rho \cos(\theta)
+\end{array}
+\right)
+\left(   
+\begin{array}{cc}
+ \cos(\theta) & - \rho \sin(\theta)  \\
+ \sin(\theta)  & \rho \cos(\theta) 
+\end{array}
+\right) \\
+&= 
+\left(   
+\begin{array}{cc}
+1 & 0  \\
+0  & \rho^2  
+\end{array}
+\right) 
+ = 
+\left(   
+\begin{array}{cc}
+ E & F  \\
+ F  & G  
+\end{array}
+\right) \,.
+\end{align*}
+
 
 :::
 
 
-::: Example
-### Unit cylinder
 
-Consider the unit cylinder with chart
+::: Example
+### FFF of Unit cylinder  {#example-cylinder-fff}
+
+**Question.** Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
@@ -3631,7 +3726,7 @@ $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
 
-*Solution.* We have
+**Solution.** We have
 $$
 \sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
 $$
@@ -3653,12 +3748,12 @@ $$
 
 ::: Example
 
-Find the first fundamental form of the surface chart
+**Question.** Find the first fundamental form of the surface chart
 $$
 \sss(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
 $$
 
-*Solution.* We compute
+**Solution.** We compute
 $$
 \begin{aligned}
 \sssu & =(1,1,2 u) \\
@@ -3685,7 +3780,7 @@ $$
 ### Length of curves
 
 
-::: Theorem
+::: Proposition
 
 Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
 $$
@@ -3898,7 +3993,7 @@ $$
 ::: Example
 ### Plane and Cylinder are locally isometric {#example-plane-cylinder}
 
-**Question:** Consider the plane
+**Question.** Consider the plane
 $$
 \SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
 $$
@@ -3916,7 +4011,7 @@ $$
 
 *Note:* This shows that the Plane and the Cylinder are locally isometric.
 
-*Solution.*
+**Solution.**
 
 1. Note that $f \in \wSSS$ because
 $$
@@ -3972,7 +4067,7 @@ Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-l
 ::: Example
 ### Plane and Cone are locally isometric
 
-Consider the cone without tip
+**Question.** Consider the cone without tip
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z > 0 \} \,,
 $$
@@ -4006,7 +4101,7 @@ $$
 4. Conclude that $\SSS$ and $\wSSS$ are locally isometric.
 
 
-*Solution.*
+**Solution.**
 
 1. We have already computed in Example \ref{example-fff-cone-bis}, that the first fundamental form of $\sss$ is
 $$
@@ -4148,7 +4243,7 @@ $$
 
 ::: Example
 
-Let $S$ be a surface with surface chart 
+**Question.** Let $S$ be a surface with surface chart 
 $$
 \sss(u, v) = \left(u, v, e^{u v}\right) \,.
 $$
@@ -4161,7 +4256,7 @@ $$
 \end{align*}
 
 
-*Solution.*
+**Solution.**
 
 1. We calculate
 $$

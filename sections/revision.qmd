@@ -3807,9 +3807,9 @@ where in the above formula:
 
 
 ::: Example
-### The Cone {#example-fff-cone-bis}
+### Curves on the Cone {#example-fff-cone}
 
-Consider the cone with chart
+**Question.** Consider the cone with chart
 $$
 \sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
 $$
@@ -3825,7 +3825,7 @@ $$
 \int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
 $$
 
-*Solution.*
+**Solution.** 
 
 1. We have
 \begin{align*}
@@ -3870,6 +3870,7 @@ Therefore,
 \end{align*}
 
 :::
+
 
 
 

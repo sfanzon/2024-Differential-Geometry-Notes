@@ -1493,7 +1493,7 @@
 
  [**Proposition 130**](#Proposition-130)\Pageref{Proposition-130}
 
- [**Example 131**](#example-fff-cone-bis): The Cone\Pageref{example-fff-cone-bis}
+ [**Example 131**](#example-fff-cone): Curves on the Cone\Pageref{example-fff-cone}
 
  [**Definition 132**](#local-isometry-and-isometry-1): Local Isometry and Isometry\Pageref{local-isometry-and-isometry-1}
 

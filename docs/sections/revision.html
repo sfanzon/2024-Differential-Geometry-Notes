@@ -72,11 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -84,51 +80,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Lemma {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
 }
 .Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -136,13 +104,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -2646,9 +2646,9 @@ G &amp; = {{\pmb{\sigma}}}_{v}\cdot {{\pmb{\sigma}}}_{v}= \left(1+2 v^{2}\right)
 </ul>
 </div></details>
 </div>
-<div id="example-fff-cone-bis" class="Example" title="The Cone">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 131: </strong>The Cone</summary><div>
-<p>Consider the cone with chart <span class="math display">\[
+<div id="example-fff-cone" class="Example" title="Curves on the Cone">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 131: </strong>Curves on the Cone</summary><div>
+<p><strong>Question.</strong> Consider the cone with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v)=(\cos(u) v, \sin (u) v, v) \,,
 \]</span> where <span class="math inline">\(u  \in (0,2\pi)\)</span> and <span class="math inline">\(v &gt;0\)</span>. Prove the following:</p>
 <ol type="1">
@@ -2659,7 +2659,7 @@ G &amp; = {{\pmb{\sigma}}}_{v}\cdot {{\pmb{\sigma}}}_{v}= \left(1+2 v^{2}\right)
 \int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
 \]</span></p></li>
 </ol>
-<p><em>Solution.</em></p>
+<p><strong>Solution.</strong></p>
 <ol type="1">
 <li><p>We have <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = (- \sin(u)v, \cos(u)v,0) \\
@@ -2835,7 +2835,7 @@ U:= \left\{ (\rho,\theta) \in \mathbb{R}^2 \, \colon \, \rho &gt; 0 , \, \theta 
 </ol>
 <p><strong>Solution.</strong></p>
 <ol type="1">
-<li><p>We have already computed in Example <a href="revision.html#example-fff-cone-bis">131</a>, that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+<li><p>We have already computed in Example <span class="math inline">\(\ref{example-fff-cone-bis}\)</span>, that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 {\mathscr{F}}_1 = 2 d\rho^2 + \rho^2 d\theta^2 \,.
 \]</span></p></li>
 <li><p>First of all, note that <span class="math display">\[

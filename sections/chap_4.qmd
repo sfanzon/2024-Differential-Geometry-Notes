@@ -5663,24 +5663,13 @@ By chain rule we have
 $$
 \dg(t) = \dot u (t) \sss_u( u(t),v(t) ) + \dot v (t) \sss_v( u(t),v(t) ) \,.
 $$
-The above means that the coefficients of $\dg$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$ are $\dot u$ and $\dot v$, respectively. Then
-$$
-du(\dg) = \dot u \,, \quad dv(\dg) = \dot v \,.
-$$
-Since $\dg$ is a tangent vector, by Proposition \ref{proposition-fff-quadratic} we get
+Therefore, 
 \begin{align*}
 \norm{\dg(t)}^2 & = \dg \cdot \dg \\
-                & = I_{\pp} (\dg , \dg ) \\
-                & = E \, du(\dg)^2  + 2F \, du(\dg) dv(\g) + G \, dv(\dg)^2 \\ 
-                & = E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 
-                \,.
+                & = (\dot{u} \sssu + \dot{v} \sssv) \cdot (\dot{u} \sssu + \dot{v} \sssv)  \\
+                & = E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 \,.
 \end{align*}
-Integrating, we obtain the desired formula
-$$
-\int_{a}^{b} \norm{\dg(t)} \, dt =
-\int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
-$$
-concluding the proof.
+Integrating, we obtain the thesis.
 
 
 :::
@@ -5723,18 +5712,10 @@ $$
 \mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
 $$
 
-2. By definition we have
+2. By definition, 
 $$
-\g(t) = \sss(t,t) \,,
-$$
-so that 
-$$
-\g (t) = \sss(u(t),v(t))
+\g (t) = \sss(u(t),v(t)) \,, \quad u(t) = t \,, \quad v(t) = t\,.
 $$ 
-with 
-$$
-u(t) = t \,, \quad v(t) = t \,.
-$$
 In particular
 $$
 \dot u = 1\,, \quad \dot v = 1
@@ -5975,17 +5956,8 @@ $$
 $$
 Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form, that is, 
 $$
-E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,,
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
 $$
-where 
-\begin{align*}
-E & = \sss_u \cdot \sss_u \,, \quad
-F = \sss_u \cdot \sss_v \,, \quad
-G = \sss_v \cdot \sss_v \,, \\
-\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u \,, \quad
-\widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \,, \quad
-\widetilde{G}  = \widetilde{\sss}_v \cdot \widetilde{\sss}_v \,.
-\end{align*}
 
 
 **Note:** $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore, equality is intended pointwise.
@@ -6062,17 +6034,11 @@ Using that $f$ is a local isometry gives
 E & = \sss_u \cdot \sss_u 
     = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_u) \\
   & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u 
-    = \widetilde{E} \,.
-\end{align*}
-Simlarly, we obtain also
-\begin{align*}
+    = \widetilde{E} \,, \\[0.2cm]
 F & = \sss_u \cdot \sss_v 
     = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_v) \\
   & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v 
-    = \widetilde{F} \,,
-\end{align*}
-and
-\begin{align*}
+    = \widetilde{F} \,, \\[0.3em]
 G & = \sss_v \cdot \sss_v 
     = d_{\pp} f (\sss_v) \cdot d_{\pp} f (\sss_v) \\
   & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v 
@@ -6321,7 +6287,7 @@ $$
 $$
 and the plane
 $$
-\SSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
+\wSSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
 $$
 
 1. Let $\sss \colon U \to \SSS$ be the chart of the Cone
@@ -6495,24 +6461,15 @@ Since tangent vectors are derivatives of curves with values in $\SSS$, it also m
 
 ::: Definition
 ### Angle between curves
-
-Let $\SSS$ be a regular surface and suppose to have two curves
+Let $\SSS$ be a regular surface. Let $\g$ and $\tg$ be curves on $\SSS$ such that
 $$
-\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+\g(t_0) = \pp = \tg( t_0 ) \,.
 $$
-such that 
-$$
-\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
-$$
-Then 
-$$
-\dg(t_0) \,, \, \dtg( \tilde{t}_0 )  \in T_{\pp} \SSS \,.
-$$
-The angle $\theta$ between $\g$ and $\tg$ is the angle between $\dg(t_0)$ and $\dtg( \tilde{t}_0 )$, that is,
+The angle $\theta$ between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,,
 $$
-where $\dg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
+where $\dg$ and $\dtg$ are evaluated at $t_0$.
 
 :::
 
@@ -6524,24 +6481,23 @@ where $\dg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
 
 ::: Theorem
 
-Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
-Suppose given two curves
+
+Let $\SSS$ be a regular surface, $\sss$ a regular chart at $\pp$, and $\g,\tg$ smooth curves on $\SSS$ such that 
 $$
-\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+\g(t_0) = \pp = \tg( t_0 )  \,.
 $$
-such that 
+There exist smooth functions $u,v,\tilde{u},\tilde{v}$ such that
 $$
-\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
+\g(t) = \sss (u(t),v(t)) \,, \quad 
+\tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
 $$
 The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-where $u,v,\tilde{u},\tilde{v} \colon (a,b) \to \R$ are smooth functions such that
-$$
-\g(t) = \sss (u(t),v(t)) \,, \quad 
-\tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
-$$
+where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t),v(t))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t$.
+
+
 
 :::
 
@@ -6562,23 +6518,9 @@ $$
 \dg = \dot u \sss_u + \dot v \sss_v \,, \quad 
 \dtg = \dot{\tilde{u}} \sss_u + \dot{\tilde{v}} \sss_v \,.
 $$
-Therefore the coordinates of $\dg$ and $\dtg$ with respect to the basis
-$\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$ are
-$$
-\dg = (\dot u , \dot v) \,, \quad 
-\dtg = (\dot{\tilde{u}}  , \dot{\tilde{v}} ) \,.
-$$
-By Proposition \ref{proposition-fff-quadratic} we get
+Therefore, 
 \begin{align*}
-\dg \cdot \dtg & = I_{\pp}(\dg,\dtg) \\
-               & = (\dot u , \dot v) 
-               \left(
-               \begin{array}{cc}
-               E & F \\
-               F & G
-               \end{array}
-               \right)
-               (\dot{\tilde{u}}  , \dot{\tilde{v}} )^T \\
+\dg \cdot \dtg & = (\dot u \sss_u + \dot v \sss_v  ) \cdot ( \dot{\tilde{u}} \sss_u + \dot{\tilde{v}} \sss_v)  \\
                & =  E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} \,.
 \end{align*}
 Similarly, we obtain
@@ -6586,7 +6528,7 @@ Similarly, we obtain
 \| \dg \|^2 & = \dg \cdot \dg = E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2  \\
 \| \dtg \|^2 & = \dtg \cdot \dtg = E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
 \end{align*}
-Substituting in (@eq-angle-curves-proof) we conclude.
+Substituting in (@eq-angle-curves-proof), we conclude.
 
 :::
 
@@ -6953,7 +6895,7 @@ The proof follows by adapting the argument in the proof of Theorem \ref{theorem-
 ::: Example
 ### Stereographic Projection {#example-conformal}
 
-Denote the unit sphere by 
+**Question.** Denote the unit sphere by 
 $$
 \sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
 $$
@@ -6983,7 +6925,7 @@ Notice that $\pi$ is slightly different from the map described in @fig-stereogra
 :::
 
 
-*Solution.* It is not difficult to prove that $f$ is invertible, with inverse given by 
+**Solution.** It is not difficult to prove that $f$ is invertible, with inverse given by 
 $$
 \sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
 $$
@@ -7037,67 +6979,6 @@ showing that $\sss$ is not equi-areal.
 ![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
 
 
-Let us give another example, showing once again that Sphere and Plane are conformal.
-
-::: Example 
-### Sphere and Plane are conformal
-
-Consider the plane 
-$$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x = 0 \} \,,
-$$ 
-with chart
-$$
-\sss(u,v) := (u,v,0) \,, \quad u,v \in \R \,.
-$$
-Let $\widetilde{\SSS}$ be the sphere $\sphere^2$ with parametrization
-$$
-\widetilde{\sss}(u,v) := \left(  \cos(u) \sech(v), \sin(u) \sech(v) , \tanh (v) \right) \,.
-$$
-
-1. Compute the first fundamental forms of $\sss$ and $\wsss$.
-2. Use Theorem \ref{theorem-conformal-fff-2} to show that $\SSS$ and $\wSSS$ are conformal.
-
-
-*Solution.* 
-
-1. As already computed, the first fundamental form of $\sss$ is 
-$$
-\mathscr{F}_1 = du^2 + dv^2 \,.
-$$
-Using the identitities
-\begin{align*}
-\frac{d}{dv} \left( \sech (v)  \right) & = - \sech (v) \tanh (v) \,, \\
-\frac{d}{dv} \left( \tanh (v) \right)  & = {\sech}^2 (v) \,,
-\end{align*}
-we obtain
-\begin{align*}
-\widetilde{\sss}_u & = ( -\sin(u) \sech(v) , \cos(u)\sech(v) , 0 )  \\
-\widetilde{\sss}_v & = ( -\cos(v) \sech(v) \tanh(v) , -\sin(u) \sech(v) \tanh(v) , {\sech}^2(v) )
-\end{align*}
-By recalling that
-$$
-{\sech}^2 (v) + {\tanh}^2 (v) = 1 \,,
-$$
-we compute
-\begin{align*}
-\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
-\widetilde{F} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v =  0 \\ 
-\widetilde{G} & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(u) \\ 
-\end{align*}
-Hence the first fundamental form of $\widetilde{\SSS}$ is
-$$
-\widetilde{\mathscr{F}}_1 = {\sech}^2(v) \, \left(  du^2 + dv^2 \right) \,.
-$$
-
-2. We have computed that
-$$
-\widetilde{\mathscr{F}}_1 =  {\sech}^2(v) \, \left(  du^2 + dv^2 \right) =  {\sech}^2(v) \,\mathscr{F}_1 \,.
-$$
-Since $\sss(U) = \SSS$, by Theorem \ref{theorem-conformal-fff-2}, we conclude that $\SSS$ and $\wSSS$ are conformal.
-
-:::
-
 
 
 
@@ -7136,34 +7017,16 @@ Let $\SSS$ be a regular surface and
 $$
 \sss \colon U  \to  \SSS
 $$ 
-be a regular chart of $\SSS$. Define the plane $\p$ charted by
-$$
-\widetilde{\sss} (u,v) = (u,v,0) \,, \quad \forall \, (u,v) \in U \,.
-$$
-
-They are equivalent:
+be a regular chart of $\SSS$. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
 
 1. $\sss$ is a conformal parametrization.
 
-2. There exists a conformal map $f \colon \p \to \sss(U)$.
+2. The map $f \colon \p \to \sss(U)$ defined by
+$$
+f(u,v,0) = \sss(u,v) 
+$$
+is conformal.
 
-In particular, angles on $\SSS$ look like angles on the plane, 
-in the following sense: Suppose $\g_1, \g_2$ are curves in $\mathbb{R}^{2}$ such that
-$$
-\g_1 (t_0) = \g_2 (t_0) \,.
-$$
-Consider the corresponding curves on $\SSS$ given by 
-$$
-\tg_1 := \sss \circ \g_1 \,, \quad \tg_2 = \sss \circ \g_2 \,.
-$$
-Then 
-$$
-\theta = \widetilde{\theta} \,,
-$$
-where 
-
-- $\theta$ is the angle between $\dg_1 (t_0)$ and $\dg_2(t_0)$,
-- $\widetilde{\theta}$ is the angle between $\dtg_1 (t_0)$ and $\dtg_2(t_0)$.
 
 
 :::
@@ -7172,37 +7035,41 @@ where
 
 ::: Proof
 
-*Part 1.*
-Define the diffeomorphism $f \colon \p \to \SSS$ by setting
+The plane $\p$ is charted by
 $$
-f(u,v,0) = \sss(u,v) \,.
+\wsss(u,v) = (u,v,0) \,, \quad  (u,v) \in \R^2
 $$
-In particular, by definition of $\wsss$, 
-$$
-f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
-$$
-By Theorem \ref{theorem-conformal-fff} we have that $f$ is a conformal map
-if and only if there exists $\lambda \colon \p \to \R$ such that 
-$$
-{\FF}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
-$$
-where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\sss$ and $\wsss$, respectively. The first fundamental form of $\wsss$ is
+The first fundamental form of $\wsss$ is
 $$
 \widetilde{\mathscr{F}}_1 = du^2 + dv^2 \,.
 $$
-Therefore 
+Consider the map $f \colon \p \to \SSS$ given in Point 2, that is,
 $$
-\mathscr{F}_1 = \lambda(u,v) \left(   du^2 + dv^2   \right)\,,
+f(u,v,0) = \sss(u,v) \,.
 $$
-showing that $\sss$ is a conformal parametrization. 
+By definition of $\wsss$, 
+$$
+f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
+$$
+Theorem \ref{theorem-conformal-fff} says that $f$ is a conformal map
+if and only if there exists $\lambda \colon U \to \R$ such that 
+$$
+{\FF}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
+$$
+where $\mathscr{F}_1$ is the first fundamental form of $\sss$. This happens exactly when $\sss$ is a conformal parametrization.
+:::
 
 
-*Proof of Point 2.*
-Suppose $\sss$ is a conformal parametrization. By the proof of Point 1 we have that 
+As an immediate consequence, we have the following Theorem.
+
+
+::: Theorem
+A conformal parametrization $\sss$ preserves angles between vectors. Specifically, let $\g_{1}(t), \g_{2}(t)$ be curves in $\mathbb{R}^{2}$ such that ${\dg}_{1}\left(t_{0}\right), {\dg}_{2}\left(t_{0}\right)$ make angle $\theta$. If 
 $$
-f \colon \p \to \SSS  \,, \quad f(u,v,0) = \sss(u,v) \,,
+\g_{3}(t)=\sss\left(\g_{1}(t)\right),  \qquad \g_{4}(t)=\sss \left(\g_{2}(t)\right) \,,
 $$
-is a conformal map. Since $T_{\pp} \p = \R^2$ and $f = \sss$, the thesis follows from the fact that $d_{\pp}f$ preserves angles, since $f$ is a conformal map.
+then ${\dg}_{3}\left(t_{0}\right), {\dg}_{4}\left(t_{0}\right)$ also make angle $\theta$.
+
 
 :::
 
@@ -7212,19 +7079,19 @@ It turns out that all regular surfaces admit an atlas formed by conformal charts
 
 ::: Theorem
 
-Let $\SSS$ be a regular surface. There exists an atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ such that each chart $\sss_i \colon U_i \to \SSS$ is conformal, that is, there exists $\lambda_i \colon U \to \R$ such that the first fundamental form of $\sss_i$ is
+Let $\SSS$ be a regular surface. There exists an atlas $\mathcal{A}$ such that each chart $\sss \in \mathcal{A}$, $\sss \colon U \to \SSS$ is conformal, that is, there exists $\lambda \colon U \to \R$ such that the first fundamental form of $\sss$ is
 $$
-({{\FF}_i})_1 = \lambda_i(u,v) (du^2 + dv^2 ) \,.
+{\FF}_1 = \lambda(u,v) (du^2 + dv^2 ) \,.
 $$
 The coordinates $(u,v)$ are called **isothermal**.
 
 :::
 
 
-The proof of this result is quite technical. For example, a proof is given in the paper [@chern], you can read it [here](https://www.ams.org/journals/proc/1955-006-05/S0002-9939-1955-0074856-1/S0002-9939-1955-0074856-1.pdf). The proof in not constructive, and it involeves showing the existence of solutions to a certain PDE. If $\SSS$ is a minimial surface, existence of isothermal coordinates is easier to prove, see for example Theorem 12.4.1 in [@pressley].
+The proof of this result is quite technical, see for example the paper [@chern], which can be read [here](https://www.ams.org/journals/proc/1955-006-05/S0002-9939-1955-0074856-1/S0002-9939-1955-0074856-1.pdf). The proof in not constructive, and it involeves showing the existence of solutions to a certain PDE. If $\SSS$ is a minimial surface, existence of isothermal coordinates is easier to prove, see for example Theorem 12.4.1 in [@pressley].
 
 
-We have already seen conformal parametrizations for both Sphere and Cylinder. we admit conformal parametrizations. Therefore, angles on the Sphere and the Cylinder (with respect to the conformal parametrization) are the same as angles on the plane.
+We have already seen examples of conformal parametrization for the Cylinder:
 
 
 ::: Example
@@ -7245,33 +7112,42 @@ Therefore $\sss$ is a conformal parametrization of $\SSS$.
 
 
 
-::: Example
-### Sphere
+An important application of conformal parametrizations is in **cartography**.
 
-Consider the parametrization of the sphere
-$$
-\sss(u,v) = \left(  \sech(u) \cos(v), \sech(u) \sin(v) , \tanh (u) \right) \,.
-$$
-In Example \ref{example-conformal} we have seen that the first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1  = {\sech}(u) \, ( du^2 + dv^2 )  \,.
-$$
-Therefore $\sss$ is a conformal parametrization of the sphere.
+::: Remark 
+### Drawing World Maps
 
+Suppose given a parametrization of $\sphere^2$
+$$
+\sss \colon U \to \sphere^2 \,,
+$$
+for some $U \subseteq \R^2$. Set $V:=\sss(U)$. The inverse map 
+$$
+\sss^{-1} \colon V \subseteq \sphere^2 \to \R^2
+$$ 
+is a projection of $\sphere^2$ into the plane. If $\sphere^2$ models the Earth, $\sss^{-1}$ gives a rule to draw a world map! For a map to be useful, we would like it to 
+
+- preserve angles and shapes;
+- preserve areas.
+
+We know that angles are preserved if $\sss^{-1}$ is a conformal map, and $\sss$ a conformal parametrization. Below we discuss two conformal maps of $\sphere^2$:
+
+- Stereographic Projection,
+- Mercator Projection.
+
+In the next sections we will also discuss an equiareal map of of $\sphere^2$, i.e., a map which preserves areas. This will be called
+
+- Lambert Cylindrical Projection.
+
+We will also see that it is not possible for a map $\sss$ to both preserve angles and areas. This is because $\sss$ would be both conformal and equiareal, and hence an isometry of the sphere into the plane. However, isometries between sphere and plane cannot exist.
 
 :::
 
 
-
-
 ::: Example
-### Sphere: Stereographic projection
+### Stereographic Projection
 
-Consider the parametrization of the sphere
-$$
-\SSS = \sphere^2 \smallsetminus \{ (1,0,0) \} \,,
-$$
-given by 
+Consider the parametrization of the sphere $\sphere^2$ given by
 $$
 \sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
 $$
@@ -7281,8 +7157,78 @@ $$
 $$
 Therefore, $\sss$ is a conformal parametrization of the sphere.
 
+
+**Note.** Let $V = \sss(U)$. In this case 
+$$
+V = \sphere^2 \smallsetminus \{  (1,0,0)\} \,.
+$$
+In particular, the inverse 
+$$
+\sss^{-1} \colon V \subseteq \sphere^2   \to \R^2 
+$$
+is a conformal map. This is known as the **Stereographic Projection**, see @fig-stereographic-1 and @fig-stereographic-2.
+
 :::
 
+
+![Stereographic projection of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Stereographic_projection)](/images/stereographic_2.png){#fig-stereographic-1 width=75%}
+
+![The Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.](/images/stereographic_3.png){#fig-stereographic-2 width=75%}
+
+
+
+
+
+
+::: Example 
+### Mercator projection {#example-conformal-2}
+
+**Question.** Consider the following parametrization of the  sphere $\sphere^2$
+$$
+\sss(u,v) := \left(  \cos(u) \sech(v), \sin(u) \sech(v) , \tanh (v) \right) \,.
+$$
+Prove that $\sss$ is a conformal parametrization. 
+
+**Note.** Let $V = \sss(U)$. In particular, the inverse 
+$$
+\sss^{-1} \colon V \subseteq \sphere^2 \to \R^2 
+$$
+is a conformal map. This is known as the **Mercator Projection**, see @fig-mercator and @fig-mercator-2.
+
+
+**Solution.**  Using the identitities
+\begin{align*}
+\frac{d}{dv} \left( \sech (v)  \right) & = - \sech (v) \tanh (v) \,, \\
+\frac{d}{dv} \left( \tanh (v) \right)  & = {\sech}^2 (v) \,,
+\end{align*}
+we obtain
+\begin{align*}
+\sss_u & = ( -\sin(u) \sech(v) , \cos(u)\sech(v) , 0 )  \\
+\sssv & = ( -\cos(v) \sech(v) \tanh(v) , -\sin(u) \sech(v) \tanh(v) , {\sech}^2(v) )
+\end{align*}
+By recalling that
+$$
+{\sech}^2 (v) + {\tanh}^2 (v) = 1 \,,
+$$
+we compute
+\begin{align*}
+E & = \sss_u \cdot \sss_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
+F & = \sss_u \cdot \sss_v =  0 \\ 
+G & = \sss_v \cdot \sss_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(v) \\ 
+\end{align*}
+Hence the first fundamental form of $\sss$ is
+$$
+{\FF}_1 = {\sech}^2(v) \, \left(  du^2 + dv^2 \right) \,,
+$$
+showing that $\sss$ is a conformal parametrization.
+
+:::
+
+
+
+![Mercator projection of the Earth. This is the most frequently used map of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_2.png){#fig-mercator width=75%}
+
+![The Mercator Projection is a conformal map: As such it preseves angles and shapes. However areas are distorted away from the Equator. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_3.png){#fig-mercator-2 width=75%}
 
 
 
@@ -7290,108 +7236,201 @@ Therefore, $\sss$ is a conformal parametrization of the sphere.
 ### Areas
 
 
-Suppose given a regular surface $\SSS$, and consider a region 
+Suppose given a regular surface $\SSS$, with chart $\sss \colon U \to \R^3$. Given $R \subseteq U$, consider the region 
 $$
-R \subseteq \SSS \,.
+\sss(R) \subseteq \SSS \,.
 $$ 
-We would like to define the area of $R$, denoted by $\AA(R)$. Recall that, to define length of curves, we approximated the length of $\g$ with the length of piecewise affine approximations $\g_{\e}$ of $\g$. Since $\g_{\e}$ is piecewise affine, we know how to define the length $L(\g_{\e})$ of $\g_{\e}$. We then define the length of $\g$ as
+If $\sss(R)$ is sufficiently small, it can be approximated by a small portion of the tangent plane $T_{\pp} \SSS$, namely, by the parallelogram spanned by $\sss_u$ and $\sss_v$, see @fig-area. By the properties of vector product, the area of such parallelogram is $\norm{\sssu \times \sssv}$. Therefore, the area $A_{\sss}(R)$ of $\sss(R)$ is approximated by
 $$
-L(\g) = \lim_{\e \to 0} L(\g_\e) \,.
+A_{\sss}(R) \approx \norm{\sssu \times \sssv} \,.
 $$
-To compute surface areas we could proceed in a similar way: Approximate $R$ with flat regions $R_{\e}$ of which we know how to compute the area, and then define
+It can be shown that the area of any region $\sss(R)$ is obtained by integrating $\norm{\sssu \times \sssv}$ on $R$, see Theorem 4.2.5 in [@abate-tovena]. Specifically,
 $$
-A(R) = \lim_{\e \to 0} A(R_{\e}) \,.
+A_{\sss}(R) = \int_{R} \norm{ \sssu \times \sssv } \, dudv \,.
+$${#eq-area-heuristic}
+The proof of such result is similar to the one we did for showing that the length of a curve is given by
+$$
+L(\g) = \int_{a}^b \norm{\dg(u)} \, du \,,
+$$
+where $L(\g)$ is defined as 
+$$
+L(\g) = \lim_{\e \to 0} L(\g_\e) \,,
+$$
+where $L(\g_{\e})$ is the length of a piecewise linear approximation $\g_{\e}$ of $\g$. To obtain (@eq-area-heuristic), one can approximate $\sss(R)$ with a piecewise affine mesh $\sss(R_{\e})$, and then define 
+$$
+A_{\sss}(R) = \lim_{\e \to 0} A_{\sss}(R_{\e}) \,.
+$$
+Making this argument precise requires a lot of effort. Instead, we just take (@eq-area-heuristic) as the definition of area.
+
+::: Definition
+
+Let $\sss \colon U \to \R^3$ be a regular chart and $R \subseteq U$. The area $A_{\sss}$ of the region $\sss(R)$ is defined by
+$$
+A_{\sss} = \int_{R} \norm{ \sssu \times \sssv } \, dudv \,.
 $$
 
-Theorem 4.2.5 in [@abate-tovena].
+:::
 
 
-![The area $A$ of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){#fig-area width=70%}
-
-
-
-
-### Equiarea Maps
-
-![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same of the area of $f(R)$.](/images/fff_equiareal.png){#fig-equiareal-map width=70%}
+![The area $A_{\sss}$ of a small region $\sss(R)$ on a surface $\SSS$ can be approximated by the area of the parallelogram of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){#fig-area width=70%}
 
 
 
+::: Theorem
 
-### Summary
-
-Let us conclude with a summary for this section. We have introduced the 
-**first fundamental form** as the restriction of the euclidean scalar product to the tangent space. The first fundamental form allows to compute:
-
-- Inner product between tangent vectors
-- Angle between tangent vectors
-- Area of surface regions
-
-
-In particular we can use the first fundamental form to compute:
-
-- Length of curves on a surface
-- Angle between curves on a surface
-
-
-We have also introduced maps preserving certain quantities:
-
-- Local isometries: They preserve scalar product of tangent vectors, and length of curves
-- Conformal maps: They preserve the angle between tangent vectors, and between curves
-- Equiareal maps: They preserve areas of surface regions
-
-We have also shown that:
-
-- Conformal maps are local isometries
-- Local isometries are not conformal (in general)
-
-
-
-### Application: Cartography
-
-Consider the unit sphere
+Let $\sss \colon U \to \R^3$ be a regular chart. Then
 $$
-\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,.
+\norm{\sss_u \times \sssv} = \sqrt{ EG - F^2 } \,.
 $$
-To make a map of the Earth one has to define a projection map
+
+:::
+
+
+::: Proof
+
+By the properties of vector product, we have
 $$
-\pi \colon \sphere^2 \to \R^2 \,.
+\|\vv \times \ww \|^2 = \| \vv \|^2 \| \ww \|^2 - \vv \cdot \ww \,, \quad \forall \, \vv, \ww \in \R^3 \,.
 $$
-As we will see in the next section, the curvatures of $\sphere^2$ and $\R^2$ are different. Consequently each map $\pi$ will induce some *distorsion* in either
+Applying the above identity to $\sssu$ and $\sssv$ gives 
+$$
+\norm{\sssu \times \sssv}^2 = \| \sssu \|^2 \| \sssv \|^2 - \sssu \cdot \sssv = EG - F^2 \,.
+$$
+Taking the square roots gives the thesis.
 
-- Length
-- Angles
-- Shapes
-- Area 
+:::
 
-These types of distorsion can all be present at the same time. There are 2 main types of Earth maps
-
-1. **Conformal projections:** These preserve angles and shapes but change areas. The main examples are
-    - Stereographic projection (@fig-stereographic)
-    - Mercator projection (@fig-mercator)
-    
-  
-2. **Equiareal projections:** These preserve areas but change angles and shapes. For example:
-    - Lambert cylindrical projection (@fig-lambert)
+It is easy to check that the definition of $A_{\sss}$ does not depend on the choice of $\sss$, see Proposition 6.4.3 in [@pressley].
 
 
-The above mentioned projections admit explicit formulations, and one can actually prove that the corresponding maps are/are not conformal/equi-areal. We will discuss these 3 projections below. Details are left as an exercise. 
+::: Example
+
+**Question.** Let $\SSS$ be the paraboloid
+$$
+z = x^2 + y^2 \,.
+$$
+Determine the area of 
+$$
+\SSS \cap \{ z \leq 1\} \,.
+$$
+
+
+**Solution.** The paraboloid is charted by
+$$
+\sss(u,v) = (u,v, u^2 + v^2 ) \,,
+$$
+for $u,v \in \R$. We compute the first fundamental form of $\sss$:
+\begin{align*}
+\sssu & =  (1,0,2u) \\
+\sssv & =  (0,1,2v) \\
+E & = \sssu \cdot \sssu = 1 + 4u^2 \\
+F & = \sssu \cdot \sssv = 4uv \\
+G & = \sssu \cdot \sssu = 1 + 4v^2 \\
+\end{align*}
+In particular, we have
+\begin{align*}
+EG - F^2 & = (1 + 4u^2)(1 + 4v^2) - 16u^2v^2 \\
+         & = 1 + 4(u^2 + v^2) \,.
+\end{align*}
+The region of the paraboloid with $z \leq 1$ corresponds to $\sss(R)$, with
+$$
+R = \{ (u,v) \in \R^2 \, \colon \, u^2 + v^2 \leq 1 \} \,.
+$$
+The area of $\sss(R)$ is then
+\begin{align*}
+A_{\sss} (R) & = \int_{R} \sqrt{EG-F^2} \, dudv  \\
+             & = \int_{R} \sqrt{1 + 4(u^2 + v^2)} \, dudv \\
+             & = \int_{0}^1\int_{0}^{2\pi} \sqrt{1 + 4r^2} \, \rho \, d\rho \, d\theta \\
+             & = \frac{\pi}{6} (5^{3/2} - 1) \,, 
+\end{align*}
+where the integral was computed using polar coordinates 
+$$
+u = \rho \cos(\theta)\,, \quad v = \rho \sin(\theta) \,.
+$$
+
+:::
 
 
 
+
+### Equiareal Maps
+
+
+::: Definition
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and 
+$$
+f \colon \SSS \to \wSSS
+$$ 
+a local diffeomorphism. We say that $f$ is an **equiareal map** if it takes any region in $\SSS$ to a region of the same area in $\wSSS$. In this case we say that $\SSS$ and $\wSSS$ are **equiareal**.
+
+:::
+
+![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same as the area of $f(R)$.](/images/fff_equiareal.png){#fig-equiareal-map width=70%}
+
+
+
+::: {.Theorem #theorem-equiareal-fff}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+
+1. $f$ is an equiareal map.
+2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by 
+$$
+\widetilde{\sss}  \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} = f \circ \sss \,.
+$$ 
+Then, 
+$$
+EG - F^2 = \wE \wG - {\wF}^2 \,,
+$$
+where $E,F,G$ and $\wE,\wF,\wG$ are the coefficients of the first fundamental forms of $\sss$ and $\wsss$, respectively.
+
+:::
+
+
+Theorem \ref{theorem-equiareal-fff} can be proven with arguments similar to the proof of Theorem \ref{theorem-local-isometry}. The proof is omitted.
+
+As usual, we give a sufficient condition to prove that two regular surfaces are equiareal.
+
+
+
+::: {.Theorem  #theorem-conformal-fff-2}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
+$$
+\sss \colon U \to \SSS \,, \qquad 
+\wsss \colon U \to \wSSS \,.
+$$
+Assume that
+$$
+EG - F^2 = \wE \wG - {\wF}^2 \,,
+$$
+where $E,F,G$ and $\wE,\wF,\wG$ are the coefficients of the first fundamental forms of $\sss$ and $\wsss$, respectively. Then,
+
+1. The surfaces $\sss(U)$ and $\wSSS$ are equiareal.
+2. An equiareal map is given by
+$$
+f \colon \sss(U) \to \wSSS \,, \qquad 
+f = \wsss \circ \sss^{-1} \,.
+$$
+
+:::
+
+
+The proof follows by adapting the argument in the proof of Theorem \ref{theorem-local-isometry-2}, and by applying Theorem \ref{theorem-equiareal-fff}. This is left as an exercise.
 
 
 
 ::: Example
-### Lambert cylindrical projection
+### Archimedes map
 
 Consider the unit sphere
 $$
 \sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
 $$
-and the unit cylinder of equation
+and the unit cylinder
 $$
-x^2 + y^2 = 1 \,.
+\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
 $$
 The sphere is contained inside the cylinder, and the two surfaces touch along the circle $x^2 + y^2 = 1$ in the $\{z=0\}$ plane. Let $P \in \sphere^2$ except for north or south pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$, see @fig-archimedes. To write the projection map explicitly, denote the coordinates of $P$ and $P'$ by
 $$
@@ -7419,67 +7458,257 @@ Taking the $+$ sign gives the point
 $$
 P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,.
 $$
-
-
-Consider the chart for the sphere
+This defines the map $f \colon \sphere \to \SSS$
 $$
-\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+f(x,y,z) =  \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,,
 $$
+known as the **Archimedes map**. It is quite simple to prove that $f$ is an equiareal map from $\sphere$ into $\SSS$.
+
+:::
 
 
-The full calculation will be carried out in Example \ref{example-sphere-principal} below. 
+![Construction of the Archimedes Map between the Sphere and the Cylinder.](/images/archimedes.png){#fig-archimedes width=75%}
+
+
+
+
+### Equiareal parametrizations
+
+In the previous section we defined equiareal maps between surfaces
+$$
+f \colon \SSS \to \widetilde{\SSS}\,.
+$$
+It is also useful to define equiareal parametrizations.
+
+::: Definition
+### Equiareal parametrization {#definition-equiareal-parametrization}
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U  \to  \SSS
+$$ 
+be a regular chart of $\SSS$. We say that $\sss$ is an **equiareal parametrization** if the coefficients of the first fundamental form of $\sss$ satisfy
+$$
+EG-F^2 =1 \,.
+$$
 
 
 :::
 
 
-![Lambert projection map: Let $P \in \sphere^2$ except for north or south pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$.](/images/archimedes.png){#fig-archimedes width=80%}
+The above definition is motivated by the following result, stating that $\SSS$ admits an equiareal parametrization if and only if $\SSS$ is equiareal to a plane.
 
 
+::: Theorem
 
-![Stereographic projection of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Stereographic_projection)](/images/stereographic_2.png){#fig-stereographic-1 width=75%}
+Let $\SSS$ be a regular surface and
+$$
+\sss \colon U  \to  \SSS
+$$ 
+be a regular chart of $\SSS$. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
 
-![Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.](/images/stereographic_3.png){#fig-stereographic-2 width=75%}
+1. $\sss$ is an equiareal parametrization.
+
+2. The map $f \colon \p \to \sss(U)$ defined by
+$$
+f(u,v,0) = \sss(u,v) 
+$$
+is equiareal.
 
 
-
-
-
-![Mercator projection of the Earth. This is the most known Earth map.](/images/mercator_2.png){width=75%}
-
-![Mercator projection: Angles and shapes are preserved. However areas are magnified away from the Equator.](/images/mercator_3.png){width=75%}
-
-The Mercator projection is a conformal map. As such it preseves angles and shapes. However areas are distorted. Images from [Britannica](https://www.britannica.com/science/Mercator-projection) and [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).
 
 :::
 
+
+
+::: Proof
+
+The plane $\p$ is charted by
+$$
+\wsss(u,v) = (u,v,0) \,, \quad  (u,v) \in \R^2
+$$
+The first fundamental form of $\wsss$ is
+$$
+\widetilde{\mathscr{F}}_1 = du^2 + dv^2 \,.
+$$
+Therefore
+$$
+\wE \wG - \wF^2 = 1 \,.
+$$
+Consider the map $f \colon \p \to \SSS$ given in Point 2, that is,
+$$
+f(u,v,0) = \sss(u,v) \,.
+$$
+By definition of $\wsss$, 
+$$
+f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
+$$
+Theorem \ref{theorem-equiareal-fff} says that $f$ is an equiareal map if and only if 
+$$
+EG - F^2 = \wE \wG - \wF^2 = 1\,.
+$$
+This happens exactly when $\sss$ is an equiareal parametrization.
+:::
+
+
+As an immediate consequence, we have the following Theorem.
+
+
+::: Theorem
+An equiareal parametrization $\sss \colon U \to \R^3$ preserves areas, that is,
+$$
+|R| = A_{\sss}(R) \,, \quad \forall \, R \subseteq U \,,
+$$
+where $|R|$ is the area of $R$ in $\R^2$.
+
+:::
+
+
+An important application of equiareal parametrization is in cartography: We would like to draw a map of the Earth which preserves areas. One such map is known as the Lambert cylindrical projection.
 
 ::: Example
-### Mercator projection
+### Lambert cylindrical projection
 
-The Mercator projection is a type of cylindrical projection.  Intuitively, it is obtained by blowing up the sphere inside the cylinder, letting the sides of the sphere stick to the cylinder when it comes into contact with it. The main feature of this projection is that parallels and meridians on the Earth become horizontal and vertical lines on the map. This is ideal for navigation. A derivation of the Mercator projection using only elementary geometry is quite involved, see for example this [link](https://personal.math.ubc.ca/~israel/m103/mercator/mercator.html). We can however motivate it as follows, using differential geometry. We parametrize the sphere in spherical coordinates 
+**Question.** Consider the following parametrization of $\sphere^2$
 $$
-\sss(\theta,\f)  = 
+\sss(u,v)= \left(  \cos (u) \sqrt{1-v^2} ,  \sin(u) \sqrt{1-v^2}  , v \right)  \,.
 $$
-for $\theta \in (-\pi,\pi)$, $\f \in \left(-\frac{pi}{2},\frac{\pi}{2}\right)$. 
+Prove that $\sss$ is an equiareal parametrization.
+
+**Note:** In particular, the inverse 
+$$
+\sss^{-1} \colon \sphere^2 \to \R^2 
+$$
+is an equiareal map. This is known as the **Lambert cylindrical projection**, see @fig-lambert and @fig-lambert-2.
+
+**Solution.** We compute
+\begin{align*}
+\sssu & = \left( - \sin (u) \sqrt{1-v^2} ,  \cos(u) \sqrt{1-v^2}  , 0 \right) \\
+\sssv & =  \left( -\cos (u) v (1-v^2)^{-1/2} , - \sin(u) v (1-v^2)^{-1/2}  , 1 \right) \\
+E & = \sssu \times \sssu =  1 - v^2 \\
+F & = \sssu \times \sssv =  0 \\
+G & = \sssv \times \sssv =  1 + \frac{v^2}{1-v^2} 
+\end{align*}
+and therefore 
+$$
+EG - F^2  = (1 - v^2) \left( 1 + \frac{v^2}{1-v^2}  \right) = 1 \,,
+$$
+showing that $\sss$ is an equiareal parametrization of $\sphere^2$.
+
+:::
+
+
+![Lambert cylindrical projection of the Earth. Images from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_2.png){#fig-lambert width=75%}
+
+
+![The Lambert cylindrical projection is an equiareal map. As such it preseves areas. However angles and shapes are distorted. Image from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_3.png){#fig-lambert-2 width=75%}
+
+
+
+::: Remark
+### Cartography
+
+We have shown that:
+
+1. The Mercator projection is a conformal map of $\sphere^2$ into the plane. Such projection preseves angles but distorts areas.
+
+2. The Lambert cylindrical projection is an equiareal map of $\sphere^2$ into the plane. Such projection preseves areas but distorts angles.
+
+The following question is natural: Is there a projection 
+$$
+\sss \colon \sphere^2 \to \R^2 
+$$
+which is both conformal and equiareal?
+
+**Answer: No**. This is because $\sss$ would be an isometry between $\sphere^2$ and the plane $\R^2$. This is impossible because:
+
+- The Theorema Egregium (by Gauss) tells us that isometric surfaces must have the same Gauss curvature;
+- However, the plane has zero Gauss curvature, while the sphere has non-zero Gauss curvature;
+- Therefore the plane and the sphere cannot be isometric.
+
+This means that we cannot draw a map of the Earth which preserves both angles and lengths.
 
 :::
 
 
 
-![Lambert cylindrical projection map. First project on a cylinder from the axis passing through North pole and South pole. Then unroll the cylinder.](/images/lambert_1.png){width=75%}
+
+### Summary
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a chart. We have introduced the **first fundamental form** of $\SSS$ as the restriction of the euclidean scalar product to the tangent space:
+$$
+I_{\pp}(\vv,\ww) = \vv \cdot \ww \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS
+$$
+The first fundamental form of $\sss$ is 
+$$
+{\FF}_1 = E du^2 + 2F du dv+ G dv^2  
+$$
+where the coefficients are
+$$
+E = \sssu \cdot \sssu \,, \quad 
+F = \sssu \cdot \sssv \,, \quad 
+G = \sssv \cdot \sssv \,.
+$$
+Given a chart $\sss$, we have
+$$
+I_{\pp}(\vv,\vv) = E du(\vv)^2 + 2F du(\vv) dv(\vv) + G dv(\vv)^2 
+$$
+Consider two curves $\g$ and $\tg$ on the surface $\sss(U)$, that is,
+$$
+\g(t) = \sss(u(t),v(t)) \,, \quad 
+\tg(t) = \sss(\tilde{u}(t),\tilde{v}(t)) \,.
+$$ 
+Moreover, consider a region $R \subseteq U$. The first fundamental form allows to compute: 
+
+1. Length of curves:
+$$
+L(\g) = \int_a^b \sqrt{ E \dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2 } \, dt 
+$$
+
+2. Angle $\theta$ between $\g$ and $\tg$ (at any intersection point):
+$$
+\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,.
+$$
+
+3. Area $A_{\sss}(R)$ of the region $\sss(R)$
+$$
+A_{\sss}(R) = \int_R \sqrt{EG - F^2} \, du dv \,.
+$$
 
 
-![Lambert cylindrical projection of the Earth.](/images/lambert_2.png){width=75%}
+We have also introduced maps preserving certain quantities. Specfically, let $\wSSS$ be another regular surface and
+$$
+f \colon \SSS \to \wSSS
+$$
+a local diffeomorphism:
 
-![Lambert cylindrical projection: Areas are preserved. Angles and shapes are distorted.](/images/lambert_3.png){width=75%}
+1. $f$ local isometry: Preserves scalar product of tangent vectors, and length of curves
+    * Length of $\g$ equals that of $f \circ \g$ for any $\g$.
+    * $f$ isometry $\iff$ FFF of $\sss$ and $\wsss = f \circ \sss$ satisfy
+    $$
+    E = \wE , \quad F = \wF , \quad G = \wG 
+    $$
 
-The Lambert cylindrical projection is an equi-areal map. As such it preseves areas. However angles and shapes are distorted. Images from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).
+2. $f$ conformal map: Preserves the angle between tangent vectors, and between curves
+    * Angle between $\g$ and $\tg$ is the same as the angle between $f \circ \g$ and $f \circ \tg$
+    * $f$ conformal $\iff$ FFF of $\sss$ and $\wsss = f \circ \sss$ satisfy
+    $$
+    E = \lambda \wE , \quad F = \lambda  \wF , \quad G = \lambda  \wG 
+    $$
+    for some function $\lambda (u,v)$.
+
+3. Equiareal maps: They preserve areas of surface regions
+    * Area of $\Omega \subseteq \SSS$ is the same as the area of $f(\Omega)$.
+    * $f$ equiareal $\iff$ FFF of $\sss$ and $\wsss = f \circ \sss$ satisfy
+    $$
+    EG - F^2 = \wE  \wG - {\wF}^2
+    $$
 
 
+Moreover, they are equivalent:
 
-
-
+1. $f$ is a local isometry,
+2. $f$ is conformal and equiareal.
 
 
 

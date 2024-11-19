@@ -47,10 +47,11 @@ book:
     - sections/chap_2.qmd
     - sections/chap_3.qmd
     - sections/chap_4.qmd
-    - sections/chap_5.qmd
-    - sections/revision.qmd
     - sections/license.qmd
     - sections/references.qmd
+  appendices:
+    - sections/appendix_plots.qmd
+    - sections/revision.qmd
 
 
 bibliography: teaching.bib

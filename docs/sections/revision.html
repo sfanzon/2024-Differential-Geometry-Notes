@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/license.html" rel="next">
-<link href="../sections/chap_5.html" rel="prev">
+<link href="../sections/appendix_plots.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -72,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -80,9 +79,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Goal {
   --color1: #f4cce0;
@@ -92,15 +127,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,41 +135,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 </style>
 
@@ -201,7 +200,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/revision.html">Revision Guide</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/appendix_plots.html">Appendices</a></li><li class="breadcrumb-item"><a href="../sections/revision.html">Revision Guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -245,18 +244,6 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/revision.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Revision Guide</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sections/license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
@@ -267,6 +254,29 @@ window.Quarto = {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/appendix_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/revision.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Revision Guide</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -302,6 +312,8 @@ window.Quarto = {
   <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves">Length of curves</a></li>
   <li><a href="#isometries" id="toc-isometries" class="nav-link" data-scroll-target="#isometries">Isometries</a></li>
   <li><a href="#angles-between-curves" id="toc-angles-between-curves" class="nav-link" data-scroll-target="#angles-between-curves">Angles between curves</a></li>
+  <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps">Conformal maps</a></li>
+  <li><a href="#conformal-parametrizations" id="toc-conformal-parametrizations" class="nav-link" data-scroll-target="#conformal-parametrizations">Conformal parametrizations</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -309,7 +321,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/appendix_plots.html">Appendices</a></li><li class="breadcrumb-item"><a href="../sections/revision.html">Revision Guide</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Revision Guide</h1>
 </div>
@@ -365,9 +377,10 @@ window.Quarto = {
 <li><p>Proving that a given level surface is regular, and computing its tangent plane</p></li>
 <li><p>Proving that a given surface is ruled</p></li>
 <li><p>Calculating the first fundamental form of a surface chart</p></li>
-<li><p>Proving that a given map is a local isometries / conformal</p></li>
-<li><p>Prove that a given parametrization is conformal</p></li>
+<li><p>Proving that a given map is a local isometry / conformal / equiareal</p></li>
+<li><p>Prove that a given parametrization is conformal / equiareal</p></li>
 <li><p>Calculating length and angles of curves on surfaces</p></li>
+<li><p>Calculating areas of surface region</p></li>
 <li><p>Calculating the second fundamental form of a surface chart</p></li>
 <li><p>Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart</p></li>
 <li><p>Calculating Gaussian and mean curvature of a surface chart</p></li>
@@ -960,10 +973,10 @@ R \cos \left( \frac{s}{\rho}  \right)
 </div></details>
 </div>
 <div id="Example-38" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 38</strong></summary><div><strong>Question.</strong> Consider again the curve from Example <a href="revision.html#example-curvature">29</a> <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 38</strong></summary><div><strong>Question.</strong> Consider again the curve from Example <a href="chap_2.html#example-curvature">25</a> <span class="math display">\[
 {\pmb{\gamma}}(t) = \left(\frac{8}{5} \cos (t), 1-2 \sin (t), \frac{6}{5} \cos (t)\right) \,.
 \]</span> Compute the torsion of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
-<p><strong>Solution.</strong> Resuming calculations from Example <a href="revision.html#example-curvature">29</a>, we get <span class="math display">\[
+<p><strong>Solution.</strong> Resuming calculations from Example <a href="chap_2.html#example-curvature">25</a>, we get <span class="math display">\[
 \begin{aligned}
 \dddot{{\pmb{\gamma}}}(t) &amp; =\left(\frac{8}{5} \sin (t), 2 \cos (t), \frac{6}{5} \sin (t)\right) \\
 ( \dot{{\pmb{\gamma}}}(t) \times \ddot{{\pmb{\gamma}}}(t)) \cdot \dddot{{\pmb{\gamma}}}(t) &amp; = \frac{96}{25} \sin (t)-\frac{96}{25} \sin (t) = 0
@@ -2731,7 +2744,8 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 </div></details>
 </div>
 <div id="theorem-local-isometry-bis" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 135</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:<p></p>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 135</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is a local isometry.</li>
 <li>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> given by<br>
@@ -2739,17 +2753,9 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 \widetilde{{\pmb{\sigma}}} \colon U \to \widetilde{\mathcal{S}} \,, \qquad
 \widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\,.
 \]</span> Then <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form, that is, <span class="math display">\[
-E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,,
-\]</span> where <span class="math display">\[\begin{align*}
-E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u \,, \quad
-F = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
-G = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,, \\
-\widetilde{E} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u \,, \quad
-\widetilde{F}  = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v \,, \quad
-\widetilde{G}  = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v \,.
-\end{align*}\]</span></li>
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
+\]</span></li>
 </ol>
-<p><strong>Note:</strong> <span class="math inline">\(E,F,G\)</span> and <span class="math inline">\(\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are defined on the same set <span class="math inline">\(U\)</span>. Therefore, equality is intended pointwise.</p>
 </div></details>
 </div>
 <div id="theorem-local-isometry-2-bis" class="Theorem">
@@ -2817,7 +2823,7 @@ E = 1 \,, \quad F = 1 \,, \quad G = 1 \,,
 <p><strong>Question.</strong> Consider the cone without tip <span class="math display">\[
 \mathcal{S}= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z &gt; 0 \} \,,
 \]</span> and the plane <span class="math display">\[
-\mathcal{S}= \{ (x,y,z)\in \mathbb{R}^3 \, \colon \, z = 0 \} \,.
+\widetilde{\mathcal{S}}= \{ (x,y,z)\in \mathbb{R}^3 \, \colon \, z = 0 \} \,.
 \]</span></p>
 <ol type="1">
 <li><p>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be the chart of the Cone <span class="math display">\[
@@ -2835,7 +2841,7 @@ U:= \left\{ (\rho,\theta) \in \mathbb{R}^2 \, \colon \, \rho &gt; 0 , \, \theta 
 </ol>
 <p><strong>Solution.</strong></p>
 <ol type="1">
-<li><p>We have already computed in Example <span class="math inline">\(\ref{example-fff-cone-bis}\)</span>, that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+<li><p>We have already computed in Example <a href="chap_4.html#example-fff-cone">15</a>, that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 {\mathscr{F}}_1 = 2 d\rho^2 + \rho^2 d\theta^2 \,.
 \]</span></p></li>
 <li><p>First of all, note that <span class="math display">\[
@@ -2864,50 +2870,27 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 </section>
 <section id="angles-between-curves" class="level3">
 <h3 class="anchored" data-anchor-id="angles-between-curves">Angles between curves</h3>
-<div id="angle-between-tangent-vectors" class="Definition" title="Angle between tangent vectors">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 139: </strong>Angle between tangent vectors</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The angle between two vectors <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is defined as the number <span class="math display">\[
-\theta(\mathbf{v},\mathbf{w}) \in [0,\pi]\,,
-\]</span> such that <span class="math display">\[
-\cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
-\]</span><p></p>
+<div id="angle-between-curves" class="Definition" title="Angle between curves">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 139: </strong>Angle between curves</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. Let <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> be curves on <span class="math inline">\(\mathcal{S}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t_0) = \mathbf{p}= \widetilde{{\pmb{\gamma}}}( t_0 ) \,.
+\]</span> The angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
+\cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,,
+\]</span> where <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}\)</span> are evaluated at <span class="math inline">\(t_0\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Theorem-140" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 140</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Then <span class="math display">\[
-\cos(\theta) = \frac{ E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ \tilde \lambda \mu) + G  \mu \tilde \mu }{ (E  \lambda^2 + 2 F  \lambda \mu + G \mu^2 )^{1/2} (E  \tilde{\lambda}^2 + 2 F  {\tilde{\lambda}} {\tilde{\mu}} + G {\tilde{\mu}}^2 )^{1/2} } \,,
-\]</span> where <span class="math inline">\(\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \mathbb{R}\)</span> are such that <span class="math display">\[
-\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
-\mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
-\]</span><p></p>
-</div></details>
-</div>
-<div id="angle-between-curves" class="Definition" title="Angle between curves">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 141: </strong>Angle between curves</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and suppose to have two curves <span class="math display">\[
-{\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\,, \quad \widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathcal{S}
-\]</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t_0) = \mathbf{p}\,, \quad \widetilde{{\pmb{\gamma}}}( \tilde{t}_0 ) = \mathbf{p}\,.
-\]</span> Then <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t_0) \,, \, \dot{\widetilde{{\pmb{\gamma}}}}( \tilde{t}_0 )  \in T_{\mathbf{p}} \mathcal{S}\,.
-\]</span> The angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}(t_0)\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}( \tilde{t}_0 )\)</span>, that is, <span class="math display">\[
-\cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,,
-\]</span> where <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> is evaluated at <span class="math inline">\(t_0\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}\)</span> at <span class="math inline">\(\tilde{t}_0\)</span>.<p></p>
-</div></details>
-</div>
-<div id="Theorem-142" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 142</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Suppose given two curves <span class="math display">\[
-{\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\,, \quad \widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathcal{S}
-\]</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t_0) = \mathbf{p}\,, \quad \widetilde{{\pmb{\gamma}}}( \tilde{t}_0 ) = \mathbf{p}\,.
-\]</span> The angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
-\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
-\]</span> where <span class="math inline">\(u,v,\tilde{u},\tilde{v} \colon (a,b) \to \mathbb{R}\)</span> are smooth functions such that <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 140</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface, <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, and <span class="math inline">\({\pmb{\gamma}},\widetilde{{\pmb{\gamma}}}\)</span> smooth curves on <span class="math inline">\(\mathcal{S}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t_0) = \mathbf{p}= \widetilde{{\pmb{\gamma}}}( t_0 )  \,.
+\]</span> There exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
-\]</span><p></p>
+\]</span> The angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
+\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
+\]</span> where <span class="math inline">\(E,F,G,\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are evaluated at <span class="math inline">\((u(t),v(t))\)</span> and <span class="math inline">\(\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}\)</span> are evaluated at <span class="math inline">\(t\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Example-143" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 143</strong></summary><div>
+<div id="Example-141" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 141</strong></summary><div>
 <p><strong>Question.</strong> Let <span class="math inline">\(S\)</span> be a surface with surface chart <span class="math display">\[
 {\pmb{\sigma}}(u, v) = \left(u, v, e^{u v}\right) \,.
 \]</span></p>
@@ -2942,6 +2925,149 @@ G(1,1) &amp; =1+e^2
 \end{aligned}
 \]</span></p></li>
 </ol>
+</div></details>
+</div>
+</section>
+<section id="conformal-maps" class="level3">
+<h3 class="anchored" data-anchor-id="conformal-maps">Conformal maps</h3>
+<div id="conformal-map" class="Definition" title="Conformal map">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 142: </strong>Conformal map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces, and <span class="math display">\[
+f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
+\]</span> a local diffeomorphism. We say that <span class="math inline">\(f\)</span> is a <strong>conformal map</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> and <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is holds <span class="math display">\[
+\theta = \widetilde{\theta} \,,
+\]</span> where:<p></p>
+<ul>
+<li><span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span>,</li>
+<li><span class="math inline">\(\widetilde{\theta}\)</span> is the angle between <span class="math inline">\(d_{\mathbf{p}} f(\mathbf{v})\)</span> and <span class="math inline">\(d_{\mathbf{p}} f(\mathbf{w})\)</span>.</li>
+</ul>
+<p>In this case, we say that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are <strong>conformal</strong>.</p>
+</div></details>
+</div>
+<div id="Proposition-143" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 143</strong></summary><div>Let <span class="math inline">\(f\)</span> be a local isometry. Then <span class="math inline">\(f\)</span> is a conformal map.<p></p>
+</div></details>
+</div>
+<div id="theorem-conformal-fff" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 144</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is a conformal map.</li>
+<li>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> given by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}  \colon U \to \widetilde{\mathcal{S}} \,, \qquad \widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\,.
+\]</span> Then, there exists <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span> such that <span class="math display">\[
+\widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+\]</span> where <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>, respectively.</li>
+</ol>
+</div></details>
+</div>
+<div id="theorem-conformal-fff-2" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 145</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and consider charts <span class="math display">\[
+{\pmb{\sigma}}\colon U \to \mathcal{S}\,, \qquad
+\widetilde{{\pmb{\sigma}}}\colon U \to \widetilde{\mathcal{S}}\,.
+\]</span> Assume there exists <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span> such that <span class="math display">\[
+\widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+\]</span> where <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>, respectively. We have:</p>
+<ol type="1">
+<li>The surfaces <span class="math inline">\({\pmb{\sigma}}(U)\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are conformal.</li>
+<li>A conformal map is given by <span class="math display">\[
+f \colon {\pmb{\sigma}}(U) \to \widetilde{\mathcal{S}}\,, \qquad
+f = \widetilde{{\pmb{\sigma}}}\circ {\pmb{\sigma}}^{-1} \,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="example-conformal" class="Example" title="Stereographic Projection">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 146: </strong>Stereographic Projection</summary><div>
+<p><strong>Question.</strong> Denote the unit sphere by <span class="math display">\[
+\mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
+\]</span> and consider the surface <span class="math display">\[
+\mathcal{S}= \mathbb{S}^2 \smallsetminus \{N\} \,,
+\]</span> where the point <span class="math inline">\(N = (0,0,1)\)</span> is the North Pole. Denote the plane <span class="math inline">\(\{z = 0\}\)</span> by <span class="math display">\[
+\widetilde{\mathcal{S}}= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, z = 0 \} \,,
+\]</span> The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map, which is easily computed to be: <span class="math display">\[
+f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \quad
+f(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z},0  \right) \,.
+\]</span> Prove that:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is a conformal map.</li>
+<li><span class="math inline">\(f\)</span> is not a local isometry.</li>
+</ol>
+<p><strong>Note</strong>: In particular, the Sphere and the Plane are conformal.</p>
+<p><strong>Solution.</strong> It is not difficult to prove that <span class="math inline">\(f\)</span> is invertible, with inverse given by <span class="math display">\[
+{\pmb{\sigma}}(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
+\]</span> We have that <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span>, forming an altas of one chart. It is straightforward to compute that the coefficients of the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
+E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
+\]</span> In particualar the fisrt fundamental form is <span class="math display">\[
+\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,.
+\]</span> Define the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>: <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}= f \circ {\pmb{\sigma}}\,.
+\]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> is the inverse of <span class="math inline">\(f\)</span>, we have that <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}(u,v) = (u,v,0) \,.
+\]</span> As already computed, the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is <span class="math display">\[
+{\widetilde{\mathscr{F}}}_1 = du^2 + dv^2 \,.
+\]</span> We can now conclude:</p>
+<ol type="1">
+<li><p>We have that <span class="math display">\[
+{\widetilde{\mathscr{F}}}_1 = \frac{1}{\lambda} {\mathscr{F}}_1  \,.
+\]</span> Since <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, by Theorem <a href="revision.html#theorem-conformal-fff">144</a> we conclude that <span class="math inline">\(f\)</span> is a conformal map.</p></li>
+<li><p>Since <span class="math inline">\({\lambda}\)</span> is not always equal to <span class="math inline">\(1\)</span>, we have that <span class="math display">\[
+{\widetilde{\mathscr{F}}}_1 \neq {\mathscr{F}}_1 \,.
+\]</span> Therefore, by Theorem <a href="revision.html#theorem-local-isometry-bis">135</a>, we conclude that <span class="math inline">\(f\)</span> cannot be a local isometry.</p></li>
+</ol>
+</div></details>
+</div>
+<div id="example-conformal-2" class="Example" title="Sphere and Plane are conformal">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 147: </strong>Sphere and Plane are conformal</summary><div>
+<p><strong>Question.</strong> Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math inline">\(\{z=0\}\)</span> with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) := (u,v,0) \,, \quad u,v \in \mathbb{R}\,.
+\]</span> Let <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be the sphere <span class="math inline">\(\mathbb{S}^2\)</span> with parametrization <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}(u,v) := \left(  \cos(u) \mathop{\mathrm{sech}}(v), \sin(u) \mathop{\mathrm{sech}}(v) , \tanh (v) \right) \,.
+\]</span></p>
+<ol type="1">
+<li>Compute the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>.</li>
+<li>Show that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are conformal.</li>
+</ol>
+<p><strong>Solution.</strong></p>
+<ol type="1">
+<li><p>As already computed, the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathscr{F}_1 = du^2 + dv^2 \,.
+\]</span> Using the identitities <span class="math display">\[\begin{align*}
+\frac{d}{dv} \left( \mathop{\mathrm{sech}}(v)  \right) &amp; = - \mathop{\mathrm{sech}}(v) \tanh (v) \,, \\
+\frac{d}{dv} \left( \tanh (v) \right)  &amp; = {\mathop{\mathrm{sech}}}^2 (v) \,,
+\end{align*}\]</span> we obtain <span class="math display">\[\begin{align*}
+\widetilde{{\pmb{\sigma}}}_u &amp; = ( -\sin(u) \mathop{\mathrm{sech}}(v) , \cos(u)\mathop{\mathrm{sech}}(v) , 0 )  \\
+\widetilde{{\pmb{\sigma}}}_v &amp; = ( -\cos(v) \mathop{\mathrm{sech}}(v) \tanh(v) , -\sin(u) \mathop{\mathrm{sech}}(v) \tanh(v) , {\mathop{\mathrm{sech}}}^2(v) )
+\end{align*}\]</span> By recalling that <span class="math display">\[
+{\mathop{\mathrm{sech}}}^2 (v) + {\tanh}^2 (v) = 1 \,,
+\]</span> we compute <span class="math display">\[\begin{align*}
+\widetilde{E} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u = {\mathop{\mathrm{sech}}}^2(v) (\cos^2(u) + \sin^2(u)) = {\mathop{\mathrm{sech}}}^2(v)  \\
+\widetilde{F} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v =  0 \\
+\widetilde{G} &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v = {\mathop{\mathrm{sech}}}^2(v) ({\tanh}^2(v) + {\mathop{\mathrm{sech}}}^2(v)) = {\mathop{\mathrm{sech}}}^2(v) \\
+\end{align*}\]</span> Hence the first fundamental form of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> is <span class="math display">\[
+\widetilde{\mathscr{F}}_1 = {\mathop{\mathrm{sech}}}^2(v) \, \left(  du^2 + dv^2 \right) \,.
+\]</span></p></li>
+<li><p>We have computed that <span class="math display">\[
+\widetilde{\mathscr{F}}_1 =  {\mathop{\mathrm{sech}}}^2(v) \, \left(  du^2 + dv^2 \right) =  {\mathop{\mathrm{sech}}}^2(v) \,\mathscr{F}_1 \,.
+\]</span> Since <span class="math inline">\(A = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, by Theorem <a href="revision.html#theorem-conformal-fff-2">145</a> we conclude that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are conformal.</p></li>
+</ol>
+</div></details>
+</div>
+</section>
+<section id="conformal-parametrizations" class="level3">
+<h3 class="anchored" data-anchor-id="conformal-parametrizations">Conformal parametrizations</h3>
+<div id="definition-conformal-parametrization" class="Definition" title="Conformal parametrization">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 148: </strong>Conformal parametrization</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
+{\pmb{\sigma}}\colon U  \to  \mathcal{S}
+\]</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\({\pmb{\sigma}}\)</span> is a <strong>conformal parametrization</strong> if the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> satisfies <span class="math display">\[
+\mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
+\]</span> for some function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Theorem-149" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 149</strong></summary><div>A conformal parametrization <span class="math inline">\({\pmb{\sigma}}\)</span> preserves angles between vectors. Specifically, let <span class="math inline">\({\pmb{\gamma}}_{1}(t), {\pmb{\gamma}}_{2}(t)\)</span> be curves in <span class="math inline">\(\mathbb{R}^{2}\)</span> such that <span class="math inline">\({\dot{{\pmb{\gamma}}}}_{1}\left(t_{0}\right), {\dot{{\pmb{\gamma}}}}_{2}\left(t_{0}\right)\)</span> make angle <span class="math inline">\(\theta\)</span>. If <span class="math display">\[
+{\pmb{\gamma}}_{3}(t)={\pmb{\sigma}}\left({\pmb{\gamma}}_{1}(t)\right),  \qquad {\pmb{\gamma}}_{4}(t)={\pmb{\sigma}}\left({\pmb{\gamma}}_{2}(t)\right) \,,
+\]</span> then <span class="math inline">\({\dot{{\pmb{\gamma}}}}_{3}\left(t_{0}\right), {\dot{{\pmb{\gamma}}}}_{4}\left(t_{0}\right)\)</span> also make angle <span class="math inline">\(\theta\)</span>.<p></p>
 </div></details>
 </div>
 
@@ -3518,14 +3644,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap_5.html" class="pagination-link" aria-label="Plots with Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots with Python</span></span>
+      <a href="../sections/appendix_plots.html" class="pagination-link" aria-label="Plots with Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Plots with Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/license.html" class="pagination-link" aria-label="License">
-        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

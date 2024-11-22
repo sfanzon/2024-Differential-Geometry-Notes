@@ -29,19 +29,18 @@ You should be comfortable with the following topics/tasks:
 
 - Length, arc-length, and arc-length reparametrization
 
-- Computing arc-length reparametrization
-
 - Calculating the curvature and torsion of unit speed curves from the definitions
 
 - Calculating the curvature and torsion of (possibly not unit speed) curves from the formulae
 
-- Calculating the Frenet frame of a unit speed curve
+- Calculating the Frenet frame of a unit-speed curve
 
 - Applying the Fundamental Theorem of Space Curves to determine if two curves coincide, up to a ridig motion
 
 - Proving that a curve is contained in a plane, and computing the equation of such plane
 
 - Proving that a curve is part of a circle
+
 
 
 **Topology:** To be completed
@@ -52,8 +51,6 @@ You should be comfortable with the following topics/tasks:
 - Regularity of surface charts
 
 - Computing reparametrizations
-
-- Proving that a given function between surfaces is smooth
 
 - Computing a basis and the equation of the tangent plane
 
@@ -67,17 +64,15 @@ You should be comfortable with the following topics/tasks:
 
 - Calculating the first fundamental form of a surface chart
 
-- Proving that a given map is a local isometry / conformal / equiareal
+- Proving that a given map is a local isometry / conformal
 
-- Prove that a given parametrization is conformal / equiareal
+- Prove that a given parametrization is conformal
 
 - Calculating length and angles of curves on surfaces
 
-- Calculating areas of surface region
-
 - Calculating the second fundamental form of a surface chart
 
-- Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart
+- Calculating the matrix of the Weingarten map, the principal curvatures, and principal directions of a surface chart
 
 - Calculating Gaussian and mean curvature of a surface chart
 
@@ -4181,7 +4176,7 @@ The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t),v(t))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t$.
+where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t_0),v(t_0))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t_0$.
 
 
 :::

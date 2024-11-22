@@ -92,13 +92,21 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Corollary {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Definition {
   --color1: #c6e6ed;
@@ -116,46 +124,6 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -163,6 +131,38 @@ div.csl-indent {
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -3556,8 +3556,8 @@ F &amp; G
 <p>The first fundamental form <span class="math inline">\(I_{\mathbf{p}}\)</span> depends only on the surface <span class="math inline">\(\mathcal{S}\)</span> and the point <span class="math inline">\(\mathbf{p}\)</span>. Instead the local representation of <span class="math inline">\(I_{\mathbf{p}}\)</span> <span class="math display">\[
 \mathscr{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2 \,,
 \]</span> depends on the choice of chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. The next result explains how <span class="math inline">\(\mathscr{F}_1\)</span> changes when we change chart.</p>
-<div id="proposition-fff-reparametrization" class="Proposition" title="First fundamental form and reparametrizations">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 127: </strong>First fundamental form and reparametrizations</summary><div>
+<div id="proposition-fff-reparametrization" class="Proposition" title="FFF and reparametrizations">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 127: </strong>FFF and reparametrizations</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> a regular chart. Suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span>, that is, <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
 \]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Denote the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by, respectively, <span class="math display">\[\begin{align*}
@@ -4338,7 +4338,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
 \]</span> The angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
-\]</span> where <span class="math inline">\(E,F,G,\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are evaluated at <span class="math inline">\((u(t),v(t))\)</span> and <span class="math inline">\(\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}\)</span> are evaluated at <span class="math inline">\(t\)</span>.<p></p>
+\]</span> where <span class="math inline">\(E,F,G,\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are evaluated at <span class="math inline">\((u(t_0),v(t_0))\)</span> and <span class="math inline">\(\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}\)</span> are evaluated at <span class="math inline">\(t_0\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-33" class="Proof">
@@ -5151,10 +5151,9 @@ Figure&nbsp;4.35: The point <span class="math inline">\({\pmb{\sigma}}(u_0 + \De
 </figure>
 </div>
 <p>Using Taylor’s formula we get <span class="math display">\[\begin{align*}
-{\pmb{\sigma}}(u_0 + \Delta u , v_0 + \Delta v)  &amp; = {\pmb{\sigma}}(u_0,v_0) +  {\pmb{\sigma}}_u (u_0,v_0) \, \Delta u +
-                                          {\pmb{\sigma}}_v (u_0,v_0) \, \Delta v  \\
-                                       &amp; \,\, +  \frac12 \left(  {\pmb{\sigma}}_{uu}(u_0,v_0) (\Delta u)^2 +  2 {\pmb{\sigma}}_{uv}(u_0,v_0) \Delta u \Delta v  +{{\pmb{\sigma}}}_{vv}(u_0,v_0) (\Delta v)^2    \right) \\
-                                       &amp;  \,\, + R(\Delta u , \Delta v) \,,
+{\pmb{\sigma}}(u_0 + \Delta u , v_0 + \Delta v)  &amp; = {\pmb{\sigma}}(u_0,v_0) +  {\pmb{\sigma}}_u (u_0,v_0) \, \Delta u + {\pmb{\sigma}}_v (u_0,v_0) \, \Delta v  \\
+&amp; \,\, +  \frac12 \big(  {\pmb{\sigma}}_{uu}(u_0,v_0) (\Delta u)^2 +  2 {\pmb{\sigma}}_{uv}(u_0,v_0) \Delta u \Delta v  \\
+&amp;  \,\,  +{{\pmb{\sigma}}}_{vv}(u_0,v_0) (\Delta v)^2  \big)  + R(\Delta u , \Delta v) \,,
 \end{align*}\]</span> where <span class="math inline">\(R(\Delta u , \Delta v)\)</span> is a remainder such that <span class="math display">\[
 \lim_{\Delta \to 0} \, \frac{R(\Delta u , \Delta v) }{\Delta }  =  0 \,, \quad \Delta := (\Delta u)^2 + (\Delta v)^2 \,.
 \]</span> Since <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>, if we multiply the above Taylor expansion by <span class="math inline">\(\mathbf{N}\)</span>, and ignore the remainder, we obtain <span class="math display">\[
@@ -5196,14 +5195,12 @@ M &amp; N
 </div></details>
 </div>
 <div id="remark-sff-reparametrization" class="Remark" title="SFF and reparametrizations">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 182: </strong>SFF and reparametrizations</summary><div>
-<p>The second fundamental form <span class="math display">\[
-\mathscr{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
-\]</span> depends on the choice of chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Indeed, let us adopt the same notations as Proposition <a href="chap_4.html#proposition-fff-reparametrization">6</a>. Suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span> with <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 182: </strong>SFF and reparametrizations</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> a regular chart. Suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span>, that is, <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
-\]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Denote the second fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by <span class="math display">\[
-\widetilde{\mathscr{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
-\]</span> The matrices of <span class="math inline">\(\mathscr{F}_2\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_2\)</span> are related by <span id="eq-sff-repar"><span class="math display">\[
+\]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Denote the SFF of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by, respectively, <span class="math display">\[\begin{align*}
+\mathscr{F}_2 &amp; = L \, du^2 + 2M \, du dv + N \, dv^2 \,, \\
+\widetilde{\mathscr{F}}_2 &amp; = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
+\end{align*}\]</span> The matrices of <span class="math inline">\(\mathscr{F}_2\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_2\)</span> are related by <span id="eq-sff-repar"><span class="math display">\[
 \left(
 \begin{array}{cc}
 \widetilde{L} &amp; \widetilde{M} \\
@@ -5219,32 +5216,34 @@ M &amp; N
 \end{array}
 \right)
 \,
-J \Phi  \,,
-\tag{4.19}\]</span></span> where (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.</p>
-<blockquote class="blockquote">
-<p>Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
+J \Phi  \,
+\tag{4.19}\]</span></span> where <span class="math inline">\(J\Phi\)</span> is the Jacobian of <span class="math inline">\(\Phi\)</span> <span class="math display">\[
+J\Phi = \left(   
+\begin{array}{cc}
+\dfrac{\partial u}{\partial \tilde u}  &amp;  \dfrac{\partial u}{\partial \tilde v}  \\
+\dfrac{\partial v}{\partial \tilde u}  &amp;  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,,
+\]</span> and where (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.<p></p>
+<p><strong>Proof.</strong> Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
 \widetilde{\mathbf{N}} = \frac{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} }{\left\| \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \right\|} = \frac{\det J\Phi}{|\det J\Phi|} \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|} = \pm \mathbf{N}\,,
 \]</span> as shown in Remark <a href="chap_4.html#remark-normal-chart">87</a>.</p>
-</blockquote>
 </div></details>
 </div>
 <p>Let us show that a plane and a cylinder have different second fundamental forms.</p>
-<div id="example-sff-plane" class="Example" title="Plane">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 183: </strong>Plane</summary><div>
-<p>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span>. Suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal vectors, that is, <span class="math display">\[
-\left\| \mathbf{p} \right\| = \left\| \mathbf{q} \right\| = 1 \,, \quad \mathbf{p}\cdot \mathbf{q} = 0 \,.
-\]</span> Consider the plane with chart <span class="math display">\[
+<div id="example-sff-plane" class="Example" title="SFF of Plane">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 183: </strong>SFF of Plane</summary><div><strong>Question.</strong> Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span>, with <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> orthonormal. Consider the plane with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,, \quad (u,v) \in \mathbb{R}^2 \,.
 \]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathscr{F}_2 = 0 \,.
-\]</span> This reflects the intuition that a plane is flat, and therefore there is no <em>curvature</em>.</p>
-<blockquote class="blockquote">
-<p>We have <span class="math display">\[
+\]</span><p></p>
+<p><strong>Note:</strong> This reflects the intuition that a plane is flat, and therefore there is no <em>curvature</em>.</p>
+<p><strong>Solution.</strong> We have <span class="math display">\[
 {\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \mathbf{q} \,.
 \]</span> The principal unit normal is <span class="math display">\[
 \mathbf{N}= \frac{\mathbf{p}\times \mathbf{q}}{\left\|  \mathbf{p}\times \mathbf{q}  \right\|   } \,,
 \]</span> while the second derivatives are <span class="math display">\[
-{\pmb{\sigma}}_{\mathbf{u}} = {\pmb{\sigma}}_{\mathbf{u}} = {\pmb{\sigma}}_{\mathbf{u}} = {\pmb{0}}\,.
+{\pmb{\sigma}}_{uu} = {\pmb{\sigma}}_{uv} = {\pmb{\sigma}}_{vv} = {\pmb{0}}\,.
 \]</span> Therefore <span class="math display">\[\begin{align*}
 L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}= 0 \\
 M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
@@ -5252,45 +5251,39 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \end{align*}\]</span> and the second fundamental form is <span class="math display">\[
 \mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
 \]</span></p>
-</blockquote>
 </div></details>
 </div>
 <div id="example-cylinder-sff" class="Example" title="Unit cylinder">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 184: </strong>Unit cylinder</summary><div>
-<p>Consider the unit cylinder with chart <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 184: </strong>Unit cylinder</summary><div><strong>Question.</strong> Consider the unit cylinder with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathscr{F}_2 = -  du^2 \,.
-\]</span> This reflects the intuition that the cylinder curves only when moving in the <span class="math inline">\(v\)</span>-direction. In such direction we are moving on a circle of radius <span class="math inline">\(1\)</span>, therefore we expect the curvature to be <span class="math inline">\(-1\)</span>.</p>
-<blockquote class="blockquote">
-<p>We have <span class="math display">\[
-{\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
-\]</span> and also <span class="math display">\[
-{\pmb{\sigma}}_{uu}  = (-\cos(u), - \sin(u), 0 ) \,, \quad {\pmb{\sigma}}_{uv} = {\pmb{\sigma}}_{vv} = {\pmb{0}}\,.
-\]</span> We have also <span class="math display">\[
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  =
+\]</span><p></p>
+<p><strong>Note:</strong> This reflects the intuition that the cylinder curves only when moving in the <span class="math inline">\(u\)</span>-direction. In such direction we are moving on a circle of radius <span class="math inline">\(1\)</span>, therefore we expect the curvature to be <span class="math inline">\(-1\)</span>.</p>
+<p><strong>Solution.</strong> We have <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = (-\sin(u),\cos(u), 0 )  \\
+{\pmb{\sigma}}_v &amp; = (0,0,1) \\
+{\pmb{\sigma}}_{uu}  &amp; = (-\cos(u), - \sin(u), 0 ) \\
+{\pmb{\sigma}}_{uv} &amp; = {\pmb{\sigma}}_{vv} = {\pmb{0}}\\
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v &amp; =
 \left|  
 \begin{array}{ccc}
 \mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
 -\sin(u) &amp; \cos(u) &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}
-\right|
-= (\cos(u), \sin(u),0)
-\]</span> so that <span class="math display">\[
-\left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| = \sqrt{ \cos^2(u) + \sin^2(u)  } = 1 \,.
-\]</span> The principal unit normal is <span class="math display">\[
+\right| \\
+&amp; = (\cos(u), \sin(u),0) \\
+\left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| &amp; =  1 \,.
+\end{align*}\]</span> The principal unit normal is <span class="math display">\[
 \mathbf{N}= \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } = (\cos(u), \sin(u),0) \,.
 \]</span> We finally compute <span class="math display">\[\begin{align*}
-L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\\
-&amp; = (-\cos(u), - \sin(u), 0 ) \cdot (\cos(u), \sin(u),0) \\
-&amp; = - \cos^2(u) - \sin^2(u) = - 1 \\
+L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}= - 1 \\
 M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
 N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \end{align*}\]</span> The second fundamental form is <span class="math display">\[
 \mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
 \]</span></p>
-</blockquote>
 </div></details>
 </div>
 <div id="Remark-185" class="Remark">
@@ -5340,31 +5333,19 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <div id="Example-189" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 189</strong></summary><div>
 <ol type="1">
-<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.36</span></a>.</p></li>
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, <span class="math display">\[
+{\mathcal{G}}_{\mathcal{S}} (\mathbf{p}) = \mathbf{p}\,,
+\]</span> see <a href="#fig-gauss-sphere" class="quarto-xref">Figure&nbsp;<span>4.36</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
-\mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
+\mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| }  = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane" class="quarto-xref">Figure&nbsp;<span>4.37</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
-\]</span> Then <span class="math display">\[
-{\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
-\]</span> and <span class="math display">\[
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v =
-\left|
-\begin{array}{ccc}
-\mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
--\sin(u) &amp; \cos(u) &amp; 0 \\
-0  &amp;  0 &amp;  1
-\end{array}
-\right|
-= (\cos(u), \sin(u), 0) \,.
-\]</span> Therefore <span class="math display">\[
-\left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| = 1 \,,
-\]</span> and <span class="math display">\[
+\]</span> We have already compute that the standard unit normal is <span class="math display">\[
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
-\]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+\]</span> Therefore, the Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} (\mathbf{p}) = (\cos(u_0), \sin(u_0), 0) \,,
 \]</span> where <span class="math inline">\((u_0,v_0)\)</span> is such that <span class="math inline">\({\pmb{\sigma}}(u_0,v_0)=\mathbf{p}\)</span>. Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder" class="quarto-xref">Figure&nbsp;<span>4.38</span></a>.</p></li>
 </ol>

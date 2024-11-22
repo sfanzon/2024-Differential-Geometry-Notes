@@ -975,7 +975,7 @@
 
  [**Notation**](#Notation*-4.24)\Pageref{Notation*-4.24}
 
- [**Proposition 4.127**](#proposition-fff-reparametrization): First fundamental form and reparametrizations\Pageref{proposition-fff-reparametrization}
+ [**Proposition 4.127**](#proposition-fff-reparametrization): FFF and reparametrizations\Pageref{proposition-fff-reparametrization}
 
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
 
@@ -1119,7 +1119,7 @@
 
  [**Remark 4.182**](#remark-sff-reparametrization): SFF and reparametrizations\Pageref{remark-sff-reparametrization}
 
- [**Example 4.183**](#example-sff-plane): Plane\Pageref{example-sff-plane}
+ [**Example 4.183**](#example-sff-plane): SFF of Plane\Pageref{example-sff-plane}
 
  [**Example 4.184**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
 

@@ -5278,7 +5278,7 @@ depends on the choice of chart $\sss \colon U \to \R^3$. The next result explain
 
 
 ::: Proposition
-### First fundamental form and reparametrizations  {#proposition-fff-reparametrization}
+### FFF and reparametrizations  {#proposition-fff-reparametrization}
 
 
 Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
@@ -6495,7 +6495,7 @@ The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t),v(t))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t$.
+where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t_0),v(t_0))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t_0$.
 
 
 
@@ -7765,10 +7765,9 @@ as shown in @fig-sff-sketch.
 
 Using Taylor's formula we get
 \begin{align*}
-\sss(u_0 + \Delta u , v_0 + \Delta v)  & = \sss(u_0,v_0) +  \sss_u (u_0,v_0) \, \Delta u + 
-                                          \sss_v (u_0,v_0) \, \Delta v  \\
-                                       & \,\, +  \frac12 \left(  \sss_{uu}(u_0,v_0) (\Delta u)^2 +  2 \sss_{uv}(u_0,v_0) \Delta u \Delta v  +{\sss}_{vv}(u_0,v_0) (\Delta v)^2    \right) \\ 
-                                       &  \,\, + R(\Delta u , \Delta v) \,,
+\sss(u_0 + \Delta u , v_0 + \Delta v)  & = \sss(u_0,v_0) +  \sss_u (u_0,v_0) \, \Delta u + \sss_v (u_0,v_0) \, \Delta v  \\
+& \,\, +  \frac12 \big(  \sss_{uu}(u_0,v_0) (\Delta u)^2 +  2 \sss_{uv}(u_0,v_0) \Delta u \Delta v  \\
+&  \,\,  +{\sss}_{vv}(u_0,v_0) (\Delta v)^2  \big)  + R(\Delta u , \Delta v) \,,
 \end{align*}
 where $R(\Delta u , \Delta v)$ is a remainder such that
 $$
@@ -7845,19 +7844,16 @@ $$
 ::: Remark
 ### SFF and reparametrizations {#remark-sff-reparametrization}
 
-The second fundamental form
-$$
-\mathscr{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
-$$
-depends on the choice of chart $\sss \colon U \to \R^3$. Indeed, let us adopt the same notations 
-as Proposition \ref{proposition-fff-reparametrization}. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$ with 
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
 \widetilde{\sss} = \sss \circ \Phi \,,
 $$
-where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the second fundamental form of $\widetilde{\sss}$ by
-$$
-\widetilde{\mathscr{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
-$$
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the SFF of $\sss$ and $\wsss$ by, respectively,
+\begin{align*}
+\mathscr{F}_2 & = L \, du^2 + 2M \, du dv + N \, dv^2 \,, \\
+\widetilde{\mathscr{F}}_2 & = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
+\end{align*}
 The matrices of $\mathscr{F}_2$ and $\widetilde{\mathscr{F}}_2$ are related by
 $$
 \left(
@@ -7875,12 +7871,22 @@ M & N
 \end{array}
 \right)
 \, 
-J \Phi  \,,
+J \Phi  \,
 $${#eq-sff-repar}
-where (@eq-sff-repar) holds with $+$ if $\det J\Phi > 0$ and $-$ if
+where $J\Phi$ is the Jacobian of $\Phi$
+$$
+J\Phi = \left(   
+\begin{array}{cc}
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,,
+$$
+and where (@eq-sff-repar) holds with $+$ if $\det J\Phi > 0$ and $-$ if
 $\det J\Phi < 0$. 
 
-> Formula (@eq-sff-repar) holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
+
+**Proof.** Formula (@eq-sff-repar) holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
 $$
 \widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,,
 $$
@@ -7894,13 +7900,9 @@ Let us show that a plane and a cylinder have different second fundamental forms.
 
 
 ::: Example
-### Plane   {#example-sff-plane}
+### SFF of Plane   {#example-sff-plane}
 
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$. Suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors, that is,
-$$
-\norm{\pp} = \norm{\mathbf{q}} = 1 \,, \quad \pp \cdot \mathbf{q} = 0 \,. 
-$$
-Consider the plane with chart
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
@@ -7908,9 +7910,10 @@ Prove that the second fundamental form of $\sss$ is
 $$
 \mathscr{F}_2 = 0 \,.
 $$
-This reflects the intuition that a plane is flat, and therefore there is no *curvature*. 
 
-> We have
+**Note:** This reflects the intuition that a plane is flat, and therefore there is no *curvature*. 
+
+**Solution.** We have
 $$
 \sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,.
 $$
@@ -7920,7 +7923,7 @@ $$
 $$
 while the second derivatives are
 $$
-\sss_{\uu} = \sss_{\uu} = \sss_{\uu} = \zero \,.
+\sss_{uu} = \sss_{uv} = \sss_{vv} = \zero \,.
 $$
 Therefore
 \begin{align*}
@@ -7941,7 +7944,7 @@ $$
 ::: Example
 ### Unit cylinder  {#example-cylinder-sff}
 
-Consider the unit cylinder with chart
+**Question.** Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
@@ -7949,43 +7952,35 @@ Prove that the second fundamental form of $\sss$ is
 $$
 \mathscr{F}_2 = -  du^2 \,.
 $$
-This reflects the intuition that the cylinder curves only when moving in the $v$-direction.
+
+**Note:** This reflects the intuition that the cylinder curves only when moving in the $u$-direction.
 In such direction we are moving on a circle of radius $1$, therefore we expect the curvature 
 to be $-1$.
 
-> We have
-$$
-\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
-$$
-and also
-$$
-\sss_{uu}  = (-\cos(u), - \sin(u), 0 ) \,, \quad \sss_{uv} = \sss_{vv} = \zero \,.
-$$
-We have also 
-$$
-\sss_u \times \sss_v  =
+**Solution.** We have
+\begin{align*}
+\sss_u & = (-\sin(u),\cos(u), 0 )  \\
+\sss_v & = (0,0,1) \\
+\sss_{uu}  & = (-\cos(u), - \sin(u), 0 ) \\
+\sss_{uv} & = \sss_{vv} = \zero \\
+\sss_u \times \sss_v & =
 \left|  
 \begin{array}{ccc}
 \ii & \jj & \kk \\
 -\sin(u) & \cos(u) & 0 \\
 0 & 0 & 1
 \end{array}
-\right|
- = (\cos(u), \sin(u),0)
-$$
-so that 
-$$
-\norm{ \sss_u \times \sss_v } = \sqrt{ \cos^2(u) + \sin^2(u)  } = 1 \,. 
-$$
+\right| \\
+ & = (\cos(u), \sin(u),0) \\
+\norm{ \sss_u \times \sss_v } & =  1 \,.
+\end{align*} 
 The principal unit normal is
 $$
 \NN = \frac{\sss_u \times \sss_v}{ \norm{\sss_u \times \sss_v} } = (\cos(u), \sin(u),0) \,.
 $$
 We finally compute
 \begin{align*}
-L & = \sss_{uu} \cdot \NN \\
-  & = (-\cos(u), - \sin(u), 0 ) \cdot (\cos(u), \sin(u),0) \\
-  & = - \cos^2(u) - \sin^2(u) = - 1 \\
+L & = \sss_{uu} \cdot \NN = - 1 \\
 M & = \sss_{uv} \cdot \NN = 0 \\
 N & = \sss_{vv} \cdot \NN = 0 \\
 \end{align*}
@@ -8085,7 +8080,11 @@ $$
 ::: Example
 
 1. Suppose $\SSS$ is the unit sphere $\sphere^2$. Then 
-${\mathcal{G}}_{\SSS} \colon \SSS \to \sphere^2$ is the identity, see @fig-gauss-sphere.
+${\mathcal{G}}_{\SSS} \colon \SSS \to \sphere^2$ is the identity,
+$$
+{\mathcal{G}}_{\SSS} (\pp) = \pp \,,
+$$
+see @fig-gauss-sphere.
 
 2. Let $\mathbf{a} , \vv ,\ww \in \R^3$ with $\vv$ and $\ww$ linearly independent.
 Let $\SSS$ be the plane 
@@ -8094,7 +8093,7 @@ $$
 $$
 The Gauss map of $\SSS$ is constant:
 $$
-\mathcal{G}_{\SSS} (\pp) = \frac{ \vv \times \ww  }{ \| \vv \times \ww \| } \,,
+\mathcal{G}_{\SSS} (\pp) = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } }  = \frac{ \vv \times \ww  }{ \| \vv \times \ww \| } \,,
 $$
 for all $\pp \in \SSS$, see @fig-gauss-plane.
 
@@ -8102,31 +8101,11 @@ for all $\pp \in \SSS$, see @fig-gauss-plane.
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
-Then
-$$
-\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,,
-$$
-and
-$$
-\sss_u \times \sss_v = 
-\left|
-\begin{array}{ccc}
-\ii & \jj & \kk \\
--\sin(u) & \cos(u) & 0 \\
-0  &  0 &  1 
-\end{array}
-\right|
-= (\cos(u), \sin(u), 0) \,.
-$$
-Therefore 
-$$
-\norm{ \sss_u \times \sss_v } = 1 \,,
-$$
-and 
+We have already compute that the standard unit normal is
 $$
 \NN = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } } = (\cos(u), \sin(u), 0) \,.
 $$
-The Gauss map of $\SSS$ is
+Therefore, the Gauss map of $\SSS$ is
 $$
 \mathcal{G}_{\SSS} (\pp) = (\cos(u_0), \sin(u_0), 0) \,,
 $$

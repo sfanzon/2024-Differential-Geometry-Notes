@@ -77,6 +77,7 @@ format:
   
   pdf:
     documentclass: scrreprt
+    fontfamily: libertinus
     fontfamilyoptions:
       - osf
       - p
@@ -84,11 +85,12 @@ format:
     template-partials:
       - before-body.tex
     geometry:
-      - top=25mm
-      - left=15mm
-      - right=15mm
-      - bottom=25mm
-      - heightrounded
+      - top=20mm
+      - left=10mm
+      - right=10mm
+      - bottom=12mm
+      - headheight=14pt
+      - footskip=20pt
     link-citations: true
     link-external-icon: true
     linkcolor: magenta
@@ -102,11 +104,11 @@ format:
       - text: |
           \usepackage{scrlayer-scrpage}
           \lohead{Differential Geometry}
-          \cohead{Lecture Notes}
-          \rohead{Page \pagemark}
-          \lofoot{Dr. Silvio Fanzon}
+          \cohead{}
+          \rohead{Dr. Silvio Fanzon -- S.Fanzon@hull.ac.uk}
+          \lofoot{}
           \cofoot{}
-          \rofoot{S.Fanzon@hull.ac.uk}
+          \rofoot{Page \pagemark}
           \setheadsepline{0.5pt}
           \setfootsepline{0.8pt}
           \addtokomafont{pageheadfoot}{\color{gray}\textnormal}

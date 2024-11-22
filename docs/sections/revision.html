@@ -71,13 +71,33 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Theorem {
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Notation {
   --color1: #c6e6ed;
@@ -87,23 +107,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -111,23 +123,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -135,13 +135,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -357,10 +357,9 @@ window.Quarto = {
 <ul>
 <li><p>Regularity of curves</p></li>
 <li><p>Length, arc-length, and arc-length reparametrization</p></li>
-<li><p>Computing arc-length reparametrization</p></li>
 <li><p>Calculating the curvature and torsion of unit speed curves from the definitions</p></li>
 <li><p>Calculating the curvature and torsion of (possibly not unit speed) curves from the formulae</p></li>
-<li><p>Calculating the Frenet frame of a unit speed curve</p></li>
+<li><p>Calculating the Frenet frame of a unit-speed curve</p></li>
 <li><p>Applying the Fundamental Theorem of Space Curves to determine if two curves coincide, up to a ridig motion</p></li>
 <li><p>Proving that a curve is contained in a plane, and computing the equation of such plane</p></li>
 <li><p>Proving that a curve is part of a circle</p></li>
@@ -370,19 +369,17 @@ window.Quarto = {
 <ul>
 <li><p>Regularity of surface charts</p></li>
 <li><p>Computing reparametrizations</p></li>
-<li><p>Proving that a given function between surfaces is smooth</p></li>
 <li><p>Computing a basis and the equation of the tangent plane</p></li>
 <li><p>Calculating the standard unit normal of a surface chart</p></li>
 <li><p>Calculating the differential of a smooth function between surfaces</p></li>
 <li><p>Proving that a given level surface is regular, and computing its tangent plane</p></li>
 <li><p>Proving that a given surface is ruled</p></li>
 <li><p>Calculating the first fundamental form of a surface chart</p></li>
-<li><p>Proving that a given map is a local isometry / conformal / equiareal</p></li>
-<li><p>Prove that a given parametrization is conformal / equiareal</p></li>
+<li><p>Proving that a given map is a local isometry / conformal</p></li>
+<li><p>Prove that a given parametrization is conformal</p></li>
 <li><p>Calculating length and angles of curves on surfaces</p></li>
-<li><p>Calculating areas of surface region</p></li>
 <li><p>Calculating the second fundamental form of a surface chart</p></li>
-<li><p>Calculating the matrix of the Weingarten map and the principal curvatures of a surface chart</p></li>
+<li><p>Calculating the matrix of the Weingarten map, the principal curvatures, and principal directions of a surface chart</p></li>
 <li><p>Calculating Gaussian and mean curvature of a surface chart</p></li>
 <li><p>Calculating normal and geodesic curvature of a curve on a surface</p></li>
 <li><p>Classifying points of a surface as elliptic, parabolic, hyperbolic, planar</p></li>
@@ -2886,7 +2883,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
 \]</span> The angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
-\]</span> where <span class="math inline">\(E,F,G,\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are evaluated at <span class="math inline">\((u(t),v(t))\)</span> and <span class="math inline">\(\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}\)</span> are evaluated at <span class="math inline">\(t\)</span>.<p></p>
+\]</span> where <span class="math inline">\(E,F,G,\widetilde{E},\widetilde{F},\widetilde{G}\)</span> are evaluated at <span class="math inline">\((u(t_0),v(t_0))\)</span> and <span class="math inline">\(\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}\)</span> are evaluated at <span class="math inline">\(t_0\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Example-141" class="Example">

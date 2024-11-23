@@ -1147,7 +1147,7 @@
 
  [**Remark 4.195**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
 
- [**Theorem 4.196**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
+ [**Theorem 4.196**](#theorem-sff-chart-bis)\Pageref{theorem-sff-chart-bis}
 
  [**Lemma 4.197**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
 
@@ -1167,7 +1167,7 @@
 
  [**Notation**](#Notation*-4.47)\Pageref{Notation*-4.47}
 
- [**Example 4.200**](#helicoid): Helicoid\Pageref{helicoid}
+ [**Example 4.200**](#weingarten-matrix-of-helicoid): Weingarten matrix of Helicoid\Pageref{weingarten-matrix-of-helicoid}
 
  [**Example 4.201**](#example-weingarten-2)\Pageref{example-weingarten-2}
 
@@ -1181,77 +1181,79 @@
 
  [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Example 4.205**](#plane): Plane\Pageref{plane}
+ [**Example 4.205**](#curvatures-of-the-plane): Curvatures of the Plane\Pageref{curvatures-of-the-plane}
 
  [**Example 4.206**](#example-cylinder-curvatures): Unit cylinder\Pageref{example-cylinder-curvatures}
 
- [**Theorem 4.207**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
+ [**Remark 4.207**](#eigenvalues-and-eigenvectors-1): Eigenvalues and eigenvectors\Pageref{eigenvalues-and-eigenvectors-1}
+
+ [**Theorem 4.208**](#theorem-weingarten-diagonal-bis)\Pageref{theorem-weingarten-diagonal-bis}
 
  [**Proof**](#Proof*-4.50)\Pageref{Proof*-4.50}
 
- [**Corollary 4.208**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
+ [**Corollary 4.209**](#corollary-weingarten-diagonal-bis)\Pageref{corollary-weingarten-diagonal-bis}
 
  [**Proof**](#Proof*-4.51)\Pageref{Proof*-4.51}
 
- [**Definition 4.209**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
+ [**Definition 4.210**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
 
- [**Remark 4.210**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
+ [**Remark 4.211**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
 
- [**Remark 4.211**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
+ [**Remark 4.212**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
 
- [**Proposition 4.212**](#Proposition-4.212)\Pageref{Proposition-4.212}
+ [**Proposition 4.213**](#Proposition-4.213)\Pageref{Proposition-4.213}
 
  [**Proof**](#Proof*-4.52)\Pageref{Proof*-4.52}
 
  [**Important**](#Important*-4.53)\Pageref{Important*-4.53}
 
- [**Example 4.213**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.214**](#principal-curvatures-of-unit-cylinder): Principal curvatures of Unit Cylinder\Pageref{principal-curvatures-of-unit-cylinder}
 
- [**Example 4.214**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
+ [**Example 4.215**](#example-sphere-principal): Curvatures of Sphere\Pageref{example-sphere-principal}
 
- [**Example 4.215**](#torus): Torus\Pageref{torus}
+ [**Example 4.216**](#torus): Torus\Pageref{torus}
 
- [**Question 4.216**](#Question-4.216)\Pageref{Question-4.216}
+ [**Question 4.217**](#Question-4.217)\Pageref{Question-4.217}
 
- [**Proposition 4.217**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Proposition 4.218**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
  [**Proof**](#Proof*-4.54)\Pageref{Proof*-4.54}
 
  [**Important**](#Important*-4.55)\Pageref{Important*-4.55}
 
- [**Proposition 4.218**](#Proposition-4.218)\Pageref{Proposition-4.218}
+ [**Proposition 4.219**](#Proposition-4.219)\Pageref{Proposition-4.219}
 
  [**Proof**](#Proof*-4.56)\Pageref{Proof*-4.56}
 
- [**Definition 4.219**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+ [**Definition 4.220**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.220**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.221**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.57)\Pageref{Proof*-4.57}
 
- [**Example 4.221**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
+ [**Example 4.222**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Theorem 4.222**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
+ [**Theorem 4.223**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
 
  [**Proof**](#Proof*-4.58)\Pageref{Proof*-4.58}
 
- [**Corollary 4.223**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+ [**Corollary 4.224**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
 
- [**Example 4.224**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+ [**Example 4.225**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
 
- [**Theorem 4.225**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
+ [**Theorem 4.226**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
  [**Proof**](#Proof*-4.59)\Pageref{Proof*-4.59}
 
- [**Definition 4.226**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Definition 4.227**](#local-shape-types): Local shape types\Pageref{local-shape-types}
 
- [**Example 4.227**](#Example-4.227)\Pageref{Example-4.227}
+ [**Example 4.228**](#Example-4.228)\Pageref{Example-4.228}
 
- [**Definition 4.228**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+ [**Definition 4.229**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
 
- [**Remark 4.229**](#Remark-4.229)\Pageref{Remark-4.229}
+ [**Remark 4.230**](#Remark-4.230)\Pageref{Remark-4.230}
 
- [**Theorem 4.230**](#Theorem-4.230)\Pageref{Theorem-4.230}
+ [**Theorem 4.231**](#Theorem-4.231)\Pageref{Theorem-4.231}
 
  [**Proof**](#Proof*-4.60)\Pageref{Proof*-4.60}
 
@@ -1403,7 +1405,7 @@
 
  [**Example 72**](#d-plane-in-mathbbr3-2): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-2}
 
- [**Example 73**](#unit-cylinder-4): Unit cylinder\Pageref{unit-cylinder-4}
+ [**Example 73**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
 
  [**Example 74**](#graph-of-a-function-2): Graph of a function\Pageref{graph-of-a-function-2}
 
@@ -1479,7 +1481,7 @@
 
  [**Theorem 110**](#tangent-plane-of-level-surfaces-1): Tangent plane of level surfaces\Pageref{tangent-plane-of-level-surfaces-1}
 
- [**Example 111**](#unit-cylinder-5): Unit cylinder\Pageref{unit-cylinder-5}
+ [**Example 111**](#unit-cylinder-4): Unit cylinder\Pageref{unit-cylinder-4}
 
  [**Definition 112**](#ruled-surface-1): Ruled surface\Pageref{ruled-surface-1}
 

@@ -8143,7 +8143,7 @@ $$
 d_{\pp} {\mathcal{G}}_{\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS \,.
 $$
 
-> *Proof.* The tangent plane $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ passes through the origin and
+**Proof.** The tangent plane $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ passes through the origin and
 $$
 \mathcal{G}(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 \,.
 $$
@@ -8242,7 +8242,7 @@ II_{\pp} (\sss_v, \sss_u) & II_{\pp} (\sss_v , \sss_v)
 \end{array}
 \right)  \,,
 $$
-given that $\{ \sss_u, \sss_v\}$ is a basis for $T_{\pp} \SSS$. In a not so shocking turn of events, it happens that
+given that $\{ \sss_u, \sss_v\}$ is a basis for $T_{\pp} \SSS$. In the next Theorem, we will prove that
 $$
 A = \mathscr{F}_2 = 
 \left( 
@@ -8263,7 +8263,7 @@ Therefore, the second fundamental form $II_{\pp}$ coincides with the second fund
 :::
 
 
-::: {.Theorem #theorem-sff-chart }
+::: {.Theorem #theorem-sff-chart-bis}
 
 Let $\SSS$ be an orientable surface and $\sss \colon U \to \R^3$ be a regular chart.
 Let $\pp \in \sss(U)$. 
@@ -8296,7 +8296,7 @@ $$
 :::
 
 
-To prove Theorem \ref{theorem-sff-chart} we use the following two Lemmas.
+To prove Theorem \ref{theorem-sff-chart-bis} we use the following two Lemmas.
 
 
 ::: {.Lemma  #lemma-normal-derivatives}
@@ -8399,11 +8399,11 @@ and argue similarly. This is left as an exercise.
 :::
 
 
-We can now prove Theorem \ref{theorem-sff-chart}
+We can now prove Theorem \ref{theorem-sff-chart-bis}
 
 
 ::: Proof
-### Proof of Theorem \ref{theorem-sff-chart}
+### Proof of Theorem \ref{theorem-sff-chart-bis}
 
 By Theorem \ref{theorem-tangent-plane} we have
 $$
@@ -8460,14 +8460,10 @@ $$
 \WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS \,.
 $$
 We would like to find a formula to compute $\WW_{\pp,\SSS}$. This is easily done: Given a chart $\sss$ at $\pp$, we have that $\{\sss_u,\sss_v\}$ is a basis 
-for the vector space $T_{\pp} \SSS$. Therefore there exists a $2 \times 2$ matrix $A$
-which represents $\WW_{\pp,\SSS}$, that is, 
+for the vector space $T_{\pp} \SSS$. Therefore, there exists a $2 \times 2$ matrix $\WW$
+which represents $\WW_{\pp,\SSS}$. It turns out that
 $$
-\WW_{\pp,\SSS}(\vv) = A \vv \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
-$$
-It turns out that
-$$
-A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 $$
 where we recall that
 $$
@@ -8502,47 +8498,31 @@ Let us prove this claim.
 ### Matrix of Weingarten map  {#theorem-weingarten}
 
 Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ be 
-its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. Then
+its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. The matrix of the Weingarten map is
 $$
-\WW_{\pp,\SSS} (\vv) = \mathscr{F}_1^{-1} \mathscr{F}_2   \left(
-\begin{array}{c}
-\lambda \\
-\mu
-\end{array}
-\right)\,, \quad \forall \, v \in T_{\pp} \SSS \,,
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2  \,,
 $$
-where 
-$$
-\vv = \lambda \sss_u + \mu \sss_v \,,
-$$
-with $\sss_u$ and $\sss_v$ evaluated at $(u_0,v_0)$.
+where the first and second fundamental forms are evaluated at $(u_0,v_0)$.
 
 :::
 
 ::: Proof
 
-By Theorem \ref{theorem-tangent-plane} we know that $\{\sss_u,\sss_v\}$ is a basis of 
-$T_{\pp} \SSS$. Since $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ is linear, by standard linear algebra results there exist coefficients $a,b,c,d \in \R$ such that
+By Theorem \ref{theorem-tangent-plane}, we know that $\{\sss_u,\sss_v\}$ is a basis of 
+$T_{\pp} \SSS$. The matrix of the linear map 
 $$
-\WW_{\pp,\SSS} (\vv) = 
-\left(
+\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS
+$$ 
+with respect to such basis is given by
+$$
+\WW = \left(
 \begin{array}{cc} 
-a & b \\
-c & d
+a & c \\
+b & d
 \end{array}
-\right) 
-\left(
-\begin{array}{c}
-\lambda \\
-\mu
-\end{array}
-\right)\, \quad \forall \, \vv \in T_{\pp} \SSS \,,
+\right) \,,
 $$
-where
-$$
-\vv = \lambda \sss_u + \mu \sss_v \,.
-$$
-The coefficients $a,b,c,d \in \R$ can be compute by solving the linear system
+where the coefficients $a,b,c,d \in \R$ are such that
 \begin{align*}
 \WW_{\pp,\SSS} (\sss_u) & = a \sss_u + b \sss_v \\
 \WW_{\pp,\SSS} (\sss_v) & = c \sss_u + d \sss_v \,.
@@ -8557,7 +8537,7 @@ so that we obtain
 - \NN_u & = a \sss_u + b \sss_v \\
 - \NN_v & = c \sss_u + d \sss_v \,.
 \end{align*}
-Taking the scalar product of the above equations with $\sss_u$ and $\sss_v$ we get
+Taking the scalar product with $\sss_u$ and $\sss_v$ we get
 \begin{align*}
 - \NN_u \cdot \sss_u & = a (\sss_u \cdot \sss_u) + b (\sss_v \cdot \sss_u) \\
 - \NN_u \cdot \sss_v & = a (\sss_u \cdot \sss_v) + b (\sss_v \cdot \sss_v) \\
@@ -8587,29 +8567,28 @@ M & N
 =
 \left(
 \begin{array}{cc} 
-a & b \\
-c & d
+E & F \\
+F & G
 \end{array}
 \right)
 \left(
 \begin{array}{cc} 
-E & F \\
-F & G
+a & c \\
+b & d
 \end{array}
 \right) \,,
 $$
 which reads
 $$
-\mathscr{F}_1 A = \mathscr{F}_2 \,.
+\mathscr{F}_2 = \mathscr{F}_1 \WW =  \,.
 $$
 Now, notice that 
 $$
 \det \mathscr{F}_1 > 0 \,.
 $$
-
-> Indeed, recall Cauchy-Schwarz inequality:
+This is true by Cauchy-Schwarz inequality:
 $$
-\vv \cdot \vv \leq \| \vv \| \| \ww \| \,, \quad \forall \, \vv , \ww \in 
+\vv \cdot \ww \leq \| \vv \| \| \ww \| \,, \quad \forall \, \vv , \ww \in 
 \R^3 \,,
 $$
 where the inequality is strict if and only if $\vv$ and $\ww$ are linearly independent. Since $\SSS$ is regular, we have that 
@@ -8628,11 +8607,20 @@ Hence
                      & =  \left(\sss_u \cdot \sss_u  \right) \left(\sss_v \cdot \sss_v  \right)  -  \left(\sss_u \cdot \sss_v \right)^2  \\
                      & = \norm{ \sss_u }^2 \norm{\sss_v}^2 - \left(\sss_u \cdot \sss_v \right)^2 > 0 \,.
 \end{align*}
-
-
-In particular the matrix $\mathscr{F}_1$ is invertible and thus
+Alternatively, we could have also noticed that
 $$
-A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
+\norm{ \sss_u }^2 \norm{\sss_v}^2 - \left(\sss_u \cdot \sss_v \right)^2 = \norm{\sssu \times \sssv}^2 
+$$
+by the properties of vector product. Therefore,
+$$
+\det(\FF_1) = EG-F^2 =  \norm{\sssu \times \sssv}^2  > 0
+$$
+since $\sss$ is regular.
+
+
+In particular the matrix $\mathscr{F}_1$ is invertible, and thus
+$$
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 $$
 concluding the proof.
 
@@ -8695,11 +8683,11 @@ In the following we denote the matrix of $\WW_{\pp,\SSS}$ by the symbol $\WW$.
 
 
 ::: Example
-### Helicoid
+### Weingarten matrix of Helicoid
 
-The Helicoid is charted by
+**Question.** The Helicoid is charted by
 $$
-\sss (u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
+\sss (u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in \R \,, \, v \in (0,2\pi) \,,
 $$
 where $\lambda>0$ is a constant, see @fig-helicoid. Prove that the matrix of the Weingarten map is
 $$
@@ -8707,13 +8695,13 @@ $$
 \left(
 \begin{array}{cc}
 0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
-\dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
+- \dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
 \end{array}
 \right) \,.
 $$
 
 
-*Solution.* We compute
+**Solution.** We compute
 \begin{align*}
 \sss_u & = ( \cos(v), \sin(v), 0  )  \\
 \sss_v & = ( - u \sin(v), u \cos(v), \lambda  )  \\
@@ -8766,17 +8754,14 @@ Moreover
 \end{array}
 \right| \\
 & =
-(\lambda \sin (v), - \lambda \cos(v), u)
+(\lambda \sin (v), - \lambda \cos(v), u) \\
+\norm{\sss_u \times \sss_v} & = \sqrt{u^2 + \lambda^2} \,.
 \end{align*}
-and so
-$$
-\norm{\sss_u \times \sss_v} = \sqrt{u^2 + \lambda^2} \,.
-$$
-The standard unit normal to $\sss$ is 
-$$
-\NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } = 
-\frac{1}{\sqrt{u^2 + \lambda^2}} \, (\lambda \sin(v), -\lambda \cos(v), u) \,.
-$$
+The standard unit normal to $\sss$ is therefore 
+\begin{align*}
+\NN & = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \\
+& = \frac{1}{\sqrt{u^2 + \lambda^2}} \, (\lambda \sin(v), -\lambda \cos(v), u) \,.
+\end{align*}
 Hence
 \begin{align*}
 L & = \sss_{uu} \cdot \NN = 0 \\
@@ -8800,7 +8785,7 @@ M & N
 \end{array}
 \right) \,.
 $$
-Finally
+Finally, the matrix of the Weingarten map is
 \begin{align*}
 \WW & = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
     & =
@@ -8820,7 +8805,7 @@ Finally
 \left(
 \begin{array}{cc}
 0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
-\dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
+- \dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
 \end{array}
 \right) \,.
 \end{align*}
@@ -8887,12 +8872,12 @@ plt.show()
 
 ::: {.Example #example-weingarten-2}
 
-Find the Weingarten matrix of the following surface chart
+**Question.** Compute the matrix of the Weingarten map of the following surface chart
 $$
 \sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
 $$
 
-*Solution*. Start by computing the first fundamental form:
+**Solution.** Start by computing the first fundamental form:
 \begin{align*}
 \sss_{u} & =(1,1,2u) \\
 \sss_{v} & =(-1,1,2v) \\  
@@ -9156,13 +9141,19 @@ H & = \frac12 \operatorname{trace} \WW \\
 
 
 ::: Example
-### Plane
+### Curvatures of the Plane
 
-Consider the plane charted by
+**Question.** Consider the plane charted by
 $$
-\sss (u,v) = \mathbf{a} + \pp u + \mathbf{q} v \,, \quad u \in (0,2\pi)\,, \, u, v \in \R \,.
+\sss (u,v) = \mathbf{a} + \pp u + \mathbf{q} v \,.
 $$
-We have already computed in Example \ref{example-fff-plane} and Example \ref{example-sff-plane} that the first and second
+
+1. Compute the matrix of the Weingarten map of $\sss$.
+2. Compute the Gaussian and mean curvatures of the plane.
+
+**Solution.**
+
+1. We have already computed in Example \ref{example-fff-plane} and Example \ref{example-sff-plane} that the first and second
 fundamental forms of $\sss$ are
 $$
 \mathscr{F}_1 =
@@ -9191,13 +9182,14 @@ $$
 \end{array}
 \right)  \,.
 $$
-Hence the Gaussian curvature is
+
+2. The Gaussian curvature is
 $$
 K = \det (\WW) = 0 \,,
 $$
 while the mean curvature is
 $$
-H = \frac12 \, \operatorname{trace} \WW =  0 \,.
+H = \frac12 \, \operatorname{trace} (\WW) =  0 \,.
 $$
 
 
@@ -9209,11 +9201,17 @@ $$
 ::: Example
 ### Unit cylinder  {#example-cylinder-curvatures}
 
-Consider the unit cylinder charted by
+**Question.** Consider the unit cylinder charted by
 $$
-\sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \R \,.
+\sss (u,v) = (\cos(u), \sin(u), v) \,.
 $$
-We have already computed in Example \ref{example-cylinder-fff} and Example \ref{example-cylinder-sff}  that the first and second
+
+1. Compute the matrix of the Weingarten map of $\sss$.
+2. Compute the Gaussian and mean curvatures of the unit cylinder.
+
+**Solution.**
+
+1. We have already computed in Example \ref{example-cylinder-fff} and Example \ref{example-cylinder-sff}  that the first and second
 fundamental forms of $\sss$ are
 $$
 \mathscr{F}_1 =
@@ -9255,7 +9253,8 @@ Therefore the matrix of the Weingarten map is
 \end{array}
 \right)  \,.
 \end{align*}
-Therefore the Gaussian curvature is
+
+2. The Gaussian curvature is
 $$
 K = \det (\WW) = 0 \,,
 $$
@@ -9273,23 +9272,29 @@ $$
 
 ### Principal curvatures
 
-Let $V$ be a two-dimensional vector space.
-For a linear map $L \colon V \to V$ we say that $\lambda \in \R$ is an **eigenvalue** of $L$ with **eigenvector** $\vv \in V$ if
+
+In order to define the principal curvatures, we need the notions of eigenvalue and eigenvector. For reader's convenience, we recall them in the next Remark. 
+
+::: Remark
+### Eigenvalues and eigenvectors
+
+Let $V$ be a two-dimensional vector space, and $L \colon V \to V$ a linear map. We say that $\lambda \in \R$ is an **eigenvalue** of $L$ with **eigenvector** $\vv \in V$ if
 $$
 L(\vv)  = \lambda \vv \,, \quad \vv \neq 0 \,.
+$${#eq-eigen-equation}
+Let $\{\vv_1,\vv_2\}$ be a basis of $V$, 
+and denote by
 $$
-Suppose $A \in \R^{2 \times 2}$ is the matrix of $L$ with respect to a basis $\{\vv_1,\vv_2\}$
-of $V$. Denote by 
-$$
-\xx= (\lambda,\mu) \,, \quad 
-\vv = \lambda \ww_1 + \mu \ww_2 \,.
+\xx = (x_1,x_2) \,, \quad 
+\vv = x_1 \vv_1 + x_2 \vv_2 \,.
 $$ 
-the vector of coordinates of $\vv$. Then
+the coordinates of $\vv$ in such basis. 
+Let $A \in \R^{2 \times 2}$ be the matrix of $L$ with respect 
+to the basis $\{\vv_1,\vv_2\}$. Equation (@eq-eigen-equation) is equivalent to
 $$
-A\vv = \lambda \vv \,,
+A \xx = \lambda \xx \,,
 $$
-meaning that $\lambda$ is an eigenvalue of $A$ with eigenvector $\xx$.
-The eigenvalues of $A$ can be computed by solving the **characteristic equation**
+meaning that $\lambda$ is an eigenvalue of $A$ with eigenvector $\xx$. The eigenvalues of $A$ can be computed by solving the **characteristic equation**
 $$
 P(\lambda) = 0 \,, \quad P(\lambda) := \det \left(  A - \lambda I  \right)  \,,
 $$
@@ -9299,9 +9304,12 @@ $$
 A = P^{-1} D P \,.
 $$
 
+:::
 
 
-::: {.Theorem  #theorem-weingarten-diagonal}
+
+
+::: {.Theorem  #theorem-weingarten-diagonal-bis}
 
 Let $\SSS$ be an orientable surface and let $\WW_{\pp,\SSS}$ be the 
 Weingarten map at $\pp$. There exist scalars $\kappa_1, \kappa_2 \in \R$ and an orthonormal basis 
@@ -9335,26 +9343,36 @@ G & - F\\
 \end{array}
 \right)  \,.
 $$
-Thus $\mathcal{F}_1^{-1}$ is symmetric. Since $\mathcal{F}_2$ is symmetric, and the product
-of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric. 
+Thus, $\mathcal{F}_1^{-1}$ is symmetric. Since 
+$$
+\mathscr{F}_2 =
+\left( 
+\begin{array}{cc}
+L & M\\
+M & N
+\end{array}
+\right) 
+$$
+is symmetric, and the product
+of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric as well. 
 Therefore $\WW_{\pp,\SSS}$ is self-adjoint, see Remark \ref{remark-self-adoint}. The thesis now follows from the Spectral Theorem, see Theorem \ref{theorem-spectral}.
 
 :::
 
 
-The matrix version of Theorem \ref{theorem-weingarten-diagonal} is given in the following Corollary.
+The matrix version of Theorem \ref{theorem-weingarten-diagonal-bis} is given in the following Corollary.
 
 
-::: {.Corollary #corollary-weingarten-diagonal}
+::: {.Corollary #corollary-weingarten-diagonal-bis}
 
-Let $\SSS$ be orientable, and let $\WW$ the matrix of the Weingarten map $\WW_{\pp,\SSS}$
-with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$, where $\sss$ is a regular chart at $\pp$. Let $\kappa_1,\kappa_2,\mathbf{t}_1,\mathbf{t}_2$ be as in Theorem \ref{theorem-weingarten-diagonal}.
+Let $\SSS$ be orientable, $\sss$ is a regular chart at $\pp$. Let $\WW$ the matrix of the Weingarten map $\WW_{\pp,\SSS}$
+with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$. Let $\kappa_1,\kappa_2,\mathbf{t}_1,\mathbf{t}_2$ be as in Theorem \ref{theorem-weingarten-diagonal-bis}.
 Let $\lambda_1, \lambda_2, \mu_1, \mu_2 \in \R$ be such that
 $$
 \mathbf{t}_1 = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
 \mathbf{t}_2 = \lambda_2 \sss_u + \mu_2 \sss_v \,.
 $$
-and denote 
+Denote 
 $$
 \xx_1 = (\lambda_1,\mu_1) \,, \quad 
 \xx_2 = (\lambda_2,\mu_2) \,.
@@ -9370,22 +9388,24 @@ $$
 
 - The matrix $\WW$ is diagonalizable, with 
 $$
-\WW = P^{-1} D P \,, \quad 
-D = 
+\begin{aligned}
+\WW & = P^{-1} D P \,, \\
+D & = 
 \left(
 \begin{array}{cc}
 \kappa_1 & 0 \\
 0   & \kappa_2
 \end{array}
-\right) \,, \quad 
-P = 
+\right) \,, \\
+P & = 
 \left(
 \begin{array}{cc}
 \lambda_1 & \lambda_2 \\
 \mu_1 & \mu_2
 \end{array}
 \right) \,.
-$$
+\end{aligned}
+$${#eq-diagonal-W}
 
 
 :::
@@ -9393,20 +9413,23 @@ $$
 
 ::: Proof
 
-Recall that $\WW$ is the matrix of $\WW_{\pp,\SSS}$ with respect to the basis
-$\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$. Therefore, by definition of $\xx_1$, $\xx_2$ we get
+By Theorem \ref{theorem-weingarten-diagonal-bis} we have
 $$
-\WW_{\pp,\SSS} (\mathbf{t}_1) = \WW \xx_1 \,, \quad
-\WW_{\pp,\SSS} (\mathbf{t}_2) = \WW \xx_2 \,.
+\WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, 
+\quad \WW_{\pp,\SSS} (\mathbf{t}_2) = \kappa_2 \mathbf{t}_2 \,.
 $$
-The thesis follows by Theorem \ref{theorem-weingarten-diagonal} and the
-Spectral Theorem for matrices, see Theorem \ref{theorem-spectral-matrix}.
+As $\WW$ is the matrix of $\WW_{\pp,\SSS}$ and $\xx_1$, $\xx_2$ are the coordinates of $\ttt_1,\ttt_2$, we infer
+$$
+\WW \xx_1 = \kappa_1 \xx_1 \,, \quad
+\WW \xx_2 = \kappa_2 \xx_2 \,,
+$$
+showing that $\kappa_i$ is eigenvalue of $\WW$ with eigenvector $\xx_i$. In particular, it follows that $\WW$ is diagonal in the basis $\{\xx_1,\xx_2\}$ of $\R^2$. Therefore (@eq-diagonal-W) holds.
 
 :::
 
 
 
-The eigenvalues and eigenvectors of the weingarten map have a name.
+The principal curvatures are the eigenvalues of the matrix of the Weingarten map, and the principal vectors its eigenvectors.
 
 
 ::: Definition
@@ -9414,31 +9437,35 @@ The eigenvalues and eigenvectors of the weingarten map have a name.
 
 Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS}$ be the Weingarten map of $\SSS$ at $\pp$. We define:
 
-- The **principal curvatures** of $\SSS$ at $\pp$ are the eigenvalues $\kappa_1, \kappa_2$
+1. The **principal curvatures** of $\SSS$ at $\pp$ are the eigenvalues $\kappa_1, \kappa_2$
 of $\WW_{\pp,\SSS}$.
 
-- The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ are the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$.
+2. The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ are the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$.
 
 :::
 
 
+Corollary \ref{corollary-weingarten-diagonal-bis} gives an explicit way
+to compute the principal curvatures and vectors.
+
 ::: Remark
 ### Computing principal curvatures and vectors
 
-Corollary \ref{corollary-weingarten-diagonal} gives an explicit way
-to compute the principal curvatures and vectors:
+Suppose given a surface chart $\sss$.
 
-1. Compute the eigenvalues of $\WW$. This is done by solving for $\kappa$ the equation
+1. Compute the matrix of the Weingarten map
 $$
-\det(\WW - \kappa I) = 0 \,.
-$$
-This gives one of the principal curvatures 
-$$
-\kappa_i = \kappa
+\WW  = \FF_{1}^{-1} \FF_2 \,.
 $$
 
-2. Compute the eigenvector(s) related to the eigenvalue $\kappa$. This is 
-done by finding scalars $\lambda$, $\mu$ which solve the linear system
+1. Compute the eigenvalues of $\WW$, by solving for $\lambda$ the equation
+$$
+\det(\WW - \lambda I) = 0 \,.
+$$
+The two solutions are the principal curvatures $\kappa_1$ and $\kappa_2$.
+
+
+2. Find scalars $\lambda$, $\mu$ which solve the linear system
 $$
 (\WW - \kappa_i I) 
 \left( 
@@ -9446,14 +9473,15 @@ $$
 \lambda \\
 \mu
 \end{array}
-\right) = 0 
+\right) = 0 \,.
 $$
-This gives the eigenvector of $\WW$
+The solution(s) gives the eigenvector(s) of $\WW$
 $$
 \xx_i = (\lambda,\mu)
 $$
+corresponding to the eigenvalue $\kappa_i$.
 
-3. The principal vector associated to $\kappa_i$ is  
+3. The principal vector(s) associated to $\kappa_i$ is  
 $$
 \mathbf{t}_i = \lambda \sss_u + \mu \sss_v 
 $$
@@ -9506,7 +9534,7 @@ $$
 
 ::: Proof
 
-By Corollary \ref{corollary-weingarten-diagonal} we have
+By Corollary \ref{corollary-weingarten-diagonal-bis} we have
 $$
 \WW = P^{-1} D P \,, \quad 
 D = 
@@ -9561,14 +9589,16 @@ the first and second fundamental form coefficients.
 
 
 ::: Example
-### Unit Cylinder
+### Principal curvatures of Unit Cylinder
 
 
-Consider the unit cylinder charted by
+**Question.** Consider the unit cylinder charted by
 $$
 \sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \R \,.
 $$
-We have already computed in Example \ref{example-cylinder-curvatures} that the matrix of the Weingarten map is
+Compute the principal curvature and principal vectors.
+
+**Solution.** As computed in Example \ref{example-cylinder-curvatures}, the matrix of the Weingarten map is
 $$
 \WW =
 \left(
@@ -9585,7 +9615,7 @@ $$
 $$
 Therefore the principal curvatures are 
 $$
-\kappa_1 = - 1 \,, \quad \kappa_2 = 0
+\kappa_1 = - 1 \,, \quad \kappa_2 = 0 \,,
 $$
 and the principal vectors are
 \begin{align*}
@@ -9604,19 +9634,19 @@ as shown in @fig-cylinder-principal.
 
 
 ::: Example
-### Sphere  {#example-sphere-principal}
+### Curvatures of Sphere  {#example-sphere-principal}
 
-Consider the chart for the sphere
+**Question.** Consider the chart for the sphere
 $$
-\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,,
 $$
-Prove that 
+where $u \in (0,2\pi)$, $v \in (-\pi/2,\pi/2)$. Prove that 
 $$
-\mathcal{F}_1 =
-\mathcal{F}_2 = 
+\FF_1 =
+\FF_2 = 
 \left( 
 \begin{array}{cc}
-\sin^2(v) & 0 \\
+\cos^2(v) & 0 \\
 0         & 1 
 \end{array}
 \right) \,, \quad 
@@ -9634,21 +9664,20 @@ K = H = \kappa_1 = \kappa_2 =1 \,, \quad \mathbf{t}_1 = \sss_u \,, \quad
 \mathbf{t}_2 = \sss_v \,.
 $$ 
 
-
-*Solution.* We compute
+**Solution.** We compute
 \begin{align*}
-\sss_u & = (-\sin(u)\sin(v), \cos(u)\sin(v),0) \\
-\sss_v & = (\cos(u)\cos(v), \sin(u)\cos(v), - \sin(v)) \\
-E & = \sss_u \cdot \sss_u = \sin^2(v) \\
+\sss_u & = (-\sin(u)\cos(v), \cos(u)\cos(v),0) \\
+\sss_v & = (-\cos(u)\sin(v), -\sin(u)\sin(v), \cos(v)) \\
+E & = \sss_u \cdot \sss_u = \cos^2(v) \\
 F & = \sss_u \cdot \sss_v = 0\\
 G & = \sss_v \cdot \sss_v = 1
 \end{align*}
 and therefore the first fundamental form is
 $$
-\mathcal{F}_1 = 
+\FF_1 = 
 \left( 
 \begin{array}{cc}
-\sin^2(v) & 0 \\
+\cos^2(v) & 0 \\
 0         & 1 
 \end{array}
 \right) \,.
@@ -9659,46 +9688,51 @@ Moreover
 \left| 
 \begin{array}{ccc}
 \ii & \jj & \kk \\
--\sin(u)\sin(v)  & \cos(u)\sin(v) & 0 \\
-\cos(u)\cos(v) & \sin(u)\cos(v) & - \sin(v)
+-\sin(u)\cos(v)  & \cos(u)\cos(v) & 0 \\
+-\cos(u)\sin(v) & -\sin(u)\sin(v) & \cos(v)
 \end{array}
 \right| \\
-& = (-\cos(u)\sin^2(v), 
--\sin(u) \sin^2(v),
-- \cos(v)\sin(v)) \\
-\| \sss_u \times \sss_v \| & = |\sin(v)| \\
-\NN & = (- \cos(u) \sin(v), -\sin(u)\sin(v), -\cos(v) ) \\
-\sss_{uu} & = (-\cos(u)\sin(v), -\sin(u)\sin(v), 0 ) \\ 
-\sss_{uv} & = (-\sin(u)\cos(v), \cos(u)\cos(v), 0 ) \\
-\sss_{vv} & = (-\cos(u)\sin(v), -\sin(u)\sin(v), -\cos(v) ) \\ 
-L & = \sss_{uu} \cdot \NN = \sin^{2}(v) \\
+& = (\cos(u)\cos^2(v), 
+\sin(u) \cos^2(v),
+\cos(v)\sin(v)) \\
+\| \sss_u \times \sss_v \| & = |\cos(v)| = \cos(v) \,,
+\end{align*}
+where we used that $\cos(v)>0$ since $v \in (-\pi/2,\pi/2)$.
+Therefore,
+\begin{align*}
+\NN & = (\cos(u) \cos(v), \sin(u)\cos(v), \sin(v) ) \\
+\sss_{uu} & = (-\cos(u)\cos(v), -\sin(u)\cos(v), 0 ) \\ 
+\sss_{uv} & = (\sin(u)\sin(v), -\cos(u)\sin(v), 0 ) \\
+\sss_{vv} & = (-\cos(u)\cos(v), -\sin(u)\cos(v), -\sin(v) ) \\ 
+L & = \sss_{uu} \cdot \NN = \cos^{2}(v) \\
 M & =\sss_{uv} \cdot \NN  = 0 \\
 N & = \sss_{vv} \cdot \NN  = 1 
 \end{align*}
 so that the second fundamental form is 
 $$
-\mathcal{F}_2 = 
+\FF_2 = 
 \left( 
 \begin{array}{cc}
-\sin^2(v) & 0 \\
+\cos^2(v) & 0 \\
 0         & 1 
 \end{array}
 \right) \,.
 $$
 In particular the matrix of the Weingarten map is
 $$
-\WW = \mathcal{F}_1^{-1}\mathcal{F}_2 = \left( 
+\WW = \FF_1^{-1} \FF_2 = 
+\left( 
 \begin{array}{cc}
 1 & 0 \\
 0 & 1 
 \end{array}
-\right)
+\right) \,.
 $$
 Since $\WW$ is diagonal, the principal curvatures are
 $$
-\kappa_1 = \kappa_2 = 1
+\kappa_1 = \kappa_2 = 1 \,,
 $$
-and the principal vectors
+and the principal vectors are
 $$
 \mathbf{t}_1 = \sss_u \,, \quad 
 \mathbf{t}_2 = \sss_v \,.
@@ -10041,7 +10075,7 @@ $$
 du(\dg(t)) = \dot{u}(t) \,, \quad 
 dv(\dg(t)) = \dot{v}(t) \,.
 $$
-Therefore, using Part 1 and Theorem \ref{theorem-sff-chart}, we obtain
+Therefore, using Part 1 and Theorem \ref{theorem-sff-chart-bis}, we obtain
 \begin{align*}
 \kappa_n & = II_{\pp} (\dg(t) , \dg(t) ) \\
          & = L du(\dg(t))^2 + 2M du(\dg(t)) dv(\dg(t)) + N dv(\dg(t))^2 \\ 
@@ -10129,7 +10163,7 @@ Let $\g$ be a unit speed curve on $\SSS$ and set
 $$
 \pp := \g(t) \,.
 $$
-By Theorem \ref{theorem-weingarten-diagonal} the principal vectors 
+By Theorem \ref{theorem-weingarten-diagonal-bis} the principal vectors 
 $\{ \mathbf{t}_1, \mathbf{t}_2 \}$ form an orthonormal basis of 
 $T_{\pp} \SSS$. Since by definition
 $$ 
@@ -10259,7 +10293,7 @@ $\SSS$ at $\pp$.
 
 ::: Proof
 
-By Theorem \ref{theorem-weingarten-diagonal} the principal vectors 
+By Theorem \ref{theorem-weingarten-diagonal-bis} the principal vectors 
 $\{ \mathbf{t}_1, \mathbf{t}_2 \}$ are an orthonormal basis of 
 $T_{\pp} \SSS$. Therefore the standard unit normal $\NN$ at $\pp$ is 
 orthogonal to both 
@@ -10307,7 +10341,7 @@ $(0,0)$. Set
 $$
 \vv :=  s \sss_u + t \sss_v  \,.
 $$
-By Theorem \ref{theorem-sff-chart} we have
+By Theorem \ref{theorem-sff-chart-bis} we have
 $$
  L s^2  + 2M st + N t^2  = II_{\pp} (\vv,\vv) = \WW_{\pp,\SSS} (\vv) \cdot \vv \,.
 $$
@@ -10497,7 +10531,7 @@ $${#eq-theorem-umbilic}
 
 *Step 1. $\kappa$ is constant.*
 
-By Theorem \ref{theorem-weingarten-diagonal} the principal vectors
+By Theorem \ref{theorem-weingarten-diagonal-bis} the principal vectors
 $\{\mathbf{t}_1,\mathbf{t}_2\}$ are an orthonormal basis of
 $T_{\pp} \SSS$. Hence, for each $\vv \in T_{\pp} \SSS$ there exist
 $\lambda,\mu \in \R$ such that

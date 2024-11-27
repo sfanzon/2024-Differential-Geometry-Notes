@@ -51,7 +51,6 @@ book:
     - sections/references.qmd
   appendices:
     - sections/appendix_plots.qmd
-    - sections/revision.qmd
 
 
 bibliography: teaching.bib

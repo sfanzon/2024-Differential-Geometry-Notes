@@ -72,17 +72,61 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Goal {
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Lemma {
   --color1: #f4cce0;
@@ -96,53 +140,9 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 </style>
 
@@ -268,12 +268,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../sections/appendix_plots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/revision.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Revision Guide</span></a>
   </div>
 </li>
       </ul>
@@ -1631,7 +1625,7 @@ s(t) = \int_{t_0}^t  \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau
 <li><p>If <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
 \phi(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 \tag{1.24}\]</span></span></p></li>
-<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="revision.html#eq-proposition-unit-speed" class="quarto-xref"><span>1</span></a>) for some <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
+<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed" class="quarto-xref"><span>1.24</span></a>) for some <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
 </ol>
 </div></details>
 </div>

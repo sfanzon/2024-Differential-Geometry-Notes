@@ -46,6 +46,26 @@ Up to date information about the course, Tutorials and Homework will be publishe
 :::
 
 
+## Revision Guide {.unnumbered}
+
+A Revision Guide to prepare for the Exam is available at
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[silviofanzon.com/2024-Differential-Geometry-Revision](https://www.silviofanzon.com/2024-Differential-Geometry-Revision)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{https://www.silviofanzon.com/2024-Differential-Geometry-Revision}{silviofanzon.com/2024-Differential-Geometry-Revision}
+}
+\end{center}
+:::
+
+
 
 
 

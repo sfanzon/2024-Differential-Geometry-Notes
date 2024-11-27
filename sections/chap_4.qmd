@@ -8870,101 +8870,6 @@ plt.show()
 
 
 
-::: {.Example #example-weingarten-2}
-
-**Question.** Compute the matrix of the Weingarten map of the following surface chart
-$$
-\sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
-$$
-
-**Solution.** Start by computing the first fundamental form:
-\begin{align*}
-\sss_{u} & =(1,1,2u) \\
-\sss_{v} & =(-1,1,2v) \\  
-E & = \sss_{u} \cdot \sss_u  = 2 (1+2u^2) \\
-F & = \sss_{u} \cdot \sss_v  = 4uv \\
-G & = \sss_{v} \cdot \sss_v  = 2 (1+2v^2) 
-\end{align*}
-so that
-$$
-\mathscr{F}_{1}=
-\left(
-  \begin{array}{ll}
-E & F \\
-F & G
-\end{array}
-\right)
-=
-\left(\begin{array}{ll}
-2(1 + 2u^2) & 4uv \\
-4uv & 2(1 + 2v^2)
-\end{array}\right)
-$$
-The determinant of $\mathscr{F}_1$ is
-$$
-\det (\mathscr{F}_1) = 4 (1+2u^2 + 2v^2)
-$$
-and therefore
-\begin{align*}
-\mathscr{F}_{1}^{-1} & = \frac{1}{\det (\mathscr{F}_1)} 
-\left(
-  \begin{array}{ll}
-G & -F \\
--F & E
-\end{array}
-\right) \\
-& = \frac{1}{2(1 + 2u^2 + 2v^2)}
-\,\left(\begin{array}{ll}
-1 + 2v^2 & -2uv \\
-- 2uv & 1 + 2u^2
-\end{array}\right) \,.
-\end{align*}
-We now need to compute the second fundamental form
-\begin{align*}
-\sss_{u u} & =(0,0,2) \\
-\sss_{u v} & =(0,0,0) \\
-\sss_{v v} & =(0,0,2) \\
-\sss_{u} \times \sss_{v} & =\left|\begin{array}{ccc}
-\ii & \jj & \kk \\
-1 & 1 & 2 u \\
--1 & 1 & 2 v
-\end{array}\right| \\
-& =2(v-u,-u-v, 1) \\
-\left\|\sss_{u} \times \sss_{v}\right\| & =2\left( 1 + 2u^2 + 2v^2\right)^{\frac{1}{2}} \\
-\NN & =\frac{(v-u,-u-v, 1)}{ \left( 1 + 2 u^2 + 2 v^2 \right)^{\frac{1}{2}}} \\
-L & = \sss_{uu} \cdot \NN =\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \\
-M & = \sss_{uv} \cdot \NN = 0 \\
-N & = \sss_{vv} \cdot \NN = \frac{2}{\left(1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}}
-\end{align*}
-so that
-\begin{align*}
-\mathscr{F}_{2} & =
-\left(\begin{array}{ll}
-L & M \\
-M & N
-\end{array}\right) \\
-& =
-\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \, \left(\begin{array}{ll}
-1 & 0 \\
-0 & 1
-\end{array}\right) \,.
-\end{align*}
-The matrix of the Weingarten map is
-\begin{align*}
-\WW & = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
-& = 
-\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
-\,\left(\begin{array}{ll}
-1 + 2v^2 & -2uv \\
-- 2uv & 1 + 2u^2
-\end{array}\right) \,.
-\end{align*}
-
-:::
-
-
-
-
 
 
 ## Curvatures
@@ -9003,7 +8908,7 @@ $$
 
 - The **mean curvature** of $\SSS$ at $\pp$ as
 $$
-H := \frac12 \, \operatorname{trace} (\WW) \,,
+H := \frac12 \, \operatorname{Tr} (\WW) \,,
 $$
 
 :::
@@ -9015,7 +8920,7 @@ $$
 We recall that the **trace** of a $2 \times 2$ matrix $A$ is defined as the sum of the diagonal
 entries, that is,
 $$
-\operatorname{trace} A = a + d \,, \quad
+\operatorname{Tr} (A) = a + d \,, \quad
 A = 
 \left(
 \begin{array}{cc}
@@ -9034,7 +8939,7 @@ The Gaussian curvature and mean curvature do not depend on the choice of basis o
 matrix of the Weingarten map with respect to the basis $\{\widetilde{\sss}_u,\widetilde{\sss}_v\}$ of $T_{\pp} \SSS$, then 
 $$
 \det (\WW) = \det (\widetilde{\WW}) \,, \quad 
-\operatorname{trace} (\WW) = \operatorname{trace} (\widetilde{\WW}) \,.
+\operatorname{Tr} (\WW) = \operatorname{Tr} (\widetilde{\WW}) \,.
 $$
 
 > The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.
@@ -9129,7 +9034,7 @@ w_{22} & = \frac{1}{EG - F^2} \left( -MF + EN  \right) \\
 \end{align*}
 Therefore
 \begin{align*}
-H & = \frac12 \operatorname{trace} \WW \\
+H & = \frac12 \operatorname{Tr} \WW \\
   & = \frac12 \left (w_{11} + w_{22} \right) \\
   & = \frac{LG - 2MF + EN}{2 (EG - F^2)}  \,.
 \end{align*}
@@ -9189,7 +9094,7 @@ K = \det (\WW) = 0 \,,
 $$
 while the mean curvature is
 $$
-H = \frac12 \, \operatorname{trace} (\WW) =  0 \,.
+H = \frac12 \, \operatorname{Tr} (\WW) =  0 \,.
 $$
 
 
@@ -9260,7 +9165,7 @@ K = \det (\WW) = 0 \,,
 $$
 while the mean curvature is
 $$
-H = \frac12 \, \operatorname{trace} \WW =  - \frac12 \,.
+H = \frac12 \, \operatorname{Tr} (\WW) =  - \frac12 \,.
 $$
 
 
@@ -9311,63 +9216,17 @@ $$
 
 ::: {.Theorem  #theorem-weingarten-diagonal-bis}
 
-Let $\SSS$ be an orientable surface and let $\WW_{\pp,\SSS}$ be the 
-Weingarten map at $\pp$. There exist scalars $\kappa_1, \kappa_2 \in \R$ and an orthonormal basis 
+Let $\SSS$ be an orientable surface, $\WW_{\pp,\SSS}$ the 
+Weingarten map at $\pp$, and $\WW$ the matrix of $\WW_{\pp,\SSS}$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$. 
+
+1. There exist scalars $\kappa_1, \kappa_2 \in \R$ and an orthonormal basis 
 $\{\mathbf{t}_1,\mathbf{t}_2\}$ of $T_{\pp} \SSS$ such that 
 $$
 \WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, 
 \quad \WW_{\pp,\SSS} (\mathbf{t}_2) = \kappa_2 \mathbf{t}_2 \,.
 $$
 
-
-:::
-
-
-
-
-::: Proof
-
-Let $\sss$ be a chart for $\SSS$ at $\pp$. Then $\{\sss_u,\sss_v\}$ is a basis of $T_{\pp} \SSS$. Let $\WW$ be 
-the matrix of $\WW_{\pp,\SSS}$ with respect to such basis.
-By Theorem \ref{theorem-weingarten} we have
-$$
-\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,. 
-$$
-Recall that
-$$
-\mathscr{F}_1^{-1} = \frac{1}{EG - F^2 }
-\left( 
-\begin{array}{cc}
-G & - F\\
--F & E
-\end{array}
-\right)  \,.
-$$
-Thus, $\mathcal{F}_1^{-1}$ is symmetric. Since 
-$$
-\mathscr{F}_2 =
-\left( 
-\begin{array}{cc}
-L & M\\
-M & N
-\end{array}
-\right) 
-$$
-is symmetric, and the product
-of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric as well. 
-Therefore $\WW_{\pp,\SSS}$ is self-adjoint, see Remark \ref{remark-self-adoint}. The thesis now follows from the Spectral Theorem, see Theorem \ref{theorem-spectral}.
-
-:::
-
-
-The matrix version of Theorem \ref{theorem-weingarten-diagonal-bis} is given in the following Corollary.
-
-
-::: {.Corollary #corollary-weingarten-diagonal-bis}
-
-Let $\SSS$ be orientable, $\sss$ is a regular chart at $\pp$. Let $\WW$ the matrix of the Weingarten map $\WW_{\pp,\SSS}$
-with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$. Let $\kappa_1,\kappa_2,\mathbf{t}_1,\mathbf{t}_2$ be as in Theorem \ref{theorem-weingarten-diagonal-bis}.
-Let $\lambda_1, \lambda_2, \mu_1, \mu_2 \in \R$ be such that
+2. Let $\lambda_1, \lambda_2, \mu_1, \mu_2 \in \R$ be such that
 $$
 \mathbf{t}_1 = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
 \mathbf{t}_2 = \lambda_2 \sss_u + \mu_2 \sss_v \,.
@@ -9378,15 +9237,13 @@ $$
 \xx_2 = (\lambda_2,\mu_2) \,.
 $$
 They hold:
-
-- The scalars $\kappa_1,\kappa_2$ are eingenvalues of $\WW$ of eigenvectors
+    - The scalars $\kappa_1,\kappa_2$ are eingenvalues of $\WW$ of eigenvectors
 $\xx_1$ and $\xx_2$, that is,
 $$
 \WW \xx_1 = \kappa_1 \xx_1 \,, \quad 
 \WW \xx_2 = \kappa_2 \xx_2 \,.
 $$
-
-- The matrix $\WW$ is diagonalizable, with 
+    - The matrix $\WW$ is diagonalizable, with 
 $$
 \begin{aligned}
 \WW & = P^{-1} D P \,, \\
@@ -9408,12 +9265,45 @@ P & =
 $${#eq-diagonal-W}
 
 
+
 :::
+
+
 
 
 ::: Proof
 
-By Theorem \ref{theorem-weingarten-diagonal-bis} we have
+*Part 1.* Let $\sss$ be a chart for $\SSS$ at $\pp$. Then $\{\sss_u,\sss_v\}$ is a basis of $T_{\pp} \SSS$. Let $\WW$ be 
+the matrix of $\WW_{\pp,\SSS}$ with respect to such basis.
+By Theorem \ref{theorem-weingarten} we have
+$$
+\WW = {\FF}_1^{-1} {\FF}_2 \,. 
+$$
+Recall that
+$$
+{\FF}_1^{-1} = \frac{1}{EG - F^2 }
+\left( 
+\begin{array}{cc}
+G & - F\\
+-F & E
+\end{array}
+\right)  \,.
+$$
+Thus, ${\FF}_1^{-1}$ is symmetric. Since 
+$$
+{\FF}_2 =
+\left( 
+\begin{array}{cc}
+L & M\\
+M & N
+\end{array}
+\right) 
+$$
+is symmetric, and the product
+of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric as well. 
+Therefore $\WW_{\pp,\SSS}$ is self-adjoint, see Remark \ref{remark-self-adoint}. The thesis now follows from the Spectral Theorem, see Theorem \ref{theorem-spectral}.
+
+*Part 2.* We have just proven that
 $$
 \WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, 
 \quad \WW_{\pp,\SSS} (\mathbf{t}_2) = \kappa_2 \mathbf{t}_2 \,.
@@ -9429,13 +9319,14 @@ showing that $\kappa_i$ is eigenvalue of $\WW$ with eigenvector $\xx_i$. In part
 
 
 
+
 The principal curvatures are the eigenvalues of the matrix of the Weingarten map, and the principal vectors its eigenvectors.
 
 
 ::: Definition
 ### Principal curvatures and vectors
 
-Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS}$ be the Weingarten map of $\SSS$ at $\pp$. We define:
+Let $\SSS$ be an orientable surface, and $\WW_{\pp,\SSS}$ the Weingarten map of $\SSS$ at $\pp$. We define:
 
 1. The **principal curvatures** of $\SSS$ at $\pp$ are the eigenvalues $\kappa_1, \kappa_2$
 of $\WW_{\pp,\SSS}$.
@@ -9445,7 +9336,7 @@ of $\WW_{\pp,\SSS}$.
 :::
 
 
-Corollary \ref{corollary-weingarten-diagonal-bis} gives an explicit way
+Theorem \ref{theorem-weingarten-diagonal-bis} gives an explicit way
 to compute the principal curvatures and vectors.
 
 ::: Remark
@@ -9458,14 +9349,14 @@ $$
 \WW  = \FF_{1}^{-1} \FF_2 \,.
 $$
 
-1. Compute the eigenvalues of $\WW$, by solving for $\lambda$ the equation
+2. Compute the eigenvalues of $\WW$, by solving for $\lambda$ the equation
 $$
 \det(\WW - \lambda I) = 0 \,.
 $$
 The two solutions are the principal curvatures $\kappa_1$ and $\kappa_2$.
 
 
-2. Find scalars $\lambda$, $\mu$ which solve the linear system
+3. Find scalars $\lambda$, $\mu$ which solve the linear system
 $$
 (\WW - \kappa_i I) 
 \left( 
@@ -9481,7 +9372,7 @@ $$
 $$
 corresponding to the eigenvalue $\kappa_i$.
 
-3. The principal vector(s) associated to $\kappa_i$ is  
+4. The principal vector(s) associated to $\kappa_i$ is  
 $$
 \mathbf{t}_i = \lambda \sss_u + \mu \sss_v 
 $$
@@ -9526,7 +9417,10 @@ The principal curvatures are related to the Gaussian and mean curvatures.
 
 Let $\SSS$ be an orientable surface. Then
 $$
-K = \kappa_1 \kappa_2 \,, \quad H = \frac{\kappa_1 + \kappa_2}{2} \,.
+\begin{gathered}
+K = \kappa_1 \kappa_2 \,, \quad H = \frac{\kappa_1 + \kappa_2}{2} \,, \\
+k_i = H \pm \sqrt{H^2 - K} \,.
+\end{gathered}
 $$
 
 :::
@@ -9534,7 +9428,7 @@ $$
 
 ::: Proof
 
-By Corollary \ref{corollary-weingarten-diagonal-bis} we have
+*Part 1.* By Theorem \ref{theorem-weingarten-diagonal-bis} we have
 $$
 \WW = P^{-1} D P \,, \quad 
 D = 
@@ -9561,30 +9455,45 @@ where we also used that
 $$
 \det(P^{-1}) = \frac{1}{\det(P)}  \,.
 $$
-The trace satisfies
+
+*Part 2.* The trace satisfies
 $$
-\operatorname{trace} \left(  A B \right) = \operatorname{trace} \left( BA \right) \,, \quad \forall \, A,B \in \R^{2 \times 2} \,.
+\operatorname{Tr} \left(  A B \right) = \operatorname{Tr} \left( BA \right) \,, \quad \forall \, A,B \in \R^{2 \times 2} \,.
 $$
 By definition of mean curvature and the above formula we get
 \begin{align*}
-H & = \frac12 \operatorname{trace} (\WW ) \\
-  & = \frac12 \operatorname{trace} \left( P^{-1} D P  \right) \\
-  & = \frac12 \operatorname{trace} \left( P P^{-1} D  \right) \\
-  & = \frac12 \operatorname{trace} \left( D  \right) \\
-  & = \frac{1}{2} \left( \kappa_1  + \kappa_2 \right) \,,
+H & = \frac12 \operatorname{Tr} (\WW ) \\
+  & = \frac12 \operatorname{Tr} \left( P^{-1} D P  \right) \\
+  & = \frac12 \operatorname{Tr} \left( P P^{-1} D  \right) \\
+  & = \frac12 \operatorname{Tr} \left( D  \right) \\
+  & = \frac{1}{2} \left( \kappa_1  + \kappa_2 \right) \,.
 \end{align*}
-concluding the proof.
+
+*Part 3.* For any matrix $A \in \R^{2 \times 2}$, we have
+\begin{align*}
+\det(A - \lambda I) & = \det 
+\left(
+\begin{array}{cc}
+a - \lambda & b \\
+c & d - \lambda
+\end{array}
+\right) \\
+& = (a-\lambda)(d-\lambda) - bc \\
+& = \lambda^2 - (a + d) \lambda + ad-bc \\
+& = \lambda^2 - \operatorname{Tr}(A) \lambda + \det(\lambda) \,.
+\end{align*}
+If $A = \WW$, we obtain
+$$
+\det (\WW - \lambda I)  = \lambda^2 - 2 H \lambda + K \,.
+$$
+Therefore, the principal curvatures are
+$$
+\kappa_i = H \pm \sqrt{H^2 - K} \,.
+$$
 
 :::
 
 
-::: Important
-
-In general $\kappa_1$ and $\kappa_2$ are hard to compute, as they require solving a second order
-equation. Instead $K$ and $H$ are easier to compute, as they are directly expressed in terms of
-the first and second fundamental form coefficients.
-
-:::
 
 
 
@@ -9594,7 +9503,7 @@ the first and second fundamental form coefficients.
 
 **Question.** Consider the unit cylinder charted by
 $$
-\sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \R \,.
+\sss (u,v) = (\cos(u), \sin(u), v) \,.
 $$
 Compute the principal curvature and principal vectors.
 
@@ -9634,7 +9543,7 @@ as shown in @fig-cylinder-principal.
 
 
 ::: Example
-### Curvatures of Sphere  {#example-sphere-principal}
+### Curvatures of Sphere  {#example-sphere-principal-bis}
 
 **Question.** Consider the chart for the sphere
 $$
@@ -9752,7 +9661,7 @@ $$
 ### Torus
 
 Consider a circle $\mathcal{C}$ contained in the $xz$-plane, with center 
-at distance $b>0$ from the $z$-axis and radius $a$, with $0<a<b$. 
+at distance $b>0$ from the $z$-axis, and radius $a$, with $0<a<b$. 
 The torus is obtained by rotating $\mathcal{C}$ around the $z$-axis. 
 This surface is charted by 
 $$
@@ -9813,7 +9722,8 @@ H & = \frac{\kappa_1 + \kappa_2}{2} =
 
 
 Let $\SSS$ be a regular surface and consider all the curves $\g$ on $\SSS$ 
-passing through the point $\pp \in \SSS$. 
+passing through the point $\pp \in \SSS$. The shape of $\SSS$ at $\pp$ influences the curvature of such curves.
+
 
 ::: Question
 
@@ -9821,7 +9731,7 @@ Which curves through $\pp$ have greatest or lowest curvature?
 
 :::
 
-We start our analysis with the following proposition.
+We start our analysis with the following Proposition.
 
 
 ::: {.Proposition #proposition-surface-frame}
@@ -9891,7 +9801,7 @@ $${#eq-surface-curve-curvature-2}
 $$
 \kappa_n = \kappa \cos (\phi) \,, \quad  \kappa_g = \pm \kappa \sin(\phi) \,,
 $${#eq-surface-curve-curvature-3}
-where $\kappa$ is the curvature of $\g$ and $\phi$ is the angle between 
+where $\kappa$ is the curvature of $\g$, and $\phi$ is the angle between 
 $\NN$ and $\nn$, the principal unit normal of $\g$.
 
 :::
@@ -9918,11 +9828,11 @@ $$
 \dg \cdot \ddg = a  (\dg \cdot \dg ) + b ( \dg \cdot \NN ) + 
 c \dg \cdot \left( \NN \times \dg \right) = a \,,
 $$
-since $\dg$ is orthogonal to $\NN$ and $\NN \times \dg$, and 
+since $\dg$ is orthogonal to both $\NN$ and $\NN \times \dg$, and 
 $$
 \dg \cdot \dg  = \norm{\dg}^2 = 1 \,.
 $$
-Therefore $a = 0$ and 
+Therefore, $a = 0$ and 
 $$
 \ddg = b \NN + c \left( \NN \times \dg \right) \,.
 $$
@@ -9941,8 +9851,11 @@ Similarly, taking the scalar product of (@eq-surface-curve-curvature) with $\NN 
 \left(\NN \times \dg \right) + \kappa_g^2  \norm{\NN \times \dg}^2 \\
               & = \kappa_n^2 + \kappa_g^2 \,,
 \end{align*}
-where we used that $\NN$ and $\NN \times \dg$ are orthonormal. Since 
-$\kappa(t) = \norm{\ddg(t)}$, we get (@eq-surface-curve-curvature-2).
+where we used that $\NN$ and $\NN \times \dg$ are orthonormal. Since
+$$ 
+\kappa(t) = \norm{\ddg(t)} \,,
+$$
+we conclude (@eq-surface-curve-curvature-2).
 
 *Part 4.* Recalling that 
 $$
@@ -9952,16 +9865,16 @@ from the first equation in (@eq-surface-curve-curvature-1) we obtain
 \begin{align*}
 \kappa_n & = \ddg \cdot \NN \\
          & = \kappa \nn \cdot \NN \\
-         & = \kappa \| \nn \|^2 \| \NN \|^2 \cos(\phi) \\
+         & = \kappa \| \nn \| \| \NN \| \cos(\phi) \\
          & = \kappa \cos(\phi) \,,
 \end{align*}
-where we used that $\nn$ and $\NN$ have unit norm. Hence the first 
+where we used that $\nn$ and $\NN$ have unit norm. Hence, the first 
 equation in (@eq-surface-curve-curvature-3) is established. By 
 (@eq-surface-curve-curvature-2) we get
 \begin{align*}
 \kappa_g^2 & = \kappa^2 - \kappa_n^2 \\
-           & = \kappa^2 \cos^2(\phi) -  \kappa_n^2 \\
-           & = \kappa^2 (\cos^2(\phi) - 1 ) \\
+           & = \kappa^2 -  \kappa^2 \cos^2(\phi) \\
+           & = \kappa^2 (1 - \cos^2(\phi)) \\
            & = \kappa^2 \sin^2(\phi) \,,
 \end{align*}
 from which we obtain the second equation in (@eq-surface-curve-curvature-3).
@@ -9988,6 +9901,10 @@ $\kappa_n , \kappa_g \in \R$. We call
 
 :::
 
+In particular:
+
+- The normal curvature is the curvature of $\g$ *forced* by being on the surface.
+- The geodesic curvature is the *residual* curvature.
 
 
 The normal curvature $\kappa_n$ can be computed via the second 
@@ -10024,7 +9941,7 @@ $$
 $$
 when $\pp = \g(t)$. Set
 $$
-\tg(t) := \NN( \g(t)) \,.
+\tg := \NN \circ \g \,.
 $${#eq-theorem-normal-curvature-1}
 By definition of differential we have 
 $$
@@ -10034,7 +9951,7 @@ Note that
 $$
 \tg(t) \cdot \dg(t) = 0 \,,
 $$
-since $\NN$ is normal to $\SSS$ at $\pp$ and $\dg(t) \in T_{\pp}(\SSS)$.
+since $\NN$ is normal to $\SSS$ at $\pp = \g(t)$, and $\dg(t) \in T_{\pp}(\SSS)$.
 Differentiating the above expression we get
 \begin{align*}
 0 & = \frac{d}{dt} \left( \tg(t) \cdot \dg(t) \right) \\
@@ -10088,9 +10005,9 @@ Therefore, using Part 1 and Theorem \ref{theorem-sff-chart-bis}, we obtain
 ::: Example
 ### Curves on the sphere  {#example-curves-on-sphere}
 
-Consider the chart for the sphere
+**Question.** Consider the unit sphere with chart
 $$
-\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,.
 $$
 Show that 
 $$
@@ -10098,41 +10015,30 @@ $$
 $$ 
 for all unit speed curves on the sphere.
 
-*Solution.* 
-We have computed in Example \ref{example-sphere-principal} that the 
-second fundamental form of $\sss$ is
+**Solution.** From Example \ref{example-sphere-principal-bis}, the second fundamental form of $\sss$ is
 $$
-\mathcal{F}_2 = \sin^{2}(v) du^2 + dv^2 
+{\FF}_2 = \cos^{2}(v) du^2 + dv^2 \,.
 $$
 Let $\g$ be a unit speed curve on the sphere, that is,
 $$
 \g(t)=\sigma(u(t), v(t)) \,.
-$${#eq-sphere-normal-curvature} 
-By Theorem \ref{theorem-normal-curvature} the normal
-curvature of $\g$ is
 $$
-\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
-$$
-Differentiating (@eq-sphere-normal-curvature) we get
+Differentiating, we get
 \begin{align*}
-\dg(t) & = \frac{d}{dt} ( \cos(u(t)) \sin(v(t)), \sin(u(t)) \sin(v(t)), \cos(v(t)) ) \\
-       & = (-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
-  & \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v))
+\dg(t) & = \frac{d}{dt} ( \cos(u(t)) \cos(v(t)), \sin(u(t)) \cos(v(t)), \sin(v(t)) ) \\
+       & = (-\dot{u} \sin (u) \cos (v)-\dot{v} \cos (u) \sin (v), \\
+       & \qquad \dot{u} \cos (u) \cos (v)- \dot{v} \sin (u) \sin (v),\\
+  & \qquad \dot{v} \cos (v)) \,,
 \end{align*}
 so that 
 $$
-\| \dg(t) \|^2 =  \sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
+\| \dg(t) \|^2 =  \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
 $$
-Since $\g$ is unit speed, we also get
-$$ 
-\|\dg\|^{2} = 1 \,,
-$$ 
-showing that 
+where in the last equality we used that $\g$ is unit speed. By Theorem \ref{theorem-normal-curvature}, the normal
+curvature of $\g$ is
 $$
-\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
+\kappa_{n}=\cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,.
 $$
-as required.
-
 
 :::
 
@@ -10221,7 +10127,7 @@ As an immediate corollary of the Euler's Theorem we get the next
 statement.
 
 
-::: {.Corollary #corollary-euler-thm}
+::: {.Corollary #corollary-euler-thm-bis}
 
 Let $\SSS$ be a regular surface and $\kappa_1, \kappa_2$ its
 principal curvatures at $\pp$ with principal vectors $\mathbf{t}_1,\mathbf{t}_2$. Then:
@@ -10233,28 +10139,25 @@ principal curvatures at $\pp$ with principal vectors $\mathbf{t}_1,\mathbf{t}_2$
 :::
 
 
-In Example \ref{example-curves-on-sphere} we have shown with a direct 
-argument that 
+In Example \ref{example-curves-on-sphere}, we have shown by direct calculation that
 $$
 \kappa_n = 1
 $$
-for all unit speed curves on the sphere. Thanks to Euler's Theorem we 
-can obtain an immediate proof of this fact.
+for all unit speed curves on the sphere. Thanks to Euler's Theorem, we can obtain the same result in a quicker way.
 
 
 ::: Example 
 ### Curves on the sphere
 
-Let us consider again the chart for the sphere
+Let us consider again the chart for the unit sphere
 $$
-\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,,
 $$
-as seen in Example \ref{example-curves-on-sphere}. By Example \ref{example-sphere-principal}, the principal curvatures of
-$\sss$ are
+as seen in Example \ref{example-curves-on-sphere}. By Example \ref{example-sphere-principal-bis}, the principal curvatures of the unit sphere are
 $$
 \kappa_1 = \kappa_2 =  1 \,.
 $$
-By Euler's Theorem, for any curve $\g$ on the sphere we have
+By Euler's Theorem, for any unit-speed curve $\g$ on the sphere we have
 $$
 \kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 1 \,.
 $$
@@ -10271,7 +10174,7 @@ $$
 
 The principal curvatures $\kappa_1$ and $\kappa_2$ determine
 the maximum and minimum curvature of a surface $\SSS$, see
-Corollary \ref{corollary-euler-thm}. Hence we can study the local
+Corollary \ref{corollary-euler-thm-bis}. Hence, we can study the local
 shape of $\SSS$ in function of $\kappa_1$ and $\kappa_2$. 
 
 
@@ -10280,7 +10183,7 @@ shape of $\SSS$ in function of $\kappa_1$ and $\kappa_2$.
 ::: Theorem
 ### Local structure of surfaces {#theorem-local-surface}
 
-Let $\SSS$ be a regular surface and $\pp \in \SSS$. In the vicinity of $\pp$ 
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. In the vicinity of $\pp$, 
 the surface $\SSS$ is approximated by the quadric surface of equation
 $$
 z = \frac12 \left( x^2 \kappa_1 (\pp) + y^2 \kappa_2(\pp) \right) \,,
@@ -10294,8 +10197,8 @@ $\SSS$ at $\pp$.
 ::: Proof
 
 By Theorem \ref{theorem-weingarten-diagonal-bis} the principal vectors 
-$\{ \mathbf{t}_1, \mathbf{t}_2 \}$ are an orthonormal basis of 
-$T_{\pp} \SSS$. Therefore the standard unit normal $\NN$ at $\pp$ is 
+$\{ \mathbf{t}_1, \mathbf{t}_2 \}$ form an orthonormal basis of 
+$T_{\pp} \SSS$. Therefore, the standard unit normal $\NN$ at $\pp$ is 
 orthogonal to both 
 $\mathbf{t}_1$ and $\mathbf{t}_2$. Up to rotations and translations, 
 we can assume WLOG that $\pp = \zero$ and
@@ -10323,7 +10226,7 @@ approximation of $\sss$ at $(0,0)$ is
 \begin{align*}
 \sss(s,t) & = \sss(0,0) + s \sss_u + t \sss_v \\
           & \qquad + \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) + R \,, \\
-          & = (x,y,0) + \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) + R
+          & = (x,y,0) + \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) + R\,,
 \end{align*}
 where $R$ is a remainder and the derivatives of $\sss$ are evaluated
 at $(0,0)$. Hence, if $x,y$ are small (and thus $s,t$ are small), we have
@@ -10356,9 +10259,9 @@ Since the Weingarten map is linear we get
     & = x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \,, 
 \end{align*}
 where we used that $\mathbf{t}_1$ and $\mathbf{t}_2$ are eigenvectors of 
-$\WW_{\pp,\SSS}$ with eigenvalues $\kappa_1$ and $\kappa_2$. Hence
+$\WW_{\pp,\SSS}$ with eigenvalues $\kappa_1$ and $\kappa_2$. Hence,
 \begin{align*}
- \WW_{\pp,\SSS} (\vv) \cdot \vv & =  x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \cdot ( x \mathbf{t}_1 + y  \mathbf{t}_2) \\
+ \WW_{\pp,\SSS} (\vv) \cdot \vv & =  (x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2) \cdot ( x \mathbf{t}_1 + y  \mathbf{t}_2) \\
                                & = x^2 \kappa_1 + y^2 \kappa_2  
 \end{align*}
 Therefore
@@ -10432,23 +10335,109 @@ A surface $\SSS$ is locally approximated by one of the above quadrics, depending
 
 ::: Example
 
-Consider the surface chart
+**Question.** Consider the surface chart
 $$
 \sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
 $$
-Show that $\pp = \sss(1,0)$ is an elliptic point. Therefore $\sss$ is approximated by an *elliptic paraboiloid* in the vicinity of $\pp$.
 
-*Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
+1. Compute the first fundamental form of $\sss$.
+2. Compute the second fundamental form of $\sss$.
+3. Compute the matrix of the Weingarten map.
+4. Show that $\pp = \sss(1,0)$ is an elliptic point. 
+
+**Note.** This shows that $\sss$ is approximated by an *elliptic paraboiloid* in the vicinity of $\pp$.
+
+
+**Solution.** 
+
+1. Start by computing the first fundamental form:
+\begin{align*}
+\sss_{u} & =(1,1,2u) \\
+\sss_{v} & =(-1,1,2v) \\  
+E & = \sss_{u} \cdot \sss_u  = 2 (1+2u^2) \\
+F & = \sss_{u} \cdot \sss_v  = 4uv \\
+G & = \sss_{v} \cdot \sss_v  = 2 (1+2v^2) 
+\end{align*}
+so that
 $$
-\WW 
- = 
+\mathscr{F}_{1}=
+\left(
+  \begin{array}{ll}
+E & F \\
+F & G
+\end{array}
+\right)
+=
+\left(\begin{array}{ll}
+2(1 + 2u^2) & 4uv \\
+4uv & 2(1 + 2v^2)
+\end{array}\right)
+$$
+
+2. We now compute the second fundamental form
+\begin{align*}
+\sss_{u u} & =(0,0,2) \\
+\sss_{u v} & =(0,0,0) \\
+\sss_{v v} & =(0,0,2) \\
+\sss_{u} \times \sss_{v} & =\left|\begin{array}{ccc}
+\ii & \jj & \kk \\
+1 & 1 & 2 u \\
+-1 & 1 & 2 v
+\end{array}\right| \\
+& =2(v-u,-u-v, 1) \\
+\left\|\sss_{u} \times \sss_{v}\right\| & =2\left( 1 + 2u^2 + 2v^2\right)^{\frac{1}{2}} \\
+\NN & =\frac{(v-u,-u-v, 1)}{ \left( 1 + 2 u^2 + 2 v^2 \right)^{\frac{1}{2}}} \\
+L & = \sss_{uu} \cdot \NN =\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \\
+M & = \sss_{uv} \cdot \NN = 0 \\
+N & = \sss_{vv} \cdot \NN = \frac{2}{\left(1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}}
+\end{align*}
+so that
+\begin{align*}
+\mathscr{F}_{2} & =
+\left(\begin{array}{ll}
+L & M \\
+M & N
+\end{array}\right) \\
+& =
+\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \, \left(\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right) \,.
+\end{align*}
+
+
+3. The determinant of $\mathscr{F}_1$ is
+$$
+\det (\mathscr{F}_1) = 4 (1+2u^2 + 2v^2)
+$$
+and therefore
+\begin{align*}
+\mathscr{F}_{1}^{-1} & = \frac{1}{\det (\mathscr{F}_1)} 
+\left(
+  \begin{array}{ll}
+G & -F \\
+-F & E
+\end{array}
+\right) \\
+& = \frac{1}{2(1 + 2u^2 + 2v^2)}
+\,\left(\begin{array}{ll}
+1 + 2v^2 & -2uv \\
+-2uv & 1 + 2u^2
+\end{array}\right) \,.
+\end{align*}
+The matrix of the Weingarten map is
+\begin{align*}
+\WW & = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
+& = 
 \frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
 \,\left(\begin{array}{ll}
 1 + 2v^2 & -2uv \\
-- 2uv & 1 + 2u^2
+-2uv & 1 + 2u^2
 \end{array}\right) \,.
-$$
-For $u=1$ and $v=1$ we obtain
+\end{align*}
+
+
+4. For $u=1$ and $v=1$ we obtain
 $$
 \WW 
  = 
@@ -10468,7 +10457,7 @@ $$
 \kappa_1(\pp) = 3^{-\frac32} \,, \quad
 \kappa_2(\pp) = 3^{-\frac12} \,. \quad
 $$
-Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
+Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$, we have that $\pp$ is an elliptic point.
 
 :::
 
@@ -10500,9 +10489,9 @@ Umbilical points might be **planar** or **elliptic**.
 
 Suppose that $\pp$ is an umbilic, that is, 
 $$
-\kappa_1=\kappa_2 
+\kappa_1(\pp)=\kappa_2 (\pp) \,. 
 $$
-at $\pp$. Let $\kappa_n$ be the normal curvature of a unit speed
+Let $\kappa_n$ be the normal curvature of a unit speed
 curve $\g$ passing through $\pp$. By Theorem \ref{theorem-euler-thm}
 we have
 $$
@@ -10523,7 +10512,7 @@ umbilic. Then $\SSS$ is an open subset of plane or a sphere.
 
 ::: Proof
 
-By assumption we have
+By assumption, we have
 $$
 \kappa_1 (\pp) = \kappa_2 (\pp) = \kappa (\pp) \,, \quad \forall \, \pp \in \SSS \,.
 $${#eq-theorem-umbilic}
@@ -10629,4 +10618,415 @@ $\mathbf{a}/\kappa$ and radius $1/\kappa$.
 
 
 
+## Conclusion: FTS and Theorema Egregium
 
+We conclude with stating two important and powerful Theorems:
+
+1. Fundamental Theorem of Surfaces (FTS)
+2. Theorema Egregium
+
+
+We proceed in analogy with curves: for each point of the surface we assign a basis of $\R^3$, analogous to the Frenet frame. Let $\SSS$ be an orientable surface and $\sss$ a chart at $\pp$. The triple
+$$
+\{\sss_u,\sssv,\NN \}
+$$
+gives a basis of $\R^3$ (not orthonormal, but it does not matter). We can now express the derivatives of $\sssu$ and $\sssv$ with respect to such basis. 
+
+
+::: Proposition
+### Christoffel symbols {#proposition-christoffel}
+
+Let $\sss$ be a regular chart, with first and second fundamental forms given by
+$$
+E du^2 + F du dv + G dv^2 \,, \quad
+L du^2 + M du dv + N dv^2 \,,
+$$
+Then
+$$
+\begin{aligned}
+\sss_{uu} & = \Gamma_{11}^1 \sssu+ \Gamma_{11}^2 \sss_v + L \NN \\
+\sss_{uv} & = \Gamma_{12}^1 \sss_u + \Gamma_{12}^2 \sssv + M \NN \\
+\sss_{v v} & = \Gamma_{22}^1 \sss_u+\Gamma_{22}^2 \sss_v+ N \NN
+\end{aligned}
+$$
+where
+$$
+\begin{aligned}
+\Gamma_{11}^1 & =\frac{G E_u-2 F F_u+F E_v}{2\left(E G-F^2\right)} \\
+\Gamma_{11}^2 & =\frac{2 E F_u-E E_v-F E_u}{2\left(E G-F^2\right)} \\
+\Gamma_{12}^1 & =\frac{G E_v-F G_u}{2\left(E G-F^2\right)} \\ \Gamma_{12}^2 & =\frac{E G_u-F E_v}{2\left(E G-F^2\right)} \\
+\Gamma_{22}^1 & =\frac{2 G F_v-G G_u-F G_v}{2\left(E G-F^2\right)} \\
+\Gamma_{22}^2 & =\frac{E G_v-2 F F_v+F G_u}{2\left(E G-F^2\right)}
+\end{aligned} 
+$$
+The six coefficients $\Gamma_{ij}^k$ are called the **Christoffel symbols** of $\sss$. 
+
+:::
+
+
+::: Proof
+
+Since $\{\sssu,\sssv,\NN \}$ is a basis of $\R^3$, there exists scalars $\alpha_i,\beta_i,\gamma_i$ such that
+$$
+\begin{aligned}
+\sss_{uu} & = \alpha_1 \sssu+  \alpha_2 \sss_v +  \alpha_3 \NN \\
+\sss_{uv} & = \beta_1 \sss_u +\beta_2 \sssv + \beta_3 \NN \\
+\sss_{v v} & = \gamma_1 \sss_u + \gamma_2 \sss_v+ \gamma_3 \NN
+\end{aligned}
+$${#eq-christoffel-proof}
+Recall that the coefficient of the second fundamental form are
+$$
+L = \sss_{uu} \cdot \NN \,, \quad
+M = \sss_{uv} \cdot \NN \,, \quad
+N = \sss_{vv} \cdot \NN \,.
+$$
+Therefore, taking the dot product of each equation in (@eq-christoffel-proof) with $\NN$ gives
+$$
+\alpha_3 = L \,, \quad
+\beta_3 = M  \,, \quad
+\gamma_3 = N \,,
+$$
+where we used that $\NN$ is orthogonal to both $\sssu$ and $\sssv$. Taking the dot product of each equation in (@eq-christoffel-proof) with $\sss_{u}$ and $\sssv$ gives 6 scalar equations which determine the Christoffel symbols $\Gamma_{ij}^k$. For example, dotting the first equation in (@eq-christoffel-proof) with $\sssu$ gives
+$$
+\sss_{uu} \cdot \sssu = \alpha_1 \sssu \cdot \sssu + \alpha_2 \sssu \cdot \sssv = \alpha_1 E + \alpha_2 F \,.
+$$
+On the other hand,
+$$
+E_{u} = \frac{d}{du} (\sssu \cdot \sssu) = 2 \sss_{uu} \cdot \sssu \,,
+$$
+from which we get
+$$
+\alpha_1 E + \alpha_2 F = \frac12 E_u \,.
+$${#eq-christoffel-proof-1}
+Similarly, dotting the first equation in (@eq-christoffel-proof) with $\sssv$ gives
+$$
+\sss_{uu} \cdot \sssv = \alpha_1 \sssu \cdot \sssv + \alpha_2 \sssu \cdot \sssv = \alpha_1 F + \alpha_2 G \,.
+$$
+On the other hand,
+$$
+\sss_{uu} \cdot \sssv  = (\sssu \cdot \sssv)_v  - \sssu \cdot \sss_{uv} = F_v - \frac12 E_v \,,
+$$
+from which we obtain
+$$
+\alpha_1 F + \alpha_2 G = F_v - \frac12 E_v \,.
+$${#eq-christoffel-proof-2}
+Equations (@eq-christoffel-proof-1) and (@eq-christoffel-proof-2) foem a 2x2 linear system in $\alpha_1$ and $\alpha_2$, which reads
+$$
+\left(
+\begin{array}{cc}
+E & F \\
+F & G \\
+\end{array} 
+\right)
+\left(
+\begin{array}{c}
+\alpha_1 \\
+\alpha_2 \\ 
+\end{array}
+\right) 
+= 
+\left(
+\begin{array}{c}
+\frac12 E_u \\
+F_v - \frac12 E_v \\
+\end{array}
+\right) \,.
+$$
+Inverting the matrix of the first fundamental form, we obtain
+$$
+\left(
+\begin{array}{c}
+\alpha_1 \\
+\alpha_2 \\ 
+\end{array}
+\right) 
+= 
+\frac{1}{EG-F^2} 
+\left(
+\begin{array}{cc}
+G & -F \\
+-F & E \\ 
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+\frac12 E_u \\
+F_v - \frac12 E_v \\
+\end{array}
+\right) \,,
+$$
+which gives the first 2 Christoffel symbols
+$$
+\begin{aligned}
+\alpha_1 & = 
+\frac{GE_u - 2 F F_v + F E_v }{2 (EG-F^2)}
+=\Gamma_{11}^1 \\
+\alpha_2 & = 
+\frac{- F E_u + 2EF_v - E E_v  }{2 (EG-F^2)}
+=\Gamma_{11}^2 \\
+\end{aligned}
+$$
+The remaining 4 Christoffel symbols are obtained in a similar manner.
+
+:::
+
+Note that the Christoffel symbols depend only on the first fundamental form of $\boldsymbol{\sigma}$.
+
+
+The question is whether there are relations between the first and second fundamental forms. As it turns out, all the relations are encoded in two sets of equations:
+
+- Codazzi-Mainardi Equations
+- Gauss Equations
+
+
+::: Proposition
+### Codazzi-Mainardi and Gauss Equations {#proposition-codazzi}
+
+Let $\sss$ be a regular chart, with first and second fundamental forms
+$$
+E du^2 + F du dv + G dv^2 \,, \quad
+L du^2 + M du dv + N dv^2 \,,
+$$
+and Christoffel symbols as in Proposition \ref{proposition-christoffel}. They are satisfied:
+
+1. The **Codazzi-Mainardi Equations**
+$$
+\begin{aligned}
+L_v-M_u & =L \Gamma_{12}^1+M\left(\Gamma_{12}^2-\Gamma_{11}^1\right)-N \, \Gamma_{11}^2 \\ 
+M_v-N_u & =L \Gamma_{22}^1+M\left(\Gamma_{22}^2-\Gamma_{12}^1\right)-N \, \Gamma_{12}^2 
+\end{aligned}
+$$
+
+2. The **Gauss Equations**
+$$
+\begin{aligned}
+E K & =\left(\Gamma_{11}^2\right)_v-\left(\Gamma_{12}^2\right)_u+\Gamma_{11}^1 \Gamma_{12}^2+\Gamma_{11}^2 \Gamma_{22}^2-\Gamma_{12}^1 \Gamma_{11}^2-\left(\Gamma_{12}^2\right)^2 \\ 
+F K & = \left(\Gamma_{12}^1\right)_u-\left(\Gamma_{11}^1\right)_v+\Gamma_{12}^2 \Gamma_{12}^1-\Gamma_{11}^2 \Gamma_{22}^1 \\ 
+F K & = \left(\Gamma_{12}^2\right)_v-\left(\Gamma_{22}^2\right)_u+\Gamma_{12}^1 \Gamma_{12}^2-\Gamma_{22}^1 \Gamma_{11}^2 \\
+G K & = \left(\Gamma_{22}^1\right)_u-\left(\Gamma_{12}^1\right)_v+\Gamma_{22}^1 \Gamma_{11}^1+\Gamma_{22}^2 \Gamma_{12}^1-\left(\Gamma_{12}^1\right)^2-\Gamma_{12}^2 \Gamma_{22}^1 
+\end{aligned}
+$$
+where $K$ denotes the Gaussian curvature of $\sss$.
+
+
+:::
+
+
+The proof involves a lot of calculations, and we decide to omit it. For a reference, see Propositions 10.1.1 and 10.1.2 in [@pressley].
+
+The Codazzi-Mainardi and Gauss equations are necessary and sufficient to completely determine a surface, up to rigid motions. This is the statement of the *Fundamental Theorem of Surfaces*, which can be seen as the surfaces analogue of the Fundamental Theorem of Space Curves: Curvature and torsion completely characterize a regular curve, up to rigid motions. The equivalent Theorem for surfaces states that First and Second Fundamental Forms, with coefficients satisfying the Codazzi-Mainardi and Gauss equations, completely determine a surface, up to rigid motions.
+
+
+::: Theorem
+### Fundamental Theorem of Surfaces (FTS)
+
+1. Let $\sss \colon U \to \R^3$ and $\wsss \colon U \to \R^3$ be regular surface charts with the same first and second fundamental form. Then, there exists a rigid motion $M \colon \R^3 \to \R^3$ such that
+$$
+\wsss = M(\sss) \,. 
+$$
+
+2. Let $V \subseteq \R^3$ be open, and 
+$$
+E,F,G,L,M,N \colon V \to \R
+$$
+be smooth functions on $V$, such that
+$$
+E>0, \quad G > 0 , \quad EG-F^2 > 0 \,,
+$$
+and satisfying the Codazzi-Mainardi and Gauss equations in Proposition \ref{proposition-codazzi}, with
+$$
+K = \frac{LN - M^2}{EG - F^2} \,.
+$$
+Then, if $(u_0,v_0) \in V$, there exists 
+    - an open set $U \subseteq V$ containing $(u_0,v_0)$
+    - a regular surface chart $\sss \colon U \to \R^3$ with first and second fundamental forms given by
+    $$
+    E du^2 + F du dv + G dv^2 \,, \quad
+    L du^2 + M du dv + N dv^2 \,.
+    $$
+
+:::
+
+
+The proof of the FTS is very complicated, as it involves PDEs, and is found at page 239 of [@do-carmo]. The FTS is the reason why the differential geometry of surfaces is still an active field of research today:
+
+- If one wishes to construct a surface with prescribed first and second fundamental form, then one needs to solve the Codazzi-Mainardi and Gauss Equations
+- These are very complicated PDEs
+- Examples of active research directions are 
+    * Minimal Surfaces
+    * Costant Mean Curvature Surfaces
+    * Geometric Flows: a surface evolves following the direction of steepest descent of some energy
+    * An example of Geometric flow is the Mean Curvature Flow, in which $\SSS$ minimizes
+    $$
+    F(\SSS) = \int_{\SSS} H \, dA \,,
+    $$
+    where $H$ is the mean curvature of $\SSS$.
+
+
+
+The other major result we want to talk about is the Theorema Egregium (which means remarkable) by Gauss. 
+
+
+
+::: Theorem
+### Theorema Egregium
+
+The Gaussian curvature is invariant under local isometries.
+
+:::
+
+::: Proof
+
+Let $\sss$ be a regular surface chart. The first Gauss equation in \ref{proposition-codazzi} gives that
+$$
+KE = \left(\Gamma_{11}^2\right)_v-\left(\Gamma_{12}^2\right)_u+\Gamma_{11}^1 \Gamma_{12}^2+\Gamma_{11}^2 \Gamma_{22}^2-\Gamma_{12}^1 \Gamma_{11}^2-\left(\Gamma_{12}^2\right)^2  \,,
+$$
+where $K$ is the Gauss curvature , $E$ one of the coefficients of the first fundamental form, and $\Gamma_{ij}^k$ the Christoffel symbols of $\sss$. As $\sss$ is regular, we have that $E = \sssu \cdot \sssu > 0$. Therefore, we can divide by $E$ and obtain
+$$
+K = \frac{\left(\Gamma_{11}^2\right)_v-\left(\Gamma_{12}^2\right)_u+\Gamma_{11}^1 \Gamma_{12}^2+\Gamma_{11}^2 \Gamma_{22}^2-\Gamma_{12}^1 \Gamma_{11}^2-\left(\Gamma_{12}^2\right)^2 }{E} \,.
+$${#eq-egregium}
+Note that the Christoffel symbols depend only on the coefficients of the first fundamental form. Therefore, the RHS of (@eq-egregium) depends only on the coefficients of the first fundamental form. Since the first fundamental form is invariant under local isometries, we conclude that the Gaussian curvature $K$ is invariant under local isometries.
+
+:::
+
+The Theorem is remarkable because the Gaussian curvature is defined in terms of both first and second fundamental forms
+$$
+K = \det(\WW) = \frac{LN - M^2}{EG-F^2} \,.
+$$
+Being a curvature, $K$ should depend on how the surface bends in space. Instead, the Theorema Egregium shows that $K$ can be computed using only the first fundamental form, which is a quantity intrinsic to the surface. 
+
+As an immediate application, we obtain that there is no perfect World Map:
+
+
+::: Proposition
+
+There is no isometry between and open set of the unit sphere $\sphere^2$ and the plane. 
+
+:::
+
+::: Proof
+
+Suppose there was an isometry
+$$
+\sss \colon U \to \sphere^2 
+$$
+for some open set $U \subseteq \R^2$. The Theorema Egregium implies that $\sphere^2$ and $U$ have the same Gaussian curvature. However, the Gaussian curvature of the unit sphere is $K = 1$, while the one of the plane is $K = 0$. 
+
+:::
+
+
+In particular, we have have proven that a map 
+$$
+\sss \colon U \subseteq \R^2  \to \sphere^2
+$$
+cannot be equiareal and conformal at the same time, otherwise it would be an isometry. Therefore, world maps will always distort areas or angles, and there is no world map which preserves both.
+
+
+The converse of the Theorema Egregium is false: there are surfaces which are not isometric but have the same Gaussian curvature, see the next Example.
+
+
+::: Example
+
+**Question.** Consider the two surfaces $\SSS$ and $\wSSS$ charted by, respectively
+\begin{align*}
+\sss(u,v) & = (\cos(u)v, \sin(u)v, \log (v)), \,\, v > 0\,,  \\
+\wsss(u,v) & = (\cos(u)v, \sin(u)v, u)\,.
+\end{align*}
+
+1. Prove that $\SSS$ and $\wSSS$ are not locally isometric.
+2. Prove that $\SSS$ and $\wSSS$ have the same Gaussian curvature.
+
+**Solution.** 
+
+1. Compute the first fundamental form of $\sss$
+$$
+\begin{aligned}
+\sssu & = (-\sin(u)v, \cos(u)v, 0)  \\
+\sssv & =  (\cos(u), \sin(u), 1/v) \\
+E & = \sssu \cdot \sssu = v^2 \\
+F & = \sssu \cdot \sssv = 0 \\
+G & = \sssv \cdot \sssv = 1 + 1/v^2 \\
+\end{aligned}
+$$
+so that 
+$$
+\FF_1 = 
+\left(
+\begin{array}{cc}
+v^2 & 0 \\
+0  &   1 + 1/v^2 
+\end{array}
+\right) \,.
+$$
+The first fundamental form of $\wsss$ is
+$$
+\begin{aligned}
+\wsssu & = (-\sin(u)v, \cos(u)v, 1)  \\
+\wsssv & =  (\cos(u), \sin(u), 0) \\
+\wE & = \wsssu \cdot \wsssu = 1 + v^2 \\
+\wF & = \wsssu \cdot \wsssv = 0 \\
+\wG & = \wsssv \cdot \wsssv = 1 \\
+\end{aligned}
+$$
+so that 
+$$
+{\wFF}_1 = 
+\left(
+\begin{array}{cc}
+1 + v^2 & 0 \\
+0  &  1
+\end{array}
+\right) \,.
+$$
+Suppose by contradiction there was a local isometry $f \colon \SSS \to \wSSS$. Therefore, the charts $\sss$ and $f \circ \sss$ would have the same first fundamental form. Since $f \circ \sss$ and $\wsss$ are both charts for $\wSSS$, there exists a diffeomorphism $\Phi$ such that 
+$$
+f \circ \sss = \Phi \circ \wsss \,.
+$$
+In particular, the first fundamental form of $f \circ \sss$ is the same as the one of $\Phi \circ \wsss$. But the first fundamental form of $\Phi \circ \wsss$ is
+$$
+(J\Phi)^T \wFF_1 J\Phi = \wFF_1 \,,
+$$
+since $\wFF_1$ is diagonal, and $(J\Phi)^T J\Phi = I$.
+We conclude that 
+$$
+\FF_1 = \wFF_1 \,,
+$$
+a clear contradiction. Therefore, $\SSS$ and $\wSSS$ are not locally isometric.
+
+
+2. Note that we could compute the Gaussian curvature from the first fundamental form, by first computing the Christoffel symbols, and then using the first Gauss Equation. However, we proceed as usual, and compute $K$ as the determinant of the Weingarten map. To this end, compute the second fundamental forms of $\sss$ and $\wsss$
+$$
+\begin{aligned}
+\sss_{uu} & = (-\cos(u)v,-\sin(u)v, 0) \\
+\sss_{uv} & = (-\sin(u),\cos(u), 0) \\
+\sss_{vv} & = (0,0, -1/v^2) \\
+\sssu \times \sssv & = (\cos(u),\sin(u),-v) \\
+\norm{\sssu \times \sssv} & = (1 + v^2)^{1/2} \\
+\NN & = (1 + v^2)^{-1/2} (\cos(u),\sin(u),-v) \\
+L & = \sss_{uu} \cdot \NN = - v (1 + v^2)^{-1/2} \\
+M & = \sss_{uv} \cdot \NN = 0 \\
+N & = \sss_{vv} \cdot \NN = (1 + v^2)^{-1/2}/v \\
+\wsss_{uu} & = (-\cos(u)v,-\sin(u)v, 0) \\
+\wsss_{uv} & = (-\sin(u),\cos(u), 0) \\
+\wsss_{vv} & = (0,0, 0) \\
+\wsssu \times \wsssv & = (-\sin(u),\cos(u),-v) \\
+\norm{\wsssu \times \wsssv} & = (1+v^2)^{1/2}  \\
+\wNN & = (1+v^2)^{-1/2}  (-\sin(u),\cos(u),-v) \\
+\wL & = \wsss_{uu} \cdot \wNN = 0  \\
+\wM & = \wsss_{uv} \cdot \wNN = (1+v^2)^{-1/2}  \\
+\wN & = \wsss_{vv} \cdot \wNN = 0
+\end{aligned}
+$$
+Therefore, the Gaussian curvature of $\sss$ is
+$$
+K = \frac{LN - M^2}{EG-F^2} = -\frac{ 1 }{(1 + v^2)^2}\,,
+$$
+while the one of $\wsss$ is
+$$
+\widetilde{K} =  \frac{\wL \wN - \wM^2}{\wE \wG - \wF^2} = -
+\frac{ 1 }{ (1 + v^2)^2 } \,,
+$$
+showing that $\SSS$ and $\wSSS$ have the same Gaussian curvature. 
+
+
+:::

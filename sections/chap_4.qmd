@@ -4852,7 +4852,7 @@ $$
 $$
 \NN \colon \SSS \to \R^3 \,.
 $$
-By definition of principal normal, we have either 
+By definition of principal normal, we have 
 $$
 \NN \circ \sss = \NN_{\sss}  \,.
 $$
@@ -5278,7 +5278,7 @@ depends on the choice of chart $\sss \colon U \to \R^3$. The next result explain
 
 
 ::: Proposition
-### FFF and reparametrizations  {#proposition-fff-reparametrization}
+### FFF and reparametrizations  {#proposition-fff-reparametrization-bis}
 
 
 Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
@@ -5400,7 +5400,7 @@ Hence, the square of the length of the vector $\vv$, which has coordinates $\lam
 
 ::: Warning
 
- Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Proposition \ref{proposition-fff-reparametrization}.
+ Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Proposition \ref{proposition-fff-reparametrization-bis}.
 
 :::
 
@@ -6103,7 +6103,7 @@ To see this, suppose we can verify Condition 2 on the chart $\sss \colon U \to \
 $$
 \widetilde{\mathscr{F}}_1 = \mathscr{F}_1 \,,
 $${#eq-local-isometry-chart-1}
-where $\widetilde{\mathscr{F}}_1$ is the first fundamental form of $\widetilde{\sss} = f \circ \sss$. Assume that $\hat{\sss} \colon \hat{U} \to \SSS$ is another chart of $\SSS$. By Remark \ref{proposition-fff-reparametrization}, the fundamental forms of $\hat{\sss}$ and $\sss$ are related by
+where $\widetilde{\mathscr{F}}_1$ is the first fundamental form of $\widetilde{\sss} = f \circ \sss$. Assume that $\hat{\sss} \colon \hat{U} \to \SSS$ is another chart of $\SSS$. By Remark \ref{proposition-fff-reparametrization-bis}, the fundamental forms of $\hat{\sss}$ and $\sss$ are related by
 $$
 \hat{\mathscr{F}}_1 = (J\Phi)^T \mathscr{F}_1 J\Phi
 $${#eq-local-isometry-chart-2}
@@ -6115,7 +6115,7 @@ Applying $f$ to $\hat{\sss}$ gives
 $$
 \sss^{\dagger} := f \circ \hat{\sss} = f \circ \sss \circ \Phi = \widetilde{\sss} \circ \Phi \,,
 $$
-showing that $\sss^{\dagger}$ is a reparametrization of $\widetilde{\sss}$ with transition map $\Phi$. Therefore, by Proposition \ref{proposition-fff-reparametrization}, the fundamental forms of $\sss^{\dagger}$ and $\widetilde{\sss}$ are related by
+showing that $\sss^{\dagger}$ is a reparametrization of $\widetilde{\sss}$ with transition map $\Phi$. Therefore, by Proposition \ref{proposition-fff-reparametrization-bis}, the fundamental forms of $\sss^{\dagger}$ and $\widetilde{\sss}$ are related by
 $$
 \mathscr{F}^\dagger_1 = (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi
 $$
@@ -6197,7 +6197,7 @@ $$
 1. Prove that $f$ is smooth.
 2. Prove that $f$ is a local isometry.
 
-*Note:* This shows that the Plane and the Cylinder are locally isometric.
+**Note:** This shows that the Plane and the Cylinder are locally isometric.
 
 **Solution.**
 
@@ -7733,7 +7733,7 @@ which allows us to tell these two surfaces apart.
 
 
 We can now start our discussion about curvature of surfaces. We can make a similar argument to the one
-we made for curves: If $\g$ is a unit speed curve, the curvature of $\g$ is defined as
+we made for curves: If $\g$ is a unit-speed curve, the curvature of $\g$ is defined as
 $$
 \kappa (t) = \norm{\ddg(t)} \,.
 $$
@@ -9736,7 +9736,7 @@ We start our analysis with the following Proposition.
 
 ::: {.Proposition #proposition-surface-frame}
 
-Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a unit speed curve. Then 
+Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a unit-speed curve. Then 
 $$
 \{ \dg , \NN , \NN \times \dg  \}
 $$
@@ -9746,26 +9746,20 @@ is an orthornormal basis of $\R^3$ for all $t \in (a,b)$, where $\NN$ is the sta
 
 ::: Proof
 
-By definition 
+By definition of tangent space, $\dg(t) \in T_{\pp} \SSS$ when $\pp := \g(t)$. As $\NN(\g(t))$ is normal to $T_{\pp} \SSS$, we get
 $$
-\dg(t) \in T_{\pp} \SSS \,, \quad \pp := \g(t) \,,
+\dg \cdot \NN(\g(t)) = 0 \,.
 $$
-for all $t \in (a,b)$. This means $\dg$ is tangent to $\SSS$. Thus
+As $\g$ is unit-speed, we have $\norm{\dg} = 1$. Moreover, $\norm{\NN}=1$ by definition. Therefore, $\dg$ and $\NN$ are orthonormal, and by the properties of vector product:
 $$
-\dg \cdot \NN = 0 \,.
-$$
-We have $\norm{\dg} = 1$ since $\g$ is unit speed. 
-Moreover $\norm{\NN}=1$ by definition. 
-Since $\dg$ and $\NN$ are orthogonal, we also obtain
-$$
-\norm{\NN \times \dg} = \norm{\NN} \norm{\dg} = 1 \,,
+\norm{\NN \times \dg} = \norm{\NN} \norm{\dg} = 1 \,.
 $$ 
-by the properties of vector product. Finally 
+Again using the properties of vector product, we have
 $$
  (\NN \times \dg ) \cdot \NN  = 0 \,, \quad 
- (\NN \times \dg ) \cdot \dg  = 0 \,, \quad 
+ (\NN \times \dg ) \cdot \dg  = 0 \,.
 $$
-by the properties of vector product.
+Therefore $\{ \dg , \NN , \NN \times \dg  \}$ is an orthonormal basis of $\R^3$.
 
 :::
 
@@ -9773,11 +9767,19 @@ by the properties of vector product.
 
 ::: Important
 
-Notice that the basis
+In general, the basis
 $$
 \{ \dg , \NN , \NN \times \dg  \}
 $$
-does not coincide with the Frenet frame of $\g$ in general.
+does not coincide with the Frenet frame
+$$
+\{ \dg, \nn,\bb\}
+$$
+of $\g$. This is because the principal normal to $\g$ is
+$$
+\nn = \frac{\ddg}{\norm{\ddg}} = \frac{\ddg}{\kappa} \,,
+$$
+and, in general, $\nn \neq \NN$.
 
 :::
 
@@ -9786,7 +9788,7 @@ does not coincide with the Frenet frame of $\g$ in general.
 ::: Proposition
 
 Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a 
-unit speed curve. Then
+unit-speed curve. Then
 $$
 \ddg = \kappa_n \NN + \kappa_g \, \left( \NN \times \dg \right) \,,
 $${#eq-surface-curve-curvature}
@@ -9810,7 +9812,7 @@ $\NN$ and $\nn$, the principal unit normal of $\g$.
 ::: Proof
 
 
-*Part 1.* By Proposition \ref{proposition-surface-frame} we know that
+*Part 1.* By Proposition \ref{proposition-surface-frame}, we know that
 $$
 \{ \dg , \NN , \NN \times \dg  \}
 $$
@@ -9818,7 +9820,7 @@ is an orthornormal basis of $\R^3$. Hence
 $$
 \ddg = a \dg + b \NN + c \left( \NN \times \dg \right) \,,
 $$
-for some coefficients $a,b,c \in \R$. Since $\g$ is unit speed, 
+for some coefficients $a,b,c \in \R$. Since $\g$ is unit-speed, 
 we have that
 $$
 \dg \cdot \ddg = 0 \,.
@@ -9889,15 +9891,17 @@ curvatures of $\g$.
 ::: Definition 
 ### Normal and geodesic curvature
 
-Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a unit speed curve. By (@eq-surface-curve-curvature) we have
-$$
-\ddg = \kappa_{n} \NN + \kappa_{g} (\NN \times \dg )
-$$
-for $\NN$ the standard unit normal to $\SSS$ and scalars 
-$\kappa_n , \kappa_g \in \R$. We call
+Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a unit-speed curve. Let $\NN$ bet the standard unit normal to $\SSS$. We define:
 
-- $\kappa_{n}$ the **normal curvature** of $\g$,
-- $\kappa_{g}$ the **geodesic curvature** of $\g$.
+1. The **normal curvature** of $\g$ is
+$$
+\kappa_n = \ddg \cdot \NN \,,
+$$
+
+2. The **geodesic curvature** of $\g$ is
+$$
+\kappa_g = \ddg \cdot (\NN \times \dg ) \,.
+$$
 
 :::
 
@@ -9912,54 +9916,45 @@ fundamental form, as shown in the theorem below.
 
 
 ::: {.Theorem #theorem-normal-curvature}
+### Computing $\kappa_n$ with SFF
 
 Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ a 
-unit speed curve. Denote $\pp := \g(t)$. We have:
+unit-speed curve. Denote $\pp := \g(t)$. We have:
 
 1. The normal curvature $\kappa_n$ satisfies
 $$
 \kappa_n = {II}_{\pp} (\dg, \dg) \,.
 $$
 
-2. Let $\sss$ be a chart for $\SSS$ at $\pp$. Then 
+2. Let $\sss$ be a chart for $\SSS$ at $\pp = \g(t)$. Then 
 $$
 \g(t)=\sss(u(t), v(t))
 $$ 
 for some smooth functions $u,v \colon (a,b) \to \R$, and 
 $$
-\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,.
+\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,,
 $$
-
+where $L,M,N$ are evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ are evaluated at $t$.
 :::
 
 
 ::: Proof
 
-*Part 1.* By definition we have
+*Part 1.* By definition of tangent space, $\dg (t) \in T_{\pp} \SSS$ when $\pp = \g(t)$. By definition of differential, we have 
 $$
-\dg (t) \in T_{\pp} \SSS 
-$$
-when $\pp = \g(t)$. Set
-$$
-\tg := \NN \circ \g \,.
-$${#eq-theorem-normal-curvature-1}
-By definition of differential we have 
-$$
-d_{\pp} \NN (\dg(t)) = \dtg(t)  \,.
+d_{\pp} \NN (\dg(t)) = (\NN \circ \g )'(t)  \,.
 $${#eq-theorem-normal-curvature-2}
-Note that
+Since $\NN(\g(t))$ is normal to $T_{\pp}(\SSS)$ at $\pp = \g(t)$, and $\dg(t) \in T_{\pp}(\SSS)$, we have
 $$
-\tg(t) \cdot \dg(t) = 0 \,,
+\NN(\g(t)) \cdot \dg(t) = 0 \,.
 $$
-since $\NN$ is normal to $\SSS$ at $\pp = \g(t)$, and $\dg(t) \in T_{\pp}(\SSS)$.
-Differentiating the above expression we get
+Differentiating the above expression, we get
 \begin{align*}
-0 & = \frac{d}{dt} \left( \tg(t) \cdot \dg(t) \right) \\
-  & = \tg(t) \cdot \ddg(t)  + \dtg(t) \cdot \dg(t)   \\
-  & = \NN (\g(t)) \cdot \ddg(t)  + d_{\pp} \NN (\dg(t)) \cdot \dg(t)  
+0 & = \frac{d}{dt} \left[ \NN(\g(t)) \cdot \dg(t) \right] \\
+  & = (\NN \circ \g)'(t) \cdot \dg(t)  + \NN(\g(t)) \cdot \ddg(t)   \\
+  & =  d_{\pp} \NN (\dg(t)) \cdot \dg(t)   + \NN (\g(t)) \cdot \ddg(t)  \,,
 \end{align*}
-where in the last equation we used (@eq-theorem-normal-curvature-1) and
-(@eq-theorem-normal-curvature-2). Hence
+where in the last equation we used (@eq-theorem-normal-curvature-2). Hence,
 $$
 - d_{\pp} \NN (\dg(t)) \cdot \dg(t)  = 
 \NN (\g(t))  \cdot  \ddg(t)   \,.
@@ -9973,8 +9968,8 @@ Therefore, using (@eq-theorem-normal-curvature-3) and (@eq-theorem-normal-curvat
 \begin{align*}
 II_{\pp} (\dg(t) , \dg(t) ) & = \WW_{\pp,\SSS} (\dg(t)) \cdot \dg(t) \\
                             & = - d_{\pp} \NN (\dg(t)) \cdot \dg(t) \\
-                            & = \NN (\g(t))  \cdot  \ddg(t) \\
-                            & = \kappa_n \,,
+                            & = \NN (\g(t))  \cdot  \ddg(t) 
+                              = \kappa_n \,,
 \end{align*}
 where in the last equality we used (@eq-surface-curve-curvature-1).
 
@@ -10009,36 +10004,39 @@ Therefore, using Part 1 and Theorem \ref{theorem-sff-chart-bis}, we obtain
 $$
 \sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,.
 $$
-Show that 
+Show that, for all unit-speed curves on the sphere,
 $$
-\kappa_{n}(t)=1
+\kappa_{n}(t)=1 \,.
 $$ 
-for all unit speed curves on the sphere.
 
-**Solution.** From Example \ref{example-sphere-principal-bis}, the second fundamental form of $\sss$ is
-$$
-{\FF}_2 = \cos^{2}(v) du^2 + dv^2 \,.
-$$
-Let $\g$ be a unit speed curve on the sphere, that is,
+
+**Solution.**  Let $\g$ be a unit-speed curve on the sphere, that is,
 $$
 \g(t)=\sigma(u(t), v(t)) \,.
 $$
-Differentiating, we get
+for some functions $u,v$. Differentiating, we get
 \begin{align*}
-\dg(t) & = \frac{d}{dt} ( \cos(u(t)) \cos(v(t)), \sin(u(t)) \cos(v(t)), \sin(v(t)) ) \\
+\dg(t) & = \frac{d}{dt} \sss(u(t),v(t))\\
+ & = \frac{d}{dt} ( \cos(u(t)) \cos(v(t)), \sin(u(t)) \cos(v(t)), \sin(v(t)) ) \\
        & = (-\dot{u} \sin (u) \cos (v)-\dot{v} \cos (u) \sin (v), \\
        & \qquad \dot{u} \cos (u) \cos (v)- \dot{v} \sin (u) \sin (v),\\
-  & \qquad \dot{v} \cos (v)) \,,
+  & \qquad \dot{v} \cos (v)) \,.
 \end{align*}
-so that 
+Therefore,
 $$
 \| \dg(t) \|^2 =  \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
+$${#eq-curves-sphere}
+where in the last equality we used that $\g$ is unit-speed. From Example \ref{example-sphere-principal-bis}, the coefficients of the second fundamental form of $\sss$ are
 $$
-where in the last equality we used that $\g$ is unit speed. By Theorem \ref{theorem-normal-curvature}, the normal
+L = \cos^{2}(v), \quad M = 0 , \quad N = 1\,.
+$$
+By Theorem \ref{theorem-normal-curvature}, the normal
 curvature of $\g$ is
-$$
-\kappa_{n}=\cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,.
-$$
+\begin{align*}
+\kappa_{n} & =  L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \\
+& = \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
+\end{align*}
+where in the last equality we used (@eq-curves-sphere).
 
 :::
 
@@ -10052,9 +10050,8 @@ curvatures $\kappa_1$ and $\kappa_2$.
 ::: Theorem
 ### Euler's Theorem {#theorem-euler-thm}
 
-Let $\SSS$ be a regular surface and denote by $\kappa_1, \kappa_2$ the
-principal curvatures with principal vectors $\mathbf{t}_1,\mathbf{t}_2$.
-Let $\g$ be a unit speed curve on $\SSS$. The normal curvature of $\g$ is given by
+Let $\SSS$ be a regular surface with principal curvatures $\kappa_1, \kappa_2$ and principal vectors $\mathbf{t}_1,\mathbf{t}_2$.
+Let $\g$ be a unit-speed curve on $\SSS$. The normal curvature of $\g$ is given by
 $$
 \kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) \,,
 $$
@@ -10065,7 +10062,7 @@ where $\theta$ is the angle between $\dg$ and $\mathbf{t}_1$.
 
 ::: Proof
 
-Let $\g$ be a unit speed curve on $\SSS$ and set
+Let $\g$ be a unit-speed curve on $\SSS$ and set
 $$
 \pp := \g(t) \,.
 $$
@@ -10079,7 +10076,7 @@ there exist scalars $\lambda,\mu \in \R$ such that
 $$
 \dg(t) = \lambda \mathbf{t}_1 + \mu \mathbf{t}_2 \,.
 $$
-As $\g$ is unit speed and $\mathbf{t}_1, \mathbf{t}_2$ orthonormal, we infer
+As $\g$ is unit-speed and $\mathbf{t}_1, \mathbf{t}_2$ orthonormal, we infer
 $$
 1 = \norm{\dg(t)}^2 = \dg \cdot \dg = \lambda^2 + \mu^2 \,.
 $$
@@ -10132,7 +10129,7 @@ statement.
 Let $\SSS$ be a regular surface and $\kappa_1, \kappa_2$ its
 principal curvatures at $\pp$ with principal vectors $\mathbf{t}_1,\mathbf{t}_2$. Then:
 
-- $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$, for all unit speed curves on $\SSS$ passing through $\pp$.
+- $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$, for all unit-speed curves on $\SSS$ passing through $\pp$.
 
 - The directions of lowest and highest curvature on $\SSS$ are given by $\mathbf{t}_1$ and $\mathbf{t}_2$.
 
@@ -10143,20 +10140,24 @@ In Example \ref{example-curves-on-sphere}, we have shown by direct calculation t
 $$
 \kappa_n = 1
 $$
-for all unit speed curves on the sphere. Thanks to Euler's Theorem, we can obtain the same result in a quicker way.
+for all unit-speed curves on the sphere. Thanks to Euler's Theorem, we can obtain the same result in a quicker way.
 
 
-::: Example 
-### Curves on the sphere
 
-Let us consider again the chart for the unit sphere
+::: Example
+### Curves on the sphere (again)
+
+**Question.** Consider the unit sphere with chart
 $$
-\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,,
+\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,.
 $$
-as seen in Example \ref{example-curves-on-sphere}. By Example \ref{example-sphere-principal-bis}, the principal curvatures of the unit sphere are
+Show that, for all unit-speed curves on the sphere,
 $$
-\kappa_1 = \kappa_2 =  1 \,.
-$$
+\kappa_{n}(t)=1 \,.
+$$ 
+
+**Solution.**  By Example \ref{example-sphere-principal-bis}, the principal curvatures of the unit sphere are
+$\kappa_1 = \kappa_2 =  1$.
 By Euler's Theorem, for any unit-speed curve $\g$ on the sphere we have
 $$
 \kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 1 \,.
@@ -10165,11 +10166,258 @@ $$
 :::
 
 
+We have only defined normal and geodesic curvatures for unit-speed curves. We now extend the definition to regular curves.
+
+::: Definition
+### $\kappa_n$ and $\kappa_g$ for regular $\g$.
+
+Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a regular curve. Let $\tg$ be a unit-speed reparametrization of $\g$, with 
+$$
+\g  = \tg \circ \phi \,, \quad \phi \colon (a,b) \to (\tilde{a},\tilde{b}) \,.
+$$
+Let $\tkappa_n$ and $\tkappa_g$ be the normal and geodesic curvatures of $\tg$. The normal and geodesic curvatures of $\g$ are
+$$
+\kappa_n (t) = \tkappa_n (\phi(t)) \,, \qquad 
+\kappa_g (t) = \tkappa_g (\phi(t)) \,.
+$$
+
+:::
+
+
+It is immediate to check that $\kappa_n$ and $\kappa_g$, as defined above, do not depend on the choice of unit-speed reparametrization. Therefore, $\tg$ can be taken as the arc-length reparametrization of $\g$. The next Theorem gives practical formulas to compute $\kappa_n$ and $\kappa_g$.
+
+
+::: Theorem 
+
+Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a regular curve. 
+
+1. The normal and geodesic curvatures of $\g$ are
+
+$$
+\kappa_n = \frac{\ddg \cdot \NN}{\norm{\dg}^2} \,, \qquad
+\kappa_g = \frac{	\ddg \cdot  \left( \NN \times \dg \right) }{\norm{\dg}^3} \,.
+$$
+
+2. Denote by $\kappa$ the curvature of $\g$. It holds
+$$
+\kappa^2 = \kappa_n^2 + \kappa_g^2 \,.
+$$
+
+3. Let $\sss$ be a chart for $\SSS$ at $\pp = \g(t)$. Then
+$$
+\g(t) = \sss(u(t),v(t))
+$$
+for some smooth functions $u,v \colon (a,b) \to \R$, and
+$$
+\kappa_n = \frac{II_{\pp}(\dg,\dg)}{I_{\pp}(\dg,\dg)} = \frac{L\dot{u}^2 + 2M \dot{u}\dot{v} + N \dot{v}^2}{E\dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2} \,,
+$${#eq-formula-kn}
+where $E,F,G,L,M,N$ are evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ are evaluated at $t$.
+
+:::
+
+
+::: Proof
+
+*Part 1*. Denote by $s$ the arc-length function of $\g$. In particular, we have
+$$
+\g = \tg \circ s \,.
+$$
+Differentiating, we obtain
+$$
+\dg(t) = \dtg (s(t)) \dot{s}(t)
+$${#eq-proof-kn-kg-1}
+$$
+\ddg (t)  =  \ddtg (s(t)) \dot{s}^2(t) + \dtg (s(t)) \dot{s}(t) \ddot{s}(t) \,.
+$${#eq-proof-kn-kg-2}
+Since $\tg$ is unit-speed, its normal and geodesic curvatures are, by definition
+\begin{align*}
+\tkappa_n (s) & = \ddtg (s) \cdot \NN (\tg(s)) \\
+\tkappa_g (s) & = \ddtg (s) \cdot \left[ \NN (\tg(s)) \times \dtg(s) \right] \,.
+\end{align*}
+Taking the scalar product of (@eq-proof-kn-kg-2) with $\NN(\g(t))$ gives
+\begin{align*}
+\ddg (t) \cdot \NN( \g(t)) & = \left[\ddtg (s(t)) \cdot \NN(\g(t)) \right] \dot{s}^2(t) + \\
+                           & \qquad \qquad + \left[\dtg (s(t))  \cdot \NN(\g(t)) \right]\dot{s}(t) \ddot{s}(t) \\
+                           & = \left[\ddtg (s(t)) \cdot \NN(\g(t)) \right] \dot{s}^2(t) \,,
+\end{align*}
+where we used that
+$$
+\dtg (s(t))  \cdot \NN(\g(t))  = \dtg (s(t))  \cdot \NN(\tg(s(t))) = 0 \,, 
+$$
+since $\dtg (s(t)) \in T_{\mathbf{q}} \SSS$ when $\mathbf{q} = \tg(s(t))$, and $\NN(\tg(s(t)))$ is normal to $T_{\mathbf{q}}\SSS$. Therefore,
+\begin{align*}
+\ddg (t) \cdot \NN( \g(t)) & = \left[\ddtg (s(t)) \cdot \NN(\g(t)) \right] \dot{s}^2(t)  \\
+& = \left[\ddtg (s(t)) \cdot \NN(\tg(s(t))) \right] \dot{s}^2(t)  \\
+& = \tkappa_n(s(t)) \norm{\dg(t)}^2 \,,
+\end{align*}
+where we used the definition of $\tkappa_n$ and that $\dot s = \norm{\tg}$. By definition of $\kappa_n$, we obtain
+$$
+\kappa_n (t) = \tkappa_n(s(t)) = \frac{\ddg (t) \cdot \NN( \g(t))}{\norm{\dg(t)}^2} \,,
+$$
+as required. Similarly, taking the scalar product of (@eq-proof-kn-kg-2) with $\NN(\g(t)) \times \dg(t)$ gives
+\begin{align*}
+\ddg (t) \cdot \left[\NN( \g(t)) \times \dg(t) \right] & = 
+\ddtg (s(t)) \cdot \left[ \NN(\g(t)) \times \dg(t) \right] \dot{s}^2(t) + \\
+                           & \quad + \dtg (s(t))  \cdot  \left[\NN(\g(t)) \times \dg(t) \right]\dot{s}(t) \ddot{s}(t) \\
+                           & = \ddtg (s(t)) \cdot \left[ \NN(\g(t)) \times \dg(t) \right] \dot{s}^2(t) \,,
+\end{align*}
+where we used (@eq-proof-kn-kg-1), which implies
+\begin{align*}
+\dtg (s(t))  \cdot &   \left[\NN(\g(t)) \times \dg(t) \right]\dot{s}(t) \ddot{s}(t) = \\
+& = \dtg (s(t))  \cdot  \left[\NN(\g(t)) \times \dtg(s(t)) \right]\dot{s}^2(t) \ddot{s}(t) = 0 \,,
+\end{align*}
+by the properties of vector product. Therefore,
+\begin{align*}
+\ddg (t) \cdot \left[\NN( \g(t)) \times \dg(t) \right] & =  \ddtg (s(t)) \cdot \left[ \NN(\g(t)) \times \dg(t) \right] \dot{s}^2(t)  \\
+ & = \ddtg (s(t)) \cdot \left[ \NN(\tg(s(t))) \times \dtg(s(t)) \right] \dot{s}^3(t)  \\
+ & = \tkappa_g (s(t)) \norm{\dg(t)}^3 \,,
+\end{align*}
+where in the last to last equality we used (@eq-proof-kn-kg-1), while in the last equality we used the definition of $\tkappa_g$, and that $\dot s = \norm{\tg}$. By definition of $\kappa_g$, we get
+$$
+\kappa_g (t) = \tkappa_g(s(t)) = \frac{\ddg (t) \cdot \left[\NN( \g(t)) \times \dg(t) \right] }{\norm{\dg(t)}^3} \,,
+$$
+as required.
+
+*Part 2.* Recall that the curvature of $\g$ is defined by 
+$$
+\kappa(t) = \tkappa(s(t)) \,,
+$$
+where $\tkappa$ is the curvature of $\tg$.
+By (@eq-surface-curve-curvature-2) we have that 
+$$
+\tkappa^2(s) = \tkappa^2_n(s) + \tkappa^2_g(s)\,.
+$$
+Therefore,
+\begin{align*}
+\kappa^2 (t) & = \tkappa^2 (s(t)) \\
+             & = \tkappa^2_n(s(t)) + \tkappa^2_g(s(t)) \\
+             & = \kappa_n^2(t) + \kappa_g^2(t) \,.
+\end{align*}
+
+
+*Part 3.* Arguing as in the proof of Theorem \ref{theorem-normal-curvature}, we observe that
+$$
+\dg(t)  \cdot \NN(\g(t))= 0 \,,
+$$
+since $\dg(t) \in T_{\pp} \SSS$ when $\pp = \g(t)$, and $\NN (\g(t))$ is orthogonal to $T_{\pp}\SSS$. Differentiating, we get
+\begin{align*}
+0 & = \frac{d}{dt} \left[\dg(t)  \cdot \NN(\g(t)) \right] \\
+  & =  \ddg(t) \cdot \NN(\g(t)) + \dg(t) \cdot (\NN \circ \g)'(t)    \\
+  & =  \ddg(t) \cdot \NN(\g(t)) + \dg(t) \cdot d_{\pp} \NN (\dg(t))   \\
+  & =  \ddg(t) \cdot \NN(\g(t)) + \dg(t) \cdot d_{\pp} \mathcal{G} (\dg(t))  \\
+  & =  \ddg(t) \cdot \NN(\g(t)) - \dg(t) \cdot \WW_{\pp,\SSS} (\dg(t))   \\
+\end{align*}
+from which we obtain
+$$
+\WW_{\pp,\SSS} (\dg(t)) \cdot \dg(t)  = \ddg(t) \cdot \NN(\g(t)) \,.
+$$
+Therefore, by definition of second fundamental form, we infer
+$$
+II_{\pp} (\dg,\dg) = \WW_{\pp,\SSS}(\dg) \cdot \dg = \ddg \cdot \NN \,.
+$${#eq-proof-kn-kg-3}
+Moreover, by definition of first fundamental form, we have
+$$
+I_{\pp} (\dg,\dg) = \dg \cdot \dg = \norm{\dg}^2  \,.
+$${#eq-proof-kn-kg-4}
+Using (@eq-proof-kn-kg-3)-(@eq-proof-kn-kg-4), and the formula for $\kappa_n$ obtained in Part 1, we get the first equality in (@eq-formula-kn)
+$$
+\kappa_n = \frac{ \ddg \cdot \NN}{\norm{\dg}^2} = \frac{II_{\pp} (\dg,\dg)}{I_{\pp} (\dg,\dg)} \,.
+$$
+The second equality in (@eq-formula-kn) follows because
+$$
+\dg = \frac{d}{dt} \sss(u(t),v(t)) =  \sssu \dot{u} + \sssv \dot{v} \,,
+$$
+and therefore
+\begin{align*}
+I_{\pp} (\dg,\dg) & = E\dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2 \\
+II_{\pp} (\dg,\dg) & = L\dot{u}^2 + 2M \dot{u}\dot{v} + N \dot{v}^2 \,.
+\end{align*}
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Consider the surface chart 
+$$
+\sss ( u , v ) = \left( u , v, \dfrac{u}{v} \right) \,,
+$$
+for $v \neq 0$. For $t \neq 0$ define the curve  $\g ( t ) = \sss ( t^2 , t )$.
+
+
+1. Prove that $\sss$ is regular.
+2. Compute the principal unit normal to $\sss$.
+3. Prove that $\g$ is regular.
+4. Compute the normal and geodesic curvatures of $\g$.
+5. Compute $\kappa$, the curvature of $\g$. Verify that 
+$$
+\kappa^2 = \kappa_n^2 + \kappa_g^2 \,.
+$$
+
+
+**Solution.** 
+
+1. We have
+ \begin{equation*}
+	\begin{aligned}
+		& \sss_u = \left( 1, 0, \frac{1}{v} \right) \\
+	 &	\sss_v = \left( 0, 1, -\frac{u}{v^2} \right) \\
+		& \sss_u \times \sss_v = \left( -\frac{1}{v}, \frac{u}{v^2}, 1 \right) \neq \zero
+	\end{aligned}
+	\end{equation*}
+  since the last component of $\sss_u \times \sss_v$ is $1$. Therefore $\sss$ is regular.
+
+
+2. The principal unit normal is
+$$
+	\begin{aligned}
+		& \norm {\sss_u \times \sss_v }  = \dfrac{\left( u^2 + v^2 + v^4 \right)^{1/2}}{v^2} \\
+		& \NN = \frac{\sss_u \times \sss_v }{\norm {\sss_u \times \sss_v } } =  \dfrac{\left( -v, u , v^2 \right)}{\left( u^2 + v^2 + v^4 \right)^{1/2}}.
+	\end{aligned}
+$$
+
+3. We have
+\begin{align*}
+\g(t) & = \sss(t^2,t) = (t^2,t,t) \\
+\dg(t) & = (2t,1,1) \neq \zero
+\end{align*}
+since the last component of $\dg$ is $1$. Therefore $\g$ is regular.
+
+4. Compute the following quantities
+$$
+	\begin{aligned}
+    & \norm{\dg(t)} = 2^{1/2} \, (2t^2 +1 )^{1/2}  \\
+		& \ddg ( t ) = \left( 2, 0, 0 \right) \\
+		& \NN(t^2,t) = \dfrac{\left( -1, t , t \right)}{\left( 2t^2 + 1\right)^{1/2}} \\
+		& \ddg \cdot \NN =  - \frac{2}{(2t^2 + 1)^{1/2}} \\
+    & \NN \times \dg  = \left( 1 + 2t^2 \right)^{1/2}  (0, 1, - 1) \\
+    & \ddg \cdot \left( \NN \times \dg\right)  = 0 
+	\end{aligned}
+  $$
+Therefore, the normal curvature is
+$$
+\kappa_n = \frac{\ddg \cdot \NN}{\norm{\dg}^2} = -  \frac{1}{(2t^2 + 1)^{3/2}} \,,
+$$
+while the geodesic curvaure is
+$$
+\kappa_g = \frac{\ddg \cdot \left( \NN \times \dg\right)}{\norm{\dg}^3} = 0 \,.
+$$
+
+5. The curvature of $\g$ is
+\begin{align*}
+& \dg \times \ddg = (0,2,-2) \\
+& \norm{\dg \times \ddg} = 2^{3/2} \\
+& \kappa = \frac{\norm{\dg \times \ddg}}{\norm{\dg}^3} = \frac{1}{(2t^2 + 1)^{3/2}}
+\end{align*}
+Therefore $\kappa = - \kappa_n$. Since $\kappa_g = 0$, we conclude that $\kappa^2 = \kappa_n^2 + \kappa_g^2$.
+:::
+
 
 
 
 ## Local shape of a surface
-
 
 
 The principal curvatures $\kappa_1$ and $\kappa_2$ determine
@@ -10491,7 +10739,7 @@ Suppose that $\pp$ is an umbilic, that is,
 $$
 \kappa_1(\pp)=\kappa_2 (\pp) \,. 
 $$
-Let $\kappa_n$ be the normal curvature of a unit speed
+Let $\kappa_n$ be the normal curvature of a unit-speed
 curve $\g$ passing through $\pp$. By Theorem \ref{theorem-euler-thm}
 we have
 $$
@@ -10620,7 +10868,7 @@ $\mathbf{a}/\kappa$ and radius $1/\kappa$.
 
 ## Conclusion: FTS and Theorema Egregium
 
-We conclude with stating two important and powerful Theorems:
+We conclude by discussing two important and powerful Theorems:
 
 1. Fundamental Theorem of Surfaces (FTS)
 2. Theorema Egregium
@@ -10773,7 +11021,7 @@ The remaining 4 Christoffel symbols are obtained in a similar manner.
 Note that the Christoffel symbols depend only on the first fundamental form of $\boldsymbol{\sigma}$.
 
 
-The question is whether there are relations between the first and second fundamental forms. As it turns out, all the relations are encoded in two sets of equations:
+The question is whether there are relations between the first and second fundamental forms. As it turns out, all the existing relations are encoded in two sets of equations:
 
 - Codazzi-Mainardi Equations
 - Gauss Equations
@@ -10927,9 +11175,9 @@ The converse of the Theorema Egregium is false: there are surfaces which are not
 
 ::: Example
 
-**Question.** Consider the two surfaces $\SSS$ and $\wSSS$ charted by, respectively
+**Question.** Define the open set $U = (0,2\pi) \times (0 ,\infty)$ and let $\SSS$ and $\wSSS$ the surfaces defined by $\SSS =\sss(U)$, $\wSSS = \wsss(U)$ with
 \begin{align*}
-\sss(u,v) & = (\cos(u)v, \sin(u)v, \log (v)), \,\, v > 0\,,  \\
+\sss(u,v) & = (\cos(u)v, \sin(u)v, \log (v)) \,,  \\
 \wsss(u,v) & = (\cos(u)v, \sin(u)v, u)\,.
 \end{align*}
 
@@ -10946,17 +11194,14 @@ $$
 E & = \sssu \cdot \sssu = v^2 \\
 F & = \sssu \cdot \sssv = 0 \\
 G & = \sssv \cdot \sssv = 1 + 1/v^2 \\
-\end{aligned}
-$$
-so that 
-$$
-\FF_1 = 
+\FF_1 & = 
 \left(
 \begin{array}{cc}
 v^2 & 0 \\
 0  &   1 + 1/v^2 
 \end{array}
 \right) \,.
+\end{aligned}
 $$
 The first fundamental form of $\wsss$ is
 $$
@@ -10966,32 +11211,91 @@ $$
 \wE & = \wsssu \cdot \wsssu = 1 + v^2 \\
 \wF & = \wsssu \cdot \wsssv = 0 \\
 \wG & = \wsssv \cdot \wsssv = 1 \\
-\end{aligned}
-$$
-so that 
-$$
-{\wFF}_1 = 
+{\wFF}_1 & = 
 \left(
 \begin{array}{cc}
 1 + v^2 & 0 \\
 0  &  1
 \end{array}
 \right) \,.
+\end{aligned}
 $$
 Suppose by contradiction there was a local isometry $f \colon \SSS \to \wSSS$. Therefore, the charts $\sss$ and $f \circ \sss$ would have the same first fundamental form. Since $f \circ \sss$ and $\wsss$ are both charts for $\wSSS$, there exists a diffeomorphism $\Phi$ such that 
 $$
 f \circ \sss = \Phi \circ \wsss \,.
 $$
-In particular, the first fundamental form of $f \circ \sss$ is the same as the one of $\Phi \circ \wsss$. But the first fundamental form of $\Phi \circ \wsss$ is
+In particular, the first fundamental form of $f \circ \sss$ is the same as the one of $\Phi \circ \wsss$. In conclusion, $\sss$ and $\Phi \circ \wsss$ have the same first fundamental form. By Proposition \ref{proposition-fff-reparametrization-bis}, the first fundamental form of $\Phi \circ \wsss$ is
+\begin{align*}
+(J\Phi)^T \wFF_1 J\Phi & = 
+\left(
+\begin{array}{cc}
+a & c \\
+b & d \\
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+1 + v^2 & 0 \\
+0 & 1 \\
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}
+\right) \\
+& = 
+\left(
+\begin{array}{cc}
+a^2 (1+v^2) + c^2 & \ast \\
+\ast & \ast \\
+\end{array}
+\right) \,.
+\end{align*}
+As $\sss$ and $\Phi \circ \wsss$ have the same first fundamental form, we infer
 $$
-(J\Phi)^T \wFF_1 J\Phi = \wFF_1 \,,
+\left(
+\begin{array}{cc}
+a^2 (1+v^2) + c^2 & \ast \\
+\ast & \ast \\
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+v^2 & 0 \\
+0 & 1 + 1/v^2 \\
+\end{array}
+\right) \,.
 $$
-since $\wFF_1$ is diagonal, and $(J\Phi)^T J\Phi = I$.
-We conclude that 
+Equating the first entries, we obtain
 $$
-\FF_1 = \wFF_1 \,,
+a^2 (1+v^2) + c^2 = v^2 \,, \quad \forall \, v > 0 \,. 
 $$
-a clear contradiction. Therefore, $\SSS$ and $\wSSS$ are not locally isometric.
+Taking the limit for $v \to 0^+$ gives
+$$
+a^2 + c^2 = 0 \quad \implies \quad a = c = 0 \,.
+$$
+Therefore, we have that
+$$
+J\Phi =
+\left( 
+\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{cc}
+0 & b \\
+0 & d \\
+\end{array}
+\right) \quad \implies \quad 
+\det J\Phi = 0 \,.
+$$
+This is a contradiction, since $\Phi$ is a diffeomorphism. Hence, $\SSS$ and $\wSSS$ are not locally isometric.
 
 
 2. Note that we could compute the Gaussian curvature from the first fundamental form, by first computing the Christoffel symbols, and then using the first Gauss Equation. However, we proceed as usual, and compute $K$ as the determinant of the Weingarten map. To this end, compute the second fundamental forms of $\sss$ and $\wsss$
@@ -11008,7 +11312,7 @@ M & = \sss_{uv} \cdot \NN = 0 \\
 N & = \sss_{vv} \cdot \NN = (1 + v^2)^{-1/2}/v \\
 \wsss_{uu} & = (-\cos(u)v,-\sin(u)v, 0) \\
 \wsss_{uv} & = (-\sin(u),\cos(u), 0) \\
-\wsss_{vv} & = (0,0, 0) \\
+\wsss_{vv} & = (0,0,0) \\
 \wsssu \times \wsssv & = (-\sin(u),\cos(u),-v) \\
 \norm{\wsssu \times \wsssv} & = (1+v^2)^{1/2}  \\
 \wNN & = (1+v^2)^{-1/2}  (-\sin(u),\cos(u),-v) \\

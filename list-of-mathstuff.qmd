@@ -975,7 +975,7 @@
 
  [**Notation**](#Notation*-4.24)\Pageref{Notation*-4.24}
 
- [**Proposition 4.127**](#proposition-fff-reparametrization): FFF and reparametrizations\Pageref{proposition-fff-reparametrization}
+ [**Proposition 4.127**](#proposition-fff-reparametrization-bis): FFF and reparametrizations\Pageref{proposition-fff-reparametrization-bis}
 
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
 
@@ -1219,7 +1219,7 @@
 
  [**Definition 4.218**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.219**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.219**](#theorem-normal-curvature): Computing $\kappa_n$ with SFF\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.55)\Pageref{Proof*-4.55}
 
@@ -1231,38 +1231,46 @@
 
  [**Corollary 4.222**](#corollary-euler-thm-bis)\Pageref{corollary-euler-thm-bis}
 
- [**Example 4.223**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+ [**Example 4.223**](#curves-on-the-sphere-again): Curves on the sphere (again)\Pageref{curves-on-the-sphere-again}
 
- [**Theorem 4.224**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
+ [**Definition 4.224**](#kappa_n-and-kappa_g-for-regular-pmbgamma.): $\kappa_n$ and $\kappa_g$ for regular ${\pmb{\gamma}}$.\Pageref{kappa_n-and-kappa_g-for-regular-pmbgamma.}
+
+ [**Theorem 4.225**](#Theorem-4.225)\Pageref{Theorem-4.225}
 
  [**Proof**](#Proof*-4.57)\Pageref{Proof*-4.57}
 
- [**Definition 4.225**](#local-shape-types): Local shape types\Pageref{local-shape-types}
-
  [**Example 4.226**](#Example-4.226)\Pageref{Example-4.226}
 
- [**Definition 4.227**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
-
- [**Remark 4.228**](#Remark-4.228)\Pageref{Remark-4.228}
-
- [**Theorem 4.229**](#Theorem-4.229)\Pageref{Theorem-4.229}
+ [**Theorem 4.227**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
  [**Proof**](#Proof*-4.58)\Pageref{Proof*-4.58}
 
- [**Proposition 4.230**](#proposition-christoffel): Christoffel symbols\Pageref{proposition-christoffel}
+ [**Definition 4.228**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+
+ [**Example 4.229**](#Example-4.229)\Pageref{Example-4.229}
+
+ [**Definition 4.230**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+
+ [**Remark 4.231**](#Remark-4.231)\Pageref{Remark-4.231}
+
+ [**Theorem 4.232**](#Theorem-4.232)\Pageref{Theorem-4.232}
 
  [**Proof**](#Proof*-4.59)\Pageref{Proof*-4.59}
 
- [**Proposition 4.231**](#proposition-codazzi): Codazzi-Mainardi and Gauss Equations\Pageref{proposition-codazzi}
-
- [**Theorem 4.232**](#fundamental-theorem-of-surfaces-fts): Fundamental Theorem of Surfaces (FTS)\Pageref{fundamental-theorem-of-surfaces-fts}
-
- [**Theorem 4.233**](#theorema-egregium): Theorema Egregium\Pageref{theorema-egregium}
+ [**Proposition 4.233**](#proposition-christoffel): Christoffel symbols\Pageref{proposition-christoffel}
 
  [**Proof**](#Proof*-4.60)\Pageref{Proof*-4.60}
 
- [**Proposition 4.234**](#Proposition-4.234)\Pageref{Proposition-4.234}
+ [**Proposition 4.234**](#proposition-codazzi): Codazzi-Mainardi and Gauss Equations\Pageref{proposition-codazzi}
+
+ [**Theorem 4.235**](#fundamental-theorem-of-surfaces-fts): Fundamental Theorem of Surfaces (FTS)\Pageref{fundamental-theorem-of-surfaces-fts}
+
+ [**Theorem 4.236**](#theorema-egregium): Theorema Egregium\Pageref{theorema-egregium}
 
  [**Proof**](#Proof*-4.61)\Pageref{Proof*-4.61}
 
- [**Example 4.235**](#Example-4.235)\Pageref{Example-4.235}
+ [**Proposition 4.237**](#Proposition-4.237)\Pageref{Proposition-4.237}
+
+ [**Proof**](#Proof*-4.62)\Pageref{Proof*-4.62}
+
+ [**Example 4.238**](#Example-4.238)\Pageref{Example-4.238}

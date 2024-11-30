@@ -72,23 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -96,23 +88,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -120,7 +104,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Lemma {
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,21 +128,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 </style>
 
@@ -321,7 +321,7 @@ window.Quarto = {
 <p>Curves are 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates: respectively <span class="math display">\[
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 \]</span></p>
-<div id="0d99ccce" class="cell" data-execution_count="1">
+<div id="11cff506" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -331,7 +331,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="9671de23" class="cell" data-execution_count="2">
+<div id="2942e934" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -341,7 +341,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="04262c73" class="cell" data-execution_count="3">
+<div id="2241d548" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -374,7 +374,7 @@ f(x,y) = x^2 + y^2  \,\,, c = 1 \,.
 \]</span> But what about for example a helix in 3 dimensions? It would be more difficult to find an equation of the form <span class="math display">\[
 f(x,y,z) = 0
 \]</span> to describe such object.</p>
-<div id="70bd8ead" class="cell" data-execution_count="4">
+<div id="2c50daab" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -535,7 +535,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </ul>
 </div></details>
 </div>
-<div id="71048f0f" class="cell" data-execution_count="5">
+<div id="77da809e" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -545,7 +545,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="18585107" class="cell" data-execution_count="6">
+<div id="0d276980" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -555,7 +555,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="95e78ff7" class="cell" data-execution_count="7">
+<div id="8152e37b" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -565,7 +565,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="f5e8ef57" class="cell" data-execution_count="8">
+<div id="5ea10df6" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -952,30 +952,26 @@ Putting together (<a href="#eq-length-formula-2" class="quarto-xref"><span>1.8</
 </div>
 <p>Thanks to the above theorem we have now a way to compute <span class="math inline">\(L({\pmb{\gamma}})\)</span>. Let us check that we have given a meaningful definition of length by computing <span class="math inline">\(L({\pmb{\gamma}})\)</span> on known examples.</p>
 <div id="length-of-circle" class="Example" title="Length of Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of Circle</summary><div><strong>Question.</strong> The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
-{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t)) \,.
-\]</span> Prove that <span class="math inline">\(L({\pmb{\gamma}}) = 2\pi R\)</span>.<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of Circle</summary><div><strong>Question.</strong> Compute the length of the circle of radius <span class="math inline">\(R\)</span> <span class="math display">\[
+{\pmb{\gamma}}(t) = (x_0 + R\cos(t), y_0 + R\sin(t),0) \,.
+\]</span><p></p>
 <p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
-\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t)) \\
-\left\| \dot{{\pmb{\gamma}}}(t) \right\| &amp; = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      } \\
-                &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
-\end{align*}\]</span> Therefore <span class="math display">\[
-L({\pmb{\gamma}})  = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| \, dt
-       = \int_0^{2\pi} R \, dt  
-      = 2 \pi R \,.
-\]</span></p>
+\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t),0) \\
+\left\| \dot{{\pmb{\gamma}}}(t) \right\| &amp; = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      }  = R \\
+L({\pmb{\gamma}})  &amp; = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| \, dt
+        = \int_0^{2\pi} R \, dt  = 2 \pi R \,.
+\end{align*}\]</span></p>
 </div></details>
 </div>
 <div id="length-of-helix" class="Example" title="Length of Helix">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of Helix</summary><div><strong>Question.</strong> Consider one full turn of the Helix of radius <span class="math inline">\(R &gt;0\)</span> and rise <span class="math inline">\(H\)</span>. This is parametrized by <span class="math display">\[
-{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t) ,Ht)
-\]</span> for <span class="math inline">\(t \in (0,2\pi)\)</span>. Compute <span class="math inline">\(L({\pmb{\gamma}})\)</span>.<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of Helix</summary><div><strong>Question.</strong> Compute the length of the Helix <span class="math display">\[
+{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t) ,Ht) \,, \quad t \in (0,2\pi) \,.
+\]</span><p></p>
 <p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
 \dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t) , H) \\
-\left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp;  = \sqrt{R^2 + H^2}
-\end{align*}\]</span> Therefore <span class="math display">\[
-L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = 2 \pi \sqrt{R^2 + H^2}
-\]</span></p>
+\left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp;  = \sqrt{R^2 + H^2} \\
+L({\pmb{\gamma}}) &amp; = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = 2 \pi \sqrt{R^2 + H^2}
+\end{align*}\]</span></p>
 </div></details>
 </div>
 <p>Note that if <span class="math inline">\(H&gt;0\)</span> then <span class="math display">\[
@@ -987,10 +983,10 @@ L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, 
 <p>We have just shown in Theorem <a href="chap_1.html#theorem-length">21</a> that the length of a regular curve <span class="math inline">\({\pmb{\gamma}}\ \colon [a,b] \to \mathbb{R}^n\)</span> with <span class="math inline">\([a,b]\)</span> bounded is given by <span class="math display">\[
 L({\pmb{\gamma}}) = \int_a^b \left\|  \dot{{\pmb{\gamma}}}(t) \right\| \,dt \,.
 \]</span> Using this formula, we introduce the notion of length of a portion of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
-<div id="arc-length-1" class="Definition" title="Arc-length">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-length</summary><div>The <strong>arc-length</strong> along <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> from <span class="math inline">\(t_{0}\)</span> to <span class="math inline">\(t\)</span> is <span class="math display">\[
-s(t)=\int_{t_{0}}^{t}\|\dot{{\pmb{\gamma}}}(u)\| d u \,.
-\]</span> The function <span class="math inline">\(s(t)\)</span> is known as the arc-length function.<p></p>
+<div id="arc-length-1" class="Definition" title="Arc-Length">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-Length</summary><div>The <strong>arc-length</strong> along <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> from <span class="math inline">\(t_{0}\)</span> to <span class="math inline">\(t\)</span> is <span class="math display">\[
+s \colon (a,b) \to \mathbb{R}\,, \quad s(t)=\int_{t_{0}}^{t}\|\dot{{\pmb{\gamma}}}(u)\| d u \,.
+\]</span><p></p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -1042,8 +1038,8 @@ c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d
 </ul>
 </div></details>
 </div>
-<div id="arc-length-of-the-circle" class="Example" title="Arc-length of the Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26: </strong>Arc-length of the Circle</summary><div><strong>Question.</strong> Consider the circle of radius <span class="math inline">\(R\)</span>, parametrized by <span class="math display">\[
+<div id="arc-length-of-circle" class="Example" title="Arc-length of Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26: </strong>Arc-length of Circle</summary><div><strong>Question.</strong> Consider the circle of radius <span class="math inline">\(R\)</span>, parametrized by <span class="math display">\[
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t),0) \,, \quad  t \in [0,2\pi] \,.
 \]</span> Compute the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 <p><strong>Solution.</strong> We have <span class="math display">\[
@@ -1054,16 +1050,14 @@ s(t) = \int_{t_0}^{t}  \left\|   \dot{{\pmb{\gamma}}}(\tau) \right\| \, d\tau = 
 </div></details>
 </div>
 <div id="arc-length-of-logarithmic-spiral" class="Example" title="Arc-length of Logarithmic Spiral">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 27: </strong>Arc-length of Logarithmic Spiral</summary><div><strong>Question.</strong> The Logarithmic spiral is defined by <span class="math inline">\({\pmb{\gamma}}\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> with <span class="math display">\[
-{\pmb{\gamma}}(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
-\]</span> where <span class="math inline">\(k \in \mathbb{R}\)</span>, <span class="math inline">\(k \neq 0\)</span>, is called the <strong>growth factor</strong>. Compute the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
-<p><strong>Solution.</strong> We have <span class="math display">\[\begin{align*}
-\dot{{\pmb{\gamma}}}(t) &amp; = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ) \\
-\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2  &amp; =  (k^2 + 1) e^{2kt} \,.
-\end{align*}\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
-s(t) &amp; = \int_{t_0}^t \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau \\
-     &amp; = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
-     &amp; = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 27: </strong>Arc-length of Logarithmic Spiral</summary><div><strong>Question.</strong> Compute the arc-length of <span class="math display">\[
+{\pmb{\gamma}}(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,, \quad t \in (0,2\pi) \,.
+\]</span><p></p>
+<p><strong>Solution.</strong> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}(t) &amp; = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ,0) \\
+\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2  &amp; =  (k^2 + 1) e^{2kt} \\
+s(t) &amp; = \int_{t_0}^t \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau
+     = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
 \end{align*}\]</span></p>
 </div></details>
 </div>
@@ -1240,8 +1234,8 @@ s(t) := \int_{t_0}^t \left\|   \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau  \,
 \]</span><p></p>
 </div></details>
 </div>
-<div id="unit-speed-curve" class="Definition" title="unit-speed curve">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>unit-speed curve</summary><div>A curve <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> is <strong>unit-speed</strong> if <span class="math display">\[
+<div id="unit-speed-curve" class="Definition" title="Unit-speed curve">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>Unit-speed curve</summary><div>A curve <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> is <strong>unit-speed</strong> if <span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(t) \right\|  = 1 \,, \quad \forall \, t \in (a,b) \,.
 \]</span><p></p>
 </div></details>
@@ -1543,7 +1537,7 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div>
 <p>We now define unit-speed reparametrizations:</p>
 <div id="unit-speed-reparametrization-1" class="Definition" title="unit-speed reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> be a curve. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, that is, <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span>. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, that is, <span class="math display">\[
 \left\|  \dot{\widetilde{{\pmb{\gamma}}}}(t)  \right\| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b})
 \]</span><p></p>
 </div></details>
@@ -1618,14 +1612,12 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 <details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57: </strong>Arc-length and unit-speed reparametrization</summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^3\)</span> be a reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, that is, <span class="math display">\[
 {\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}( \phi(t) )  , \quad \forall \, t \in (a,b)
-\]</span> for some diffeomorphism <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. Denote by <span class="math display">\[
-s(t) = \int_{t_0}^t  \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau
-\]</span> the arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. We have:</p>
+\]</span> for some diffeomorphism <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We have</p>
 <ol type="1">
 <li><p>If <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
 \phi(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 \tag{1.24}\]</span></span></p></li>
-<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed" class="quarto-xref"><span>1.24</span></a>) for some <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
+<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed" class="quarto-xref"><span>1.24</span></a>), then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
 </ol>
 </div></details>
 </div>
@@ -1708,15 +1700,13 @@ t = t(s)
 \]</span><p></p>
 </div></details>
 </div>
-<div id="example-circle-arc" class="Example" title="Arc-length reparametrization of the Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>Arc-length reparametrization of the Circle</summary><div><strong>Question.</strong> Let <span class="math inline">\({\pmb{\gamma}}\colon (0,2\pi) \to \mathbb{R}^2\)</span> be the circle with center <span class="math inline">\((x_0,y_0)\)</span> and radius <span class="math inline">\(R&gt;0\)</span> <span class="math display">\[
-{\pmb{\gamma}}(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
+<div id="example-circle-arc" class="Example" title="Arc-length reparametrization of Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>Arc-length reparametrization of Circle</summary><div><strong>Question.</strong> The circle of radius <span class="math inline">\(R&gt;0\)</span> is <span class="math display">\[
+{\pmb{\gamma}}(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0) \,.
 \]</span> Reparametrize <span class="math inline">\({\pmb{\gamma}}\)</span> by arc-length.<p></p>
 <p><strong>Solution.</strong> The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
 s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = Rt
-\]</span> The inverse <span class="math inline">\(s^{-1}\)</span> is <span class="math display">\[
-t(s) = \frac{s}{R}
-\]</span> The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\]</span> The inverse is <span class="math inline">\(t(s) = s/R\)</span>. The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(s) = {\pmb{\gamma}}(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) \,.
 \]</span></p>
 </div></details>
@@ -1738,9 +1728,7 @@ t(s) = \frac{s}{R}
 \end{align*}\]</span></p></li>
 <li><p>The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
 s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = 13 t \,.
-\]</span> The inverse <span class="math inline">\(s^{-1}\)</span> is <span class="math display">\[
-t(s) = \frac{s}{13}  \,.
-\]</span> The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\]</span> The inverse is <span class="math inline">\(t(s) = s/13\)</span>. The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(s)= {\pmb{\gamma}}(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
 \]</span></p></li>
 </ol>
@@ -1766,7 +1754,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 \]</span> with <span class="math inline">\(s^{-1}\)</span> the inverse of the arc-length function. It can be shown that the integral at (<a href="#eq-twisted-arc" class="quarto-xref"><span>1.27</span></a>) cannot be written in terms of elementary functions. Therefore there are not explicit formulas for <span class="math inline">\(s\)</span> and <span class="math inline">\(s^{-1}\)</span>. As a consequence the unit-speed parametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> cannot be computed explicitly in this case.<p></p>
 </div></details>
 </div>
-<div id="4847564a" class="cell" data-execution_count="13">
+<div id="d947ac29" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

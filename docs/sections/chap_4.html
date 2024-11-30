@@ -92,7 +92,27 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Corollary {
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -100,35 +120,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -140,29 +140,29 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 </style>
 
@@ -449,22 +449,19 @@ B(\mathbf{v},\mathbf{w}) = B(\mathbf{w}, \mathbf{v})
 </div>
 <p>Bilinear forms can be represented by a matrix.</p>
 <div id="matrix-representation-for-bilinear-forms" class="Remark" title="Matrix representation for bilinear forms">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 3: </strong>Matrix representation for bilinear forms</summary><div>
-<p>Let <span class="math inline">\(\{\mathbf{v}_1, \ldots , \mathbf{v}_n \}\)</span> be a basis for the vector space <span class="math inline">\(V\)</span>. Given a bilinear form <span class="math inline">\(B \colon V \times V \to \mathbb{R}\)</span> we define the matrix <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 3: </strong>Matrix representation for bilinear forms</summary><div>Let <span class="math inline">\(\{\mathbf{v}_1, \ldots , \mathbf{v}_n \}\)</span> be a basis for the vector space <span class="math inline">\(V\)</span>. Given a bilinear form <span class="math inline">\(B \colon V \times V \to \mathbb{R}\)</span> we define the matrix <span class="math display">\[
 M := \left(  B(\mathbf{v}_i,\mathbf{v}_j) \right)_{i,j=1}^n \in \mathbb{R}^{n \times n} \,.
 \]</span> Then <span class="math display">\[
 B(\mathbf{v},\mathbf{w}) = \mathbf{x}^T \,M \, \mathbf{y}\,.
-\]</span></p>
-<blockquote class="blockquote">
-<p><em>Proof.</em> We can write <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> in cordinates as <span class="math display">\[
+\]</span><p></p>
+<p><strong>Proof.</strong> We can write <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> in cordinates as <span class="math display">\[
 \mathbf{v}= \sum_{i=1}^n \lambda_i \mathbf{v}_i \,, \quad
 \mathbf{w}= \sum_{i=1}^n \mu_i \mathbf{v}_i \,,
 \]</span> for suitable coefficients <span class="math inline">\(\lambda_i, \mu_i \in \mathbb{R}\)</span>. Using bilinearity of <span class="math inline">\(B\)</span> we get <span class="math display">\[\begin{align*}
 B(\mathbf{v},\mathbf{w}) &amp; = B \left(  \sum_{i=1}^n \lambda_i \mathbf{v}_i, \sum_{j=1}^n \mu_j \mathbf{v}_j   \right) \\
-&amp; = \sum_{i,j=1}^n \lambda_i \mu_j B(\mathbf{v}_i,\mathbf{v}_j) \\
-&amp; = \mathbf{x}^T M \mathbf{y}\,.
+           &amp; = \sum_{i,j=1}^n \lambda_i \mu_j B(\mathbf{v}_i,\mathbf{v}_j) \\
+           &amp; = \mathbf{x}^T M \mathbf{y}\,.
 \end{align*}\]</span></p>
-</blockquote>
 </div></details>
 </div>
 <div id="quadratic-form" class="Definition" title="Quadratic form">
@@ -652,16 +649,13 @@ A = P D P^T
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21: </strong>Topology of <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>
 <p>The Euclidean norm on <span class="math inline">\(\mathbb{R}^n\)</span> is denoted by <span class="math display">\[
 \| \mathbf{x}\| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \mathbf{x}= (x_1 , \ldots, x_n) \in \mathbb{R}^n \,.
-\]</span> The Euclidean norm induces the distance <span class="math display">\[
-d(\mathbf{x},\mathbf{y}) := \| \mathbf{x}- \mathbf{y}\| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
-\]</span></p>
-<p>In particular, we have:</p>
+\]</span> Define the Euclidean distance <span class="math inline">\(d(\mathbf{x},\mathbf{y}) = \| \mathbf{x}- \mathbf{y}\|\)</span>.</p>
 <ol type="1">
 <li><p>The pair <span class="math inline">\((\mathbb{R}^n,d)\)</span> is a metric space.</p></li>
 <li><p>The topology induced by the metric <span class="math inline">\(d\)</span> is called the Euclidean topology, denoted by <span class="math inline">\(\mathcal{T}\)</span>.</p></li>
 <li><p>A set <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is <strong>open</strong> if for all <span class="math inline">\(\mathbf{x}\in U\)</span> there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(\mathbf{x}) \subseteq U\)</span>, where <span class="math display">\[
 B_{\varepsilon}(\mathbf{x}) := \{  \mathbf{y}\in \mathbb{R}^n \, \colon \,\| \mathbf{x}- \mathbf{y}\| &lt; \varepsilon\}
-\]</span> is the open ball of radius <span class="math inline">\(\varepsilon&gt;0\)</span> and centered at <span class="math inline">\(\mathbf{x}\)</span>. In this case we write <span class="math inline">\(U \in \mathcal{T}\)</span>, with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology in <span class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+\]</span> is the open ball of radius <span class="math inline">\(\varepsilon&gt;0\)</span> centered at <span class="math inline">\(\mathbf{x}\)</span>. We write <span class="math inline">\(U \in \mathcal{T}\)</span>, with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology in <span class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
 <li><p>A set <span class="math inline">\(V \subseteq \mathbb{R}^n\)</span> is <strong>closed</strong> if <span class="math inline">\(V^c := \mathbb{R}^n \smallsetminus U\)</span> is open.</p></li>
 </ol>
 </div></details>
@@ -690,7 +684,7 @@ V := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| \geq 1  \}
 </div></details>
 </div>
 <div id="subspace-topology" class="Definition" title="Subspace Topology">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 23: </strong>Subspace Topology</summary><div>Given a subset <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> the <strong>subspace topology</strong> on <span class="math inline">\(A\)</span> is the family of sets <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 23: </strong>Subspace Topology</summary><div>Let <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span>. The <strong>subspace topology</strong> on <span class="math inline">\(A\)</span> is the family <span class="math display">\[
 \mathcal{T}_A := \{  U \subseteq A \, \colon \,\exists \,\, W \in \mathcal{T}\, \text{ s.t. } \, U = A \cap W  \} \,.
 \]</span> If <span class="math inline">\(U \in \mathcal{T}_A\)</span>, we say that <span class="math inline">\(U\)</span> is open in <span class="math inline">\(A\)</span>.<p></p>
 </div></details>
@@ -705,12 +699,12 @@ f = (f_1,\ldots,f_m) \,.
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Continuous Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is <strong>continuous</strong> at <span class="math inline">\(\mathbf{x}\in U\)</span> if <span class="math inline">\(\forall \, \varepsilon&gt;0\)</span>, <span class="math inline">\(\exists \, \delta &gt; 0\)</span> such that <span class="math display">\[
 \|  \mathbf{x}- \mathbf{y}\| &lt; \delta \quad \implies \quad
 \| f(\mathbf{x}) - f (\mathbf{y}) \| &lt; \varepsilon\,.
-\]</span> We say that <span class="math inline">\(f\)</span> is continuous in <span class="math inline">\(U\)</span> if it is continuous for all <span class="math inline">\(\mathbf{x}\in U\)</span>.<p></p>
+\]</span> <span class="math inline">\(f\)</span> is continuous in <span class="math inline">\(U\)</span> if it is continuous for all <span class="math inline">\(\mathbf{x}\in U\)</span>.<p></p>
 </div></details>
 </div>
 <p>The above ``classical’’ definition of continuity is equivalent to the topological one, in the following sense:</p>
-<div id="continuity-topological-definition" class="Proposition" title="Continuity: Topological definition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 25: </strong>Continuity: Topological definition</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span>, with <span class="math inline">\(U,V\)</span> open. We have that <span class="math inline">\(f\)</span> is continuous if and only if <span class="math inline">\(f^{-1}(A)\)</span> is open in <span class="math inline">\(U\)</span>, for all <span class="math inline">\(A\)</span> open in <span class="math inline">\(V\)</span>.<p></p>
+<div id="continuity-topological-definition" class="Theorem" title="Continuity: Topological definition">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 25: </strong>Continuity: Topological definition</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span>, with <span class="math inline">\(U,V\)</span> open. We have that <span class="math inline">\(f\)</span> is continuous if and only if <span class="math inline">\(f^{-1}(A)\)</span> is open in <span class="math inline">\(U\)</span>, for all <span class="math inline">\(A\)</span> open in <span class="math inline">\(V\)</span>.<p></p>
 </div></details>
 </div>
 <div id="homeomorphism" class="Definition" title="Homeomorphism">
@@ -718,7 +712,7 @@ f = (f_1,\ldots,f_m) \,.
 <p>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span> with <span class="math inline">\(U,V\)</span> open. We say that <span class="math inline">\(f\)</span> is a <strong>homeomorphism</strong> if:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous;</li>
-<li>There exists inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span> which is continuous.</li>
+<li><span class="math inline">\(f\)</span> admits continuous inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span>.</li>
 </ol>
 </div></details>
 </div>
@@ -731,7 +725,7 @@ d_{\mathbf{x}}f (\mathbf{h}) = \lim_{\varepsilon\to 0} \   \frac{ f(\mathbf{x}+ 
 <p>The idea behind the definition of differentiability is as follows: The function <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(\mathbf{x}\)</span> if it can be approximated by the linear map <span class="math inline">\(d_{\mathbf{x}} f\)</span> around the point <span class="math inline">\(\mathbf{x}\)</span>.</p>
 <p>We denote by <span class="math inline">\(\{\mathbf{e}_i\}_{i=1}^n\)</span> the standard basis of <span class="math inline">\(\mathbb{R}^n\)</span>. When <span class="math inline">\(f\)</span> is differentiable, the partial derivatives are defined as follows:</p>
 <div id="partial-derivative" class="Definition" title="Partial Derivative">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Partial Derivative</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open be differentiable. The <strong>partial derivative</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\in U\)</span> in direction <span class="math inline">\(\mathbf{e}_i\)</span> is given by <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Partial Derivative</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(U\)</span> open, <span class="math inline">\(f\)</span> differentiable. The <strong>partial derivative</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\in U\)</span> in direction <span class="math inline">\(\mathbf{e}_i\)</span> is <span class="math display">\[
 \frac{\partial f}{\partial x_i}(\mathbf{x}) := d_{\mathbf{x}} f (\mathbf{e}_i) =  \lim_{\varepsilon\to 0}  \frac{ f( \mathbf{x}+ \varepsilon\mathbf{e}_i ) - f(\mathbf{x}) }{ \varepsilon} \,.
 \]</span><p></p>
 </div></details>
@@ -747,8 +741,8 @@ Jf(\mathbf{x}):= \left( \frac{\partial f_i}{\partial x_j}(\mathbf{x}) \right)_{i
 <p>The differential <span class="math inline">\(d_{\mathbf{x}} f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> is a linear map. As such, it must have a matrix representation with respect to the Euclidean basis. Since the partial derivative is defined as <span class="math display">\[
 \frac{\partial f}{\partial x_i}(\mathbf{x}):= d_{\mathbf{x}} f(\mathbf{e}_i) \,,
 \]</span> we trivially have that <span class="math inline">\(Jf(\mathbf{x})\)</span> is the matrix of <span class="math inline">\(d_{\mathbf{x}} f\)</span> with respect to the standard basis:</p>
-<div id="matrix-representation-of-the-differential" class="Proposition" title="Matrix representation of the differential">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 30: </strong>Matrix representation of the differential</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> be differentiable. The matrix of the linear map <span class="math inline">\(d_{\mathbf{x}} f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> with respect to the standard basis is given by the Jacobian matrix <span class="math inline">\(Jf(\mathbf{x})\)</span>.<p></p>
+<div id="matrix-representation-of-d_mathbfx-f" class="Proposition" title="Matrix representation of d_{\mathbf{x}} f">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 30: </strong>Matrix representation of <span class="math inline">\(d_{\mathbf{x}} f\)</span></summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> be differentiable. The matrix of the linear map <span class="math inline">\(d_{\mathbf{x}} f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> with respect to the standard basis is given by the Jacobian matrix <span class="math inline">\(Jf(\mathbf{x})\)</span>.<p></p>
 </div></details>
 </div>
 <div id="multi-index-notation" class="Definition" title="Multi-index notation">
@@ -760,20 +754,18 @@ Jf(\mathbf{x}):= \left( \frac{\partial f_i}{\partial x_j}(\mathbf{x}) \right)_{i
 </div></details>
 </div>
 <div id="smooth-function" class="Definition" title="Smooth Function">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 32: </strong>Smooth Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is smooth if the derivatives <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 32: </strong>Smooth Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. <span class="math inline">\(f\)</span> is smooth if the derivatives <span class="math display">\[
 \frac{\partial^{|\alpha|} f}{d\mathbf{x}^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
 \]</span> exist for each multi-index <span class="math inline">\(\alpha \in \mathbb{N}^n\)</span>. Note that in this case all the derivatives of <span class="math inline">\(f\)</span> are automatically continuous.<p></p>
 </div></details>
 </div>
 <div id="gradient-and-partial-derivatives" class="Notation" title="Gradient and partial derivatives">
-<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation: </strong>Gradient and partial derivatives</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> be smooth. We denote the partial derivatives by <span class="math display">\[
-\begin{aligned}
-\partial_{x_i} f &amp; = f_{x_i} =  \frac{\partial f}{\partial x_i} \\
-\partial_{x_i x_j} f &amp; = f_{x_i x_j} = \frac{\partial^2 f}{\partial x_i \partial x_j} \\
-\partial_{x_i x_j x_k} f &amp; = f_{x_i x_j x_k} =  \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k}
-\end{aligned}
-\]</span><p></p>
-<p>For <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> smooth we denote the <strong>gradient</strong> by <span class="math display">\[
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation: </strong>Gradient and partial derivatives</summary><div>For <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> smooth, the partial derivatives are <span class="math display">\[\begin{gather*}
+\partial_{x_i} f  = f_{x_i} =  \frac{\partial f}{\partial x_i} \,, \qquad
+\partial_{x_i x_j} f = f_{x_i x_j} = \frac{\partial^2 f}{\partial x_i \partial x_j} \\
+\partial_{x_i x_j x_k} f  = f_{x_i x_j x_k} =  \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k}
+\end{gather*}\]</span><p></p>
+<p>For <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> smoothm, the <strong>gradient</strong> is <span class="math display">\[
 \nabla f (\mathbf{x}) = \left(  f_{x_1}(\mathbf{x}) , \ldots ,  f_{x_n}(\mathbf{x}) \right) \,.
 \]</span> Note that <span class="math inline">\(\nabla f(\mathbf{x})\)</span> coincides with <span class="math inline">\(Jf(\mathbf{x})\)</span>.</p>
 </div></details>
@@ -794,14 +786,13 @@ g(x,y) := (x^2,y^2,x-y)
 <p>Let <span class="math inline">\(f \colon U \to V\)</span>, with <span class="math inline">\(U,V \subseteq \mathbb{R}^n\)</span> open. We say that <span class="math inline">\(f\)</span> is a <strong>diffeomorphism</strong> between <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> if:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is smooth,</li>
-<li>There exists the inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span>,</li>
-<li><span class="math inline">\(f^{-1}\)</span> is smooth.</li>
+<li><span class="math inline">\(f\)</span> admits smooth inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span>.</li>
 </ol>
 </div></details>
 </div>
 <div id="local-diffeomorphism" class="Definition" title="Local diffeomorphism">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 35: </strong>Local diffeomorphism</summary><div>
-<p>Let <span class="math inline">\(f \colon \mathbb{R}^n \to \mathbb{R}^n\)</span>. We say that <span class="math inline">\(f\)</span> is a <strong>local diffeomorphism</strong> at <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span> if:</p>
+<p>A function <span class="math inline">\(f \colon \mathbb{R}^n \to \mathbb{R}^n\)</span> is a <strong>local diffeomorphism</strong> at <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span> if:</p>
 <ol type="1">
 <li>There exists an open set <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> such that <span class="math inline">\(\mathbf{x}_0 \in U\)</span>,</li>
 <li>There exists an open set <span class="math inline">\(V \subseteq \mathbb{R}^n\)</span> such that <span class="math inline">\(f(\mathbf{x}_0) \in V\)</span>,</li>
@@ -833,7 +824,7 @@ J\phi(t_0) = \dot{\phi}(t_0) \,, \quad \det J\phi(t_0) = \dot{\phi}(t_0) \,,
 <p>The condition at (<a href="#eq-non-vanish-det" class="quarto-xref"><span>4.1</span></a>) is sufficient fot <span class="math inline">\(f\)</span> to be a <strong>local diffeomorphism</strong> at <span class="math inline">\(\mathbf{x}_0\)</span>. This is the content of the Inverse Function Theorem.</p>
 <div id="theorem-inverse-function" class="Theorem" title="Inverse Function Theorem">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 39: </strong>Inverse Function Theorem</summary><div>
-<p>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open. Suppose <span class="math inline">\(f\)</span> is a smooth function and <span class="math display">\[
+<p>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open, <span class="math inline">\(f\)</span> smooth. Assume <span class="math display">\[
 \det J f(\mathbf{x}_0) \neq 0 \,,
 \]</span> for some <span class="math inline">\(\mathbf{x}_0 \in U\)</span>. Then:</p>
 <ol type="1">
@@ -881,16 +872,16 @@ U:= \mathbb{R}^n \smallsetminus \bigcup_{k=1}^\infty L_k \,.
 </div>
 <div id="Example-41" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 41</strong></summary><div>
-<p><strong>Question.</strong> Consider the function <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+<p><strong>Question.</strong> Define the function <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}^2\)</span> <span class="math display">\[
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 \]</span></p>
 <ol type="1">
-<li><p>Prove that <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span>.</p></li>
+<li><p>Prove that <span class="math inline">\(f\)</span> is a local diffeomorphism at each point.</p></li>
 <li><p>Prove that <span class="math inline">\(f\)</span> is not a diffeomorphism.</p></li>
 </ol>
 <p><strong>Solution.</strong></p>
 <ol type="1">
-<li><p>We compute <span class="math display">\[\begin{align*}
+<li><p><span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> by the Inverse Function Theorem, since <span class="math display">\[\begin{align*}
 &amp; J f (x,y) =
 e^x \left(
 \begin{array}{cc}
@@ -898,13 +889,11 @@ e^x \left(
   -\sin(y)    &amp;  \cos(y)
 \end{array}
 \right)  \\
-&amp; \det Jf(x,y) = e^{2x}
-\end{align*}\]</span> Therefore <span class="math display">\[
-Jf(x,y) \neq 0 \quad \forall \, (x,y) \in \mathbb{R}^2 \,.
-\]</span> By the Inverse Function Theorem, <span class="math inline">\(f\)</span> is a local diffeomorphism at each point <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span>.</p></li>
-<li><p><span class="math inline">\(f\)</span> is not injective, since <span class="math display">\[
+&amp; \det Jf(x,y) = e^{2x} \neq 0 \,.
+\end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(f\)</span> is not invertible because it is not injective, since <span class="math display">\[
 f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \mathbb{R}^2 , \,  n \in \mathbb{N}\,.
-\]</span> Therefore <span class="math inline">\(f\)</span> is not invertible from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>. This implies <span class="math inline">\(f\)</span> cannot be a diffeomorphism of <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
+\]</span> Hence, <span class="math inline">\(f\)</span> cannot be a diffeomorphism of <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -912,18 +901,16 @@ f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \mathbb{R}^2 , \,  n \in 
 </section>
 <section id="surfaces" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="surfaces"><span class="header-section-number">4.2</span> Surfaces</h2>
-<p>We give our main definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<p>We give the main definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <div id="surface" class="Definition" title="Surface">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 42: </strong>Surface</summary><div>Let <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span> be a connected set. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist<p></p>
 <ol type="1">
 <li>An open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>,</li>
-<li>A smooth map <span class="math display">\[
-{\pmb{\sigma}}\colon U \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,
-\]</span> such that
+<li>A smooth map <span class="math inline">\({\pmb{\sigma}}\colon U \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> such that
 <ul>
-<li><span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span></li>
-<li><span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span></li>
-<li><span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span></li>
+<li><span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>,</li>
+<li><span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>,</li>
+<li><span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span>.</li>
 </ul></li>
 </ol>
 <p>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong> at <span class="math inline">\(\mathbf{p}\)</span>.</p>
@@ -991,10 +978,9 @@ Figure&nbsp;4.1: Sketch of the surface <span class="math inline">\(\mathcal{S}\)
 </div></details>
 </div>
 <div id="d-plane-in-mathbbr3" class="Example" title="2D Plane in \mathbb{R}^3">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 45: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>
-<p>Planes in <span class="math inline">\(\mathbb{R}^3\)</span> are surfaces with atlas made by one chart. To prove it, note that a plane <span class="math inline">\({\pmb{\pi}}\subseteq \mathbb{R}^3\)</span> is described by the equation <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 45: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Planes in <span class="math inline">\(\mathbb{R}^3\)</span> are surfaces with atlas made by one chart. To prove it, note that a plane <span class="math inline">\({\pmb{\pi}}\subseteq \mathbb{R}^3\)</span> is described by the equation <span class="math display">\[
 {\pmb{\pi}}= \{  \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}\cdot \mathbf{w}= \lambda \} \,,
-\]</span> for some <span class="math inline">\(\mathbf{w}\in \mathbb{R}^3\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Let</p>
+\]</span> for some <span class="math inline">\(\mathbf{w}\in \mathbb{R}^3\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Let<p></p>
 <ul>
 <li><span class="math inline">\(\mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> be orthonormal, and orthogonal to <span class="math inline">\(\mathbf{w}\)</span>.</li>
 <li><span class="math inline">\(\mathbf{a} \in {\pmb{\pi}}\)</span> be any point in the plane.</li>
@@ -1010,8 +996,7 @@ Figure&nbsp;4.1: Sketch of the surface <span class="math inline">\(\mathcal{S}\)
 \]</span> Then <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart for <span class="math inline">\({\pmb{\pi}}\)</span>, and <span class="math display">\[
 \mathcal{A} = \{{\pmb{\sigma}}\}
 \]</span> is an atlas, implying that <span class="math inline">\({\pmb{\pi}}\)</span> is a surface.</p>
-<blockquote class="blockquote">
-<p>Check that <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart:</p>
+<p><strong>Proof.</strong> Check that <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
 <li><span class="math inline">\(\mathbb{R}^2\)</span> is obviously open.</li>
@@ -1029,7 +1014,6 @@ Figure&nbsp;4.1: Sketch of the surface <span class="math inline">\(\mathcal{S}\)
 <p>Notice that <span class="math display">\[
 {\pmb{\sigma}}(\mathbb{R}^2) = {\pmb{\pi}}\,,
 \]</span> and therefore <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\({\pmb{\pi}}\)</span>, showing that <span class="math inline">\({\pmb{\pi}}\)</span> is a surface.</p>
-</blockquote>
 </div></details>
 </div>
 <div id="fig-plane-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1064,8 +1048,7 @@ V = U_1 \cup U_2 \,,
 \]</span> The images of the two charts <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are shown in <a href="#fig-cylinder-surface" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>. We have that <span class="math inline">\(\mathcal{S}\)</span> is a surface with the atlas <span class="math display">\[
 \mathcal{A} = \{ {\pmb{\sigma}}_1, {\pmb{\sigma}}_2\} \,.
 \]</span></p>
-<blockquote class="blockquote">
-<p>Check:</p>
+<p><strong>Check:</strong></p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is smooth, since <span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
 <li><span class="math inline">\(U_i\)</span> is clearly open in <span class="math inline">\(\mathbb{R}^2\)</span>.</li>
@@ -1076,7 +1059,6 @@ V = U_1 \cup U_2 \,,
 \mathcal{S}= {\pmb{\sigma}}_1(U_1) \cup {\pmb{\sigma}}_2(U_2) \,.
 \]</span></li>
 </ul>
-</blockquote>
 </div></details>
 </div>
 <div id="fig-cylinder-surface" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1098,8 +1080,7 @@ Figure&nbsp;4.3: Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> 
 \]</span> where <span class="math inline">\({\pmb{\sigma}}\colon U \to \Gamma_f\)</span> is <span class="math display">\[
 {\pmb{\sigma}}(u,v):=(u,v,f(u,v)) \,.
 \]</span></p>
-<blockquote class="blockquote">
-<p>Let us check that <span class="math inline">\(\Gamma_f\)</span> is a surface:</p>
+<p><strong>Proof.</strong> Let us check that <span class="math inline">\(\Gamma_f\)</span> is a surface:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth since <span class="math inline">\(f\)</span> is smooth.</li>
 <li><span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> by assumption.</li>
@@ -1112,7 +1093,6 @@ Figure&nbsp;4.3: Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> 
 \Gamma_f = {\pmb{\sigma}}(U) \,.
 \]</span></li>
 </ul>
-</blockquote>
 </div></details>
 </div>
 <p>Let us conclude the section with an example of a set which is not a surface.</p>
@@ -1235,32 +1215,24 @@ J{\pmb{\sigma}}(u,v) =
 \]</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span>, where <span class="math display">\[
 {\pmb{\sigma}}\colon \mathbb{R}^2 \to {\pmb{\pi}}\,, \quad {\pmb{\sigma}}(u,v):= \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
 \]</span> Prove that <span class="math inline">\({\pmb{\pi}}\)</span> is a regular surface.<p></p>
-<p><strong>Solution.</strong> <span class="math inline">\({\pmb{\pi}}\)</span> is a regular surface because <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart. To see it, compute <span class="math display">\[
-{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \mathbf{q} \,,
-\]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, given that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal.</p>
+<p><strong>Solution.</strong> We have <span class="math inline">\({{\pmb{\sigma}}}_{u}= \mathbf{p}, {\pmb{\sigma}}_v = \mathbf{q}\)</span>. Since <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal, we conclude that <span class="math inline">\({{\pmb{\sigma}}}_{u}\)</span> and <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span> are linearly independent and <span class="math inline">\({\pmb{\sigma}}\)</span> is regular. <span class="math inline">\({\pmb{\pi}}\)</span> is a regular surface because <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.</p>
 </div></details>
 </div>
 <div id="example-unit-cylinder" class="Example" title="Unit cylinder">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 53: </strong>Unit cylinder</summary><div><strong>Question.</strong> Consider the infinite unit cylinder <span class="math display">\[
 \mathcal{S}= \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \} \,.
-\]</span> In Example <a href="chap_4.html#example-cylinder-chart">46</a>, we have seen that <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math display">\[
-\mathcal{A} = \{ {\pmb{\sigma}}_1,{\pmb{\sigma}}_2\} \,,
-\]</span> where we define <span class="math display">\[
-{\pmb{\sigma}}\colon \mathbb{R}^2 \to \mathbb{R}^3   \,, \quad
-{\pmb{\sigma}}(u,v):= (\cos(u),\sin(u),v)
-\]</span> and <span class="math display">\[\begin{align*}
-{\pmb{\sigma}}_1 &amp; := {\pmb{\sigma}}|_{U_1} \,,   &amp; {\pmb{\sigma}}_2 &amp; := {\pmb{\sigma}}|_{U_2} \,, \\
-U_1 &amp; := \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,,
-&amp; U_2 &amp; := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
-\end{align*}\]</span> Prove that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.<p></p>
-<p><strong>Solution.</strong> Compute the partial derivatives <span class="math display">\[
-{\pmb{\sigma}}_u = (-\sin(u),\cos(u),0) \,, \quad
-{\pmb{\sigma}}_v = (0,0,1) \,.
-\]</span> Therefore <span class="math display">\[
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = (\cos (u), \sin(u), 0)  \,, \quad \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| = 1 \,.
-\]</span> This implies <span class="math display">\[
-{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,,
-\]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Therefore <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are regular charts, being restrictions of <span class="math inline">\({\pmb{\sigma}}\)</span>. Thus, <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas, making <span class="math inline">\(\mathcal{S}\)</span> a regular surface.</p>
+\]</span> <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>, with <span class="math display">\[\begin{gather*}
+{\pmb{\sigma}}(u,v) = (\cos(u),\sin(u),v)\,, \quad
+{\pmb{\sigma}}_1  := {\pmb{\sigma}}|_{U_1} \,,   \quad  {\pmb{\sigma}}_2 := {\pmb{\sigma}}|_{U_2} \,, \\
+U_1  = \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,, \qquad
+U_2  = \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
+\end{gather*}\]</span> Prove that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.<p></p>
+<p><strong>Solution.</strong> The map <span class="math inline">\({\pmb{\sigma}}\)</span> is regular because <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = (-\sin(u),\cos(u),0)\\
+{\pmb{\sigma}}_v &amp; = (0,0,1) \\
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v &amp; = (\cos (u), \sin(u), 0) \\
+\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| &amp; = 1 \neq 0 \,.
+\end{align*}\]</span> Therefore <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are regular charts, being restrictions of <span class="math inline">\({\pmb{\sigma}}\)</span>. Thus, <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas and <span class="math inline">\(\mathcal{S}\)</span> a regular surface.</p>
 </div></details>
 </div>
 <p>The infinite cylinder can also be parametrized using a single chart, as shown in the next Example.</p>
@@ -1301,8 +1273,7 @@ f_u  &amp; f_v \\
 \mathbb{S}^2 := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1  \} \,.
 \]</span> In order to prove that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface, we need to introduce spherical coordinates.</p>
 <div id="spherical-coordinates" class="Definition" title="Spherical coordinates">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 56: </strong>Spherical coordinates</summary><div>
-<p>Consider a point <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 56: </strong>Spherical coordinates</summary><div>Consider a point <span class="math display">\[
 \mathbf{p}:= (x,y,z) \in \mathbb{R}^3 \smallsetminus \{{\pmb{0}}\} \,.
 \]</span> The point <span class="math inline">\(\mathbf{p}\)</span> is represented in <strong>spherical coordinates</strong> by <span class="math display">\[\begin{align*}
 x &amp; = \rho \cos(\theta) \cos (\varphi)    \\
@@ -1310,15 +1281,13 @@ y &amp; = \rho \sin(\theta) \cos (\varphi)   \\
 z &amp; = \rho \sin (\varphi)
 \end{align*}\]</span> where <span class="math display">\[
 \rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \theta \in [-\pi,\pi] \,, \quad \varphi\in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
-\]</span> with the angles <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\varphi\)</span> as in <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>.</p>
-<blockquote class="blockquote">
-<p>It is clear that <span class="math inline">\(z = \rho \sin(\varphi)\)</span>. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{q}\)</span> has length <span class="math display">\[
+\]</span> with the angles <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\varphi\)</span> as in <a href="#fig-spherical-coordinates" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>.<p></p>
+<p><strong>Check:</strong> It is clear that <span class="math inline">\(z = \rho \sin(\varphi)\)</span>. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{q}\)</span> has length <span class="math display">\[
 L = \rho \cos(\varphi) \,.
 \]</span> Therefore we get <span class="math display">\[\begin{align*}
 x &amp; = L \cos (\theta) = \rho \cos(\theta) \cos (\varphi)   \\
 y &amp; = L \sin (\theta) = \rho \sin(\theta) \cos (\varphi)  
 \end{align*}\]</span> concluding.</p>
-</blockquote>
 </div></details>
 </div>
 <div id="fig-spherical-coordinates" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1850,21 +1819,14 @@ V = {\pmb{\sigma}}^{-1}(I)\,, \quad \widetilde{V} = \widetilde{{\pmb{\sigma}}}^{
 \]</span> By Theorem <a href="chap_4.html#theorem-transition-map">64</a>, the map <span class="math inline">\(\Phi\)</span> is differentiable. As <span class="math inline">\(\Phi = {\pmb{\sigma}}^{-1} \circ \widetilde{{\pmb{\sigma}}}\)</span>, the proof is concluded.</p>
 </div></details>
 </div>
-<p>The following Proposition gives a very useful sufficient condition to check differentiability.</p>
-<div id="proposition-diff-check" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 71</strong></summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. Make the following assumptions:<p></p>
+<p>The following Theorem gives a very useful sufficient condition to check differentiability.</p>
+<div id="theorem-diff-check-2" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 71</strong></summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. Assume:<p></p>
 <ol type="1">
-<li><span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> is an open set such that <span class="math display">\[
-\mathcal{S}_1 \subseteq V \,,
-\]</span></li>
-<li><span class="math inline">\(f \colon V \to \mathbb{R}^3\)</span> is a differentiable function such that<br>
-<span class="math display">\[
-f(\mathcal{S}_1) \subseteq \mathcal{S}_2 \,.
-\]</span></li>
+<li><span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> is open, with <span class="math inline">\(\mathcal{S}_1 \subseteq V\)</span>,</li>
+<li><span class="math inline">\(f \colon V \to \mathbb{R}^3\)</span> is differentiable, with <span class="math inline">\(f(\mathcal{S}_1) \subseteq \mathcal{S}_2\)</span>.</li>
 </ol>
-<p>Then the restriction <span class="math display">\[
-f |_{\mathcal{S}_1} \colon \mathcal{S}_1 \to \mathcal{S}_2
-\]</span> is a differentiable map between surfaces.</p>
+<p>The restriction <span class="math inline">\(f |_{\mathcal{S}_1} \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> is a smooth map.</p>
 </div></details>
 </div>
 <div id="Proof*-10" class="Proof">
@@ -2476,13 +2438,10 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 <div id="Example-93" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 93</strong></summary><div>
-<p>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart. Then <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 93</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart. Then <span class="math display">\[
 \mathcal{S}_{{\pmb{\sigma}}} := {\pmb{\sigma}}(U)
-\]</span> is a regular surface with atlas <span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}\}\)</span>. Therefore <span class="math inline">\(\mathcal{S}_{{\pmb{\sigma}}}\)</span> is orientable.</p>
-<blockquote class="blockquote">
-<p>This is because we have only one chart. Therefore any transition map <span class="math inline">\(\Phi\)</span> will be the identity, so that <span class="math inline">\(\det J \Phi = 1 &gt; 0\)</span>.</p>
-</blockquote>
+\]</span> is a regular surface with atlas <span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}\}\)</span>. Therefore <span class="math inline">\(\mathcal{S}_{{\pmb{\sigma}}}\)</span> is orientable.<p></p>
+<p><strong>Check:</strong> This is because we have only one chart. Therefore any transition map <span class="math inline">\(\Phi\)</span> will be the identity, so that <span class="math inline">\(\det J \Phi = 1 &gt; 0\)</span>.</p>
 </div></details>
 </div>
 <div id="Remark-94" class="Remark">
@@ -3774,22 +3733,21 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 </div></details>
 </div>
 <div id="Example-134" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 134</strong></summary><div><strong>Question.</strong> Find the first fundamental form of the surface chart <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 134</strong></summary><div><strong>Question.</strong> Find the FFF of the surface chart <span class="math display">\[
 {\pmb{\sigma}}(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
 \]</span><p></p>
 <p><strong>Solution.</strong> We compute <span class="math display">\[
 \begin{aligned}
-{{\pmb{\sigma}}}_{u}&amp; =(1,1,2 u) \\
-{{\pmb{\sigma}}}_{v}&amp; =(-1,1,2 v) \\
-E &amp; = {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 2\left(1+2 u^{2}\right) \\
-F &amp; ={{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 4 u v \\
-G &amp; = {{\pmb{\sigma}}}_{v}\cdot {{\pmb{\sigma}}}_{v}= \left(1+2 v^{2}\right)
-\end{aligned}
-\]</span> so that <span class="math display">\[
-\mathscr{F}_{1}=\left(\begin{array}{cc}
-2\left(1+2 u^{2}\right) &amp; 4 u v \\
-4 u v &amp; 2\left(1+2 v^{2}\right)
+&amp; {{\pmb{\sigma}}}_{u}=(1,1,2 u)
+&amp; \,&amp;   F  ={{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 4 u v \\
+&amp; {{\pmb{\sigma}}}_{v}=(-1,1,2 v)
+&amp;\,&amp;  G  = {{\pmb{\sigma}}}_{v}\cdot {{\pmb{\sigma}}}_{v}= 2\left(1+2 v^{2}\right) \\
+&amp;  E  = {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= 2\left(1+2 u^{2}\right)
+&amp;\,&amp; \mathscr{F}_{1}  = 2\left(\begin{array}{cc}
+1+2 u^{2} &amp; 2 u v \\
+2 u v &amp; 1+2 v^{2}
 \end{array}\right) \,.
+\end{aligned}
 \]</span></p>
 </div></details>
 </div>
@@ -3871,17 +3829,12 @@ G(u(t),v(t)) &amp; = G(t,t) = 2  \,.
 <p>Isometries are an important class of maps between surfaces: They are smooth maps which preserve the first fundamental form.</p>
 <div id="local-isometry-and-isometry" class="Definition" title="Local Isometry and Isometry">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 137: </strong>Local Isometry and Isometry</summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math display">\[
-f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
-\]</span> be a smooth map. Denote the differential of <span class="math inline">\(f\)</span> by <span class="math display">\[
-d_{\mathbf{p}}f \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetilde{\mathcal{S}}\,.
-\]</span></p>
-<p>We say that:</p>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> smooth.</p>
 <ol type="1">
-<li><p><span class="math inline">\(f\)</span> is a <strong>local isometry</strong>, if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> <span id="eq-loc-iso"><span class="math display">\[
+<li><p><span class="math inline">\(f\)</span> is a <strong>local isometry</strong>, if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> <span class="math display">\[
 \mathbf{v}\cdot \mathbf{w}= d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{w}) \,, \quad
 \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
-\tag{4.10}\]</span></span> In this case, <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are said to be <strong>locally isometric</strong>.</p></li>
+\]</span> In this case, <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are said to be <strong>locally isometric</strong>.</p></li>
 <li><p><span class="math inline">\(f\)</span> is an <strong>isometry</strong> if:</p>
 <ul>
 <li><span class="math inline">\(f\)</span> is a local isometry;</li>
@@ -3893,7 +3846,7 @@ d_{\mathbf{p}}f \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetild
 </div>
 <p>Recall that the first fundamental form of <span class="math inline">\(\mathcal{S}\)</span> is defined by <span class="math display">\[
 I_{\mathbf{p}} (\mathbf{v}, \mathbf{w}) = \mathbf{v}\cdot  \mathbf{w}\,, \quad \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
-\]</span> Therefore, condition (<a href="#eq-loc-iso" class="quarto-xref"><span>4.10</span></a>) reads <span class="math display">\[
+\]</span> Therefore, condition (<span class="quarto-unresolved-ref">?eq-loc-iso</span>) reads <span class="math display">\[
 I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) = I_{\mathbf{p}} (d_{\mathbf{p}}f(\mathbf{v}), d_{\mathbf{p}}f(\mathbf{w})) \,, \quad
 \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> In this sense, we see that local isometries preserve the first fundamental form.</p>
@@ -3969,7 +3922,7 @@ d_{\mathbf{p}}f (\dot{{\pmb{\gamma}}}(t))  = \dot{\widetilde{{\pmb{\gamma}}}}(t)
 \]</span><p></p>
 <p><em>Part 2.</em> We need to prove that <span class="math inline">\(f\)</span> is a local isometry. By Remark <a href="chap_4.html#remark-local-isometry">138</a>, it is sufficient to show that <span id="eq-proof-loc-iso"><span class="math display">\[
 d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{v}) = \mathbf{v}\cdot \mathbf{v}\,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}}(\mathcal{S}) \,.  
-\tag{4.11}\]</span></span> Therefore, let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> be arbitrary. By definition of tangent plane, there exists a curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math display">\[
+\tag{4.10}\]</span></span> Therefore, let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> be arbitrary. By definition of tangent plane, there exists a curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0) = \mathbf{v}\,.
 \]</span> Define the curve <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}\colon (-\varepsilon,\varepsilon) \to \widetilde{\mathcal{S}}  \,, \qquad \widetilde{{\pmb{\gamma}}}:= f \circ {\pmb{\gamma}}\,.
@@ -3984,7 +3937,7 @@ d_{\mathbf{p}}f (\mathbf{v}) = \dot{\widetilde{{\pmb{\gamma}}}}(0) \,.
 d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{v}) &amp; = \dot{\widetilde{{\pmb{\gamma}}}}(0) \cdot \dot{\widetilde{{\pmb{\gamma}}}}(0) \\
                                     &amp; = \dot{{\pmb{\gamma}}}(0) \cdot \dot{{\pmb{\gamma}}}(0) \\
                                     &amp; = \mathbf{v}\cdot \mathbf{v}\,.
-\end{align*}\]</span> As <span class="math inline">\(\mathbf{v}\)</span> was arbitrary, we conclude (<a href="#eq-proof-loc-iso" class="quarto-xref"><span>4.11</span></a>).</p>
+\end{align*}\]</span> As <span class="math inline">\(\mathbf{v}\)</span> was arbitrary, we conclude (<a href="#eq-proof-loc-iso" class="quarto-xref"><span>4.10</span></a>).</p>
 </div></details>
 </div>
 <p>By definition, local isometries preserve the first fundamental form. The next Theorem gives a practical method to check if a map is a local isometry.</p>
@@ -4094,15 +4047,15 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 \]</span> is a local isometry, it is sufficient to verify Condition 2 in Theorem <a href="chap_4.html#theorem-local-isometry">142</a> on one atlas of <span class="math inline">\(\mathcal{S}\)</span>. Then, automatically, all other atlases will verify the condition, ensuring that <span class="math inline">\(f\)</span> is a local isometry.<p></p>
 <p>To see this, suppose we can verify Condition 2 on the chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span>, that is, suppose we have proven <span id="eq-local-isometry-chart-1"><span class="math display">\[
 \widetilde{\mathscr{F}}_1 = \mathscr{F}_1 \,,
-\tag{4.12}\]</span></span> where <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> is the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. Assume that <span class="math inline">\(\hat{{\pmb{\sigma}}} \colon \hat{U} \to \mathcal{S}\)</span> is another chart of <span class="math inline">\(\mathcal{S}\)</span>. By Remark <a href="chap_4.html#proposition-fff-reparametrization-bis">127</a>, the fundamental forms of <span class="math inline">\(\hat{{\pmb{\sigma}}}\)</span> and <span class="math inline">\({\pmb{\sigma}}\)</span> are related by <span id="eq-local-isometry-chart-2"><span class="math display">\[
+\tag{4.11}\]</span></span> where <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> is the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. Assume that <span class="math inline">\(\hat{{\pmb{\sigma}}} \colon \hat{U} \to \mathcal{S}\)</span> is another chart of <span class="math inline">\(\mathcal{S}\)</span>. By Remark <a href="chap_4.html#proposition-fff-reparametrization-bis">127</a>, the fundamental forms of <span class="math inline">\(\hat{{\pmb{\sigma}}}\)</span> and <span class="math inline">\({\pmb{\sigma}}\)</span> are related by <span id="eq-local-isometry-chart-2"><span class="math display">\[
 \hat{\mathscr{F}}_1 = (J\Phi)^T \mathscr{F}_1 J\Phi
-\tag{4.13}\]</span></span> where <span class="math inline">\(\Phi\)</span> is the transition map <span class="math inline">\(\Phi \colon \hat{U} \to U\)</span> such that <span class="math display">\[
+\tag{4.12}\]</span></span> where <span class="math inline">\(\Phi\)</span> is the transition map <span class="math inline">\(\Phi \colon \hat{U} \to U\)</span> such that <span class="math display">\[
 \hat{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,.
 \]</span> Applying <span class="math inline">\(f\)</span> to <span class="math inline">\(\hat{{\pmb{\sigma}}}\)</span> gives <span class="math display">\[
 {\pmb{\sigma}}^{\dagger} := f \circ \hat{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\circ \Phi = \widetilde{{\pmb{\sigma}}} \circ \Phi \,,
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}^{\dagger}\)</span> is a reparametrization of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> with transition map <span class="math inline">\(\Phi\)</span>. Therefore, by Proposition <a href="chap_4.html#proposition-fff-reparametrization-bis">127</a>, the fundamental forms of <span class="math inline">\({\pmb{\sigma}}^{\dagger}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are related by <span class="math display">\[
 \mathscr{F}^\dagger_1 = (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi
-\]</span> Recalling (<a href="#eq-local-isometry-chart-1" class="quarto-xref"><span>4.12</span></a>) and (<a href="#eq-local-isometry-chart-2" class="quarto-xref"><span>4.13</span></a>), we get <span class="math display">\[\begin{align*}
+\]</span> Recalling (<a href="#eq-local-isometry-chart-1" class="quarto-xref"><span>4.11</span></a>) and (<a href="#eq-local-isometry-chart-2" class="quarto-xref"><span>4.12</span></a>), we get <span class="math display">\[\begin{align*}
 \mathscr{F}^\dagger_1 &amp; = (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi  \\
 &amp; =  (J\Phi)^T \mathscr{F}_1 J\Phi  \\
 &amp; = \hat{\mathscr{F}}_1 \,.
@@ -4137,11 +4090,7 @@ f \circ {\pmb{\sigma}}= \widetilde{{\pmb{\sigma}}}\circ {\pmb{\sigma}}^{-1} \cir
 </div>
 <div id="example-plane-cylinder" class="Example" title="Plane and Cylinder are locally isometric">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 145: </strong>Plane and Cylinder are locally isometric</summary><div>
-<p><strong>Question.</strong> Consider the plane <span class="math display">\[
-\mathcal{S}= \{ (x,y,z) \in \mathbb{R}^3   \, \colon \, x = 0  \} \,,
-\]</span> and the unit cylinder <span class="math display">\[
-\mathcal{S}= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,  x^2 + y^2 = 1 \} \,.
-\]</span> Define the function <span class="math display">\[
+<p><strong>Question.</strong> Consider the plane <span class="math inline">\(\mathcal{S}= \{ x = 0 \}\)</span> and the unit cylinder <span class="math inline">\(\mathcal{S}= \{ x^2 + y^2 = 1 \}\)</span>. Define the function <span class="math display">\[
 f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f(0,y,z) = (\cos(y),\sin(y),z) \,.
 \]</span></p>
 <ol type="1">
@@ -4155,26 +4104,20 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f(0,y,z) = (\cos(y),\s
 \cos(y)^2 + \sin(y)^2 = 1\,,
 \]</span> therefore <span class="math inline">\(f\)</span> is well-defined. Moreover, <span class="math inline">\(f\)</span> is the restriction to <span class="math inline">\(\mathcal{S}\)</span> of the function <span class="math display">\[
 g \colon \mathbb{R}^3 \to \mathbb{R}^3 \,, \qquad g(x,y,z) = (\cos(y),\sin(y),z) \,.
-\]</span> Since <span class="math inline">\(g\)</span> is smooth, and <span class="math inline">\(g(\mathcal{S}) = \widetilde{\mathcal{S}}\)</span>, by Theorem <a href="revision.html#theorem-diff-check-2">88</a> we infer that <span class="math inline">\(g |_{\mathcal{S}} = f\)</span> is smooth between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>.</p></li>
-<li><p>Define the chart of <span class="math inline">\(\mathcal{S}\)</span>: <span class="math display">\[
+\]</span> Since <span class="math inline">\(g\)</span> is smooth, and <span class="math inline">\(g(\mathcal{S}) = \widetilde{\mathcal{S}}\)</span>, by Theorem <a href="chap_4.html#theorem-diff-check-2">71</a> we infer that <span class="math inline">\(g |_{\mathcal{S}} = f\)</span> is smooth between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>.</p></li>
+<li><p>The plane <span class="math inline">\(\mathcal{S}\)</span> is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (0,u,v) \,, \quad u,v \in \mathbb{R}\,.
-\]</span> We already know that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, with first fundamental form coefficients given by <span class="math display">\[
-E = 1 \,, \quad F = 1 \,, \quad G = 1 \,,
-\]</span> and corresponding first fundamental form <span class="math display">\[
-{\mathscr{F}}_1 = du^2 + dv^2 \,.
+\]</span> We already know that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, with FFF coefficients <span class="math display">\[
+E = 1 \,, \quad F = 0 \,, \quad G = 1 \,.
 \]</span> Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}}= f \circ {\pmb{\sigma}}\)</span>. Therefore, <span class="math display">\[
 \widetilde{{\pmb{\sigma}}}(u,v) = f(0,u,v) = (\cos(u),\sin(u),v) \,.
-\]</span> We have that <span class="math display">\[\begin{align*}
-{\widetilde{{\pmb{\sigma}}}}_{u}&amp; = ( -\sin(u),\cos(u),0 ) \\
-{\widetilde{{\pmb{\sigma}}}}_{v}&amp; = (0,0,1) \\
-\widetilde{E}&amp; = {\widetilde{{\pmb{\sigma}}}}_{u}\cdot {\widetilde{{\pmb{\sigma}}}}_{u}= 1 \\  
-\widetilde{F}&amp; = {\widetilde{{\pmb{\sigma}}}}_{u}\cdot {\widetilde{{\pmb{\sigma}}}}_{v}= 0 \\
-\widetilde{G}&amp; = {\widetilde{{\pmb{\sigma}}}}_{v}\cdot {\widetilde{{\pmb{\sigma}}}}_{v}= 1
-\end{align*}\]</span> Therefore, the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}= f \circ {\pmb{\sigma}}\)</span> is <span class="math display">\[
-{\widetilde{\mathscr{F}}}_1 =  du^2 + dv^2 \,.
-\]</span> In particular, we have shown that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form: <span class="math display">\[
-{\mathscr{F}}_1 = {\widetilde{\mathscr{F}}}_1 \,.
-\]</span> Since <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, by Theorem <a href="chap_4.html#theorem-local-isometry-2">144</a> we conclude that <span class="math inline">\(f\)</span> is a local isometry of <span class="math inline">\(\mathcal{S}\)</span> into <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>.</p></li>
+\]</span> The FFF of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is <span class="math display">\[\begin{align*}
+&amp; {\widetilde{{\pmb{\sigma}}}}_{u}= ( -\sin(u),\cos(u),0 )
+&amp; \, &amp; \widetilde{F}= {\widetilde{{\pmb{\sigma}}}}_{u}\cdot {\widetilde{{\pmb{\sigma}}}}_{v}= 0 \\
+&amp; {\widetilde{{\pmb{\sigma}}}}_{v}= (0,0,1)
+&amp; \, &amp; \widetilde{G}= {\widetilde{{\pmb{\sigma}}}}_{v}\cdot {\widetilde{{\pmb{\sigma}}}}_{v}= 1\\
+&amp; \widetilde{E}= {\widetilde{{\pmb{\sigma}}}}_{u}\cdot {\widetilde{{\pmb{\sigma}}}}_{u}= 1   
+\end{align*}\]</span> Thus, <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same FFF. Since <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, by Theorem <a href="revision.html#theorem-local-isometry-2-bis">136</a> we conclude that <span class="math inline">\(f\)</span> is a local isometry of <span class="math inline">\(\mathcal{S}\)</span> into <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -4284,7 +4227,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 <div id="Proof*-32" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is <span id="eq-angle-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
-\tag{4.14}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
+\tag{4.13}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
 \mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
 \mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
 \]</span> for some <span class="math inline">\(\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \mathbb{R}\)</span>. Hence, the coordinates of <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> are <span class="math display">\[
@@ -4304,7 +4247,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 \end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
 \| \mathbf{v}\|^2 &amp; = \mathbf{v}\cdot \mathbf{v}= E  {\lambda}^2 + 2 F  \lambda \mu + G \mu^2  \\
 \| \mathbf{w}\|^2 &amp; = \mathbf{w}\cdot \mathbf{w}= E  \tilde{\lambda}^2 + 2 F  \tilde{\lambda} \tilde{\mu}  + G  \tilde{\mu}^2 \,.  
-\end{align*}\]</span> Substituting in (<a href="#eq-angle-proof" class="quarto-xref"><span>4.14</span></a>) we conclude.<p></p>
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-proof" class="quarto-xref"><span>4.13</span></a>) we conclude.<p></p>
 </div></details>
 </div>
 </section>
@@ -4339,7 +4282,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 <div id="Proof*-33" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span id="eq-angle-curves-proof"><span class="math display">\[
 \cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,.
-\tag{4.15}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">79</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
+\tag{4.14}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">79</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad
 \widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
 \]</span> Differentiating the above expressions we obtain <span class="math display">\[
@@ -4351,7 +4294,7 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \qquad f = \widetilde{{\pmb{\
 \end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
 \| \dot{{\pmb{\gamma}}}\|^2 &amp; = \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2  \\
 \| \dot{\widetilde{{\pmb{\gamma}}}}\|^2 &amp; = \dot{\widetilde{{\pmb{\gamma}}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}= E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
-\end{align*}\]</span> Substituting in (<a href="#eq-angle-curves-proof" class="quarto-xref"><span>4.15</span></a>), we conclude.<p></p>
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-curves-proof" class="quarto-xref"><span>4.14</span></a>), we conclude.<p></p>
 </div></details>
 </div>
 <div id="Example-152" class="Example">
@@ -4466,21 +4409,21 @@ f \colon \mathcal{S}\to \widetilde{\mathcal{S}}
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose <span class="math inline">\(f\)</span> is a conformal map, so that <span id="eq-theorem-conformal-proof"><span class="math display">\[
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
 \frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
-\tag{4.16}\]</span></span> Let <span class="math inline">\(\{\pmb{\alpha}_1,\pmb{\alpha}_2\}\)</span> be an orthonormal basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, that is, <span class="math display">\[
+\tag{4.15}\]</span></span> Let <span class="math inline">\(\{\pmb{\alpha}_1,\pmb{\alpha}_2\}\)</span> be an orthonormal basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, that is, <span class="math display">\[
 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle = 0 \,, \quad
 \| \pmb{\alpha}_1  \| = \| \pmb{\alpha}_2 \| = 1 \,.
 \]</span> Define <span class="math display">\[\begin{align*}
 \lambda(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_1} \right\rangle_f = \| \pmb{\alpha_1} \|_f^2 \,, \\
 \mu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f \,, \\
 \nu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_2},\pmb{\alpha_2} \right\rangle_f = \| \pmb{\alpha_2} \|_f^2   \,.
-\end{align*}\]</span> By (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.16</span></a>) we have <span class="math display">\[
+\end{align*}\]</span> By (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.15</span></a>) we have <span class="math display">\[
 \frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle}{ \| \pmb{\alpha_1} \| \| \pmb{\alpha_2} \|  } =
 \frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f}{ \| \pmb{\alpha_1} \|_f \| \pmb{\alpha_2} \|_f  } \,.
 \]</span> Since <span class="math inline">\(\pmb{\alpha}_1 \cdot \pmb{\alpha}_2 = 0\)</span>, from the above we get <span class="math display">\[
 \mu (\mathbf{p}) = \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2  \right\rangle_f = 0 \,.
 \]</span> Moreover, since <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_2\)</span> are orthonormal, the angle between <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_1 + \pmb{\alpha}_2\)</span> is <span class="math inline">\(\theta = \pi/4\)</span>. By definition of angle between vectors, we infer <span class="math display">\[
 \frac{\sqrt{2}}{2} = \cos (\theta) = \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } \,.
-\]</span> On the other hand, using (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.16</span></a>) we get <span class="math display">\[
+\]</span> On the other hand, using (<a href="#eq-theorem-conformal-proof" class="quarto-xref"><span>4.15</span></a>) we get <span class="math display">\[
 \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } =
 \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle_f  }{ \| \pmb{\alpha}_1 \|_f \| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f } \,.
 \]</span> The numerator of the right hand side satisfies <span class="math display">\[\begin{align*}
@@ -4572,13 +4515,9 @@ f = \widetilde{{\pmb{\sigma}}}\circ {\pmb{\sigma}}^{-1} \,.
 <p>The proof follows by adapting the argument in the proof of Theorem <a href="chap_4.html#theorem-local-isometry-2">144</a>, and by applying Theorem <a href="revision.html#theorem-conformal-fff">144</a>. This is left as an exercise.</p>
 <div id="example-conformal" class="Example" title="Stereographic Projection">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 160: </strong>Stereographic Projection</summary><div>
-<p><strong>Question.</strong> Denote the unit sphere by <span class="math display">\[
-\mathbb{S}^2 = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
-\]</span> and consider the surface <span class="math display">\[
-\mathcal{S}= \mathbb{S}^2 \smallsetminus \{N\} \,,
-\]</span> where the point <span class="math inline">\(N = (0,0,1)\)</span> is the North Pole. Denote the plane <span class="math inline">\(\{z = 0\}\)</span> by <span class="math display">\[
-\widetilde{\mathcal{S}}= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \, z = 0 \} \,,
-\]</span> The plane <span class="math inline">\(\{z=0\}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span> except the north pole. The line joining the north pole to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\{z=0\}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map, which is easily computed to be: <span class="math display">\[
+<p><strong>Question.</strong> Consider the unit sphere <span class="math inline">\(\mathbb{S}^2 = \{x^2 + y^2 + z^2 = 1 \}\)</span> and define the surface <span class="math display">\[
+\mathcal{S}= \mathbb{S}^2 \smallsetminus \{N\} \,, \quad N = (0,0,1) \,.
+\]</span> Consider the plane <span class="math inline">\(\widetilde{\mathcal{S}}= \{z = 0\}\)</span>. The plane <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> slices through the equator of the sphere. Let <span class="math inline">\(P=(x,y,z)\)</span> be any point on <span class="math inline">\(\mathbb{S}^2\)</span>, except the North Pole <span class="math inline">\(N\)</span>. The line joining <span class="math inline">\(N\)</span> to <span class="math inline">\(P\)</span> intersects the plane <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at the point <span class="math inline">\(P'\)</span>, see <a href="#fig-stereographic-4" class="quarto-xref">Figure&nbsp;<span>4.25</span></a>. The point <span class="math inline">\(P'\)</span> defines the <em>Stereographic Projection</em> map, which is easily computed to be: <span class="math display">\[
 f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\,, \quad
 f(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z},0  \right) \,.
 \]</span> Prove that:</p>
@@ -4587,17 +4526,13 @@ f(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z},0  \right) \,.
 <li><span class="math inline">\(f\)</span> is not a local isometry.</li>
 </ol>
 <p><strong>Note</strong>: In particular, the Sphere and the Plane are conformal.</p>
-<p><strong>Solution.</strong> It is not difficult to prove that <span class="math inline">\(f\)</span> is invertible, with inverse given by <span class="math display">\[
+<p><strong>Solution.</strong> It is easy to prove that <span class="math inline">\(f^{-1} = {\pmb{\sigma}}\)</span>, with <span class="math display">\[
 {\pmb{\sigma}}(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
-\]</span> We have that <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span>, forming an altas of one chart. It is straightforward to compute that the coefficients of the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
-E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
-\]</span> In particualar the fisrt fundamental form is <span class="math display">\[
-\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,.
-\]</span> Define the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>: <span class="math display">\[
-\widetilde{{\pmb{\sigma}}}= f \circ {\pmb{\sigma}}\,.
-\]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> is the inverse of <span class="math inline">\(f\)</span>, we have that <span class="math display">\[
+\]</span> We have that <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span>, forming an altas of one chart. It is straightforward to compute that the FFF of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,, \quad \lambda(u,v) = \frac{4}{(u^2+v^2+1)^2} \,.
+\]</span> Let <span class="math inline">\(\widetilde{{\pmb{\sigma}}}= f \circ {\pmb{\sigma}}\)</span>. Since <span class="math inline">\({\pmb{\sigma}}= f^{-1}\)</span>, we have that <span class="math display">\[
 \widetilde{{\pmb{\sigma}}}(u,v) = (u,v,0) \,.
-\]</span> As already computed, the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is <span class="math display">\[
+\]</span> As already computed, the FFF of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is <span class="math display">\[
 {\widetilde{\mathscr{F}}}_1 = du^2 + dv^2 \,.
 \]</span> We can now conclude:</p>
 <ol type="1">
@@ -4606,7 +4541,7 @@ E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
 \]</span> Since <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, by Theorem <a href="revision.html#theorem-conformal-fff">144</a> we conclude that <span class="math inline">\(f\)</span> is a conformal map.</p></li>
 <li><p>Since <span class="math inline">\({\lambda}\)</span> is not always equal to <span class="math inline">\(1\)</span>, we have that <span class="math display">\[
 {\widetilde{\mathscr{F}}}_1 \neq {\mathscr{F}}_1 \,.
-\]</span> Therefore, by Theorem <a href="chap_4.html#theorem-local-isometry">142</a>, we conclude that <span class="math inline">\(f\)</span> cannot be a local isometry.</p></li>
+\]</span> Therefore, by Theorem <a href="revision.html#theorem-local-isometry-bis">135</a>, we conclude that <span class="math inline">\(f\)</span> cannot be a local isometry.</p></li>
 </ol>
 </div></details>
 </div>
@@ -4743,24 +4678,22 @@ Figure&nbsp;4.27: The Stereographic projection is a conformal map: Angles and sh
 </figure>
 </div>
 <div id="example-conformal-2" class="Example" title="Mercator projection">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 168: </strong>Mercator projection</summary><div><strong>Question.</strong> Consider the following parametrization of the sphere <span class="math inline">\(\mathbb{S}^2\)</span> <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 168: </strong>Mercator projection</summary><div><strong>Question.</strong> Prove that the following parametrization of <span class="math inline">\(\mathbb{S}^2\)</span> is conformal <span class="math display">\[
 {\pmb{\sigma}}(u,v) := \left(  \cos(u) \mathop{\mathrm{sech}}(v), \sin(u) \mathop{\mathrm{sech}}(v) , \tanh (v) \right) \,.
-\]</span> Prove that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.<p></p>
+\]</span><p></p>
 <p><strong>Note.</strong> Let <span class="math inline">\(V = {\pmb{\sigma}}(U)\)</span>. In particular, the inverse <span class="math display">\[
 {\pmb{\sigma}}^{-1} \colon V \subseteq \mathbb{S}^2 \to \mathbb{R}^2
 \]</span> is a conformal map. This is known as the <strong>Mercator Projection</strong>, see <a href="#fig-mercator" class="quarto-xref">Figure&nbsp;<span>4.28</span></a> and <a href="#fig-mercator-2" class="quarto-xref">Figure&nbsp;<span>4.29</span></a>.</p>
 <p><strong>Solution.</strong> Using the identitities <span class="math display">\[\begin{align*}
-\frac{d}{dv} \left( \mathop{\mathrm{sech}}(v)  \right) &amp; = - \mathop{\mathrm{sech}}(v) \tanh (v) \,, \\
-\frac{d}{dv} \left( \tanh (v) \right)  &amp; = {\mathop{\mathrm{sech}}}^2 (v) \,,
+&amp; \mathop{\mathrm{sech}}(v)' = - \mathop{\mathrm{sech}}(v) \tanh (v) \,, \\
+&amp; \tanh (v)' = {\mathop{\mathrm{sech}}}^2 (v) \,,\\
+&amp; {\mathop{\mathrm{sech}}}^2 (v) + {\tanh}^2 (v) = 1
 \end{align*}\]</span> we obtain <span class="math display">\[\begin{align*}
-{\pmb{\sigma}}_u &amp; = ( -\sin(u) \mathop{\mathrm{sech}}(v) , \cos(u)\mathop{\mathrm{sech}}(v) , 0 )  \\
-{{\pmb{\sigma}}}_{v}&amp; = ( -\cos(v) \mathop{\mathrm{sech}}(v) \tanh(v) , -\sin(u) \mathop{\mathrm{sech}}(v) \tanh(v) , {\mathop{\mathrm{sech}}}^2(v) )
-\end{align*}\]</span> By recalling that <span class="math display">\[
-{\mathop{\mathrm{sech}}}^2 (v) + {\tanh}^2 (v) = 1 \,,
-\]</span> we compute <span class="math display">\[\begin{align*}
-E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = {\mathop{\mathrm{sech}}}^2(v) (\cos^2(u) + \sin^2(u)) = {\mathop{\mathrm{sech}}}^2(v)  \\
-F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v =  0 \\
-G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = {\mathop{\mathrm{sech}}}^2(v) ({\tanh}^2(v) + {\mathop{\mathrm{sech}}}^2(v)) = {\mathop{\mathrm{sech}}}^2(v) \\
+&amp; \widetilde{{\pmb{\sigma}}}_u  = \mathop{\mathrm{sech}}(v) \, ( -\sin(u)  , \cos(u), 0 )  \\
+&amp; \widetilde{{\pmb{\sigma}}}_v  = \mathop{\mathrm{sech}}(v) \, ( -\cos(v)  \tanh(v) , -\sin(u) \tanh(v) , \mathop{\mathrm{sech}}(v) ) \\
+&amp; \widetilde{E} = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u = {\mathop{\mathrm{sech}}}^2(v) (\cos^2(u) + \sin^2(u)) = {\mathop{\mathrm{sech}}}^2(v)  \\
+&amp; \widetilde{F}  = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v =  0 \\
+&amp; \widetilde{G} = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v = {\mathop{\mathrm{sech}}}^2(v) ({\tanh}^2(v) + {\mathop{\mathrm{sech}}}^2(v)) = {\mathop{\mathrm{sech}}}^2(v) \\
 \end{align*}\]</span> Hence the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 {\mathscr{F}}_1 = {\mathop{\mathrm{sech}}}^2(v) \, \left(  du^2 + dv^2 \right) \,,
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.</p>
@@ -4795,13 +4728,13 @@ Figure&nbsp;4.29: The Mercator Projection is a conformal map: As such it preseve
 A_{{\pmb{\sigma}}}(R) \approx \left\| {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v} \right\| \,.
 \]</span> It can be shown that the area of any region <span class="math inline">\({\pmb{\sigma}}(R)\)</span> is obtained by integrating <span class="math inline">\(\left\| {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v} \right\|\)</span> on <span class="math inline">\(R\)</span>, see Theorem 4.2.5 in <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. Specifically, <span id="eq-area-heuristic"><span class="math display">\[
 A_{{\pmb{\sigma}}}(R) = \int_{R} \left\|  {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v} \right\| \, dudv \,.
-\tag{4.17}\]</span></span> The proof of such result is similar to the one we did for showing that the length of a curve is given by <span class="math display">\[
+\tag{4.16}\]</span></span> The proof of such result is similar to the one we did for showing that the length of a curve is given by <span class="math display">\[
 L({\pmb{\gamma}}) = \int_{a}^b \left\| \dot{{\pmb{\gamma}}}(u) \right\| \, du \,,
 \]</span> where <span class="math inline">\(L({\pmb{\gamma}})\)</span> is defined as <span class="math display">\[
 L({\pmb{\gamma}}) = \lim_{\varepsilon\to 0} L({\pmb{\gamma}}_\varepsilon) \,,
-\]</span> where <span class="math inline">\(L({\pmb{\gamma}}_{\varepsilon})\)</span> is the length of a piecewise linear approximation <span class="math inline">\({\pmb{\gamma}}_{\varepsilon}\)</span> of <span class="math inline">\({\pmb{\gamma}}\)</span>. To obtain (<a href="#eq-area-heuristic" class="quarto-xref"><span>4.17</span></a>), one can approximate <span class="math inline">\({\pmb{\sigma}}(R)\)</span> with a piecewise affine mesh <span class="math inline">\({\pmb{\sigma}}(R_{\varepsilon})\)</span>, and then define <span class="math display">\[
+\]</span> where <span class="math inline">\(L({\pmb{\gamma}}_{\varepsilon})\)</span> is the length of a piecewise linear approximation <span class="math inline">\({\pmb{\gamma}}_{\varepsilon}\)</span> of <span class="math inline">\({\pmb{\gamma}}\)</span>. To obtain (<a href="#eq-area-heuristic" class="quarto-xref"><span>4.16</span></a>), one can approximate <span class="math inline">\({\pmb{\sigma}}(R)\)</span> with a piecewise affine mesh <span class="math inline">\({\pmb{\sigma}}(R_{\varepsilon})\)</span>, and then define <span class="math display">\[
 A_{{\pmb{\sigma}}}(R) = \lim_{\varepsilon\to 0} A_{{\pmb{\sigma}}}(R_{\varepsilon}) \,.
-\]</span> Making this argument precise requires a lot of effort. Instead, we just take (<a href="#eq-area-heuristic" class="quarto-xref"><span>4.17</span></a>) as the definition of area.</p>
+\]</span> Making this argument precise requires a lot of effort. Instead, we just take (<a href="#eq-area-heuristic" class="quarto-xref"><span>4.16</span></a>) as the definition of area.</p>
 <div id="Definition-169" class="Definition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 169</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart and <span class="math inline">\(R \subseteq U\)</span>. The area <span class="math inline">\(A_{{\pmb{\sigma}}}\)</span> of the region <span class="math inline">\({\pmb{\sigma}}(R)\)</span> is defined by <span class="math display">\[
 A_{{\pmb{\sigma}}} = \int_{R} \left\|  {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v} \right\| \, dudv \,.
@@ -5174,7 +5107,7 @@ N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \mathscr{F}_2 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
 \]</span> defined by <span id="eq-sff-chart"><span class="math display">\[
 \mathscr{F}_2 (\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv (\mathbf{v})+ N \, dv^2 (\mathbf{v}) \,,
-\tag{4.18}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="revision.html#definition-coordinate-functions">121</a>.<p></p>
+\tag{4.17}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="revision.html#definition-coordinate-functions">121</a>.<p></p>
 </div></details>
 </div>
 <div id="Notation*-40" class="Notation">
@@ -5212,15 +5145,15 @@ M &amp; N
 \right)
 \,
 J \Phi  \,
-\tag{4.19}\]</span></span> where <span class="math inline">\(J\Phi\)</span> is the Jacobian of <span class="math inline">\(\Phi\)</span> <span class="math display">\[
+\tag{4.18}\]</span></span> where <span class="math inline">\(J\Phi\)</span> is the Jacobian of <span class="math inline">\(\Phi\)</span> <span class="math display">\[
 J\Phi = \left(   
 \begin{array}{cc}
 \dfrac{\partial u}{\partial \tilde u}  &amp;  \dfrac{\partial u}{\partial \tilde v}  \\
 \dfrac{\partial v}{\partial \tilde u}  &amp;  \dfrac{\partial v}{\partial \tilde v}
 \end{array}
 \right) \,,
-\]</span> and where (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.<p></p>
-<p><strong>Proof.</strong> Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>4.19</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
+\]</span> and where (<a href="#eq-sff-repar" class="quarto-xref"><span>4.18</span></a>) holds with <span class="math inline">\(+\)</span> if <span class="math inline">\(\det J\Phi &gt; 0\)</span> and <span class="math inline">\(-\)</span> if <span class="math inline">\(\det J\Phi &lt; 0\)</span>.<p></p>
+<p><strong>Proof.</strong> Formula (<a href="#eq-sff-repar" class="quarto-xref"><span>4.18</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
 \widetilde{\mathbf{N}} = \frac{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} }{\left\| \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \right\|} = \frac{\det J\Phi}{|\det J\Phi|} \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|} = \pm \mathbf{N}\,,
 \]</span> as shown in Remark <a href="chap_4.html#remark-normal-chart">87</a>.</p>
 </div></details>
@@ -5381,7 +5314,7 @@ Figure&nbsp;4.38: If <span class="math inline">\(\mathcal{S}\)</span> is the uni
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
 T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
-\tag{4.20}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.39</span></a>. Therefore <span class="math display">\[
+\tag{4.19}\]</span></span> see <a href="#fig-weingarten" class="quarto-xref">Figure&nbsp;<span>4.39</span></a>. Therefore <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
 \]</span><p></p>
 <p><strong>Proof.</strong> The tangent plane <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> passes through the origin and <span class="math display">\[
@@ -5390,7 +5323,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 \mathbf{N}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,.
 \]</span> Since by definition <span class="math display">\[
 \mathbf{N}(\mathbf{p}) \perp T_{\mathbf{p}} \mathcal{S}\,,
-\]</span> we infer (<a href="#eq-gauss-identification" class="quarto-xref"><span>4.20</span></a>).</p>
+\]</span> we infer (<a href="#eq-gauss-identification" class="quarto-xref"><span>4.19</span></a>).</p>
 </div></details>
 </div>
 <div id="fig-weingarten" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -5431,11 +5364,8 @@ II_{\mathbf{p}}(\mathbf{v},\mathbf{w}) := \mathcal{W}_{\mathbf{p}, \mathcal{S}}(
 </div></details>
 </div>
 <div id="Remark-194" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 194</strong></summary><div>
-<p>The second fudamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> is bilinear.</p>
-<blockquote class="blockquote">
-<p>Indeed, <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is linear, being the differential of a smooth map. Hence <span class="math inline">\(II_{\mathbf{p}}\)</span> is bilinear, given that the scalar product is bilinear.</p>
-</blockquote>
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 194</strong></summary><div>The second fudamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> is bilinear.<p></p>
+<p><strong>Check.</strong> <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is linear, being the differential of a smooth map. Hence <span class="math inline">\(II_{\mathbf{p}}\)</span> is bilinear, given that the scalar product is bilinear.</p>
 </div></details>
 </div>
 <div id="matrix-of-the-second-fundamental-form" class="Remark" title="Matrix of the second fundamental form">
@@ -5882,14 +5812,11 @@ c &amp; d
 </div></details>
 </div>
 <div id="Remark-202" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 202</strong></summary><div>
-<p>The Gaussian curvature and mean curvature do not depend on the choice of basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Indeed, if <span class="math inline">\(\widetilde{\mathcal{W}}\)</span> is the matrix of the Weingarten map with respect to the basis <span class="math inline">\(\{\widetilde{{\pmb{\sigma}}}_u,\widetilde{{\pmb{\sigma}}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, then <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 202</strong></summary><div>The Gaussian curvature and mean curvature do not depend on the choice of basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Indeed, if <span class="math inline">\(\widetilde{\mathcal{W}}\)</span> is the matrix of the Weingarten map with respect to the basis <span class="math inline">\(\{\widetilde{{\pmb{\sigma}}}_u,\widetilde{{\pmb{\sigma}}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, then <span class="math display">\[
 \det (\mathcal{W}) = \det (\widetilde{\mathcal{W}}) \,, \quad
 \operatorname{Tr} (\mathcal{W}) = \operatorname{Tr} (\widetilde{\mathcal{W}}) \,.
-\]</span></p>
-<blockquote class="blockquote">
-<p>The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.</p>
-</blockquote>
+\]</span><p></p>
+<p><strong>Check.</strong> The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.</p>
 </div></details>
 </div>
 <p>Since we have shown that the matrix of the Weingarten map is <span class="math display">\[
@@ -6069,10 +5996,10 @@ H = \frac12 \, \operatorname{Tr} (\mathcal{W}) =  - \frac12 \,.
 <div id="eigenvalues-and-eigenvectors-1" class="Remark" title="Eigenvalues and eigenvectors">
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 206: </strong>Eigenvalues and eigenvectors</summary><div>Let <span class="math inline">\(V\)</span> be a two-dimensional vector space, and <span class="math inline">\(L \colon V \to V\)</span> a linear map. We say that <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is an <strong>eigenvalue</strong> of <span class="math inline">\(L\)</span> with <strong>eigenvector</strong> <span class="math inline">\(\mathbf{v}\in V\)</span> if <span id="eq-eigen-equation"><span class="math display">\[
 L(\mathbf{v})  = \lambda \mathbf{v}\,, \quad \mathbf{v}\neq 0 \,.
-\tag{4.21}\]</span></span> Let <span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2\}\)</span> be a basis of <span class="math inline">\(V\)</span>, and denote by <span class="math display">\[
+\tag{4.20}\]</span></span> Let <span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2\}\)</span> be a basis of <span class="math inline">\(V\)</span>, and denote by <span class="math display">\[
 \mathbf{x}= (x_1,x_2) \,, \quad
 \mathbf{v}= x_1 \mathbf{v}_1 + x_2 \mathbf{v}_2 \,.
-\]</span> the coordinates of <span class="math inline">\(\mathbf{v}\)</span> in such basis. Let <span class="math inline">\(A \in \mathbb{R}^{2 \times 2}\)</span> be the matrix of <span class="math inline">\(L\)</span> with respect to the basis <span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2\}\)</span>. Equation (<a href="#eq-eigen-equation" class="quarto-xref"><span>4.21</span></a>) is equivalent to <span class="math display">\[
+\]</span> the coordinates of <span class="math inline">\(\mathbf{v}\)</span> in such basis. Let <span class="math inline">\(A \in \mathbb{R}^{2 \times 2}\)</span> be the matrix of <span class="math inline">\(L\)</span> with respect to the basis <span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2\}\)</span>. Equation (<a href="#eq-eigen-equation" class="quarto-xref"><span>4.20</span></a>) is equivalent to <span class="math display">\[
 A \mathbf{x}= \lambda \mathbf{x}\,,
 \]</span> meaning that <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A\)</span> with eigenvector <span class="math inline">\(\mathbf{x}\)</span>. The eigenvalues of <span class="math inline">\(A\)</span> can be computed by solving the <strong>characteristic equation</strong> <span class="math display">\[
 P(\lambda) = 0 \,, \quad P(\lambda) := \det \left(  A - \lambda I  \right)  \,,
@@ -6119,7 +6046,7 @@ P &amp; =
 \end{array}
 \right) \,.
 \end{aligned}
-\tag{4.22}\]</span></span></li>
+\tag{4.21}\]</span></span></li>
 </ul></li>
 </ol>
 </div></details>
@@ -6150,7 +6077,7 @@ M &amp; N
 \]</span> As <span class="math inline">\(\mathcal{W}\)</span> is the matrix of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> and <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span> are the coordinates of <span class="math inline">\(\mathbf{t}_1,\mathbf{t}_2\)</span>, we infer <span class="math display">\[
 \mathcal{W}\mathbf{x}_1 = \kappa_1 \mathbf{x}_1 \,, \quad
 \mathcal{W}\mathbf{x}_2 = \kappa_2 \mathbf{x}_2 \,,
-\]</span> showing that <span class="math inline">\(\kappa_i\)</span> is eigenvalue of <span class="math inline">\(\mathcal{W}\)</span> with eigenvector <span class="math inline">\(\mathbf{x}_i\)</span>. In particular, it follows that <span class="math inline">\(\mathcal{W}\)</span> is diagonal in the basis <span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2\}\)</span> of <span class="math inline">\(\mathbb{R}^2\)</span>. Therefore (<a href="#eq-diagonal-W" class="quarto-xref"><span>4.22</span></a>) holds.</p>
+\]</span> showing that <span class="math inline">\(\kappa_i\)</span> is eigenvalue of <span class="math inline">\(\mathcal{W}\)</span> with eigenvector <span class="math inline">\(\mathbf{x}_i\)</span>. In particular, it follows that <span class="math inline">\(\mathcal{W}\)</span> is diagonal in the basis <span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2\}\)</span> of <span class="math inline">\(\mathbb{R}^2\)</span>. Therefore (<a href="#eq-diagonal-W" class="quarto-xref"><span>4.21</span></a>) holds.</p>
 </div></details>
 </div>
 <p>The principal curvatures are the eigenvalues of the matrix of the Weingarten map, and the principal vectors its eigenvectors.</p>
@@ -6462,13 +6389,13 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 <div id="Proposition-217" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 217</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit-speed curve. Then <span id="eq-surface-curve-curvature"><span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa_n \mathbf{N}+ \kappa_g \, \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
-\tag{4.23}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
+\tag{4.22}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
 \kappa_n = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\,, \quad \kappa_g = \ddot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right)  \,,
-\tag{4.24}\]</span></span> <span id="eq-surface-curve-curvature-2"><span class="math display">\[
+\tag{4.23}\]</span></span> <span id="eq-surface-curve-curvature-2"><span class="math display">\[
 \kappa^2 = \kappa_n^2 + \kappa_g^2 \,,
-\tag{4.25}\]</span></span> <span id="eq-surface-curve-curvature-3"><span class="math display">\[
+\tag{4.24}\]</span></span> <span id="eq-surface-curve-curvature-3"><span class="math display">\[
 \kappa_n = \kappa \cos (\phi) \,, \quad  \kappa_g = \pm \kappa \sin(\phi) \,,
-\tag{4.26}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span>, and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+\tag{4.25}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span>, and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-54" class="Proof">
@@ -6485,30 +6412,30 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= \left\| \dot{{\pmb{\gamma}}} \right\|^2 = 1 \,.
 \]</span> Therefore, <span class="math inline">\(a = 0\)</span> and <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= b \mathbf{N}+ c \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,.
-\]</span> Setting <span class="math inline">\(\kappa_n := b\)</span> and <span class="math inline">\(\kappa_g := c\)</span> we conclude (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.23</span></a>).<p></p>
-<p><em>Part 2.</em> Taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.23</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> yields <span class="math display">\[
+\]</span> Setting <span class="math inline">\(\kappa_n := b\)</span> and <span class="math inline">\(\kappa_g := c\)</span> we conclude (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.22</span></a>).<p></p>
+<p><em>Part 2.</em> Taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.22</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> yields <span class="math display">\[
 \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}= \kappa_n \left\| \mathbf{N} \right\|^2 + \kappa_g \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \cdot \mathbf{N}= \kappa_n \,,
-\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal vectors. Similarly, taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.23</span></a>) with <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> yields the second equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.24</span></a>).</p>
-<p><em>Part 3.</em> By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.23</span></a>) we infer <span class="math display">\[\begin{align*}
+\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal vectors. Similarly, taking the scalar product of (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.22</span></a>) with <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> yields the second equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.23</span></a>).</p>
+<p><em>Part 3.</em> By (<a href="#eq-surface-curve-curvature" class="quarto-xref"><span>4.22</span></a>) we infer <span class="math display">\[\begin{align*}
 \left\| \ddot{{\pmb{\gamma}}} \right\|^2 &amp; = \kappa_n^2 \left\| \mathbf{N} \right\|^2 + 2 \kappa_n \kappa_g \mathbf{N}\cdot
 \left(\mathbf{N}\times \dot{{\pmb{\gamma}}}\right) + \kappa_g^2  \left\| \mathbf{N}\times \dot{{\pmb{\gamma}}} \right\|^2 \\
               &amp; = \kappa_n^2 + \kappa_g^2 \,,
 \end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal. Since <span class="math display">\[
 \kappa(t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\| \,,
-\]</span> we conclude (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.25</span></a>).</p>
+\]</span> we conclude (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.24</span></a>).</p>
 <p><em>Part 4.</em> Recalling that <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa \mathbf{n}\,,
-\]</span> from the first equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.24</span></a>) we obtain <span class="math display">\[\begin{align*}
+\]</span> from the first equation in (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.23</span></a>) we obtain <span class="math display">\[\begin{align*}
 \kappa_n &amp; = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\\
          &amp; = \kappa \mathbf{n}\cdot \mathbf{N}\\
          &amp; = \kappa \| \mathbf{n}\| \| \mathbf{N}\| \cos(\phi) \\
          &amp; = \kappa \cos(\phi) \,,
-\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{n}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> have unit norm. Hence, the first equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.26</span></a>) is established. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.25</span></a>) we get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{n}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> have unit norm. Hence, the first equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.25</span></a>) is established. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.24</span></a>) we get <span class="math display">\[\begin{align*}
 \kappa_g^2 &amp; = \kappa^2 - \kappa_n^2 \\
            &amp; = \kappa^2 -  \kappa^2 \cos^2(\phi) \\
            &amp; = \kappa^2 (1 - \cos^2(\phi)) \\
            &amp; = \kappa^2 \sin^2(\phi) \,,
-\end{align*}\]</span> from which we obtain the second equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.26</span></a>).</p>
+\end{align*}\]</span> from which we obtain the second equation in (<a href="#eq-surface-curve-curvature-3" class="quarto-xref"><span>4.25</span></a>).</p>
 </div></details>
 </div>
 <p>The quantities <span class="math inline">\(\kappa_n\)</span> and <span class="math inline">\(\kappa_g\)</span> are the normal and geodesic curvatures of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
@@ -6549,24 +6476,24 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 <div id="Proof*-55" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By definition of tangent space, <span class="math inline">\(\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}\)</span> when <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>. By definition of differential, we have <span id="eq-theorem-normal-curvature-2"><span class="math display">\[
 d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) = (\mathbf{N}\circ {\pmb{\gamma}})'(t)  \,.
-\tag{4.27}\]</span></span> Since <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t))\)</span> is normal to <span class="math inline">\(T_{\mathbf{p}}(\mathcal{S})\)</span> at <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>, and <span class="math inline">\(\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}}(\mathcal{S})\)</span>, we have <span class="math display">\[
+\tag{4.26}\]</span></span> Since <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t))\)</span> is normal to <span class="math inline">\(T_{\mathbf{p}}(\mathcal{S})\)</span> at <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>, and <span class="math inline">\(\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}}(\mathcal{S})\)</span>, we have <span class="math display">\[
 \mathbf{N}({\pmb{\gamma}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) = 0 \,.
 \]</span> Differentiating the above expression, we get <span class="math display">\[\begin{align*}
 0 &amp; = \frac{d}{dt} \left[ \mathbf{N}({\pmb{\gamma}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \right] \\
   &amp; = (\mathbf{N}\circ {\pmb{\gamma}})'(t) \cdot \dot{{\pmb{\gamma}}}(t)  + \mathbf{N}({\pmb{\gamma}}(t)) \cdot \ddot{{\pmb{\gamma}}}(t)   \\
   &amp; =  d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)   + \mathbf{N}({\pmb{\gamma}}(t)) \cdot \ddot{{\pmb{\gamma}}}(t)  \,,
-\end{align*}\]</span> where in the last equation we used (<a href="#eq-theorem-normal-curvature-2" class="quarto-xref"><span>4.27</span></a>). Hence, <span id="eq-theorem-normal-curvature-3"><span class="math display">\[
+\end{align*}\]</span> where in the last equation we used (<a href="#eq-theorem-normal-curvature-2" class="quarto-xref"><span>4.26</span></a>). Hence, <span id="eq-theorem-normal-curvature-3"><span class="math display">\[
 - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  =
 \mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t)   \,.
-\tag{4.28}\]</span></span> By definition of Weingarten and Gauss map we get <span id="eq-theorem-normal-curvature-4"><span class="math display">\[
+\tag{4.27}\]</span></span> By definition of Weingarten and Gauss map we get <span id="eq-theorem-normal-curvature-4"><span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) = - d_{\mathbf{p}} \mathcal{G} (\dot{{\pmb{\gamma}}}(t)) =  
 - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \,.
-\tag{4.29}\]</span></span> Therefore, using (<a href="#eq-theorem-normal-curvature-3" class="quarto-xref"><span>4.28</span></a>) and (<a href="#eq-theorem-normal-curvature-4" class="quarto-xref"><span>4.29</span></a>), we infer <span class="math display">\[\begin{align*}
+\tag{4.28}\]</span></span> Therefore, using (<a href="#eq-theorem-normal-curvature-3" class="quarto-xref"><span>4.27</span></a>) and (<a href="#eq-theorem-normal-curvature-4" class="quarto-xref"><span>4.28</span></a>), we infer <span class="math display">\[\begin{align*}
 II_{\mathbf{p}} (\dot{{\pmb{\gamma}}}(t) , \dot{{\pmb{\gamma}}}(t) ) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
                             &amp; = - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
                             &amp; = \mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t)
                               = \kappa_n \,,
-\end{align*}\]</span> where in the last equality we used (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.24</span></a>).<p></p>
+\end{align*}\]</span> where in the last equality we used (<a href="#eq-surface-curve-curvature-1" class="quarto-xref"><span>4.23</span></a>).<p></p>
 <p><em>Part 2.</em> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span> and <span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,.
 \]</span> Differentiating the above expression we get <span class="math display">\[
@@ -6597,12 +6524,12 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
   &amp; \qquad \dot{v} \cos (v)) \,.
 \end{align*}\]</span> Therefore, <span id="eq-curves-sphere"><span class="math display">\[
 \| \dot{{\pmb{\gamma}}}(t) \|^2 =  \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
-\tag{4.30}\]</span></span> where in the last equality we used that <span class="math inline">\({\pmb{\gamma}}\)</span> is unit-speed. From Example <a href="chap_4.html#example-sphere-principal-bis">213</a>, the coefficients of the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
+\tag{4.29}\]</span></span> where in the last equality we used that <span class="math inline">\({\pmb{\gamma}}\)</span> is unit-speed. From Example <a href="chap_4.html#example-sphere-principal-bis">213</a>, the coefficients of the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
 L = \cos^{2}(v), \quad M = 0 , \quad N = 1\,.
 \]</span> By Theorem <a href="chap_5.html#theorem-normal-curvature">40</a>, the normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[\begin{align*}
 \kappa_{n} &amp; =  L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \\
 &amp; = \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
-\end{align*}\]</span> where in the last equality we used (<a href="#eq-curves-sphere" class="quarto-xref"><span>4.30</span></a>).</p>
+\end{align*}\]</span> where in the last equality we used (<a href="#eq-curves-sphere" class="quarto-xref"><span>4.29</span></a>).</p>
 </div></details>
 </div>
 <p>The normal curvature <span class="math inline">\(\kappa_n\)</span> is related to the principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>.</p>
@@ -6626,7 +6553,7 @@ L = \cos^{2}(v), \quad M = 0 , \quad N = 1\,.
 \mu = \sin(\theta) \,.
 \]</span> Hence <span id="eq-euler-thm-proof"><span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \cos(\theta) \mathbf{t}_1 + \sin(\theta) \mathbf{t}_2 \,.
-\tag{4.31}\]</span></span> In particular, we can take the scalar product of (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.31</span></a>) with <span class="math inline">\(\mathbf{t}_1\)</span> to get <span class="math display">\[
+\tag{4.30}\]</span></span> In particular, we can take the scalar product of (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.30</span></a>) with <span class="math inline">\(\mathbf{t}_1\)</span> to get <span class="math display">\[
 \cos(\theta) = \lambda = \dot{{\pmb{\gamma}}}(t) \cdot \mathbf{t}_1 \,.
 \]</span> Since <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span> are unit vectors, from the above equation we conclude that <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span>. In addition, recall that <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, \quad
@@ -6636,7 +6563,7 @@ II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\ma
 II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) \cdot \mathbf{t}_2 = \kappa_1  \mathbf{t}_1 \cdot \mathbf{t}_2 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_1 = \kappa_2  \mathbf{t}_2 \cdot \mathbf{t}_1 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_2 = \kappa_2 \left\| \mathbf{t}_2 \right\|^2 = \kappa_2 \\
-\end{align*}\]</span> By Theorem <a href="chap_5.html#theorem-normal-curvature">40</a>, equation (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.31</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> By Theorem <a href="chap_5.html#theorem-normal-curvature">40</a>, equation (<a href="#eq-euler-thm-proof" class="quarto-xref"><span>4.30</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
 \kappa_n &amp; = {II}_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) \\
 &amp; = \cos^2(\theta) \, II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1)  +  \cos(\theta) \sin(\theta) \,  II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) \\
 &amp; \,\,\,\, + \sin(\theta)\cos(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1)  + \sin^2(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2)  \\
@@ -6697,7 +6624,7 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 {\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t))
 \]</span> for some smooth functions <span class="math inline">\(u,v \colon (a,b) \to \mathbb{R}\)</span>, and <span id="eq-formula-kn"><span class="math display">\[
 \kappa_n = \frac{II_{\mathbf{p}}(\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}})}{I_{\mathbf{p}}(\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}})} = \frac{L\dot{u}^2 + 2M \dot{u}\dot{v} + N \dot{v}^2}{E\dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2} \,,
-\tag{4.32}\]</span></span> where <span class="math inline">\(E,F,G,L,M,N\)</span> are evaluated at <span class="math inline">\((u(t),v(t))\)</span>, and <span class="math inline">\(\dot{u},\dot{v}\)</span> are evaluated at <span class="math inline">\(t\)</span>.</p></li>
+\tag{4.31}\]</span></span> where <span class="math inline">\(E,F,G,L,M,N\)</span> are evaluated at <span class="math inline">\((u(t),v(t))\)</span>, and <span class="math inline">\(\dot{u},\dot{v}\)</span> are evaluated at <span class="math inline">\(t\)</span>.</p></li>
 </ol>
 </div></details>
 </div>
@@ -6706,12 +6633,12 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 {\pmb{\gamma}}= \widetilde{{\pmb{\gamma}}}\circ s \,.
 \]</span> Differentiating, we obtain <span id="eq-proof-kn-kg-1"><span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \dot{s}(t)
-\tag{4.33}\]</span></span> <span id="eq-proof-kn-kg-2"><span class="math display">\[
+\tag{4.32}\]</span></span> <span id="eq-proof-kn-kg-2"><span class="math display">\[
 \ddot{{\pmb{\gamma}}}(t)  =  \ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \dot{s}^2(t) + \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \dot{s}(t) \ddot{s}(t) \,.
-\tag{4.34}\]</span></span> Since <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, its normal and geodesic curvatures are, by definition <span class="math display">\[\begin{align*}
+\tag{4.33}\]</span></span> Since <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, its normal and geodesic curvatures are, by definition <span class="math display">\[\begin{align*}
 \widetilde{\kappa}_n (s) &amp; = \ddot{\widetilde{{\pmb{\gamma}}}}(s) \cdot \mathbf{N}(\widetilde{{\pmb{\gamma}}}(s)) \\
 \widetilde{\kappa}_g (s) &amp; = \ddot{\widetilde{{\pmb{\gamma}}}}(s) \cdot \left[ \mathbf{N}(\widetilde{{\pmb{\gamma}}}(s)) \times \dot{\widetilde{{\pmb{\gamma}}}}(s) \right] \,.
-\end{align*}\]</span> Taking the scalar product of (<a href="#eq-proof-kn-kg-2" class="quarto-xref"><span>4.34</span></a>) with <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t))\)</span> gives <span class="math display">\[\begin{align*}
+\end{align*}\]</span> Taking the scalar product of (<a href="#eq-proof-kn-kg-2" class="quarto-xref"><span>4.33</span></a>) with <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t))\)</span> gives <span class="math display">\[\begin{align*}
 \ddot{{\pmb{\gamma}}}(t) \cdot \mathbf{N}( {\pmb{\gamma}}(t)) &amp; = \left[\ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \mathbf{N}({\pmb{\gamma}}(t)) \right] \dot{s}^2(t) + \\
                            &amp; \qquad \qquad + \left[\dot{\widetilde{{\pmb{\gamma}}}}(s(t))  \cdot \mathbf{N}({\pmb{\gamma}}(t)) \right]\dot{s}(t) \ddot{s}(t) \\
                            &amp; = \left[\ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \mathbf{N}({\pmb{\gamma}}(t)) \right] \dot{s}^2(t) \,,
@@ -6723,24 +6650,24 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 &amp; = \widetilde{\kappa}_n(s(t)) \left\| \dot{{\pmb{\gamma}}}(t) \right\|^2 \,,
 \end{align*}\]</span> where we used the definition of <span class="math inline">\(\widetilde{\kappa}_n\)</span> and that <span class="math inline">\(\dot s = \left\| \widetilde{{\pmb{\gamma}}} \right\|\)</span>. By definition of <span class="math inline">\(\kappa_n\)</span>, we obtain <span class="math display">\[
 \kappa_n (t) = \widetilde{\kappa}_n(s(t)) = \frac{\ddot{{\pmb{\gamma}}}(t) \cdot \mathbf{N}( {\pmb{\gamma}}(t))}{\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2} \,,
-\]</span> as required. Similarly, taking the scalar product of (<a href="#eq-proof-kn-kg-2" class="quarto-xref"><span>4.34</span></a>) with <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t)\)</span> gives <span class="math display">\[\begin{align*}
+\]</span> as required. Similarly, taking the scalar product of (<a href="#eq-proof-kn-kg-2" class="quarto-xref"><span>4.33</span></a>) with <span class="math inline">\(\mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t)\)</span> gives <span class="math display">\[\begin{align*}
 \ddot{{\pmb{\gamma}}}(t) \cdot \left[\mathbf{N}( {\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] &amp; =
 \ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \left[ \mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] \dot{s}^2(t) + \\
                            &amp; \quad + \dot{\widetilde{{\pmb{\gamma}}}}(s(t))  \cdot  \left[\mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right]\dot{s}(t) \ddot{s}(t) \\
                            &amp; = \ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \left[ \mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] \dot{s}^2(t) \,,
-\end{align*}\]</span> where we used (<a href="#eq-proof-kn-kg-1" class="quarto-xref"><span>4.33</span></a>), which implies <span class="math display">\[\begin{align*}
+\end{align*}\]</span> where we used (<a href="#eq-proof-kn-kg-1" class="quarto-xref"><span>4.32</span></a>), which implies <span class="math display">\[\begin{align*}
 \dot{\widetilde{{\pmb{\gamma}}}}(s(t))  \cdot &amp;   \left[\mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right]\dot{s}(t) \ddot{s}(t) = \\
 &amp; = \dot{\widetilde{{\pmb{\gamma}}}}(s(t))  \cdot  \left[\mathbf{N}({\pmb{\gamma}}(t)) \times \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \right]\dot{s}^2(t) \ddot{s}(t) = 0 \,,
 \end{align*}\]</span> by the properties of vector product. Therefore, <span class="math display">\[\begin{align*}
 \ddot{{\pmb{\gamma}}}(t) \cdot \left[\mathbf{N}( {\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] &amp; =  \ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \left[ \mathbf{N}({\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] \dot{s}^2(t)  \\
 &amp; = \ddot{\widetilde{{\pmb{\gamma}}}}(s(t)) \cdot \left[ \mathbf{N}(\widetilde{{\pmb{\gamma}}}(s(t))) \times \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \right] \dot{s}^3(t)  \\
 &amp; = \widetilde{\kappa}_g (s(t)) \left\| \dot{{\pmb{\gamma}}}(t) \right\|^3 \,,
-\end{align*}\]</span> where in the last to last equality we used (<a href="#eq-proof-kn-kg-1" class="quarto-xref"><span>4.33</span></a>), while in the last equality we used the definition of <span class="math inline">\(\widetilde{\kappa}_g\)</span>, and that <span class="math inline">\(\dot s = \left\| \widetilde{{\pmb{\gamma}}} \right\|\)</span>. By definition of <span class="math inline">\(\kappa_g\)</span>, we get <span class="math display">\[
+\end{align*}\]</span> where in the last to last equality we used (<a href="#eq-proof-kn-kg-1" class="quarto-xref"><span>4.32</span></a>), while in the last equality we used the definition of <span class="math inline">\(\widetilde{\kappa}_g\)</span>, and that <span class="math inline">\(\dot s = \left\| \widetilde{{\pmb{\gamma}}} \right\|\)</span>. By definition of <span class="math inline">\(\kappa_g\)</span>, we get <span class="math display">\[
 \kappa_g (t) = \widetilde{\kappa}_g(s(t)) = \frac{\ddot{{\pmb{\gamma}}}(t) \cdot \left[\mathbf{N}( {\pmb{\gamma}}(t)) \times \dot{{\pmb{\gamma}}}(t) \right] }{\left\| \dot{{\pmb{\gamma}}}(t) \right\|^3} \,,
 \]</span> as required.<p></p>
 <p><em>Part 2.</em> Recall that the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is defined by <span class="math display">\[
 \kappa(t) = \widetilde{\kappa}(s(t)) \,,
-\]</span> where <span class="math inline">\(\widetilde{\kappa}\)</span> is the curvature of <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span>. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.25</span></a>) we have that <span class="math display">\[
+\]</span> where <span class="math inline">\(\widetilde{\kappa}\)</span> is the curvature of <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span>. By (<a href="#eq-surface-curve-curvature-2" class="quarto-xref"><span>4.24</span></a>) we have that <span class="math display">\[
 \widetilde{\kappa}^2(s) = \widetilde{\kappa}^2_n(s) + \widetilde{\kappa}^2_g(s)\,.
 \]</span> Therefore, <span class="math display">\[\begin{align*}
 \kappa^2 (t) &amp; = \widetilde{\kappa}^2 (s(t)) \\
@@ -6759,11 +6686,11 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  = \ddot{{\pmb{\gamma}}}(t) \cdot \mathbf{N}({\pmb{\gamma}}(t)) \,.
 \]</span> Therefore, by definition of second fundamental form, we infer <span id="eq-proof-kn-kg-3"><span class="math display">\[
 II_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) = \mathcal{W}_{\mathbf{p},\mathcal{S}}(\dot{{\pmb{\gamma}}}) \cdot \dot{{\pmb{\gamma}}}= \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\,.
-\tag{4.35}\]</span></span> Moreover, by definition of first fundamental form, we have <span id="eq-proof-kn-kg-4"><span class="math display">\[
+\tag{4.34}\]</span></span> Moreover, by definition of first fundamental form, we have <span id="eq-proof-kn-kg-4"><span class="math display">\[
 I_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) = \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= \left\| \dot{{\pmb{\gamma}}} \right\|^2  \,.
-\tag{4.36}\]</span></span> Using (<a href="#eq-proof-kn-kg-3" class="quarto-xref"><span>4.35</span></a>)-(<a href="#eq-proof-kn-kg-4" class="quarto-xref"><span>4.36</span></a>), and the formula for <span class="math inline">\(\kappa_n\)</span> obtained in Part 1, we get the first equality in (<a href="#eq-formula-kn" class="quarto-xref"><span>4.32</span></a>) <span class="math display">\[
+\tag{4.35}\]</span></span> Using (<a href="#eq-proof-kn-kg-3" class="quarto-xref"><span>4.34</span></a>)-(<a href="#eq-proof-kn-kg-4" class="quarto-xref"><span>4.35</span></a>), and the formula for <span class="math inline">\(\kappa_n\)</span> obtained in Part 1, we get the first equality in (<a href="#eq-formula-kn" class="quarto-xref"><span>4.31</span></a>) <span class="math display">\[
 \kappa_n = \frac{ \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}}{\left\| \dot{{\pmb{\gamma}}} \right\|^2} = \frac{II_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}})}{I_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}})} \,.
-\]</span> The second equality in (<a href="#eq-formula-kn" class="quarto-xref"><span>4.32</span></a>) follows because <span class="math display">\[
+\]</span> The second equality in (<a href="#eq-formula-kn" class="quarto-xref"><span>4.31</span></a>) follows because <span class="math display">\[
 \dot{{\pmb{\gamma}}}= \frac{d}{dt} {\pmb{\sigma}}(u(t),v(t)) =  {{\pmb{\sigma}}}_{u}\dot{u} + {{\pmb{\sigma}}}_{v}\dot{v} \,,
 \]</span> and therefore <span class="math display">\[\begin{align*}
 I_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) &amp; = E\dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2 \\
@@ -6834,7 +6761,7 @@ II_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) &amp; = L\dot{u}^2 +
 <div id="theorem-local-surface" class="Theorem" title="Local structure of surfaces">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 227: </strong>Local structure of surfaces</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. In the vicinity of <span class="math inline">\(\mathbf{p}\)</span>, the surface <span class="math inline">\(\mathcal{S}\)</span> is approximated by the quadric surface of equation <span id="eq-local-structure"><span class="math display">\[
 z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) \,,
-\tag{4.37}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
+\tag{4.36}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="Proof*-58" class="Proof">
@@ -6842,13 +6769,13 @@ z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) 
 \mathbf{t}_1 = (1,0,0) \,, \quad
 \mathbf{t}_2 = (0,1,0) \,, \quad
 \mathbf{N}= (0,0,1) \,.
-\tag{4.38}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Up to reparametrizing, we can assume that <span class="math display">\[
+\tag{4.37}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Up to reparametrizing, we can assume that <span class="math display">\[
 {\pmb{\sigma}}(0,0)  = \mathbf{p}= {\pmb{0}}\,.
 \]</span> As <span class="math inline">\(\mathbf{N}= (0,0,1)\)</span>, it follows that <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is the <span class="math inline">\(xy\)</span>-plane <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 = \{ (x,y,0) \, \colon \,x, y \in \mathbb{R}\} \, .
 \]</span> Since <span class="math inline">\(\{{\pmb{\sigma}}_u ,{\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, we have that for each <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> there exist <span class="math inline">\((s,t) \in \mathbb{R}^2\)</span> such that <span id="eq-theorem-local-surface-1"><span class="math display">\[
 (x,y,0) = s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \,,
-\tag{4.39}\]</span></span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. The Taylor approximation of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span> is <span class="math display">\[\begin{align*}
+\tag{4.38}\]</span></span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. The Taylor approximation of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span> is <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}(s,t) &amp; = {\pmb{\sigma}}(0,0) + s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \\
           &amp; \qquad + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R \,, \\
           &amp; = (x,y,0) + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R\,,
@@ -6861,7 +6788,7 @@ z &amp; := \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t
 \mathbf{v}:=  s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  \,.
 \]</span> By Theorem <a href="chap_4.html#theorem-sff-chart-bis">196</a> we have <span class="math display">\[
 L s^2  + 2M st + N t^2  = II_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) \cdot \mathbf{v}\,.
-\]</span> On the other hand, using (<a href="#eq-theorem-local-surface" class="quarto-xref"><span>4.38</span></a>) and (<a href="#eq-theorem-local-surface-1" class="quarto-xref"><span>4.39</span></a>) we get <span class="math display">\[
+\]</span> On the other hand, using (<a href="#eq-theorem-local-surface" class="quarto-xref"><span>4.37</span></a>) and (<a href="#eq-theorem-local-surface-1" class="quarto-xref"><span>4.38</span></a>) we get <span class="math display">\[
 \mathbf{v}= s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  = (x,y,0) = x \mathbf{t}_1 + y \mathbf{t}_2 \,.
 \]</span> Since the Weingarten map is linear we get <span class="math display">\[\begin{align*}
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) &amp; = x  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) + y  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \\
@@ -6885,16 +6812,16 @@ z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
 <ul>
 <li><p><strong>Elliptic</strong> if <span class="math display">\[
 \kappa_1(\mathbf{p}) &gt; 0 \,, \, \kappa_2(\mathbf{p}) &gt; 0 \quad \mbox{ or } \quad  \kappa_1(\mathbf{p}) &lt; 0 \,, \, \kappa_2(\mathbf{p}) &lt; 0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.37</span></a>) is the equation of an <strong>elliptic paraboloid</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.36</span></a>) is the equation of an <strong>elliptic paraboloid</strong>.</p></li>
 <li><p><strong>Hyperbolic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})&lt;0&lt;\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{2}(\mathbf{p})&lt;0&lt; \kappa_{1}(\mathbf{p})
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.37</span></a>) is the equation of a <strong>hyperbolic paraboloid</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.36</span></a>) is the equation of a <strong>hyperbolic paraboloid</strong>.</p></li>
 <li><p><strong>Parabolic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{2}(\mathbf{p}) \neq 0, \, \kappa_{1}(\mathbf{p})=0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.37</span></a>) is the equation of a <strong>parabolic cylinder</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.36</span></a>) is the equation of a <strong>parabolic cylinder</strong>.</p></li>
 <li><p><strong>Planar</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
-\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.37</span></a>) is the equation of a <strong>plane</strong>.</p></li>
+\]</span> Then (<a href="#eq-local-structure" class="quarto-xref"><span>4.36</span></a>) is the equation of a <strong>plane</strong>.</p></li>
 </ul>
 </div></details>
 </div>
@@ -7002,7 +6929,7 @@ G &amp; -F \\
 -2uv &amp; 1 + 2u^2
 \end{array}\right) \,.
 \end{align*}\]</span></p></li>
-<li><p>For <span class="math inline">\(u=1\)</span> and <span class="math inline">\(v=1\)</span> we obtain <span class="math display">\[
+<li><p>For <span class="math inline">\(u=1\)</span> and <span class="math inline">\(v=0\)</span> we obtain <span class="math display">\[
 \mathcal{W}
 =
 \frac{1}{3^{\frac32}}
@@ -7047,26 +6974,26 @@ G &amp; -F \\
 <details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
 <p>By assumption, we have <span id="eq-theorem-umbilic"><span class="math display">\[
 \kappa_1 (\mathbf{p}) = \kappa_2 (\mathbf{p}) = \kappa (\mathbf{p}) \,, \quad \forall \, \mathbf{p}\in \mathcal{S}\,.
-\tag{4.40}\]</span></span></p>
+\tag{4.39}\]</span></span></p>
 <p><em>Step 1. <span class="math inline">\(\kappa\)</span> is constant.</em></p>
 <p>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal-bis">207</a> the principal vectors <span class="math inline">\(\{\mathbf{t}_1,\mathbf{t}_2\}\)</span> are an orthonormal basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Hence, for each <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
 \mathbf{v}= \lambda \mathbf{t}_1 + \mu \mathbf{t}_2 \,.
-\]</span> Using the linearity of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> and (<a href="#eq-theorem-umbilic" class="quarto-xref"><span>4.40</span></a>) we obtain <span class="math display">\[\begin{align*}
+\]</span> Using the linearity of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> and (<a href="#eq-theorem-umbilic" class="quarto-xref"><span>4.39</span></a>) we obtain <span class="math display">\[\begin{align*}
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) &amp; = \lambda \mathcal{W}_{\mathbf{p},\mathcal{S}} ( \mathbf{t}_1) + \mu  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \\
                      &amp; = \lambda \kappa \mathbf{t}_1 + \mu \kappa \mathbf{t}_2 \\
                      &amp; = \kappa \mathbf{v}\,,
 \end{align*}\]</span> showing that <span id="eq-theorem-umbilic-1"><span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) = \kappa \mathbf{v}\,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
-\tag{4.41}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart of <span class="math inline">\(\mathcal{S}\)</span>. Up to restricting <span class="math inline">\({\pmb{\sigma}}\)</span>, we can assume that <span class="math inline">\(U\)</span> is connected. By Lemma <a href="chap_5.html#lemma-weingarten">18</a> we have <span class="math display">\[
+\tag{4.40}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart of <span class="math inline">\(\mathcal{S}\)</span>. Up to restricting <span class="math inline">\({\pmb{\sigma}}\)</span>, we can assume that <span class="math inline">\(U\)</span> is connected. By Lemma <a href="chap_5.html#lemma-weingarten">18</a> we have <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = - \mathbf{N}_{u} \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = - \mathbf{N}_{v} \,.
-\]</span> On the other hand, by (<a href="#eq-theorem-umbilic-1" class="quarto-xref"><span>4.41</span></a>) we infer <span class="math display">\[
+\]</span> On the other hand, by (<a href="#eq-theorem-umbilic-1" class="quarto-xref"><span>4.40</span></a>) we infer <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = \kappa {\pmb{\sigma}}_u \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = \kappa {\pmb{\sigma}}_v \,,
 \]</span> from which <span id="eq-theorem-umbilic-2"><span class="math display">\[
 \mathbf{N}_{u} = - \kappa {\pmb{\sigma}}_u \,, \quad
 \mathbf{N}_{v} = - \kappa {\pmb{\sigma}}_v \,.
-\tag{4.42}\]</span></span> Thus <span class="math display">\[
+\tag{4.41}\]</span></span> Thus <span class="math display">\[
 \left( \kappa {\pmb{\sigma}}_u \right)_v = - \left( \mathbf{N}_u \right)_v =
 - \left( \mathbf{N}_v \right)_u = \left( \kappa {\pmb{\sigma}}_v \right)_u \,.
 \]</span> Moreover <span class="math display">\[\begin{align*}
@@ -7074,12 +7001,12 @@ G &amp; -F \\
 \left( \kappa {\pmb{\sigma}}_v \right)_u &amp; = \kappa_u {\pmb{\sigma}}_v + \kappa {\pmb{\sigma}}_{uv} \,,
 \end{align*}\]</span> so that <span id="eq-theorem-umbilic-3"><span class="math display">\[
 \kappa_v {\pmb{\sigma}}_u = \kappa_u {\pmb{\sigma}}_v \,.
-\tag{4.43}\]</span></span> Recall that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, being <span class="math inline">\(\mathcal{S}\)</span> regular. Hence the linear combination at (<a href="#eq-theorem-umbilic-3" class="quarto-xref"><span>4.43</span></a>) must be trivial, implying <span class="math display">\[
+\tag{4.42}\]</span></span> Recall that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, being <span class="math inline">\(\mathcal{S}\)</span> regular. Hence the linear combination at (<a href="#eq-theorem-umbilic-3" class="quarto-xref"><span>4.42</span></a>) must be trivial, implying <span class="math display">\[
 \kappa_u = \kappa_v = 0 \,.
 \]</span> Since <span class="math inline">\(U\)</span> is connected, the above implies that <span class="math inline">\(\kappa\)</span> is constant.</p>
 <p><em>Step 2.</em> We have the two cases <span class="math inline">\(\kappa = 0\)</span> and <span class="math inline">\(\kappa \neq 0\)</span>.</p>
 <ul>
-<li><p>Assume <span class="math inline">\(\kappa = 0\)</span>. By (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.42</span></a>) we get that <span class="math display">\[
+<li><p>Assume <span class="math inline">\(\kappa = 0\)</span>. By (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.41</span></a>) we get that <span class="math display">\[
 \mathbf{N}_u = \mathbf{N}_v = {\pmb{0}}\,,
 \]</span> which implies <span class="math inline">\(\mathbf{N}\)</span> is constant. Therefore <span class="math display">\[
 \left( \mathbf{N}\cdot {\pmb{\sigma}}\right)_u = \mathbf{N}_u \cdot {\pmb{\sigma}}+ \mathbf{N}\cdot {\pmb{\sigma}}_u = 0  
@@ -7090,7 +7017,7 @@ G &amp; -F \\
 \]</span> This shows <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is contained in the plane <span class="math display">\[
 \pi = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{N}\cdot \mathbf{x}= c \} \,.
 \]</span></p></li>
-<li><p>Assume <span class="math inline">\(\kappa \neq 0\)</span>. Condition (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.42</span></a>) implies <span class="math display">\[
+<li><p>Assume <span class="math inline">\(\kappa \neq 0\)</span>. Condition (<a href="#eq-theorem-umbilic-2" class="quarto-xref"><span>4.41</span></a>) implies <span class="math display">\[
 \mathbf{N}= -\kappa {\pmb{\sigma}}+ \mathbf{a}
 \]</span> for some <span class="math inline">\(\mathbf{a} \in \mathbb{R}^3\)</span> constant vector. Thus <span class="math display">\[
 \left\|  {\pmb{\sigma}}- \frac{1}{\kappa} \mathbf{a}  \right\|^2 =
@@ -7139,27 +7066,27 @@ L du^2 + M du dv + N dv^2 \,,
 {\pmb{\sigma}}_{uv} &amp; = \beta_1 {\pmb{\sigma}}_u +\beta_2 {{\pmb{\sigma}}}_{v}+ \beta_3 \mathbf{N}\\
 {\pmb{\sigma}}_{v v} &amp; = \gamma_1 {\pmb{\sigma}}_u + \gamma_2 {\pmb{\sigma}}_v+ \gamma_3 \mathbf{N}
 \end{aligned}
-\tag{4.44}\]</span></span> Recall that the coefficient of the second fundamental form are <span class="math display">\[
+\tag{4.43}\]</span></span> Recall that the coefficient of the second fundamental form are <span class="math display">\[
 L = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\,, \quad
 M = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}\,, \quad
 N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
-\]</span> Therefore, taking the dot product of each equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.44</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> gives <span class="math display">\[
+\]</span> Therefore, taking the dot product of each equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.43</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> gives <span class="math display">\[
 \alpha_3 = L \,, \quad
 \beta_3 = M  \,, \quad
 \gamma_3 = N \,,
-\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to both <span class="math inline">\({{\pmb{\sigma}}}_{u}\)</span> and <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span>. Taking the dot product of each equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.44</span></a>) with <span class="math inline">\({\pmb{\sigma}}_{u}\)</span> and <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span> gives 6 scalar equations which determine the Christoffel symbols <span class="math inline">\(\Gamma_{ij}^k\)</span>. For example, dotting the first equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.44</span></a>) with <span class="math inline">\({{\pmb{\sigma}}}_{u}\)</span> gives <span class="math display">\[
+\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> is orthogonal to both <span class="math inline">\({{\pmb{\sigma}}}_{u}\)</span> and <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span>. Taking the dot product of each equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.43</span></a>) with <span class="math inline">\({\pmb{\sigma}}_{u}\)</span> and <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span> gives 6 scalar equations which determine the Christoffel symbols <span class="math inline">\(\Gamma_{ij}^k\)</span>. For example, dotting the first equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.43</span></a>) with <span class="math inline">\({{\pmb{\sigma}}}_{u}\)</span> gives <span class="math display">\[
 {\pmb{\sigma}}_{uu} \cdot {{\pmb{\sigma}}}_{u}= \alpha_1 {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{u}+ \alpha_2 {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= \alpha_1 E + \alpha_2 F \,.
 \]</span> On the other hand, <span class="math display">\[
 E_{u} = \frac{d}{du} ({{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{u}) = 2 {\pmb{\sigma}}_{uu} \cdot {{\pmb{\sigma}}}_{u}\,,
 \]</span> from which we get <span id="eq-christoffel-proof-1"><span class="math display">\[
 \alpha_1 E + \alpha_2 F = \frac12 E_u \,.
-\tag{4.45}\]</span></span> Similarly, dotting the first equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.44</span></a>) with <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span> gives <span class="math display">\[
+\tag{4.44}\]</span></span> Similarly, dotting the first equation in (<a href="#eq-christoffel-proof" class="quarto-xref"><span>4.43</span></a>) with <span class="math inline">\({{\pmb{\sigma}}}_{v}\)</span> gives <span class="math display">\[
 {\pmb{\sigma}}_{uu} \cdot {{\pmb{\sigma}}}_{v}= \alpha_1 {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}+ \alpha_2 {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v}= \alpha_1 F + \alpha_2 G \,.
 \]</span> On the other hand, <span class="math display">\[
 {\pmb{\sigma}}_{uu} \cdot {{\pmb{\sigma}}}_{v}= ({{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{v})_v  - {{\pmb{\sigma}}}_{u}\cdot {\pmb{\sigma}}_{uv} = F_v - \frac12 E_v \,,
 \]</span> from which we obtain <span id="eq-christoffel-proof-2"><span class="math display">\[
 \alpha_1 F + \alpha_2 G = F_v - \frac12 E_v \,.
-\tag{4.46}\]</span></span> Equations (<a href="#eq-christoffel-proof-1" class="quarto-xref"><span>4.45</span></a>) and (<a href="#eq-christoffel-proof-2" class="quarto-xref"><span>4.46</span></a>) foem a 2x2 linear system in <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span>, which reads <span class="math display">\[
+\tag{4.45}\]</span></span> Equations (<a href="#eq-christoffel-proof-1" class="quarto-xref"><span>4.44</span></a>) and (<a href="#eq-christoffel-proof-2" class="quarto-xref"><span>4.45</span></a>) foem a 2x2 linear system in <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span>, which reads <span class="math display">\[
 \left(
 \begin{array}{cc}
 E &amp; F \\
@@ -7291,7 +7218,7 @@ L du^2 + M du dv + N dv^2 \,.
 KE = \left(\Gamma_{11}^2\right)_v-\left(\Gamma_{12}^2\right)_u+\Gamma_{11}^1 \Gamma_{12}^2+\Gamma_{11}^2 \Gamma_{22}^2-\Gamma_{12}^1 \Gamma_{11}^2-\left(\Gamma_{12}^2\right)^2  \,,
 \]</span> where <span class="math inline">\(K\)</span> is the Gauss curvature , <span class="math inline">\(E\)</span> one of the coefficients of the first fundamental form, and <span class="math inline">\(\Gamma_{ij}^k\)</span> the Christoffel symbols of <span class="math inline">\({\pmb{\sigma}}\)</span>. As <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, we have that <span class="math inline">\(E = {{\pmb{\sigma}}}_{u}\cdot {{\pmb{\sigma}}}_{u}&gt; 0\)</span>. Therefore, we can divide by <span class="math inline">\(E\)</span> and obtain <span id="eq-egregium"><span class="math display">\[
 K = \frac{\left(\Gamma_{11}^2\right)_v-\left(\Gamma_{12}^2\right)_u+\Gamma_{11}^1 \Gamma_{12}^2+\Gamma_{11}^2 \Gamma_{22}^2-\Gamma_{12}^1 \Gamma_{11}^2-\left(\Gamma_{12}^2\right)^2 }{E} \,.
-\tag{4.47}\]</span></span> Note that the Christoffel symbols depend only on the coefficients of the first fundamental form. Therefore, the RHS of (<a href="#eq-egregium" class="quarto-xref"><span>4.47</span></a>) depends only on the coefficients of the first fundamental form. Since the first fundamental form is invariant under local isometries, we conclude that the Gaussian curvature <span class="math inline">\(K\)</span> is invariant under local isometries.<p></p>
+\tag{4.46}\]</span></span> Note that the Christoffel symbols depend only on the coefficients of the first fundamental form. Therefore, the RHS of (<a href="#eq-egregium" class="quarto-xref"><span>4.46</span></a>) depends only on the coefficients of the first fundamental form. Since the first fundamental form is invariant under local isometries, we conclude that the Gaussian curvature <span class="math inline">\(K\)</span> is invariant under local isometries.<p></p>
 </div></details>
 </div>
 <p>The Theorem is remarkable because the Gaussian curvature is defined in terms of both first and second fundamental forms <span class="math display">\[
@@ -7317,7 +7244,7 @@ K = \det(\mathcal{W}) = \frac{LN - M^2}{EG-F^2} \,.
 <p><strong>Question.</strong> Define the open set <span class="math inline">\(U = (0,2\pi) \times (0 ,\infty)\)</span> and let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> the surfaces defined by <span class="math inline">\(\mathcal{S}={\pmb{\sigma}}(U)\)</span>, <span class="math inline">\(\widetilde{\mathcal{S}}= \widetilde{{\pmb{\sigma}}}(U)\)</span> with <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}(u,v) &amp; = (\cos(u)v, \sin(u)v, \log (v)) \,,  \\
 \widetilde{{\pmb{\sigma}}}(u,v) &amp; = (\cos(u)v, \sin(u)v, u)\,.
-\end{align*}\]</span></p>
+\end{align*}\]</span> Note that <span class="math inline">\(\mathcal{S}\)</span> is the surface of revolution obtained by rotating the curve <span class="math inline">\((v,0,\log(v))\)</span>, while <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> is a portion of Helicoid.</p>
 <ol type="1">
 <li>Prove that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are not locally isometric.</li>
 <li>Prove that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> have the same Gaussian curvature.</li>
@@ -7356,7 +7283,15 @@ v^2 &amp; 0 \\
 \end{aligned}
 \]</span> Suppose by contradiction there was a local isometry <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span>. Therefore, the charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> would have the same first fundamental form. Since <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are both charts for <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>, there exists a diffeomorphism <span class="math inline">\(\Phi\)</span> such that <span class="math display">\[
 f \circ {\pmb{\sigma}}= \Phi \circ \widetilde{{\pmb{\sigma}}}\,.
-\]</span> In particular, the first fundamental form of <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> is the same as the one of <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span>. In conclusion, <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form. By Proposition <a href="chap_4.html#proposition-fff-reparametrization-bis">127</a>, the first fundamental form of <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span> is <span class="math display">\[\begin{align*}
+\]</span> In particular, the first fundamental form of <span class="math inline">\(f \circ {\pmb{\sigma}}\)</span> is the same as the one of <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span>. In conclusion, <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form. By Proposition <a href="chap_4.html#proposition-fff-reparametrization-bis">127</a>, the first fundamental form of <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span> is <span class="math inline">\((J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi\)</span>. Therefore, we have <span id="eq-non-egregium"><span class="math display">\[
+\mathscr{F}_1 = (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi \,.
+\tag{4.47}\]</span></span> Taking the determinant of both sides, we get <span class="math display">\[
+\det(\mathscr{F}_1) = \det(J\Phi)^2 \det (\widetilde{\mathscr{F}}_1) \,.
+\]</span> We compute that <span class="math display">\[
+\det (\mathscr{F}_1) =  \det (\widetilde{\mathscr{F}}_1) =  1 + v^2 \,,
+\]</span> and thus <span id="eq-non-egregium-1"><span class="math display">\[
+\det J \Phi = \pm 1 \,.
+\tag{4.48}\]</span></span> On the other hand, <span class="math display">\[\begin{align*}
 (J\Phi)^T \widetilde{\mathscr{F}}_1 J\Phi &amp; =
 \left(
 \begin{array}{cc}
@@ -7383,7 +7318,7 @@ a^2 (1+v^2) + c^2 &amp; \ast \\
 \ast &amp; \ast \\
 \end{array}
 \right) \,.
-\end{align*}\]</span> As <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\Phi \circ \widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form, we infer <span class="math display">\[
+\end{align*}\]</span> By (<a href="#eq-non-egregium" class="quarto-xref"><span>4.47</span></a>), we get <span class="math display">\[
 \left(
 \begin{array}{cc}
 a^2 (1+v^2) + c^2 &amp; \ast \\
@@ -7400,10 +7335,13 @@ v^2 &amp; 0 \\
 \]</span> Equating the first entries, we obtain <span class="math display">\[
 a^2 (1+v^2) + c^2 = v^2 \,, \quad \forall \, v &gt; 0 \,.
 \]</span> Taking the limit for <span class="math inline">\(v \to 0^+\)</span> gives <span class="math display">\[
-a^2 + c^2 = 0 \quad \implies \quad a = c = 0 \,.
+\lim_{v \to 0^+} \left [ a^2(u,v) + c^2 (u,v) \right] = 0 \,,
+\]</span> which implies <span class="math display">\[
+\lim_{v \to 0^+} a (u,v) = 0 \,, \qquad
+\lim_{v \to 0^+} c (u,v)  = 0 \,.
 \]</span> Therefore, we have that <span class="math display">\[
-J\Phi =
-\left(
+\lim_{v \to 0^+} J\Phi(u,v) =
+\lim_{v \to 0^+} \left(
 \begin{array}{cc}
 a &amp; b \\
 c &amp; d \\
@@ -7415,9 +7353,15 @@ c &amp; d \\
 0 &amp; b \\
 0 &amp; d \\
 \end{array}
-\right) \quad \implies \quad
-\det J\Phi = 0 \,.
-\]</span> This is a contradiction, since <span class="math inline">\(\Phi\)</span> is a diffeomorphism. Hence, <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are not locally isometric.</p></li>
+\right) \,.
+\]</span> By continuity of the determinant, we infer <span class="math display">\[
+\lim_{v \to 0^+} \det J\Phi (u,v) = \det \left(
+\begin{array}{cc}
+0 &amp; b \\
+0 &amp; d \\
+\end{array}
+\right) = 0 \,.
+\]</span> This contradicts (<a href="#eq-non-egregium-1" class="quarto-xref"><span>4.48</span></a>). Hence, <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> cannot be locally isometric.</p></li>
 <li><p>Note that we could compute the Gaussian curvature from the first fundamental form, by first computing the Christoffel symbols, and then using the first Gauss Equation. However, we proceed as usual, and compute <span class="math inline">\(K\)</span> as the determinant of the Weingarten map. To this end, compute the second fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> <span class="math display">\[
 \begin{aligned}
 {\pmb{\sigma}}_{uu} &amp; = (-\cos(u)v,-\sin(u)v, 0) \\

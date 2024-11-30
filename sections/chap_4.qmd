@@ -130,7 +130,7 @@ $$
 B(\vv,\ww) = \xx^T \,M \, \yy \,. 
 $$
 
-> *Proof.* We can write $\vv$ and $\ww$ in cordinates as
+**Proof.** We can write $\vv$ and $\ww$ in cordinates as
 $$
 \vv = \sum_{i=1}^n \lambda_i \vv_i \,, \quad 
 \ww = \sum_{i=1}^n \mu_i \vv_i \,,
@@ -497,6 +497,8 @@ $$
 
 ### Topology of $\R^n$
 
+
+
 ::: Definition 
 ### Topology of $\R^n$
 
@@ -504,12 +506,7 @@ The Euclidean norm on $\R^n$ is denoted by
 $$
 \| \xx \| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \xx = (x_1 , \ldots, x_n) \in \R^n \,.
 $$
-The Euclidean norm induces the distance
-$$
-d(\xx,\yy) := \| \xx - \yy \| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
-$$
-
-In particular, we have:
+Define the Euclidean distance $d(\xx,\yy) = \| \xx - \yy \|$.
 
 1. The pair $(\R^n,d)$ is a metric space. 
 2. The topology induced by the metric $d$ is called the Euclidean topology, denoted by $\TT$. 
@@ -517,7 +514,7 @@ In particular, we have:
 $$
 B_{\e}(\xx) := \{  \yy \in \R^n \divider \| \xx - \yy  \| < \e   \}
 $$
-is the open ball of radius $\e>0$ and centered at $\xx$. In this case we write $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
+is the open ball of radius $\e>0$ centered at $\xx$. We write $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
 
 4. A set $V \subseteq \R^n$ is **closed** if $V^c := \R^n \smallsetminus U$ is open. 
 
@@ -566,10 +563,11 @@ is closed, since $V^c = C$ is the unit cube, which is open.
 
 
 
+
 ::: Definition 
 ### Subspace Topology
 
-Given a subset $A \subseteq \R^n$ the **subspace topology** on $A$ is the family of sets
+Let $A \subseteq \R^n$. The **subspace topology** on $A$ is the family
 $$
 \TT_A := \{  U \subseteq A \divider \exists \,\, W \in \TT \st U = A \cap W  \} \,.
 $$
@@ -598,12 +596,12 @@ $$
 \|  \xx - \yy  \| < \delta \quad \implies \quad 
 \| f(\xx) - f (\yy) \| < \e \,.
 $$
-We say that $f$ is continuous in $U$ if it is continuous for all $\xx \in U$.
+$f$ is continuous in $U$ if it is continuous for all $\xx \in U$.
 :::
 
 The above ``classical'' definition of continuity is equivalent to the topological one, in the following sense:
 
-::: Proposition
+::: Theorem
 ### Continuity: Topological definition
 
 Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
@@ -617,7 +615,7 @@ Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have t
 Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a **homeomorphism** if: 
 
 1. $f$ is continuous; 
-2. There exists inverse $f^{-1} \colon V \to U$ which is continuous.
+2. $f$ admits continuous inverse $f^{-1} \colon V \to U$.
 
 :::
 
@@ -634,7 +632,6 @@ for all $\mathbf{h} \in \R^n$, where the limit is taken in $\R^m$. The linear ma
 
 :::
 
-
 The idea behind the definition of differentiability is as follows: The function $f$ is differentiable at $\xx$ if it can be approximated by the linear map $d_{\xx} f$ around the point $\xx$.  
 
 We denote by $\{\ee_i\}_{i=1}^n$ the standard basis of $\R^n$. When $f$ is differentiable, the partial derivatives are defined as follows:
@@ -642,13 +639,12 @@ We denote by $\{\ee_i\}_{i=1}^n$ the standard basis of $\R^n$. When $f$ is diffe
 ::: Definition
 ### Partial Derivative
 
-Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The **partial derivative** of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
+Let $f \colon U \subseteq \R^n \to \R^m$, $U$ open, $f$ differentiable. The **partial derivative** of $f$ at $\xx \in U$ in direction $\ee_i$ is
 $$
 \frac{\partial f}{\partial x_i}(\xx) := d_{\xx} f (\ee_i) =  \lim_{\e \to 0}  \frac{ f( \xx + \e \ee_i ) - f(\xx) }{ \e } \,.
 $$
 
 :::
-
 
 
 ::: Definition
@@ -663,7 +659,6 @@ If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its
 $$
 \det (Jf) \,.
 $$
-
 :::
 
 The differential $d_{\xx} f \colon \R^n \to \R^m$ is a linear map. As such, it must have a matrix representation with respect to the Euclidean basis. Since the partial derivative is defined as 
@@ -675,7 +670,7 @@ we trivially have that $Jf(\xx)$ is the matrix of $d_{\xx} f$ with respect to th
 
 
 ::: Proposition
-### Matrix representation of the differential
+### Matrix representation of $d_{\xx} f$
 
 Let $f \colon U \subseteq \R^n \to \R^m$ be differentiable. The matrix of the linear map $d_{\xx} f \colon \R^n \to \R^m$ with respect to the standard basis is given by the Jacobian matrix $Jf(\xx)$.
 
@@ -704,7 +699,7 @@ the length of the multi-index.
 ::: Definition
 ### Smooth Function
 
-Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is smooth if the derivatives 
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. $f$ is smooth if the derivatives 
 $$
 \frac{\partial^{|\alpha|} f}{d\xx^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
 $$
@@ -718,16 +713,14 @@ exist for each multi-index $\alpha \in \N^n$. Note that in this case all the der
 ::: Notation
 ### Gradient and partial derivatives
 
-Let $f \colon U \subseteq \R^n \to \R$ be smooth. We denote the partial derivatives by 
-$$
-\begin{aligned}
-\partial_{x_i} f & = f_{x_i} =  \frac{\partial f}{\partial x_i} \\
-\partial_{x_i x_j} f & = f_{x_i x_j} = \frac{\partial^2 f}{\partial x_i \partial x_j} \\
-\partial_{x_i x_j x_k} f & = f_{x_i x_j x_k} =  \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} 
-\end{aligned}
-$$
+For $f \colon U \subseteq \R^n \to \R^m$ smooth, the partial derivatives are 
+\begin{gather*}
+\partial_{x_i} f  = f_{x_i} =  \frac{\partial f}{\partial x_i} \,, \qquad 
+\partial_{x_i x_j} f = f_{x_i x_j} = \frac{\partial^2 f}{\partial x_i \partial x_j} \\
+\partial_{x_i x_j x_k} f  = f_{x_i x_j x_k} =  \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} 
+\end{gather*}
 
-For $f \colon U \subseteq \R^n \to \R$ smooth we denote the **gradient** by
+For $f \colon U \subseteq \R^n \to \R$ smoothm, the **gradient** is
 $$
 \nabla f (\xx) = \left(  f_{x_1}(\xx) , \ldots ,  f_{x_n}(\xx) \right) \,.
 $$
@@ -735,7 +728,6 @@ Note that $\nabla f(\xx)$ coincides with $Jf(\xx)$.
 
 
 :::
-
 
 
 ::: Example
@@ -757,14 +749,14 @@ are both smooth.
 A key definition needed for the study of surfaces is the one of diffeomorphism. In this section we only consider maps from $\R^n$ into $\R^n$.
 
 
+
 ::: Definition
 ### Diffeomorphism
   
 Let $f \colon U \to V$, with $U,V \subseteq \R^n$ open. We say that $f$ is a **diffeomorphism** between $U$ and $V$ if:
 
 1. $f$ is smooth,
-2. There exists the inverse $f^{-1} \colon V \to U$, 
-3. $f^{-1}$ is smooth.
+2. $f$ admits smooth inverse $f^{-1} \colon V \to U$.
 
 :::
 
@@ -772,7 +764,7 @@ Let $f \colon U \to V$, with $U,V \subseteq \R^n$ open. We say that $f$ is a **d
 ::: Definition
 ### Local diffeomorphism
 
-Let $f \colon \R^n \to \R^n$. We say that $f$ is a **local diffeomorphism** at 
+A function $f \colon \R^n \to \R^n$ is a **local diffeomorphism** at 
 $\xx_0 \in \R^n$ if:
 
 1. There exists an open set $U \subseteq \R^n$ such that $\xx_0 \in U$,
@@ -828,7 +820,8 @@ The condition at (@eq-non-vanish-det) is sufficient fot $f$ to be a **local diff
 ::: Theorem
 ### Inverse Function Theorem {#theorem-inverse-function}
 
-Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a smooth function and
+
+Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open, $f$ smooth. Assume
 $$
 \det J f(\xx_0) \neq 0 \,,
 $$
@@ -840,7 +833,6 @@ for some $\xx_0 \in U$. Then:
 
 
 :::
-
 
 
 
@@ -902,21 +894,23 @@ We will show this in the next Example.
 :::
 
 
+
+
 ::: Example
 
-**Question.** Consider the function $f \colon \R^2 \to \R^2$ defined by
+**Question.** Define the function $f \colon \R^2 \to \R^2$
 $$
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 $$
 
-1. Prove that $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$.
+1. Prove that $f$ is a local diffeomorphism at each point.
 
 2. Prove that $f$ is not a diffeomorphism.
 
 
 **Solution.** 
 
-1. We compute
+1. $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$ by the Inverse Function Theorem, since
 \begin{align*}
 & J f (x,y) = 
 e^x \left(
@@ -925,23 +919,18 @@ e^x \left(
   -\sin(y)    &  \cos(y) 
 \end{array}
 \right)  \\
-& \det Jf(x,y) = e^{2x} 
+& \det Jf(x,y) = e^{2x} \neq 0 \,.
 \end{align*}
-Therefore 
-$$
-Jf(x,y) \neq 0 \quad \forall \, (x,y) \in \R^2 \,.
-$$
-By the Inverse Function Theorem, $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$. 
 
-2. $f$ is not injective, since 
+
+2. $f$ is not invertible because it is not injective, since 
 $$
 f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \R^2 , \,  n \in \N  \,.
 $$
-Therefore $f$ is not invertible from $\R^2$ into $\R^2$. This implies $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
-
-
+Hence, $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
 
 :::
+
 
 
 
@@ -951,7 +940,7 @@ Therefore $f$ is not invertible from $\R^2$ into $\R^2$. This implies $f$ cannot
 ## Surfaces
 
 
-We give our main definition of surface in $\R^3$.
+We give the main definition of surface in $\R^3$.
 
 
 ::: Definition
@@ -960,14 +949,10 @@ We give our main definition of surface in $\R^3$.
 Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **surface** if for every point $\pp \in \SSS$ there exist 
 
 1. An open set $U \subseteq \R^2$,
-2. A smooth map
-$$
-\sss \colon U \to  \sss(U) \subseteq \SSS \,
-$$
-such that 
-    - $\pp \in \sss(U)$
-    - $\sss(U)$ is open in $\SSS$
-    - $\sss$ is a homeomorphism between $U$ and $\sss(U)$
+2. A smooth map $\sss \colon U \to  \sss(U) \subseteq \SSS$ such that 
+    - $\pp \in \sss(U)$, 
+    - $\sss(U)$ is open in $\SSS$,
+    - $\sss$ is a homeomorphism between $U$ and $\sss(U)$.
 
 The homeomorphism $\sss$ is called a **surface chart** at $\pp$.
 
@@ -1102,8 +1087,8 @@ $$
 $$ 
 is an atlas, implying that $\p$ is a surface.
 
-> Check that $\sss$ is a chart:
->
+**Proof.** Check that $\sss$ is a chart:
+
 - $\sss$ is smooth.
 - $\R^2$ is obviously open.
 - $\sss(\R^2)$ is open in $\p$ for the subspace topology, since $\sss(\R^2) = \p$, and $\p$ is open in the subspace topology.
@@ -1120,8 +1105,8 @@ $$
 Clearly, $\sss^{-1}$ is continuous.
 - Thus, $\sss$ is a homeomorphism between $\R^2$ and $\p$. 
 - Therefore $\sss$ is a chart for $\p$. Since
->
-> 
+
+ 
 Notice that 
 $$
 \sss(\R^2) = \p \,,
@@ -1180,14 +1165,14 @@ $$
 $$
 
 
-> Check:
->
-> - $\sss_i$ is smooth, since $\sss$ is smooth.
-> - $U_i$ is clearly open in $\R^2$.
-> - One can check that $\sss_i(U_i)$ is open in $\SSS$.
-> - $\sss_i$ is clearly invertible from $U_i$ to $\sss_i(U_i)$, and the inverse is continuous.
-> - Thus, $\sss_i$ is a homeomorphism between $U_i$ and $\sss(U_i)$.
-> - $\mathcal{A} = \{\sss_1 , \sss_2\}$ is an atlas for $\SSS$, since 
+**Check:**
+
+ - $\sss_i$ is smooth, since $\sss$ is smooth.
+ - $U_i$ is clearly open in $\R^2$.
+ - One can check that $\sss_i(U_i)$ is open in $\SSS$.
+ - $\sss_i$ is clearly invertible from $U_i$ to $\sss_i(U_i)$, and the inverse is continuous.
+ - Thus, $\sss_i$ is a homeomorphism between $U_i$ and $\sss(U_i)$.
+ - $\mathcal{A} = \{\sss_1 , \sss_2\}$ is an atlas for $\SSS$, since 
 $$
 \SSS = \sss_1(U_1) \cup \sss_2(U_2) \,.
 $$
@@ -1215,21 +1200,21 @@ $$
 \sss(u,v):=(u,v,f(u,v)) \,.
 $$
 
-> Let us check that $\Gamma_f$ is a surface:
->
-> - $\sss$ is smooth since $f$ is smooth.
-> - $U$ is open in $\R^2$ by assumption.
-> - $\sss(U) = \Gamma_f$, and therefore $\sss(U)$ is open in $\Gamma_f$.
-> - The inverse of $\sss$ is given by ${\sss}^{-1} \colon \Gamma_f \to U$ defined as
-> $$
-> {\sss}^{-1}(u,v,f(u,v)) := (u,v) \,.
-> $$
-> Clearly ${\sss}^{-1}$ is continuous.
-> - Therefore $\sss$ is a homeomorphism of $U$ into $\Gamma_f$.
-> - $\mathcal{A}=\{\sss\}$ is an atlas for $\Gamma_f$, since 
-> $$
-> \Gamma_f = \sss(U) \,.
-> $$
+**Proof.** Let us check that $\Gamma_f$ is a surface:
+
+- $\sss$ is smooth since $f$ is smooth.
+- $U$ is open in $\R^2$ by assumption.
+- $\sss(U) = \Gamma_f$, and therefore $\sss(U)$ is open in $\Gamma_f$.
+- The inverse of $\sss$ is given by ${\sss}^{-1} \colon \Gamma_f \to U$ defined as
+$$
+{\sss}^{-1}(u,v,f(u,v)) := (u,v) \,.
+$$
+Clearly ${\sss}^{-1}$ is continuous.
+- Therefore $\sss$ is a homeomorphism of $U$ into $\Gamma_f$.
+- $\mathcal{A}=\{\sss\}$ is an atlas for $\Gamma_f$, since 
+$$
+\Gamma_f = \sss(U) \,.
+$$
 
 :::
 
@@ -1436,11 +1421,7 @@ $$
 $$
 Prove that $\p$ is a regular surface.
 
-**Solution.** $\p$ is a regular surface because $\sss$ is a regular chart. To see it, compute
-$$
-\sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,,
-$$
-showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ and $\mathbf{q}$ are orthonormal.
+**Solution.** We have $\sssu = \pp, \sss_v = \mathbf{q}$. Since $\pp$ and $\mathbf{q}$ are orthonormal, we conclude that $\sssu$ and $\sssv$ are linearly independent and $\sss$ is regular. $\p$ is a regular surface because $\sss$ is a regular chart. 
 
 :::
 
@@ -1450,48 +1431,29 @@ showing that $\sss_u$ and $\sss_v$ are linearly independent, given that $\pp$ an
 ::: Example
 ### Unit cylinder {#example-unit-cylinder}
 
-
 **Question.** Consider the infinite unit cylinder
 $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
-In Example \ref{example-cylinder-chart}, we have seen that $\SSS$ is a surface with atlas 
-$$
-\mathcal{A} = \{ \sss_1,\sss_2\} \,,
-$$ 
-where we define
-$$
-\sss \colon \R^2 \to \R^3   \,, \quad 
-\sss(u,v):= (\cos(u),\sin(u),v)
-$$
-and 
-\begin{align*}
-\sss_1 & := \sss |_{U_1} \,,   & \sss_2 & := \sss |_{U_2} \,, \\
-U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, 
-& U_2 & := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
-\end{align*}
+$\SSS$ is a surface with atlas $\mathcal{A} = \{ \sss_1,\sss_2\}$, with
+\begin{gather*}
+\sss(u,v) = (\cos(u),\sin(u),v)\,, \quad
+\sss_1  := \sss |_{U_1} \,,   \quad  \sss_2 := \sss |_{U_2} \,, \\
+U_1  = \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, \qquad
+U_2  = \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
+\end{gather*}
 Prove that $\SSS$ is a regular surface.
 
-**Solution.** Compute the partial derivatives
-$$
-\sss_u = (-\sin(u),\cos(u),0) \,, \quad 
-\sss_v = (0,0,1) \,.
-$$
-Therefore
-$$
-\sss_u \times \sss_v = (\cos (u), \sin(u), 0)  \,, \quad \norm{\sss_u \times \sss_v} = 1 \,.
-$$
-This implies
-$$
-\sss_u \times \sss_v \neq 0 \,, \quad \forall \, (u,v) \in \R^2 \,,
-$$
-showing that $\sss_u$ and $\sss_v$ are linearly independent. Therefore
-$\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas, making $\SSS$ a regular surface.
+**Solution.** The map $\sss$ is regular because
+\begin{align*}
+\sss_u & = (-\sin(u),\cos(u),0)\\
+\sss_v & = (0,0,1) \\
+\sss_u \times \sss_v & = (\cos (u), \sin(u), 0) \\
+\norm{\sss_u \times \sss_v} & = 1 \neq 0 \,.
+\end{align*}
+Therefore $\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas and $\SSS$ a regular surface.
 
 :::
-
-
-
 
 The infinite cylinder can also be parametrized using a single chart, as shown in the next Example.
 
@@ -1582,7 +1544,7 @@ $$
 $$
 with the angles $\theta$ and $\fi$ as in @fig-spherical-coordinates. 
 
-> It is clear that $z = \rho \sin(\fi)$. To compute $x$ and $y$, we note
+**Check:** It is clear that $z = \rho \sin(\fi)$. To compute $x$ and $y$, we note
 that the segment joining $\zero$ to $\mathbf{q}$ has length 
 $$
 L = \rho \cos(\fi) \,.
@@ -2503,27 +2465,18 @@ By Theorem \ref{theorem-transition-map}, the map $\Phi$ is differentiable. As $\
 :::
 
 
-The following Proposition gives a very useful sufficient condition to check differentiability.
+The following Theorem gives a very useful sufficient condition to check differentiability.
 
 
-:::{.Proposition  #proposition-diff-check}
+::: {.Theorem #theorem-diff-check-2}
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Make the following assumptions:
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Assume:
 
-1. $V \subseteq \R^3$ is an open set such that 
-$$
-\SSS_1 \subseteq V \,,
-$$
-2. $f \colon V \to \R^3$ is a differentiable function such that  
-$$
-f(\SSS_1) \subseteq \SSS_2 \,.
-$$
+1. $V \subseteq \R^3$ is open, with $\SSS_1 \subseteq V$,
+2. $f \colon V \to \R^3$ is differentiable, with $f(\SSS_1) \subseteq \SSS_2$.
 
-Then the restriction 
-$$
-f |_{\SSS_1} \colon \SSS_1 \to \SSS_2 
-$$
-is a differentiable map between surfaces.
+The restriction 
+$f |_{\SSS_1} \colon \SSS_1 \to \SSS_2$ is a smooth map.
 
 :::
 
@@ -3570,7 +3523,7 @@ $$
 $$ 
 is a regular surface with atlas $\mathcal{A}=\{\sss\}$. Therefore $\SSS_{\sss}$ is orientable.
 
-> This is because we have only one chart. Therefore any transition map $\Phi$ will be the identity,
+**Check:** This is because we have only one chart. Therefore any transition map $\Phi$ will be the identity,
 so that $\det J \Phi = 1 > 0$.
 
 :::
@@ -5594,7 +5547,7 @@ Therefore, lengths, angles and areas are the same on the two surfaces.
 
 ::: Example
 
-**Question.** Find the first fundamental form of the surface chart
+**Question.** Find the FFF of the surface chart
 $$
 \sss(u, v)=\left(u-v, u+v, u^{2}+v^{2}\right)\,.
 $$
@@ -5602,19 +5555,16 @@ $$
 **Solution.** We compute
 $$
 \begin{aligned}
-\sssu & =(1,1,2 u) \\
-\sssv & =(-1,1,2 v) \\
-E & = \sssu \cdot \sssv = 2\left(1+2 u^{2}\right) \\
-F & =\sssu \cdot \sssv = 4 u v \\
-G & = \sssv \cdot \sssv = \left(1+2 v^{2}\right)
-\end{aligned}
-$$
-so that
-$$
-\mathscr{F}_{1}=\left(\begin{array}{cc}
-2\left(1+2 u^{2}\right) & 4 u v \\
-4 u v & 2\left(1+2 v^{2}\right)
+& \sssu  =(1,1,2 u)
+& \,&   F  =\sssu \cdot \sssv = 4 u v \\
+& \sssv =(-1,1,2 v) 
+&\,&  G  = \sssv \cdot \sssv = 2\left(1+2 v^{2}\right) \\
+&  E  = \sssu \cdot \sssv = 2\left(1+2 u^{2}\right) 
+&\,& \mathscr{F}_{1}  = 2\left(\begin{array}{cc}
+1+2 u^{2} & 2 u v \\
+2 u v & 1+2 v^{2}
 \end{array}\right) \,.
+\end{aligned}
 $$
 
 
@@ -5744,26 +5694,18 @@ Therefore,
 Isometries are an important class of maps between surfaces: They are smooth maps which preserve the first fundamental form.
 
 
+
 ::: Definition 
 ### Local Isometry and Isometry
 
-Let $\SSS$ and $\wSSS$ be regular surfaces and 
-$$
-f \colon \SSS \to \wSSS
-$$
-be a smooth map. Denote the differential of $f$ by
-$$
-d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \wSSS \,.
-$$
-
-We say that:
-
+Let $\SSS$ and $\wSSS$ be regular and 
+$f \colon \SSS \to \wSSS$ smooth.
 
 1. $f$ is a **local isometry**, if for all $\pp \in \SSS$
 $$
 \vv \cdot \ww  = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
 \forall \, \vv, \ww \in T_{\pp} \SSS \,. 
-$${#eq-loc-iso}
+$$
 In this case, $\SSS$ and $\wSSS$ are said to be **locally isometric**.
 
 2. $f$ is an **isometry** if:
@@ -5772,7 +5714,6 @@ In this case, $\SSS$ and $\wSSS$ are said to be **locally isometric**.
     
    In this case, $\SSS$ and $\wSSS$ are said to be **isometric**.
     
-
 :::
 
 
@@ -6178,18 +6119,12 @@ Therefore, by assumption, $\sss$ and $\wsss$ have the same first fundamental for
 
 
 
+
+
 ::: Example
 ### Plane and Cylinder are locally isometric {#example-plane-cylinder}
 
-**Question.** Consider the plane
-$$
-\SSS = \{ (x,y,z) \in \R^3   \, \colon \, x = 0  \} \,,
-$$
-and the unit cylinder 
-$$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \,  x^2 + y^2 = 1 \} \,.
-$$
-Define the function
+**Question.** Consider the plane $\SSS = \{ x = 0 \}$ and the unit cylinder $\SSS = \{ x^2 + y^2 = 1 \}$. Define the function
 $$
 f \colon \SSS \to \wSSS \,, \qquad f(0,y,z) = (\cos(y),\sin(y),z) \,.
 $$
@@ -6212,41 +6147,33 @@ $$
 Since $g$ is smooth, and $g(\SSS) = \wSSS$, 
 by Theorem \ref{theorem-diff-check-2} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
 
-2. Define the chart of $\SSS$:
+2. The plane $\SSS$ is charted by
 $$
 \sss(u,v) = (0,u,v) \,, \quad u,v \in \R \,.
 $$
-We already know that $\sss$ is regular, with first fundamental form coefficients given by
+We already know that $\sss$ is regular, with FFF coefficients
 $$
-E = 1 \,, \quad F = 1 \,, \quad G = 1 \,,
-$$
-and corresponding first fundamental form
-$$
-{\FF}_1 = du^2 + dv^2 \,.
+E = 1 \,, \quad F = 0 \,, \quad G = 1 \,.
 $$
 Define $\wsss = f \circ \sss$. Therefore,
 $$
 \wsss(u,v) = f(0,u,v) = (\cos(u),\sin(u),v) \,.
 $$
-We have that
+The FFF of $\wsss$ is
 \begin{align*}
-\wsssu & = ( -\sin(u),\cos(u),0 ) \\
-\wsssv & = (0,0,1) \\
-\wE & = \wsssu \cdot \wsssu = 1 \\  
-\wF & = \wsssu \cdot \wsssv = 0 \\
-\wG & = \wsssv \cdot \wsssv = 1 
+& \wsssu = ( -\sin(u),\cos(u),0 ) 
+& \, & \wF  = \wsssu \cdot \wsssv = 0 \\
+& \wsssv  = (0,0,1) 
+& \, & \wG  = \wsssv \cdot \wsssv = 1\\ 
+& \wE  = \wsssu \cdot \wsssu = 1   
 \end{align*}
-Therefore, the first fundamental form of $\wsss = f \circ \sss$ is
-$$
-{\wFF}_1 =  du^2 + dv^2 \,.
-$$
-In particular, we have shown that $\sss$ and $\wsss$ have the same first fundamental form:
-$$
-{\FF}_1 = {\wFF}_1 \,.
-$$
-Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
+Thus, $\sss$ and $\wsss$ have the same FFF. Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2-bis} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
 
 :::
+
+
+
+
 
 
 ::: Example
@@ -6892,22 +6819,16 @@ The proof follows by adapting the argument in the proof of Theorem \ref{theorem-
 
 
 
+
 ::: Example
 ### Stereographic Projection {#example-conformal}
 
-**Question.** Denote the unit sphere by 
+**Question.** Consider the unit sphere 
+$\sphere^2 = \{x^2 + y^2 + z^2 = 1 \}$ and define the surface
 $$
-\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
+\SSS = \sphere^2 \smallsetminus \{N\} \,, \quad N = (0,0,1) \,.
 $$
-and consider the surface
-$$
-\SSS = \sphere^2 \smallsetminus \{N\} \,,
-$$
-where the point $N = (0,0,1)$ is the North Pole. Denote the plane $\{z = 0\}$ by
-$$
-\wSSS = \{ (x,y,z) \in \R^3 \, \colon \, z = 0 \} \,,
-$$ 
-The plane $\{z=0\}$ slices through the equator of the sphere. Let $P=(x,y,z)$ be any point on $\sphere^2$ except the north pole. The line joining the north pole to $P$ intersects the plane $\{z=0\}$ at the point $P'$, see @fig-stereographic-4. The point $P'$ defines the *Stereographic Projection* map, which is easily computed to be:
+Consider the plane $\wSSS = \{z = 0\}$. The plane $\wSSS$ slices through the equator of the sphere. Let $P=(x,y,z)$ be any point on $\sphere^2$, except the North Pole $N$. The line joining $N$ to $P$ intersects the plane $\wSSS$ at the point $P'$, see @fig-stereographic-4. The point $P'$ defines the *Stereographic Projection* map, which is easily computed to be:
 $$
 f \colon \SSS \to \wSSS \,, \quad 
 f(x,y,z) = \left( \frac{x}{1-z},\frac{y}{1-z},0  \right) \,.
@@ -6925,27 +6846,20 @@ Notice that $\pi$ is slightly different from the map described in @fig-stereogra
 :::
 
 
-**Solution.** It is not difficult to prove that $f$ is invertible, with inverse given by 
+**Solution.** It is easy to prove that $f^{-1} = \sss$, with
 $$
 \sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
 $$
-We have that $\sss$ is a regular chart for $\SSS$, forming an altas of one chart. It is straightforward to compute that the coefficients of the first fundamental form of $\sss$ are
+We have that $\sss$ is a regular chart for $\SSS$, forming an altas of one chart. It is straightforward to compute that the FFF of $\sss$ is
 $$
-E = G = \lambda(u,v) := \frac{4}{(u^2+v^2+1)^2} \,, \qquad F = 0 \,.
+\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,, \quad \lambda(u,v) = \frac{4}{(u^2+v^2+1)^2} \,.
 $$
-In particualar the fisrt fundamental form is
-$$
-\mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,.
-$$
-Define the chart of $\wSSS$: 
-$$
-\wsss = f \circ \sss \,.
-$$
-Since $\sss$ is the inverse of $f$, we have that
+Let $\wsss = f \circ \sss$. 
+Since $\sss = f^{-1}$, we have that
 $$
 \wsss(u,v) = (u,v,0) \,.
 $$
-As already computed, the first fundamental form of $\wsss$ is 
+As already computed, the FFF of $\wsss$ is 
 $$
 {\wFF}_1 = du^2 + dv^2 \,.
 $$
@@ -6961,7 +6875,7 @@ Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-c
 $$
 {\wFF}_1 \neq {\FF}_1 \,.
 $$
-Therefore, by Theorem \ref{theorem-local-isometry}, we conclude that $f$ cannot be a 
+Therefore, by Theorem \ref{theorem-local-isometry-bis}, we conclude that $f$ cannot be a 
 local isometry.
 
 ::: {.content-hidden}
@@ -6974,6 +6888,7 @@ showing that $\sss$ is not equi-areal.
 :::
 
 :::
+
 
 
 ![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
@@ -6990,6 +6905,9 @@ $$
 f \colon \SSS \to \widetilde{\SSS}\,.
 $$
 It is also useful to define conformal parametrizations.
+
+
+
 
 ::: Definition
 ### Conformal parametrization {#definition-conformal-parametrization}
@@ -7183,11 +7101,11 @@ is a conformal map. This is known as the **Stereographic Projection**, see @fig-
 ::: Example 
 ### Mercator projection {#example-conformal-2}
 
-**Question.** Consider the following parametrization of the  sphere $\sphere^2$
+**Question.** Prove that the following parametrization of $\sphere^2$ is conformal
 $$
 \sss(u,v) := \left(  \cos(u) \sech(v), \sin(u) \sech(v) , \tanh (v) \right) \,.
 $$
-Prove that $\sss$ is a conformal parametrization. 
+
 
 **Note.** Let $V = \sss(U)$. In particular, the inverse 
 $$
@@ -7196,25 +7114,19 @@ $$
 is a conformal map. This is known as the **Mercator Projection**, see @fig-mercator and @fig-mercator-2.
 
 
-**Solution.**  Using the identitities
+**Solution.** Using the identitities
 \begin{align*}
-\frac{d}{dv} \left( \sech (v)  \right) & = - \sech (v) \tanh (v) \,, \\
-\frac{d}{dv} \left( \tanh (v) \right)  & = {\sech}^2 (v) \,,
+& \sech (v)' = - \sech (v) \tanh (v) \,, \\
+& \tanh (v)' = {\sech}^2 (v) \,,\\
+& {\sech}^2 (v) + {\tanh}^2 (v) = 1
 \end{align*}
 we obtain
 \begin{align*}
-\sss_u & = ( -\sin(u) \sech(v) , \cos(u)\sech(v) , 0 )  \\
-\sssv & = ( -\cos(v) \sech(v) \tanh(v) , -\sin(u) \sech(v) \tanh(v) , {\sech}^2(v) )
-\end{align*}
-By recalling that
-$$
-{\sech}^2 (v) + {\tanh}^2 (v) = 1 \,,
-$$
-we compute
-\begin{align*}
-E & = \sss_u \cdot \sss_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
-F & = \sss_u \cdot \sss_v =  0 \\ 
-G & = \sss_v \cdot \sss_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(v) \\ 
+& \widetilde{\sss}_u  = \sech(v) \, ( -\sin(u)  , \cos(u), 0 )  \\
+& \widetilde{\sss}_v  = \sech(v) \, ( -\cos(v)  \tanh(v) , -\sin(u) \tanh(v) , \sech(v) ) \\
+& \widetilde{E} = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
+& \widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v =  0 \\ 
+& \widetilde{G} = \widetilde{\sss}_v \cdot \widetilde{\sss}_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(v) \\ 
 \end{align*}
 Hence the first fundamental form of $\sss$ is
 $$
@@ -7222,7 +7134,9 @@ $$
 $$
 showing that $\sss$ is a conformal parametrization.
 
+
 :::
+
 
 
 
@@ -8222,7 +8136,7 @@ $$
 
 The second fudamental form $II_{\pp}$ of $\SSS$ is bilinear. 
 
-> Indeed, $\WW_{\pp,\SSS}$ is linear, being the differential of a smooth map. Hence $II_{\pp}$ is bilinear, given that the scalar product is bilinear.
+**Check.** $\WW_{\pp,\SSS}$ is linear, being the differential of a smooth map. Hence $II_{\pp}$ is bilinear, given that the scalar product is bilinear.
 
 :::
 
@@ -8942,7 +8856,7 @@ $$
 \operatorname{Tr} (\WW) = \operatorname{Tr} (\widetilde{\WW}) \,.
 $$
 
-> The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.
+**Check.** The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.
 
 :::
 
@@ -10685,7 +10599,7 @@ The matrix of the Weingarten map is
 \end{align*}
 
 
-4. For $u=1$ and $v=1$ we obtain
+4. For $u=1$ and $v=0$ we obtain
 $$
 \WW 
  = 
@@ -11180,6 +11094,7 @@ The converse of the Theorema Egregium is false: there are surfaces which are not
 \sss(u,v) & = (\cos(u)v, \sin(u)v, \log (v)) \,,  \\
 \wsss(u,v) & = (\cos(u)v, \sin(u)v, u)\,.
 \end{align*}
+Note that $\SSS$ is the surface of revolution obtained by rotating the curve $(v,0,\log(v))$, while $\wSSS$ is a portion of Helicoid. 
 
 1. Prove that $\SSS$ and $\wSSS$ are not locally isometric.
 2. Prove that $\SSS$ and $\wSSS$ have the same Gaussian curvature.
@@ -11224,7 +11139,23 @@ Suppose by contradiction there was a local isometry $f \colon \SSS \to \wSSS$. T
 $$
 f \circ \sss = \Phi \circ \wsss \,.
 $$
-In particular, the first fundamental form of $f \circ \sss$ is the same as the one of $\Phi \circ \wsss$. In conclusion, $\sss$ and $\Phi \circ \wsss$ have the same first fundamental form. By Proposition \ref{proposition-fff-reparametrization-bis}, the first fundamental form of $\Phi \circ \wsss$ is
+In particular, the first fundamental form of $f \circ \sss$ is the same as the one of $\Phi \circ \wsss$. In conclusion, $\sss$ and $\Phi \circ \wsss$ have the same first fundamental form. By Proposition \ref{proposition-fff-reparametrization-bis}, the first fundamental form of $\Phi \circ \wsss$ is $(J\Phi)^T \wFF_1 J\Phi$. Therefore, we have
+$$
+\FF_1 = (J\Phi)^T \wFF_1 J\Phi \,.
+$${#eq-non-egregium}
+Taking the determinant of both sides, we get
+$$
+\det(\FF_1) = \det(J\Phi)^2 \det (\wFF_1) \,.
+$$
+We compute that
+$$
+\det (\FF_1) =  \det (\wFF_1) =  1 + v^2 \,,
+$$
+and thus
+$$
+\det J \Phi = \pm 1 \,.
+$${#eq-non-egregium-1}
+On the other hand,
 \begin{align*}
 (J\Phi)^T \wFF_1 J\Phi & = 
 \left(
@@ -11253,7 +11184,7 @@ a^2 (1+v^2) + c^2 & \ast \\
 \end{array}
 \right) \,.
 \end{align*}
-As $\sss$ and $\Phi \circ \wsss$ have the same first fundamental form, we infer
+By (@eq-non-egregium), we get
 $$
 \left(
 \begin{array}{cc}
@@ -11275,12 +11206,17 @@ a^2 (1+v^2) + c^2 = v^2 \,, \quad \forall \, v > 0 \,.
 $$
 Taking the limit for $v \to 0^+$ gives
 $$
-a^2 + c^2 = 0 \quad \implies \quad a = c = 0 \,.
+\lim_{v \to 0^+} \left [ a^2(u,v) + c^2 (u,v) \right] = 0 \,,
+$$
+which implies
+$$
+\lim_{v \to 0^+} a (u,v) = 0 \,, \qquad 
+\lim_{v \to 0^+} c (u,v)  = 0 \,.
 $$
 Therefore, we have that
 $$
-J\Phi =
-\left( 
+\lim_{v \to 0^+} J\Phi(u,v) =
+\lim_{v \to 0^+} \left( 
 \begin{array}{cc}
 a & b \\
 c & d \\
@@ -11292,10 +11228,18 @@ c & d \\
 0 & b \\
 0 & d \\
 \end{array}
-\right) \quad \implies \quad 
-\det J\Phi = 0 \,.
+\right) \,.
 $$
-This is a contradiction, since $\Phi$ is a diffeomorphism. Hence, $\SSS$ and $\wSSS$ are not locally isometric.
+By continuity of the determinant, we infer
+$$
+\lim_{v \to 0^+} \det J\Phi (u,v) = \det \left( 
+\begin{array}{cc}
+0 & b \\
+0 & d \\
+\end{array}
+\right) = 0 \,.
+$$
+This contradicts (@eq-non-egregium-1). Hence, $\SSS$ and $\wSSS$ cannot be locally isometric.
 
 
 2. Note that we could compute the Gaussian curvature from the first fundamental form, by first computing the Christoffel symbols, and then using the first Gauss Equation. However, we proceed as usual, and compute $K$ as the determinant of the Weingarten map. To this end, compute the second fundamental forms of $\sss$ and $\wsss$

@@ -1288,28 +1288,21 @@ Thanks to the above theorem we have now a way to compute $L(\g)$.
 Let us check that we have given a meaningful definition of length by computing $L(\g)$ on known examples.
 
 
-
 ::: Example
 ### Length of Circle
 
-**Question.** The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+**Question.** Compute the length of the circle of radius $R$
 $$
-\g(t) = (R\cos(t), R\sin(t)) \,.
+\g(t) = (x_0 + R\cos(t), y_0 + R\sin(t),0) \,.
 $$
-Prove that $L(\g) = 2\pi R$.
 
 **Solution.** We compute
 \begin{align*}
-\dg(t) & = (-R\sin(t), R\cos(t)) \\
-\norm{\dg(t)} & = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      } \\
-                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
+\dg(t) & = (-R\sin(t), R\cos(t),0) \\
+\norm{\dg(t)} & = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      }  = R \\
+L(\g)  & = \int_{0}^{2\pi}  \norm{  \dg(t)} \, dt 
+        = \int_0^{2\pi} R \, dt  = 2 \pi R \,.
 \end{align*}
-Therefore 
-$$
-L(\g)  = \int_{0}^{2\pi}  \norm{  \dg(t)} \, dt 
-       = \int_0^{2\pi} R \, dt  
-      = 2 \pi R \,.
-$$
 :::
 
 
@@ -1318,22 +1311,17 @@ $$
 ::: Example
 ### Length of Helix
 
-**Question.** Consider one full turn of the Helix of radius $R >0$ and rise $H$. This is parametrized by
+**Question.** Compute the length of the Helix
 $$
-\g(t) = (R\cos(t), R\sin(t) ,Ht)
+\g(t) = (R\cos(t), R\sin(t) ,Ht) \,, \quad t \in (0,2\pi) \,.
 $$
-for $t \in (0,2\pi)$. Compute $L(\g)$.
-
 
 **Solution.** We compute
 \begin{align*}
 \dg(t) & = (-R\sin(t), R\cos(t) , H) \\
-\norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} 
+\norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} \\
+L(\g) & = \int_0^{2\pi} \norm{ \dg(u) } \, du = 2 \pi \sqrt{R^2 + H^2}
 \end{align*}
-Therefore 
-$$
-L(\g) = \int_0^{2\pi} \norm{ \dg(u) } \, du = 2 \pi \sqrt{R^2 + H^2}
-$$
 
 :::
 
@@ -1363,15 +1351,13 @@ Using this formula, we introduce the notion of length of a portion of $\g$.
 
 
 
-::: Definition
-### Arc-length
+::: Definition 
+### Arc-Length
 
 The **arc-length** along $\g \colon (a,b) \to \R^3$ from $t_{0}$ to $t$ is
 $$
-s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u \,.
+s \colon (a,b) \to \R \,, \quad s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u \,.
 $$
-The function $s(t)$ is known as the arc-length function.
-
 
 :::
 
@@ -1440,7 +1426,7 @@ $$
 
 
 ::: Example
-### Arc-length of the Circle
+### Arc-length of Circle
 
 **Question.** Consider the circle of radius $R$, parametrized by
 $$
@@ -1463,23 +1449,19 @@ In particular we see that $\dot s = R$ is constant.
 ::: Example
 ### Arc-length of Logarithmic Spiral
 
-**Question.** The Logarithmic spiral is defined by $\g \ \colon [0,2\pi] \to \R^2$ with
+**Question.** Compute the arc-length of
 $$
-\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,, \quad t \in (0,2\pi) \,.
 $$
-where $k \in \R$, $k \neq 0$, is called the **growth factor**. Compute the arc-length function of $\g$. 
 
-**Solution.** We have
+**Solution.** The arc-length starting from $t_0$ is
 \begin{align*}
-\dg(t) & = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ) \\
-\norm{\dg(t)}^2  & =  (k^2 + 1) e^{2kt} \,.
+\dg(t) & = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ,0) \\
+\norm{\dg(t)}^2  & =  (k^2 + 1) e^{2kt} \\
+s(t) & = \int_{t_0}^t \norm{\dg(\tau)} \, d \tau 
+     = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
 \end{align*}
-The arc-length starting from $t_0$ is
-\begin{align*}
-s(t) & = \int_{t_0}^t \norm{\dg(\tau)} \, d \tau \\
-     & = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
-     & = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
-\end{align*}
+
 :::
 
 
@@ -1788,7 +1770,7 @@ $$
 
 
 ::: Definition
-### unit-speed curve
+### Unit-speed curve
 
 A curve $\g \ \colon (a,b) \to \R^3$ is **unit-speed** if
 $$
@@ -2300,7 +2282,7 @@ We now define unit-speed reparametrizations:
 ::: Definition 
 ### unit-speed reparametrization
 
-Let $\g \colon (a,b) \to \R^n$ be a curve. A **unit-speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit-speed, that is,
+Let $\g \colon (a,b) \to \R^n$. A **unit-speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit-speed, that is,
 $$
 \norm{ \dtg(t) } = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b})
 $$
@@ -2435,22 +2417,19 @@ is a unit-speed reparametrization of $\g$. In the next proposition we show that 
 
 ::: Proposition
 ### Arc-length and unit-speed reparametrization  {#proposition-arc-length-unit}
+
 Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^3$ be a reparametrization of $\g$, that is,
 $$
 \g(t) = \tg ( \phi(t) )  , \quad \forall \, t \in (a,b)
 $$
-for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. Denote by
-$$
-s(t) = \int_{t_0}^t  \norm{\dg(\tau)} \, d \tau 
-$$
-the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
+for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We have
 
 1. If $\tg$ is unit-speed, there exists $c \in \R$ such that
 $$
 \f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
 $$ {#eq-proposition-unit-speed}
 
-2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit-speed.
+2. If $\f$ is given by (@eq-proposition-unit-speed), then $\tg$ is unit-speed.
 
 :::
 
@@ -2614,12 +2593,12 @@ $$
 
 
 ::: Example 
-### Arc-length reparametrization of the Circle {#example-circle-arc}
+### Arc-length reparametrization of Circle {#example-circle-arc}
 
-**Question.** Let $\g \colon (0,2\pi) \to \R^2$ be the circle
-with center $(x_0,y_0)$ and radius $R>0$
+
+**Question.** The circle of radius $R>0$ is
 $$
-\g(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0)
+\g(t) = ( x_0 + R \cos (t), y_0 + \sin (t),0) \,.
 $$
 Reparametrize $\g$ by arc-length.
 
@@ -2627,11 +2606,7 @@ Reparametrize $\g$ by arc-length.
 $$
 s(t) = \int_0^t \norm{ \dg(u) } \, d u = Rt
 $$
-The inverse $s^{-1}$ is
-$$
-t(s) = \frac{s}{R} 
-$$
-The arc-length reparametrization of $\g$ is
+The inverse is $t(s) = s/R$. The arc-length reparametrization of $\g$ is
 $$
 \tg(s) = \g(t(s)) = \left( x_0 + R \cos \left( \frac{s}{R} \right), y_0 + \sin \left( \frac{s}{R} \right), 0 \right) \,.
 $$
@@ -2662,17 +2637,13 @@ $$
 $$
 s(t) = \int_0^t \norm{ \dg(u) } \, d u = 13 t \,.
 $$
-The inverse $s^{-1}$ is
-$$
-t(s) = \frac{s}{13}  \,.
-$$
-The arc-length reparametrization of $\g$ is
+The inverse is $t(s) = s/13$. The arc-length reparametrization of $\g$ is
 $$
 \tg(s)= \g(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
 $$
-
-
 :::
+
+
 
 ::: Warning
 

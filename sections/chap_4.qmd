@@ -4187,17 +4187,13 @@ For a proof see Proposition 4.4.5 in [@pressley]. The above Proposition says tha
 
 ::: {.Theorem #theorem-df-invertible}
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces. Suppose that 
-$$
-f \colon \SSS_1 \to \SSS_2 
-$$
-is smooth, and let $\pp \in \SSS_1$. They are equivalent:
+Let $\SSS_1$, $\SSS_2$ be regular surfaces and $f \colon \SSS_1 \to \SSS_2$ smooth. They are equivalent:
 
 1. $f$ is a local diffeomorphism at $\pp$.
 2. The differential $d_{\pp} f \colon T_{\pp} \SSS_1 \to T_{f(\pp)} \SSS_2$ is invertible at $\pp$.
 
-
 :::
+
 
 The proof is based on the Inverse Function Theorem \ref{theorem-inverse-function}, see Proposition 4.4.6 in
 [@pressley].
@@ -4914,7 +4910,8 @@ with $u \in (0,2\pi)$ and $v \in (a,b)$.
 :::
 
 
-::: {.Proposition #proposition-revolution}
+::: Theorem
+### Regularity of surfaces of revolution
 
 A surface of revolution is regular if and only if $\g$ is regular.
 
@@ -4925,19 +4922,12 @@ A surface of revolution is regular if and only if $\g$ is regular.
 
 We have
 \begin{align*}
-\sss_u & = \left(- \sin(u)f(v),  \cos(u) f(v), 0 \right) \,, \\
-\sss_v & = \left(\cos(u) \dot{f}(v) , \sin(u)\dot{f}(v) , \dot{g}(v) \right) \,.
+\sss_u & = \left(- \sin(u)f(v),  \cos(u) f(v), 0 \right) \\
+\sss_v & = \left(\cos(u) \dot{f}(v) , \sin(u)\dot{f}(v) , \dot{g}(v) \right)  \\
+\sss_u \times \sss_v & = \left( \cos(u) f \dot{g} ,  \sin(u) f \dot{g} , -f \dot{f} \right) \,, \\
+\norm{\sss_u \times \sss_v} & = f \sqrt{\left( \dot{f}^2 + \dot{g}^2 \right)} = f \norm{\dg} \,.
 \end{align*}
-Therefore
-$$
-\sss_u \times \sss_v = \left( \cos(u) f \dot{g} ,  \sin(u) f \dot{g} , -f \dot{f} \right) \,,
-$$
-and 
-$$
-\norm{\sss_u \times \sss_v}^2 = f^2 \left( \dot{f}^2 + \dot{g}^2 \right) = f^2 \norm{\g}^2 \,.
-$$
-Recall that $f > 0$ by definition, so that $f^2 \neq 0$. 
-Therefore $\sss_u$ and $\sss_v$ are linearly independent if and only if $\g$ is regular.
+Now, $\sss$ is regular if and only if $\sss_u \times \sss_v \neq \zero$. Since $f > 0$ by definition, we conclude that $\sss$ is regular if and only if $\dg \neq \zero$, that is, $\g$ is regular.
 
 :::
 
@@ -4992,9 +4982,6 @@ In this section we introduce the first **fundamental form** of a surface. This w
 
 
 
-
-### Definition of FFF
-
 Let $\SSS$ be a surface and consider two points $\pp, \mathbf{q} \in \SSS$. The euclidean distance between $\pp$ and $\mathbf{q}$ is 
 $$
 \norm{\pp - \mathbf{q}} \,.
@@ -5019,19 +5006,17 @@ $$
 Therefore, computing $\norm{\dg(t)}$ is equivalent
 to computing the length of tangent vectors to $\SSS$. This motivates the definition of first fundamental form.
 
-
 ::: Definition
-### First fundamental form
+### First fundamental form (FFF)
 
 Let $\SSS$ be a regular surface and $\pp \in \SSS$. The 
-**first fundamental form** of $\SSS$ at $\pp$ is the bilinear symmetric map
+**first fundamental form (FFF)** of $\SSS$ at $\pp$ is the bilinear symmetric map
 $$
 I_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R \,, \quad I_{\pp} (\vv,\ww) := \vv \cdot \ww \,.
 $$
 
 
 :::
-
 
 Three observations:
 
@@ -5055,53 +5040,35 @@ charts. To this end, we first define:
 ::: Definition
 ### Coordinate functions on tangent plane  {#definition-coordinate-functions}
 
-Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. 
-For each $\pp \in \sss(U)$ we have
-$$
-T_{\pp} \SSS = \operatorname{span} \{\sss_u,\sss_v\} \,,
-$$
-where $\sss_u$ and $\sss_v$ are evaluated at the point $(u,v) \in U$ such that 
-$$
-\sss(u,v)=\pp \,.
-$$
-Therefore, for each $\vv \in T_{\pp} \SSS$, there exist $\lambda,\mu \in \R$ such that
-$$
-\vv = \lambda \sss_u + \mu \sss_v \,.
-$$
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$. 
 The **coordinate functions** on $T_{\pp} \SSS$ are the linear maps
 $$
 du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
-\quad dv(\vv) := \mu \,.
+\quad dv(\vv) := \mu \,,
 $$
+where $\vv = \lambda \sssu + \mu \sssv$, since $\{\sssu, \sssv\}$ is a basis for $T_{\pp}\SSS$.
 
 :::
 
 
 
-::: Definition
-### First fundamental form of a chart
 
-Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
+
+::: Definition
+### FFF of a chart
+
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$. Define $E , F , G \colon U \to \R$
 $$
-E , F , G \colon U \to \R 
+E = \sss_u \cdot \sss_u \,, \quad  F = \sss_u \cdot \sss_v \,, \quad 
+G = \sss_v \cdot \sss_v \,.
 $$
-by setting
+The **FFF** of $\sss$ is the quadratic form
+$\mathscr{F}_1 \colon T_{\pp} \SSS \to \R$
 $$
-E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
-G := \sss_v \cdot \sss_v \,.
+\mathscr{F}_1 (\vv) = E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,, \quad \forall \, v \in T_{\pp} \SSS \,,
 $$
-The **first fundamental form** of $\sss$ is the quadratic form
-$$
-\mathscr{F}_1 \colon T_{\pp} \SSS \to \R
-$$
-defined by
-$$
-\mathscr{F}_1 (\vv) := E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,,
-$${#eq-fff-chart}
-for all $\vv \in T_{\pp} \SSS$, and $\pp \in \sss(U)$, where $E,F,G$ are evaluated at 
-$$
-(u,v) = \sss^{-1}(\pp) \,.
-$$
+for all $\pp \in \sss(U)$, with $E,F,G$ evaluated at 
+$(u,v) = \sss^{-1}(\pp)$.
 
 :::
 
@@ -5114,9 +5081,10 @@ We are now ready to write $I_{\pp}$ with respect to the basis $\{\sss_u,\sss_v\}
 
 
 
-::: {.Proposition  #proposition-fff-quadratic}
+::: Theorem
+### Matrix of FFF {#theorem-fff-quadratic}
 
-Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$, and $\pp \in \sss(U)$. Then
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$, and $\pp \in \sss(U)$. Then
 $$
 I_{\pp} (\vv,\ww) = (du (\vv), dv(\vv) )  \, 
 \left( 
@@ -5124,15 +5092,18 @@ I_{\pp} (\vv,\ww) = (du (\vv), dv(\vv) )  \,
 E & F \\
 F & G 
 \end{array}
-\right) \, (du(\ww) , dv(\ww))^T \,,
+\right)
+(du (\ww), dv(\ww) )^T \,, 
 $$
-for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathscr{F}_1$ is the quadratic form associated to the symmetric bilinear form $I_{\pp}$, that is,
+for all $\vv,\ww \in T_{\pp} \SSS$. In particular, it holds
 $$
 \mathscr{F}_1 (\vv) = I_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
 $$
 
 
 :::
+
+
 
 ::: Proof
 
@@ -5174,7 +5145,7 @@ statement and definition of $\mathscr{F}_1$.
 ::: Remark
 ### Linear algebra interpretation 
 
-Using linear algebra, Proposition \ref{proposition-fff-quadratic} has the following clear interpretation: $I_{\pp}$ is a symmetric bilinear form on the vector space $T_{\pp} \SSS$. 
+Using linear algebra, Theorem \ref{theorem-fff-quadratic} has the following clear interpretation: $I_{\pp}$ is a symmetric bilinear form on the vector space $T_{\pp} \SSS$. 
 Fixing the basis $\{ \sss_u, \sss_v \}$ for $T_{\pp} \SSS$, we can represent $I_{\pp}$ via the matrix
 \begin{align*}
 M & := 
@@ -5221,6 +5192,33 @@ $$
 :::
 
 
+::: Example
+### FFF of Unit cylinder  {#example-cylinder-fff}
+
+**Question.** Consider the unit cylinder with chart
+$$
+\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+Prove that the FFF of $\sss$ is 
+$$
+\mathscr{F}_1 = du^2 + dv^2 \,.
+$$
+
+**Solution.** We have
+\begin{align*}
+& \sss_u  = (-\sin(u),\cos(u), 0 ) 
+& \, & F  = \sss_u \cdot \sss_v = 0  \\
+& \sss_v  = (0,0,1) 
+& \, & G  = \sss_v \cdot \sss_v = 1 \\
+& E  = \sss_u \cdot \sss_u = 1 
+& \, & \mathscr{F}_1  =  du^2 + dv^2 
+\end{align*}
+ 
+:::
+
+
+::: Warning 
+
 The first fundamental form $I_{\pp}$ depends only on the surface $\SSS$ and the point $\pp$. 
 Instead the local representation of $I_{\pp}$
 $$
@@ -5228,49 +5226,32 @@ $$
 $$
 depends on the choice of chart $\sss \colon U \to \R^3$. The next result explains how $\mathscr{F}_1$ changes when we change chart.
 
+:::
 
 
 ::: Proposition
 ### FFF and reparametrizations  {#proposition-fff-reparametrization-bis}
 
 
-Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
-$$
-\widetilde{\sss} = \sss \circ \Phi \,,
-$$
-where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the first fundamental forms of $\sss$ and $\wsss$ by, respectively,
-\begin{align*}
-\mathscr{F}_1 & = E \, du^2 + 2F \, du dv + G \, dv^2 \,, \\
-\widetilde{\mathscr{F}}_1 & = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
-\end{align*}
+Let $\sss \colon U \to \R^3$ be regular, and $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ a reparametrization, with 
+$\widetilde{\sss} = \sss \circ \Phi$ and $\Phi \colon \widetilde{U} \to U$ diffeomorphism. 
 
-1. The matrices of $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are related by
+1. The matrices $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ of the FFF of $\sss$ and $\wsss$ are related by
 $$
+{\wFF}_1 = (J \Phi)^T \, \mathscr{F}_1 \, J \Phi  \,, \quad 
+\mathscr{F}_1 = \left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)  \,, \quad 
+\widetilde{\mathscr{F}}_1 =
 \left(
 \begin{array}{cc}
 \widetilde{E} & \widetilde{F} \\
 \widetilde{F} & \widetilde{G}
 \end{array}
-\right)  
-= 
-(J \Phi)^T \,
-\left(
-\begin{array}{cc}
-E & F \\
-F & G
-\end{array}
-\right)
-\, 
-J \Phi  \,,
-$${#eq-fff-change-basis-1}
-where $J\Phi$ is the Jacobian of $\Phi$
-$$
-J\Phi = \left(   
-\begin{array}{cc}
- \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
- \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
-\end{array}
-\right) \,.
+\right)  \,.
 $$
 
 
@@ -5280,7 +5261,7 @@ $$
 du & = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \\ 
 dv & = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v} 
 \end{aligned}
-$${#eq-fff-change-basis-2}
+$$
 
 :::
 
@@ -5293,183 +5274,58 @@ The pairs $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\
 \widetilde{\sss}_{\tilde{v}}  & = 
 \sss_u  \, \frac{\partial u}{\partial \tilde{v}}  + \sss_v  \frac{\partial v}{\partial \tilde{v}} 
 \end{align*}
-The above show that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore, formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for bilinear forms and linear maps, respectively.
+The above show that the change of basis matrix between $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ is given exactly by $J\Phi$. Therefore, the two formulas in the Proposition are consequence of change of basis results for bilinear forms and linear maps, respectively.
 
 
 :::
 
 
-Let us compute the first fundamental form of a plane and of a cylinder.
-
 
 ::: Example
 ### FFF of Plane {#example-fff-plane}
 
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
-$$
-\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
-$$
-Prove that the first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1 = du^2 + dv^2 \,.
-$$
-
-**Solution.** We have
-$$
-\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,,
-$$
-and therefore, using that $\pp$ and $\mathbf{q}$ are orthonormal,
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$, $\mathbf{q}$ orthonormal. The plane in cartesian and polar coordinates is charted by, respectively,
 \begin{align*}
-E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
-F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
-G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
+& \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,, \\
+& \wsss(\rho,\theta) = \mathbf{a} + \rho \cos(\theta) \pp + \rho \sin(\theta) \mathbf{q} \,, \quad \rho>0 , \, \theta \in (0,2\pi) \,.
 \end{align*}
-The first fundamental form of $\sss$ is, therefore
+
+1. Show that the FFF of $\sss$ and $\wsss$ are
 $$
-\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
-$$
-
-:::
-
-
-::: Remark
-
-In the simple case of Example \ref{example-fff-plane}, the first fundamental form is essentially the Pythagorean Theorem on the plane: In fact, a basis for $T_{\pp} \SSS$ is 
-$$
-T_{\pp}\SSS = \operatorname{span} \{ \sssu , \sssv \} = \{ \lambda \pp + \mu \mathbf{q} \, \colon \, \lambda, \mu \in \R \} \,.
-$$
-Therefore, for 
-$$
-\vv \in T_{\pp} \SSS \,, \qquad \vv = \lambda \pp + \mu \mathbf{q} \,,
-$$
-we have
-$$
-\| \vv \|^2 = \FF_1 (\vv) = du^2(\vv) +  dv^2(\vv) = \lambda^2 + \mu^2 \,.
-$$
-Hence, the square of the length of the vector $\vv$, which has coordinates $\lambda, \mu$ in the basis $\{ \sssu, \sssv \}$, is equal to $\lambda^2 + \mu^2$.
-
-:::
-
-
-::: Warning
-
- Changing parametrization can change the local form of $\FF_1$, as seen in the next two examples. This is not surprising, due to Proposition \ref{proposition-fff-reparametrization-bis}.
-
-:::
-
-
-
-::: Example
-
-If in Example \ref{example-fff-plane} we drop the assumption of $\pp$ and $\mathbf{q}$ being orthonormal, then 
-$$
-\mathscr{F}_1 = \norm{\pp}^2 \, du^2 + 2 \pp \cdot \mathbf{q} \, du \, dv + \norm{\mathbf{q}}^2 \, dv^2 \,.
+\mathscr{F}_1 = du^2  +  dv^2 \,, \qquad 
+{\wFF}_1 = d\rho^2 + \rho^2 d\theta^2 \,.
 $$
 
-:::
-
-
-
-::: Example
-### FFF of Plane in polar coordinates   {#example-fff-plane-polar}
-
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp, \mathbf{q}$ orthonormal. In polar coordinates, the plane is charted by
+2. Let $\Phi$ be the change of variables from polar to cartesian coordinates. Show that
 $$
-\sss(\rho,\theta) = \mathbf{a} + \rho \cos(\theta) \pp + \rho \sin(\theta) \mathbf{q} \,, \quad \rho>0 , \, \theta \in (0,2\pi) \,.
+{\wFF}_1 = (J \Phi)^T \, {\FF}_1 \, J \Phi  \,.
 $$
-
-1. By direct calculation, show that the first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1 = d\rho^2 + \rho^2 d\theta^2 \,.
-$$
-
-2. The first fundamental form of the plane in cartesian coordinates is 
-$$
-{\wFF}_1 = du^2 + dv^2 \,.
-$$
-Verify that 
-$$
-\left(
-\begin{array}{cc}
-E & F \\
-F & G
-\end{array}
-\right)  
-= 
-(J \Phi)^T \,
-\left(
-\begin{array}{cc}
-\wE & \wF \\
-\wF & \wG
-\end{array}
-\right)
-\, 
-J \Phi  \,,
-$$
-where $\Phi$ is the change of variables from polar to cartesian coordinates.
 
 **Solution.** 
 
-1. Compute $\mathscr{F}_1$ directly:
+1. Using that $\pp$ and $\mathbf{q}$ are orthonormal,
 \begin{align*}
-\sss_{\rho} & = \cos(\theta)\pp + \sin(\theta) \mathbf{q} \\ 
-\sss_{\theta} & = - \rho \sin(\theta) \pp + \rho \cos(\theta) \mathbf{q}
+& \sss_u = \pp  \,, 
+&& \wsss_{\rho}  = \cos(\theta)\pp + \sin(\theta) \mathbf{q}  \\
+& \sss_v  = \mathbf{q} 
+& \, &  \wsss_{\theta} = - \rho \sin(\theta) \pp + \rho \cos(\theta) \mathbf{q} \\
+& E = \sss_u \cdot \sss_u  = 1
+& \, & \wE  = \wsss_{\rho} \cdot \wsss_{\rho}  = 1  \\
+& F = \sss_u \cdot \sss_v = 0
+& \, & \wF  = \wsss_{\rho} \cdot \wsss_{\theta} = 0 \\
+& G = \sss_v \cdot \sss_v  = 1 
+& \, & \wG  = \wsss_{\theta} \cdot \wsss_{\theta} = r^2 \\
+& \mathscr{F}_1  = du^2 + dv^2 
+& \, & {\wFF}_1  = d{\rho}^2 + {\rho}^2 d\theta^2
 \end{align*}
-and therefore 
-\begin{align*}
-E & = \sss_{\rho} \cdot \sss_{\rho} \\
-    & = \cos^2(\theta)\norm{\pp}^2 + \sin^2(\theta)\norm{\mathbf{q}}^2 + 2 \cos(\theta) \sin(\theta) \pp \cdot \mathbf{q} \\
-    & = 1 \\
-F & = \sss_{\rho} \cdot \sss_{\theta} = 0 \\
-G & = \sss_{\theta} \cdot \sss_{\theta} = r^2 \\
-\end{align*}
-Then the first fundamental form is
-$$
-\mathscr{F}_1 = E \, d{\rho}^2 + 2 F\, d{\rho} \, d\theta + G \, d\theta^2 = d{\rho}^2 + {\rho}^2 d\theta^2 \,.  
-$$
 
-2. The change of variables from polar to cartesian coordinates is
-$$
-\Psi({\rho},\theta) = ( {\rho} \cos(\theta), {\rho} \sin (\theta) )\,.
-$$
-The Jacobian of $\Psi$ is
-$$
-J\Phi = \left(   
-\begin{array}{cc}
- \cos(\theta) & - {\rho} \sin(\theta)  \\
- \sin(\theta)  & {\rho} \cos(\theta) 
-\end{array}
-\right) \,.
-$$
-The matrix of ${\wFF}_1$ is just the identity:
-$$
-\left(
-\begin{array}{cc}
-\wE & \wF \\
-\wF & \wG
-\end{array}
-\right)
-=
-\left(
-\begin{array}{cc}
-1 & 0 \\
-0 & 1
-\end{array}
-\right) \,.
-$$
-Therefore, we have
+2. We have $\Phi({\rho},\theta) = ( {\rho} \cos(\theta), {\rho} \sin (\theta) )$. Then
 \begin{align*}
-(J \Phi)^T &
-\left(
-\begin{array}{cc}
-\wE & \wF \\
-\wF & \wG
-\end{array}
-\right)
-\, 
+(J \Phi)^T & 
+\,  \FF_1
 J \Phi
-= (J \Phi)^T \, J \Phi \\
-&= 
+ = (J \Phi)^T \, J \Phi \\
+& = 
 \left(
 \begin{array}{cc}
 \cos(\theta) &  \sin(\theta) \\
@@ -5489,47 +5345,38 @@ J \Phi
 0  & \rho^2  
 \end{array}
 \right) 
- = 
-\left(   
-\begin{array}{cc}
- E & F  \\
- F  & G  
-\end{array}
-\right) \,.
+ = \wFF_1 \,.
 \end{align*}
 
 
 :::
 
 
-::: Example
-### FFF of Unit cylinder  {#example-cylinder-fff}
 
-**Question.** Consider the unit cylinder with chart
-$$
-\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
-$$
-Prove that the first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1 = du^2 + dv^2 \,.
-$$
 
-**Solution.** We have
+::: Remark
+
+As seen in Example \ref{example-fff-plane}, when the plane is charted in cartesian coordinates, the FFF is essentially the Pythagorean Theorem on the plane: In fact, a basis for $T_{\pp} \SSS$ is 
 $$
-\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
+T_{\pp}\SSS = \operatorname{span} \{ \sssu , \sssv \} = \{ \lambda \pp + \mu \mathbf{q} \, \colon \, \lambda, \mu \in \R \} \,.
 $$
-and therefore 
-\begin{align*}
-E & = \sss_u \cdot \sss_u = 1 \\
-F & = \sss_u \cdot \sss_v = 0 \\
-G & = \sss_v \cdot \sss_v = 1 \\
-\end{align*}
-Then the first fundamental form is
+Therefore, for 
 $$
-\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\vv \in T_{\pp} \SSS \,, \qquad \vv = \lambda \pp + \mu \mathbf{q} \,,
 $$
+we have
+$$
+\| \vv \|^2 = \FF_1 (\vv) = du^2(\vv) +  dv^2(\vv) = \lambda^2 + \mu^2 \,.
+$$
+Hence, the square of the length of the vector $\vv$, which has coordinates $\lambda, \mu$ in the basis $\{ \sssu, \sssv \}$, is equal to $\lambda^2 + \mu^2$.
 
 :::
+
+
+
+
+
+
 
 
 ::: Remark
@@ -5580,13 +5427,11 @@ The first fundamental form allows to compute the
 length of curves with values on surfaces.
 
 
-::: {.Proposition  #proposition-fff-length}
+::: Proposition
+### Length of curves and FFF {#proposition-fff-length}
 
-Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
-$$
-\g \colon (a,b) \to \sss(U) \subseteq \SSS 
-$$
-is a smooth curve. Then
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$. Let 
+$\g \colon (a,b) \to \SSS$ be a smooth curve. Then
 $$
 \g(t) = \sss (u(t), v(t)) \,, 
 $$
@@ -5595,12 +5440,10 @@ $$
 \int_{a}^{b} \norm{\dg(t)} \, dt =
 \int_{a}^{b} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
 $$
-where in the above formula:
-
-- $\dot u, \dot v$ are computed at $t$,
-- $E,F,G$ are computed at $(u(t),v(t))$.
+where $\dot u, \dot v$ are computed at $t$, and $E,F,G$ at $(u(t),v(t))$.
 
 :::
+
 
 
 ::: Proof 
@@ -5627,65 +5470,46 @@ Integrating, we obtain the thesis.
 
 
 
-
 ::: Example
 ### Curves on the Cone {#example-fff-cone}
 
 **Question.** Consider the cone with chart
 $$
-\sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, 
-$$
-where $u  \in (0,2\pi)$ and $v >0$. Prove the following:
-
-1. The first fundamental form of $\sss$ is
-$$
-\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+\sss (u,v)=(\cos(u) v, \sin (u) v, v) \,, \quad u \in (0,2\pi),\, v > 0 \,.
 $$
 
-2. Let $\g (t):= \sss(t,t)$. The length of $\g$ is
-$$
-\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{ t^2 + 2  } \, dt  \,.
-$$
+1. Compute the first fundamental form of $\sss$.
+
+2. Compute the length of $\g (t)= \sss(t,t)$ for $t \in (\pi/2,\pi)$.
 
 **Solution.** 
 
-1. We have
+1. The first fundamental form of $\sss$ is
 \begin{align*}
-\sss_u & = (- \sin(u)v, \cos(u)v,0) \\
-\sss_v & = (\cos(u), \sin (u), 1) \\
-E & = \sss_u \cdot \sss_u = v^2 \\
-F & = \sss_u \cdot \sss_v  = 0 \\
-G & = \sss_v \cdot \sss_v = 2
+& \sss_u  = (- \sin(u)v, \cos(u)v,0) 
+&\,&  F = \sss_u \cdot \sss_v  = 0 \\
+& \sss_v = (\cos(u), \sin (u), 1) 
+&\,& G = \sss_v \cdot \sss_v = 2 \\
+& E  = \sss_u \cdot \sss_u = v^2 
+& \, & \mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2
 \end{align*}
-The first fundamental form of $\sss$ is 
-$$
-\mathscr{F}_1 = v^2 \, du^2 + 2 \, dv^2 \,.
-$$
 
-2. By definition, 
-$$
-\g (t) = \sss(u(t),v(t)) \,, \quad u(t) = t \,, \quad v(t) = t\,.
-$$ 
-In particular
-$$
-\dot u = 1\,, \quad \dot v = 1
-$$ 
-and 
+
+2. $\g (t) = \sss(u(t),v(t))$ with 
+$u(t) = t$ and $v(t) = t$. Then
 \begin{align*}
-E(u(t),v(t)) & = E(t,t) = t^2 \\
-F(u(t),v(t)) & = F(t,t) = 0 \\
-G(u(t),v(t)) & = G(t,t) = 2  \,.
+& \dot u = 1\,, \,\, \dot v = 1 
+& & F(u(t),v(t))  = F(t,t) = 0 \\
+& E(u(t),v(t))  = E(t,t) = t^2 
+& & G(u(t),v(t))  = G(t,t) = 2 
 \end{align*}
-Therefore,
-\begin{align*}
-\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt & = 
-\int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
-& = \int_{\pi/2}^{\pi} \sqrt{  t^2 + 2   } \, dt   \,.
-\end{align*}
+The length of $\g$ between $\pi/2$ and $\pi$ is
+$$
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt 
+ = \int_{\pi/2}^{\pi} \sqrt{  t^2 + 2   } \, dt   \,.
+$$
 
 :::
-
-
 
 
 
@@ -5699,7 +5523,7 @@ Isometries are an important class of maps between surfaces: They are smooth maps
 ### Local Isometry and Isometry
 
 Let $\SSS$ and $\wSSS$ be regular and 
-$f \colon \SSS \to \wSSS$ smooth.
+$f \colon \SSS \to \wSSS$ smooth. We say that:
 
 1. $f$ is a **local isometry**, if for all $\pp \in \SSS$
 $$
@@ -5758,11 +5582,7 @@ Local isometries are automatically local diffeomorphisms.
 
 ::: {.Proposition #prop-isometry-diffeo}
 
-Let $\SSS$ and $\wSSS$ be regular surfaces and 
-$$
-f \colon \SSS \to \wSSS
-$$
-a local isometry. Then $f$ is a local diffeomorphims.
+Local isometries are local diffeomorphims.
 
 :::
 
@@ -5807,12 +5627,13 @@ This is because, in general, local diffeomorphisms are not global diffeomorphism
 Local isometries preserve the length of curves, as shown in the following Proposition.
 
 
-::: Proposition
+::: Theorem
+### Local isometries preserve lengths
 
-Let $\SSS$ and $\wSSS$ be regular surfaces and $f \colon \SSS \to \wSSS$ be a smooth map. They are equivalent:
+Let $\SSS, \wSSS$ be regular surfaces, $f \colon \SSS \to \wSSS$ smooth. Equivalently:
 
 1. $f$ is a local isometry.
-2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\wSSS$. Then $\g$ and $\tg$ have the same length.
+2. Let $\g$ be a curve on $\SSS$ and define the curve $\tg = f \circ \g$ on $\wSSS$. Then $\g$ and $\tg$ have the same length.
 
 :::
 
@@ -5885,25 +5706,22 @@ As $\vv$ was arbitrary, we conclude (@eq-proof-loc-iso).
 By definition, local isometries preserve the first fundamental form. The next Theorem gives a practical method to check if a map is a local isometry.
 
 
-::: {.Theorem  #theorem-local-isometry}
+::: Theorem
+### Local isometries preserve FFF {#theorem-local-isometry}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+Let $\SSS, \wSSS$ be regular surfaces, $f \colon \SSS \to \wSSS$ smooth. Equivalently:
 
 1. $f$ is a local isometry.
-2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by  
-$$
-\widetilde{\sss} \colon U \to \widetilde{\SSS} \,, \qquad 
-\widetilde{\sss} = f \circ \sss \,.
-$$
-Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form, that is, 
+2. Let $\sss \colon U \to \SSS$ be regular chart of $\SSS$, and define a chart of $\wSSS$ as $\widetilde{\sss} \colon U \to \widetilde{\SSS}$, with $\widetilde{\sss} = f \circ \sss$. Then $\sss$ and $\widetilde{\sss}$ have the same FFF
 $$
 E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
 $$
 
+:::
+
 
 **Note:** $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on the same set $U$. Therefore, equality is intended pointwise.
 
-:::
 
 
 ::: Proof
@@ -6079,20 +5897,12 @@ f \colon \SSS \to \wSSS \,.
 $$
 As an alternative, we can shift the problem of finding $f$, to the problem of finding suitable charts $\sss$ of $\SSS$, and $\wsss$ of $\wSSS$, such that $\sss$ and $\wsss$ have the same first fundamntal form. This is detailed in the next Theorem.
 
+::: Theorem 
+### Sufficient condition for local isometry {#theorem-local-isometry-2}
 
-
-::: {.Theorem  #theorem-local-isometry-2}
-
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
-$$
-\sss \colon U \to \SSS \,, \qquad 
-\wsss \colon U \to \wSSS \,.
-$$
-Assume that $\sss$ and $\wsss$ have the same first fundamental form: 
-$$
-E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,.
-$$
-We have:
+Let $\SSS, \widetilde{\SSS}$ be regular surfaces, with charts 
+$\sss \colon U \to \SSS$ and $\wsss \colon U \to \wSSS$.
+Assume that $\sss$ and $\wsss$ have the same FFF. We have
 
 1. The surfaces $\sss(U)$ and $\wSSS$ are locally isometric.
 2. A local isometry is given by
@@ -6101,10 +5911,12 @@ f \colon \sss(U) \to \wSSS \,, \qquad
 f = \wsss \circ \sss^{-1} \,.
 $$
 
+:::
+
+
 
 **Note:** $\sss$ and $\wsss$ are defined on the same open set $U$. Therefore, $E,F,G$ and $\widetilde{E},\widetilde{F},\widetilde{G}$ are defined on $U$, and the equality is intended pointwise.
 
-:::
 
 
 ::: Proof
@@ -6121,39 +5933,24 @@ Therefore, by assumption, $\sss$ and $\wsss$ have the same first fundamental for
 
 
 
+
 ::: Example
 ### Plane and Cylinder are locally isometric {#example-plane-cylinder}
 
-**Question.** Consider the plane $\SSS = \{ x = 0 \}$ and the unit cylinder $\SSS = \{ x^2 + y^2 = 1 \}$. Define the function
+**Question.** Consider the plane $\SSS = \{ x = 0 \}$ and the unit cylinder $\wSSS = \{ x^2 + y^2 = 1 \}$. Define the function
 $$
 f \colon \SSS \to \wSSS \,, \qquad f(0,y,z) = (\cos(y),\sin(y),z) \,.
 $$
+Prove that $f$ is a local isometry (you may assume $f$ smooth).
 
-1. Prove that $f$ is smooth.
-2. Prove that $f$ is a local isometry.
 
-**Note:** This shows that the Plane and the Cylinder are locally isometric.
-
-**Solution.**
-
-1. Note that $f \in \wSSS$ because
-$$
-\cos(y)^2 + \sin(y)^2 = 1\,,
-$$
-therefore $f$ is well-defined. Moreover, $f$ is the restriction to $\SSS$ of the function
-$$
-g \colon \R^3 \to \R^3 \,, \qquad g(x,y,z) = (\cos(y),\sin(y),z) \,.
-$$
-Since $g$ is smooth, and $g(\SSS) = \wSSS$, 
-by Theorem \ref{theorem-diff-check-2} we infer that $g |_{\SSS} = f$ is smooth between $\SSS$ and $\wSSS$.
-
-2. The plane $\SSS$ is charted by
+**Solution.** The plane $\SSS$ is charted by
 $$
 \sss(u,v) = (0,u,v) \,, \quad u,v \in \R \,.
 $$
 We already know that $\sss$ is regular, with FFF coefficients
 $$
-E = 1 \,, \quad F = 0 \,, \quad G = 1 \,.
+E = 1 \,, \,\, F = 0 \,, \,\, G = 1 \quad \implies \quad \FF_1 = du^2 + dv^2 \,.
 $$
 Define $\wsss = f \circ \sss$. Therefore,
 $$
@@ -6165,14 +5962,12 @@ The FFF of $\wsss$ is
 & \, & \wF  = \wsssu \cdot \wsssv = 0 \\
 & \wsssv  = (0,0,1) 
 & \, & \wG  = \wsssv \cdot \wsssv = 1\\ 
-& \wE  = \wsssu \cdot \wsssu = 1   
+& \wE  = \wsssu \cdot \wsssu = 1  
+& \, & \wFF_1 =  du^2 + dv^2
 \end{align*}
-Thus, $\sss$ and $\wsss$ have the same FFF. Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2-bis} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
+Thus, $\sss$ and $\wsss$ have the same FFF. Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-local-isometry-2} we conclude that $f$ is a local isometry of $\SSS$ into $\wSSS$.
 
 :::
-
-
-
 
 
 
@@ -6205,6 +6000,7 @@ We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are
 
 
 
+
 ::: Example
 ### Plane and Cone are locally isometric
 
@@ -6212,82 +6008,56 @@ We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are
 $$
 \SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = z^2 \,, \,\, z > 0 \} \,,
 $$
-and the plane
-$$
-\wSSS = \{ (x,y,z)\in \R^3 \, \colon \, z = 0 \} \,.
-$$
+and the plane $\wSSS = \{ z = 0 \}$.
 
-1. Let $\sss \colon U \to \SSS$ be the chart of the Cone
-$$
-\sss(\rho,\theta) = (\rho \cos(\theta), \rho \sin(\theta), \rho ) \,,
-$$
-where we define
-$$
-U:= \left\{ (\rho,\theta) \in \R^2 \, \colon \, \rho > 0 , \, \theta \in (0,2\pi) \right\} \,. 
-$$ 
-Compute the first fundamental form ${\FF}_1$ of $\sss$.
-
-2. Let $\wsss \colon U \to \wSSS$ be the chart of the Plane
-$$
-\wsss(\rho,\theta) = (a\rho \cos(b\theta), a\rho \sin(b\theta), 0 )
-$$
-where $a>0$ and $b \in (0,1]$ are constants. Compute the first fundamental form ${\wFF}_1$ of $\wsss$.
+1. Compute the FFF of the chart of the Cone
+\begin{align*}
+& \sss \colon U \to \SSS\,, \qquad  \sss(\rho,\theta) = (\rho \cos(\theta), \rho \sin(\theta), \rho ) \,, \\
+& U = \left\{ (\rho,\theta) \in \R^2 \, \colon \, \rho > 0 , \, \theta \in (0,2\pi) \right\} \,. 
+\end{align*}
 
 
-3. Find coefficients $a,b$ such that 
+2. Compute the FFF of the chart of the plane
 $$
-{\FF}_1 = {\wFF}_1 \,.
+\wsss \colon U \to \wSSS \,, \qquad 
+\wsss(\rho,\theta) = (a\rho \cos(b\theta), a\rho \sin(b\theta), 0 ) \,,
 $$
+where $a>0$ and $b \in (0,1]$ are constants.
 
-4. Conclude that $\SSS$ and $\wSSS$ are locally isometric.
+
+3. Prove that $f = \wsss \circ \sss^{-1}$ is a local isometry between $\SSS$ and $\wSSS$, for suitable coefficients $a,b$.
 
 
 **Solution.**
 
-1. We have already computed in Example \ref{example-fff-cone}, that the first fundamental form of $\sss$ is
+1. As seen in Example \ref{example-fff-cone}, the coefficients of the FFF of $\sss$ are
 $$
-{\FF}_1 = 2 d\rho^2 + \rho^2 d\theta^2 \,.
+E = 2 \,, \qquad F = 0 \,, \qquad G = \rho^2 \,.
 $$
 
 
-2. First of all, note that 
+2. Note that $\wsss$ is well defined for all $(\rho,\theta) \in U$, as
 $$
 \theta \in (0,2\pi), \quad b \in (0,1] \quad \implies \quad 
-b \theta \in (0,2\pi) \,,
+b \theta \in (0,2\pi) \,.
 $$
-showing that $\wsss$ is well defined for all $(\rho,\theta) \in U$. We compute
+The coefficients of the FFF of $\wsss$ are
 \begin{align*}
-{\wsss}_{\rho} & = ( a \cos(b\theta), a \sin(b\theta), 0 ) \\
-{\wsss}_{\theta} & = ( - ab \rho \sin(b \theta), ab\rho \cos(b\theta), 0 ) \\
-\wE & = {\wsss}_{\rho} \cdot {\wsss}_{\rho} = a^2 \\  
-\wF & = {\wsss}_{\rho} \cdot {\wsss}_{\theta} = 0 \\
-\wG & = {\wsss}_{\theta} \cdot {\wsss}_{\theta} = a^2b^2 \rho^2
+& {\wsss}_{\rho}  = a \ ( \cos(b\theta), \sin(b\theta), 0 ) 
+&& \wF  = {\wsss}_{\rho} \cdot {\wsss}_{\theta} = 0\\
+& {\wsss}_{\theta} = ab \rho \ ( -  \sin(b \theta),  \cos(b\theta), 0 ) 
+&& \wG  = {\wsss}_{\theta} \cdot {\wsss}_{\theta} = a^2b^2 \rho^2 \\
+& \wE  = {\wsss}_{\rho} \cdot {\wsss}_{\rho} = a^2 
 \end{align*}
-from which we conclude that the first fundamental form of $\wsss$ is
-$$
-{\wFF}_1 = a^2 d\rho^2 + a^2b^2 \rho^2 d\rho^2 \,.
-$$
 
-
-3. Equating ${\FF}_1$ and ${\wFF}_1$ we obtain
+3. Imposing that $\wE = E$, $\wF = F$ and $\wG = G$, we obtain
 $$
 a^2 = 2 , \,\, a^2b^2 = 1 \quad \implies \quad a = \sqrt{2} \,, \,\, b = \frac{1}{\sqrt{2}} \,.
 $$
-Note that $a>0$ and $0<b<1$, showing that $a,b$ are admissible.
-
-
-4. For $a = \sqrt{2}$ and $b = 1/\sqrt{2}$ we have that 
-$$
-{\FF}_1 = {\wFF}_1 \,.
-$$
-Since $\sss$ and $\wsss$ are regular charts for $\SSS$ and $\wSSS$, respectively, from Theorem \ref{theorem-local-isometry} we conclude that $\SSS$ and $\wSSS$ are locally isometric. Furthermore, the local isometry is given by
-$$
-f \colon \SSS \to \wSSS \,, \qquad f = \wsss \circ \sss^{-1} \,.
-$$
+Note that $a>0$ and $0<b<1$, showing that $a,b$ are admissible. Hence, for $a = \sqrt{2}$ and $b = 1/\sqrt{2}$, the charts $\sss$ and $\wsss$ have the same FFF. By Theorem \ref{theorem-local-isometry}, we conclude that $\SSS$ and $\wSSS$ are locally isometric, with local isometry given by $f = \wsss \circ \sss^{-1}$.
 
 
 :::
-
 
 
 
@@ -6354,7 +6124,7 @@ $$
 \vv = (\lambda , \mu ) \,, \quad 
 \ww = ({\tilde{\lambda}}  , {\tilde{\mu}} ) \,.
 $$
-By Proposition \ref{proposition-fff-quadratic} we get
+By Theorem \ref{theorem-fff-quadratic} we get
 \begin{align*}
 \vv \cdot \ww & = I_{\pp}(\vv,\ww) \\
                & = (\lambda , \mu) 
@@ -6386,20 +6156,20 @@ Since tangent vectors are derivatives of curves with values in $\SSS$, it also m
 
 
 
+
 ::: Definition
 ### Angle between curves
-Let $\SSS$ be a regular surface. Let $\g$ and $\tg$ be curves on $\SSS$ such that
+
+Let $\SSS$ be a regular surface, and $\g$, $\tg$ curves on $\SSS$ intersecting at
 $$
 \g(t_0) = \pp = \tg( t_0 ) \,.
 $$
 The angle $\theta$ between $\g$ and $\tg$ is
 $$
-\cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,,
+\cos(\theta) = \frac{ \dg(t_0) \cdot \dtg(t_0) }{ \| \dg(t_0) \| \,  \| \dtg(t_0) \| } \,.
 $$
-where $\dg$ and $\dtg$ are evaluated at $t_0$.
 
 :::
-
 
 
 ![Sketch of angle $\theta$ between two curves $\g$ and $\tg$ on $\SSS$.](/images/fff_angle_curves.png){width=70%}
@@ -6407,12 +6177,10 @@ where $\dg$ and $\dtg$ are evaluated at $t_0$.
 
 
 ::: Theorem
+### Angle between curves and FFF
 
-
-Let $\SSS$ be a regular surface, $\sss$ a regular chart at $\pp$, and $\g,\tg$ smooth curves on $\SSS$ such that 
-$$
-\g(t_0) = \pp = \tg( t_0 )  \,.
-$$
+Let $\SSS$ be a regular surface, $\sss$ regular chart at $\pp$, and $\g,\tg$ curves on $\SSS$ intersecting at 
+$\g(t_0) = \pp = \tg( t_0 )$. 
 There exist smooth functions $u,v,\tilde{u},\tilde{v}$ such that
 $$
 \g(t) = \sss (u(t),v(t)) \,, \quad 
@@ -6422,11 +6190,10 @@ The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-where $E,F,G,\wE,\wF,\wG$ are evaluated at $(u(t_0),v(t_0))$ and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ are evaluated at $t_0$.
-
-
+with $E,F,G,\wE,\wF,\wG$ evaluated at $(u(t_0),v(t_0))$, and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ at $t_0$.
 
 :::
+
 
 
 ::: Proof
@@ -6462,14 +6229,15 @@ Substituting in (@eq-angle-curves-proof), we conclude.
 
 
 ::: Example
+### Calculation of angle between curves
 
-**Question.** Let $S$ be a surface with surface chart 
+**Question.** Let $S$ be a surface charted by
 $$
 \sss(u, v) = \left(u, v, e^{u v}\right) \,.
 $$
 
-1. Calculate its first fundamental form.
-2. Calculate $\cos (\theta)$ where $\theta$ is the angle between the two curves
+1. Calculate the FFF of $\sss$.
+2. Calculate $\cos (\theta)$, where $\theta$ is the angle between the two curves
 \begin{align*}
 \g(t) & =\sss(u(t), v(t)), \quad u(t)=t,\, v(t)=t \,, \\
 \tg(t) & = \sss( \tilde{u}(t),\tilde{v}(t) ) \,, \quad \tilde{u}(t) = 1 , \, \tilde{v}(t) = t \,.
@@ -6478,41 +6246,33 @@ $$
 
 **Solution.**
 
-1. We calculate
-$$
-\sss_u = \left(1,0, e^{u v} v\right), \quad \sss_v=\left(0,1, e^{u v} u\right) \,.
-$$
-Therefore, the coefficients of the first fundamental form are
+1. The coefficients of the FFF are
 \begin{align*}
-E(u,v) & =1+e^{2 u v} v^2 \\
-F(u,v) & = e^{2 u v} u v \\
-G(u,v) & = 1+e^{2 u v} u^2
+& \sss_u = \left(1,0, e^{u v} v\right) 
+&\,& F(u,v)  = e^{2 u v} u v \\
+& \sss_v=\left(0,1, e^{u v} u\right)
+& \, & G(u,v)  = 1+e^{2 u v} u^2 \\
+& E(u,v)  =1+e^{2 u v} v^2 
 \end{align*}
 
 
-2. The curves $\g$ and $\tg$ intersect at
-$$
-\g(1)=\tg(1)=\sss(1,1) \,.
-$$
-We calculate
-$$
-\dot{u}(1)=1, \quad \dot{v}(1)=1, \quad \dot{\tilde{u}}(1)=0, \quad \dot{\tilde{v}}(1) = 1 \,,
-$$
-and
+2. $\g$ and $\tg$ intersect at $\g(1)=\tg(1)=\sss(1,1)$. We compute
 \begin{align*}
-E(1,1) & = 1+e^2 \\
-F(1,1) & =e^2 \\
-G(1,1) & =1+e^2
+& \dot{u}(1)  = 1   
+&\,& E(1,1)  = 1+e^2 \\
+& \dot{v}(1)=1 
+&\,& F(1,1)  =e^2 \\
+& \dot{\tilde{u}}(1)=0 
+&\,& G(1,1)  =1+e^2 \\
+& \dot{\tilde{v}}(1) = 1
 \end{align*}
-Therefore
+Therefore, the angle $\theta$ satisfies
 $$
-\begin{aligned}
-\cos \theta & =\frac{E \dot{u} \dot{\tilde{u}} + F \left(\dot{u} \dot{\tilde{v}}+ \dot{\tilde{u}}  \dot{v}\right)+G \dot{v} \dot{\tilde{v}}}{\sqrt{E \dot{u}^2 + 2 F \dot{u} \dot{v} + G \dot{v}^2} \sqrt{E \dot{\tilde{u}}^2 + 2 F\dot{\tilde{u}} \dot{\tilde{v}}+ G \dot{\tilde{v}}^2}} \\
-& =\frac{1+2 e^2}{\sqrt{2+4 e^2} \sqrt{1+e^2}}=\sqrt{\frac{1+2 e^2}{2+2 e^2}} \,.
-\end{aligned}
+\cos (\theta) =\frac{1+2 e^2}{\sqrt{2+4 e^2} \sqrt{1+e^2}}=\sqrt{\frac{1+2 e^2}{2+2 e^2}} \,.
 $$
 
 :::
+
 
 
 
@@ -6524,25 +6284,22 @@ $$
 Local isometries are maps which preserve the **scalar product** between tangent vectors. We want to consider maps which preserve the **angle** between tangent
 vectors. These will be called **conformal maps**.
 
-
 ::: Definition
 ### Conformal map
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces, and 
+Let $\SSS,\wSSS$ be regular surfaces, $f \colon \SSS \to \wSSS$ local diffeomorphism. We say that $f$ is a **conformal map**, if for all $\pp \in \SSS$
 $$
-f \colon \SSS \to \wSSS
+\theta = \widetilde{\theta} \,, \quad 
+\forall \, \vv , \ww \in T_{\pp} \SSS \,,
 $$
-a local diffeomorphism. We say that $f$ is a **conformal map** if for all $\pp \in \SSS$ and $\vv , \ww \in T_{\pp} \SSS$ is holds
-$$
-\theta = \widetilde{\theta} \,,
-$$
-where:
 
 - $\theta$ is the angle between $\vv$ and $\ww$,
 - $\widetilde{\theta}$ is the angle between $d_{\pp} f(\vv)$ and $d_{\pp} f(\ww)$.
 
 In this case, we say that $\SSS$ and $\wSSS$ are **conformal**.
 :::
+
+
 
 
 ![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=70%}
@@ -6583,7 +6340,7 @@ $$
 
 ::: Proposition
 
-Let $f$ be a local isometry. Then $f$ is a conformal map.
+Local isometries are conformal maps.
 
 :::
 
@@ -6750,25 +6507,23 @@ showing that $f$ is a conformal map.
 The following result gives a practical necessary and sufficient condition to check if a map is conformal.
 
 
-::: {.Theorem #theorem-conformal-fff}
+::: Theorem
+### Conformal maps and FFF {#theorem-conformal-fff-bis}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+Let $\SSS$, $\widetilde{\SSS}$ be regular surfaces, 
+$f \colon \SSS \to \widetilde{\SSS}$ a local diffeomorphism. Equivalently:
 
 1. $f$ is a conformal map.
-2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by 
-$$
-\widetilde{\sss}  \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} = f \circ \sss \,.
-$$ 
-Then, there exists $\lambda \colon U \to \R$ such that 
+
+2. Let $\sss \colon U \to \SSS$ be regular chart of $\SSS$, and define a chart of $\wSSS$ as $\widetilde{\sss} \colon U \to \widetilde{\SSS}$, with $\widetilde{\sss} = f \circ \sss$. Then the FFF of $\sss$ and $\widetilde{\sss}$ satisfy
 $$
 \widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
 $$
-where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\sss$ and $\widetilde{\sss}$, respectively.
-
+for some smooth map $\lambda \colon U \to \R$.
 :::
 
 
-Theorem \ref{theorem-conformal-fff} can be easily proven by using Theorem \ref{theorem-conformal}, and by adapting the
+Theorem \ref{theorem-conformal-fff-bis} can be easily proven by using Theorem \ref{theorem-conformal}, and by adapting the
 argument in the proof of Theorem \ref{theorem-local-isometry}.
 We omit the proof.
 
@@ -6779,7 +6534,7 @@ To prove that a diffeomorphism
 $$
 f \colon \SSS \to \widetilde{\SSS}
 $$
-is a conformal map, it is sufficient to verify Condition 2 in Theorem \ref{theorem-conformal-fff} on one atlas of $\SSS$. Then, automatically, all other atlases will verify the condition, ensuring that $f$ is a conformal map. 
+is a conformal map, it is sufficient to verify Condition 2 in Theorem \ref{theorem-conformal-fff-bis} on one atlas of $\SSS$. Then, automatically, all other atlases will verify the condition, ensuring that $f$ is a conformal map. 
 
 *Proof.* This can be seen by adapting the argument found in Remark \ref{remark-local-isometry-chart}.
 
@@ -6789,31 +6544,22 @@ is a conformal map, it is sufficient to verify Condition 2 in Theorem \ref{theor
 The following result gives a sufficient condition to prove that two regular surfaces are conformal.
 
 
+::: Theorem  
+### Sufficient condition for conformality {#theorem-conformal-fff-2}
 
-::: {.Theorem  #theorem-conformal-fff-2}
-
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
-$$
-\sss \colon U \to \SSS \,, \qquad 
-\wsss \colon U \to \wSSS \,.
-$$
-Assume there exists $\lambda \colon U \to \R$ such that 
-$$
-\widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
-$$
-where $\mathscr{F}_1$ and $\widetilde{\mathscr{F}}_1$ are the first fundamental forms of $\sss$ and $\widetilde{\sss}$, respectively. We have:
+Let $\SSS, \widetilde{\SSS}$ be regular surfaces, with charts 
+$\sss \colon U \to \SSS$ and $\wsss \colon U \to \wSSS$.
+Assume that $\widetilde{\mathscr{F}}_1 = \lambda \FF_1$ for some $\lambda \colon U \to \R$. We have
 
 1. The surfaces $\sss(U)$ and $\wSSS$ are conformal.
-2. A conformal map is given by
+2. A conformal map is given by 
 $$
-f \colon \sss(U) \to \wSSS \,, \qquad 
-f = \wsss \circ \sss^{-1} \,.
+f \colon \sss(U) \to \wSSS\,, \qquad f = \wsss \circ \sss^{-1} \,.
 $$
 
 :::
 
-
-The proof follows by adapting the argument in the proof of Theorem \ref{theorem-local-isometry-2}, and by applying Theorem \ref{theorem-conformal-fff}. This is left as an exercise.
+The proof follows by adapting the argument in the proof of Theorem \ref{theorem-local-isometry-2}, and by applying Theorem \ref{theorem-conformal-fff-bis}. This is left as an exercise.
 
 
 
@@ -6850,7 +6596,7 @@ Notice that $\pi$ is slightly different from the map described in @fig-stereogra
 $$
 \sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
 $$
-We have that $\sss$ is a regular chart for $\SSS$, forming an altas of one chart. It is straightforward to compute that the FFF of $\sss$ is
+It is straightforward to compute that the FFF of $\sss$ is
 $$
 \mathscr{F}_1 = \lambda(u,v) (du^2 + dv^2) \,, \quad \lambda(u,v) = \frac{4}{(u^2+v^2+1)^2} \,.
 $$
@@ -6869,13 +6615,13 @@ We can now conclude:
 $$
 {\wFF}_1 = \frac{1}{\lambda} {\FF}_1  \,.
 $$
-Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-conformal-fff} we conclude that $f$ is a conformal map.
+Since $\mathcal{A} = \{\sss\}$ is an atlas for $\SSS$, by Theorem \ref{theorem-conformal-fff-bis} we conclude that $f$ is a conformal map.
 
 2. Since ${\lambda}$ is not always equal to $1$, we have that 
 $$
 {\wFF}_1 \neq {\FF}_1 \,.
 $$
-Therefore, by Theorem \ref{theorem-local-isometry-bis}, we conclude that $f$ cannot be a 
+Therefore, by Theorem \ref{theorem-local-isometry}, we conclude that $f$ cannot be a 
 local isometry.
 
 ::: {.content-hidden}
@@ -6909,18 +6655,15 @@ It is also useful to define conformal parametrizations.
 
 
 
+
 ::: Definition
 ### Conformal parametrization {#definition-conformal-parametrization}
 
-Let $\SSS$ be a regular surface and 
+Let $\sss \colon U  \to \R^3$ be regular. We say that $\sss$ is a **conformal parametrization** if the FFF of $\sss$ satisfies
 $$
-\sss \colon U  \to  \SSS
-$$ 
-be a regular chart of $\SSS$. We say that $\sss$ is a **conformal parametrization** if the first fundamental form of $\sss$ satisfies
+\mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2) \,,
 $$
-\mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
-$$
-for some function $\lambda \colon U \to \R$. 
+for some smooth function $\lambda \colon U \to \R$. 
 
 
 :::
@@ -6929,13 +6672,11 @@ for some function $\lambda \colon U \to \R$.
 The above definition is motivated by the following result, stating that $\SSS$ admits a conformal parametrization if and only if $\SSS$ is conformal to a plane.
 
 
+
+
 ::: Theorem
 
-Let $\SSS$ be a regular surface and
-$$
-\sss \colon U  \to  \SSS
-$$ 
-be a regular chart of $\SSS$. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
+Let $\sss \colon U  \to \R^3$ be regular. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
 
 1. $\sss$ is a conformal parametrization.
 
@@ -6946,8 +6687,10 @@ $$
 is conformal.
 
 
-
 :::
+
+
+
 
 
 
@@ -6969,7 +6712,7 @@ By definition of $\wsss$,
 $$
 f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
 $$
-Theorem \ref{theorem-conformal-fff} says that $f$ is a conformal map
+Theorem \ref{theorem-conformal-fff-bis} says that $f$ is a conformal map
 if and only if there exists $\lambda \colon U \to \R$ such that 
 $$
 {\FF}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
@@ -6982,14 +6725,17 @@ As an immediate consequence, we have the following Theorem.
 
 
 ::: Theorem
-A conformal parametrization $\sss$ preserves angles between vectors. Specifically, let $\g_{1}(t), \g_{2}(t)$ be curves in $\mathbb{R}^{2}$ such that ${\dg}_{1}\left(t_{0}\right), {\dg}_{2}\left(t_{0}\right)$ make angle $\theta$. If 
-$$
-\g_{3}(t)=\sss\left(\g_{1}(t)\right),  \qquad \g_{4}(t)=\sss \left(\g_{2}(t)\right) \,,
-$$
-then ${\dg}_{3}\left(t_{0}\right), {\dg}_{4}\left(t_{0}\right)$ also make angle $\theta$.
+### Conformal parametrizations preserve angles
+
+Let $\sss$ be a conformal parametrization, and $\g_{1}(t), \g_{2}(t)$ be curves in $\mathbb{R}^{2}$ such that ${\dg}_{1}\left(t_{0}\right), {\dg}_{2}\left(t_{0}\right)$ make angle $\theta$. Let 
+$\tg_{1} = \sss \circ \g_{1}$ and $\tg_{2}=\sss \circ \g_{2}$. Then ${\dtg}_{1}\left(t_{0}\right), {\dtg}_{2}\left(t_{0}\right)$ also make angle $\theta$.
 
 
 :::
+
+
+
+
 
 
 It turns out that all regular surfaces admit an atlas formed by conformal charts.
@@ -7012,20 +6758,24 @@ The proof of this result is quite technical, see for example the paper [@chern],
 We have already seen examples of conformal parametrization for the Cylinder:
 
 
+
 ::: Example
 ### Unit cylinder
 
-Consider the unit cylinder $\SSS$ charted by
+**Question.** Prove that the following is a conformal parametrization of the unit cylinder
 $$
 \sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi), \, v \in \R \,.
 $$
-We have proven that the first fundamental form of $\sss$ is
+
+**Solution.** We have already computed that the FFF of $\sss$ is
 $$
 \mathscr{F}_1 = du^2 + dv^2 \,.
 $$
-Therefore $\sss$ is a conformal parametrization of $\SSS$.
+Therefore $\sss$ is a conformal parametrization, with $\lambda = 1$.
 
 :::
+
+
 
 
 
@@ -7069,7 +6819,7 @@ Consider the parametrization of the sphere $\sphere^2$ given by
 $$
 \sss(u,v) =\left( \frac{2u}{u^2+v^2+1},  \frac{2v}{u^2+v^2+1} , 1-\frac{2}{u^2+v^2+1}\right) \,.
 $$
-We have seen in Example \ref{example-conformal} that $\sss$ can be defined via the stereographic projection. We have also mentioned that the first fundamental form of $\sss$ is
+We have seen in Example \ref{example-conformal} that $\sss$ is the inverse of the stereographic projection map. We have also mentioned that the FFF of $\sss$ is
 $$
 \mathscr{F}_1 = \frac{4}{(u^2+v^2+1)^2} (du^2 + dv^2) \,.
 $$
@@ -7101,7 +6851,7 @@ is a conformal map. This is known as the **Stereographic Projection**, see @fig-
 ::: Example 
 ### Mercator projection {#example-conformal-2}
 
-**Question.** Prove that the following parametrization of $\sphere^2$ is conformal
+**Question.** Prove that the parametrization of $\sphere^2$ is conformal
 $$
 \sss(u,v) := \left(  \cos(u) \sech(v), \sin(u) \sech(v) , \tanh (v) \right) \,.
 $$
@@ -7114,25 +6864,20 @@ $$
 is a conformal map. This is known as the **Mercator Projection**, see @fig-mercator and @fig-mercator-2.
 
 
-**Solution.** Using the identitities
+**Solution.** Recall the identities ${\sech}^2 (v) + {\tanh}^2 (v) = 1$ and
 \begin{align*}
-& \sech (v)' = - \sech (v) \tanh (v) \,, \\
-& \tanh (v)' = {\sech}^2 (v) \,,\\
-& {\sech}^2 (v) + {\tanh}^2 (v) = 1
+& \sech (v)' = - \sech (v) \tanh (v) \,, \qquad 
+ \tanh (v)' = {\sech}^2 (v) \,.
 \end{align*}
-we obtain
+The chart $\sss$ is a conformal parametrization because the FFF is
 \begin{align*}
 & \widetilde{\sss}_u  = \sech(v) \, ( -\sin(u)  , \cos(u), 0 )  \\
 & \widetilde{\sss}_v  = \sech(v) \, ( -\cos(v)  \tanh(v) , -\sin(u) \tanh(v) , \sech(v) ) \\
 & \widetilde{E} = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(v) (\cos^2(u) + \sin^2(u)) = {\sech}^2(v)  \\ 
 & \widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v =  0 \\ 
-& \widetilde{G} = \widetilde{\sss}_v \cdot \widetilde{\sss}_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(v) \\ 
+& \widetilde{G} = \widetilde{\sss}_v \cdot \widetilde{\sss}_v = {\sech}^2(v) ({\tanh}^2(v) + {\sech}^2(v)) = {\sech}^2(v)  \\
+& {\FF}_1 = {\sech}^2(v) \, \left(  du^2 + dv^2 \right) \,.
 \end{align*}
-Hence the first fundamental form of $\sss$ is
-$$
-{\FF}_1 = {\sech}^2(v) \, \left(  du^2 + dv^2 \right) \,,
-$$
-showing that $\sss$ is a conformal parametrization.
 
 
 :::
@@ -7178,7 +6923,7 @@ Making this argument precise requires a lot of effort. Instead, we just take (@e
 
 ::: Definition
 
-Let $\sss \colon U \to \R^3$ be a regular chart and $R \subseteq U$. The area $A_{\sss}$ of the region $\sss(R)$ is defined by
+Let $\sss \colon U \to \R^3$ be a regular chart and $R \subseteq U$. The area $A_{\sss}$ of the region $\sss(R)$ is
 $$
 A_{\sss} = \int_{R} \norm{ \sssu \times \sssv } \, dudv \,.
 $$
@@ -7219,43 +6964,36 @@ It is easy to check that the definition of $A_{\sss}$ does not depend on the cho
 
 ::: Example
 
-**Question.** Let $\SSS$ be the paraboloid
-$$
-z = x^2 + y^2 \,.
-$$
-Determine the area of 
+**Question.** Let $\SSS$ be the paraboloid $z = x^2 + y^2$.
+Compute the area of 
 $$
 \SSS \cap \{ z \leq 1\} \,.
 $$
 
 
-**Solution.** The paraboloid is charted by
+**Solution.** The paraboloid $\SSS$ is charted by
 $$
 \sss(u,v) = (u,v, u^2 + v^2 ) \,,
 $$
 for $u,v \in \R$. We compute the first fundamental form of $\sss$:
 \begin{align*}
-\sssu & =  (1,0,2u) \\
-\sssv & =  (0,1,2v) \\
-E & = \sssu \cdot \sssu = 1 + 4u^2 \\
-F & = \sssu \cdot \sssv = 4uv \\
-G & = \sssu \cdot \sssu = 1 + 4v^2 \\
+& \sssu  =  (1,0,2u) 
+&\,& F  = \sssu \cdot \sssv = 4uv \\
+& \sssv =  (0,1,2v) 
+&\,& G  = \sssu \cdot \sssu = 1 + 4v^2 \\
+& E  = \sssu \cdot \sssu = 1 + 4u^2 
+&\,& EG - F^2 =  1 + 4(u^2 + v^2)
 \end{align*}
-In particular, we have
-\begin{align*}
-EG - F^2 & = (1 + 4u^2)(1 + 4v^2) - 16u^2v^2 \\
-         & = 1 + 4(u^2 + v^2) \,.
-\end{align*}
-The region of the paraboloid with $z \leq 1$ corresponds to $\sss(R)$, with
+The region $\SSS \cap \{z \leq 1\}$ corresponds to $\sss(R)$, with
 $$
 R = \{ (u,v) \in \R^2 \, \colon \, u^2 + v^2 \leq 1 \} \,.
 $$
 The area of $\sss(R)$ is then
 \begin{align*}
-A_{\sss} (R) & = \int_{R} \sqrt{EG-F^2} \, dudv  \\
-             & = \int_{R} \sqrt{1 + 4(u^2 + v^2)} \, dudv \\
-             & = \int_{0}^1\int_{0}^{2\pi} \sqrt{1 + 4r^2} \, \rho \, d\rho \, d\theta \\
-             & = \frac{\pi}{6} (5^{3/2} - 1) \,, 
+A_{\sss} (R) & = \int_{R} \sqrt{EG-F^2} \, dudv  
+               = \int_{R} \sqrt{1 + 4(u^2 + v^2)} \, dudv \\
+             & = \int_{0}^1\int_{0}^{2\pi} \sqrt{1 + 4r^2} \, \rho \, d\rho \, d\theta 
+              = \frac{\pi}{6} (5^{3/2} - 1) \,, 
 \end{align*}
 where the integral was computed using polar coordinates 
 $$
@@ -7272,11 +7010,9 @@ $$
 
 ::: Definition
 
-Let $\SSS$ and $\wSSS$ be regular surfaces and 
-$$
-f \colon \SSS \to \wSSS
-$$ 
-a local diffeomorphism. We say that $f$ is an **equiareal map** if it takes any region in $\SSS$ to a region of the same area in $\wSSS$. In this case we say that $\SSS$ and $\wSSS$ are **equiareal**.
+
+Let $\SSS$ and $\wSSS$ be regular surfaces and $f \colon \SSS \to \wSSS$
+a local diffeomorphism. We say that $f$ is an **equiareal map** if it takes any region in $\SSS$ to a region of the same area in $\wSSS$. In this case, we say that $\SSS$ and $\wSSS$ are **equiareal**.
 
 :::
 
@@ -7286,18 +7022,15 @@ a local diffeomorphism. We say that $f$ is an **equiareal map** if it takes any 
 
 ::: {.Theorem #theorem-equiareal-fff}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+
+Let $\SSS$, $\widetilde{\SSS}$ be regular surfaces, 
+$f \colon \SSS \to \widetilde{\SSS}$ a local diffeomorphism. Equivalently:
 
 1. $f$ is an equiareal map.
-2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by 
+2. Let $\sss \colon U \to \SSS$ be regular chart of $\SSS$, and define a chart of $\wSSS$ as $\widetilde{\sss} \colon U \to \widetilde{\SSS}$, with $\widetilde{\sss} = f \circ \sss$. Then the FFF of $\sss$ and $\widetilde{\sss}$ satisfy
 $$
-\widetilde{\sss}  \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} = f \circ \sss \,.
-$$ 
-Then, 
+EG - F^2 = \wE \wG - {\wF}^2 \,.
 $$
-EG - F^2 = \wE \wG - {\wF}^2 \,,
-$$
-where $E,F,G$ and $\wE,\wF,\wG$ are the coefficients of the first fundamental forms of $\sss$ and $\wsss$, respectively.
 
 :::
 
@@ -7308,18 +7041,14 @@ As usual, we give a sufficient condition to prove that two regular surfaces are 
 
 
 
-::: {.Theorem  #theorem-conformal-fff-2}
+::: {.Theorem  #theorem-equiareal-fff-2}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and consider charts
-$$
-\sss \colon U \to \SSS \,, \qquad 
-\wsss \colon U \to \wSSS \,.
-$$
-Assume that
+Let $\SSS, \widetilde{\SSS}$ be regular surfaces, with charts 
+$\sss \colon U \to \SSS$ and $\wsss \colon U \to \wSSS$. Assume that
 $$
 EG - F^2 = \wE \wG - {\wF}^2 \,,
 $$
-where $E,F,G$ and $\wE,\wF,\wG$ are the coefficients of the first fundamental forms of $\sss$ and $\wsss$, respectively. Then,
+We have
 
 1. The surfaces $\sss(U)$ and $\wSSS$ are equiareal.
 2. An equiareal map is given by
@@ -7335,18 +7064,109 @@ The proof follows by adapting the argument in the proof of Theorem \ref{theorem-
 
 
 
+
+
 ::: Example
 ### Archimedes map
 
-Consider the unit sphere
+**Question.** Consider the surface $\SSS$ obtained by removing the North and South Poles from the unit sphere
 $$
-\sphere^2 = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 + z^2 = 1 \} \,,
+\SSS = \sphere^2 \smallsetminus \{  (0,0,\pm 1) \} \,,
+\qquad \sphere^2 = \{x^2 + y^2 + z^2 = 1 \} \,.
 $$
-and the unit cylinder
+Let $\wSSS = \{ x^2 + y^2 = 1 \}$ be the unit cylinder. The *Archimedes map* is
 $$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
+f \colon \SSS \to \wSSS \,, \quad 
+f(x,y,z) =  \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,.
 $$
-The sphere is contained inside the cylinder, and the two surfaces touch along the circle $x^2 + y^2 = 1$ in the $\{z=0\}$ plane. Let $P \in \sphere^2$ except for north or south pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$, see @fig-archimedes. To write the projection map explicitly, denote the coordinates of $P$ and $P'$ by
+
+1. Prove that $f$ is a diffeomorphism.
+2. Prove that $f$ is equiareal. 
+
+
+**Solution.**  Note that $f \in \wSSS$ because
+$$
+{\left[ \frac{x}{(x^2 + y^2)^{1/2}} \right]}^2 
++{\left[ \frac{y}{(x^2 + y^2)^{1/2}} \right]}^2 = 1 \,.
+$$
+Therefore $f$ is well-defined. In order to chart $\SSS$, introduce
+\begin{align*}
+& \sss(u,v) = (\cos(u)\cos(v), \sin(u) \cos(v), \sin(v)) \\
+& U_1 = \left\{ (u,v) \in \R^2 \, \colon \, u \in (-\pi,\pi), \, v \in \left( -\pi/2, \pi/2 \right)  \right\} \\
+& U_2 = \left\{ (u,v) \in \R^2 \, \colon \, u \in (0,2\pi), \, v \in \left( -\pi/2, \pi/2 \right)  \right\} \\
+& \sss_1 = \sss |_{U_1} \,, \qquad 
+\sss_2 = \sss |_{U_2} \,.
+\end{align*}
+Note that 
+\begin{align*}
+& \sss(U_1) = \sphere^2 \smallsetminus \{ \text{Date Line}, (0,0,\pm 1)   \} \,, \\
+& \sss(U_2) = \sphere^2 \smallsetminus \{ \text{Greenwich Meridian}, (0,0,\pm 1)  \} \,,
+\end{align*}
+Therefore $\mathcal{A} = \{ \sss_1, \sss_2\}$ is an atlas for $\SSS$. Denote the components of $\sss$ by
+$$
+x = \cos(u)\cos(v) \,, \quad 
+y = \sin(u)\cos(v) \,,\quad
+z = \sin(v) \,.
+$$
+We have that
+$$
+(x^2 + y^2)^{1/2} = |\cos(v)| = \cos(v) \,,
+$$
+where we used that $\cos(v)>0$, since $v \in (-\pi/2,\pi/2)$ when $(u,v) \in U_1$ or $(u,v) \in U_2$. Thus, the chart $\wsss = f \circ \sss$ is
+\begin{align*}
+\wsss (u,v) & = f (\sss(u,v)) \\
+& = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \\
+& = 
+\left( \frac{\cos(u)\cos(v)}{\cos(v)}, 
+\frac{\sin(u)\cos(v)}{\cos(v)},
+\sin(v) \right) \\
+& = ( \cos(u), \sin(u), \sin(v) ) \,.
+\end{align*}
+It is clear that $\wsss$ charts the part of the unit cylinder between the planes $\{z=-1\}$ and $\{z=1\}$, when $u \in [0,2\pi]$ and $v \in (-\pi/2,\pi/2)$. Therefore, the charts 
+$$
+\widetilde{A} = \{ \wsss_1, \wsss_2, \} \,, \quad \wsss_1,  = \wsss|_{U_1} \,, \quad \wsss_2 = \wsss|_{U_2}, 
+$$
+form an atlas for the surface $\wSSS \cap \{-1 < z < 1\}$.
+
+
+1. For $i=1,2$ define the map
+$$
+\Psi_i \colon U_i \to U_i \,, \qquad
+\Psi_i = {\wsss}^{-1} \circ f \circ \sss \,.
+$$
+Since $\wsss = f \circ \sss$, we have that $\Psi$ is the identity
+$$
+\Psi (u,v) = (u,v) \,.
+$$
+Therefore $\Psi$ is smooth, with smooth inverse. By definition of smooth map between surfaces, this implies that both $f$ and $f^{-1}$ are smooth. Thus, $f$ is a diffeomorphism between $\SSS$ and $\wSSS \cap \{ - 1 < z < 1\}$.
+
+
+2. We compute the FFF of $\sss$
+\begin{align*}
+& \sss_u  = (-\sin(u)\cos(v), \cos(u)\cos(v),0) \\
+& \sss_v  = (-\cos(u)\sin(v), -\sin(u)\sin(v), \cos(v)) \\
+& E  = \sss_u \cdot \sss_u = \cos^2(v) \\
+& F  = \sss_u \cdot \sss_v = 0\\
+& G  = \sss_v \cdot \sss_v = 1 
+\end{align*}
+The FFF of $\wsss$ is
+\begin{align*}
+& \wsss_u = (-\sin(u), \cos(u),0) \\
+& \wsss_v = (0, 0, \cos(v)) \\
+& \wE = \wsss_u \cdot \wsss_u = 1 \\
+& \wF = \wsss_u \cdot \wsss_v = 0\\
+& \wG = \wsss_v \cdot \wsss_v = \cos^2(v) 
+\end{align*}
+Therefore, we have that $\sss$ and $\wsss = f \circ \sss$ satisfy
+$$
+EG-F^2 = \wE \wG - {\wF}^2 = \cos^2(v) \,.
+$${#eq-archimedes-equiareal}
+Note that $\sss_i$ is defined by restricting $\sss$ to $U_i$. Hence, $\sss$ and $\sss_i$ have the same FFF. Similarly, $\wsss_i := f \circ \sss_i$ is just the restriction to $U_i$ of $\wsss$. Therefore, $\wsss_i$ and $\wsss$ have the same FFF. We conclude that $\wsss_i$ and $\wsss_i = f \circ \sss_i$ also satisfy (@eq-archimedes-equiareal). In particular, since $\mathcal{A} = \{\sss_1,\sss_2\}$ is an Atlas for $\SSS$, Theorem \ref{theorem-equiareal-fff} implies that $f$ is an equiareal map.
+
+
+
+
+**Derivation of the Archimedes map.** The sphere $\SSS$ is contained inside the cylinder $\wSSS$, and the two surfaces touch along the circle $x^2 + y^2 = 1$ in the $\{z=0\}$ plane. Let $P \in \sphere^2$, except for North or South Pole. Draw the line through $P$ and the $z$-axis which is parallel to the plane $\{z=0\}$. This line intersects the cylinder in 2 points. Denote by $P'$ the intersection point which is closest to $P$, see @fig-archimedes. To write the projection map explicitly, denote the coordinates of $P$ and $P'$ by
 $$
 P = (x,y,z) \,, \quad P' = (X,Y,Z) \,.
 $$
@@ -7372,16 +7192,63 @@ Taking the $+$ sign gives the point
 $$
 P' = (X,Y,Z) = \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,.
 $$
-This defines the map $f \colon \sphere \to \SSS$
+This defines the Archimedes map $f \colon \SSS \to \wSSS$
 $$
-f(x,y,z) =  \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,,
+f(x,y,z) =  \left( \frac{x}{(x^2 + y^2)^{1/2}}, \frac{y}{(x^2 + y^2)^{1/2}} ,   z \right) \,.
 $$
-known as the **Archimedes map**. It is quite simple to prove that $f$ is an equiareal map from $\sphere$ into $\SSS$.
 
 :::
 
 
 ![Construction of the Archimedes Map between the Sphere and the Cylinder.](/images/archimedes.png){#fig-archimedes width=75%}
+
+
+
+
+We conclude this section by clarifying the relationship between isometries, conformal and equiareal maps.
+
+::: {.Theorem #theorem-conformal-equiareal}
+
+Let $f \colon \SSS \to \wSSS$ be a local diffeomorphism between surfaces. They are equivalent:
+
+1. $f$ is a local isometry.
+2. $f$ is conformal and equiareal.
+
+:::
+
+
+::: Proof
+
+*Part 1.* Local isometries preserve the FFF. Therefore, $f$ is conformal with $\lambda = 1$. Moreover, also $EG-F^2$ is preserved, implying that $f$ is equiareal.
+
+*Part 2.* Assume $f$ is conformal and equiareal. Let $\sss \colon U \to \R^3$ be a chart of $\SSS$, and define $\wsss = f \circ \sss$. As $f$ is conformal, by Thoerem \ref{theorem-conformal-fff-bis} we have that
+$$
+\wE = \lambda E \,, \qquad
+\wF = \lambda F \,, \qquad
+\wG = \lambda G \,, 
+$$
+for some smooth $\lambda \colon U \to \R$. As $f$ is equiareal, by Theorem \ref{theorem-equiareal-fff} we have that
+$$
+EG-F^2 = \wE \wG - {\wF}^2 \,.
+$$
+In particular, we get
+$$
+EG-F^2 = \wE \wG - {\wF}^2 = (\lambda E)(\lambda F) - (\lambda G)^2 = \lambda^2  (EG-F^2) \,.
+$$
+Since $\sss$ is a regular chart, we have $EG-F^2>0$. Therefore, we obtain $\lambda = \pm 1$, which implies 
+$$
+\wE = \lambda E \,, \quad \lambda = \pm 1 \,.
+$$
+Note that
+$$
+E = \sssu \cdot \sssu = \norm{\sssu}^2 > 0 \,,
+$$
+being $\sss$ regular (so that $\sssu \neq \zero$). Similarly, as $\wsss$ is regular, we also have that $\wE > 0$. Therefore $\lambda = 1$. In particular, we have shown that $\FF = \wFF$, implying that $f$ is a local isometry by Thoerem \ref{theorem-local-isometry}.  
+
+
+:::
+
+
 
 
 
@@ -7397,15 +7264,11 @@ It is also useful to define equiareal parametrizations.
 ::: Definition
 ### Equiareal parametrization {#definition-equiareal-parametrization}
 
-Let $\SSS$ be a regular surface and 
-$$
-\sss \colon U  \to  \SSS
-$$ 
-be a regular chart of $\SSS$. We say that $\sss$ is an **equiareal parametrization** if the coefficients of the first fundamental form of $\sss$ satisfy
+
+Let $\sss \colon U  \to \R^3$ be regular. We say that $\sss$ is an **equiareal parametrization** if the coefficients of the FFF of $\sss$ satisfy
 $$
 EG-F^2 =1 \,.
 $$
-
 
 :::
 
@@ -7415,11 +7278,8 @@ The above definition is motivated by the following result, stating that $\SSS$ a
 
 ::: Theorem
 
-Let $\SSS$ be a regular surface and
-$$
-\sss \colon U  \to  \SSS
-$$ 
-be a regular chart of $\SSS$. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
+
+Let $\sss \colon U  \to \R^3$ be regular. Let $\p$ be the plane $\{z=0\}$. They are equivalent:
 
 1. $\sss$ is an equiareal parametrization.
 
@@ -7428,8 +7288,6 @@ $$
 f(u,v,0) = \sss(u,v) 
 $$
 is equiareal.
-
-
 
 :::
 
@@ -7483,11 +7341,10 @@ An important application of equiareal parametrization is in cartography: We woul
 ::: Example
 ### Lambert cylindrical projection
 
-**Question.** Consider the following parametrization of $\sphere^2$
+**Question.** Prove that the following parametrization of $\sphere^2$ is equiareal
 $$
 \sss(u,v)= \left(  \cos (u) \sqrt{1-v^2} ,  \sin(u) \sqrt{1-v^2}  , v \right)  \,.
 $$
-Prove that $\sss$ is an equiareal parametrization.
 
 **Note:** In particular, the inverse 
 $$
@@ -7495,13 +7352,14 @@ $$
 $$
 is an equiareal map. This is known as the **Lambert cylindrical projection**, see @fig-lambert and @fig-lambert-2.
 
+
 **Solution.** We compute
 \begin{align*}
-\sssu & = \left( - \sin (u) \sqrt{1-v^2} ,  \cos(u) \sqrt{1-v^2}  , 0 \right) \\
-\sssv & =  \left( -\cos (u) v (1-v^2)^{-1/2} , - \sin(u) v (1-v^2)^{-1/2}  , 1 \right) \\
-E & = \sssu \times \sssu =  1 - v^2 \\
-F & = \sssu \times \sssv =  0 \\
-G & = \sssv \times \sssv =  1 + \frac{v^2}{1-v^2} 
+& \sssu  = \left( - \sin (u) \sqrt{1-v^2} ,  \cos(u) \sqrt{1-v^2}  , 0 \right) \\
+& \sssv =  \left( -\cos (u) v (1-v^2)^{-1/2} , - \sin(u) v (1-v^2)^{-1/2}  , 1 \right) \\
+& E  = \sssu \cdot \sssu =  1 - v^2 \\
+& F = \sssu \cdot \sssv =  0 \\
+& G = \sssv \cdot \sssv =  1 + \frac{v^2}{1-v^2} 
 \end{align*}
 and therefore 
 $$
@@ -7534,10 +7392,10 @@ $$
 $$
 which is both conformal and equiareal?
 
-**Answer: No**. This is because $\sss$ would be an isometry between $\sphere^2$ and the plane $\R^2$. This is impossible because:
+**Answer: No**. This is because $\sss$ would be an isometry between $\sphere^2$ and the plane $\R^2$, see Theorem \ref{theorem-conformal-equiareal}. This is impossible because:
 
-- The Theorema Egregium (by Gauss) tells us that isometric surfaces must have the same Gauss curvature;
-- However, the plane has zero Gauss curvature, while the sphere has non-zero Gauss curvature;
+- The Theorema Egregium (by Gauss - we will study it) tells us that isometric surfaces must have the same Gaussian curvature;
+- However, the plane has zero Gaussian curvature, while the sphere has non-zero Gaussian curvature;
 - Therefore the plane and the sphere cannot be isometric.
 
 This means that we cannot draw a map of the Earth which preserves both angles and lengths.
@@ -7707,33 +7565,19 @@ is called the **second fundamental form** of $\SSS$. Therefore $\mathscr{F}_2$ m
 ::: Definition
 ### Second fundamental form of a chart
 
-Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Denote the standard unit normal of $\sss$ by
-$$
-\NN \colon U \to \R^3 \,, \quad \NN = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } } \,.
-$$
-Define the functions
-$$
-L , M , N \colon U \to \R 
-$$
-by setting
+
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$. 
+Define $L , M , N \colon U \to \R$
 $$
 L := \sss_{uu} \cdot \NN  \,, \quad  M := \sss_{uv} \cdot \NN \,, \quad 
-N := \sss_{vv} \cdot \NN \,.
+N := \sss_{vv} \cdot \NN \,,
 $$
-Let $\pp \in \sss(U)$ and denote by $(u_0,v_0) \in U$ the point such that
+where $\NN$ is the standard unit normal to $\sss$. The **second fundamental form (SFF)** of $\sss$ is the quadratic form $\mathscr{F}_2 \colon T_{\pp} \SSS \to \R$
 $$
-\sss(u_0,v_0) = \pp \,.
+\mathscr{F}_2 (\vv) = L \, du^2(\vv) + 2M \, du(\vv) \, dv (\vv)+ N \, dv^2 (\vv) \,, \,\, \forall \, v \in T_{\pp} \SSS ,
 $$
-The **second fundamental form** of $\sss$ at $\pp$ is the quadratic form
-$$
-\mathscr{F}_2 \colon T_{\pp} \SSS \to \R
-$$
-defined by
-$$
-\mathscr{F}_2 (\vv) := L \, du^2(\vv) + 2M \, du(\vv) \, dv (\vv)+ N \, dv^2 (\vv) \,,
-$${#eq-sff-chart}
-for all $\vv \in T_{\pp} \SSS$. Here $L,M,N$ are evaluated at $(u_0,v_0)$, and 
-$du$, $dv$ are the coordinate functions as in Definition \ref{definition-coordinate-functions}.
+for all $\pp \in \sss(U)$, with $L,M,N$ evaluated at $(u,v) = \sss^{-1}(v)$, and 
+$du$, $dv$ the coordinate functions in Definition \ref{definition-coordinate-functions}.
 
 :::
 
@@ -7755,100 +7599,26 @@ $$
 
 
 
-::: Remark
-### SFF and reparametrizations {#remark-sff-reparametrization}
-
-
-Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
-$$
-\widetilde{\sss} = \sss \circ \Phi \,,
-$$
-where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the SFF of $\sss$ and $\wsss$ by, respectively,
-\begin{align*}
-\mathscr{F}_2 & = L \, du^2 + 2M \, du dv + N \, dv^2 \,, \\
-\widetilde{\mathscr{F}}_2 & = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
-\end{align*}
-The matrices of $\mathscr{F}_2$ and $\widetilde{\mathscr{F}}_2$ are related by
-$$
-\left(
-\begin{array}{cc}
-\widetilde{L} & \widetilde{M} \\
-\widetilde{M} & \widetilde{N}
-\end{array}
-\right)  
-= 
-\pm (J \Phi)^T \,
-\left(
-\begin{array}{cc}
-L & M \\
-M & N
-\end{array}
-\right)
-\, 
-J \Phi  \,
-$${#eq-sff-repar}
-where $J\Phi$ is the Jacobian of $\Phi$
-$$
-J\Phi = \left(   
-\begin{array}{cc}
- \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
- \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
-\end{array}
-\right) \,,
-$$
-and where (@eq-sff-repar) holds with $+$ if $\det J\Phi > 0$ and $-$ if
-$\det J\Phi < 0$. 
-
-
-**Proof.** Formula (@eq-sff-repar) holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
-$$
-\widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,,
-$$
-as shown in Remark \ref{remark-normal-chart}.
-
-:::
-
-
 Let us show that a plane and a cylinder have different second fundamental forms.
 
-
-
 ::: Example
-### SFF of Plane   {#example-sff-plane}
+### SFF of Plane {#example-sff-plane}
 
-**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthonormal. Consider the plane with chart
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$, $\mathbf{q}$ orthonormal. The plane is charted by
 $$
 \sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
-Prove that the second fundamental form of $\sss$ is
-$$
-\mathscr{F}_2 = 0 \,.
-$$
+Prove that the SFF of $\sss$ is $\mathscr{F}_2 = 0$.
 
-**Note:** This reflects the intuition that a plane is flat, and therefore there is no *curvature*. 
+**Note:** This reflects the intuition that a plane is flat, and therefore there is no *curvature*.
 
-**Solution.** We have
-$$
-\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,.
-$$
-The principal unit normal is
-$$
-\NN = \frac{\pp \times \mathbf{q}}{\norm{ \pp \times \mathbf{q} }   } \,,
-$$
-while the second derivatives are
-$$
-\sss_{uu} = \sss_{uv} = \sss_{vv} = \zero \,.
-$$
-Therefore
-\begin{align*}
-L & = \sss_{uu} \cdot \NN = 0 \\
-M & = \sss_{uv} \cdot \NN = 0 \\
-N & = \sss_{vv} \cdot \NN = 0 \\
-\end{align*}
-and the second fundamental form is
-$$
-\mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
-$$
+**Solution.** We have that $\FF_2 = 0$, since
+\begin{gather*}
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,, \quad \sss_{uu} = \sss_{uv} = \sss_{vv} = \zero \,, \\
+ L = \sss_{uu} \cdot \NN = 0 \,, \quad 
+ M = \sss_{uv} \cdot \NN = 0 \,, \quad
+  N = \sss_{vv} \cdot \NN = 0 \,.
+\end{gather*}
 
 :::
 
@@ -7856,13 +7626,13 @@ $$
 
 
 ::: Example
-### Unit cylinder  {#example-cylinder-sff}
+### SFF of Unit cylinder  {#example-cylinder-sff}
 
 **Question.** Consider the unit cylinder with chart
 $$
 \sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
 $$
-Prove that the second fundamental form of $\sss$ is
+Prove that the SFF of $\sss$ is
 $$
 \mathscr{F}_2 = -  du^2 \,.
 $$
@@ -7873,37 +7643,23 @@ to be $-1$.
 
 **Solution.** We have
 \begin{align*}
-\sss_u & = (-\sin(u),\cos(u), 0 )  \\
-\sss_v & = (0,0,1) \\
-\sss_{uu}  & = (-\cos(u), - \sin(u), 0 ) \\
-\sss_{uv} & = \sss_{vv} = \zero \\
-\sss_u \times \sss_v & =
-\left|  
-\begin{array}{ccc}
-\ii & \jj & \kk \\
--\sin(u) & \cos(u) & 0 \\
-0 & 0 & 1
-\end{array}
-\right| \\
- & = (\cos(u), \sin(u),0) \\
-\norm{ \sss_u \times \sss_v } & =  1 \,.
+& \sss_u  = (-\sin(u),\cos(u), 0 ) 
+&\,& \NN  = \frac{\sss_u \times \sss_v}{ \norm{\sss_u \times \sss_v} }  \\
+& \sss_v = (0,0,1) 
+&\,& \, \quad = (\cos(u), \sin(u),0) \\
+& \sss_{uu}  = (-\cos(u), - \sin(u), 0 ) 
+&\,& L  = \sss_{uu} \cdot \NN = - 1 \\
+& \sss_{uv}  = \sss_{vv} = \zero 
+&\,& M = \sss_{uv} \cdot \NN = 0 \\
+& \sss_u \times \sss_v  = (\cos(u), \sin(u),0) 
+&\,& N  = \sss_{vv} \cdot \NN = 0 \\
+& \norm{ \sss_u \times \sss_v }  =  1 
+&\,&\mathscr{F}_2 = -  du^2 
 \end{align*} 
-The principal unit normal is
-$$
-\NN = \frac{\sss_u \times \sss_v}{ \norm{\sss_u \times \sss_v} } = (\cos(u), \sin(u),0) \,.
-$$
-We finally compute
-\begin{align*}
-L & = \sss_{uu} \cdot \NN = - 1 \\
-M & = \sss_{uv} \cdot \NN = 0 \\
-N & = \sss_{vv} \cdot \NN = 0 \\
-\end{align*}
-The second fundamental form is
-$$
-\mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
-$$
 
 :::
+
+
 
 
 ::: Remark
@@ -7917,6 +7673,47 @@ $$
 \mathscr{F}_2 = 0 \,, \quad \widetilde{\mathscr{F}}_2 = - du^2   \,,
 $$
 respectively.
+:::
+
+
+
+
+
+::: Remark
+### SFF and reparametrizations {#remark-sff-reparametrization}
+
+
+Let $\sss \colon U \to \R^3$ be regular, and $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ a reparametrization, with 
+$\widetilde{\sss} = \sss \circ \Phi$ and $\Phi \colon \widetilde{U} \to U$ diffeomorphism. The matrices $\FF_2$ and $\wFF_2$ of the SFF of $\sss$ and $\wsss$ are related by
+$$
+\wFF_2 = \pm (J \Phi)^T \FF_2 J \Phi \,, \quad 
+\FF_2 = \left(
+\begin{array}{cc}
+\widetilde{L} & \widetilde{M} \\
+\widetilde{M} & \widetilde{N}
+\end{array}
+\right) \,, \quad
+ \wFF_2\left(
+\begin{array}{cc}
+\widetilde{L} & \widetilde{M} \\
+\widetilde{M} & \widetilde{N}
+\end{array}
+\right)  \,,
+$$
+where the formula holds with the plus sign if $\det J\Phi > 0$, and with the minus sign if $\det J\Phi < 0$.
+
+:::
+
+
+
+::: Proof 
+
+The formula holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
+$$
+\widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,,
+$$
+as shown in Remark \ref{remark-normal-chart}.
+
 :::
 
 
@@ -7960,8 +7757,7 @@ where $\sphere^2$ is the unit sphere in $\R^3$. Thus $\NN \colon \SSS \to \spher
 ::: Definition
 ### Gauss map
 
-Let $\SSS$ be an oriented surface and $\NN$ the standard unit normal to $\SSS$. The **Gauss map** of 
-$\SSS$ is the map 
+Let $\SSS$ be an oriented surface with standard unit normal $\NN$. The **Gauss map** of $\SSS$ is
 $$
 {\mathcal{G}}_{\SSS} \colon \SSS  \to \sphere^2 \,, \quad 
 {\mathcal{G}}_{\SSS} (\pp):= \NN(\pp) \,.
@@ -8083,13 +7879,10 @@ we infer (@eq-gauss-identification).
 ::: Definition
 ### Weingarten map
 
-Let $\SSS$ be an orientable surface and $\mathcal{G} \colon \SSS \to \sphere^2$ its Gauss map. 
-The **Weingarten map** $\WW_{\pp, \SSS}$ of $\SSS$ at $\pp$ is the negative differential of the 
-Gauss map at $\pp$, that is,
+Let $\SSS$ be an orientable surface with Gauss map $\mathcal{G} \colon \SSS \to \sphere^2$. The **Weingarten map** $\WW_{\pp, \SSS}$ of $\SSS$ at $\pp$ is
 $$
-\WW_{\pp,\SSS} \colon T_{\pp}\SSS  \to T_{\pp} \SSS \,, \quad  \WW_{\pp,\SSS}(\vv) := -d_{\pp} \mathcal{G} (\vv) \,,
+\WW_{\pp,\SSS} \colon T_{\pp}\SSS  \to T_{\pp} \SSS \,, \quad  \WW_{\pp,\SSS}(\vv) = -d_{\pp} \mathcal{G} (\vv) \,.
 $$
-for all $\vv \in T_{\pp} \SSS$.
 
 :::
 
@@ -8114,23 +7907,17 @@ The Weingarten map allows us to define a bilnear form on $T_{\pp} \SSS$. We call
 
 
 ::: Definition
-### Second fundamental form of a surface
+### SFF of a surface
 
-
-Let $\SSS$ be an orientable surface and denote by 
+Let $\SSS$ be an orientable surface with Weingarten map $\WW_{\pp,\SSS}$. The **SFF** of $\SSS$ at $\pp$ is the bilinear map
 $$
-\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS 
-$$
-its Weingarten map at $\pp$. The **second fundamental form** of $\SSS$ at $\pp$ is the map
-$$
-II_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R
-$$ 
-defined by
-$$
-II_{\pp}(\vv,\ww) := \WW_{\pp, \SSS}(\vv) \cdot \ww \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS \,.
+II_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R \,, \quad 
+II_{\pp}(\vv,\ww) := \WW_{\pp, \SSS}(\vv) \cdot \ww \,.
 $$
 
 :::
+
+
 
 ::: Remark
 
@@ -8143,7 +7930,6 @@ The second fudamental form $II_{\pp}$ of $\SSS$ is bilinear.
 
 ::: Remark 
 ### Matrix of the second fundamental form
-
 
 Let $\sss$ be a chart at $\pp \in \SSS$. Since $II_{\pp}$ is a bilinear form on 
 $T_{\pp} \SSS$, it can be represented by the $2 \times 2$ matrix 
@@ -8177,10 +7963,10 @@ Therefore, the second fundamental form $II_{\pp}$ coincides with the second fund
 :::
 
 
-::: {.Theorem #theorem-sff-chart-bis}
+::: Theorem 
+### Matrix of the SFF {#theorem-sff-chart-bis}
 
-Let $\SSS$ be an orientable surface and $\sss \colon U \to \R^3$ be a regular chart.
-Let $\pp \in \sss(U)$. 
+Let $\sss \colon U \to \R^3$ be regular, $\SSS = \sss(U)$, and $\pp \in \sss(U)$. Then 
 
 1. The second funamental form $II_{\pp}$ is a symmetric bilinear map.
 
@@ -8194,12 +7980,7 @@ M & N
 \end{array}
 \right) \, (du(\ww) , dv(\ww))^T \,,
 $$
-for all $\vv,\ww \in T_{\pp} \SSS$, where
-$$
-L = \sss_{uu} \cdot \NN \,, \quad 
-M = \sss_{uv} \cdot \NN \,, \quad 
-N = \sss_{vv} \cdot \NN \,.
-$$
+for all $\vv,\ww \in T_{\pp} \SSS$.
 
 3. $\mathscr{F}_2$ is the quadratic form associated to $II_{\pp}$, that is,
 $$
@@ -8254,16 +8035,15 @@ The rest of the proof follows similarly.
 
 ::: {.Lemma  #lemma-weingarten}
 
-Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ be 
-its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. Then
+
+Let $\SSS$ be an orientable surface with Weingarten map $\WW_{\pp,\SSS}$, and $\sss$ a regular chart at $\pp$. Then
 $$
 \WW_{\pp,\SSS} (\sss_u) = - \NN_u \,, \quad 
 \WW_{\pp,\SSS} (\sss_v) = - \NN_v \,,
 $$
-where $\sss_u,\sss_v,\NN_u,\NN_v$ are evaluated at $(u_0,v_0)$.
+where $\sss_u,\sss_v,\NN_u,\NN_v$ are evaluated at $(u,v) = \sss^{-1}(\pp)$.
 
 :::
-
 
 ::: Proof
 
@@ -8411,12 +8191,11 @@ Let us prove this claim.
 ::: Theorem
 ### Matrix of Weingarten map  {#theorem-weingarten}
 
-Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ be 
-its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. The matrix of the Weingarten map is
+Let $\SSS$ be an orientable surface with Weingarten map $\WW_{\pp,\SSS}$. Let $\sss$ be a regular chart at $\pp$. The matrix of the Weingarten map with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp}\SSS$ is
 $$
 \WW = \mathscr{F}_1^{-1} \mathscr{F}_2  \,,
 $$
-where the first and second fundamental forms are evaluated at $(u_0,v_0)$.
+where the FFF and SFF are evaluated at $(u,v) = \sss^{-1}(\pp)$.
 
 :::
 
@@ -8541,15 +8320,11 @@ concluding the proof.
 :::
 
 
-::: Important
+::: Remark
+### Matrix inverse
 
-A matrix $A \in \R^{n \times n}$ is invertible if and only if $\det (A) \neq 0$. In such case
+A matrix $A \in \R^{2 \times 2}$ is invertible if and only if $\det (A) \neq 0$. In such case
 the inverse $A^{-1}$ is computed via the formula
-$$
-A^{-1} = \frac{1}{\det (A)} \, \operatorname{cof}(A)^T \,,
-$$
-where $\operatorname{cof}(A)$ is the cofactor matrix of $A$. For $n=2$ the above formula
-reads:
 $$
 \left(
 \begin{array}{cc}
@@ -8558,13 +8333,13 @@ c & d
 \end{array}
 \right)^{-1}
 =
-\frac{1}{ad - bc}  \,
+\frac{1}{\det(A)}  \,
 \left(
 \begin{array}{cc}
 d & -b \\
 -c & a 
 \end{array}
-\right) \,.
+\right) \,, \quad \det(A) = ad - bc \,.
 $$
 If the matrix is diagonal, then 
 $$
@@ -8573,7 +8348,7 @@ $$
 \lambda & 0 \\
 0 & \mu 
 \end{array}
-\right) 
+\right)^{-1}
 =
 \left(
 \begin{array}{cc}
@@ -8597,57 +8372,37 @@ In the following we denote the matrix of $\WW_{\pp,\SSS}$ by the symbol $\WW$.
 
 
 ::: Example
-### Weingarten matrix of Helicoid
+### Weingarten map of Helicoid
 
 **Question.** The Helicoid is charted by
 $$
 \sss (u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in \R \,, \, v \in (0,2\pi) \,,
 $$
-where $\lambda>0$ is a constant, see @fig-helicoid. Prove that the matrix of the Weingarten map is
-$$
-\WW = 
-\left(
-\begin{array}{cc}
-0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
-- \dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
-\end{array}
-\right) \,.
-$$
+with $\lambda>0$ constant, see @fig-helicoid. Compute the matrix of the Weingarten map.
 
 
-**Solution.** We compute
+
+**Solution.** We compute all the derivatives of $\sss$
 \begin{align*}
-\sss_u & = ( \cos(v), \sin(v), 0  )  \\
-\sss_v & = ( - u \sin(v), u \cos(v), \lambda  )  \\
-\sss_{uu} & = ( 0, 0, 0  )  \\
-\sss_{uv} & = (- \sin(v), \cos(v), 0 ) \\
-\sss_{vv} & = ( - u \cos(v), - u \sin(v), 0 ) \\
+& \sss_u  = ( \cos(v), \sin(v), 0  )  
+&\,& \sss_{uv}  = (- \sin(v), \cos(v), 0 ) \\
+& \sss_v = ( - u \sin(v), u \cos(v), \lambda  )  
+&\,& \sss_{vv} = -u \, ( \cos(v), \sin(v), 0 ) \\
+& \sss_{uu}  = ( 0, 0, 0  ) 
 \end{align*}
-from which
+The FFF and its inverse are
 \begin{align*}
-E & = \sss_u \cdot \sss_u = 1 \\
-F & = \sss_u \cdot \sss_v = 0 \\
-G & = \sss_v \cdot \sss_v = u^2 + \lambda^2 \,, 
-\end{align*}
-so that the first fundamental form is
-$$
-\mathscr{F}_1 = 
-\left(
-\begin{array}{cc}
-E & F \\
-F & G 
-\end{array}
-\right)
-=
+& E  = \sss_u \cdot \sss_u = 1  
+&\,& F  = \sss_u \cdot \sss_v = 0 \\
+& G  = \sss_v \cdot \sss_v = u^2 + \lambda^2 \\
+& \mathscr{F}_1 = 
 \left(
 \begin{array}{cc}
 1 & 0 \\
 0 & u^2 + \lambda^2 
 \end{array}
-\right) \,.
-$$
-Since $\mathscr{F}_1$ is diagonal, the inverse is immediately computed
-$$
+\right) 
+&\,&  
 \mathscr{F}_1^{-1}
 =
 \left(
@@ -8656,70 +8411,34 @@ $$
 0 & \dfrac{1}{u^2 + \lambda^2}
 \end{array}
 \right) \,.
-$$
-Moreover
+\end{align*}
+The standard unit normal to $\sss$ is 
 \begin{align*}
-\sss_u \times \sss_v & = 
-\left|
-\begin{array}{ccc}
-\ii & \jj & \kk \\
-\cos(v)  &  \sin(v)  &  0 \\
--u \sin(v) & u \cos(v) & \lambda 
-\end{array}
-\right| \\
-& =
+& \sss_u \times \sss_v  =
 (\lambda \sin (v), - \lambda \cos(v), u) \\
-\norm{\sss_u \times \sss_v} & = \sqrt{u^2 + \lambda^2} \,.
+& \norm{\sss_u \times \sss_v}  = \sqrt{u^2 + \lambda^2} \\
+& \NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } 
+ = \frac{1}{\sqrt{u^2 + \lambda^2}} \, (\lambda \sin(v), -\lambda \cos(v), u) \,.
 \end{align*}
-The standard unit normal to $\sss$ is therefore 
+The SFF of $\sss$ is
 \begin{align*}
-\NN & = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \\
-& = \frac{1}{\sqrt{u^2 + \lambda^2}} \, (\lambda \sin(v), -\lambda \cos(v), u) \,.
-\end{align*}
-Hence
-\begin{align*}
-L & = \sss_{uu} \cdot \NN = 0 \\
-M & = \sss_{uv} \cdot \NN = - \frac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
+L & = \sss_{uu} \cdot \NN = 0   \qquad \qquad M  = \sss_{uv} \cdot \NN = - \frac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
 N & = \sss_{vv} \cdot \NN = 0 \\
-\end{align*}
-and the second funamental form $\mathscr{F}_2$ is
-$$
-\mathscr{F}_2 = 
-\left(
-\begin{array}{cc}
-L & M \\
-M & N 
-\end{array}
-\right)
-=
+\mathscr{F}_2 & =
 \left(
 \begin{array}{cc}
 0 & - \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
-- \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} & 0
+-\dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} & 0
 \end{array}
 \right) \,.
-$$
+\end{align*}
 Finally, the matrix of the Weingarten map is
 \begin{align*}
-\WW & = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
-    & =
-\left( 
-\begin{array}{cc}
-1 & 0 \\
-0 & \dfrac{1}{u^2 + \lambda^2}
-\end{array}
-\right)    
-\left(
-\begin{array}{cc}
-0 & - \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
-- \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} & 0
-\end{array}
-\right) \\
-& = 
+\WW  = \mathscr{F}_1^{-1} \mathscr{F}_2  = 
 \left(
 \begin{array}{cc}
 0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
-- \dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
+-\dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
 \end{array}
 \right) \,.
 \end{align*}
@@ -8812,15 +8531,15 @@ first two curvatures that we consider are called **Gaussian** and **mean** curva
 ::: Definition
 ### Gaussian and mean curvature
 
-Let $\SSS$ be an orientable surface and let $\WW$ denote the matrix of
+Let $\SSS$ be an orientable surface. Let $\WW$ be the matrix of
 the Weingarten map $\WW_{\pp,\SSS}$ of $\SSS$ at $\pp$. We define:
 
-- The **Gaussian curvature** of $\SSS$ at $\pp$ as
+1. The **Gaussian curvature** of $\SSS$ at $\pp$ is
 $$
 K := \det (\WW) \,,
 $$
 
-- The **mean curvature** of $\SSS$ at $\pp$ as
+2. The **mean curvature** of $\SSS$ at $\pp$ is
 $$
 H := \frac12 \, \operatorname{Tr} (\WW) \,,
 $$
@@ -8829,10 +8548,10 @@ $$
 
 
 ::: Notation
-### Trace of a $2 \times 2$ matrix
+### Trace of a matrix
 
-We recall that the **trace** of a $2 \times 2$ matrix $A$ is defined as the sum of the diagonal
-entries, that is,
+The **trace** of a $2 \times 2$ matrix is the sum of the diagonal
+entries
 $$
 \operatorname{Tr} (A) = a + d \,, \quad
 A = 
@@ -8868,9 +8587,12 @@ $$
 we can express $K$ and $H$ in terms of the first and second fundamental forms.
 
 
-::: Proposition
 
-Let $\SSS$ be an orientable surface and $\sss$ a regular chart at $\pp$. Then
+
+::: Proposition
+### Formulas for $K$ and $H$
+
+Let $\sss \colon U \to \R^3$ be a regular chart, and $\SSS = \sss(U)$. Then
 $$
 K =
 \frac{ LN-M^2 }{ EG - F^2 } \,, \quad 
@@ -8879,6 +8601,7 @@ H =
 $$
 
 :::
+
 
 
 ::: Proof
@@ -8958,11 +8681,10 @@ H & = \frac12 \operatorname{Tr} \WW \\
 
 
 
-
 ::: Example
-### Curvatures of the Plane
+### Curvatures of the Plane {#example-curvature-plane}
 
-**Question.** Consider the plane charted by
+**Question.** Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$, $\mathbf{q}$ orthonormal. Consider the plane charted by
 $$
 \sss (u,v) = \mathbf{a} + \pp u + \mathbf{q} v \,.
 $$
@@ -8972,8 +8694,7 @@ $$
 
 **Solution.**
 
-1. We have already computed in Example \ref{example-fff-plane} and Example \ref{example-sff-plane} that the first and second
-fundamental forms of $\sss$ are
+1. From Examples \ref{example-fff-plane}, \ref{example-sff-plane}, the FFF and SFF of $\sss$ are
 $$
 \mathscr{F}_1 =
 \left(
@@ -9002,36 +8723,28 @@ $$
 \right)  \,.
 $$
 
-2. The Gaussian curvature is
+2. The Gaussian and mean curvatures are
 $$
-K = \det (\WW) = 0 \,,
-$$
-while the mean curvature is
-$$
+K = \det (\WW) = 0 \,, \qquad 
 H = \frac12 \, \operatorname{Tr} (\WW) =  0 \,.
 $$
 
-
-
 :::
 
-
-
 ::: Example
-### Unit cylinder  {#example-cylinder-curvatures}
+### Curvatures of the Unit cylinder  {#example-cylinder-curvatures}
 
-**Question.** Consider the unit cylinder charted by
+**Question.** Consider the unit cylinder $\SSS$ charted by
 $$
 \sss (u,v) = (\cos(u), \sin(u), v) \,.
 $$
 
 1. Compute the matrix of the Weingarten map of $\sss$.
-2. Compute the Gaussian and mean curvatures of the unit cylinder.
+2. Compute the Gaussian and mean curvatures of $\SSS$.
 
 **Solution.**
 
-1. We have already computed in Example \ref{example-cylinder-fff} and Example \ref{example-cylinder-sff}  that the first and second
-fundamental forms of $\sss$ are
+1. From Examples \ref{example-cylinder-fff}, \ref{example-cylinder-sff}, the FFF and SFF of $\sss$ are
 $$
 \mathscr{F}_1 =
 \left(
@@ -9049,42 +8762,27 @@ $$
 \right) \,.
 $$
 Therefore the matrix of the Weingarten map is
-\begin{align*}
-\WW & = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
-& =
-\left(
-\begin{array}{cc}
-1 & 0 \\
-0 & 1
-\end{array}
-\right) 
-\left(
-\begin{array}{cc}
--1 & 0 \\
-0 & 0
-\end{array}
-\right)  \\
-& =
+$$
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 
+ =
 \left(
 \begin{array}{cc}
 -1 & 0 \\
 0 & 0
 \end{array}
 \right)  \,.
-\end{align*}
+$$
 
-2. The Gaussian curvature is
+2. The Gaussian and mean curvatures are
 $$
-K = \det (\WW) = 0 \,,
-$$
-while the mean curvature is
-$$
+K = \det (\WW) = 0 \,, \qquad 
 H = \frac12 \, \operatorname{Tr} (\WW) =  - \frac12 \,.
 $$
 
-
-
 :::
+
+
+
 
 
 
@@ -9126,12 +8824,10 @@ $$
 :::
 
 
+::: Theorem  
+### Eigenvalues of Weingarten map {#theorem-weingarten-diagonal-bis}
 
-
-::: {.Theorem  #theorem-weingarten-diagonal-bis}
-
-Let $\SSS$ be an orientable surface, $\WW_{\pp,\SSS}$ the 
-Weingarten map at $\pp$, and $\WW$ the matrix of $\WW_{\pp,\SSS}$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$. 
+Let $\SSS$ be an orientable surface and $\sss$ a regular chart at $\pp$. Let $\WW$ be the matrix of the Weingarten map $\WW_{\pp,\SSS}$ with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$. Then
 
 1. There exist scalars $\kappa_1, \kappa_2 \in \R$ and an orthonormal basis 
 $\{\mathbf{t}_1,\mathbf{t}_2\}$ of $T_{\pp} \SSS$ such that 
@@ -9145,42 +8841,34 @@ $$
 \mathbf{t}_1 = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
 \mathbf{t}_2 = \lambda_2 \sss_u + \mu_2 \sss_v \,.
 $$
-Denote 
-$$
-\xx_1 = (\lambda_1,\mu_1) \,, \quad 
-\xx_2 = (\lambda_2,\mu_2) \,.
-$$
-They hold:
-    - The scalars $\kappa_1,\kappa_2$ are eingenvalues of $\WW$ of eigenvectors
-$\xx_1$ and $\xx_2$, that is,
+Denote $\xx_1 = (\lambda_1,\mu_1)$ and $\xx_2 = (\lambda_2,\mu_2)$. Then $\kappa_1,\kappa_2$ are eingenvalues of $\WW$ of eigenvectors $\xx_1$ and $\xx_2$
 $$
 \WW \xx_1 = \kappa_1 \xx_1 \,, \quad 
 \WW \xx_2 = \kappa_2 \xx_2 \,.
 $$
-    - The matrix $\WW$ is diagonalizable, with 
+In particular, the matrix $\WW$ is diagonalizable, with 
 $$
-\begin{aligned}
-\WW & = P^{-1} D P \,, \\
-D & = 
+\WW = P^{-1} D P , \quad 
+D  = 
 \left(
 \begin{array}{cc}
 \kappa_1 & 0 \\
 0   & \kappa_2
 \end{array}
-\right) \,, \\
-P & = 
+\right) \,, \quad
+P  = 
 \left(
 \begin{array}{cc}
 \lambda_1 & \lambda_2 \\
 \mu_1 & \mu_2
 \end{array}
 \right) \,.
-\end{aligned}
-$${#eq-diagonal-W}
+$$
 
 
 
 :::
+
 
 
 
@@ -9227,7 +8915,7 @@ $$
 \WW \xx_1 = \kappa_1 \xx_1 \,, \quad
 \WW \xx_2 = \kappa_2 \xx_2 \,,
 $$
-showing that $\kappa_i$ is eigenvalue of $\WW$ with eigenvector $\xx_i$. In particular, it follows that $\WW$ is diagonal in the basis $\{\xx_1,\xx_2\}$ of $\R^2$. Therefore (@eq-diagonal-W) holds.
+showing that $\kappa_i$ is eigenvalue of $\WW$ with eigenvector $\xx_i$. In particular, it follows that $\WW$ is diagonal in the basis $\{\xx_1,\xx_2\}$ of $\R^2$. Therefore $\WW =  P^{-1} D P$, with $D$ and $P$ as in the statement.
 
 :::
 
@@ -9240,37 +8928,39 @@ The principal curvatures are the eigenvalues of the matrix of the Weingarten map
 ::: Definition
 ### Principal curvatures and vectors
 
-Let $\SSS$ be an orientable surface, and $\WW_{\pp,\SSS}$ the Weingarten map of $\SSS$ at $\pp$. We define:
+Let $\SSS$ be an orientable surface. Let $\WW_{\pp,\SSS}$ the Weingarten map of $\SSS$ at $\pp$. We define:
 
 1. The **principal curvatures** of $\SSS$ at $\pp$ are the eigenvalues $\kappa_1, \kappa_2$
 of $\WW_{\pp,\SSS}$.
 
-2. The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ are the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$.
+2. The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ are the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$ of $\WW_{\pp,\SSS}$.
 
 :::
+
 
 
 Theorem \ref{theorem-weingarten-diagonal-bis} gives an explicit way
 to compute the principal curvatures and vectors.
 
+
 ::: Remark
 ### Computing principal curvatures and vectors
 
-Suppose given a surface chart $\sss$.
+Let $\sss \colon U \to \R^3$ be a regular chart and $\SSS = \sss(U)$.
 
-1. Compute the matrix of the Weingarten map
+1. Compute the FFF and SFF of $\sss$, and the matrix of the Weingarten map
 $$
 \WW  = \FF_{1}^{-1} \FF_2 \,.
 $$
 
-2. Compute the eigenvalues of $\WW$, by solving for $\lambda$ the equation
+3. Compute the eigenvalues of $\WW$, by solving for $\lambda$ the equation
 $$
 \det(\WW - \lambda I) = 0 \,.
 $$
 The two solutions are the principal curvatures $\kappa_1$ and $\kappa_2$.
 
 
-3. Find scalars $\lambda$, $\mu$ which solve the linear system
+4. Find scalars $\lambda$, $\mu$ which solve the linear system
 $$
 (\WW - \kappa_i I) 
 \left( 
@@ -9286,7 +8976,7 @@ $$
 $$
 corresponding to the eigenvalue $\kappa_i$.
 
-4. The principal vector(s) associated to $\kappa_i$ is  
+5. The principal vector(s) associated to $\kappa_i$ is  
 $$
 \mathbf{t}_i = \lambda \sss_u + \mu \sss_v 
 $$
@@ -9294,11 +8984,10 @@ $$
 
 :::
 
-
 ::: Remark
-### Computing principal curvatures and vectors
+### The case of $\WW$ diagonal
 
-If the matrix of the Weingarten map has the form
+Let $\sss \colon U \to \R^3$ be a regular chart and $\SSS = \sss(U)$. Assume the matrix of the Weingarten map is diagonal
 $$
 \WW = 
 \left(
@@ -9306,14 +8995,14 @@ $$
 \kappa_1 & 0 \\
 0        & \kappa_2
 \end{array}
-\right)
+\right) \,.
 $$
-then $\WW$ is already diagonal. The eigenvalues of $\WW$ are $\kappa_1$ and $\kappa_2$, with eigenvectors
+Then, the eigenvalues of $\WW$ are $\kappa_1$ and $\kappa_2$, with eigenvectors
 $$
 \xx_1 = (1,0) \,, \quad 
 \xx_2 = (0,1) \,. 
 $$
-Therefore $\kappa_1,\kappa_2$ are the principal curvatures, with 
+Therefore $\kappa_1,\kappa_2$ are the principal curvatures of $\SSS$, with 
 principal vectors given by
 $$
 \mathbf{t}_1 = \sss_u \,, \quad \mathbf{t}_2 = \sss_v \,.
@@ -9322,12 +9011,11 @@ $$
 :::
 
 
-
-
 The principal curvatures are related to the Gaussian and mean curvatures.
 
 
 ::: Proposition
+### Relationships between curvatures {#proposition-curvatures-relationships}
 
 Let $\SSS$ be an orientable surface. Then
 $$
@@ -9415,13 +9103,14 @@ $$
 ### Principal curvatures of Unit Cylinder
 
 
+
 **Question.** Consider the unit cylinder charted by
 $$
 \sss (u,v) = (\cos(u), \sin(u), v) \,.
 $$
 Compute the principal curvature and principal vectors.
 
-**Solution.** As computed in Example \ref{example-cylinder-curvatures}, the matrix of the Weingarten map is
+**Solution.** By Example \ref{example-cylinder-curvatures}, the matrix of the Weingarten map is
 $$
 \WW =
 \left(
@@ -9431,19 +9120,15 @@ $$
 \end{array}
 \right)  \,.
 $$
-Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
-eigenvectors are 
+Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and the eigenvectors are 
 $$
 \xx_1 = (1,0), \quad \xx_2 = (0,1) \,.
 $$
-Therefore the principal curvatures are 
-$$
-\kappa_1 = - 1 \,, \quad \kappa_2 = 0 \,,
-$$
-and the principal vectors are
+Therefore, the principal curvatures and principal vectors are
 \begin{align*}
-\mathbf{t}_1 & = \sss_u = (-\sin(u),\cos(v),0) \,,\\
-\mathbf{t}_2 & = \sss_v = (0,0,1)\,,
+& \kappa_1 = - 1 \,, \quad \kappa_2 = 0 \,,\\
+& \mathbf{t}_1 = \sss_u = (-\sin(u),\cos(v),0) \,,\\
+& \mathbf{t}_2 = \sss_v = (0,0,1)\,,
 \end{align*}
 as shown in @fig-cylinder-principal.
 
@@ -9455,7 +9140,6 @@ as shown in @fig-cylinder-principal.
 
 
 
-
 ::: Example
 ### Curvatures of Sphere  {#example-sphere-principal-bis}
 
@@ -9464,7 +9148,7 @@ $$
 \sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,,
 $$
 where $u \in (0,2\pi)$, $v \in (-\pi/2,\pi/2)$. Prove that 
-$$
+\begin{gather*}
 \FF_1 =
 \FF_2 = 
 \left( 
@@ -9479,43 +9163,30 @@ $$
 1 & 0 \\
 0 & 1 
 \end{array}
-\right) \,,
-$$
-and
-$$
+\right) \,, \\
 K = H = \kappa_1 = \kappa_2 =1 \,, \quad \mathbf{t}_1 = \sss_u \,, \quad
 \mathbf{t}_2 = \sss_v \,.
-$$ 
+\end{gather*} 
 
-**Solution.** We compute
+**Solution.** Compute the FFF of $\sss$
 \begin{align*}
 \sss_u & = (-\sin(u)\cos(v), \cos(u)\cos(v),0) \\
 \sss_v & = (-\cos(u)\sin(v), -\sin(u)\sin(v), \cos(v)) \\
 E & = \sss_u \cdot \sss_u = \cos^2(v) \\
 F & = \sss_u \cdot \sss_v = 0\\
-G & = \sss_v \cdot \sss_v = 1
-\end{align*}
-and therefore the first fundamental form is
-$$
-\FF_1 = 
+G & = \sss_v \cdot \sss_v = 1 \\
+\FF_1 & = 
 \left( 
 \begin{array}{cc}
 \cos^2(v) & 0 \\
 0         & 1 
 \end{array}
 \right) \,.
-$$
-Moreover 
+\end{align*}
+Moreover
 \begin{align*}
-\sss_u \times \sss_v & = 
-\left| 
-\begin{array}{ccc}
-\ii & \jj & \kk \\
--\sin(u)\cos(v)  & \cos(u)\cos(v) & 0 \\
--\cos(u)\sin(v) & -\sin(u)\sin(v) & \cos(v)
-\end{array}
-\right| \\
-& = (\cos(u)\cos^2(v), 
+\sss_u \times \sss_v &  
+ = (\cos(u)\cos^2(v), 
 \sin(u) \cos^2(v),
 \cos(v)\sin(v)) \\
 \| \sss_u \times \sss_v \| & = |\cos(v)| = \cos(v) \,,
@@ -9531,7 +9202,7 @@ L & = \sss_{uu} \cdot \NN = \cos^{2}(v) \\
 M & =\sss_{uv} \cdot \NN  = 0 \\
 N & = \sss_{vv} \cdot \NN  = 1 
 \end{align*}
-so that the second fundamental form is 
+Hence, the SFF and matrix of the Weingarten map are
 $$
 \FF_2 = 
 \left( 
@@ -9539,10 +9210,7 @@ $$
 \cos^2(v) & 0 \\
 0         & 1 
 \end{array}
-\right) \,.
-$$
-In particular the matrix of the Weingarten map is
-$$
+\right) \,, \quad 
 \WW = \FF_1^{-1} \FF_2 = 
 \left( 
 \begin{array}{cc}
@@ -9551,16 +9219,12 @@ $$
 \end{array}
 \right) \,.
 $$
-Since $\WW$ is diagonal, the principal curvatures are
+Since $\WW$ is diagonal, the principal curvatures and vectors are
 $$
-\kappa_1 = \kappa_2 = 1 \,,
-$$
-and the principal vectors are
-$$
-\mathbf{t}_1 = \sss_u \,, \quad 
+\kappa_1 = \kappa_2 = 1 \,, \quad \mathbf{t}_1 = \sss_u \,, \quad 
 \mathbf{t}_2 = \sss_v \,.
 $$
-Finally, we have that
+Finally, the mean and Gaussian curvatures are
 $$
 H = \frac{\kappa_1 + \kappa_2}{2} = 1 \,, \quad
 K= \kappa_1 \kappa_2 = 1 \,.
@@ -9571,8 +9235,9 @@ $$
 
 
 
+
 ::: Example
-### Torus
+### Curvatures of the Torus
 
 Consider a circle $\mathcal{C}$ contained in the $xz$-plane, with center 
 at distance $b>0$ from the $z$-axis, and radius $a$, with $0<a<b$. 
@@ -9645,16 +9310,27 @@ Which curves through $\pp$ have greatest or lowest curvature?
 
 :::
 
-We start our analysis with the following Proposition.
+We start our analysis with the following Definition.
 
 
-::: {.Proposition #proposition-surface-frame}
+::: Definition
+### Darboux frame
 
-Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a unit-speed curve. Then 
+Let $\SSS$ be a regular surface, $\g \colon (a,b) \to \SSS$ a unit-speed curve. The 
+**Darboux frame** of $\g$ at $t$ is the triple 
 $$
-\{ \dg , \NN , \NN \times \dg  \}
+\{ \dg , \NN , \NN \times \dg  \} \,,
 $$
-is an orthornormal basis of $\R^3$ for all $t \in (a,b)$, where $\NN$ is the standard unit normal to $\SSS$ evaluated at $\pp = \g(t)$.
+where $\g$ is evaluated at $t$, and $\NN$ is the standard unit normal to $\SSS$, evaluated at $\pp = \g(t)$.
+
+:::
+
+
+
+::: Proposition 
+### Darboux frame is orthonormal basis {#proposition-surface-frame}
+
+Let $\SSS$ be a regular surface, $\g \colon (a,b) \to \SSS$ a unit-speed curve. The Darboux frame is an orthornormal basis of $\R^3$ for all $t \in (a,b)$.
 
 :::
 
@@ -9681,7 +9357,7 @@ Therefore $\{ \dg , \NN , \NN \times \dg  \}$ is an orthonormal basis of $\R^3$.
 
 ::: Important
 
-In general, the basis
+In general, the Darboux frame
 $$
 \{ \dg , \NN , \NN \times \dg  \}
 $$
@@ -9700,8 +9376,9 @@ and, in general, $\nn \neq \NN$.
 
 
 ::: Proposition
+### Coefficients of $\ddg$ in the Darboux frame
 
-Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a 
+Let $\SSS$ be a regular surface, $\g \colon (a,b) \to \SSS$ a 
 unit-speed curve. Then
 $$
 \ddg = \kappa_n \NN + \kappa_g \, \left( \NN \times \dg \right) \,,
@@ -9802,10 +9479,12 @@ The quantities $\kappa_n$ and $\kappa_g$ are the normal and geodesic
 curvatures of $\g$.
 
 
-::: Definition 
-### Normal and geodesic curvature
 
-Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a unit-speed curve. Let $\NN$ bet the standard unit normal to $\SSS$. We define:
+
+::: Definition 
+### Normal and geodesic curvatures
+
+Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a unit-speed curve. Let $\NN$ bet the standard unit normal to $\SSS$.
 
 1. The **normal curvature** of $\g$ is
 $$
@@ -9829,8 +9508,8 @@ The normal curvature $\kappa_n$ can be computed via the second
 fundamental form, as shown in the theorem below.
 
 
-::: {.Theorem #theorem-normal-curvature}
-### Computing $\kappa_n$ with SFF
+::: Theorem 
+### Computing $\kappa_n$ with SFF {#theorem-normal-curvature}
 
 Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ a 
 unit-speed curve. Denote $\pp := \g(t)$. We have:
@@ -9848,7 +9527,7 @@ for some smooth functions $u,v \colon (a,b) \to \R$, and
 $$
 \kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,,
 $$
-where $L,M,N$ are evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ are evaluated at $t$.
+where $L,M,N$ are evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ at $t$.
 :::
 
 
@@ -9914,43 +9593,39 @@ Therefore, using Part 1 and Theorem \ref{theorem-sff-chart-bis}, we obtain
 ::: Example
 ### Curves on the sphere  {#example-curves-on-sphere}
 
-**Question.** Consider the unit sphere with chart
+**Question.** Consider the unit sphere $\sphere^2$ with chart
 $$
 \sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,.
 $$
-Show that, for all unit-speed curves on the sphere,
+Show that, for all unit-speed curves on $\sphere^2$,
 $$
 \kappa_{n}(t)=1 \,.
 $$ 
 
 
-**Solution.**  Let $\g$ be a unit-speed curve on the sphere, that is,
-$$
-\g(t)=\sigma(u(t), v(t)) \,.
-$$
-for some functions $u,v$. Differentiating, we get
+**Solution.** Let $\g (t)=\sss(u(t), v(t))$ be a unit-speed curve on $\sphere^2$. Differentiating, we get Differentiating, we get
 \begin{align*}
-\dg(t) & = \frac{d}{dt} \sss(u(t),v(t))\\
+\dg(t) 
  & = \frac{d}{dt} ( \cos(u(t)) \cos(v(t)), \sin(u(t)) \cos(v(t)), \sin(v(t)) ) \\
        & = (-\dot{u} \sin (u) \cos (v)-\dot{v} \cos (u) \sin (v), \\
        & \qquad \dot{u} \cos (u) \cos (v)- \dot{v} \sin (u) \sin (v),\\
-  & \qquad \dot{v} \cos (v)) \,.
+  & \qquad \dot{v} \cos (v)) \\
+\| \dg(t) \|^2 & =  \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
 \end{align*}
-Therefore,
+Since $\g$ is unit-speed, we have $\norm{\dg} = 1$. Therefore,
 $$
-\| \dg(t) \|^2 =  \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
-$${#eq-curves-sphere}
-where in the last equality we used that $\g$ is unit-speed. From Example \ref{example-sphere-principal-bis}, the coefficients of the second fundamental form of $\sss$ are
+\cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,.
+$$
+By Example \ref{example-sphere-principal-bis}, the coefficients of the SFF of $\sss$ are
 $$
 L = \cos^{2}(v), \quad M = 0 , \quad N = 1\,.
 $$
 By Theorem \ref{theorem-normal-curvature}, the normal
 curvature of $\g$ is
 \begin{align*}
-\kappa_{n} & =  L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \\
-& = \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
+\kappa_{n}  =  L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} 
+ = \cos^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,.
 \end{align*}
-where in the last equality we used (@eq-curves-sphere).
 
 :::
 
@@ -9958,6 +9633,7 @@ where in the last equality we used (@eq-curves-sphere).
 
 The normal curvature $\kappa_n$ is related to the principal 
 curvatures $\kappa_1$ and $\kappa_2$.
+
 
 
 
@@ -9972,6 +9648,7 @@ $$
 where $\theta$ is the angle between $\dg$ and $\mathbf{t}_1$.
 
 :::
+
 
 
 ::: Proof
@@ -10061,31 +9738,28 @@ for all unit-speed curves on the sphere. Thanks to Euler's Theorem, we can obtai
 ::: Example
 ### Curves on the sphere (again)
 
-**Question.** Consider the unit sphere with chart
-$$
-\sss(u, v)=(\cos (u) \cos (v), \sin (u) \cos (v), \sin (v)) \,.
-$$
-Show that, for all unit-speed curves on the sphere,
-$$
-\kappa_{n}(t)=1 \,.
-$$ 
+**Question.** Same question as in Example \ref{example-curves-on-sphere}.
 
 **Solution.**  By Example \ref{example-sphere-principal-bis}, the principal curvatures of the unit sphere are
 $\kappa_1 = \kappa_2 =  1$.
 By Euler's Theorem, for any unit-speed curve $\g$ on the sphere we have
 $$
-\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 1 \,.
+\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 
+ \cos^2(\theta) +  \sin^2(\theta) =1 \,.
 $$
 
 :::
 
 
+
 We have only defined normal and geodesic curvatures for unit-speed curves. We now extend the definition to regular curves.
 
-::: Definition
-### $\kappa_n$ and $\kappa_g$ for regular $\g$.
 
-Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a regular curve. Let $\tg$ be a unit-speed reparametrization of $\g$, with 
+
+::: Definition
+### $\kappa_n$ and $\kappa_g$ for regular $\g$
+
+Let $\SSS$ be regular, and $\g \colon (a,b) \to \SSS$ a regular curve. Let $\tg$ be a unit-speed reparametrization of $\g$, with 
 $$
 \g  = \tg \circ \phi \,, \quad \phi \colon (a,b) \to (\tilde{a},\tilde{b}) \,.
 $$
@@ -10101,11 +9775,14 @@ $$
 It is immediate to check that $\kappa_n$ and $\kappa_g$, as defined above, do not depend on the choice of unit-speed reparametrization. Therefore, $\tg$ can be taken as the arc-length reparametrization of $\g$. The next Theorem gives practical formulas to compute $\kappa_n$ and $\kappa_g$.
 
 
+
+
 ::: Theorem 
+### Formulas for $\kappa_n$ and $\kappa_g$
 
-Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a regular curve. 
+Let $\SSS$ be regular, and $\g \colon (a,b) \to \SSS$ a regular curve. 
 
-1. The normal and geodesic curvatures of $\g$ are
+1. The normal and geodesic curvatures of $\g$ are given by
 
 $$
 \kappa_n = \frac{\ddg \cdot \NN}{\norm{\dg}^2} \,, \qquad
@@ -10125,7 +9802,7 @@ for some smooth functions $u,v \colon (a,b) \to \R$, and
 $$
 \kappa_n = \frac{II_{\pp}(\dg,\dg)}{I_{\pp}(\dg,\dg)} = \frac{L\dot{u}^2 + 2M \dot{u}\dot{v} + N \dot{v}^2}{E\dot{u}^2 + 2F \dot{u}\dot{v} + G \dot{v}^2} \,,
 $${#eq-formula-kn}
-where $E,F,G,L,M,N$ are evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ are evaluated at $t$.
+with $E,F,G,L,M,N$ evaluated at $(u(t),v(t))$, and $\dot{u},\dot{v}$ at $t$.
 
 :::
 
@@ -10253,12 +9930,13 @@ II_{\pp} (\dg,\dg) & = L\dot{u}^2 + 2M \dot{u}\dot{v} + N \dot{v}^2 \,.
 
 
 ::: Example
+### Calculation of normal and geodesic curvatures
 
-**Question.** Consider the surface chart 
+**Question.** For $v \neq 0$ and $t \neq 0$, consider the surface chart and curve 
 $$
-\sss ( u , v ) = \left( u , v, \dfrac{u}{v} \right) \,,
+\sss ( u , v ) = \left( u , v, \dfrac{u}{v} \right) \,, \quad 
+\g ( t ) = \sss ( t^2 , t ) \,.
 $$
-for $v \neq 0$. For $t \neq 0$ define the curve  $\g ( t ) = \sss ( t^2 , t )$.
 
 
 1. Prove that $\sss$ is regular.
@@ -10273,16 +9951,15 @@ $$
 
 **Solution.** 
 
-1. We have
+1. The chart $\sss$ is regular because
  \begin{equation*}
 	\begin{aligned}
-		& \sss_u = \left( 1, 0, \frac{1}{v} \right) \\
-	 &	\sss_v = \left( 0, 1, -\frac{u}{v^2} \right) \\
+		& \sss_u = \left( 1, 0, \frac{1}{v} \right) \,, \quad 
+	 	\sss_v = \left( 0, 1, -\frac{u}{v^2} \right) \\
 		& \sss_u \times \sss_v = \left( -\frac{1}{v}, \frac{u}{v^2}, 1 \right) \neq \zero
 	\end{aligned}
 	\end{equation*}
-  since the last component of $\sss_u \times \sss_v$ is $1$. Therefore $\sss$ is regular.
-
+  
 
 2. The principal unit normal is
 $$
@@ -10292,42 +9969,36 @@ $$
 	\end{aligned}
 $$
 
-3. We have
+3. The curve $\g$ is regular because
 \begin{align*}
 \g(t) & = \sss(t^2,t) = (t^2,t,t) \\
 \dg(t) & = (2t,1,1) \neq \zero
 \end{align*}
-since the last component of $\dg$ is $1$. Therefore $\g$ is regular.
 
 4. Compute the following quantities
-$$
-	\begin{aligned}
-    & \norm{\dg(t)} = 2^{1/2} \, (2t^2 +1 )^{1/2}  \\
-		& \ddg ( t ) = \left( 2, 0, 0 \right) \\
-		& \NN(t^2,t) = \dfrac{\left( -1, t , t \right)}{\left( 2t^2 + 1\right)^{1/2}} \\
-		& \ddg \cdot \NN =  - \frac{2}{(2t^2 + 1)^{1/2}} \\
-    & \NN \times \dg  = \left( 1 + 2t^2 \right)^{1/2}  (0, 1, - 1) \\
-    & \ddg \cdot \left( \NN \times \dg\right)  = 0 
-	\end{aligned}
-  $$
-Therefore, the normal curvature is
-$$
-\kappa_n = \frac{\ddg \cdot \NN}{\norm{\dg}^2} = -  \frac{1}{(2t^2 + 1)^{3/2}} \,,
-$$
-while the geodesic curvaure is
-$$
-\kappa_g = \frac{\ddg \cdot \left( \NN \times \dg\right)}{\norm{\dg}^3} = 0 \,.
-$$
+\begin{align*}
+    & \norm{\dg(t)} = 2^{1/2} \, (2t^2 +1 )^{1/2}  
+    & \, & \ddg \cdot \NN =  - \frac{2}{(2t^2 + 1)^{1/2}} \\
+	& \ddg ( t ) = \left( 2, 0, 0 \right) 
+    & \, & \NN \times \dg  = \left( 1 + 2t^2 \right)^{1/2}  (0, 1, - 1) \\
+	& \NN(t^2,t) = \dfrac{\left( -1, t , t \right)}{\left( 2t^2 + 1\right)^{1/2}}
+	& \, & \ddg \cdot \left( \NN \times \dg\right)  = 0 
+\end{align*}
+The normal and geodesic curvatures are
+\begin{align*}
+\kappa_n & = \frac{\ddg \cdot \NN}{\norm{\dg}^2} = -  \frac{1}{(2t^2 + 1)^{3/2}} \,,\\
+\kappa_g & = \frac{\ddg \cdot \left( \NN \times \dg\right)}{\norm{\dg}^3} = 0 \,.
+\end{align*}
 
 5. The curvature of $\g$ is
 \begin{align*}
-& \dg \times \ddg = (0,2,-2) \\
-& \norm{\dg \times \ddg} = 2^{3/2} \\
+& \dg \times \ddg = (0,2,-2) \,, \quad 
+ \norm{\dg \times \ddg} = 2^{3/2} \\
 & \kappa = \frac{\norm{\dg \times \ddg}}{\norm{\dg}^3} = \frac{1}{(2t^2 + 1)^{3/2}}
 \end{align*}
-Therefore $\kappa = - \kappa_n$. Since $\kappa_g = 0$, we conclude that $\kappa^2 = \kappa_n^2 + \kappa_g^2$.
-:::
+Thus $\kappa = - \kappa_n$. Since $\kappa_g = 0$, we conclude that $\kappa^2 = \kappa_n^2 + \kappa_g^2$.
 
+:::
 
 
 
@@ -10338,8 +10009,6 @@ The principal curvatures $\kappa_1$ and $\kappa_2$ determine
 the maximum and minimum curvature of a surface $\SSS$, see
 Corollary \ref{corollary-euler-thm-bis}. Hence, we can study the local
 shape of $\SSS$ in function of $\kappa_1$ and $\kappa_2$. 
-
-
 
 
 ::: Theorem
@@ -10450,8 +10119,8 @@ we can distinguish between $4$ approximating shapes.
 ::: Definition
 ### Local shape types
 
-Let $\SSS$ be a regular surface and denote by $\kappa_1(\pp)$ and 
-$\kappa_2(\pp)$ its principal curvatures at $\pp$. The point $\pp$ is
+Let $\SSS$ be a regular surface, with $\kappa_1(\pp)$ and 
+$\kappa_2(\pp)$ the principal curvatures at $\pp$. The point $\pp$ is
 
 
 - **Elliptic** if 
@@ -10493,9 +10162,41 @@ A surface $\SSS$ is locally approximated by one of the above quadrics, depending
 
 :::
 
+Sometimes it is not easy to compute the principal curvatures $\kappa_1,\kappa_2$ explicitly. However, the Gaussian curvature $K$ is simpler to compute, as it is just the determinant of the matrix of the Weingarten map. As $K = \kappa_1\kappa_2$, we can still infer some information about the local shape type from the knowledge of $K$.
+
+
+::: Proposition
+### Gaussian curvature and local shape {#proposition-gauss-shape}
+
+Let $\SSS$ be a regular surface, with $K(\pp)$ the Gaussian curvature at $\pp$. The point $\pp$ is
+
+- **Elliptic** if $K(\pp) > 0$,
+
+- **Hyperbolic** if $K(\pp) < 0$,
+
+- **Parabolic** or **Planar** if $K(\pp) = 0$. 
+
+
+:::
+
+::: Proof
+
+The Gaussian curvature satisfies $K=\kappa_1\kappa_2$ where $\kappa_1$ and $\kappa_2$ are the principal curvatures of $\SSS$.
+
+- If $K > 0$, then we must have either $\kappa_1,\kappa_2 > 0$ or $\kappa_1,\kappa_2<0$. Therefore, the point is elliptic.
+
+- If $K < 0$, then we must have either $\kappa_1< 0 <\kappa_2$ or $\kappa_2 < 0 < \kappa_1$. Therefore, the point is hyperbolic.
+
+- If $K = 0$, then we might have
+    * $\kappa_1 \neq 0$ and $\kappa_2 = 0$, or $\kappa_1 = 0$ and $\kappa_2 \neq 0$. In both cases the point is parabolic.
+    * $\kappa_1 = \kappa_2 = 0$, in which case the point is planar.
+
+:::
 
 
 ::: Example
+### Analysis of local shape
+
 
 **Question.** Consider the surface chart
 $$
@@ -10506,73 +10207,48 @@ $$
 2. Compute the second fundamental form of $\sss$.
 3. Compute the matrix of the Weingarten map.
 4. Show that $\pp = \sss(1,0)$ is an elliptic point. 
-
-**Note.** This shows that $\sss$ is approximated by an *elliptic paraboiloid* in the vicinity of $\pp$.
+5. Can there be points which are not elliptic?
 
 
 **Solution.** 
 
-1. Start by computing the first fundamental form:
+1. The FFF of $\sss$ is
 \begin{align*}
-\sss_{u} & =(1,1,2u) \\
-\sss_{v} & =(-1,1,2v) \\  
-E & = \sss_{u} \cdot \sss_u  = 2 (1+2u^2) \\
-F & = \sss_{u} \cdot \sss_v  = 4uv \\
-G & = \sss_{v} \cdot \sss_v  = 2 (1+2v^2) 
-\end{align*}
-so that
-$$
-\mathscr{F}_{1}=
-\left(
-  \begin{array}{ll}
-E & F \\
-F & G
-\end{array}
-\right)
-=
-\left(\begin{array}{ll}
-2(1 + 2u^2) & 4uv \\
-4uv & 2(1 + 2v^2)
+& \sss_{u} =(1,1,2u) 
+&\,& F = \sss_{u} \cdot \sss_v  = 4uv \\
+& \sss_{v} =(-1,1,2v) 
+&\,&G = \sss_{v} \cdot \sss_v  = 2 (1+2v^2) \\
+& E  = \sss_{u} \cdot \sss_u  = 2 (1+2u^2)
+&\,&\mathscr{F}_{1}  =
+2\left(\begin{array}{ll}
+1 + 2u^2 & 2uv \\
+2uv & 1 + 2v^2
 \end{array}\right)
-$$
-
-2. We now compute the second fundamental form
-\begin{align*}
-\sss_{u u} & =(0,0,2) \\
-\sss_{u v} & =(0,0,0) \\
-\sss_{v v} & =(0,0,2) \\
-\sss_{u} \times \sss_{v} & =\left|\begin{array}{ccc}
-\ii & \jj & \kk \\
-1 & 1 & 2 u \\
--1 & 1 & 2 v
-\end{array}\right| \\
-& =2(v-u,-u-v, 1) \\
-\left\|\sss_{u} \times \sss_{v}\right\| & =2\left( 1 + 2u^2 + 2v^2\right)^{\frac{1}{2}} \\
-\NN & =\frac{(v-u,-u-v, 1)}{ \left( 1 + 2 u^2 + 2 v^2 \right)^{\frac{1}{2}}} \\
-L & = \sss_{uu} \cdot \NN =\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \\
-M & = \sss_{uv} \cdot \NN = 0 \\
-N & = \sss_{vv} \cdot \NN = \frac{2}{\left(1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}}
 \end{align*}
-so that
+
+2. The standard unit normal is
 \begin{align*}
-\mathscr{F}_{2} & =
-\left(\begin{array}{ll}
-L & M \\
-M & N
-\end{array}\right) \\
-& =
-\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \, \left(\begin{array}{ll}
+\sss_{u} \times \sss_{v} & =2(v-u,-u-v, 1) \\
+\left\|\sss_{u} \times \sss_{v}\right\| & =2\left( 1 + 2u^2 + 2v^2\right)^{\frac{1}{2}} \\
+\NN & =\frac{(v-u,-u-v, 1)}{ \left( 1 + 2 u^2 + 2 v^2 \right)^{\frac{1}{2}}}
+\end{align*}
+The SFF of $\sss$ is
+\begin{align*}
+& \sss_{u u}  =(0,0,2) 
+\qquad \quad L = \sss_{uu} \cdot \NN =2 \left( 1 + 2u^{2}+ 2v^{2}\right)^{-\frac{1}{2}} \\
+& \sss_{u v}  =(0,0,0)
+\qquad \quad M  = \sss_{uv} \cdot \NN = 0 \\
+& \sss_{v v} =(0,0,2) 
+\qquad \quad N = \sss_{vv} \cdot \NN = 2\left(1 + 2u^{2}+ 2v^{2}\right)^{-\frac{1}{2}} \\
+& \mathscr{F}_{2}  
+ = \left( 1 + 2u^{2}+ 2v^{2}\right)^{-\frac{1}{2}} \, \left(\begin{array}{ll}
 1 & 0 \\
 0 & 1
 \end{array}\right) \,.
 \end{align*}
 
 
-3. The determinant of $\mathscr{F}_1$ is
-$$
-\det (\mathscr{F}_1) = 4 (1+2u^2 + 2v^2)
-$$
-and therefore
+3. The inverse of $\mathscr{F}_1$ is
 \begin{align*}
 \mathscr{F}_{1}^{-1} & = \frac{1}{\det (\mathscr{F}_1)} 
 \left(
@@ -10616,25 +10292,27 @@ $$
 $$
 Therefore the principal curvatures at $\pp$ are
 $$
-\kappa_1(\pp) = 3^{-\frac32} \,, \quad
-\kappa_2(\pp) = 3^{-\frac12} \,. \quad
+\kappa_1(\pp) = 3^{-\frac32} > 0 \,, \quad
+\kappa_2(\pp) = 3^{-\frac12} > 0\,. \quad
 $$
-Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$, we have that $\pp$ is an elliptic point.
+Therefore $\pp$ is an elliptic point.
+
+5. No. This is because the Gaussian curvature is
+$$
+K = \det(\WW) = \frac{1}{(1 + 2u^2 + 2v^2)^2} >0\,.
+$$
+By Proposition \ref{proposition-gauss-shape} we conclude that every point is elliptic.
 
 :::
 
 
 
 
-
-### Umbilical points
-
-
 ::: Definition
 ### Umbilical point
 
-Let $\SSS$ be a regular surface and denote by $\kappa_1(\pp)$ and 
-$\kappa_2(\pp)$ its principal curvatures at $\pp$. We say that $\pp$ is an **umbilic** if 
+Let $\SSS$ be a regular surface, with $\kappa_1(\pp)$ and 
+$\kappa_2(\pp)$ the principal curvatures at $\pp$. We say that $\pp$ is an **umbilical point** if 
 $$
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
 $$
@@ -10645,6 +10323,27 @@ $$
 ::: Remark
 
 Umbilical points might be **planar** or **elliptic**.
+
+:::
+
+
+
+
+
+::: Example
+### Plane and Sphere
+
+1. From Example \ref{example-curvature-plane}, the principal curvatures of the plane are
+$$
+\kappa_1 = \kappa_2 = 0 \,.
+$$
+Therefore, all points are umbilical, of planar type.
+
+2. From Example \ref{example-sphere-principal-bis}, the principal curvatures of the sphere are
+$$
+\kappa_1 = \kappa_2 = 1 \,.
+$$
+Therefore, all points are umbilical, of elliptic type.
 
 :::
 
@@ -10665,6 +10364,7 @@ a sphere or a plane. Indeed, the following theorem holds.
 
 
 ::: Theorem
+### Structure theorem at umbilics
 
 Let $\SSS$ be a regular surface such that every point $\pp \in \SSS$ is
 umbilic. Then $\SSS$ is an open subset of plane or a sphere.
@@ -10775,6 +10475,232 @@ $\mathbf{a}/\kappa$ and radius $1/\kappa$.
 
 
 :::
+
+
+
+
+::: Proposition 
+### Criterion for umbilics {#proposition-characterization-umbilics-1}
+
+Let $\SSS$ be a regular surface. The point $\pp$ is umbilical if and only if 
+$$
+H^2(\pp) = K(\pp) \,.
+$$
+In particular, $\pp$ cannot be umbilical if 
+$$
+K(\pp) < 0 \,.
+$$
+
+:::
+
+::: Proof
+
+*Part 1.* By Proposition \ref{proposition-curvatures-relationships}, the principal curvatures are
+$$
+\kappa_1 = H + \sqrt{H^2 - K }\,, \quad 
+\kappa_2 = H - \sqrt{H^2 - K }\,.
+$$
+By definition, $\pp$ is umbilic if and only if $\kappa_1 = \kappa_2$ at $\pp$, which is equivalent to $H^2 - K = 0$.
+
+*Part 2.* If $K(\pp) < 0$, then we cannot have that 
+$K(\pp) = H^2(\pp)$. Therefore, by Part 1, $\pp$ cannot be umbilical.
+
+:::
+
+
+
+
+
+
+::: Proposition 
+### Chart criterion for umbilics {#proposition-characterization-umbilics-2}
+
+
+Let $\sss \colon U \to \R^3$ be a regular chart and $\SSS = \sss(U)$. A point $\pp$ is umbilic if and only if there exists a scalar $\kappa$ such that
+$$
+\FF_2 = \kappa \FF_1 \,.
+$$
+
+
+:::
+
+
+
+::: Proof 
+
+**Part 1.** By Theorem \ref{theorem-weingarten-diagonal-bis}, there exists a basis $\{\ttt_1,\ttt_2\}$ of $T_{\pp} \SSS$ such that the Weingarten map satisfies
+$$
+\WW_{\pp,\SSS} (\ttt_1) = \kappa_1 \ttt_1 \,, \quad
+\WW_{\pp,\SSS} (\ttt_2) = \kappa_2 \ttt_2 \,,
+$$
+where $\kappa_1$ and $\kappa_2$ are the principal curvatures of $\SSS$ at $\pp$. If $\pp$ is umbilical, then 
+$$
+\kappa_1 = \kappa_2 = \kappa \,.
+$$
+Let $\vv \in T_{\pp} \SSS$. Then $\vv = \lambda \ttt_1 + \mu \ttt_2$ for some $\lambda,\mu \in \R$. By linearity of $\WW_{\pp,\SSS}$, we get
+\begin{align*}
+\WW_{\pp,\SSS} (\vv) & = \WW_{\pp,\SSS} (\lambda \ttt_1 + \mu \ttt_2) \\
+& = \lambda \WW_{\pp,\SSS}(\ttt_1) + \mu \WW_{\pp,\SSS}(\ttt_2) \\
+& = \lambda \kappa \ttt_1 + \mu \kappa \ttt_2 \\
+& = \kappa \vv \,,
+\end{align*}
+showing that $\WW_{\pp,\SSS}$ is a multiple of the identity map. Therefore, the matrix representation of $\WW_{\pp,\SSS}$ with respect to any basis of $T_{\pp}\SSS$ is a multiple of the identity matrix. In particular,
+$$
+\WW = \kappa I \,,
+$$
+where $\WW$ is the matrix of $\WW_{\pp,\SSS}$ with respect to the basis $\{\sssu,\sssv\}$ of $T_{\pp}\SSS$. Recalling that $\WW = \FF_1^{-1} \FF_2$, we obtain 
+$$
+\WW = \kappa I \quad  \implies \quad 
+\FF_1^{-1} \FF_2 =  \kappa I  \quad \implies \quad 
+\FF_2 =  \kappa \FF_1 \,.
+$$ 
+
+:::
+
+
+::: Example
+### Plane and Sphere
+
+1. If the plane is charted as in Example \ref{example-curvature-plane}, the FFF and SFF are
+$$
+\FF_1 = 
+\left( 
+\begin{array}{cc}
+1 & 0 \\
+0 & 1 
+\end{array}
+\right) \,, \qquad 
+\FF_2 = 
+\left( 
+\begin{array}{cc}
+0 & 0 \\
+0 & 0 
+\end{array}
+\right)  \,.
+$$
+Therefore $\FF_2 = \kappa \FF_1$ with $\kappa = 0$, and all points are umbilical.
+
+2. If the sphere is charted as in Example \ref{example-sphere-principal-bis}, the FFF and SFF are
+$$
+\FF_1 = \FF_2 = 
+\left( 
+\begin{array}{cc}
+\cos^2(v) & 0 \\
+0         & 1 
+\end{array}
+\right) \,.
+$$
+Since $\FF_2 = \FF_1$, all points on the sphere are umbilical.
+
+:::
+
+
+
+::: Remark
+### How to find umbilics
+
+Condition $\FF_2 = \kappa \FF_1$ is equivalent to
+$$
+(E,F,G) \times (L,M,N) = \zero \,.
+$$
+In practice, umbilics can be found by solving the above equations. Common factors may be discarded, if convenient.
+
+:::
+
+::: Proof
+
+By the properties of vector product, we have that
+$$
+(E,F,G) \times (L,M,N) = \zero
+$$
+if and only if the vectors $(E,F,G)$ and $(L,M,N)$ are parallel. Therefore, there exists a constant $\kappa$ such that
+$$
+(L,M,N) = \kappa (E,F,G) \quad \iff \quad 
+\FF_2 = \kappa \FF_1 \,.
+$$
+
+:::
+
+
+
+
+
+
+
+
+::: Example
+### Local shape of the Monkey Saddle
+
+**Question.** Consider the *Monkey Saddle* surface $\SSS$ described by
+$$
+z = x^3 - 3xy^2 \,.
+$$
+
+1. Compute the Gaussian curvature of $\SSS$.
+2. Does $\SSS$ contain any hyperbolic point?
+3. Prove that the origin is the only umbilical point.
+
+
+**Solution.** The Monkey Saddle is charted by
+$$
+\sss (u,v) = (u,v, u^3 - 3uv^2) \,.
+$$
+The FFF of $\sss$ is
+\begin{align*}
+& \sssu  = (1,0,3(u^2 - v^2))
+&&F    = \sssu \cdot \sssv = - 18 uv (u^2 - v^2) \\
+& \sssv  = (0,1,-6uv) 
+&& G = \sssv \cdot \sssv = 1 + 36u^2v^2  \\
+& E = \sssu \cdot \sssu = 1 + 9 (u^2 - v^2)^2 \\
+\end{align*}
+The SFF of $\sss$ is
+\begin{align*}
+\sssu \times \sssv & = (-3(u^2-v^2), 6uv, 1) \\
+\norm{\sssu \times \sssv} & = 1 + 36u^2v^2 +  9 (u^2 - v^2)^2 \\
+& = 1 + 9u^4 + 9v^4 + 18u^2v^2 \\
+& = 1 + 9 (u^2 + v^2)^2 \\
+\NN & = \frac{(-3(u^2-v^2), 6uv, 1)}{\sqrt{1 + 9 (u^2 + v^2)^2 }} \\
+\sss_{uu} & = (0,0,6u) \\
+\sss_{uv} & = (0,0,-6v) \\
+\sss_{vv} & = (0,0,-6u) \\
+L & = \sss_{uu} \cdot \NN = \frac{6u}{\sqrt{1 + 9 (u^2 + v^2)^2 }}\\
+M & = \sss_{uv} \cdot \NN = \frac{-6v}{\sqrt{1 + 9 (u^2 + v^2)^2 }}\\
+N & = \sss_{vv} \cdot \NN = \frac{6u}{\sqrt{1 + 9 (u^2 + v^2)^2 }}
+\end{align*}
+
+1. We have that
+\begin{align*}
+EG-F^2 & = (1 + 9 (u^2 - v^2)^2)(1 + 36u^2v^2) - (- 18 uv (u^2 - v^2))^2 \\
+& =  1 + 36u^2v^2 +  9 (u^2 - v^2)^2 \\
+& = 1 + 9u^4 + 9v^4 + 18u^2v^2 \\
+& = 1 + 9 (u^2 + v^2)^2 \\
+LN-M^2 & = -\frac{36(u^2 + v^2)}{ 1 + 9 (u^2 + v^2)^2 }
+\end{align*}
+Therefore the Gaussian curvature is
+$$
+K = \frac{LN - M^2}{EG-F^2} = - \frac{36 (u^2 + v^2)}{[1 + 9 (u^2 + v^2)^2]^2} \,.
+$$
+
+2. Note that 
+$$
+K < 0 \,, \quad \forall \, (u,v) \neq (0,0) \,.
+$$ 
+By Proposition \ref{proposition-gauss-shape}, we conclude that all the points outside of the origin are hyperbolic.
+
+
+3. Since $K<0$ everywhere except at the origin, Proposition \ref{proposition-characterization-umbilics-1} implies that points outside the origin cannot be umbilic. At $(0,0)$, we have
+$$
+\FF_1 = du^2 + dv^2 \,, \quad \FF_2 = 0  \,.
+$$
+Therefore $\FF_2$ is a multiple of $\FF_1$, and by Proposition \ref{proposition-characterization-umbilics-2} we conclude that $(0,0)$ is an umbilical point. Note: the matrix of the Weingarten map is $\WW= \FF^{-1}_1 \FF_2 = 0$. Therefore the principal curvatures are $\kappa_1 =  \kappa_2 = 0$, showing that $(0,0)$ is a planar point.
+:::
+
+
+
+![The Monkey Saddle surface $z= x^3 - 3xy^2$.](/images/monkey_saddle.png){width=40%}
+
+
+
 
 
 

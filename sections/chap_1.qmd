@@ -700,7 +700,7 @@ $$
 In @fig-smooth-curve we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point $x$.
 
 
-![Example of smooth and non-smooth curves](/images/smooth_curve.png){#fig-smooth-curve width=70%}
+![Example of smooth and non-smooth curves](/images/smooth_curve.png){#fig-smooth-curve width=40%}
 
 
 We will work under the following assumption.
@@ -806,7 +806,7 @@ $$
 as $\delta \to 0$, we see that $\dg (t)$ is **parallel** to the tangent of $\g$ at $\g(t)$, as showin in @fig-tangent.
 
 
-![Approximating the tangent vector](/images/tangent.png){#fig-tangent width=70%}
+![Approximating the tangent vector](/images/tangent.png){#fig-tangent width=40%}
 
 
 
@@ -1009,7 +1009,7 @@ $$
 The above is just an extension of the Pythagoras theorem to $\R^n$, and the length of $v$ is computed from the origin.
 
 
-![Interpretation of $\norm{v}$ in $\R^2$](/images/pythagoras.png){width=70%}
+![Interpretation of $\norm{v}$ in $\R^2$](/images/pythagoras.png){width=40%}
 
 
 If we have a second vector $\uu \in \R^n$, then the quantity 
@@ -1019,12 +1019,12 @@ $$
 measures the length of the difference between $u$ and $v$.
 
 
-![Interpretation of $\norm{\uu-\vv}$ in $\R^2$](/images/length_difference.png){width=70%}
+![Interpretation of $\norm{\uu-\vv}$ in $\R^2$](/images/length_difference.png){width=40%}
 
 
 We would like to define the concept of **length** of a curve. Intuitively, one could proceed by approximation as in the figure below.
 
-![Approximating the length of $\g$](/images/length_approx.png){width=70%}
+![Approximating the length of $\g$](/images/length_approx.png){width=40%}
 
 In formulae, this means choosing some time instants
 $$
@@ -1133,7 +1133,7 @@ $$
 The above argument can be made rigorous, as we see in the next theorem.
 
 
-![Approximating $L(\g)$ via $\dg$](/images/length_derivative.png){width=70%}
+![Approximating $L(\g)$ via $\dg$](/images/length_derivative.png){width=40%}
 
 
 
@@ -1289,7 +1289,7 @@ Let us check that we have given a meaningful definition of length by computing $
 
 
 ::: Example
-### Length of Circle
+### Length of the Circle
 
 **Question.** Compute the length of the circle of radius $R$
 $$
@@ -1308,8 +1308,9 @@ L(\g)  & = \int_{0}^{2\pi}  \norm{  \dg(t)} \, dt
 
 
 
+
 ::: Example
-### Length of Helix
+### Length of the Helix
 
 **Question.** Compute the length of the Helix
 $$
@@ -1318,8 +1319,8 @@ $$
 
 **Solution.** We compute
 \begin{align*}
-\dg(t) & = (-R\sin(t), R\cos(t) , H) \\
-\norm{ \dg(t)  } &  = \sqrt{R^2 + H^2} \\
+\dg(t) & = (-R\sin(t), R\cos(t) , H) \qquad
+\norm{ \dg(t)  }  = \sqrt{R^2 + H^2} \\
 L(\g) & = \int_0^{2\pi} \norm{ \dg(u) } \, du = 2 \pi \sqrt{R^2 + H^2}
 \end{align*}
 
@@ -1342,7 +1343,7 @@ causes a bit of shrinkage, as shown in the above estimate.
 
 ## Arc-length
 
-We have just shown in Theorem \ref{theorem-length} that the length of a regular curve $\g \ \colon [a,b] \to \R^n$ with $[a,b]$ bounded is given by
+We have just shown in Theorem \ref{theorem-length} that the length of a smooth curve $\g \ \colon [a,b] \to \R^n$ with $[a,b]$ bounded is given by
 $$
 L(\g) = \int_a^b \norm{ \dg (t)} \,dt \,.
 $$
@@ -1352,17 +1353,17 @@ Using this formula, we introduce the notion of length of a portion of $\g$.
 
 
 ::: Definition 
-### Arc-Length
+### Arc-Length of a curve
 
 The **arc-length** along $\g \colon (a,b) \to \R^3$ from $t_{0}$ to $t$ is
 $$
-s \colon (a,b) \to \R \,, \quad s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u \,.
+s \colon (a,b) \to \R \,, \qquad s(t)=\int_{t_{0}}^{t}\|\dg(u)\| d u \,.
 $$
 
 :::
 
 
-![Arc-length of $\g$ starting at $\g(t_0)$](/images/arc_length.png){width=70%}
+![Arc-length of $\g$ starting at $\g(t_0)$](/images/arc_length.png){width=40%}
 
 
 ::: Remark
@@ -1430,7 +1431,7 @@ $$
 
 **Question.** Consider the circle of radius $R$, parametrized by
 $$
-\g(t) = (R\cos(t), R\sin(t),0) \,, \quad  t \in [0,2\pi] \,.
+\g(t) = (R\cos(t), R\sin(t),0)  \,.
 $$
 Compute the arc-length function of $\g$.
 
@@ -1438,7 +1439,7 @@ Compute the arc-length function of $\g$.
 $$
 \dg(t) = (-R\sin(t), R\cos(t),0) \,, \quad \norm{\dg(t)} = R \,.
 $$
-Therefore, for any fixed $t_0 \in [0,2\pi]$, we have
+Therefore, for any fixed $t_0$, we have
 $$
 s(t) = \int_{t_0}^{t}  \norm{  \dg(\tau)} \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
 $$
@@ -1451,7 +1452,7 @@ In particular we see that $\dot s = R$ is constant.
 
 **Question.** Compute the arc-length of
 $$
-\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,, \quad t \in (0,2\pi) \,.
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,.
 $$
 
 **Solution.** The arc-length starting from $t_0$ is
@@ -1463,6 +1464,7 @@ s(t) & = \int_{t_0}^t \norm{\dg(\tau)} \, d \tau
 \end{align*}
 
 :::
+
 
 
 ```{python}
@@ -1518,7 +1520,7 @@ $$
 :::
 
 
-![Vectors $u$ and $v$ in $\R^2$ forming angle $\theta$](/images/scalar_product.png){width=60%}
+![Vectors $u$ and $v$ in $\R^2$ forming angle $\theta$](/images/scalar_product.png){width=40%}
 
 
 ::: Remark 
@@ -1786,7 +1788,7 @@ A crucial identity which allows to simplify calculations for unit-speed curves i
 the next proposition.
 
 
-::: { .Proposition #proposition-speed-identity} 
+::: {.Proposition #proposition-speed-identity} 
 
 Let $\g \ \colon (a,b) \to \R^n$ be a unit-speed curve. Then
 $$
@@ -1831,7 +1833,7 @@ Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit-spee
 
 
 
-![If $\g$ is unit-speed then $\dg$ and $\ddg$ are orthogonal](/images/tangent_orthogonal.png){width=60%}
+![If $\g$ is unit-speed then $\dg$ and $\ddg$ are orthogonal](/images/tangent_orthogonal.png){width=40%}
 
 
 
@@ -1904,12 +1906,14 @@ $$
 ::: Definition
 ### Reparametrization
 
-Let $\g \ \colon (a,b) \to \R^n$ be a curve. A **reparametrization** of $\g$ is a curve $\tilde{\g} \ \colon (\tilde{a},\tilde{b}) \to \R^n$ such that
+
+Let $\g \ \colon (a,b) \to \R^3$. A **reparametrization** of $\g$ is a curve $\tilde{\g} \ \colon (\tilde{a},\tilde{b}) \to \R^3$ such that
 $$
-\tg (t) = \g (\f(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,, 
-$$ {#eq-reparametrization}
+\tg (t) = \g (\f(t)) \,,\quad \forall \, t \in (\tilde{a},\tilde{b})\,,
+$$
 for $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ diffeomorphism. We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
 :::
+
 
 
 ::: Remark
@@ -1940,7 +1944,7 @@ $\Gamma$ is called the support of $\gamma$.
 
 
 
-![Sketch of 1D shape $\Gamma$ parametrized by $\g$ and $\tg$. We can switch parametrization by means of the diffeomorphism $\f$.](/images/reparametrization.png){#fig-reparametrization width=70%}
+![Sketch of 1D shape $\Gamma$ parametrized by $\g$ and $\tg$. We can switch parametrization by means of the diffeomorphism $\f$.](/images/reparametrization.png){#fig-reparametrization width=40%}
 
 
 
@@ -1987,14 +1991,14 @@ $$
 
 ::: {.content-visible when-format="html"}
 
-![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.gif){width=90%}
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.gif){width=40%}
 
 :::
 
 
 ::: {.content-visible when-format="pdf"}
 
-![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=60%}
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=40%}
 
 :::
 
@@ -2050,14 +2054,14 @@ $$
 
 ::: {.content-visible when-format="html"}
 
-![Lemniscate curve $\g$ and Lemniscate at double speed $\tg$](/images/lemniscate_animated.gif){width=90%}
+![Lemniscate curve $\g$ and Lemniscate at double speed $\tg$](/images/lemniscate_animated.gif){width=40%}
 
 :::
 
 
 ::: {.content-visible when-format="pdf"}
 
-![Lemniscate curve](/images/lemniscate_static.png){width=50%}
+![Lemniscate curve](/images/lemniscate_static.png){width=40%}
 
 :::
 
@@ -2077,7 +2081,7 @@ We will see that this is possible if and only if the curve $\g$ is regular, in t
 
 
 ::: Definition
-### Regular points  {#definition-regular}
+### Regular curve  {#definition-regular}
 
 Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. We say that:
 
@@ -2086,9 +2090,9 @@ $$
 \dg(t_0) \neq 0 \,.
 $$
 2. A point $\g(t_0)$ is **singular** if it is not regular.
-3. The curve $\g$ is regular if every point of $\g$ is regular, that is,
+3. $\g$ is **regular** if every point of $\g$ is regular, that is,
 $$
-\dg(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,. 
+\norm{\dg (t)}  \neq 0 \,, \quad \forall \, t \in (a,b)\,.
 $$
 
 :::
@@ -2196,14 +2200,14 @@ If we animate the plots of the above parametrizations we see that:
 
 ::: {.content-visible when-format="html"}
 
-![Left: Animation of $\g(t) = (t,t^2)$. Right: Animation of $\eeta(t) = (t^3,t^6)$.](/images/singular_curve_animated.gif){width=90%}
+![Left: Animation of $\g(t) = (t,t^2)$. Right: Animation of $\eeta(t) = (t^3,t^6)$.](/images/singular_curve_animated.gif){width=40%}
 
 :::
 
 
 ::: {.content-visible when-format="pdf"}
 
-![Parabola $\Gamma$](/images/singular_curve.png){width=50%}
+![Parabola $\Gamma$](/images/singular_curve.png){width=40%}
 
 :::
 
@@ -2280,7 +2284,7 @@ Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **not
 We now define unit-speed reparametrizations:
 
 ::: Definition 
-### unit-speed reparametrization
+### Unit-speed reparametrization
 
 Let $\g \colon (a,b) \to \R^n$. A **unit-speed reparametrization** of $\g$ is a reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ which is unit-speed, that is,
 $$
@@ -2308,7 +2312,7 @@ As it turns out, all the unit-speed reparametrizations of $\g$ are of the form
 $$
 \tg = \g \circ \psi  \,, \qquad \psi := \pm s^{-1} + c
 $$
-The above statements will be proved in Theorem \ref{theorem-regular-unit-speed} and Proposition \ref{proposition-arc-length-unit} below.
+The above statements will be proved in Theorem \ref{theorem-regular-unit-speed} and Theorem \ref{theorem-arc-length-unit} below.
 
 
 
@@ -2415,10 +2419,10 @@ $$
 is a unit-speed reparametrization of $\g$. In the next proposition we show that the arc-length $s$ is essentially the only unit-speed reparametrization of a regular curve. 
 
 
-::: Proposition
-### Arc-length and unit-speed reparametrization  {#proposition-arc-length-unit}
+::: Theorem
+### Characterization of unit-speed reparametrizations {#theorem-arc-length-unit}
 
-Let $\g \ \colon (a,b) \to \R^3$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^3$ be a reparametrization of $\g$, that is,
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a reparametrization of $\g$, that is,
 $$
 \g(t) = \tg ( \phi(t) )  , \quad \forall \, t \in (a,b)
 $$
@@ -2528,9 +2532,9 @@ proving that $\tg$ is a unit-speed reparametrization.
 ::: Definition
 ### Arc-length reparametrization
 
-Let $\g$ be regular. The **arc-length reparametrization** of $\g$ is the curve
+Let $\g$ be regular. The **arc-length reparametrization** of $\g$ is
 $$
-\tg = \g  \circ s^{-1}
+\tg = \g  \circ s^{-1} \,,
 $$
 with $s^{-1}$ inverse of the arc-length function of $\g$.
 
@@ -2613,35 +2617,33 @@ $$
 
 :::
 
-
 ::: Example
+### Reparametrization by arc-length
 
 **Question.** Consider the curve
 $$
 \g(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
 $$
 
-1. Prove that $\g$ is regular.
-2. Reparametrize $\g$ by arc-length.
+Prove that $\g$ is regular, and reparametrize it by arc-length.
 
-
-**Solution.**
-
-1. $\g$ is regular because
-\begin{align*}
-\dg(t) & =(-5 \sin (t), 5 \cos (t), 12) \\
- \|\dg(t)\| & = 13 \neq 0
- \end{align*}
-
-2. The arc-length of $\g$ starting from $t_0 = 0$ is
+**Solution.** $\g$ is regular because
 $$
-s(t) = \int_0^t \norm{ \dg(u) } \, d u = 13 t \,.
+\dg(t)  =(-5 \sin (t), 5 \cos (t), 12) \,, \qquad 
+ \|\dg(t)\|  = 13 \neq 0
 $$
-The inverse is $t(s) = s/13$. The arc-length reparametrization of $\g$ is
+The arc-length of $\g$ starting from $t_0 = 0$, and its inverse, are
+$$
+s(t) = \int_0^t \norm{ \dg(u) } \, d u = 13 t \,, \qquad t(s) = \frac{s}{13} \,.
+$$
+The arc-length reparametrization of $\g$ is
 $$
 \tg(s)= \g(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
 $$
+
+
 :::
+
 
 
 
@@ -2663,21 +2665,17 @@ $$
 $$
 Therefore 
 $$
-\dg(t) = (1,2t,3t^2)\,,
-$$
-so that 
-$$
-\dg (t) \neq 0 \,, \quad \forall \, t \in \R  \,,
+\dg(t) = (1,2t,3t^2) \neq \zero \,,
 $$
 meaning that $\g$ is regular. In particular
 $$
-\norm{ \dg(t) } = \sqrt{  1 + 4t^2 + 9t^4 }
+\norm{ \dg(t) } = \sqrt{  1 + 4t^2 + 9t^4 }\,,
 $$
 so that the arc-length of $\g$ is
 $$
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 $${#eq-twisted-arc}
-Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} 
+Since $\g$ is regular, by Theorem \ref{theorem-arc-length-unit} 
 we know that $\g$ admits the unit-speed reparametrization
 $$
 \tg :=  \g \circ s^{-1}
@@ -2770,14 +2768,14 @@ This curve has two main properties:
 
 ::: {.content-visible when-format="html"}
 
-![Animated plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_animated.gif){width=90%}
+![Animated plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_animated.gif){width=40%}
 
 :::
 
 
 ::: {.content-visible when-format="pdf"}
 
-![Plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_static.png){width=60%}
+![Plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_static.png){width=40%}
 
 :::
 
@@ -2896,7 +2894,7 @@ see figure below. In this way $\tg$ is $T$-periodic and smooth.
 :::
 
 
-![The points $t \in \R$ and $\tilde{t} \in [a,b]$ from Point 3 in Remark \ref{remark-closed}. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){width=70%}
+![The points $t \in \R$ and $\tilde{t} \in [a,b]$ from Point 3 in Remark \ref{remark-closed}. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){width=40%}
 
 
 ::: Definition
@@ -3024,7 +3022,7 @@ Therefore $\g$ is constant. This is a contradiction, as we were assuming that $\
 
 
 
-![For each $t \in \R$ there exist unique $k_n \in \Z$ and $\tilde{t}_n \in [0,T_n]$ such that $t=\tilde{t} + k_n T_n$. In this skecth $k_n =3$.](/images/archimedean.png){width=70%}
+![For each $t \in \R$ there exist unique $k_n \in \Z$ and $\tilde{t}_n \in [0,T_n]$ such that $t=\tilde{t} + k_n T_n$. In this skecth $k_n =3$.](/images/archimedean.png){width=40%}
 
 
 ::: Example
@@ -3122,4 +3120,4 @@ which is not an integer multiple of the period $2\pi$. Therefore $\g$ is **self-
 
 
 
-![Limaçon curve](/images/limacon.png){width=60%}
+![Limaçon curve](/images/limacon.png){width=40%}

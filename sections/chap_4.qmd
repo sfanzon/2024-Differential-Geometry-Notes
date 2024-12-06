@@ -19,13 +19,13 @@ There is only one available direction in which to move on a curve:
 - $t \mapsto \g(-t)$ moves backward on the curve
 
 
-![Sketch of a curve $\g$.](/images/curves_example.png){width=60%}
+![Sketch of a curve $\g$.](/images/curves_example.png){width=40%}
 
 
 Surfaces are 2D objects in $\R^3$. There are two directions in which one can move on a surface. 
 
 
-![Sketch of a surfaces: Sphere, Torus, Möbius band.](/images/surfaces_example.png){width=70%}
+![Sketch of a surfaces: Sphere, Torus, Möbius band.](/images/surfaces_example.png){width=40%}
 
 
 
@@ -39,7 +39,7 @@ How to dercribe a surface mathematically?
 A curve $\Gamma \subseteq \R^3$ can be described with one function $\g \colon (a,b) \to \Gamma$. The idea is that $\Gamma$ looks locally like $\R$.
 
 
-![A curve $\Gamma$ can be described by a function $\g \colon (a,b) \to \Gamma$.](/images/curves_example_2.png){width=60%}
+![A curve $\Gamma$ can be described by a function $\g \colon (a,b) \to \Gamma$.](/images/curves_example_2.png){width=40%}
 
 
 How do we represent a surface? Suppose given a function $\sss \colon U \to \R^3$, with $U \subseteq \R^2$ open set. Denote by $\SSS := \sss(U)$ the image of $U$ through $\sss$. We say that $\SSS$ is a surface and $\sss$ is a **chart**. Unofortunately, not all surfaces can be described with just one chart: in most cases one needs to piece together many local **charts** $\sss_i \colon U_i \to \SSS$, with $U_i \subseteq \R^2$ open. The charts $\sss_i$ represent $\SSS$ if they cover the whole surface:
@@ -48,7 +48,7 @@ $$
 $$
 
 
-![A surface $\SSS$ can be described by a family of charts $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open set.](/images/surfaces_example_2.png){width=60%}
+![A surface $\SSS$ can be described by a family of charts $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open set.](/images/surfaces_example_2.png){width=40%}
 
 Before proceeding with the formal definition of surface, we collect some preliminary definitions and results.
 
@@ -521,7 +521,6 @@ is the open ball of radius $\e>0$ centered at $\xx$. We write $U \in \TT$, with 
 :::
 
 
-
 ::: Example
 
 - The $n$-dimensional unit sphere
@@ -578,7 +577,6 @@ If $U \in \TT_A$, we say that $U$ is open in $A$.
 
 
 
-
 ### Smooth functions
 
 
@@ -607,6 +605,7 @@ The above ``classical'' definition of continuity is equivalent to the topologica
 Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
 
 :::
+
 
 
 ::: Definition
@@ -655,11 +654,9 @@ $f$ at $\xx$ is the $m \times n$ matrix of partial derivatives:
 $$
 Jf(\xx):= \left( \frac{\partial f_i}{\partial x_j}(\xx) \right)_{i,j}  \in \R^{m \times n} \,.
 $$
-If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its determinant, denoted by
-$$
-\det (Jf) \,.
-$$
+If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its determinant, denoted by $\det (Jf)$.
 :::
+
 
 The differential $d_{\xx} f \colon \R^n \to \R^m$ is a linear map. As such, it must have a matrix representation with respect to the Euclidean basis. Since the partial derivative is defined as 
 $$
@@ -750,6 +747,7 @@ A key definition needed for the study of surfaces is the one of diffeomorphism. 
 
 
 
+
 ::: Definition
 ### Diffeomorphism
   
@@ -764,7 +762,7 @@ Let $f \colon U \to V$, with $U,V \subseteq \R^n$ open. We say that $f$ is a **d
 ::: Definition
 ### Local diffeomorphism
 
-A function $f \colon \R^n \to \R^n$ is a **local diffeomorphism** at 
+$f \colon \R^n \to \R^n$ is a **local diffeomorphism** at 
 $\xx_0 \in \R^n$ if:
 
 1. There exists an open set $U \subseteq \R^n$ such that $\xx_0 \in U$,
@@ -774,9 +772,11 @@ $\xx_0 \in \R^n$ if:
 :::
 
 
-::: Remark
 
-If $f \colon U \to V$ is a diffeomorphism, then $f$ is a local diffeomorphism at each $\xx_0 \in U$.
+
+::: Proposition
+
+Diffeomorphisms are local diffeomorphisms.
 
 :::
 
@@ -784,12 +784,15 @@ If $f \colon U \to V$ is a diffeomorphism, then $f$ is a local diffeomorphism at
 Non-vanishing Jacobian determinant is a necessary condition for being a diffeomorphism, as outlined in the following Proposition.
 
 
-::: {.Proposition #proposition-jacobian-zero}
+
+::: Proposition
+### Necessary condition for being diffeomorphism {#proposition-jacobian-zero}
 
 Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a local diffeomorhism at $\xx_0 \in U$. Then 
 $$
 \det Jf (\xx_0) \neq 0 \,.
 $${#eq-non-vanish-det}
+
 
 :::
 
@@ -817,9 +820,9 @@ The condition at (@eq-non-vanish-det) is sufficient fot $f$ to be a **local diff
 
 
 
+
 ::: Theorem
 ### Inverse Function Theorem {#theorem-inverse-function}
-
 
 Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open, $f$ smooth. Assume
 $$
@@ -896,21 +899,18 @@ We will show this in the next Example.
 
 
 
+
 ::: Example
+### A local diffeomorphism which is not global
 
 **Question.** Define the function $f \colon \R^2 \to \R^2$
 $$
 f(x,y) = (e^x \cos(y), e^x \sin(y)) \,.
 $$
 
-1. Prove that $f$ is a local diffeomorphism at each point.
+Prove $f$ is a local diffeomorphism but not a diffeomorphism.
 
-2. Prove that $f$ is not a diffeomorphism.
-
-
-**Solution.** 
-
-1. $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$ by the Inverse Function Theorem, since
+**Solution.** $f$ is a local diffeomorphism at each point $(x,y) \in \R^2$ by the Inverse Function Theorem, since
 \begin{align*}
 & J f (x,y) = 
 e^x \left(
@@ -921,16 +921,13 @@ e^x \left(
 \right)  \\
 & \det Jf(x,y) = e^{2x} \neq 0 \,.
 \end{align*}
-
-
-2. $f$ is not invertible because it is not injective, since 
+However, $f$ is not invertible because it is not injective, since 
 $$
 f(x,y) = f(x, y + 2n\pi) \,, \quad \forall\, (x,y) \in \R^2 , \,  n \in \N  \,.
 $$
 Hence, $f$ cannot be a diffeomorphism of $\R^2$ into $\R^2$.
 
 :::
-
 
 
 
@@ -946,18 +943,16 @@ We give the main definition of surface in $\R^3$.
 ::: Definition
 ### Surface
 
-Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **surface** if for every point $\pp \in \SSS$ there exist 
+Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **surface** if for every point $\pp \in \SSS$ there exist an open set $U \subseteq \R^2$, and a smooth map 
+$\sss \colon U \to  \sss(U) \subseteq \SSS$ such that 
 
-1. An open set $U \subseteq \R^2$,
-2. A smooth map $\sss \colon U \to  \sss(U) \subseteq \SSS$ such that 
-    - $\pp \in \sss(U)$, 
-    - $\sss(U)$ is open in $\SSS$,
-    - $\sss$ is a homeomorphism between $U$ and $\sss(U)$.
+1. $\pp \in \sss(U)$, 
+2. $\sss(U)$ is open in $\SSS$,
+3. $\sss$ is a homeomorphism between $U$ and $\sss(U)$.
 
-The homeomorphism $\sss$ is called a **surface chart** at $\pp$.
+$\sss$ is called a **surface chart** at $\pp$.
 
 :::
-
 
 A visual interpretation of the definition of surface is given in @fig-def-surface.
 
@@ -1002,7 +997,7 @@ $$
 
 
 
-![Sketch of the surface $\SSS$ and chart $\sss \colon U \to \sss(U) \subseteq \SSS$. The set $U \subseteq \R^2$ is open in $\R^2$ and $\sss(U)$ is open in $\SSS$. This means there exists $W$ open in $\R^3$ such that $\sss(U) = \SSS \cap W$.](/images/surfaces_example_3.png){#fig-def-surface width=70%}
+![Sketch of the surface $\SSS$ and chart $\sss \colon U \to \sss(U) \subseteq \SSS$. The set $U \subseteq \R^2$ is open in $\R^2$ and $\sss(U)$ is open in $\SSS$. This means there exists $W$ open in $\R^3$ such that $\sss(U) = \SSS \cap W$.](/images/surfaces_example_3.png){#fig-def-surface width=40%}
 
 
 ::: Notation
@@ -1036,18 +1031,17 @@ An atlas of a surface is a collection of charts which cover the whole surface:
 ::: Definition
 ### Atlas of a surface
 
-Let $\SSS$ be a surface. Assume there exists a collection of **charts** 
+Let $\SSS$ be a surface. Assume given a collection of charts
 $$
 \mathcal{A} = \{ \sss_i\}_{i \in I} \,, \qquad 
-\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,,
+\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,.
 $$
-for some family of indices $I$. The family $\mathcal{A}$ is an **atlas** of $\SSS$ if 
+The family $\mathcal{A}$ is an **atlas** of $\SSS$ if 
 $$
 \SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
 $$
 
 :::
-
 
 
 
@@ -1117,7 +1111,7 @@ and therefore $\mathcal{A} = \{\sss\}$ is an atlas for $\p$, showing that $\p$ i
 
 
 
-![A plane $\p$ is a surface with atlas containing a single chart $\sss \colon \R^2 \to \p$.](/images/surface_plane.png){#fig-plane-surface width=70%}
+![A plane $\p$ is a surface with atlas containing a single chart $\sss \colon \R^2 \to \p$.](/images/surface_plane.png){#fig-plane-surface width=40%}
 
 
 
@@ -1180,7 +1174,7 @@ $$
 :::
 
 
-![Unit cylinder $\SSS$ is a surface with atlas $\mathcal{A} = \{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){#fig-cylinder-surface width=70%}
+![Unit cylinder $\SSS$ is a surface with atlas $\mathcal{A} = \{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){#fig-cylinder-surface width=40%}
 
 
 
@@ -1293,7 +1287,7 @@ which is instead connected. We have obtained a contradiction, and therefore $\SS
 
 
 
-![The circular cone is not a surface. This is because $\SSS \smallsetminus \{\zero\}$ is disconnected.](/images/surface_cone.png){#fig-surface-cone width=70%}
+![The circular cone is not a surface. This is because $\SSS \smallsetminus \{\zero\}$ is disconnected.](/images/surface_cone.png){#fig-surface-cone width=40%}
 
 
 
@@ -1314,17 +1308,16 @@ We want to do something similar for surfaces: We look for a condition that event
 ::: Definition
 ### Regular Chart
 
-Let $U \subseteq \R^2$ be open. A map
-$$
-\sss = \sss(u,v)  \colon U \to \R^3
-$$
-is called a **regular chart** if the partial derivatives
+Let $U \subseteq \R^2$ be open. A map $\sss = \sss(u,v)  \colon U \to \R^3$
+is a **regular chart** if the partial derivatives
 $$
 \sss_u(u,v) = \frac{d\sss}{du}(u,v) \,, \quad
 \sss_v(u,v) = \frac{d\sss}{dv}(u,v) 
 $$
 are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
 :::
+
+
 
 We are now ready to define regular surfaces.
 
@@ -1334,40 +1327,23 @@ We are now ready to define regular surfaces.
 
 Let $\SSS$ be a surface. We say that:
 
-- $\mathcal{A}$ is a **regular atlas** if $\sss$ is a regular chart for all $\sss \in \mathcal{A}$. 
-- $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
+- $\mathcal{A}$ is a **regular atlas** if any $\sss$ in $\mathcal{A}$ is regular. 
+- $\SSS$ is a **regular surface** if it admits a regular atlas.
 
 :::
 
+
 Before making some examples, we highlight give some equivalent methods for checking the regularity condition.
 
-::: Proposition
+::: Theorem
+### Characterization of regular charts
 
-Let $U \subseteq \R^2$ be open and consider a map
-$$
-\sss  \colon U \to \R^3 \,.
-$$
-They are equivalent:
+Let $\sss  \colon U \to \R^3$ with $U \subseteq \R^2$ open. They are equivalent:
 
 1. $\sss$ is a regular chart.
-2. The differential $d_{\xx} \sss \colon \R^2 \to \R^3$ is injective for all $\xx \in U$.
-3. The Jacobian matrix
-$$
-J\sss (u,v) = 
-\left(
-\begin{array}{ccc}
-\sigma^1_{u}  &  \sigma^1_{v} \\
-\sigma^2_{u}  &  \sigma^2_{v} \\
-\sigma^3_{u}  &  \sigma^3_{v} \\
-\end{array} 
-\right)
-$$
-has rank $2$ for all $(u,v) \in U$.
-4. It holds
-$$
-\sss_u \times \sss_v \neq 0 \, \quad  \forall \, (u,v) \in U \,.
-$$
-
+2. $d_{\xx} \sss \colon \R^2 \to \R^3$ is injective for all $\xx \in U$.
+3. The Jacobian matrix $J \sss$ has rank $2$ for all $(u,v) \in U$.
+4. $\sss_u \times \sss_v \neq 0$ for all $(u,v) \in U$.
 
 :::
 
@@ -1427,7 +1403,6 @@ Prove that $\p$ is a regular surface.
 
 
 
-
 ::: Example
 ### Unit cylinder {#example-unit-cylinder}
 
@@ -1436,24 +1411,23 @@ $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
 $\SSS$ is a surface with atlas $\mathcal{A} = \{ \sss_1,\sss_2\}$, with
-\begin{gather*}
-\sss(u,v) = (\cos(u),\sin(u),v)\,, \quad
-\sss_1  := \sss |_{U_1} \,,   \quad  \sss_2 := \sss |_{U_2} \,, \\
-U_1  = \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, \qquad
-U_2  = \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
-\end{gather*}
+\begin{align*}
+& \sss(u,v) = (\cos(u),\sin(u),v)\,,
+&& \sss_1  = \sss |_{U_1} \,,   \quad  \sss_2 = \sss |_{U_2} \,, \\
+& U_1  = \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,,
+&& U_2  = \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
+\end{align*}
 Prove that $\SSS$ is a regular surface.
 
 **Solution.** The map $\sss$ is regular because
 \begin{align*}
-\sss_u & = (-\sin(u),\cos(u),0)\\
-\sss_v & = (0,0,1) \\
-\sss_u \times \sss_v & = (\cos (u), \sin(u), 0) \\
-\norm{\sss_u \times \sss_v} & = 1 \neq 0 \,.
+\sss_u  = (-\sin(u),\cos(u),0) \,, \quad \sss_v  = (0,0,1)  \,,
 \end{align*}
-Therefore $\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas and $\SSS$ a regular surface.
+are linearly independent, since the last components of $\sssu$ and $\sssv$ are $0$ and $1$. Therefore, also $\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$. Thus, $\mathcal{A}$ is a regular atlas and $\SSS$ a regular surface.
 
 :::
+
+
 
 The infinite cylinder can also be parametrized using a single chart, as shown in the next Example.
 
@@ -1482,15 +1456,15 @@ Then $\sss$ is regular and $\mathcal{A} = \{\sss\}$ is a regular atlas for $\SSS
 
 
 
+
 ::: Example
 ### Graph of a function
 
-**Question.** Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+**Question.** Let $f \colon U \to \R$ be smooth, $U \subseteq \R^2$ open. Define
 $$
-\Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
+\Gamma_f = \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,,
 $$
-$\Gamma_f$ is surface with atlas given by
-$\mathcal{A} = \{ \sss \}$, where
+the graph of $f$. Then $\Gamma_f$ is surface with atlas $\mathcal{A} = \{ \sss \}$, where
 $$
 \sss \colon U \to \Gamma_f \,, \quad 
 \sss(u,v):=(u,v,f(u,v)) \,.
@@ -1498,12 +1472,7 @@ $$
 Prove that $\Gamma_f$ is a regular surface.
 
 
-**Solution.** Compute the partial derivatives
-$$
-\sss_u = (1,0,f_u) \,, \quad 
-\sss_v = (0,1,f_v) \,.
-$$
-Therefore, the Jacobian matrix is
+**Solution.** The Jacobian matrix of $\sss$ is
 $$
 J\sss (u,v) = 
 \left(
@@ -1514,7 +1483,8 @@ f_u  & f_v \\
 \end{array} 
 \right) \,.
 $$
-Notice that the first minor of $J\sss$ is the identity matrix, which has determinant $1$, and is hence invertible. Therefore $J\sss$ has rank 2, showing that $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. This implies $\mathcal{A}$ is a regular atlas, and $\SSS$ is a regular surface.
+$J\sss$ has rank 2, because the
+first minor is the $2 \times 2$ identity matrix. Therefore, $\sss$ is regular. This implies $\mathcal{A}$ is a regular atlas, and $\SSS$ is a regular surface.
 
 :::
 
@@ -1525,14 +1495,11 @@ $$
 $$
 In order to prove that $\sphere^2$ is a regular surface, we need to introduce spherical coordinates.
 
+
 ::: Definition
 ### Spherical coordinates
 
-Consider a point
-$$
-\pp := (x,y,z) \in \R^3 \smallsetminus \{\zero\} \,.
-$$ 
-The point $\pp$ is represented in **spherical coordinates** by
+The **spherical coordinates** of $\pp = (x,y,z) \neq \zero$ are
 \begin{align*}
 x & = \rho \cos(\theta) \cos (\fi)    \\
 y & = \rho \sin(\theta) \cos (\fi)   \\
@@ -1559,7 +1526,7 @@ concluding.
 :::
 
 
-![Spherical coordinates in $\R^3$.](/images/spherical_coordinates.png){#fig-spherical-coordinates width=80%}
+![Spherical coordinates in $\R^3$.](/images/spherical_coordinates.png){#fig-spherical-coordinates width=40%}
 
 
 
@@ -1634,13 +1601,16 @@ In particular, we have shown that
 $$
 \sphere^2 = \sss(U) \cup \widetilde{\sss}(U) \,.
 $$
-It is left as an exercise to check that
+
+
+**Question.** Show that
 $$
 \mathcal{A} := \{   \sss , \widetilde{\sss} \} 
 $$
 is a regular atlas for $\sphere^2$.
 
-*Solution.* Check that $\sss$ and $\widetilde{\sss}$ are charts:
+
+**Solution.** Check that $\sss$ and $\widetilde{\sss}$ are charts:
 
 - $\sss$ is smooth.
 - $U$ is open in $\R^2$.
@@ -1687,7 +1657,7 @@ is a regular atlas for $\sphere^2$.
 :::
 
 
-![Equator Line, Greenwich Meridian, Date Line, North and South Poles on the sphere.](/images/earth.png){#fig-earth width=80%}
+![Equator Line, Greenwich Meridian, Date Line, North and South Poles on the sphere.](/images/earth.png){#fig-earth width=40%}
 
 
 
@@ -1766,11 +1736,7 @@ In alternative, the sphere can be parametrized in Cartesian coordinates.
 ::: Example
 ### Unit sphere in Cartesian coordinates {#example-sphere-cartesian}
 
-Consider the unit sphere in $\R^3$
-$$
-\sphere^2 := \left\{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \right\} \,.
-$$
-Define the collection of charts
+**Question.**  Define the following collection of charts on the sphere $\sphere^2$
 $$
 \mathcal{A} = \{ \sss_i \}_{i=1}^6 \,,
 $$
@@ -1787,9 +1753,9 @@ be the unit open ball in $\R^2$, and define $\sss_i \colon U \to \R^3$ by
 \sss_5 (u,v) & = \left(\sqrt{1-u^2-v^2} , u ,v \right) \\
 \sss_6 (u,v) & = \left(-\sqrt{1-u^2-v^2}, u,v,  \right) \\
 \end{align*}
-We have that $\mathcal{A}$ is a regular atlas, showing that $\sphere^2$ is a regular surface. 
+Prove that $\mathcal{A}$ is a regular atlas.
 
-**Proof.** Let us check that $\sphere^2$ is a surface:
+**Solution.** Let us check that $\sphere^2$ is a surface:
 
 - $\sss_1$ is smooth, since in $U$ we have $u^2+v^2<1$.
 - $U$ is open, being the open ball of radius $1$ in $\R^2$.
@@ -1846,29 +1812,24 @@ Let us conclude the section with the example of a non-regular surface.
 
 
 ::: Example
+### A non-regular chart
 
-**Question.** Consider the surface chart
+**Question.** Prove that the following chart is not regular
 $$
 \sss(u,v) = (u,v^2,v^3) \,.
 $$
-Prove that $\sss$ is not regular.
 
 **Solution.** We have
 $$
-\sss_u = (1,0,0) \,, \quad
-\sss_v = (0,2v,3v^2) \,,
+\sss_v  = (0,2v,3v^2) \,, \qquad 
+\sss_v(u,0)  = (0,0,0) \,. 
 $$
-and therefore 
-$$
-\sss_v(u,0) = (0,0,0) \,, 
-$$
-showing that $\sss_u$ and $\sss_v$ are linearly dependent along the line
-$$
-L = \{ (u,0) \divider u \in \R \} \,.
-$$
-Hence $\sss$ is not a regular chart.
+$\sss$ is not regular because $\sss_u$ and $\sss_v$ are linearly dependent along the line $L = \{ (u,0) \divider u \in \R \}$.
 
 :::
+
+
+
 
 Looking at Figure @fig-plot-cusp, it is clear that $\SSS$ is not regular, since $\SSS$ has a cusp along the line $\sss(L)$.
 
@@ -1935,34 +1896,23 @@ plt.show()
 
 We have already considered reparametrizations when we studied curves. In a similar way, one can reparametrize surface charts.
 
-
 ::: Definition
+### Reparametrization
 
 Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
 $$
 \sss \colon U \to \R^3 \,, \quad 
 \widetilde{\sss} \colon \widetilde{U} \to \R^3 \,,
 $$ 
-are surface charts. We say that $\widetilde{\sss}$ is a **reparametrization** of $\sss$ if there exists a diffeomorphism
+are surface charts. We say that $\widetilde{\sss}$ is a **reparametrization** of $\sss$ if there exists a diffeomorphism $\Phi \colon \widetilde{U} \to U$ such that 
 $$
-\Phi \colon \widetilde{U} \to U \,,
+\widetilde{\sss} = \sss \circ \Phi \,.
 $$
-such that 
-$$
-\widetilde{\sss} = \sss \circ \Phi \,,
-$$
-that is,
-$$
-\widetilde{\sss}( \tilde{u},\tilde{v} ) = \sss (  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in 
-\widetilde{U} \,.
-$$
-We call $\Phi$ a **reparametrization map**.
 
 :::
 
 
-
-![Schematic illustration of surface chart $\sss$ and reparametrization $\widetilde{\sss}$.](/images/surface_reparametrization.png){width=80%}
+![Schematic illustration of surface chart $\sss$ and reparametrization $\widetilde{\sss}$.](/images/surface_reparametrization.png){width=40%}
 
 
 We will show that reparametrizations of regular charts are regular. To prove this, first we need to recall the chain rule for vector valued functions of several variables.
@@ -2066,23 +2016,17 @@ We will now prove that the reparametrization of a regular chart is regular.
 
 
 
-::: {.Proposition  #proposition-transition-maps}
+::: Theorem
+### Reparametrizations of regular charts are regular {#theorem-reparametrization}
 
-Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
+Let $U, \widetilde{U} \subseteq \R^2$ be open and 
+$\sss \colon U \to \R^3$ be regular. Suppose given a diffeomorphism $\Phi \colon \widetilde{U} \to U$. The reparametrization
 $$
-\sss \colon U \to \R^3 
-$$ 
-is a regular chart. Assume given a diffeomorphism
-$$
-\Phi \colon \widetilde{U} \to U \,.
-$$
-The reparametrization $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ defined by 
-$$
-\widetilde{\sss} = \sss \circ \Phi
+\widetilde{\sss} \colon \widetilde{U} \to \R^3\,, \qquad \widetilde{\sss} = \sss \circ \Phi
 $$
 is a regular chart, and it holds
 $$
- \widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} =\det  J \Phi \,  \left( \sssu \times \sssv  \right)
+ \widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} =\det  J \Phi \,  \left( \sssu \times \sssv  \right) \,.
 $$
 
 :::
@@ -2147,87 +2091,69 @@ $$
 I := \sss_i(U_i) \cap \sss_j(U_j) \neq \emptyset \,,
 $$
 for some $i \neq j$.
-It is natural to ask whether the charts $\sss_i$ and $\sss_j$ are reparametrizations of each other on the overlapping region $I$, see @fig-transition-maps. This is indeed the case, see Proposition \ref{proposition-transition-map} below. Such reparametrization is called a *transition map*.
+It is natural to ask whether the charts $\sss_i$ and $\sss_j$ are reparametrizations of each other on the overlapping region $I$, see @fig-transition-maps. This is indeed the case, see Theorem \ref{theorem-transition-reparam} below. Such reparametrization is called a *transition map*.
 
 
-![If the two regular charts $\sss$ and $\widetilde{\sss}$ have overlapping image, then they are reparametrization of each other, through a transition map $\Phi =  {\sss}^{-1} \circ \wsss$.](/images/surfaces_transition_map.png){#fig-transition-maps width=80%}
+![If the two regular charts $\sss$ and $\widetilde{\sss}$ have overlapping image, then they are reparametrization of each other, through a transition map $\Phi =  {\sss}^{-1} \circ \wsss$.](/images/surfaces_transition_map.png){#fig-transition-maps width=40%}
 
 
 
 ::: Definition
 ### Transition map
 
-Let $\SSS$ be a regular surface and 
-$$
-\sss \colon U \to  \SSS \,, \quad
-\widetilde{\sss} \colon \widetilde{U} \to  \SSS
-$$
-be regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
+Let $\SSS$ be a regular surface, $\sss \colon U \to  \SSS$, $\wsss \colon \wU \to  \SSS$ regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap
 $$
 I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
 $$
-The set $I$ is open in $\SSS$, being intersection of open sets. Define the sets
+$I$ is open in $\SSS$, being intersection of open sets. Define
 $$
 V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{\sss}^{-1} (I) \subseteq \widetilde{U} \,.
 $$
-Note that $V$ and $\widetilde{V}$ are open, by continuity of $\sss$ and $\widetilde{\sss}$. Since $\sss$ and $\widetilde{\sss}$ are homeomorphisms, by construction
-$$
-\sss(V) = \widetilde{\sss} (\widetilde{V} ) = I \,.
-$$
-Therefore, they are well defined the restrictions
+$V$ and $\widetilde{V}$ are open, by continuity of $\sss$ and $\widetilde{\sss}$. Moreover, as $\sss$ and $\widetilde{\sss}$ are homeomorphisms, we have $\sss(V) = \widetilde{\sss} (\widetilde{V} ) = I$. Therefore, they are well defined the restriction homeomorphisms
 $$
 \sss |_{V} \colon V \to I \,, \quad 
 \widetilde{\sss} |_{\widetilde{V}} \colon \widetilde{V} \to I \,.
 $$
-The maps $\sss |_{V}$ and $\widetilde{\sss} |_{\widetilde{V}}$ are homeomorphisms, being restrictions of homeomorphisms. The composition homeomorphism
+The **transition map** from $\sss$ to $\widetilde{\sss}$ is the homeomorphism
 $$
-\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss}
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss} \,.
 $$
-is called a **transition map** from $\sss$ to $\widetilde{\sss}$.
 
 :::
+
 
 
 
 The following theorem states that the transition maps between regular charts are diffeomorphisms. The proof is somewhat technical and relies on the Implicit Function Theorem. A similar argument will be used for Lemma \ref{lemma-curve-S} in @sec-tangent-space. We have chosen to omit the proof here, but interested readers can refer to page 117 of [@pressley] for details.
 
 
-::: {.Theorem #theorem-transition-map}
+::: {.Theorem #theorem-transition-diffeo}
 
-Let $\SSS$ be a regular surface. The transition maps between regular charts are diffeomorphisms. 
+Transition maps between regular charts are diffeomorphisms. 
 
 :::
 
-The immediate consequence of Theorem \ref{theorem-transition-map} is that transition maps are reparametrizations. 
+The immediate consequence of Theorem \ref{theorem-transition-diffeo} is that transition maps are reparametrizations. 
 To fix notations, let us state this fact precisely.
 
 
-::: {.Proposition #proposition-transition-map}
+::: Theorem
+### Transition maps are reparametrizations {#theorem-transition-reparam}
 
-Let $\SSS$ be a regular surface and 
+Let $\SSS$ be a regular surface, $\sss \colon U \to  \SSS$, $\wsss \colon \wU \to  \SSS$ regular charts, with
+$I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset$. Define the transition map
 $$
-\sss \colon U \to \SSS \,, \quad
-\widetilde{\sss} \colon \widetilde{U} \to  \SSS
+\Phi = \sss^{-1}\circ \wsss \colon \widetilde{V} \to V , \quad V = \sss^{-1}(I) , \quad 
+\widetilde{V} = \wsss^{-1}(I) \,.
 $$
-be regular charts. Suppose the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
-$$
-I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
-$$
-Define the open sets
-$$
-V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \wsss^{-1}(I) \subseteq \widetilde{U} \,,
-$$
-and the transition map
-$$
-\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1}\circ \wsss \,.
-$$
-Then $\sss$ and $\wsss$ are reparametrization of each other, with reparametrization map given by $\Phi$, that is,
+Then $\sss$ and $\wsss$ are reparametrization of each other, with
 $$
 \wsss = \sss \circ \Phi \,, \qquad \sss = \wsss \circ \Phi^{-1} \,.
 $$
 
 
 :::
+
 
 
 
@@ -2274,7 +2200,7 @@ $$
 \Phi:= \sss^{-1} \circ \widetilde{\sss} \,. 
 $$
 Since $\sss$ and $\widetilde{\sss}$ are regular, 
-Proposition \ref{proposition-transition-map} guarantees that $\Phi$ is a reparametrization map. Therefore $\sss$ and $\widetilde{\sss}$ are reparametrization of each other, with 
+Theorem \ref{theorem-transition-reparam} guarantees that $\Phi$ is a reparametrization map. Therefore $\sss$ and $\widetilde{\sss}$ are reparametrization of each other, with 
 $$
 \widetilde{\sss} = \sss \circ \Phi \,.
 $$
@@ -2285,7 +2211,7 @@ Conclusion: the two parametrizations $\sss$ and $\widetilde{\sss}$ of $\sphere^2
 
 ::: Important
 
-Proposition \ref{proposition-transition-map} demonstrates that there is no single preferred way to parametrize a surface: When two regular charts overlap, they are reparametrizations of each other in the overlapping region.
+Theorem \ref{theorem-transition-reparam} demonstrates that there is no single preferred way to parametrize a surface: When two regular charts overlap, they are reparametrizations of each other in the overlapping region.
 
 This observation has a significant consequence: 
 
@@ -2306,32 +2232,28 @@ f \colon \SSS_1 \to \SSS_2 \,,
 $$
 where $\SSS_1$ and $\SSS_2$ are regular surfaces. Up to this point, we only know how to define smooth functions from $\R^n$ to $\R^m$. The idea is to use surface charts to extend this definition of smoothness to functions between surfaces, see @fig-smooth-functions.
 
-
 ::: Definition  
 ### Smooth functions between surfaces {#definition-smooth-map-surface}
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces and let 
-$$
-f \colon \SSS_1 \to \SSS_2 
-$$
-be a map. We say that:
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces and $f \colon \SSS_1 \to \SSS_2$ a map.
 
-1. $f$ is *smooth at $\pp \in \SSS_1$*, if there exist charts $\sss_i \colon U_i \to \SSS_i$ for $i=1,2$ such that
+1. $f$ is *smooth at $\pp \in \SSS_1$*, if there exist charts
 $$
-\pp \in \sss_1(U_1)\,, \quad f(\pp) \in \sss_2(U_2) 
+\sss_i \colon U_i \to \SSS_i \,\, \text{such that}  \,\, \pp \in \sss_1(U_1)\,, \, f(\pp) \in \sss_2(U_2) \,, 
 $$
-and 
+and that the following map is smooth
 $$
-(\sss_2^{-1} \circ f \circ \sss_1 )  \colon U_1 \to U_2
+\Psi  \colon U_1 \to U_2 \,, \quad \Psi = \sss_2^{-1} \circ f \circ \sss_1   \,.
 $$
-is smooth.
 
 2. $f$ is *smooth*, if it is smooth for each $\pp \in \SSS_1$.
 
 :::
 
 
-![The function $f \colon \SSS_1 \to \SSS_2$ is smooth at $\pp$, if the vector valued function $\sss_2^{-1} \circ f \circ \sss_1$ is smooth.](/images/surface_smooth_map.png){#fig-smooth-functions width=70%}
+
+
+![The function $f \colon \SSS_1 \to \SSS_2$ is smooth at $\pp$, if the vector valued function $\sss_2^{-1} \circ f \circ \sss_1$ is smooth.](/images/surface_smooth_map.png){#fig-smooth-functions width=40%}
 
 
 
@@ -2358,7 +2280,7 @@ $$
     $$
     \sss_i(U_i) \cap \widetilde{\sss}_i (\widetilde{U}_i) \neq \emptyset \,.
     $$
-    As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-map} there exist open sets
+    As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-diffeo} there exist open sets
     $$
     V_i \subseteq U_i \,, \qquad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
     $$
@@ -2422,15 +2344,13 @@ is smooth, ending the proof.
 
 The inverse function of a chart is a differentiable.
 
-:::{.Proposition  #proposition-inverse-diff}
+::: Proposition
+### Inverse of a regular chart is smooth {#proposition-inverse-diff}
 
-Let $\SSS$ be a regular surface, and $\sss \colon U \to \SSS$ a regular chart. The inverse
-$$
-\sss^{-1} \colon \sss(U) \to U \subseteq \R^2 \,,
-$$
-is a differentiable function.
+Let $\sss \colon U \to \R^3$ be regular. Then $\sss^{-1} \colon \sss(U) \to U$ is smooth.
 
 :::
+
 
 ::: Proof
 
@@ -2460,7 +2380,7 @@ and the transition map
 $$
 \Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \wsss \,.
 $$
-By Theorem \ref{theorem-transition-map}, the map $\Phi$ is differentiable. As $\Phi = \sss^{-1} \circ \wsss$, the proof is concluded.
+By Theorem \ref{theorem-transition-diffeo}, the map $\Phi$ is differentiable. As $\Phi = \sss^{-1} \circ \wsss$, the proof is concluded.
 
 :::
 
@@ -2537,18 +2457,16 @@ because $f(\sphere^2) \subseteq \mathbb{E}$.
 :::
 
 
-
 ::: Definition
 ### Diffeomorphism of surfaces
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces. 
 
-1. A map $f \colon \SSS_1 \to \SSS_2$ is a **diffeomorphism**, if $f$ is smooth and admits smooth inverse.
+1. $f \colon \SSS_1 \to \SSS_2$ is a **diffeomorphism**, if $f$ is smooth and admits smooth inverse.
 
-2. We say that $\SSS_1$ and $\SSS_2$ are **diffeomorphic**, if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
+2. $\SSS_1$, $\SSS_2$ are **diffeomorphic** if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
 
 :::
-
 
 
 The key ideas around diffeomorphisms are:
@@ -2560,9 +2478,10 @@ The key ideas around diffeomorphisms are:
 2. Two diffeomorphic surfaces have essentially the same charts, as shown in the next Proposition.
 
 
-::: {.Proposition  #proposition-f-chart}
+::: Proposition
+### Image of charts under diffeomorphisms {#proposition-f-chart}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a diffeomorphism. If 
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces, $f \colon \SSS \to \widetilde{\SSS}$ diffeomorphism. If 
 $\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
 $$
 \widetilde{\sss}   \colon U \to \widetilde{\SSS} \,, \qquad \widetilde{\sss} := f \circ \sss \,,
@@ -2583,7 +2502,7 @@ $$
 (f \circ \sss) (u,v) = \sss_2  \left( \Phi(u,v) \right)
 $$
 with $\Phi$ diffeomorphism, meaning that $f \circ \sss$ is a reparametrization of 
-$\sss_2$. Since $\sss_2$ is regular, by Proposition \ref{proposition-transition-maps} we deduce
+$\sss_2$. Since $\sss_2$ is regular, by Theorem \ref{theorem-reparametrization} we deduce
 that $f \circ \sss$ is regular.
 
 :::
@@ -2595,19 +2514,17 @@ We conclude with the definition of local diffeomorphism between surfaces.
 ### Local diffeomorphism
 
 Let $\SSS_1$ and $\SSS_2$ be regular surfaces, and 
-$$
-f \colon \SSS_1 \to \SSS_2 \,,
-$$
-be a differentiable map.
+$f \colon \SSS_1 \to \SSS_2$ smooth.
+
 
 1. $f$ is a **local diffeomorphism** at $\pp \in \SSS_1$ if:
     * There exists An open set $V \subseteq \SSS_1$ with $\pp \in V$; 
     * $f(V) \subseteq \SSS_2$ is open;
-    * $f \colon V \to f(V)$ is a diffeomorphism between surfaces.
+    * $f \colon V \to f(V)$ is smooth between surfaces.
 
 2. $f$ is a **local diffeomorphism** in $\SSS_1$, if it is a local diffeomorphism at each $\pp \in \SSS_1$.
 
-3. $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for each $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
+3. $\SSS_1$ is **locally diffeomorphic** to $\SSS_2$, if for all $\pp \in \SSS_1$ there exists $f$ local diffeomorphism at $\pp$.
 
 :::
 
@@ -2619,7 +2536,7 @@ Two remarks:
 
 
 
-## Tangent space {#sec-tangent-space}
+## Tangent plane {#sec-tangent-space}
 
 
 The tangent vector to a curve $\g \colon \R \to \R^3$ at the point $\g(t)$ is just $\dg(t)$, the derivative of the curve at $t$. Tangent vectors to a surface $\SSS$ can be defined as the tangent vectors of curves $\g \colon \R \to \SSS$ with values in $\SSS$, see @fig-tangent-plane.
@@ -2636,22 +2553,17 @@ From now on, all the surfaces will be regular and all the charts will be regular
 
 
 ::: Definition
-### Tangent vectors and tangent space
+### Tangent vectors and tangent plane
 
 Let $\SSS$ be a surface and $\pp \in \SSS$. 
 
-1. We say that $\vv \in \R^3$ is 
-a **tangent vector** to $\SSS$ at $\pp$, if there exists a smooth curve
+1. $\vv \in \R^3$ is 
+a **tangent vector** to $\SSS$ at $\pp$, if there exists a smooth curve $\g \colon (-\e,\e) \to \R^3$ such that
 $$
-\g \colon (-\e,\e) \to \R^3 \,, 
+\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,, \quad \vv = \dg(0) \,.
 $$
-such that
-$$
-\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,, \quad \vv = \dg(0) \,,
-$$
-where $\e>0$. 
 
-2. The **tangent space** of $\SSS$ at $\pp$ is the set
+2. The **tangent plane** of $\SSS$ at $\pp$ is the set
 $$
 T_{\pp} \SSS := \{ \vv \in \R^3 \divider \vv \, \mbox{ tangent vector of } \, \SSS \, \mbox{ at } \, \pp \} \,.
 $$
@@ -2661,11 +2573,12 @@ $$
 
 
 
-![Tangent space $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ has to satisfy $\vv = \dg(0)$, for some smooth curve $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){#fig-tangent-plane width=80%}
+
+![Tangent plane $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ has to satisfy $\vv = \dg(0)$, for some smooth curve $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){#fig-tangent-plane width=40%}
 
 
 
-Let us start with the most basic example: We want to compute the tangent space to an open set in $\R^2$. 
+Let us start with the most basic example: We want to compute the tangent plane to an open set in $\R^2$. 
 
 
 ::: {.Example #example-tangent-open-set}
@@ -2721,50 +2634,34 @@ for all $\vv , \ww \in T_{\pp}\SSS$ and $\lambda, \mu \in \R$.
 
 To prove this result, we need a Lemma concerning curves with values on surfaces: The lemma says that when $\SSS$ is regular, all the smooth curves $\g \colon (-\e,\e) \to \R^3$ with values in $\SSS$, are of the form
 $$
-\g(t) = \sss(u(t),v(t)) \,, \quad \forall \, t \in (-\e_0,\e_0)
+\g(t) = \sss(u(t),v(t)) \,, \quad \forall \, t \in (-\e,\e)\,,
 $$
-for a pair of smooth functions $u,v \colon (-\e,\e) \to \R$, and a suitable $\e_0 \in (0,\e]$.
-
-
+for a pair of smooth functions $u,v \colon (-\e,\e) \to \R$.
 
 ::: Lemma
 ### Curves with values on surfaces {#lemma-curve-S}
 
-Let $\SSS$ be a surface, $\pp \in \SSS$, and $\sss \colon U \to \SSS$ a chart at $\pp$. Denote
+Let $\sss \colon U \to \R^3$ be a regular chart and $\SSS := \sss(U)$.
+Let $\pp \in \SSS$ and $(u_0,v_0) = \sss^{-1}(\pp)$. 
+Assume $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that 
 $$
-(u_0,v_0) = \sss^{-1}(\pp) \,.
+\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp  \,.
 $$
-Let $\g \colon (-\e,\e) \to \R^3$ be a smooth curve, and consider the statements:
-
-1. The curve $\g$ satisfies $\g(0) = \pp$ and 
+There exist smooth functions $u , v \colon (-\e,\e) \to \R$ such that
 $$
-\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
+\g(t) = \sss( u(t), v(t) ) \,, \,\, \forall \, t \in (-\e,\e) \,, \quad u(0)=u_0 \,, \,\, v(0) = v_0 \,.
 $$
-
-2. There exist $\e_0 \in (0,\e]$ and smooth functions
-$$
-u , v \colon (-\e_0,\e_0) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
-$$
-such that
-$$
-\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e_0,\e_0) \,.
-$$
-
-We have that:
-
-- Point 1 implies Point 2.
-- Point 2 implies Point 1 when $\e_0 = \e$.
 
 :::
 
 
 ::: Proof
 
-*Part 1.* To visualize the geometric ideas of this part of the proof, see @fig-curves-surface. Let $\pp$ in $\SSS$, and assume given a smooth curve $\g \colon (-\e,\e) \to \R^3$ such that $\g(0) = \pp$ and
+To visualize the geometric ideas of this part of the proof, see @fig-curves-surface. Let $\pp$ in $\SSS=\sss(U)$, and assume given a smooth curve $\g \colon (-\e,\e) \to \R^3$ such that $\g(0) = \pp$ and
 $$
 \g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
 $$
-Denote the coordinates of the chart $\sss \colon U \to \SSS$ by
+Denote the coordinates of the chart $\sss \colon U \to \R^3$ by
 $$
 \sss(u,v) = (f(u,v), g(u,v), h(u, v)) \,.
 $$
@@ -2897,63 +2794,35 @@ u(0) = u_0 \,, \qquad v(0) = v_0 \,.
 $$
 
 
-*Part 2.* This part is trivial: Suppose that there exist smooth functions
-$$
-u , v \colon (-\e,\e) \to \R \,,\quad u(0)=u_0 \,, \quad v(0) = v_0 \,,
-$$
-such that
-$$
-\g(t) = \sss( u(t), v(t) ) \,, \quad \forall \, t \in (-\e,\e) \,.
-$$
-Since $\sss(U) \subseteq \SSS$, it follows that
-$$
-\g(t) \in \SSS \,, \quad \forall \, t \in (-\e,\e) \,.
-$$
-Moreover, using that $u(0)=u_0$ and $v(0) = v_0$, we get
-$$
-\g(0) = \sss(u(0),v(0)) = \sss(u_0,v_0) = \pp \,.
-$$
 
 :::
 
 
-![Image associated with Part 1 of the Proof for Lemma \ref{lemma-curve-S}. The smooth coordinates $\eeta(t) = (u(t),v(t))$ are constructed by setting $\eeta := F^{-1} \circ \pi \circ \g$.](/images/curves_surface.png){#fig-curves-surface width=80%}
+![Image associated with the Proof for Lemma \ref{lemma-curve-S}. The smooth coordinates $\eeta(t) = (u(t),v(t))$ are constructed by setting $\eeta := F^{-1} \circ \pi \circ \g$.](/images/curves_surface.png){#fig-curves-surface width=40%}
 
 
 We are now ready to characterize $T_{\pp} \SSS$ when $\SSS$ is a regular surface.
 
 
-::: {.Theorem #theorem-tangent-plane}
 
-Let $\SSS$ be a (regular) surface and $\pp \in \SSS$. 
-Let $\sss \colon U \to \SSS$ be a chart at $\pp$. Denote
-$$
-(u_0,v_0) = \sss^{-1}(\pp) \,.
-$$
-The following hold:
 
-1. The tangent space satisfies
+::: Theorem
+### Characterization of Tangent Plane {#theorem-tangent-plane}
+
+Let $\sss \colon U \to \R^3$ be a regular chart and $\SSS := \sss(U)$. Let $\pp \in \SSS$. Then
 $$
 T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} := \{  \lambda \sss_u + \mu \sss_v \divider \lambda,\mu \in \R \} \,,
 $$
-where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$. 
-
-2. The tangent space is a vector space isomorphic to $\R^2$, that is,
-$$
-T_{\pp} \SSS \simeq \R^2 \,,
-$$
-with isomorphism $\Phi \colon T_{\pp} \SSS \to \R^2$ given by
-$$
-\Phi\left(  \lambda \sss_u + \mu \sss_v   \right) = (\lambda, \mu) \,.
-$$
+where $\sss_u$ and $\sss_v$ are evaluated at $(u,v) =\sss^{-1}(\pp)$. 
 
 :::
 
+
 ::: Proof
 
-*Part 1.* Let $\sss \colon U \to \SSS$ be a chart at $p$. 
+Let $\sss \colon U \to \SSS$ be a regular chart.
 
-- First, suppose $\vv \in T_{\pp} \SSS$. By definition of tangent space, there exists 
+- First, suppose $\vv \in T_{\pp} \SSS$. By definition of tangent plane, there exists 
 a smooth curve $\g \colon (-\e,\e) \to \SSS$ such that
 $$
 \g(0) = \pp \,, \quad \dg(0) = \vv \,.
@@ -3026,10 +2895,26 @@ and therefore
 $$
 \dg(0) = \sss_u (u_0 , v_0 ) \lambda + \sss_v (u_0 ,v_0) \mu = \vv \,.
 $$
-This proves that $\vv \in T_{\pp} \SSS$, ending the proof of *Part 1*.
+This proves that $\vv \in T_{\pp} \SSS$, ending the proof.
 
+:::
 
-*Part 2*. We have shown that
+::: Remark
+
+The tangent plane is a vector space isomorphic to $\R^2$, that is,
+$$
+T_{\pp} \SSS \simeq \R^2 \,,
+$$
+with isomorphism $\Phi \colon T_{\pp} \SSS \to \R^2$ given by
+$$
+\Phi\left(  \lambda \sss_u + \mu \sss_v   \right) = (\lambda, \mu) \,.
+$$
+
+:::
+
+::: Proof
+
+By Theorem \ref{theorem-tangent-plane} we have that
 $$
 T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \}
 $$
@@ -3041,21 +2926,6 @@ $$
 
 :::
 
-
-
-Therefore, $T_{\pp} \SSS$ is always two-dimensional. This justifies the following definition.
-
-
-::: Definition 
-### Tangent plane
-
-Let $\SSS$ be a regular surface and $\pp \in \SSS$. The set
-$$
-T_{\pp} \SSS
-$$
-is called the **tangent plane** to $\SSS$ at $\pp$.
-
-:::
 
 
 
@@ -3079,30 +2949,20 @@ which is the **affine tangent plane** through $\pp \in \SSS$.
 :::
 
 
-We can easily compute cartesian equations for the tangent plane
-$$
-T_{\pp} \SSS \,.
-$$
+We can easily compute cartesian equations for the tangent plane.
 
 
-
-::: Proposition
+::: Theorem
 ### Equation of tangent plane
 
-Let $\SSS$ be a regular surface and $\pp \in \SSS$. Let $\sss \colon U \to \SSS$ be a regular chart at $\pp$. Set
+Let $\sss \colon U \to \SSS$ be regular, $\SSS = \sss(U)$. Let $\pp \in \SSS$ and
 $$
-(u_0,v_0) := \sss^{-1}(\pp) \,, \quad \nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
+\nn := \sss_u (u,v) \times \sss_v (u,v) \,, \quad 
+(u,v) := \sss^{-1}(\pp) \,.
 $$
-They hold:
-
-1. The equation of the tangent plane $T_{\pp} \SSS$ is given by
+The equation of the tangent plane $T_{\pp} \SSS$ is given by
 $$
 \xx \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
-$$
-
-2. The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
-$$
-(\xx - \pp) \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
 $$
 
 :::
@@ -3112,15 +2972,32 @@ $$
 
 By Theorem \ref{theorem-tangent-plane} we know that
 $$
-T_{\pp} \SSS = \operatorname{span} \{  \sss_u (u_0,v_0), \sss_v (u_0,v_0) \} \,.
+T_{\pp} \SSS = \operatorname{span} \{  \sss_u, \sss_v \} \,.
 $$
 By the properties of cross product, the vector $\nn$ is orthogonal to both
-$\sss_u (u_0,v_0)$ and $\sss_v (u_0,v_0)$. Therefore it is orthogonal to
+$\sss_u$ and $\sss_v$. Therefore it is orthogonal to
 $T_{\pp} \SSS$. The equation for $T_{\pp} \SSS$ is then
 $$
 \xx \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
 $$
-In particular, the equation for the affine tangent plane $\pp + T_{\pp} \SSS$ is
+
+
+:::
+
+
+::: Remark 
+### Equation of affine tangent plane
+
+The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
+$$
+(\xx - \pp) \cdot \nn = 0 \,, \quad  \forall \, \xx \in \R^3 \,.
+$$
+
+:::
+
+::: Proof
+
+The vector $\nn$ is orthogonalto $T_{\pp}\SSS$. In particular, the equation for the affine tangent plane $\pp + T_{\pp} \SSS$ is
 $$
 \xx \cdot \nn = k \,, \quad  \forall \, \xx \in \R^3 \,,
 $$
@@ -3138,103 +3015,52 @@ ending the proof.
 
 
 
-
 ::: Example
+### Calculation of tangent plane
 
+**Question.** For $u \in (0,2\pi)$, $v < 1$, let $\SSS$ charted by
+$$
+\sss (u,v) = \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,.
+$$
 
-**Question.** Consider the surface $\SSS$ defined by the chart
-$$
-\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
-$$
-for $u \in (0,2\pi)$, $v < 1$.
+1. Prove that $\sss$ charts the paraboloid $x^2 + y^2 - z = 1$.
+2. Prove that $\sss$ is regular and compute $\nn = \sssu \times \sssv$.
+3. Give a basis for $T_{\pp} \SSS$ at 
+$\pp = (\sqrt2/2, \sqrt2/2, 0)$.
 
-1. Prove that $\sss$ parametrizes a paraboloid, see @fig-paraboloid.
-2. Prove that $\sss$ is regular.
-3. Compute the vector $\nn = \sssu \times \sssv$
-4. Consider the point
-$$
-\pp = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,.
-$$
-Give a basis for $T_{\pp} \SSS$ at the point
-
-5. Compute the cartesian equation of $T_{\pp} \SSS$. Give your answer in the form
-$$
-ax + by + cz = d\,,
-$$
-for suitable $a,b,c,d \in \R$.
+4. Compute the cartesian equation of $T_{\pp} \SSS$.
 
 
 **Solution.**
 
-1. Denote the coordinates of $\sss$ by
-$$
-\sss(u,v) = (x,y,z) \,.
-$$
-We have
+1. Denote $\sss(u,v) = (x,y,z)$. We have
 \begin{align*}
-x^2 + y^2 & = \left( \sqrt{1-v} \cos(u) \right)^2 + \left( \sqrt{1-v} \cos(u) \right)^2 \\
-          & = 1 - v  \\
-          & = 1 - z \,,
-\end{align*}
-showing that $\sss$ parametrizes the paraboloid
-$$
-z = - x^2 - y^2 + 1 \,.
-$$
-
-2. Proof that $\sss$ is regular:
-\begin{align*}
-\sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
-\sss_v & = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
-\end{align*}
-The last component of $\sss_u$ is $0$, and the last component of $\sss_v$ is $1$, thus $\sss_u$ and $\sss_v$ are linearly independent. Hence $\sss$ is regular. 
-
-3. We compute:
-\begin{align*}
-\nn & = \sss_u \times \sss_v \\
-    & = 
-\left| 
-\begin{array}{ccc}
-\ii & \jj & \kk \\
--\sqrt{1-v} \sin(u) & \sqrt{1-v} \cos(u) & 0 \\
--\frac{1}{2} (1-v)^{-1/2}  \cos(u) & -\frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
-\end{array}
-\right| \\
-& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
+x^2 + y^2 & = \left( \sqrt{1-v} \cos(u) \right)^2 + \left( \sqrt{1-v} \sin(u) \right)^2 \\
+          & = 1 - v  = 1 - z \,.
 \end{align*}
 
-4. Notice that 
-$$
-\sss \left( \frac{\pi}{4}, 0 \right)  = \pp \,.
-$$
-A basis for $T_{\pp} \SSS$ is given by the vectors
+2. We compute $\nn = \sssu \times \sssv$ and show that $\sss$ is regular:
 \begin{align*}
-\sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,,\\
+& \sss_u  = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
+& \sss_v  = \left( -   \frac{1}{2} (1-v)^{-1/2}  \cos(u) , -\frac{1}{2} (1-v)^{-1/2}   \sin(u), 1  \right)  \\
+& \nn   = \sss_u \times \sss_v  = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12  \right) \neq \zero 
+\end{align*}
+
+3. Notice that $\sss \left( \pi/4, 0 \right)  = \pp$. A basis for $T_{\pp} \SSS$ is
+\begin{align*}
+\sss_u  \left( \frac{\pi}{4}, 0 \right) & = \left(  - \frac{\sqrt{2}}{2} ,  \frac{\sqrt{2}}{2} , 0        \right)\,, \\
 \sss_v  \left( \frac{\pi}{4}, 0 \right) & = \left( -    \frac{\sqrt{2}}{4}  , - \frac{\sqrt{2}}{4} , 1        \right) \,.
 \end{align*}
 
-5. Using the calculation for $\nn$ in Point 3, we find
+4. Using the calculation for $\nn$ in Point 2, we find
 $$
 \nn  \left( \frac{\pi}{4}, 0 \right) 
 =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
 $$
-The equation for $T_{\pp} \SSS$ is therefore
+The equation for $T_{\pp} \SSS$ is $\xx \cdot \nn = 0$, which reads
 $$
-\xx \cdot \nn = 0 \,, \quad \forall \, \xx \in \R^3 \,.
+\sqrt{2} \, x + \sqrt{2} \, y -  z = 0 \,.
 $$
-The above reads
-$$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,,
-$$
-which implies 
-$$
-\sqrt{2} \, x + \sqrt{2} \, y -  z = 0 \,,
-$$
-Consider the surface $\SSS$ defined by the chart
-$$
-\sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v  \right) \,,
-$$
-for $u \in (0,2\pi)$, $v < 1$.
-
 
 :::
 
@@ -3243,7 +3069,7 @@ for $u \in (0,2\pi)$, $v < 1$.
 
 ```{python}
 #| echo: false
-#| fig-cap: "Paraboloid."
+#| fig-cap: "The Paraboloid in the Example."
 #| label: fig-paraboloid
 
 # Importing numpy, matplotlib and mplot3d
@@ -3292,7 +3118,7 @@ plt.show()
 
 
 ::: Remark
-### Tangent space and derivations
+### Tangent plane and derivations
 
 The definition of tangent plane depends on the fact that $\SSS$ is contained in $\R^3$. This is a serious drawback in many applications, as the surface $\SSS$ does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an *intrinsic* definition of tangent plane, depending only on the point $\pp$ and the surface $\SSS$. 
 
@@ -3380,7 +3206,7 @@ There is however an issue: $\NN_{\sss}$ is not independent on the choice of char
 $$
 \widetilde{\sss} = \sss \circ \Phi \,, 
 $$
-with $\Phi \colon \widetilde{U} \to U$ diffeomorphism. As stated in Proposition \ref{proposition-transition-maps}, we have
+with $\Phi \colon \widetilde{U} \to U$ diffeomorphism. As stated in Thorem \ref{theorem-reparametrization}, we have
 $$
 \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
 = \det J\Phi \, ( \sss_u \times \sss_v )\,.
@@ -3397,16 +3223,16 @@ Therefore the sign on the right hand side depends on the sign of the Jacobian de
 The above remark motivates the following definitions.
 
 
-
 ::: Definition
 ### Standard unit normal of a chart
 
 Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. The **standard unit normal** of $\sss$ is the smooth function
 $$
-\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
 $$
 
 :::
+
 
 
 
@@ -3466,6 +3292,7 @@ $$
 Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
 
 :::
+
 
 
 
@@ -3558,7 +3385,7 @@ $\SSS$, without ambiguity.
 ::: Definition
 ### Unit normal of a surface
 
-Let $\SSS$ be a regular surface. A **unit normal** of $\SSS$ is a smooth function
+Let $\SSS$ be a regular surface. A **unit normal** to $\SSS$ is a smooth function
 $\NN \colon \SSS \to \R^3$ such that
 $$
 \NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
@@ -3621,44 +3448,27 @@ In the following we will often denote by $\NN$ both the standard unit normal of 
 
 
 
-::: Example
 
-**Question.** Let $\SSS$ be the surface described by the chart
+::: Example
+### Calculation of $\NN$
+
+**Question.** Compute the standard unit normal to
 $$
 \sss(u,v) = (e^u, u+v, v ) \,, \quad u,v \in \R \,.
 $$
 
-1. Prove that $\sss$ is regular.
-2. Compute the standard unit normal to $\sss$.
 
-
-**Solution.**
-
-1. Compute the following quantities:
+**Solution.** The standard unit normal to $\sss$ is
 \begin{align*}
-\sss_{u} & =\left(e^{u}, 1,0\right) \\
-\sss_{v} & =(0,1,1) \\
-\sss_{u} \times \sss_{v} & = \left|\begin{array}{ccc}
-\ii & \jj & \kk \\
-e^{u} & 1 & 0 \\
-0 & 1 & 1
-\end{array}\right| \\
-& = \left(1,-e^{u}, e^{u}\right)
+& \sss_{u} =\left(e^{u}, 1,0\right) \,, \,\, \sss_{v}  =(0,1,1) \,,
+& &  \norm{\sss_u \times \sss_v}  =  \sqrt{1+2 e^{2 u}}\\
+&  \sss_{u} \times \sss_{v} = \left(1,-e^{u}, e^{u}\right) 
+&  &   \NN_{\sss}   
+     = \frac{\left(1,-e^{u}, e^{u}\right)}{\sqrt{1+2 e^{2 u}}}
 \end{align*}
-Since 
-$$
-\norm{\sss_u \times \sss_v} =  \sqrt{1+2 e^{2 u}} \geq 1\,,
-$$
-we see that $\sss_u \times \sss_v \neq \zero$, showing that $\sss$ is regular. 
 
-2. The standard unit normal to $\sss$ is
-$$
-\NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
-     = \frac{1}{\sqrt{1+2 e^{2 u}}} \, \left(1,-e^{u}, e^{u}\right) \,.
-$$
 
 :::
-
 
 
 
@@ -3733,19 +3543,18 @@ Lemma \ref{lemma-derivative} justifies the following definition of differential.
 
 
 ::: Definition
-### Differential of smooth function {#definition-differential-f}
+### Differential of smooth function
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. 
 The differential $d_{\pp}f$ of $f$ at $\pp$ is defined as the map
 $$
 d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad d_{\pp}f (\vv) := (f \circ \g)'(0) \,,
 $$
-where $\g \colon (-\e,\e) \to \SSS$ is any smooth curve such that
-$$
-\g(0) = \pp \,, \qquad  \dg(0) = \vv \,.
-$$
+with $\g \colon (-\e,\e) \to \SSS$ smooth curve, $\g(0) = \pp$, $\dg(0) = \vv$.
 
 :::
+
+
 
 
 
@@ -3756,46 +3565,32 @@ $$
 Therefore, a priori, $d_{\pp} f (\vv)$ could depend on which curve is chosen. This is however, not the case, as shown in the next Proposition. We will also show that the map $df_{\pp}$ is linear, and compute its matrix. 
 
 
-::: {.Proposition #proposition-differential-smooth}
+::: Theorem
+### Matrix of $d_{\pp}f$ {#theorem-differential-smooth}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Denote the differential of $f$ by
-$$
-d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
-$$
-We have:
+Let $\SSS,\wSSS$ be regular surfaces, and $f \colon \SSS \to \widetilde{\SSS}$ smooth.
 
 1. $d_{\pp}f (\vv)$ depends only on $f, \pp,\vv$ (and not on $\g$).
 
-2. $d_{\pp} f$ is linear, that is,
+2. $d_{\pp} f$ is linear, that is, for all $\vv,\ww \in T_{\pp} \SSS$ and $\lambda,\mu \in \R$
 $$
-d_{\pp}f (\lambda \vv + \mu \ww) = \lambda d_{\pp}f (\vv) + \mu d_{\pp}f (\ww) \,, 
+d_{\pp}f (\lambda \vv + \mu \ww) = \lambda d_{\pp}f (\vv) + \mu d_{\pp}f (\ww) \,.
 $$
-for all $\vv,\ww \in T_{\pp} \SSS$ and $\lambda,\mu \in \R$.
-3. Let 
-$$
-\sss \colon U \to \SSS \,, \quad \widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS} \,,
-$$
-be regular charts at $\pp$ and $f(\pp)$, respectively. Denote by 
-$$
-(u,v)  \mapsto ( \alpha(u,v), \beta(u,v) ) 
-$$
-the components of the smooth map
-$$
-\Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
-$$
-In particular it holds
+
+3. Let $\sss \colon U \to \SSS$, $\widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS}$ be regular charts at $\pp$, $f(\pp)$. Let $\alpha$ and $\beta$ be the components of 
+$\Psi = \widetilde{\sss}^{-1} \circ f \circ \sss$, so that
 $$
 \widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
 \quad \forall \, (u,v) \in U \,.
 $$
-The matrix of the linear map $d_{\pp}f$ with respect to the basis 
+The matrix of $d_{\pp}f$ with respect to the basis 
 $$
 \{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
 \{ \widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\pp)} \widetilde{\SSS} \,,
 $$
 is given by the Jacobian of the map $\Psi$, that is,
 $$
-d_{\pp} f = J\Psi = \left(
+J\Psi = \left(
 \begin{array}{cc}
 \alpha_u & \alpha_v \\
 \beta_u & \beta_v \\
@@ -3803,11 +3598,10 @@ d_{\pp} f = J\Psi = \left(
 \right) \,.
 $$
 
-
 :::
 
 
-Point 3 in the above Proposition seems complicated, but it is saying something really simple:
+Point 3 in the above Theorem says that:
 
 1. Let $f \colon \SSS \to \widetilde{\SSS}$ be a smooth function between surfaces. Consider local charts $\sss$ at $\pp$, and $\widetilde{\sss}$ at $f(\pp)$. By definition of smooth map, the real map
 $$
@@ -3945,7 +3739,7 @@ Then
 $$
 d_{\pp} f (\vv) = (f \circ \g)'(0)\,.
 $$
-Method to construct $\g$: Following the proof of Proposition \ref{proposition-differential-smooth}, one can proceed as follows: 
+Method to construct $\g$: Following the proof of Theorem \ref{theorem-differential-smooth}, one can proceed as follows: 
     - Find $\sss \colon U \to \SSS$ chart of $\SSS$ at $\pp$.
     - Compute 
     $$
@@ -3992,7 +3786,18 @@ Method to construct $\g$: Following the proof of Proposition \ref{proposition-di
     $$
     - Compute 
     $$
-    d_{\pp} f (\vv) = \left(
+    d_{\pp} f (\vv) = \tilde{\lambda} \wsssu + \tilde{\mu} \wsssv
+    $$
+    where the coefficients $\tilde{\lambda}$ and $\tilde{\mu}$ are
+    $$
+    \left(
+    \begin{array}{c}
+    \tilde{\lambda} \\
+    \tilde{\mu} \\
+    \end{array}
+    \right) 
+    =
+     \left(
     \begin{array}{cc}
     \alpha_u & \alpha_v \\
     \beta_u & \beta_v \\
@@ -4009,77 +3814,45 @@ Method to construct $\g$: Following the proof of Proposition \ref{proposition-di
 
 Let us give example calculations for both methods.
 
+
+
 ::: Example
 ### Computing $d_{\pp}f$ using the definition
 
-**Question.** Consider the portion of the plane $\{z=0\}$,
+**Question.** Consider the plane $\SSS = \{z=0\}$, the unit cylinder
+$\widetilde{\SSS} = \{ x^2 + y^2 = 1 \}$, and the map
 $$
-\SSS = \left\{ (x,y,0) \in \R^3 \, \colon \, x \in (0,2\pi)\,, \, y \in  \R \right\} \,,
-$$ 
-and the unit cylinder
-$$
-\widetilde{\SSS} = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \}  \,.
-$$
-Define the map 
-$$
-f \colon S \to \widetilde{\SSS} \,, \quad 
-f(x,y,0) := (\cos x , \sin x, y) \,.
+f \colon S \to \widetilde{\SSS} \,, \qquad f(x,y,0) = (\cos x , \sin x, y) \,.
 $$
 
-1. Compute $T_{\pp}\SSS$.
-
-2. Prove that the differential $d_{\pp}f$ at
-$$
-\pp = (u_0,v_0,0) \,, \quad \vv = (\lambda,\mu,0) \,,
-$$
-is given by
-$$
-d_{\pp} f (\vv) =   (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
-$$
+1. Compute $T_{\pp}\SSS$. 
+2. Compute $d_{\pp}f$ at $\pp = (u_0,v_0,0)$ and $\vv = (\lambda,\mu,0)$.
 
 
 **Solution.**
 
-1. A chart for $\SSS$ is given by
+1. A chart for $\SSS$ is given by $\sss(u,v) = (u,v,0)$. Hence,
 $$
-\sss(u,v) = (u,v,0) \,.
+\sss_u = (1,0,0) \,, \quad \sss_v = (0,1,0) \,,
 $$
-Therefore 
+and the tangent space is
 $$
-\sss_u = (1,0,0) \,, \qquad \sss_v = (0,1,0) \,, 
+T_{\pp} \SSS  = \operatorname{span} \{ \sss_u,\sss_v \} 
+              = \{ (\lambda,\mu,0) \, \colon \, \lambda,\mu \in \R \} \,.
 $$
-from which
-\begin{align*}
-T_{\pp} \SSS & = \operatorname{span} \{ \sss_u,\sss_v \} \\
-             & = \operatorname{span} \{ (1,0,0), (0,1,0)  \} \\
-             & = \{ (\lambda,\mu,0) \, \colon \, \lambda,\mu \in \R \} \,.
-\end{align*}
 
-2. From the answer to Point 1, we see that 
-$$
-\vv = (\lambda,\mu,0) \in T_{\pp} \SSS \,. 
-$$
-Define the curve $\g \colon (-\e,\e) \to \SSS$ by setting
+2. Define the curve $\g \colon (-\e,\e) \to \SSS$ by setting
 $$
 \g(t) := \sss(u_0 + t \lambda, v_0 + t \mu ) = (u_0 + t \lambda, v_0 + t \mu, 0)\,.
 $$
-Clearly,
-$$
-\g(0) = \pp \,, \quad \dg(0) = \vv = (\lambda,\mu,0)\,.
-$$
-We have
+Note that $\g(0) = \pp$ and $\dg(0) = \vv = (\lambda,\mu,0)$. Therefore, the differential is given by
 \begin{align*}
-(f \circ \g) (t) & = f(u_0 + t \lambda, v_0 + t \mu,0) \\
-                 & = ( \cos(u_0 + t \lambda), \sin(u_0 + t \lambda),v_0 + t \mu ) \,,\\
-(f \circ \g)' (t) & = (- \lambda \sin (u_0 + t\lambda), \lambda \cos (u_0 + t \lambda), \mu) \,.
+& (f \circ \g) (t)  = ( \cos(u_0 + t \lambda), \sin(u_0 + t \lambda),v_0 + t \mu ) \,,\\
+& (f \circ \g)' (t)  = (- \lambda \sin (u_0 + t\lambda), \lambda \cos (u_0 + t \lambda), \mu) \,, \\
+& d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
 \end{align*}
-Therefore, the differential is given by
-$$
-d_{\pp} f (\vv) = (f \circ \g)' (0) =  (- \lambda \sin (u_0), \lambda \cos (u_0), \mu) \,.
-$$
 
 :::
-
 
 
 
@@ -4090,48 +3863,39 @@ $$
 ::: Example
 ### Computing the matrix of $d_{\pp}f$
 
-**Question.** Consider the unit cylinder, charted by
+**Question.** Let $\SSS$ be the cylinder, and $\wSSS$ the plane, charted by
 $$
-\sss(u,v) = (\cos u, \sin u, v) \,, \quad (u,v) \in U := (0,2\pi) \times \R \,.
+\sss(u,v) = (\cos u, \sin u, v) \,, \quad  
+\widetilde{\sss}(u,v) = (u,v,0) \,, 
 $$
-Consider the plane $\widetilde{\SSS}$ charted by
-$$
-\widetilde{\sss}(u,v) = (u,v,0) \,, \quad (u,v) \in \wU = \R^2 \,.
-$$
-Define the map
+defined on $U = (0,2\pi) \times \R$ and $\wU = \R^2$. Define the map
 $$
 f \colon \SSS \to \wSSS \,, \quad 
 f(x,y,z) = (y,xz,0) \,.
 $$
-Compute the matrix of $d_{\pp} f$ with respect to these charts.
+Compute the matrix of $d_{\pp} f$ with respect to $\{\sssu,\sssv\}$ and $\{\wsssu,\wsssv\}$.
 
-**Solution.** We need to compute the map
-$$
-\Psi \colon U \to \widetilde{U} \,, \quad \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \,.
-$$
-Clearly, we have
-$$
-\widetilde{\sss}^{-1} (u,v,0) =(u,v) \,.
-$$
-Therefore
+**Solution.** Note that $\widetilde{\sss}^{-1} (u,v,0) =(u,v)$. Hence,
 \begin{align*}
-\Psi(u,v) & = \widetilde{\sss}^{-1} \left( f(\sss(u,v))    \right) \\
-          & = \widetilde{\sss}^{-1} \left( f(\cos u, \sin u, v )    \right) \\
-          & =  \widetilde{\sss}^{-1} \left( \sin (u), \cos (u) v, 0    \right) \\
-          & = \left( \sin (u), \cos (u) v    \right) \,.
+\Psi(u,v) & = \widetilde{\sss}^{-1} \left( f(\sss(u,v))    \right) 
+           = \widetilde{\sss}^{-1} \left( f(\cos u, \sin u, v )    \right) \\
+          & =  \widetilde{\sss}^{-1} \left( \sin (u), \cos (u) v, 0    \right) 
+           = \left( \sin (u), \cos (u) v    \right) \,.
 \end{align*}
-The components of $\Psi$ are
+The components of $\Psi$ are 
 $$
-\alpha(u,v) = \sin(u) \,, \qquad \beta (u,v) =  \cos (u) v  \,.
+\alpha(u,v) = \sin(u)\,, \quad \beta (u,v) =  \cos (u) v \,. 
 $$
-Therefore 
-\begin{align*}
-\alpha_u & = \cos (u) \,, & \alpha_v &  = 0 \\
-\beta_u  & = -\sin (u) v \,,  & \beta_v &  = \cos(u) 
-\end{align*}
 The matrix of $d_{\pp}f$ is hence
 $$
-d_{\pp}f = J\Psi = 
+J\Psi = 
+\left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u & \beta_v \\
+\end{array}
+\right)
+=
 \left(
 \begin{array}{cc}
 \cos (u) & 0 \\
@@ -4141,6 +3905,8 @@ d_{\pp}f = J\Psi =
 $$
 
 :::
+
+
 
 
 The differential satisfies the following useful properties.
@@ -4223,9 +3989,9 @@ Level surfaces are described as the set of zeros of scalar functions.
 ::: Definition
 ### Level surface
 
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
+Let $f \colon V \to \R$ be smooth, $V \subseteq \R^3$  open. The **level surface** associated to $f$ is the set
 $$
-\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+\SSS_f = f^{-1}(\{0\}) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
 $$
 
 
@@ -4236,21 +4002,16 @@ We now give a result concerning regularity of level surfaces. The proof, rather 
 found in Proposition 3.1.25 of [@abate-tovena]. We decide to omit it.
 
 
-::: {.Theorem #theorem-level-surface}
+::: Theorem
+### Regularity of level surfaces {#theorem-level-surface}
 
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level surface
+Let $f \colon V \to \R$ be smooth, with $V \subseteq \R^3$  open. Assume 
 $$
-\SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
-$$
-Suppose that 
-$$
-\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+\nabla f (x,y,z) \neq \zero \,, \quad \forall \, (x,y,z) \in V \,.
 $$
 Then $\SSS_f$ is a regular surface.
 
 :::
-
-
 
 We saw that the circular cone
 $$
@@ -4271,34 +4032,24 @@ We can also show that $\SSS^+$ is a regular surface by using Theorem \ref{theore
 ::: Example
 ### Circular cone
 
-**Question.** Consider the circular cone
+**Question.** Prove the circular cone is a regular surface
 $$
 \SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
 $$
-Prove that $\SSS$ is a regular surface.
 
-**Solution.** Define the open set 
+**Solution.** Define the open set $V \subset \R^3$ and $f \colon V \to \R$ by 
 $$
-V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,,
-$$
-and the function $f \colon V \to \R$ by
-$$
+V = \{ (x,y,z) \in \R^3 \divider z > 0 \} \,, \quad 
 f(x,y,z) = x^2 + y^2 - z^2 \,.
 $$
-We have
+$\SSS$ is a regular surface, since $\SSS = \SSS_f$ and
 $$
-\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad 
+\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq \zero  \,, \quad 
 \forall \, (x,y,z) \in V \,.
 $$
-Since 
-$$
-\SSS = \SSS_f \,,
-$$
-we conclude that $\SSS$ is a regular surface.
 
 
 :::
-
 
 
 ```{python}
@@ -4356,19 +4107,15 @@ plt.show()
 Let us give a characterization of the tangent plane to level surfaces.
 
 
-::: Proposition
+::: Theorem
 ### Tangent plane of level surfaces
 
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
-Suppose that 
+Let $f \colon V \to \R$ be smooth, with $V \subseteq \R^3$  open. Assume 
 $$
-\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+\nabla f (x,y,z) \neq \zero \,, \quad \forall \, (x,y,z) \in V \,.
 $$
-Let $\pp \in \SSS_f$. We have
-$$
-\nabla f(\pp) \perp T_{\pp} \SSS_f \,.
-$$ 
-In particular, they hold:
+Let $\pp \in \SSS_f$. Then
+$\nabla f(\pp) \perp T_{\pp} \SSS_f$, and
 
 1. The cartesian equation of $T_{\pp} \SSS_f$ is given by
 $$
@@ -4380,7 +4127,11 @@ $$
 \nabla f(\pp) \cdot (\xx- \pp) = 0 \,, \quad \forall \, \xx \in \R^3\,.
 $$
 
+
+
 :::
+
+
 
 ::: Proof
 
@@ -4431,65 +4182,41 @@ $$
 
 
 
+
 ::: Example
 ## Unit cylinder
 
-**Question.** Consider the unit cylinder 
-$$
-\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}   \,.
-$$
+**Question.** Consider the unit cylinder $\SSS = \{ x^2 + y^2 = 1 \}$.
 
 1. Prove that $\SSS$ is a regular surface. 
-2. Let 
-$$
-\pp = \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) \in \SSS
-$$
-Show that $T_{\pp} \SSS$ has cartesian equation 
-$$
-x + y = 0 \,.
-$$
+2. Find the equation of $T_{\pp} \SSS$ at $\pp = \left( \sqrt{2}/2,\sqrt{2}/2,5 \right)$.
 
 
 **Solution.**
 
-1. Define the open set
+1. Define the open set $V \subseteq \R^3$ and $f \colon V \to \R$ by
 $$
-V = \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+V = \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,, \quad f(x,y,z) := x^2 + y^2 -1 \,.
 $$
-Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
+$\SSS$ is a regular surface, since $\SSS = \SSS_f$ and
 $$
-f(x,y,z) := x^2 + y^2 -1 \,.
-$$
-We have
-$$
-\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq \zero  \,, \quad 
 \forall \, (x,y,z) \in V \,.
 $$
-Since 
-$$
-\SSS = \SSS_f \,,
-$$
-we conclude that $\SSS$ is a regular surface.
 
-2. Using the expression for $\nabla f$ found in Point 1, we get
+
+2. Using the expression for $\nabla f$ in Point 1, we get
 $$
 \nabla f (\pp) = \nabla f \left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},5 \right) = 
 (\sqrt{2},\sqrt{2},0) \,.
 $$
 The equation for $T_{\pp} \SSS$ is
 $$
-\nabla f (\pp) \cdot \xx = 0 \,, \quad \forall \, \xx \in \R^3 \,.
-$$
-Therefore, we find
-\begin{align*}
-\nabla f (\pp) \cdot \xx = 0 \,\, & \iff \,\,
-(\sqrt{2},\sqrt{2},0) \cdot (x,y,z) = 0 \\ 
-\,\, & \iff \,\, 
+\nabla f (\pp) \cdot \xx = 0 \,\, \iff \,\,
 x + y = 0 \,.
-\end{align*}
+$$
 
 :::
-
 
 
 
@@ -4578,17 +4305,17 @@ The proof of Theorem \ref{theorem-quadrics} follows (quite tediously) by diagona
 the symmetric matrix $A$, and by studying the eigenvalues, see Theorem 5.5.2 in [@pressley].
 
 
-![Classification of quadrics: Ellipsoid and Hyperboloid of 1 sheet.](/images/quadrics_1.png){#fig-quadrics-1 width=70%}
+![Classification of quadrics: Ellipsoid and Hyperboloid of 1 sheet.](/images/quadrics_1.png){#fig-quadrics-1 width=40%}
 
-![Classification of quadrics: Hyperboloid of 2 sheets and Elliptic Paraboiloid.](/images/quadrics_2.png){#fig-quadrics-2 width=70%}
+![Classification of quadrics: Hyperboloid of 2 sheets and Elliptic Paraboiloid.](/images/quadrics_2.png){#fig-quadrics-2 width=40%}
 
-![Classification of quadrics: Hyperbolic Paraboloid and Quadric Cone.](/images/quadrics_3.png){#fig-quadrics-3 width=70%}
+![Classification of quadrics: Hyperbolic Paraboloid and Quadric Cone.](/images/quadrics_3.png){#fig-quadrics-3 width=40%}
 
-![Classification of quadrics: Elliptic Cylinder and Hyperbolic Cylinder.](/images/quadrics_4.png){#fig-quadrics-4 width=70%}
+![Classification of quadrics: Elliptic Cylinder and Hyperbolic Cylinder.](/images/quadrics_4.png){#fig-quadrics-4 width=40%}
 
-![Classification of quadrics: Parabolic Cylinder and Plane.](/images/quadrics_5.png){#fig-quadrics-5 width=70%}
+![Classification of quadrics: Parabolic Cylinder and Plane.](/images/quadrics_5.png){#fig-quadrics-5 width=40%}
 
-![Classification of quadrics: 2 parallel planes and 2 intersecting planes.](/images/quadrics_6.png){#fig-quadrics-6 width=70%}
+![Classification of quadrics: 2 parallel planes and 2 intersecting planes.](/images/quadrics_6.png){#fig-quadrics-6 width=40%}
 
 
 
@@ -4668,7 +4395,6 @@ showing that $S$ is a Hyperboloid of two sheets.
 A ruled surface, is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined
 in the following way.
 
-
 ::: Definition
 ### Ruled surface
 
@@ -4677,25 +4403,22 @@ chart
 $$
 \sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
-where
+where $\g, \mathbf{a} \colon (a,b) \to \R^3$ are smooth curves, such that
+$$
+\dg(t) \, \text{ and } \, \mathbf{a}(t) \,  \text{ are linearly independent for all } \, t \in (a,b).
+$$ 
 
-1. $\g \colon (a,b) \to \R^3$ is a smooth curve,
-2. $\mathbf{a} \colon (a,b) \to \R^3$ is a smooth curve,
-3. $\dg(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. 
-
-We say that:
-
-1. $\g$ is the **base curve**.
-2. The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**.
+$\g$ is the **base curve** and the lines $v \mapsto v \mathbf{a}(u)$ the **rulings**.
 
 :::
 
-
-::: Proposition
+::: Theorem
+### Regularity of ruled surfaces
 
 A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
 
 :::
+
 
 ::: Proof
 
@@ -4720,40 +4443,28 @@ $$
 $$
 we can obtain both the unit cylinder, and the Möbius band. 
 
-
 ::: Example
-### Unit Cylinder
+### Unit Cylinder is ruled surface
 
-**Question.** Prove that the unit cylinder 
-$$
-\SSS = \{ (x,y,z) \in \R^3 \, \colon \, x^2 + y^2 = 1 \} \,.
-$$
-is a ruled surface.
+**Question.** Prove that the unit cylinder is a ruled surface.
 
 
-**Solution.** 
-We know that the unit cylinder is charted by
-$$
-\sss (u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in (0,2\pi) \times \R \,.
-$$
-We can rewrite $\sss$ as
-$$
-\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
-$$
-with
-$$
-\g(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
-$$
-Note that the vectors
+
+**Solution.** The unit cylinder $\SSS$ is charted by
+\begin{align*}
+& \sss (u,v)  = (\cos(u), \sin(u),v ) = \g(u) + v \mathbf{a}(u) \\
+& \g(u) = (\cos(u), \sin(u),0 ) \,, \quad \mathbf{a} = (0,0,1) 
+\end{align*}
+$\SSS$ is a ruled surface, since the vectors
 $$
 \dg = (-\sin(u), \cos(u), 0 ) \,, \quad \mathbf{a} = (0,0,1)
 $$
-are orthogonal, and hence linearly independent. Therefore $\SSS$ is a ruled surface.
+are orthogonal, and hence linearly independent.
 
 :::
 
 
-![The unit cylinder is a ruled surface with base curve the unit circle, and rulings given by vertical lines.](/images/surfaces_ruled.png){#fig-cylinder-ruled width=70%}
+![The unit cylinder is a ruled surface with base curve the unit circle, and rulings given by vertical lines.](/images/surfaces_ruled.png){#fig-cylinder-ruled width=40%}
 
 
 ::: Example
@@ -4827,64 +4538,46 @@ This clearly contradicts (@eq-mobius-not-orientable). Therefore $\NN$ cannot exi
 
 
 
-![The Möbius band is a ruled surface with base curve $\g$ and rulings given by rotating vertical lines.](/images/surfaces_ruled_2.png){#fig-mobius-ruled width=70%}
+![The Möbius band is a ruled surface with base curve $\g$ and rulings given by rotating vertical lines.](/images/surfaces_ruled_2.png){#fig-mobius-ruled width=40%}
+
 
 
 
 ::: Example
+### A ruled surface
 
-**Question.** Show that the surface 
+**Question.** Show that the following surface is ruled
 $$
-S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\}
+S=\left\{(x, y, z) \in \mathbb{R}^{3} \, \colon \, x^{2}+ 10 xy + 16x^2 - z = 0\right\} \,.
 $$ 
-is a ruled surface.
 
-**Solution.** We shall make a change of variables. Notice that we can rearrange
+**Solution.** We can rearrange
 $$
-\begin{aligned}
-x^{2}+10 x y+16 x^{2}-z & =0 \\
-(x+8 y)(x+2 y) & = z .
-\end{aligned}
+x^{2}+10 x y+16 x^{2}-z  =0 \, \iff \,
+(x+8 y)(x+2 y)  = z \,.
 $$
-Let 
+Let $u=x+8 y$ and $v=x+2 y$. Therefore $u v=z$ and
 $$
-u=x+8 y, \qquad  v=x+2 y \,.
-$$ 
-Then $u v=z$ and
-$$
-\begin{aligned}
-u-v & =6 y \quad \implies \quad  y=\frac{u-v}{6} \\
-x & =u-8 y \\
-& =u-\frac{8(u-v)}{6} \\
-& =\frac{4 v-u}{3} .
-\end{aligned}
+u-v  =6 y \,  \implies \,  y=\frac{u-v}{6}
+\, \implies \,
+x  =u-8 y =\frac{4 v-u}{3} \,.
 $$
 It follows that if $(x, y, z) \in S$ then
 $$
 \begin{aligned}
 (x, y, z) & =\left(\frac{4 v-u}{3}, \frac{u-v}{6}, u v\right) \\
-& =\left(-\frac{u}{3}, \frac{u}{6}, 0\right)+v\left(\frac{4}{3},-\frac{1}{6}, u\right) \\
-& = \g(u) + v \mathbf{a}(u) \,,
+& =\left(-\frac{u}{3}, \frac{u}{6}, 0\right)+v\left(\frac{4}{3},-\frac{1}{6}, u\right) 
+ = \g(u) + v \mathbf{a}(u) \,.
 \end{aligned}
 $$
-where we have set
-\begin{align*}
-\g (u) & = \left(-\frac{u}{3}, \frac{u}{6}, 0\right) \\
-\mathbf{a}(u) & = \left(\frac{4}{3},-\frac{1}{6}, u\right) \,.
-\end{align*}
-Notice that 
+When $u \neq 0$, the vectors
 $$
-\dg(u) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,.
-$$
-For $u \neq 0$, we clearly have that $\mathbf{a}(u)$ and $\dg(u)$ are linearly independent (the last component of $\dg(u)$ is $0$). For $u = 0$ we have
-$$
-\dg(0) = \left(-\frac{1}{3}, \frac{1}{6}, 0\right) \,, \qquad 
- \mathbf{a}(0) = \left(\frac{4}{3},-\frac{1}{6}, 0\right) \,,
-$$
-which are clearly linearly independent. Therefore, $S$ is a ruled surface.
+\mathbf{a}(u) =\left(\frac{4}{3},-\frac{1}{6}, u\right) \,, \quad 
+\dg (u) = \left(-\frac13,\frac16,0 \right) \,,
+$$ 
+are linearly independent, as the last component of $\dg(u)$ is $0$. Also $\mathbf{a}(0)$ and $\dg(0)$ are linearly independent. Thus, $\SSS$ is a ruled surface.
 
 :::
-
 
 
 
@@ -4897,17 +4590,18 @@ Surfaces of revolution are obtained by rotating a curve about the $z$-axis.
 ::: Definition
 ### Surface of revolution
 
-Let $\g \colon (a,b) \to \R^3$ be a smooth curve in the $(x,z)$-plane, that is,
+Let $\g \colon (a,b) \to \R^3$ be a smooth curve in the $(x,z)$-plane,
 $$
-\g(v) = (f(v), 0 , g(v)) \,.
+\g(v) = (f(v), 0 , g(v)) \,, \qquad f > 0 \,.
 $$
-Suppose that $f>0$. The surface obtained by rotating $\g$ about the $z$-axis is called **surface of revolution**. A chart for $\SSS$ is given by
+The surface $\SSS$ formed by rotating $\g$ about the $z$-axis, called a **surface of revolution**, is charted by $\sss \colon U \to \R^3$
 $$
 \sss (u,v) =  (\cos(u)f(v) , \sin(u) f(v), g(v))\,,
+\,\, U =  (0,2\pi) \times (a,b) \,.
 $$
-with $u \in (0,2\pi)$ and $v \in (a,b)$.
 
 :::
+
 
 
 ::: Theorem
@@ -4916,6 +4610,7 @@ with $u \in (0,2\pi)$ and $v \in (a,b)$.
 A surface of revolution is regular if and only if $\g$ is regular.
 
 :::
+
 
 
 ::: Proof
@@ -4931,37 +4626,25 @@ Now, $\sss$ is regular if and only if $\sss_u \times \sss_v \neq \zero$. Since $
 
 :::
 
-
-
 ::: Example
-### Catenoid
+### Catenoid is surface of revolution
 
-**Question.** The catenary function is defined by
-$$
-f(v) = \cosh (v) \,.  
-$$
-The Catenoid $\SSS$ is the surface of revolution obtained by rotating the catenary about the $z$-axis, that is, by rotating the curve
-$$
-\g(v) = \left(  \cosh (v), 0 , v \right) \,.
-$$
-A chart $\SSS$ is given by
+**Question.** The Catenoid $\SSS$ is the surface of revolution formed by rotating the catenary $\g(v) = \left(  \cosh (v), 0 , v \right)$ about the $z$-axis. A chart for $\SSS$ is given by
 $$
 \sss (u,v) = (\cos(u) \cosh (v) , \sin(u) \cosh (v), v) \,, 
 $$
-where $u \in [0,2\pi)$ and $v \in \R$. Prove that $\SSS$ is a regular surface.
+with $u \in (0,2\pi), v \in \R$. Prove that $\SSS$ is a regular surface.
 
-**Solution.** Note that $f>0$ and 
+**Solution.** Note that $f>0$. $\SSS$ is regular because $\g$ is regular, as
 $$
 \dg = \left(  \sinh (v), 0 , 1 \right) \,, \quad 
 \norm{\dg}^2 = 1+ \sinh(v)^2 \geq 1 \,.
 $$
-Therefore $\g$ is regular. As $\SSS$ is a surface of revolution, we conclude that $\SSS$ is regular.
-
 
 :::
 
 
-![The Catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis.](/images/surface_catenoid.png){#fig-catenoid width=70%}
+![The Catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis.](/images/surface_catenoid.png){#fig-catenoid width=40%}
 
 
 
@@ -5553,7 +5236,7 @@ $$
 In this sense, we see that local isometries preserve the first fundamental form.
 
 
-![Sketch of a local isometry $f$ between $\SSS$ and $\widetilde{\SSS}$. The scalar product between tangent vectors $\vv$ and $\ww$ is preserved by $d_{\pp}f$.](/images/fff_local_isometry.png){width=70%}
+![Sketch of a local isometry $f$ between $\SSS$ and $\widetilde{\SSS}$. The scalar product between tangent vectors $\vv$ and $\ww$ is preserved by $d_{\pp}f$.](/images/fff_local_isometry.png){width=40%}
 
 
 
@@ -5734,7 +5417,7 @@ Let $\sss$ be a chart for $\SSS$ at $\pp$. Define
 $$
 \widetilde{\sss} = f \circ \sss \,.
 $$
-Since $f$ is a local isometry, then it is also a local diffeomorhims by Proposition \ref{prop-isometry-diffeo}. In particular, Proposition \ref{proposition-f-chart} ensures that $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
+Since $f$ is a local isometry, then it is also a local diffeomorhims by Proposition \ref{prop-isometry-diffeo}. In particular, Proposition \ref{proposition-f-chart} ensures that $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. Now, recall the statement of Theorem \ref{theorem-differential-smooth}: if
 $$
 \widetilde{\sss} ( \alpha(u,v), \beta(u,v) ) = f ( \sss (u,v) ) \,,
 $$
@@ -5813,7 +5496,7 @@ showing that $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
 \sss_u \cdot \sss_v & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \\
 \sss_v \cdot \sss_v & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v 
 \end{align*}
-As discussed above, since $\widetilde{\sss} = f \circ \sss$, by Proposition \ref{proposition-differential-smooth} we get
+As discussed above, since $\widetilde{\sss} = f \circ \sss$, by Theorem \ref{theorem-differential-smooth} we get
 $$
 d_{\pp} f(\sss_u)  = \widetilde{\sss}_u \,, \quad 
 d_{\pp} f(\sss_v)  = \widetilde{\sss}_v \,.
@@ -5994,7 +5677,7 @@ We have seen in Example \ref{example-plane-cylinder} that $\SSS$ and $\wSSS$ are
 :::
 
 
-![A simple closed curve $\g$ in the plane $\SSS$ can be shrunk continuously into a point without leaving $\SSS$. A parallel $\g$ of the Cylinder $\wSSS$ cannot be shrunk continuously into a point without leaving $\wSSS$.](/images/simply_connected.png){#fig-simply-connected width=70%}
+![A simple closed curve $\g$ in the plane $\SSS$ can be shrunk continuously into a point without leaving $\SSS$. A parallel $\g$ of the Cylinder $\wSSS$ cannot be shrunk continuously into a point without leaving $\wSSS$.](/images/simply_connected.png){#fig-simply-connected width=40%}
 
 
 
@@ -6084,7 +5767,7 @@ $$
 :::
 
 
-![Sketch of angle $\theta$ between two vectors $\vv,\ww$ in $T_{\pp} \SSS$.](/images/fff_angle_vectors.png){width=70%}
+![Sketch of angle $\theta$ between two vectors $\vv,\ww$ in $T_{\pp} \SSS$.](/images/fff_angle_vectors.png){width=40%}
 
 
 
@@ -6172,7 +5855,7 @@ $$
 :::
 
 
-![Sketch of angle $\theta$ between two curves $\g$ and $\tg$ on $\SSS$.](/images/fff_angle_curves.png){width=70%}
+![Sketch of angle $\theta$ between two curves $\g$ and $\tg$ on $\SSS$.](/images/fff_angle_curves.png){width=40%}
 
 
 
@@ -6302,7 +5985,7 @@ In this case, we say that $\SSS$ and $\wSSS$ are **conformal**.
 
 
 
-![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=70%}
+![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=40%}
 
 
 ::: Notation
@@ -6637,7 +6320,7 @@ showing that $\sss$ is not equi-areal.
 
 
 
-![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=70%}
+![Stereographic projection map from the North pole $N = (0,0,1)$. Let $P \in \sphere^2$. The line through $N$ and $P$ intersects the plane $\{z=0\}$ at the point $P'$.](/images/stereographic_4.png){#fig-stereographic-4 width=40%}
 
 
 
@@ -6839,9 +6522,9 @@ is a conformal map. This is known as the **Stereographic Projection**, see @fig-
 :::
 
 
-![Stereographic projection of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Stereographic_projection)](/images/stereographic_2.png){#fig-stereographic-1 width=75%}
+![Stereographic projection of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Stereographic_projection)](/images/stereographic_2.png){#fig-stereographic-1 width=40%}
 
-![The Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.](/images/stereographic_3.png){#fig-stereographic-2 width=75%}
+![The Stereographic projection is a conformal map: Angles and shapes are preserved. However areas are magnified away from the North pole.](/images/stereographic_3.png){#fig-stereographic-2 width=40%}
 
 
 
@@ -6885,9 +6568,9 @@ The chart $\sss$ is a conformal parametrization because the FFF is
 
 
 
-![Mercator projection of the Earth. This is the most frequently used map of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_2.png){#fig-mercator width=75%}
+![Mercator projection of the Earth. This is the most frequently used map of the Earth. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_2.png){#fig-mercator width=40%}
 
-![The Mercator Projection is a conformal map: As such it preseves angles and shapes. However areas are distorted away from the Equator. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_3.png){#fig-mercator-2 width=75%}
+![The Mercator Projection is a conformal map: As such it preseves angles and shapes. However areas are distorted away from the Equator. Image from [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection).](/images/mercator_3.png){#fig-mercator-2 width=40%}
 
 
 
@@ -6931,7 +6614,7 @@ $$
 :::
 
 
-![The area $A_{\sss}$ of a small region $\sss(R)$ on a surface $\SSS$ can be approximated by the area of the parallelogram of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){#fig-area width=70%}
+![The area $A_{\sss}$ of a small region $\sss(R)$ on a surface $\SSS$ can be approximated by the area of the parallelogram of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){#fig-area width=40%}
 
 
 
@@ -7016,7 +6699,7 @@ a local diffeomorphism. We say that $f$ is an **equiareal map** if it takes any 
 
 :::
 
-![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same as the area of $f(R)$.](/images/fff_equiareal.png){#fig-equiareal-map width=70%}
+![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same as the area of $f(R)$.](/images/fff_equiareal.png){#fig-equiareal-map width=40%}
 
 
 
@@ -7200,7 +6883,7 @@ $$
 :::
 
 
-![Construction of the Archimedes Map between the Sphere and the Cylinder.](/images/archimedes.png){#fig-archimedes width=75%}
+![Construction of the Archimedes Map between the Sphere and the Cylinder.](/images/archimedes.png){#fig-archimedes width=40%}
 
 
 
@@ -7370,10 +7053,10 @@ showing that $\sss$ is an equiareal parametrization of $\sphere^2$.
 :::
 
 
-![Lambert cylindrical projection of the Earth. Images from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_2.png){#fig-lambert width=75%}
+![Lambert cylindrical projection of the Earth. Images from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_2.png){#fig-lambert width=40%}
 
 
-![The Lambert cylindrical projection is an equiareal map. As such it preseves areas. However angles and shapes are distorted. Image from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_3.png){#fig-lambert-2 width=75%}
+![The Lambert cylindrical projection is an equiareal map. As such it preseves areas. However angles and shapes are distorted. Image from [Wikipedia](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection).](/images/lambert_3.png){#fig-lambert-2 width=40%}
 
 
 
@@ -7533,7 +7216,7 @@ $$
 $$
 as shown in @fig-sff-sketch. 
 
-![The point $\sss(u_0 + \Delta u, v_0 + \Delta v)$ on $\SSS$ deviates from $T_{\pp}\SSS$ by a quantity $\delta$.](/images/sff_sketch.png){#fig-sff-sketch width=70%}
+![The point $\sss(u_0 + \Delta u, v_0 + \Delta v)$ on $\SSS$ deviates from $T_{\pp}\SSS$ by a quantity $\delta$.](/images/sff_sketch.png){#fig-sff-sketch width=40%}
 
 Using Taylor's formula we get
 \begin{align*}
@@ -7765,7 +7448,7 @@ $$
 
 :::
 
-![The Gauss map ${\mathcal{G}}_{\SSS}$ of $\SSS$ is defined as ${\mathcal{G}}_{\SSS}(\pp):= \NN(\pp)$. Note that ${\mathcal{G}}_{\SSS}(\pp) \in \sphere^2$.](/images/sff_gauss_map.png){width=70%}
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of $\SSS$ is defined as ${\mathcal{G}}_{\SSS}(\pp):= \NN(\pp)$. Note that ${\mathcal{G}}_{\SSS}(\pp) \in \sphere^2$.](/images/sff_gauss_map.png){width=40%}
 
 
 
@@ -7826,13 +7509,13 @@ Note that $\mathcal{G}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$, see 
 :::
 
 
-![The Gauss map ${\mathcal{G}}_{\SSS}$ of a sphere is the identity.](/images/sff_gauss_sphere.png){#fig-gauss-sphere width=70%}
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of a sphere is the identity.](/images/sff_gauss_sphere.png){#fig-gauss-sphere width=40%}
 
 
-![The Gauss map ${\mathcal{G}}_{\SSS}$ of a plane is constant.](/images/sff_gauss_plane.png){#fig-gauss-plane width=70%}
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of a plane is constant.](/images/sff_gauss_plane.png){#fig-gauss-plane width=40%}
 
 
-![If $\SSS$ is the unit cylinder, the Gauss map ${\mathcal{G}}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$.](/images/sff_gauss_cylinder.png){#fig-gauss-cylinder width=70%}
+![If $\SSS$ is the unit cylinder, the Gauss map ${\mathcal{G}}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$.](/images/sff_gauss_cylinder.png){#fig-gauss-cylinder width=40%}
 
 
 
@@ -7871,7 +7554,7 @@ we infer (@eq-gauss-identification).
 
 
 
-![We ca identify $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ with $T_{\pp} \SSS$. This is because $\mathcal{G}(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ and $\mathcal{G}(\pp) = \NN(\pp)$.](/images/sff_weingarten.png){#fig-weingarten width=70%}
+![We ca identify $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ with $T_{\pp} \SSS$. This is because $\mathcal{G}(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ and $\mathcal{G}(\pp) = \NN(\pp)$.](/images/sff_weingarten.png){#fig-weingarten width=40%}
 
 
 
@@ -9136,7 +8819,7 @@ as shown in @fig-cylinder-principal.
 
 
 
-![Principal vectors of the unit cylinder.](/images/sff_principal_cylinder.png){#fig-cylinder-principal width=70%}
+![Principal vectors of the unit cylinder.](/images/sff_principal_cylinder.png){#fig-cylinder-principal width=40%}
 
 
 
@@ -10154,9 +9837,9 @@ Then (@eq-local-structure) is the equation of a **plane**.
 
 ::: {#fig-elephants layout-nrow=2}
 
-![](/images/surfaces_local_shape_1.png){width=70%}
+![](/images/surfaces_local_shape_1.png){width=40%}
 
-![](/images/surfaces_local_shape_2.png){width=70%}
+![](/images/surfaces_local_shape_2.png){width=40%}
 
 A surface $\SSS$ is locally approximated by one of the above quadrics, depending on the values of principal curvatures at $\pp$.
 

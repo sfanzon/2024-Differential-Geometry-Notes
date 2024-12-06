@@ -17,17 +17,14 @@ So far we have worked in $\R^n$, where for example we have the notions of open s
 
 Let $X$ be a set and $\TT$ a collection of subsets of $X$. We say that $\TT$ is a **topology** on $X$ if the following 3 properties hold:
 
-- (A1) We have $\emptyset, X \in \TT$,
+- (A1) The sets $\emptyset, X$ belong to $\TT$,
 
 - (A2) If $\{A_i\}_{i \in I}$ is an arbitrary family of elements of $\TT$, then
 $$
 \bigcup_{i \in I} A_i  \in \TT \,.
 $$
 
-- (A3) If $A,B \in \TT$ then
-$$
-A \cap B \in \TT \,.
-$$
+- (A3) If $A,B \in \TT$ then $A \cap B \in \TT$.
 
 Further, we say:
 
@@ -80,25 +77,38 @@ These are:
 ::: Definition
 ### Trivial topology
 
-Let $X$ be a set. The trivial topology on $X$ is the topology $\TT$ defined by
+Let $X$ be a set. The **trivial topology** on $X$ is the collection of sets
 $$
-\TT := \{  \emptyset , X \} \,.
+\TTt := \{  \emptyset , X \} \,.
 $$
 
-> Let us check that $\TT$ is indeed a topology. We need to verify the 3 properties of a topology:
->
->  - (A1) We clearly have $\emptyset , X \in \TT$.
->  - (A2) The only non-trivial union to check is the one between $\emptyset$ and $X$. We have
->  $$
-    \emptyset \cup X = X \in \TT \,. 
->  $$ 
->  - (A3) The only non-trivial intersection to check is the one between $\emptyset$ and $X$. We have
->  $$
-    \emptyset \cap X = \emptyset \in \TT \,. 
->  $$ 
->
-> Therefore $\TT$ is a topology on $X$.
+
 :::
+
+
+::: Proof
+### $\TTt$ is a topology on $X$
+
+To prove $\TTt$ is a topology on $X$, we need to check the axioms:
+
+- (A1) By definition of $\TTt$, we have $\emptyset , X \in \TTt$.
+
+- (A2) Assume $\{A_i\}_{i \in I}$ is an arbitrary family of elements of $\TTt$. There are two possibilities
+    * If all the sets $A_i$ are empty, then $\bigcup_i A_i = \emptyset \in \TTt$.
+    * If $A_i = X$ for at least one index $i$, then $\bigcup_i A_i = X \in \TTt$.  
+    
+    In both cases, $\bigcup_i A_i \in \TTt$, so that (A2) holds.
+
+- (A3) Assume $A,B \in \TTt$. We have 3 cases:
+    * $A=B= \emptyset$. Then $A \cap B = \emptyset \in \TTt$.
+    * $A = X$ and $B = \emptyset$. Then $A \cap B = \emptyset \in \TTt$.
+    * $A = B=X$. Then $A \cap B = X \in \TTt$.
+
+    In all the 3 cases we have $A \cap B \in \TTt$, so that (A3) holds.
+
+Therefore $\TTt$ is a topology on $X$.
+:::
+
 
 
 
@@ -107,28 +117,26 @@ $$
 ::: Definition
 ### Discrete topology
 
-Let $X$ be a set. The discrete topology on $X$ is the topology $\TT$ defined by
+Let $X$ be a set. The **discrete topology** on $X$ is the collection of all subsets of $X$
 $$
-\TT := \{ A \divider A \subseteq X \} \,,
+\TTd := \{ A \divider A \subseteq X \} \,.
 $$
-that is, every subset of $X$ is open.
 
-> Let us check that $\TT$ is a topology: 
->
->  - (A1) We have $\emptyset , X \in \TT$, since $\emptyset$ and $X$ are subsets of $X$.
->  - (A2) The arbitrary union of subsets of $X$ is still a subset of $X$. Therefore
->  $$
->  \bigcup_{i \in I} A_i \in \TT \,, 
->  $$
->  whenever $A_i \in \TT$ for all $i \in I$.
->
->  - (A3) The intersection of two subsets of $X$ is still a subset of $X$. Therefore
->  $$
->  A \cap B \in \TT \,, 
->  $$
->  whenever $A, B  \in \TT$.
->
-> Therefore $\TT$ is a topology on $X$.
+
+:::
+
+::: Proof
+### $\TTd$ is a topology on $X$
+
+To prove $\TTd$ is a topology on $X$, we need to check the axioms:
+
+- (A1) We have $\emptyset , X \in \TTd$, since $\emptyset$ and $X$ are subsets of $X$.
+
+- (A2) The arbitrary union of subsets of $X$ is still a subset of $X$. Therefore $\bigcup  A_i \in \TTd$ whenever $A_i \in \TTd$ for all $i \in I$.
+
+- (A3) The intersection of two subsets of $X$ is still a subset of $X$. Therefore $A \cap B \in \TTd$ whenever $A, B  \in \TTd$.
+
+Therefore $\TTd$ is a topology on $X$.
 :::
 
 
@@ -156,74 +164,65 @@ $$
 \| \xx \| := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
 $$
 
-See @fig-open-set-Rn for a schematic picture of an open set.
 :::
 
+See @fig-open-set-Rn for a schematic picture of an open set.
 
-
-![The set $A \subseteq \R^n$ is open if for every $\xx \in A$ there exists $r>0$ such that $B_r(\xx) \subseteq A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
+![The set $A \subseteq \R^n$ is open if for every $\xx \in A$ there exists $r>0$ such that $B_r(\xx) \subseteq A$.](/images/open_set_R.png){#fig-open-set-Rn width=40%}
 
 
 
 ::: Definition
 ### Euclidean topology of $\R^n$  {#definition-euclidean-topology}
 
-The Euclidean topology on $\R^n$ is the topology $\TT$ defined by
+The **Euclidean topology** on $\R^n$ is the collection of sets
 $$
-\TT := \{ A \divider A \subseteq \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
+\TTe := \{ A \divider A \subseteq \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
 $$
 
 :::
 
 
-We need to check that the above definition is well-posed, in the sense that we have to
-prove that $\TT$ is a topology on $\R^n$.
-
-
 ::: Proof
-### Well-posedness of Definition \ref{definition-euclidean-topology}
+### $\TTe$ is a topology on $\R^n$
 
-Let us check that $\TT$ is a topology on $\R^n$: 
+To prove $\TTe$ is a topology on $\R^n$, we need to check the axioms:
 
-  - (A1) We have $\emptyset , \R^n \in \TT$: Indeed $\emptyset$ is open because there is no point $\xx$ for which (@eq-open-set-Rn) needs to be checked. Moreover $\R^n$ is open because (@eq-open-set-Rn) holds with any radius $r>0$. 
-  - (A2) Let $A_i \in \TT$ for all $i \in I$ and define the union set
-  $$
-  A:=\bigcup_{i \in I} A_i \,.
-  $$
-  We need to check that $A$ is open. Let $\xx \in A$. By definition of union, there exists an index $i_0 \in I$ such that
+- (A1) We have $\emptyset , \R^n \in \TTe$: Indeed $\emptyset$ is open because there is no point $\xx$ for which (@eq-open-set-Rn) needs to be checked. Moreover, $\R^n$ is open because (@eq-open-set-Rn) holds with any radius $r>0$. 
+
+- (A2) Let $A_i \in \TTe$ for all $i \in I$. Define the union
+  $A =\bigcup_i A_i$. We need to check that $A$ is open. Let $\xx \in A$. By definition of union, there exists an index $i_0 \in I$ such that
   $\xx \in A_{i_0}$. Since $A_{i_0}$ is open, by (@eq-open-set-Rn) there exists $r>0$ such that 
-  $B_r(\xx) \subseteq A_{i_0}$. As $A_{i_0} \subseteq A$, we conclude that $B_r(\xx) \subseteq A$. Thus $A$ is open and $A \in \TT$.
+  $B_r(\xx) \subseteq A_{i_0}$. As $A_{i_0} \subseteq A$, we conclude that $B_r(\xx) \subseteq A$, so that $A \in \TTe$.
 
- - (A3) Let $A, B \in \TT$. 
+ - (A3) Let $A, B \in \TTe$. 
   We need to check that $A \cap B$ is open. Let $\xx \in A \cap B$. Therefore $\xx \in A$ and $\xx \in B$. Since $A$ and $B$ are open, by (@eq-open-set-Rn) there exist $r_1,r_2>0$ such that 
   $B_{r_1}(\xx) \subseteq A$ and $B_{r_2}(\xx) \subseteq B$. Set $r := \min\{ r_1,r_2\}$. Then 
   $$
   B_r(\xx) \subseteq B_{r_1}(\xx) \subseteq A  \,, \quad 
   B_r(\xx) \subseteq B_{r_2}(\xx) \subseteq B  \,, 
   $$
-  Hence $B_r(\xx) \subseteq A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
+  Hence $B_r(\xx) \subseteq A \cap B$, showing that $A \cap B  \in \TTe$.
 
- This proves that $\TT$ is a topology on $\R^n$.
+This proves that $\TTe$ is a topology on $\R^n$.
+
 :::
-
 
 
 Let us make a basic, but useful, observation: balls in $\R^n$ are open for the Euclidean topology.
 
 
-::: {.Proposition   #proposition-balls-open}
+::: Proposition   
+### $B_r(\xx)$ is an open set of $\TTe$ {#proposition-balls-open}
 
-Let $\R^n$ be equipped with $\TT$ the Euclidean topology. Let $r>0$ and $\xx \in \R^n$. Then
-$$
-B_r(\xx) \in \TT \,.
-$$
+Let $\R^n$ be equipped with the Euclidean topology $\TTe$. Let $r>0$ and $\xx \in \R^n$. Then $B_r(\xx) \in \TTe$.
 
 :::
 
 
 ::: Proof
 
-We need to shown that $B_r(\xx)$ satisfies (@eq-open-set-Rn). Therefore, let $\yy \in B_r(\xx)$. In particular
+To prove that $B_r(\xx) \in \TTe$, we need to show that $B_r(\xx)$ satisfies (@eq-open-set-Rn). Therefore, let $\yy \in B_r(\xx)$. In particular
 $$
 \norm{\xx - \yy}<r \,.
 $${#eq-balls-open}
@@ -240,14 +239,13 @@ $$
 \| \zz - \xx \| \leq \norm{ \xx - \yy } + \norm{ \yy - \zz } <  \norm{ \xx - \yy } + \e = r \,, 
 $$
 where we used that $\norm{\yy - \zz} < \e$ and the definition of $\e$. Hence $\zz \in B_r(\xx)$, proving 
-(@eq-proof-ball-open). This proves that $B_r(\xx)$ satisfies (@eq-open-set-Rn), and is therefore
-open.
+(@eq-proof-ball-open). Thus, $B_r(\xx)$ satisfies (@eq-open-set-Rn), ending the proof.
 
 
 :::
 
 
-![The ball $B_{\e}(\yy)$ is contained in $B_r(\xx)$ if $\e := r - \norm{\xx-\yy}$.](/images/balls_open.png){#fig-balls-open width=70%}
+![The ball $B_{\e}(\yy)$ is contained in $B_r(\xx)$ if $\e := r - \norm{\xx-\yy}$.](/images/balls_open.png){#fig-balls-open width=40%}
 
 
 
@@ -287,7 +285,7 @@ A:=[0,1)
 $$
 is neither open nor closed.
 
-> For the moment we do not have the tools to prove this. We will have them shortly. 
+**Note:** For the moment we do not have the tools to prove this. We will have them shortly. 
 
 :::
 
@@ -302,15 +300,9 @@ Let $(X,\TT)$ be a topological space. Properties (A1)-(A2)-(A3) of $\TT$ are equ
 
 - (C1) $\emptyset, X$ are closed.
 - (C2) If $C_i$ is closed for all $i \in I$, then
-$$
-\bigcap_{i \in I} \, C_i
-$$
-is closed.
+$\bigcap_{i \in I} \, C_i$ is closed.
 - (C3) If $C_1,C_2$ are closed then
-$$
-C_1 \cup C_2
-$$
-is closed.
+$C_1 \cup C_2$ is closed.
 
 :::
 
@@ -319,12 +311,12 @@ is closed.
 
 We have 3 points to check:
 
-- The equivalence between (A1) and (C1) is clear, since
+1. The equivalence between (A1) and (C1) is clear, since
 $$
 \emptyset^c = X \,, \quad X^c = \emptyset \,.
 $$
 
-- Suppose $C_i$ are closed for all $i \in I$. Therefore $C_i^c$ are open for all $i \in I$. By De Morgan's laws we have that
+2. Suppose $C_i$ is closed for all $i \in I$. Therefore $C_i^c$ is open for all $i \in I$. By De Morgan's laws we have that
 $$
 \left(  \bigcap_{i \in I} \, C_i \right)^c =  \bigcup_{i \in I} \, C_i^c 
 $$
@@ -336,7 +328,7 @@ $$
 $$
 Therefore (A2) and (C2) are equivalent.
 
-- Suppose $C_1,C_2$ are closed. Therefore $C_1^c, C_2^c$ are open. By De Morgan's laws we have that
+3. Suppose $C_1,C_2$ are closed. Therefore $C_1^c, C_2^c$ are open. By De Morgan's laws we have that
 $$
 \left(  C_1 \cup  C_2 \right)^c =  C_1^c \cap C_2^c 
 $$
@@ -378,16 +370,17 @@ The set $V(I)$ is called an **algebraic set**. Define
 $$
 \mathcal{C} := \{ V(I) \divider I \subset \mathbb{K}[x_1,\ldots,x_n] \} \,.
 $$
-Then $\mathcal{C}$ satisfies (C1), (C2) and (C3). This is an easy check,
-and is left as exercise. 
-
-
 The collection $\mathcal{C}$ is known as the **Zariski topology** on the space $\mathbb{K}^n$. This topology provides a natural framework for studying **Affine Varieties** -- generalized surfaces obtained by gluing together algebraic sets of the form $V(I)$. The area of mathematics studying these objects is known as Algebraic Geometry. For more information, see this [Wikipedia page](https://en.wikipedia.org/wiki/Zariski_topology) and this [paper](https://www.ias.ac.in/public/Volumes/reso/004/08/0036-0057.pdf).
 
 An example of affine variety is the **Quadrifolium**, which is the curve defined by the polar coordinates equation $r = \sin(2\theta)$, see @fig-quadrifolium. It can be easily seen that the Quadrifolium is an affine variety in $\R^2$, which can be described by using just one algebraic set, namely $V( (x^2+y^2)^3 - 4x^2 y^2)$. 
+
+**Question.** Prove that $\mathcal{C}$ satisfies (C1), (C2) and (C3). 
+
+**Solution.** Easy check, left by exercise.
+
 :::
 
-![The Quadrifolium is an affine variety with algebraic set $V( (x^2+y^2)^3 - 4x^2 y^2)$.](/images/quadrifolium.png){#fig-quadrifolium width=70%}
+![The Quadrifolium is an affine variety with algebraic set $V( (x^2+y^2)^3 - 4x^2 y^2)$.](/images/quadrifolium.png){#fig-quadrifolium width=40%}
 
 
 
@@ -401,49 +394,28 @@ set $X$. We would like to have some notions of comparison between $\TT_1$ and $\
 
 
 ::: Definition
-### Finer and coarser topology
+### Comparing topologies
 
-Let $X$ be a set and let $\TT_1$, $\TT_2$ be topologies on $X$. Suppose that
-$$
-\TT_2 \subseteq \TT_1 \,.
-$$
-We say that:
+Let $X$ be a set and let $\TT_1$, $\TT_2$ be topologies on $X$. 
 
-- $\TT_1$ is **finer** than $\TT_2$.
-- $\TT_2$ is **coarser** than $\TT_1$.
+1. $\TT_1$ is **finer** than $\TT_2$ if $\TT_2 \subseteq \TT_1$. 
 
-If it holds 
-$$
-\TT_2 \subsetneq \TT_1 \,,
-$$
-we say that:
 
-- $\TT_1$ is **strictly finer** than $\TT_2$.
-- $\TT_2$ is **strictly coarser** than $\TT_1$.
+2. $\TT_1$ is **strictly finer** than $\TT_2$ if $\TT_2 \subsetneq \TT_1$.
 
-We say that $\TT_1$ and $\TT_2$ are the **same** topology if
-$$
-\TT_1 = \TT_2 \,.
-$$
+3. $\TT_1$ and $\TT_2$ are the **same** topology if $\TT_1 = \TT_2$.
 :::
 
 
 
 
 ::: Example
+### Comparing $\TTt$ and $\TTd$
 
-Let $X$ be a set and consider the trivial and discrete topologies
-$$
-\TT_{\textrm{trivial}} = \{ \emptyset, X\} \,, \quad \TT_{\textrm{discrete}} = \{ A \divider A \subseteq X \} \,.
-$$
-Then 
-$$
-\TT_{\textrm{trivial}} \subsetneq \TT_{\textrm{discrete}} \,,
-$$
-so that $\TT_{\textrm{discrete}}$ is strictly finer than $\TT_{\textrm{trivial}}$.
-
+Let $X$ be a set. Then $\TT_{\textrm{trivial}} \subseteq \TT_{\textrm{discrete}}$.
 
 :::
+
 
 
 Another interesting example is given by the **cofinite topology** on 
@@ -453,22 +425,71 @@ $\R$. The sets in this topology are open if they are either empty, or coincide w
 ::: Example
 ### Cofinite topology on $\R$
 
-
-
-Consider the following family $\TT_{\textrm{cofinite}}$ of subsets of $\R$
+**Question.** The **cofinite topology** on $\R$ is the collection of sets
 $$
-\TT_{\textrm{cofinite}} := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \}\,. 
-$$
-Then $(\R,\TT_{\textrm{cofinite}})$ is a topological space, and $\TT_{\textrm{cofinite}}$ is called the **cofinite topology**. We have that
-$$
-\TT_{\textrm{cofinite}} \subsetneq \TT_{\textrm{euclidean}} \,.
+\TTcof := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \}\,. 
 $$
 
+1. Prove that $(\R,\TTcof)$ is a topological space.
+2. Prove that $\TTcof \subseteq \TTe$.
+3. Prove that $\TTcof \neq \TTe$.
 
 
-> Exercise: Show that $\TT_{\textrm{cofinite}}$ is a topology on $\R$ and that $\TT_{\textrm{cofinite}} \subsetneq \TT_{\textrm{euclidean}}$.
+**Solution. Part 1.** Show that the topology properties are satisfied:
+
+(A1) We have $\emptyset \in \TTcof$, since $\emptyset^c = \R$. We have $\R \in \TTcof$ because ${\R}^c = \emptyset$ is finite.
+
+(A2) Let $U_i \in \TTcof$ for all $i \in I$, and define
+$U := \bigcup_{i \in I} \,  U_i$. 
+By the De Morgan's laws we have
+$$
+U^c = \left( \cup_{i \in I} \,  U_i    \right)^c = \cap_{i \in I} \, U_i^c \,.
+$$
+We have two cases:
+
+1. There exists $i_0 \in I$ such that $U_{i_0}^c$ is finite. Then 
+$$
+U^c = \cap_{i \in I} U_i^c \subset U_{i_0}^c \,,
+$$
+and therefore $U^c$ is finite, showing that $U \in \TTcof$.
+
+2. None of the sets $U_i^c$ is finite. Therefore $U_i^c = \R$ for all $i \in I$, from which we deduce 
+$$
+U^c = \cap_{i \in I} U_i^c = \R \quad \implies \quad U \in \TTcof\,.
+$$
+   
+In both cases, we have $U \in \TTcof$, so that (A2) holds.
+		
+(A3) Let $U,V \in \TTcof$. Set $A=U \cap V$. Then
+$$
+A^c = U^c \cup V^c \,.
+$$
+We have $2$ possibilities:
+
+1. $U^c, V^c$ finite: Then $A^c$ is finite, and $A \in \TTcof$.
+
+2. $U^c = \R$ or $V^c = \R$: Then $A^c = \R$, and $A \in \TTcof$.  
+    
+In all cases, we have shown that $A \in \TTcof$, so that (A3) holds.
+
+
+**Part 2.** Let $U \in \TTcof$. We have two cases:
+
+- $U^c$ is finite. Then $U^c = \{x_1, \ldots,x_n\}$ for some points $x_i \in \R$. Up to relabeling the points, we can assume that $x_i < x_j$ when $i < j$. Therefore,
+$$
+U =  \{x_1, \ldots,x_n\}^c = \bigcup_{i=0}^{n} (x_i,x_{i+1}) \,, \quad x_0 := -\infty,\quad x_{n+1} := \infty \,.
+$$
+The sets $(x_i,x_{i+1})$ are open in $\TTe$, and therefore $U \in \TTe$.
+
+- $U^c = \R$. Then $U = \emptyset$, which belongs to $\TTe$ by (A1).
+
+In both cases, $U \in \TTe$. Therefore $\TTcof \subseteq \TTe$.
+
+**Part 3.** consider the interval $U=(0,1)$. Then $U \in \TTe$. However $U^c$ is neither $\R$, nor finite. Thus $U \notin \TTcof$.
 
 :::
+
+
 
 
 
@@ -482,23 +503,17 @@ the notion of convergence of sequences.
 ::: Definition
 ### Convergent sequence
 
-Let $(X,\TT)$ be a topological. Consider a sequence $\{x_n\}_{n \in \N} \subseteq X$ and a point
-$x \in X$. We say that $x_n$ converges to $x_0$ if the following property holds:
+Let $(X,\TT)$ be a topological space. Consider a sequence $\{x_n\} \subseteq X$ and a point
+$x \in X$. We say that $x_n$ converges to $x_0$ in the topology $\TT$, if the following property holds:
 $$
-\forall \, U \in \TT  \st x_0 \in U\,, \,\, \exists \, N = N(U) \in \N \st  x_n \in U \,, \, \forall \, n \geq N \,.
+\begin{aligned}
+& \forall \, U \in \TT  \st x_0 \in U\,, \,\, \exists \, N = N(U) \in \N \st  \\
+& x_n \in U \,, \, \forall \, n \geq N \,.
+\end{aligned}
 $$ {#eq-convergence}
-
+The convergence of $x_n$ to $x_0$ is denoted by $x_n \to x_0$.
 :::
 
-
-::: Notation
-
-The convergence of $x_n$ to $x_0$ is denoted by 
-$$
-x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
-$$
-
-:::
 
 
 Let us analyze the definition of convergence in the topologies we have encountered so far. We will have that:
@@ -512,16 +527,9 @@ Let us analyze the definition of convergence in the topologies we have encounter
 We now precisely state and prove the above claims.
 
 ::: Proposition
-### Convergence for trivial topology
+### Convergent sequences in $\TTt$ {#proposition-convergence-trivial}
 
-Let $(X,\TT)$ be topological space, with $\TT$ the trivial topology, that is,
-$$
-\TT = \{ \emptyset, X \} \,.
-$$
-Let $\{x_n\} \subseteq X$ be a sequence and $x_0 \in X$ a point. Then 
-$$
-x_n \to x_0 \,.
-$$
+Let $X$ be equipped with $\TTt$. Let $\{x_n\} \subseteq X$, $x_0 \in X$. Then $x_n \to x_0$.
 
 :::
 
@@ -529,62 +537,54 @@ $$
 
 ::: Proof
 
-To show that $x_n \to x_0$ we need to check that (@eq-convergence) holds. Therefore, let 
-$U \in \TT$ with $x_0 \in U$. We have two cases:
+To show that $x_n \to x_0$ we need to check that (@eq-convergence) holds. Let 
+$U \in \TTt$ with $x_0 \in U$. We have two cases:
 
-- $U = \emptyset$:  This case is not possible, since $x_0$ cannot be in $U$. 
+- $U = \emptyset$: There is nothing to prove, since $x_0$ cannot be in $U$. 
 
-- $U = X$: Take $N=1$. Since $U$ is the whole space, then $x_n \in U$ for all $n \geq 1$.  
+- $U = X$: Take $N=1$. Since $U = X$, we have $x_n \in U$ for all $n \geq 1$.  
 
-As these are all the open sets, we conclude that $x_n \to x_0$.
+Thus (@eq-convergence) holds for all the sets $U \in \TTt$, showing that $x_n \to x_0$.
+
 :::
 
 
 
 ::: Warning
 
-This example is saying that in general the topological limit of a sequence is **not unique**!
+Proposition \ref{proposition-convergence-trivial} shows the topological limit may **not be unique**!
 
 :::
+
+
 
 
 
 ::: Proposition
-### Convergence for discrete topology
+### Convergent sequences in $\TTd$
 
-Let $(X,\TT)$ be topological space, with $\TT$ the discrete topology, that is,
-$$
-\TT = \{ A  \divider A \subseteq X \} \,.
-$$
-Let $\{x_n\} \subseteq X$ be a sequence and $x_0 \in X$ a point. They are equivalent:
+Let $X$ be equipped with $\TTd$. Let $\{x_n\} \subseteq X$, $x_0 \in X$. They are equivalent:
 
-1. $x_n \to x_0$.
-2. $\{x_n\}$ is eventually constant, that is, there exists $N \in \N$ such that 
-$$
-x_n = x_0 \,, \quad \forall \, n \geq N \,.
-$$
+1. $x_n \to x_0$ in the topology $\TTd$.
+2. $\{x_n\}$ is eventually constant: $\exists \, N \in \N \, \st \, x_n = x_0 , \, \forall \, n \geq N$
+
 :::
+
+
 
 
 
 ::: Proof
 
-*Part 1. Assume that $x_n \to x_0$.*
-
-We have to prove that $\{x_n\}$ is eventually constant. To this end, let 
-$$
-U = \{x_0\} \,.
-$$
-Then $U \in \TT$. Since $x_n \to x_0$, by (@eq-convergence) there exists $N \in \N$ such that
+*Part 1.* Assume that $x_n \to x_0$. Let $U = \{x_0\}$.
+Then $U \in \TTd$. Since $x_n \to x_0$, by (@eq-convergence) there exists $N \in \N$ such that
 $$
 x_n \in U  \,, \quad \forall \, n \geq N \,.
 $$
-As $U = \{x_0\}$, the above is saying that $x_n = x_0$ for all $n \geq N$. Hence $x_n$ is eventually constant. 
+As $U = \{x_0\}$, we infer $x_n = x_0$ for all $n \geq N$. Hence $x_n$ is eventually constant. 
 
 
-*Part 2. Assume that $x_n$ is eventually equal to $x_0$.*
-
-By assumption there exists $N \in \N$ such that 
+*Part 2.* Assume that $x_n$ is eventually equal to $x_0$, that is, there exists $N \in \N$ such that 
 $$
 x_n = x_0 \,, \quad \forall \, n \geq N \,.
 $${#eq-convergence-discrete}
@@ -600,44 +600,31 @@ Since $U$ was arbitrary, we conclude that $x_n \to x_0$.
 Before proceeding to examining convergence in the Euclidean topology, let us recall the 
 classical definition of convergence in $\R^n$.
 
+
 ::: Definition
 ### Classical convergence in $\R^n$
 
 Let $\{\xx_n\} \subseteq \R^n$ and $\xx_0 \in \R^n$. We say that $\xx_n$ converges $\xx_0$ in the 
-classical sense if 
+classical sense if $\norm{\xx_n - \xx_0} \to 0$, that is,
 $$
-\lim_{n \to \infty} \norm{\xx_n - \xx_0}  = 0 \,. 
+\forall \, \e>0 , \, \exists \, N \in \N , \, \st \norm{\xx_n - \xx_0} < \e  \,, \, \forall \, n \geq N \,.
 $$
-The above is equivalent to: For all $\e>0$ there exists $N \in \N$ such that
-$$
-\norm{\xx_n - \xx_0} < \e  \,, \quad \forall \, n \geq N \,.
-$$
-
 
 :::
 
 
 ::: Proposition
-### Convergence for Euclidean topology  {#proposition-convergence-Rn}
+### Convergent sequences in $\TTe$  {#proposition-convergence-Rn}
 
-Let $\R^n$ be equipped with $\TT$ the Euclidean topology.
-Let $\{\xx_n\} \subseteq \R^n$ be a sequence and $\xx_0 \in \R^n$ a point. They are equivalent:
+Let $\R^n$ be equipped with $\TTe$. Let $\{x_n\} \subseteq \R^n$, $x_0 \in \R^n$. They are equivalent:
 
-1. $\xx_n \to \xx_0$ with respect to $\TT$.
+1. $\xx_n \to \xx_0$ in the topology $\TTe$.
 2. $\xx_n \to \xx_0$ in the classical sense.
 :::
 
-
 ::: Proof
 
-*Part 1. Assume $\xx_n \to \xx_0$ with respect to $\TT$.*
-
-Fix $\e>0$ and consider the set
-$$
-U := B_{\e}(\xx_0) \,.
-$$
-By Proposition \ref{proposition-balls-open} we know that $U \in \TT$. Moreover $\xx_0 \in U$.
-By the convergence $\xx_n \to \xx_0$ with respect to $\TT$, there exists $N \in \N$ such that 
+*Part 1.* Assume $\xx_n \to \xx_0$ with respect to $\TTe$. Fix $\e>0$ and define $U := B_{\e}(\xx_0)$. By Proposition \ref{proposition-balls-open}, we have $U \in \TT$. Moreover $\xx_0 \in U$. As $\xx_n \to \xx_0$ with respect to $\TTe$, there exists $N \in \N$ such that 
 $$
 \xx_n \in U \,, \quad \forall \, n \geq N \,.
 $$
@@ -648,33 +635,23 @@ $$
 showing that $\xx_n \to \xx_0$ in the classical sense.
 
 
-*Part 2. Assume $\xx_n \to \xx_0$ in the classical sense.*
-
-
-Let $U \in \TT$ be such that $\xx_0 \in U$. By definition of Euclidean topology, this means that 
-there exists $r>0$ such that 
-$$
-B_r(\xx_0) \subseteq U \,.
-$$
+*Part 2.* Assume $\xx_n \to \xx_0$ in the classical sense. Let $U \in \TTe$ be an arbitrary set such that $\xx_0 \in U$. By definition of Euclidean topology, this means that 
+there exists $r>0$ such that $B_r(\xx_0) \subseteq U$.
 As $\xx_n \to \xx_0$ in the classical sense, there exists $N \in \N$ such that 
 $$
 \norm{\xx_n - \xx_0} < r \,, \quad \forall \, n \geq N \,.
 $$
-The above is equivalent to 
+By definition of $B_r(\xx_0)$, and since $B_r(\xx_0) \subseteq U$, the above is equivalent to 
 $$
-\xx_n \in B_{r}(\xx_0) \,, \quad \forall \, n \geq N \,.
+\xx_n \in B_{r}(\xx_0) \subseteq U \,, \quad \forall \, n \geq N \,.
 $$
-Since $B_r(\xx_0) \subseteq U$, we have proven that
-$$
-\xx_n \in U \,, \quad \forall \, n \geq N \,.
-$$
-Since $U$ is arbitrary, we conclude that $\xx_n \to \xx_0$ with respect to $\TT$.
+As $U$ is arbitrary, we infer $\xx_n \to \xx_0$ with respect to $\TTe$.
 :::
 
 
 ::: Notation
 
-Since classical convergence in $\R^n$ agrees with topological convergence with respect to $\TT$, we will just say that $\xx_n \to \xx_0$ in $\R^n$ without ambiguity.
+Since classical convergence in $\R^n$ agrees with topological convergence with respect to $\TTe$, we will just say that $\xx_n \to \xx_0$ in $\R^n$ without ambiguity.
 
 :::
 
@@ -687,11 +664,7 @@ when multiple topologies are present.
 
 ::: Proposition
 
-Let $X$ be a set and $\TT_1,\TT_2$ be topologies on $X$. Suppose that
-$$
-\TT_2 \subseteq \TT_1 \,.
-$$
-Let $\{x_n\} \subset X$ and $x_0 \in X$. We have
+Let $X$ be a set and $\TT_1,\TT_2$ be topologies on $X$. Suppose that $\TT_2 \subseteq \TT_1$. Let $\{x_n\} \subset X$ and $x_0 \in X$. We have
 $$
 x_n \to x_0 \,\, \mbox{ in } \,\, \TT_1  \quad \implies
 \quad 
@@ -705,13 +678,11 @@ $$
 Assume $x_n \to x_0$ in $\TT_1$. We need to prove that $x_n \to x_0$ in $\TT_2$. Therefore, let $U \in \TT_2$ be such that $x_0 \in U$. Since $\TT_2 \subseteq \TT_1$, we have that $U \in \TT_1$. As  $x_n \to x_0$ in $\TT_1$, there exists $N \in \N$ such that 
 $$
 x_n \in U \,, \quad \forall \, n \geq N \,.
-$$
-Since $U \in \TT_2$, the above proves $x_n \to x_0$ in $\TT_2$.
+$${#eq-nested-convergence}
+Since $U \in \TT_2$, condition (@eq-nested-convergence) shows that $x_n \to x_0$ in $\TT_2$.
 
 
 :::
-
-
 
 
 
@@ -723,81 +694,65 @@ We will now define a class of topological spaces known as metric spaces.
 
 
 
-
 ::: Definition 
-### Distance
+### Distance and Metric space
 
 Let $X$ be a set. A **distance** on $X$ is a function 
-$$
-d \colon X \times X \to \R
-$$
-such that, for all $x,y,z \in X$ they hold:
+$d \colon X \times X \to \R$ such that, for all $x,y,z \in X$ they hold:
 
-- (M1) Positivity: The distance is non-negative
-$$
-d(x,y) \geq 0 \,.
-$$ 
-Moreover 
-$$
-d(x,y) = 0 \quad \iff x=y \,.
-$$
+- (M1) Positivity: $d(x,y) \geq 0$ and $d(x,y) = 0 \, \iff \, x=y$
 
-- (M2) Symmetry: The distance is symmetric
-$$
-d(x,y) = d(y,x) \,.
-$$
+- (M2) Symmetry: $d(x,y) = d(y,x)$
 
-- (M3) Triangle Inequality: It holds
-$$
-d(x,z) \leq d(x,y) + d(y,z) \,.
-$$
+- (M3) Triangle Inequality: $d(x,z) \leq d(x,y) + d(y,z)$
+
+The pair $(X,d)$ is called a **metric space**.
+
 :::
-
-
 
 
 ::: Definition
-### Metric space
+### Euclidean distance on $\R^n$
 
-Let $X$ be a set and $d \colon X \times X \to \R$ be a distance on $X$. 
-We say that the pair $(X,d)$ is a **metric space**.
+The **Euclidean distance** over $\R^n$ is defined by
+$$
+d(\xx,\yy) := \norm{ \xx - \yy } = \left(  \sum_{i=1}^n |x_i - y_i|^2   \right)^{1/2}  \,, \quad \forall \xx,\yy \in \R^n \,.
+$$
 :::
 
 
+::: Proposition
 
+Let $d$ be the Euclidean distance on $\R^n$. Then $(\R^n,d)$ is a metric space.
 
-::: Example
-### $\R^n$ as metric space
+:::
 
-The Euclidean norm naturally induces a distance over $\R^n$ by setting
-$$
-d(\xx,\yy) := \norm{ \xx - \yy } \,.
-$$
-Then $(\R^n,d)$ is a metric space.
+::: Proof
 
-> It is trivial to check that the Euclidean distance satisfies (M1) and (M2). 
-> To show (M3), recalling the triangle inequality in $\R^n$:
+It is trivial that $d$ satisfies (M1) and (M2). 
+To show (M3), recall the triangle inequality in $\R^n$:
 $$
-\| \xx + \yy \| \leq \| \xx \|   + \| \yy \| \,,
+\| \xx + \yy \| \leq \| \xx \|   + \| \yy \| \,, \quad 
+\forall \, \xx , \yy \in \R^n \,. 
 $$
-for all $\xx , \yy \in \R^n$. Using the above we obtain
+Using the above, we obtain
 \begin{align*}
 d(\xx,\yy) & = \| \xx - \yy \| \\
              & = \| (\xx - \zz) + (\zz - \yy) \| \\
              & \leq  \| \xx - \zz \| + \| \zz - \yy \|  \\
-             & = d (\xx,\zz) + d (\zz,\yy) \,,
+             & = d (\xx,\zz) + d (\zz,\yy) \,.
 \end{align*}
-proving that $d$ satisfies (M3). This prove that $(\R^n,d)$ is a metric space.
+Thus, $d$ satisfies (M3) and $(\R^n,d)$ is a metric space.
 
 :::
 
 
 
-::: Example
+::: Definition
 ### $p$-distance on $\R^n$
 
 
-For $\xx,\yy \in \R^n$ and $p \in [1,\infty)$ define 
+Let $p \in [1,\infty)$. The **$p$-distance** over $\R^n$ is 
 $$
 d_p ( \xx, \yy ) := \left(  \sum_{i=1}^n |x_i - y_i|^p   \right)^{\frac1p} \,.
 $$
@@ -806,19 +761,26 @@ For $p = \infty$ we set
 $$
 d_{\infty} ( \xx, \yy ) := \max_{i = 1 \ldots, n} |x_i - y_i|  \,.
 $$
-We have that $(\R^n,d_p)$ is a metric space. 
 
-> Indeed properties (M1)-(M2) hold trivially. The triangle inequality is also 
-> trivially satisfied by $d_{\infty}$. We are left with checking the triangle inequality
-> for $d_p$ with $p \geq 1$. To this end, define
+:::
+
+
+::: Proposition
+Let $d_p$ be the **$p$-distance** over $\R^n$, with $p \in [1,\infty]$. Then $(\R^n,d_p)$ is a metric space. 
+
+:::
+
+::: Proof
+
+Properties (M1)-(M2) hold trivially. The triangle inequality is also trivially satisfied by $d_{\infty}$. We are left with checking the triangle inequality for $d_p$ with $p \in [1,\infty)$. To this end, define
 $$
 \| \xx \|_p :=  \left(  \sum_{i=1}^n |x_i|^p  \right)^{\frac1p} \,.
 $$
 Minkowski's inequality, see [Wikipedia page](https://en.wikipedia.org/wiki/Minkowski_inequality), states that 
 $$
-\| \xx + \yy \|_p \leq   \| \xx  \|_p  +  \|  \yy \|_p \,,
+\| \xx + \yy \|_p \leq   \| \xx  \|_p  +  \|  \yy \|_p \,, \quad \, \forall \xx ,\yy \in \R^n\,.
 $$
-for all $\xx ,\yy \in \R^n$. Therefore
+Therefore
 \begin{align*}
 d_p(\xx,\yy) & = \| \xx - \yy \|_p  \\
              & = \| (\xx - \zz) + (\zz - \yy) \|_p \\
@@ -838,52 +800,52 @@ A metric $d$ on a set $X$ naturally induces a topology which is **compatible** w
 ::: Definition
 ### Topology induced by the metric  {#definition-metric-topology}
 
-Let $(X,d)$ be a metric space. We define the topology $\TT_d$ **induced by the metric** $d$ as the
-collection of sets $U \subseteq X$ that satisfy the following property:
+Let $(X,d)$ be a metric space. The set $A \subseteq X$ is **open** if it holds
 $$
 \forall \, x \in U \,, \, \exists \, r \in \R, \, r > 0 \, \st \, B_r(x) \subseteq U \,,
 $$
-where $B_r(x)$ is the ball centered at $x$ of radius $r$. This is defined by 
+where $B_r(x)$ is the ball centered at $x$ of radius $r$, defined by 
 $$
-B_r(x) := \{ y \in X  \, \colon \,  d(x,y)<r  \} \,.
+B_r(x) = \{ y \in X  \, \colon \,  d(x,y)<r  \} \,.
 $$
-
+The topology **induced by the metric** $d$ is the
+collection of sets
+$$
+\TT_d = \{ U\, \colon \, U \subseteq X, \, U \text{ open}   \}\,.
+$$
 
 :::
 
 
-We need to check that the above definition is well-posed, that is, we need to show 
-that $\TT_d$ is actually a topology on $X$. The proof follows, line by line, the proof that the Euclidean topology is indeed a topology, see proof immediately below Definition \ref{definition-euclidean-topology}. This is left
+The proof that $\TT_d$ is a topology on $X$ follows, line by line, the proof that the Euclidean topology $\TTe$ is indeed a topology, see proof immediately below Definition \ref{definition-euclidean-topology}. This is left
 as an exercise.
 
 
 
 
 
-
-
-
-
-
-
-::: Example
+::: Remark
 ### Topology induced by Euclidean distance
 
 Consider the metric space $(\R^n,d)$ with $d$ the Euclidean distance. Then 
 $$
-\TT_d = \TT_{\textrm{euclidean}} \,,
+\TT_d = \TTe \,,
 $$
-where $\TT_{\textrm{euclidean}}$ is the Euclidean topology on $\R^n$. 
+where $\TTe$ is the Euclidean topology on $\R^n$. 
 
-> Exercise: Prove the above statement. It is an immediate consequence of definitions.
+
 :::
+
+The proof is trivial, since the metric $d$ is the Euclidean distance.
+
+
 
 
 
 ::: Example
 ### Discrete distance
 
-Let $X$ be a set. Define the function $d \colon X \times X \to \R$ by
+**Question.** Let $X$ be a set. The **discrete distance** is the function $d \colon X \times X \to \R$ defined by
 $$
 d(x,y) := 
 \begin{cases}
@@ -891,15 +853,12 @@ d(x,y) :=
 	1 & \mbox{ if } \, x \neq y 
 \end{cases}
 $$
-Then $(X,d)$ is a metric space, and $d$ is called the **discrete distance**. Moreover 
-$$
-\TT_d = \TT_{\textrm{discrete}}
-$$
-where $\TT_{\textrm{discrete}}$ is the **discrete topology** on $X$.
+
+1. Prove that $(X,d)$ is a metric space.
+2. Prove that $\TT_d = \TT_{\textrm{discrete}}$.
 
 
-> Exercise: Prove that $(X,d)$ is a metric space and $\TT_d = \TT_{\textrm{discrete}}$.
-
+**Solution.** See Question 3 in Homework 3.
 :::
 
 
@@ -912,18 +871,16 @@ open sets in $X$. The proof is left as an exercise.
 
 ::: {.Proposition #proposition-metric-ball}
 
+Let $(X,d)$ be a metric space, $\TT_d$ the topology induced by $d$. Then:
 
-Let $(X,d)$ be a metric space and $\TT_d$ the topology induced by $d$. Then:
-
-- For all $x \in X$, $r>0$ we have $B_r(x) \subseteq \TT_d$.
-- $U \in \TT_d$ if and only if
+- For all $x \in X$, $r>0$ we have $B_r(x) \in \TT_d$.
+- $U \in \TT_d$ if and only if $\exists \, I$ family of indices s.t.
 $$
-U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
+U = \bigcup_{ i \in I } B_{r_i}(x_i) \,, \quad 
+x_i \in X , \,\, r_i > 0 \,.
 $$
-with $I$ family of indices and $x_i \in X$, $r_i > 0$.
 
 :::
-
 
 
 We now define the concept of equivalent metrics.
@@ -966,7 +923,7 @@ The proof of Proposition \ref{proposition-equivalent-metrics} is trivial, and is
 
 Let $p > 1$. The metrics $d_p$ and $d_{\infty}$ on $\R^n$ are equivalent.
 
-> This follows from Proposition \ref{proposition-equivalent-metrics} and the estimate
+**Proof** Follows from Proposition \ref{proposition-equivalent-metrics} and the estimate
 $$
 d_{\infty} (\xx,\yy) \leq d_p (\xx,\yy) \leq n \, d_{\infty} (\xx,\yy) \,, \quad \forall \xx \,, \, \yy \in \R^n \,.
 $$
@@ -982,18 +939,17 @@ If two metrics are equivalent, that does not mean they have the same balls. For 
 :::
 
 
-![Balls $B_r(0)$ for the metrics $d_2, d_\infty, d_1$ in $\R^2$.](/images/balls_R2.png){#fig-balls-R2 width=80%}
+![Balls $B_r(0)$ for the metrics $d_2, d_\infty, d_1$ in $\R^2$.](/images/balls_R2.png){#fig-balls-R2 width=50%}
 
 
 
 
 We can characterize the convergence of sequences in metric spaces.
 
-
 ::: Proposition
 ### Convergence in metric space
 
-Suppose $(X,d)$ is a metric space and denote by $\TT_d$ the topology induce by $d$. Let $\{x_n\} \subseteq X$ and $x_0 \in X$. They are equivalent:
+Suppose $(X,d)$ is a metric space and $\TT_d$ the topology induced by $d$. Let $\{x_n\} \subseteq X$ and $x_0 \in X$. They are equivalent:
 
 1. $x_n \to x_0$ with respect to the topology $\TT_d$.
 2. $d(x_n,x_0) \to 0$ in $\R$.
@@ -1021,8 +977,7 @@ in a topological space.
 ::: Definition
 ### Interior of a set
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
-The **interior** of $A$ is the set
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. The **interior** of $A$ is
 $$
 \interior{A} :=  \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U \,.
 $$
@@ -1039,17 +994,15 @@ The definition of $\interior{A}$ is well-posed, since $\emptyset \subseteq A$ an
 
 
 ::: Proposition
+### $\interior{A}$ is the largest open set contained in $A$
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. Then
 $\interior{A}$ is the largest open set contained in $A$, that is:
 
 1. $\interior{A}$ is open.
 2. $\interior{A} \subseteq A$.
 3. If $V \in \TT$ and $V \subseteq A$, then $V \subseteq \interior{A}$.
-4. $A$ is open if and only if 
-$$
-A = \interior{A} \,.
-$$
+4. $A$ is open if and only if $A = \interior{A}$.
 
 :::
 
@@ -1057,7 +1010,6 @@ $$
 
 ::: Proof
 
-We have:
 
 1. $\interior{A}$ is open, since it is union of open sets, see property (A2).
 2. $\interior{A} \subseteq A$, since $\interior{A}$ is union of sets contained in $A$.
@@ -1081,13 +1033,10 @@ As we already know that $\interior{A} \subseteq A$, we conclude that $A = \inter
 ::: Definition
 ### Closure of a set
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
-The **closure** of $A$ is the set
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. The **closure** of $A$ is
 $$
-\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C \, \text{closed} } } \, C \,,
+\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C \, \text{closed} } } \, C \,.
 $$
-that is, $\closure{A}$ is the intersection of all closed sets containing 
-$A$.
 
 :::
 
@@ -1102,24 +1051,21 @@ The definition of $\closure{A}$ is well-posed, since $A \subseteq X$, and $X$ is
 
 
 ::: Proposition
+### $\closure{A}$ is the smallest closed set containing $A$
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. Then
 $\closure{A}$ is the smallest closed set containing $A$, that is:
 
 1. $\closure{A}$ is closed.
 2. $A \subseteq \closure{A}$.
 3. If $V$ is closed $A \subseteq V$, then $\closure{A} \subseteq V$.
-4. $A$ is closed if and only if 
-$$
-A = \closure{A} \,.
-$$
+4. $A$ is closed if and only if $A = \closure{A}$.
 
 :::
 
 
 ::: Proof
 
-We have:
 
 1. $\closure{A}$ is closed, since it is intersection of closed sets, see property (C2).
 
@@ -1141,7 +1087,7 @@ showing that $\closure{A} \subseteq A$. As we already know that $A \subseteq \cl
 
 ::: {.Lemma #lemma-closure-intersection}
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. They are equivalent:
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. They are equivalent:
 
 1. $x_0 \in \closure{A}$.
 2. For every $U \in \TT$ such that $x_0 \in U$, it holds
@@ -1164,11 +1110,11 @@ $$
 Let us check the two implications hold:
 
 - Suppose $x_0 \notin \closure{A}$. Then $x_0 \in U := (\closure{A})^c$. Note that $U$ is open,
-since $U^c = \closure{A}$ is closed. We have
+since $U^c = \closure{A}$ is closed. Since $A \subseteq \closure{A}$, we have
 $$
-A \cap U = A \cap (\overline{A})^c = \emptyset \,,
+A \cap U = A \cap (\overline{A})^c = \emptyset \,.
 $$
-since $A \subseteq \closure{A}$.
+
 
 - Assume there exists $U \in \TT$ such that $x_0 \in U$ and $U \cap A = \emptyset$. Therefore
 $A \subseteq U^c$. Since $U$ is open, $U^c$ is closed. Then
@@ -1185,8 +1131,7 @@ Since $x_0 \notin U^c$, we conclude that $x_0 \notin \closure{A}$.
 ::: Definition
 ### Boundary of a set
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
-The **boundary** of $A$ is the set
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. The **boundary** of $A$ is
 $$
 \partial A := \closure{A} \smallsetminus \interior{A} \,.
 $$
@@ -1196,7 +1141,7 @@ $$
 
 ::: Proposition
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+Let $(X,\TT)$ be a topological space, and $A \subseteq X$. Then
 $\partial A$ is closed.
 
 :::
@@ -1221,9 +1166,10 @@ We can characterize $\closure{A}$ as the set of limit points of sequences in $A$
 
 
 ::: Definition
+### Set of limit points
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$. The set of
-limit points of $A$ is defined as
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. The set of
+**limit points** of $A$ is defined as
 $$
 L(A):=\{  x \in X \divider \exists \, \{x_n \} \subseteq A \st x_n \to x    \} \,.
 $$
@@ -1234,9 +1180,9 @@ $$
 ::: {.Proposition #proposition-closure-sequence}
 
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
+Let $(X,\TT)$ be a topological space, $A \subseteq X$ a set. 
 Let $\{x_n\} \subseteq A$ and $x_0 \in X$ be such that $x_n \to x_0$. Then
-$x_0 \in \closure{A}$. Therefore 
+$x_0 \in \closure{A}$. In particular,
 $$
 L(A) \subseteq \closure{A} \,.
 $$
@@ -1270,7 +1216,7 @@ in general, that is,
 $$
 \closure{A} \not\subset L(A) \,.
 $$
-We show a counterexample to the above in Example \ref{example-closure-counter}.
+We show a counterexample in Example \ref{example-closure-counter}.
 
 2. The relation  
 $$
@@ -1282,33 +1228,42 @@ such as metric spaces, see Proposition \ref{proposition-closure-metric} below.
 
 
 ::: {.Example #example-closure-counter}
-### Co-countable topology
+### Co-countable topology on $\R$
 
-Let $X=\R$ with the co-countable topology 
+**Question.** The **co-countable** topology on $\R$ is the collection of sets 
 $$
-\TT := \{ A \subseteq \R \divider A^c = \R \,\, \mbox{ or } \,\, A^c \,
+\TTcc := \{ A \subseteq \R \divider A^c = \R \,\, \mbox{ or } \,\, A^c \,
 \mbox{ countable }\} \,.
 $$
-Define the set
-$$
-A = (-\infty,0] \,.
-$$
-We have the following facts (proof by exercise):
 
-1. $A$ is not closed, and $\closure{A} = \R$. 
-2. Convergent sequences in $(X,\TT)$ are eventually constant. 
+1. Prove that $\TTcc$ is a topology on $\R$.
 
-Point 2 implies that the limit points of $A$ are all the points in $A$:
-$$
-L(A) = A = [-\infty , 0)
-$$
-In particular this shows
-$$
-\closure{A} \not\subset L(A)
-$$
-since $\closure{A} = \R$ by point 1.
+2. Prove that a sequence $\{x_n\}$ is convergent in $\TTcc$ if and only if it is eventually constant. 
 
-> Exercise: Prove the statements in Points 1 and 2.
+3. Define the set $A = (-\infty,0]$. Prove that $\closure{A} = \R$. 
+
+4. Conclude that $\closure{A} \not\subset L(A)$.
+
+
+
+**Solution.** 
+
+1. See Question 2 in Homework 3.
+
+2. See Question 2 in Homework 3.
+
+3. Assume $C$ is a closed set such that $A \subseteq C$. Since $C$ is closed, it follows that $C^c \in \TTcc$. Therefore $(C^c)^c = C$ is either countable, or equal to $\R$. As $A \subseteq C$, we have that $C$ is uncountable. Therefore, $C = \R$. As $C$ is an arbitrary closed set containing $A$, we conclude that
+$$
+\closure{A} =\bigcap_{ \substack{  A \subseteq C    \\ C \, \text{closed}  }   } \, C = \bigcap_{ \substack{  A \subseteq C    \\ C \, \text{closed}  }   } \, \R  = \R \,. 
+$$
+
+4. By Point 2, convergent sequences are eventually constant. Therefore, if $\{x_n\} \subseteq A$ converges to $x_0$, we conclude that $x_0 \in A$. This shows  
+$$
+L(A) = A = [-\infty , 0) \,.
+$$
+By Point 3, we have $\closure{A} = \R$. We conclude that
+$\closure{A} \not\subset L(A)$.
+
 :::
 
 
@@ -1317,28 +1272,25 @@ since $\closure{A} = \R$ by point 1.
 In metric spaces we can characterize the interior of a set and the closure in the following way.
 
 
-::: {.Proposition #proposition-closure-metric}
+::: Proposition 
+### Characterization of $\interior{A}$ and $\closure{A}$ in metric space {#proposition-closure-metric}
 
+Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$. For any $A \subseteq X$, we have
 
-Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
-Let $A \subseteq X$. We have
-$$
-\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
-$${#eq-formula-interior}
-and 
-$$
-\closure{A} = L(A):= \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
-$${#eq-formula-closure}
+1. $\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A \}$ ,
+
+2. $\closure{A} = L(A) = \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \}$.
 
 
 :::
 
 
- 
 
 ::: Proof
-The proof of (@eq-formula-interior) is left as an exercise. Let us prove 
-(@eq-formula-closure). The inclusion $L(A) \subseteq \closure{A}$ holds by Proposition \ref{proposition-closure-sequence}. We are left to show that
+
+1. See Question 4 in Homework 3.
+
+2. The inclusion $L(A) \subseteq \closure{A}$ holds by Proposition \ref{proposition-closure-sequence}. We are left to show that
 $$
 \closure{A} \subseteq L(A) \,.
 $$
@@ -1354,9 +1306,9 @@ x_n \in B_{1/n}(x_0) \,, \quad \forall \, n \in \N \,.
 $$
 In particular, we have that 
 $$
-d(x_n,x_0) < \frac{1}{n} \to 0
+0 \leq d(x_n,x_0) < \frac{1}{n} \to 0
 $$
-as $n \to \infty$. Thus $x_n \to x_0$, showning that $x_0 \in L(A)$.
+as $n \to \infty$. Thus $x_n \to x_0$, showing that $x_0 \in L(A)$.
 :::
 
 
@@ -1365,17 +1317,19 @@ as $n \to \infty$. Thus $x_n \to x_0$, showning that $x_0 \in L(A)$.
 
 ::: Example
 
-Consider $\R$ with the Euclidean topology and $A :=[0,1)$. We have that 
+**Question.** Consider $\R$ equipped with the Euclidean topology. Let $A =[0,1)$. Prove that:
 $$
 \interior{A} = (0,1) \,, \quad \closure{A} = [0,1] \,, \quad \partial A = \{0,1\} \,.
 $$
-In particular 
+
+**Note:** In particular, this shows
 $$
 \interior{A}  \neq A \,, \quad \closure{A} \neq A \,,
 $$
-showing that $A$ is neither open, nor closed. 
+so that $A$ is neither open, nor closed. 
 
-> The proof of the above statements is left as an exercise.
+**Solution.** See Question 5 in Homework 3.
+
 :::
 
 
@@ -1392,7 +1346,7 @@ showing that $A$ is neither open, nor closed.
 ::: Definition
 ### Density
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. We say that $A$ is **dense** in $X$ if 
+Let $(X,\TT)$ be a topological space. We say that a subset $A \subseteq X$ is **dense** in $X$, if 
 $$
 A \cap U \neq \emptyset \,, \quad \, \forall \,\, U \in \TT\,, \,\, U \neq \emptyset \,.
 $$
@@ -1406,14 +1360,12 @@ Density can be characterized in terms of closure.
 
 
 ::: Proposition
+### Characterization of density {#proposition-density}
 
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. They are equivalent:
+Let $(X,\TT)$ be a topological space, $A \subseteq X$. They are equivalent:
 
-1. $A$ is **dense** in $X$.
-2. It holds
-$$
-\closure{A} = X \,.
-$$
+1. $A$ is dense in $X$.
+2. It holds $\closure{A} = X$.
 
 :::
 
@@ -1452,56 +1404,96 @@ Therefore $U = \emptyset$, which is a contradiction.
 
 
 ::: Example
+### $\Q$ is dense in $(\R,\TTe)$
 
-Consider $\R$ with the Euclidean topology.
+**Question.** Consider $\R$ equipped with the Euclidean topology $\TTe$.
 
-1. We have that the set of integers $\Z$ is closed in $\R$. Indeed,
+1. Prove that $\Q$ is dense in $\R$, that is, $\closure{\Q} = \R$. 
+
+3. Prove that $\interior{Q} = \emptyset$. 
+
+**Note:** This shows $\Q$ is neither open, nor closed, since
 $$
-\Z^c = \bigcup_{ z \in \Z}  \, (z , z + 1 ) \,. 
+\interior{\Q} \neq \Q \,, \quad \closure{\Q} \neq \Q \,.
 $$
-Since $(z,z+1)$ is open in $\R$, by (A2) we conclude that 
-$\Z^c$ is open, so that $\Z$ is closed. Therefore 
+
+**Solution.** To solve the exercise we will need the following well-known analysis result: 
+
+**Density Thoerem.** Let $x \in \R$ and $\e>0$. There exists $q \in \Q$ such that
 $$
-\closure{\Z} = \Z \,,
+|x-q| < \e \,.
 $$
-showing that $\Z$ is not dense in $\R$.
+
+1. We want to prove that $\Q$ is dense in $\R$ according to the topological definition. Therefore, let $U$ be a non-empty open set in $\R$. Let $x \in U$. Since $U$ is open, there exists $r>0$ such that
+$$
+(x-r,x+r) \subseteq U \,.
+$$
+By the **Density Theorem**, there exists $q \in \R$ such that 
+$$
+|x-q| < r \,.
+$$
+In particular, this shows $q \in (x-r,x+r)$, so that $q \in U$. Therefore $\Q \cap U \neq \emptyset$, proving that $\Q$ is dense in $\R$. In particular, by Proposition \ref{proposition-density}, we conclude that $\closure{\Q} = \R$. 
+
+2. Recall that $(\R,\TTe)$ is a metric space. Therefore, we can apply Proposition \ref{proposition-closure-metric}, and infer that
+$$
+\interior{\Q} = \{ q \in \Q \divider \exists \,\, r>0  \st (q-r,q+r) \subseteq \Q \}
+$${#eq-interior-Q}
+Assume by contradiction that $\interior{\Q} \neq \emptyset$. Let $q \in \interior{\Q}$. By (@eq-interior-Q), there exists $r > 0$ such that
+$$
+(q-r,q+r) \subseteq \Q \,.
+$$
+But $(q-r,q+r)$ is an interval of $\R$, and therefore it will contain an irrational number $x \in \R \smallsetminus \Q$. Contradiction. Hence, $\interior{\Q} = \emptyset$.
 
 
-2. The rational numbers $\Q$ are instead dense in $\R$, as proven in the
-Analysis module. Therefore 
-$$
-\closure{\Q} = \R \,.
-$$
-It is also easy to check that
-$$
-\interior{\Q} = \emptyset \,.
-$$
-Therefore 
-$$
-\interior{\Q} \neq \Q \,, \quad \closure{\Q} \neq \Q \,,
-$$
-showing that $\Q$ is neither open, nor closed. 
 
 :::
 
 
 
 ::: Example
+### $\Z$ is not dense in $(\R,\TTe)$
+
+**Question.** Consider $\R$ equipped with the Euclidean topology $\TTe$. Prove that the set of integers $\Z$ is not dense in $\R$, with 
+$$
+\closure{\Z} = \Z \,.
+$$
+
+**Solution.** The set of integers $\Z$ satisfies
+$$
+\Z^c = \bigcup_{ z \in \Z}  \, (z , z + 1 ) \,. 
+$$
+Since $(z,z+1)$ is open in $\R$, by (A2) we conclude that 
+$\Z^c$ is open, so that $\Z$ is closed. Therefore 
+$$
+\closure{\Z} = \Z \,.
+$$
+As $\closure{\Z} \neq \R$, by Proposition \ref{proposition-density}, we have that $\Z$ is not dense in $\R$.
+
+:::
 
 
-Consider $\R$ with the cofinite topology
+
+If we change topologies, the closure might change.
+
+
+::: Example
+### $\Z$ is dense in $(\R,\TTcof)$
+
+**Question.** Consider $\R$ equipped with the cofinite topology
 $$
-\TT_{\textrm{cofinite}} := \{ U \subset \R \divider U^c \, \mbox{ is finite, }  \mbox{ or } U^c = \R \}\,. 
+\TTcof = \{ U \subset \R \divider U^c \, \mbox{ is finite, }  \mbox{ or } U^c = \R \}\,. 
 $$
-We have that 
+Prove that $\Z$ is dense in $\R$. In particular,
 $$
 \closure{\Z } = \R \,,
 $$
-showing that $\Z$ is dense in $\R$.
 
-> Proof. Suppose $C$ is a closed set such that $\Z \subseteq C$. By definition of $\TT_{\textrm{cofinite}}$ we have $C = \R$ or $C$ finite.
-Since $\Z \subseteq C$ and $\Z$ is not finite, we conclude $C = \R$. This
-proves that $\R$ is the only closed set containing $\Z$, and so $\closure{\Z} = \R$.
+**Solution.** Suppose $C$ is a closed set such that $\Z \subseteq C$. By definition of $\TTcof$, we have that $(C^c)^c = C$ is either finite, or it coincides with $\R$. Since $\Z \subseteq C$, and $\Z$ is not finite, we conclude $C = \R$.
+As $C$ is an arbitrary closed set containing $\Z$, we conclude that
+$$
+\closure{\Z} =\bigcap_{ \substack{  \Z \subseteq C    \\ C \, \text{closed}  }   } \, C = \bigcap_{ \substack{  \Z \subseteq C    \\ C \, \text{closed}  }   } \, \R  = \R \,. 
+$$ 
+In particular, by Proposition \ref{proposition-density}, $\Z$ is dense in $\R$.
 
 :::
 
@@ -1520,8 +1512,9 @@ means of disjoint open sets.
 
 
 ::: Definition
+### Hausdorff space
 
-Let $(X,\TT)$ be a topological space. We say that $X$ is a Hausdorff space if for every two points $x,y \in X$ with $x \neq y$ there exist $U,V \in \TT$ such that
+We say that a topological space $(X,\TT)$ is **Hausdorff** if for every $x,y \in X$ with $x \neq y$, there exist $U,V \in \TT$ such that
 $$
 x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
 $$
@@ -1535,26 +1528,19 @@ The main example of Hausdorff spaces are metrizable spaces.
 
 ::: {.Proposition  #proposition-hausdorff-1}
 
-Let $(X,d)$ be a metric space with $\TT_d$ the topology induced by $d$. Then $(X, \TT_d)$ is a Hausdorff space.
+Let $(X,d)$ be a metric space, $\TT_d$ the topology induced by $d$. Then $(X, \TT_d)$ is a Hausdorff space.
 
 :::
 
 
 ::: Proof
 
-Let $x,y \in X$ with $x \neq y$. Set 
-$$
-\e := \frac12 \, d(x,y) \,, 
-$$
-and define 
+Let $x,y \in X$ with $x \neq y$. Define
 $$
 U := B_{\e}(x)\,, \quad 
-V := B_{\e}(y) \,.
+V := B_{\e}(y) \,, \quad \e := \frac12 \, d(x,y) \,.
 $$
-By Proposition \ref{proposition-metric-ball} we know that $U, V \in \TT_d$. Moreover $x \in U$, $y \in V$. We are left to show that 
-$$
-U \cap V = \emptyset \,.
-$$
+By Proposition \ref{proposition-metric-ball}, we know that $U, V \in \TT_d$. Moreover $x \in U$, $y \in V$. We are left to show that $U \cap V = \emptyset$.
 Suppose by contradiction that $U \cap V \neq \emptyset$ and let $z \in U \cap V$. Therefore 
 $$
 d(x,z) < \e \,,  \quad d(y,z) < \e \,.
@@ -1576,7 +1562,7 @@ In general, every metrizable space is Hausdorff.
 ::: Definition
 ### Metrizable space
 
-Let $(X,\TT)$ be a topological space. We say that the topology $\TT$ is metrizable if there
+Let $(X,\TT)$ be a topological space. We say that the topology $\TT$ is **metrizable** if there
 exists a metric $d$ on $X$ such that
 $$
 \TT = \TT_d \,,
@@ -1611,28 +1597,19 @@ a few examples.
 
 
 ::: Example
-### Trivial topology is not Hausdorff
+### $(X,\TTt)$ is not Hausdorff
 
-Let $(X,\TT)$ be a topological space with $\TT$ trivial topology. Assume that $X$ has more than one element. Then $X$ is not Hausdorff.
+**Question.** Let $X$ be equipped with the trivial topology $\TTt$. Then $X$ is not Hausdorff.
 
-> Indeed, let $x,y \in X$ with $x \neq y$. Suppose by contradiction that $X$ is Hausdorff. Then there exist $U,V \in \TT$ such that 
+**Solution.** Assume by contradiction $(X,\TTt)$ is Hausdorff and let $x,y \in X$ with $x \neq y$. Then, there exist $U,V \in \TTt$ such that 
 $$
 x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
 $$
-Recall that
+In particular $U \neq \emptyset$ and $V \neq \emptyset$. Since $\TT = \{  \emptyset, X \}$, we conclude that
 $$
-\TT = \{  \emptyset, X \} \,.
+U = V = X  \quad \implies \quad U \cap V  = X \neq \emptyset \,.
 $$
-Since $x \in U$ and $y \in V$, we deduce that $U$ and $V$ are non-empty. 
-Since $U$ and $V$ are open, the only possibility is that 
-$$
-U = V = X \,.
-$$
-In this case we have
-$$
-U \cap V = X \cap X = X \neq \emptyset \,,
-$$
-leading to a contradiciton. Hence $X$ is not Hausdorff.
+This is a contradiction, and thus $(X,\TTt)$ is not Hausdorff.
 
 
 :::
@@ -1641,15 +1618,29 @@ leading to a contradiciton. Hence $X$ is not Hausdorff.
 
 
 ::: Example
-### Cofinite topology is not Hausdorff
+### $(\R,\TTcof)$ is not Hausdorff
 
-Consider the cofinite topology on $\R$
+**Question.** Consider the cofinite topology on $\R$
 $$
-\TT := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \} \,. 
+\TTcof = \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \} \,. 
 $$
-Then $(\R,\TT)$ is a topological space which is not Hausdorff. 
+Prove that $(\R,\TTcof)$ is not Hausdorff. 
 
-> Exercise: Show that $(\R,\TT)$ is not Hausdorff.
+**Solution.** Assume by contradiction $(\R,\TTcof)$ is Hausdorff and let $x, y \in \R$ with $x \neq y$. Then, there exist $U,V \in \TTcof$ such that 
+$$
+x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
+$$
+Taking the complement of $U \cap V = \emptyset$, we infer
+$$
+\R = (U \cap V)^c = U^c \cup V^c \,.
+$${#eq-Q31}
+There are two possibilities:
+	
+1. $U^c$ and $V^c$ are finite. Then $U^c \cup V^c$ is finite, so that (@eq-Q31) is a contradiction.
+
+2. Either $U^c = \R$ or $U^c = \R$. If $U^c = \R$, then $U = \emptyset$. This is a contradiction, since $x \in U$. If $V^c = \R$, then $V = \emptyset$. This is a contradiction, since $y \in V$. 
+
+Hence $(\R,\TTcof)$ is not Hausdorff.
 
 :::
 
@@ -1657,99 +1648,63 @@ Then $(\R,\TT)$ is a topological space which is not Hausdorff.
 
 
 ::: Example
+## Lower-limit topology on $\R$ is not Hausdorff
 
-
-Consider the following family $\TT$ of subsets of $\R$
+**Question.** The **lower-limit topology** on $\R$ is the collection of sets
 $$
-\TT := \{ U = (-\infty,a)  \divider - \infty \leq a \leq \infty  \}\,. 
+\TTll =\{\emptyset, \R\} \cup \{ (a,+\infty) \, \colon \, a \in \R \} \,.
 $$
-Then $(\R,\TT)$ is a topological space which is not Hausdorff.
 
-> We start by showing that $(\R,\TT)$ is a topological space. We need to check the properties of topologies:
->
->  - (A1) We have that 
->  $$
->  (\infty,\infty) = \emptyset \in \TT \,, \quad (-\infty,\infty) = \R \in \TT \,.
->  $$
->
->  - (A2) Suppose that $A_i \in \TT$ for all $i \in I$. By definition
->  $$
->  A_i = (-\infty, a_i) \,, \quad - \infty \leq a_i \leq \infty \,.
->  $$
->  Set 
->  $$
->  a := \sup_{i \in I} \ a_i \,, \quad A := (-\infty, a) \,. 
->  $$
->  Note that $a$ always exists, and possibly $a=\infty$. Moreover 
->  $A \in \TT$. We claim
->  $$
->  A = \bigcup_{i \in I} \, A_i \,.
->  $${#eq-sorgenfrey-1}
->  To prove (@eq-sorgenfrey-1) first suppose that $x \in A$. Then $x < a$. 
->  Set $\e := a - x$, so that $\e>0$. By definition of supremum there
->  exists $i_{0} \in I$ such that 
->  $$
->  a - \e < a_{i_0} \,.
->  $$
->  From the above, and from the definition of $\e$, we deduce
->  $$
->  a_{i_0} > a - \e = a - a + x = x \,,
->  $$ 
->  showing that $x \in (-\infty, a_{i_0}) = A_{i_0}$. Therefore
->  $$
->  A \subseteq \bigcup_{i \in I} \, A_i \,.
->  $$
->  Conversely, assume that $x \in \cup_{i \in I} \, A_i$. Therefore there
->  exists $i_0 \in I$ such that $x \in A_{i_0} = (-\infty, a_{i_0})$. In 
->  particular 
->  $$
->  x < a_{i_0} \leq \sup_{i \in I} a_i = a \,,
->  $$
->  showing that $x \in (-\infty,a) = A$. Therefore 
->  $$
->  \bigcup_{i \in I} \, A_i \subseteq A\,,
->  $$
->  and (@eq-sorgenfrey-1) is proven.
->
->  - (A3) Let $A, B \in \TT$. Therefore 
->  $$
->  A = (-\infty, a)\,, \quad B = (-\infty, b)\,,
->  $$
->  for some $a,b \in [-\infty, \infty]$. Set
->  $$
->  U := A \cap B \,, \quad z:= \min \{a,b\} \,.
->  $$
->  It is immediate to check that 
->  $$
->  U = (-\infty, z) \,,
->  $$
->  showing that $U \in \TT$.
->
-> Therefore $(\R,\TT)$ is a topological space. We now show that $(\R,\TT)$ is not Hausdorff. Suppose by contradiction that $(\R,\TT)$ is Hausdorff. Let $x,y \in \R$  with $x \neq y$. By assumption there exist $U,V \in \TT$ such that 
->  $$
->  x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
->  $$ 
->  By definition of $\TT$ there exist $a,b \in [-\infty,\infty]$ such that
->  $$
->  U = (-\infty,a) \,, \quad V = (- \infty, b) \,.
->  $$
->  Since $x \in U$ and $y \in V$, in particular $U$ and $V$ are non-empty. Therefore $a,b>-\infty$. Set 
->  $$
->  z := \min\{a , b \}\,, \quad Z:= U \cap V = (-\infty,z) \,.
->  $$ 
->  As $a,b>-\infty$, we have $z > - \infty$. Therefore $Z \neq \emptyset$. This is a contradiction, since $U \cap V = \emptyset$. Therefore $(\R,\TT)$ is not Hausdorff.
+1. Prove that $(\R,\TTll)$ is a topological space.
+2. Prove that $(\R,\TTll)$ is not Hausdorff.
+
+**Solution. Part 1.** We show that $(\R, \TTll)$ is a topological space by verifying the axioms:
+
+(A1) By definition $\emptyset, \R \in \TTll$.
+
+(A2) Let $A_i \in \TTll$ for all $i \in I$. We have 2 cases:
+
+- If $A_i = \emptyset$ for all $i$, then $\cup_i A_i = \emptyset \in \TTll$. 
+
+- At least one of the sets $A_i$ is non-empty. As empty-sets do not contribute to the union, we can discard them. Therefore, $A_i = (-\infty, a_i)$ with $a_i \in \R \cup \{\infty\}$. Define:
+$$
+a := \sup_{i \in I} a_i, \quad A := (-\infty, a).
+$$
+Then $A \in \mathcal{T}$ and:
+$$
+A = \cup_{i \in I} A_i.
+$$
+To prove this, let $x \in A$. Then $x < a$, so there exists $i_0 \in I$ such that $x < a_{i_0}$. Thus, $x \in A_{i_0}$, showing $A \subseteq \cup_{i \in I} A_i$. Conversely, if $x \in \cup_{i \in I} A_i$, then $x \in A_{i_0}$ for some $i_0 \in I$, implying $x < a_{i_0} \leq a$. Thus, $x \in A$, proving $\cup_{i \in I} A_i \subseteq A$.
+
+(A3) Let $A, B \in \TTll$. We have 3 cases:
+
+- $A = \emptyset$ or $B = \emptyset$. Then $A \cap B = \emptyset \in \TTll$.
+
+- $A \neq \emptyset$ and $B \neq \emptyset$. Therefore, $A = (-\infty, a)$ and $B = (-\infty, b)$ with $a, b \in \R \cup \{\infty\}$. Define
+$$
+U := A \cap B, \quad z := \min\{a, b\}.
+$$
+Then $U = (-\infty, z) \in \TTll$.
+
+Thus, $(\R, \TTll)$ is a topological space.
+
+**Part 2.** To show $(\R, \TTll)$ is not Hausdorff, assume otherwise. Let $x, y \in \R$ with $x \neq y$. Then there exist $U, V \in \TTll$ such that:
+$$
+x \in U, \quad y \in V, \quad U \cap V = \emptyset.
+$$
+As $U,V$ are non-empty, by definition of $\TTll$, there exist $a, b \in \R \cup \{\infty\}$ such that $U = (-\infty, a)$ and $V = (-\infty, b)$. Define:
+$$
+z := \min\{a, b\}, \quad Z := U \cap V = (-\infty, z).
+$$
+Hence $Z \neq \emptyset$, contradicting $U \cap V = \emptyset$. Thus, $(\R, \TTll)$ is not Hausdorff.
+
 
 :::
 
 
 
 
-
-
-
-
-
-In Hausdorff spaces the limit of a sequence is unique.
+In Hausdorff spaces the limit of sequences is unique.
 
 
 ::: Proposition
@@ -1762,11 +1717,11 @@ Let $(X,\TT)$ be a Hausdorff space. If a sequence $\{x_n\} \subseteq X$ converge
 
 ::: Proof
 
-Let $\{x_n\} \subseteq X$ be a convergent sequence. Suppose by contradiction that 
+Let $\{x_n\} \subseteq X$ be convergent, and suppose by contradiction that 
 $$
-x_n \to x_0 \,, \quad x_n \to y_0
+x_n \to x_0 \,, \quad x_n \to y_0 \,, \quad  x_0 \neq y_0 \,.
 $$
-in $X$, for some $x_0,y_0 \in X$ with $x_0 \neq y_0$. Since $X$ is Hausdorff, there exist $U,V \in \TT$ such that 
+Since $X$ is Hausdorff, there exist $U,V \in \TT$ such that 
 $$
 x_0 \in U \,, \quad y_0 \in V \,, \quad U \cap V = \emptyset \,.
 $$
@@ -1784,7 +1739,7 @@ Take $N:=\max\{N_1,N_2\}$. Then
 $$
 x_n \in U \cap V \,, \quad \forall \, n \geq N  \,.
 $$
-Since $U \cap V = \emptyset$, the above is a contradiction. Therefore the limit of $x_n$ is unique. 
+Since $U \cap V = \emptyset$, the above is a contradiction. Therefore the limit is unique. 
 
 :::
 
@@ -1804,12 +1759,12 @@ we need the concept of pre-image of a set under a function.
 
 Let $X, Y$ be sets and $f \colon X \to Y$ be a function. 
 
-- Let $U \subseteq X$. The image of $U$ under $f$ is the subset of $Y$ defined by
+1. Let $U \subseteq X$. The image of $U$ under $f$ is the subset of $Y$ defined by
 $$
 f (U) := \{ y \in Y \divider \exists \, x \in X \st y = f(x) \} = \{ f(x) \divider x \in X \} \,.
 $$
 
-- Let $V \subseteq Y$. The pre-image of $V$ under $f$ is the subset of $X$ defined by
+2. Let $V \subseteq Y$. The pre-image of $V$ under $f$ is the subset of $X$ defined by
 $$
 f^{-1} (V) := \{ x \in X \divider f(x) \in V \} \,.
 $$
@@ -1864,12 +1819,12 @@ We omit the proof. We can now define continuous functions between topological sp
 
 Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let $f \colon X \to Y$ be a function. 
 
-- Let $x_0 \in X$. We say that $f$ is continuous at $x_0$ if it holds:
+1. Let $x_0 \in X$. We say that $f$ is continuous at $x_0$ if it holds:
 $$
 \forall \, V \in \TT_Y \st f(x_0) \in V \,, \,\, \exists \, U \in \TT_X \st x_0 \in U \,, \,\, f(U) \subseteq V \,.
 $$
 
-- We say that $f$ is continuous from $(X,\TT_X)$ to $(Y,\TT_Y)$ if $f$ is continuous at each point $x_0 \in X$.
+2. We say that $f$ is continuous from $(X,\TT_X)$ to $(Y,\TT_Y)$ if $f$ is continuous at each point $x_0 \in X$.
 
 :::
 
@@ -1883,10 +1838,7 @@ The following proposition presents a useful characterization of continuous funct
 Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let $f \colon X \to Y$ be a function. They are equivalent:
 
 1. $f$ is continuous from $(X,\TT_X)$ to $(Y,\TT_Y)$.
-2. It holds:
-$$
-f^{-1}(V) \in \TT_X  \,, \quad \forall \, V \in \TT_Y \,. 
-$$
+2. It holds: $f^{-1}(V) \in \TT_X$ for all $V \in \TT_Y$.
 
 :::
 
@@ -1902,28 +1854,24 @@ The proof of Proposition \ref{proposition-continuity-characterization} is simple
 
 ::: Example
 
-Let $X$ be a set and $\TT_1$, $\TT_2$ be topologies on $X$. Define the identity map
+**Question.** Let $X$ be a set and $\TT_1$, $\TT_2$ be topologies on $X$. Define the identity map
 $$
 {\id}_{X} \colon (X,\TT_1) \to (X,\TT_2)  \,, \quad {\id}_{X} (x):= x \,.
 $$
-They are equivalent:
+Prove that they are equivalent:
 
 1. ${\id}_{X}$ is continuous from $(X,\TT_1)$ to $(X,\TT_2)$.
-2. $\TT_1$ is finer than $\TT_2$
-$$
-\TT_2 \subseteq \TT_1 \,.
-$$
+2. $\TT_1$ is finer than $\TT_2$, that is, $\TT_2 \subseteq \TT_1$.
 
-
->  Indeed, ${\id}_{X}$ is continuous if and only if
->  $$
->  {\id}_{X}^{-1} (V) \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,.
->  $$
->  But ${\id}_{X}^{-1} (V) = V$, so that the above reads
->  $$
->  V \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,,
->  $$
->  which is equivalent to $\TT_2 \subseteq \TT_1$.
+**Solution.** ${\id}_{X}$ is continuous if and only if
+$$
+{\id}_{X}^{-1} (V) \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,.
+$$
+But ${\id}_{X}^{-1} (V) = V$, so that the above reads
+$$
+V \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,,
+$$
+which is equivalent to $\TT_2 \subseteq \TT_1$.
 
 :::
 
@@ -2030,8 +1978,11 @@ Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. Denote by $\TT_X$ and $\TT_Y$ the 
 1. $f$ is continuous at $x_0$ in the topological sense.
 2. It holds:
 $$
-\forall \, \e > 0 \,, \, \exists \, \delta >0 \st \, d_Y(f(x),f(x_0))<\e \,\, 
+\begin{aligned}
+& \forall \, \e > 0 \,, \, \exists \, \delta >0 \st \\
+& d_Y(f(x),f(x_0))<\e \,\, 
 \mbox{ if } \,\, d_X(x , x_0) < \delta \,.
+\end{aligned}
 $$
 
 :::
@@ -2042,63 +1993,54 @@ Let us examine continuity in the cases of the trivial and discrete topologies.
 
 
 ::: Example
-Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be a topological space. Suppose that 
+
+**Question.** Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be a topological space. Suppose that 
 $\TT_Y$ is the trivial topology, that is,
 $$
 \TT_Y = \{ \emptyset, Y \} \,.
 $$
-Then every function $f \colon X \to Y$ is continuous. 
+Prove that every function $f \colon X \to Y$ is continuous. 
 
+**Solution.** $f$ is continuous if $f^{-1}(V) \in \TT_X$ for all $V \in \TT_Y$. We have two cases:
 
-> Indeed, we know that $f$ is continuous if and only if it holds:
-> $$
-> f^{-1}(V) \in \TT_X \,, \quad \forall \,\, V \in \TT_Y \,.
-> $$
-> We have two cases:
->
->  - $V=\emptyset$: Then 
->  $$
->  f^{-1}(V) = f^{-1}(\emptyset) = \emptyset \in \TT_X \,.
->  $$
->  - $V=Y$: Then 
->  $$
->  f^{-1}(V) = f^{-1}(Y) = X \in \TT_X \,.
->  $$
->
-> Therefore $f$ is continuous.
+- $V=\emptyset$: Then 
+$f^{-1}(V) = f^{-1}(\emptyset) = \emptyset \in \TT_X$.
+
+- $V=Y$: Then $f^{-1}(V) = f^{-1}(Y) = X \in \TT_X$.
+
+Therefore $f$ is continuous.
 
 :::
 
 
 
 ::: Example
-Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Suppose that 
+
+
+**Question.** Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Suppose that 
 $\TT_Y$ is the discrete topology, that is,
 $$
 \TT_Y = \{ V \st V \subseteq Y \} \,.
 $$
-Let $f \colon X \to Y$. They are equivalent:
+Let $f \colon X \to Y$. Prove that they are equivalent:
 
 1. $f$ is continuous from $X$ to $Y$.
 2. $f^{-1}(\{y\}) \in \TT_X$ for all $y \in Y$.  
 
 
-> Indeed, suppose that $f$ is continuous. Then
-> $$
-> f^{-1}(V) \in \TT_X \,, \quad \forall \,\, V \in \TT_Y \,.
-> $$
-> As $V=\{y\} \in \TT_Y$, we conclude that $f^{-1}(\{y\}) \in \TT_X$.
->
-> Conversely, assume that $f^{-1}(\{y\}) \in \TT_X$ for all $y \in Y$.  Let $V \in \TT_Y$. Trivially, we have
-> $$
-> V = \bigcup_{y \in V} \, \{ y \} \,.
-> $$
-> Therefore 
-> $$
-> f^{-1}(V) = f^{-1}\left( \bigcup_{y \in V}\, \{ y \} \right) = \bigcup_{y \in V} \, f^{-1}( \{y \} ) \,.
-> $$
-> As $f^{-1}( \{y \}) \in \TT_X$ for all $y \in Y$, by property (A2) we conclude that $f^{-1}(V) \in \TT_X$. Therefore $f$ is continuous.
->
+**Solution.** Suppose that $f$ is continuous. Then
+$$
+f^{-1}(V) \in \TT_X \,, \quad \forall \,\, V \in \TT_Y \,.
+$$
+As $V=\{y\} \in \TT_Y$, we conclude that $f^{-1}(\{y\}) \in \TT_X$.
+
+Conversely, assume that $f^{-1}(\{y\}) \in \TT_X$ for all $y \in Y$.  Let $V \in \TT_Y$. Trivially, we have $V = \cup_{y \in V} \, \{ y \}$.
+Therefore 
+$$
+f^{-1}(V) = f^{-1}\left( \bigcup_{y \in V}\, \{ y \} \right) = \bigcup_{y \in V} \, f^{-1}( \{y \} ) \,.
+$$
+As $f^{-1}( \{y \}) \in \TT_X$ for all $y \in Y$, by property (A2) we conclude that $f^{-1}(V) \in \TT_X$. Therefore $f$ is continuous.
+
 :::
 
 
@@ -2158,14 +2100,14 @@ showing that $f(x_n) \to f(x_0)$ in $Y$.
 
 ::: Warning
 
-The reverse implication of Proposition \ref{proposition-continuity-sequential} is false. That is, even if it holds
+1. The reverse implication of Proposition \ref{proposition-continuity-sequential} is false:
 $$
 \text{sequential continuity} \quad  \centernot\implies \quad \text{continuity}
 $$ 
 A counterexample is given in Example \ref{example-sequential-continuity} below.
 
-For continuity to be equivalent to sequential continuity, the topologies on
-$X$ and $Y$ have to be first countable. In particular, this is the case for metrizable topologies, see
+2. Continuity is equivalent to sequential continuity if the topologies on
+$X$ and $Y$ are first countable. This is the case for metrizable topologies, see
 Proposition \ref{proposition-sequential-continuity} below.
 
 :::
@@ -2225,30 +2167,31 @@ but such that $\{f(y_n)\}$ does not converge. This contradicts our assumption. H
 ::: {.Example  #example-sequential-continuity}
 ### Sequential continuity does not imply continuity
 
-Consider $\R$ with the co-countable and discrete topologies:
+**Question.** Consider the co-countable and discrete topologies on $\R$
 \begin{gather*}
-{\TT}_{\textrm{cc}} = \{ A \subseteq \R \divider A^c = \R  \, \mbox{ or } \, A^c \, \mbox{ countable} \} \\
-{\TT}_{\textrm{discrete}} = \{ A \subseteq \R \}
+\TTcc = \{ A \subseteq \R \divider A^c = \R  \, \mbox{ or } \, A^c \, \mbox{ countable} \} \\
+\TTd = \{ A \subseteq \R \}
 \end{gather*}
-The following holds: Sequences in $(\R,{\TT}_{\textrm{cc}})$ and $(\R,{\TT}_{\textrm{discrete}})$ converge if and only if they are eventually constant. 
-
 Consider the identity function
 $$
-f \colon (\R,{\TT}_{\textrm{cc}}) \to (\R,{\TT}_{\textrm{discrete}}) \,, \quad f(x):=x \,.
+f \colon (\R,\TTcc) \to (\R,\TTd) \,, \quad f(x):=x \,.
 $$
-We have that:
+Prove that 
 
-1. $f$ is not continuous  
-    
-    >Indeed $\{x\} \in {\TT}_{\textrm{discrete}}$ but 
+1. $f$ is not continuous.
+2. $f$ is sequentially continuous.
+
+*Hint: You can use the following fact: Sequences in $(\R,\TTcc)$ and $(\R,{\TTd})$ converge if and only if they are eventually constant.*
+
+**Solution.**
+
+1.  We have $\{x\} \in {\TT}_{\textrm{discrete}}$. However,
     $$
     f^{-1}(\{ x\}) = \{x\} \notin {\TT}_{\textrm{cc}} \,,
     $$
-    since $\{x\}^c = \R \smallsetminus \{x\}$ is neither equal to $\R$, nor countable.
+    since $\{x\}^c = \R \smallsetminus \{x\}$ is neither equal to $\R$, nor countable. Therefore $f$ is not continuous.
 
-2. $f$ is sequentially continuous  
-
-    > If $\{x_n\}$ is convergent in ${\TT}_{\textrm{cc}}$, then it is eventually constant. Therefore $\{f(x_n)\}$ is eventually constant, and so it is convergent in ${\TT}_{\textrm{discrete}}$.
+2. Assume that $\{x_n\}$ is convergent in $\TTcc$. By the Hint, we have that $\{x_n\}$ is eventually constant. Again by the Hint, we infer that $\{x_n\}$ is convergent in $\TTd$. Since $f(x_n) = x_n$, we conclude that $f$ is sequentially continuous.
 
 :::
 
@@ -2259,16 +2202,9 @@ Let us make an observation on continuity of compositions.
 
 
 :::  Proposition
+### Continuity of compositions
 
-Let $(X,\TT_X), (Y,\TT_Y), (Z,\TT_Z)$ be topological spaces. Let 
-$$
-f \colon X \to Y \,, \quad g \colon Y \to Z \,,
-$$
-be given functions. If $f$ and $g$ are continuous, then 
-$$
-(g \circ f) \colon X \to Z 
-$$
-is continuous.
+Let $(X,\TT_X), (Y,\TT_Y), (Z,\TT_Z)$ be topological spaces. Assume $f \colon X \to Y$ and $g \colon Y \to Z$ are continuous. Then $(g \circ f) \colon X \to Z$ is continuous.
 :::
 
 ::: Proof
@@ -2297,10 +2233,7 @@ We conclude the section by introducing homeomorphisms.
 Let $(X,\TT_X)$, $(Y,\TT_Y)$ be topological space. A function $f \colon X \to Y$ is called an **homeomorphism** if they hold:
 
 1. $f$ is continuous.
-2. There exists $g \colon Y \to X$ continuous such that 
-$$
-g \circ f = {\id}_{X} \,, \quad f \circ g = {\id}_{Y}  \,.
-$$
+2. $f$ admits continuous inverse $f^{-1} \colon Y \to X$.
 
 :::
 
@@ -2321,10 +2254,10 @@ Any subset $Y$ in a topological space $X$ naturally inherits a topological struc
 
 Let $(X,\TT)$ be a topological space and $Y \subseteq X$ a subset. Define the family of sets
 \begin{align*}
-\SSS & := \{ A \subset Y \divider \exists \,\, U \in \TT \st A = U \cap Y   \} \\
+\SSS & := \{ A \subseteq Y \divider \exists \,\, U \in \TT \st A = U \cap Y   \} \\
      & = \{ U \cap Y , \,\, U \in \TT  \} \,.
 \end{align*}
-The family $\SSS$ is called **subspace topology** on $Y$ induced by the inclusion $Y \subset X$.
+The family $\SSS$ is called **subspace topology** on $Y$ induced by the inclusion $Y \subseteq X$.
 
 :::
 
@@ -2335,34 +2268,20 @@ The family $\SSS$ is called **subspace topology** on $Y$ induced by the inclusio
 We have to show that $(Y,\SSS)$ is a topological space:
 
 - (A1) $\emptyset \in \SSS$ since
-$$
-\emptyset = \emptyset \cap Y
-$$
-and $\emptyset \in \TT$. Similarly we have $Y \in \SSS$, since
-$$
-Y = X \cap Y \,,
-$$
-and $X \in \TT$.
+$\emptyset = \emptyset \cap Y$ and $\emptyset \in \TT$. Similarly, we have $Y \in \SSS$, since
+$Y = X \cap Y$ and $X \in \TT$.
 
-- (A2) Let $A_i \in \SSS$ for $i \in I$. By definition there exist $U_i \in \TT$ such that 
+- (A2) Let $A_i \in \SSS$ for $i \in I$. By definition there exist $U_i \in \TT$ such that $A_i =  U_i \cap Y$ for all $i \in I$. Therefore 
 $$
-A_i =  U_i \cap Y \,, \quad \forall \, i \in I \,.
-$$
-Therefore 
-$$
-\bigcup_{i \in I} \, A_i = 
-\bigcup_{i \in I} (U_i \cap Y ) =
-\left(\bigcup_{i \in I} U_i \right) \cap Y  \,.
+\cup_{i \in I} \, A_i = 
+\cup_{i \in I} (U_i \cap Y ) =
+\left(\cup_{i \in I} U_i \right) \cap Y  \,.
 $$
 The above proves that $\cup_{i \in I} \, A_i \in \SSS$, since 
 $\cup_{i \in I} \, U_i \in \TT$.
 
 - (A3) Let $A_1, A_2 \in \SSS$. By definition there exist $U_1,U_2 \in \TT$ such that 
-$$
-A_1 =  U_1 \cap Y \,, \quad
-A_2 =  U_2 \cap Y
-$$
-Therefore 
+$A_1 =  U_1 \cap Y$ and $A_2 =  U_2 \cap Y$. Therefore 
 $$
 A_1 \cap A_2  = (  U_1 \cap Y ) \cap (U_2 \cap Y) = (U_1 \cap U_2) \cap Y
 $$
@@ -2377,8 +2296,8 @@ If the set $Y$ is open, the subspace topology coincides with the original topolo
 
 ::: Proposition
 
-Let $(X,\TT)$ be a topological space and $Y \in \TT$. 
-$A \subset Y$. Then
+Let $(X,\TT)$ be a topological space and $Y \in \TT$. Let  
+$A \subseteq Y$. Then
 $$
 A \in \SSS \quad \iff \quad A \in \TT \,.
 $$
@@ -2409,16 +2328,16 @@ showing that $A \in \SSS$.
 
 ::: Warning
 
-Let $(X,\TT)$ be a topological space, $A \subset Y \subset X$. In general we could have
+Let $(X,\TT)$ be a topological space, $A \subseteq Y \subseteq X$. In general we could have
 $$
-A \in \SSS \quad \mbox{and} \quad A \notin \TT
+A \in \SSS \quad \mbox{and} \quad A \notin \TT \,.
 $$
 
-> For example consider $X=\R$ with $\TT$ the euclidean topology. Consider the subset $Y = [0,2)$ and equip $Y$ with the subspace topology $\SSS$. Let $A = [0,1)$. Then $A \notin \TT$ but $A \in \SSS$, since 
+**Example.** Let $X=\R$ with $\TTe$. Consider the subset $Y = [0,2)$, and equip $Y$ with the subspace topology $\SSS$. Let $A = [0,1)$. Then $A \notin \TTe$ but $A \in \SSS$, since 
 $$
-A =  (-1,1)  \cap Y
+A =  (-1,1)  \cap Y \,, \qquad (-1,1) \in \TTe \,.
 $$
-and $(-1,1) \in \TT$.
+
 
 :::
 
@@ -2427,26 +2346,26 @@ and $(-1,1) \in \TT$.
 
 ::: Example
 
-Let $X=\R$ be equipped with $\TT$, the euclidean topology. Let 
-$\SSS$ be the subspace topology on $\Z$. Then 
+**Question.** Let $X=\R$ be equipped with $\TTe$. Let 
+$\SSS$ be the subspace topology on $\Z$. Prove that
 $$
-\SSS = \TT_{\textrm{discrete}}
+\SSS = \TTd \,.
 $$
 
-> *Proof.* The set $\{z\}$ is open in $\SSS$ for all $z \in \Z$. Indeed, 
+
+**Solution.** To prove that $\SSS = \TTd$, we need to show that all the subsets of $\Z$ are open in $\SSS$.
+
+1. Let $z \in \Z$ be arbitrary. Notice that 
 $$
 \{z\} = \left(  z-1 , z + 1   \right)   \cap \Z \,
 $$
-and $(z - 1, z + 1) \in \TT$. Thus $\{z\} \in \SSS$. Let now $A \subseteq \Z$. Then
-$$
-A = \bigcup_{z \in A} \, \{ z \} \,,
-$$
-and therefore $A \in \SSS$ by (A2). This proves that
-$$
-\SSS = \{ A \st A \subseteq \Z \} \,,
-$$
-that is, $\SSS$ is the discrete topology on $\Z$.
+and $(z - 1, z + 1) \in \TTe$. Thus $\{z\} \in \SSS$. 
 
+2. Let now $A \subseteq \Z$ be an arbitrary subset. Trivially,
+$$
+A = \cup_{z \in A} \, \{ z \} \,.
+$$
+As $\{z\} \in \SSS$, we infer that $A \in \SSS$ by (A2).
 
 :::
 
@@ -2469,8 +2388,8 @@ We can generalize the concept of basis to arbitrary topological spaces.
 ### Topological basis
 
 Let $(X,\TT)$ be a topological space and let $\mathcal{B} \subseteq \TT$.  We say that 
-$\mathcal{B}$ is a **topological basis** for the topology $\TT$ if for all $U \in \TT$ 
-there exist open sets $\{B_i\} \subseteq \mathcal{B}$, with $I$ family of indices, such that 
+$\mathcal{B}$ is a **topological basis** for the topology $\TT$, if for all $U \in \TT$ 
+there exist open sets $\{B_i\}_{i \in I} \subseteq \mathcal{B}$, with $I$ family of indices, such that 
 $$
 U = \bigcup_{i \in I} \, B_i \,.
 $${#eq-topo-basis}
@@ -2482,25 +2401,75 @@ $${#eq-topo-basis}
 
 ::: Example
 
+**Question.** Prove the following statements.
+
 1. Let $(X,\TT)$ be a topological space. Then $\mathcal{B}:=\TT$ is a basis for $\TT$.  
     
-    > This is true because one can just take $B=U$ in (@eq-topo-basis).
-
-2. $(X,d)$ metric space with topology $\TT_d$ induced by the metric. Then
+   
+2. Let $(X,d)$ be a metric space with topology $\TT_d$ induced by the metric. Then
 $$
 \mathcal{B} :=\{ B_r(x) \divider x \in X \,, \,\, r>0  \}
 $$
 is a basis for $\TT_d$.
 
-    > This is true by Propostion \ref{proposition-metric-ball}.
+   
 
-3. Let $(X,\TT)$ with $X$ the discrete topology. Then
+3. Let $X$ be equipped with $\TTd$. Then
 $$
 \mathcal{B}:=\{   \{x\}  \divider x \in X \}
 $$
-is a basis for $\TT$.  
+is a basis for $\TTd$.  
 
-    > This is true because for any $U \in \TT$ we have $$U = \bigcup_{ x \in U }  \, \{x\} \,. $$
+   
+
+**Solution.**
+
+1. This is true because one can just take $B=U$ in (@eq-topo-basis).
+
+2. This is true by Propostion \ref{proposition-metric-ball}.
+
+3. This is true because for any $U \in \TT$ we have 
+$$
+U = \bigcup_{ x \in U }  \, \{x\} \,. 
+$$
+
+:::
+
+
+
+
+
+::: Example
+
+**Question.** Consider $\R$ equipped with the Euclidean topology $\TTe$. Which of the following collection of sets are basis for $\TTe$? Motivate your answer.
+
+1. $\mathcal{B}_1 = \{ (a,b) \,\colon \, a,b \in \R \}$.
+2. $\mathcal{B}_2 = \{ (a,b) \,\colon \, a,b \in \Q \}$.
+3. $\mathcal{B}_3 = \{ (a,b) \,\colon \, a,b \in \Z \}$.
+
+**Solution.**
+
+1. $\mathcal{B}_1$ is a basis for $\TTe$, for the following reason. Let $d$ be the Euclidean distance on $\R$, and $\TT_d$ the topology induced by $d$. We know that $\TT_d = \TTe$, therefore 
+$$
+\mathcal{B} :=\{ B_r(x) \divider x \in \R \,, \,\, r>0  \}
+$$
+is a basis for $\TTe$ by Propostion \ref{proposition-metric-ball}. Note that balls in $\R$ are just open intervals
+$$
+B_r(x) = (x-r,x+r) \,.
+$$
+Hence $\mathcal{B}_1 = \mathcal{B}$, so that $\mathcal{B}_1$ is a basis for $\TTe$.
+
+2. $\mathcal{B}_2$ is a basis for $\TTe$. This is because any open interval $(a,b)$ with $a,b \in \R$ can be written as
+$$
+\bigcup_{q,r \in \Q , \, a< q , \, s<b} (q,s) = (a,b) \,.
+$$
+Therefore, since $\mathcal{B}_1$ is a basis for $\TTe$, we conclude that also $\mathcal{B}_2$ is a basis for $\TTe$.
+
+
+3. $\mathcal{B}_3$ is not a basis for $\TTe$. Indeed, consider $U = (0,1/2)$, which is open in $\TTe$. It is clear that $U$ cannot be obtained as the union of intervals $(q,s)$ with $q,s \in \Z$.
+
+
+
 :::
 
 
@@ -2509,7 +2478,7 @@ is a basis for $\TT$.
 ::: {.Proposition  #proposition-basis}
 
 
-Let $(X,\TT)$ be a topological space and $\mathcal{B}$ a basis for $\TT$. They hold:
+Let $(X,\TT)$ be a topological space, and $\mathcal{B}$ a basis for $\TT$. They hold:
 
 - (B1) We have
 $$
@@ -2545,19 +2514,17 @@ Properties (B1) and (B2) from Proposition \ref{proposition-basis} are sufficient
 for generating a topology.
 
 
+
+
+
 ::: {.Proposition  #proposition-topology-basis}
 
 
-Let $X$ be a set and $\mathcal{B}$ a collection of subsets of $X$ such that (B1)-(B2) hold.
-Define
+Let $X$ be a set, and $\mathcal{B}$ a collection of subsets of $X$ satisfying (B1)-(B2). Define
 $$
 \TT := \left\{  U \subseteq X \divider U = \bigcup_{i \in I} B_i \,, \,\, B_i \in \mathcal{B}     \right\} \,.
 $$
-Then:
-
-1. $\TT$ is a topology on $X$.
-
-2. $\mathcal{B}$ is a basis for $\TT$.
+Then $\TT$ is a topology on $X$, with basis given by $\mathcal{B}$.
 
 
 :::
@@ -2602,6 +2569,8 @@ $U_1 \cap U_2$ is union of sets in $\mathcal{B}$, showing that $U_1 \cap U_2 \in
 
 
 
+
+
 ## Product topology
 
 
@@ -2618,51 +2587,58 @@ with a topology. We proceed as follows.
 Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Define the family $\mathcal{B}$ of subsets
 of $X \times Y$ as
 $$
-\mathcal{B} := \{   U \times V \divider U \in \TT_X \,, \,\, V \in \TT_Y  \} \subset X \times Y \,.
+\mathcal{B} := \{   U \times V \divider U \in \TT_X \,, \,\, V \in \TT_Y  \} \subseteq \TT_X \times \TT_Y \,.
 $$
-Then $\mathcal{B}$ satisfies properties (B1) and (B2) from Proposition \ref{proposition-basis}. 
-
+Then $\mathcal{B}$ satisfies properties (B1) and (B2) from Proposition \ref{proposition-basis}. In particular,
+$$
+\TT_{X \times Y} := \left\{  Z  \, \divider \, Z =  \bigcup_{i \in I} U_i \times V_i , \,\, U_i \times V_i \in \mathcal{B}   \right\} 
+$${#eq-product-topology}
+is a topology on $X \times Y$. 
 
 :::
 
+::: Proof
 
-The proof is an easy check, and is left as an exercise. As $\mathcal{B}$ 
+The proof that $\mathcal{B}$ satisfies (B1)-(B2) is an easy check, and is left as an exercise. As $\mathcal{B}$ 
 satisfies (B1)-(B2), by Proposition \ref{proposition-topology-basis} we
-know that 
-$$
-\TT_{X \times Y} := \left\{  U \times V  \divider U \times V = \bigcup_{i \in I} B_i \,, ,\,\, B_i \in \mathcal{B}     \right\} 
-$${#eq-product-topology}
-is a topology on $X \times Y$. 
+know that $\TT_{X \times Y}$ is a topology on $X \times Y$.
+
+:::
+
 
 
 ::: Definition
 ### Product topology
 
-Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. We call 
-$\TT_{X \times Y}$ at (@eq-product-topology) the **product topology** on $X \times Y$.
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. The **product topology** on $X \times Y$ is the collection of sets
+$\TT_{X \times Y}$ at (@eq-product-topology).
 
 :::
 
 
 ::: Example 
 
-Let $\R$ be equipped with the Euclidean topology. The product topology on $\R \times \R$ coincides with the topology 
-on $\R^2$ equipped with the Euclidean topology. 
+Let $\R$ be equipped with the (one dimensional) Euclidean topology. The product topology on $\R \times \R$ coincides with the topology 
+on $\R^2$ equipped with the (two dimensional) Euclidean topology. 
 
 :::
 
 
-Consider the projection maps
-$$
-\pi_X \colon X \times Y \to X   \,, \quad \pi_X (x,y):=x 
-$$
-and 
-$$
-\pi_Y \colon X \times Y \to Y   \,, \quad \pi_Y (x,y):=y 
-$$
+::: Definition
+### Projection maps
+
+Given two sets $X,Y$ we define the **projection maps** as
+\begin{align*}
+& \pi_X \colon X \times Y \to X   \,, \quad \pi_X (x,y):=x \,,\\
+& \pi_Y \colon X \times Y \to Y   \,, \quad \pi_Y (x,y):=y \,.
+\end{align*}
+
+:::
+
 
 
 ::: Proposition 
+### Projections $\pi_X$, $\pi_Y$ are continuous for $\TT_{X \times Y}$
 
 Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces and equip $X \times Y$ with the product topology $\TT_{X \times Y}$. Then $\pi_X$ and $\pi_Y$
 are continuous.
@@ -2729,8 +2705,8 @@ are closed. It follows that $\emptyset$ and $X$ are both open and closed.
 
 Let $(X,\TT)$ be a topological space. We say that:
 
-- $X$ is **connected** if the only subsets of $X$ which are both open and closed are $\emptyset$ and $X$. 
-- $X$ is **disconnected** if it is not connected.
+1. $X$ is **connected** if the only subsets of $X$ which are both open and closed are $\emptyset$ and $X$. 
+2. $X$ is **disconnected** if it is not connected.
 
 :::
 
@@ -2743,9 +2719,7 @@ definitions of connectedness. Before stating it, we define the concept of proper
 ### Proper subset
 
 Let $X$ be a set. A subset $A \subseteq X$ is **proper** if 
-$$
-A \neq \emptyset \,, \quad A \neq X \,.
-$$
+$A \neq \emptyset$ and $A \neq X$.
 
 :::
 
@@ -2770,11 +2744,7 @@ Suppose $X$ is disconnected. Then there exists $U \subseteq X$ which is open, cl
 $$
 U \neq \emptyset \,, \quad U \neq X \,.
 $${#eq-proof-connected-1}
-Define 
-$$
-A:= U \,, \quad B:= U^c \,.
-$$
-By definition of complement we have
+Define $A:= U$, $B:= U^c$. By definition of complement we have
 $$
 X = A \cup B  \,, \quad A \cap B = \emptyset \,.
 $$
@@ -2822,58 +2792,110 @@ definitions of disconnected topological space.
 
 ::: Example
 
-Consider the set $X = \{0,1\}$ with the subspace topology induced by the inclusion $X \subset \R$, where $\R$ is equipped with the
-Euclidean topology $\TT_{\textrm{euclidean}}$. Then $X$ is disconnected.
+**Question.** Consider the set $X = \{0,1\}$ with the subspace topology induced by the inclusion $X \subseteq \R$, where $\R$ is equipped with the
+Euclidean topology $\TTe$. Prove that $X$ is disconnected.
 
-> *Proof.* Note that 
+**Solution.** Note that 
 $$
 X = \{ 0 \} \cup \{ 1 \} \,, \quad \{ 0 \} \cap \{ 1 \} = \emptyset \,.
 $$
 The set $\{ 0 \}$ is open for the subspace topology, since
 $$
 \{ 0 \} = X \cap (-1,1) \,, \quad 
-(-1,1) \in \TT_{\textrm{euclidean}} \,.
+(-1,1) \in \TTe \,.
 $$
 Similarly, also $\{ 1 \}$ is open for the subspace topology, since
 $$
 \{ 1 \} = X \cap (0,2) \,, \quad 
-(0,2) \in \TT_{\textrm{euclidean}} \,.
+(0,2) \in \TTe \,.
 $$
-Clearly 
-$$
-\{ 0 \} \neq \emptyset \,, \quad \{ 1 \} \neq \emptyset \,,
-$$
-showing that $X$ is disconnected.
+Since $\{ 0 \}$ and $\{ 1 \}$ are proper subsets of $X$, 
+we conclude that $X$ is disconnected.
 
 :::
 
 
 ::: {.Example  #example-R-minus-p}
 
-Let $p \in \R$. The set $X = \R \smallsetminus \{p\}$ is disconnected. 
+**Question.** Let $\R$ be equipped with $\TTe$, and let $p \in \R$. Prove that the set $X = \R \smallsetminus \{p\}$ is disconnected. 
 
-> *Proof.* Define the sets 
+**Solution.** Define the sets 
 $$ 
 A = (-\infty,p) \,, \quad B = (p , \infty) \,.
 $$
-Then $A,B$ are proper subsets of $X$, since $p \notin X$. Moreover 
+$A$ and $B$ are proper subsets of $X$. Moreover 
 $$
 X = A \cup B \,,  \quad A \cap B = \emptyset \,.
 $$
-Finally we have that $A,B$ are open for the subspace topology, since
-they are open in $\R$. Therefore $X$ is disconnected.
+Finally, $A,B$ are open for the subspace topology on $X$, since
+they are open in $(\R,\TTe)$. Therefore $X$ is disconnected.
 
 :::
+
+
+As it is easy to imagine, the conclusion of \ref{example-R-minus-p} is false if the dimension is $n \geq 2$. In order to prove the statement rigorously, we need a technical lemma.
+
+
+
+
+
+::: {.Lemma #lemma-connected-open-closed}
+
+Let $(X,\TT)$ be a topological space. Let $A,  U \subseteq X$ with $A$ connected and $U$ open and closed. Suppose that $A \cap U \neq \emptyset$. Then $A \subseteq U$.
+ 
+:::
+
+
+::: Proof
+
+The following set identities hold for any pair of sets $U$ and $A$:
+\begin{align*}
+A & = ( A \cap U ) \cup (A \cap U^c)  \\
+\emptyset & = ( A \cap U ) \cap (A \cap U^c) 
+\end{align*}
+Now, suppose by contradiction $A \not\subseteq U$. This means $A \cap U^c \neq \emptyset$. By assumption we also have $A \cap U \neq \emptyset$. Moreover the sets $A \cap U$ and $A \cap U^c$ are open for the subspace topology on $A$, since $U$ and $U^c$ are open in $X$. Hence $A$ is the disjoint union of non-empty open sets, showing that $A$ is disconnected. Contradiction. Thus $A \subseteq U$.
+
+:::
+
 
 
 ::: {.Example   #example-Rn-minus-p}
 
-Let $n \geq 2$ and $A \subseteq \R^n$ be open and connected. Let $p \in A$. Then $X = A \smallsetminus \{p\}$ is connected. 
+**Question.** Let $n \geq 2$, and $A \subseteq \R^n$ be open and connected. Let $\pp \in A$. Prove that $X = A \smallsetminus \{\pp\}$ is connected. 
 
-> Exercise: Prove that $X$ is connected.
+**Solution.** Assume that
+$$
+X = U \cup V\,,
+$$
+with $U,V$ disjoint and open in $X$. If we show that $U,V$ are not proper, we conclude that  $X$ is connected. In order to prove it, start by noting that $X = A \smallsetminus \{\pp\}$ is open, since $A$ is open. As the sets $U,V$ are open for the subspace topology on $X$, and $X$ is open in $\R^n$, we conclude that $U,V$ are open in $\R^n$. As $U,V$ are also closed for the subspace topology, we conclude that they are closed in $\R^n$. As $A$ is open, and $\pp \in A$, there exists $r>0$ such that
+$B_r(\pp) \subseteq A$. Since $X = A \smallsetminus \{\pp\}$, we have
+$$
+B_r(\pp) \smallsetminus \{\pp\} \subseteq X \,.
+$$
+As $X = U \cup V$, we have 
+$$
+\left( B_r(\pp) \smallsetminus \{\pp\} \right) \cap U \neq \emptyset \quad \text{or} \quad \left( B_r(\pp) \smallsetminus \{\pp\} \right) \cap V \neq \emptyset \,.
+$$
+Without loss of generality, assume that $\left( B_r(\pp) \smallsetminus \{\pp\} \right) \cap U \neq \emptyset$ (the argument is similar in the other case). Since $B_r(\pp) \smallsetminus \{\pp\}$ is open, and $U$ is open and closed, by Lemma \ref{lemma-connected-open-closed} we conclude that
+$$
+B_r(\pp) \smallsetminus \{\pp\}  \subseteq U  \quad \implies \quad 
+B_r(\pp) \subseteq U' := U \cup \{\pp\} \,.
+$$
+Let $\mathbf{q} \in U'$. We have two cases:
 
+- $\mathbf{q} \neq \pp$: Then $\mathbf{q} \in U$. As $U$ is open, there exists $\e>0$ such that
+$$
+B_{\e}(\mathbf{q}) \subseteq U \subseteq U' \,.
+$$
+
+- $\mathbf{q} = \pp$: We have shown that $B_r(\pp) \subseteq U'$. 
+
+This shows $U'$ is open in $\R^n$. In conclusion, we have
+$$
+X = U \cup V \quad \implies \quad A = U' \cup V \,,
+$$
+with $U',V$ disjoint and open in $A$ (since they are open in $\R^n$). As $\pp \in U'$, we conclude that $U' \neq \emptyset$. By connectedness of $A$, we must have $V = \emptyset$. This implies $U = X$. Therefore $U$ and $V$ are not proper, implying that $X$ is connected.
 :::
-
 
 
 The next theorem shows that connectedness is preserved by continuous maps.
@@ -2942,7 +2964,8 @@ connectedness is a topological invariant, e.g., connectedness is
 preserved by homeomorphisms.  
 
 
-::: {.Corollary  #corollary-invariant-connected}
+::: Theorem  
+### Connectedness is topological invariant {#theorem-invariant-connected}
 
 Let $(X,\TT_X)$, $(Y,\TT_Y)$ be homeomorhic topological spaces. 
 Then
@@ -2959,19 +2982,15 @@ The proof follows immediately by Theorem \ref{theorem-connected}, and is left to
 
 ::: {.Example #example-dimension}
 
-Let $n \geq 2$. Then $\R^n$ not homeomorphic to $\R$.
+**Question.** Let $n \geq 2$. Prove that $\R^n$ is not homeomorphic to $\R$.
 
-> *Proof.*  Suppose by contradiction that there exists a homeomorphism 
+**Solution.**  Suppose by contradiction that there exists a homeomorphism $f \colon \R^n \to \R$.
+Define $p = f(\zero)$ and the restriction
 $$
-f \colon \R^n \to \R \,.
+g \colon \left(\R^n \smallsetminus \{\zero\} \right) \to \left(\R \smallsetminus \{p\} \right) \,, \quad g(x) = f(x) \,.
 $$
-Define $p = f(0)$ and the restriction
-$$
-g \colon \R^n \smallsetminus \{0\} \to \R \smallsetminus \{p\} \,, \quad g(x) = f(x) \,.
-$$
-Since $g$ is a restriction of a homeomorphism, then $g$ is a homeomorphism. 
-We have that $\R^n \smallsetminus \{0\}$ is connected, as a consequence of  
-Example \ref{example-Rn-minus-p}. Hence, by Corollary \ref{corollary-invariant-connected}, we infer that $\R \smallsetminus \{p\}$ is connected. This is a contradiction, since $\R \smallsetminus \{p\}$ is
+Note that $g$ is a homeomorphism, being restriction of a homeomorphism.
+By Example \ref{example-Rn-minus-p}, we have that $\R^n \smallsetminus \{\zero\}$ is connected. Hence, by Theorem \ref{theorem-invariant-connected}, we infer that $\R \smallsetminus \{p\}$ is connected. This is a contradiction, since $\R \smallsetminus \{p\}$ is
 disconnected, as shown in Example \ref{example-R-minus-p}.
 
 :::
@@ -2996,35 +3015,36 @@ Let us give another example of spaces which are not homeomorphic.
 
 ::: Example
 
-Define the 1D unit circle
+**Question.** Define the one dimensional unit circle
 $$
 \sphere^1 := \{(x,y) \in \mathbb{R}^2 \, \colon \, x^2 + y^2 = 1 \} \,.
 $$
-Then $\sphere^1$ and $[0,1]$ are not homeomorphic. 
+Prove that $\sphere^1$ and $[0,1]$ are not homeomorphic. 
 
 
-> *Proof.* Suppose by contradiction that there exists and omeomorphism
-	$$
-	f  \colon [0,1] \to \mathbb{S}^1 \,.
-	$$
-	The restriction of $f$ to $[0,1] \smallsetminus \{\frac12\}$ defines an omeomorphism 
-	$$
-	g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left( \sphere^1 \smallsetminus \{\mathbf{p}\} \right) \,, \quad \mathbf{p} := f\left(\frac12 \right) \,.
-	$$
-	The set $[0,1] \smallsetminus \left\{ \frac12 \right\}$ is disconnected, 
-	since 
-	$$
-	[0,1] \smallsetminus \{1/2\} = [0,1/2) \, \cup \, (1/2,1] 
-	$$
-	with $[0,1/2)$ and $(1/2,1]$ open for the subset topology, non-empty and disjoint. Therefore, using that $g$ is an omeomorphism, we conclude that also $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is disconnected. Let $\theta_0 \in [0,2\pi)$ be the unique angle such that 
-	$$
-	\mathbf{p} = (\cos (\theta_0),\sin(\theta_0)) \,.
-	$$
-	Thus $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is parametrized by
-	$$
-	\g(t):=(\cos(t),\sin(t)) \,, \quad t \in (\theta_0,\theta_0 + 2\pi) \,.
-	$$ 
-	Since $\g$ is continuous and $(\theta_0,\theta_0 + 2\pi)$ is connected, by Theorem \ref{theorem-connected}, we conclude that $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is connected. Contradiction.
+**Solution.** Suppose by contradiction that there exists a homeomorphism
+$$
+f  \colon [0,1] \to \mathbb{S}^1 \,.
+$$
+The restriction of $f$ to $[0,1] \smallsetminus \{\frac12\}$ defines a homeomorphism 
+$$
+g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left( \sphere^1 \smallsetminus \{\mathbf{p}\} \right) \,, \quad \mathbf{p} := f\left(\frac12 \right) \,.
+$$
+The set $[0,1] \smallsetminus \left\{ \frac12 \right\}$ is disconnected, 
+since 
+$$
+[0,1] \smallsetminus \{1/2\} = [0,1/2) \, \cup \, (1/2,1] 
+$$
+with $[0,1/2)$ and $(1/2,1]$ open for the subset topology, non-empty and disjoint. Therefore, using that $g$ is a homeomorphism, we conclude that also $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is disconnected. Let $\theta_0 \in [0,2\pi)$ be the unique angle such that 
+$$
+\mathbf{p} = (\cos (\theta_0),\sin(\theta_0)) \,.
+$$
+Thus $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is parametrized by
+$$
+\g(t):=(\cos(t),\sin(t)) \,, \quad t \in (\theta_0,\theta_0 + 2\pi) \,.
+$$ 
+Since $\g$ is continuous and $(\theta_0,\theta_0 + 2\pi)$ is connected, by Theorem \ref{theorem-connected}, we conclude that $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is connected. Contradiction.
+
 :::
 
 
@@ -3052,7 +3072,8 @@ $$
 
 :::
 
-::: {.Theorem  #theorem-interval-connected}
+::: Theorem  
+### Intervals are connected {#theorem-interval-connected}
 
 Let $\R$ be equipped with the Euclidean topology and let $I \subseteq \R$. They are equivalent:
 
@@ -3151,7 +3172,7 @@ $$
 As $f$ is continuous and $X$ is connected, by Theorem \ref{theorem-connected} we know that $f(X)$ is connected in $\R$. By Theorem \ref{theorem-interval-connected} we have that $f(X)$ is an interval. Since $a,b \in X$ it follows
 $f(a), f(b) \in f(X)$. Therefore, if $c \in \R$ is such that
 $$
-f(a) < c < f(b)
+f(a) \leq c \leq f(b)
 $$
 we conclude that $c \in f(X)$, since $f(X)$ is an interval. 
 Hence there exists $\xi \in X$ such that $f(\xi) = c$.
@@ -3160,50 +3181,66 @@ Hence there exists $\xi \in X$ such that $f(\xi) = c$.
 
 
 
+There is an alternative proof to the fact that intervals are connected. It makes use of the classical Intermediate Value Theorem in $\R$. It is an interesting exercise.
+
+
+::: Example
+### Intervals are connected - Alternative proof
+
+**Question.** Prove the following statements.
+
+1. Let $(X,\TT)$ be a disconnected topological space. Prove that there exists a function $f \colon X \to \{0,1\}$ which is continuous and surjective.
+
+2. Consider $\R$ equipped with the Euclidean topology. Let $I \subseteq \R$ be an interval. Use point (1), and the Intermediate Value Theorem in $\R$ (see statement below), to show that $I$ is connected.  
+
+*Intermediate Value Theorem in $\R$*: Suppose that $f \colon [a,b] \to \R$ is continuous, and $f(a) < f(b)$. Let $c \in \R$ be such that $f(a) \leq c \leq f(b)$. Then, there exists $\xi \in [a,b]$ such that $f(\xi) = c$.
+
+**Solution. Part 1.** Since $X$ is disconnected, there exist $A,B \in \TT$ proper and such that
+$$
+X = A \cup B \,, \quad A \cap B = \emptyset \,.
+$$
+Define $f \colon X \to \{0,1\}$ by
+$$
+f(x) = 
+\begin{cases}
+	0 & \,\, \mbox{ if } \, x \in A \\
+	1 & \,\, \mbox{ if } \, x \in B \\
+\end{cases}
+$$
+Since $A$ and $B$ are non-empty, it follows that $f$ is surjective. Moreover $f$ is continuous: Indeed suppose $U \subseteq \R$ is open. We have 4 cases: 
+
+- $0,1 \notin U$. Then $f^{-1}(U) = \emptyset \in \TT$.
+- $0 \in U, \, 1 \notin U$. Then $f^{-1}(U) = A \in \TT$.
+- $0 \notin U, \, 1 \in U$. Then $f^{-1}(U) = B \in \TT$.
+- $0,1 \in U$. Then $f^{-1}(U) = X \in \TT$.
+
+Then $f^{-1}(U) \in \TT$ for all $U \subseteq \R$ open, showing that $f$ is continuous.
+
+**Part 2.** Let $I \subseteq \R$ be an interval. Suppose by contradiction $I$ is disconnected. By Point (1), there exists a map $f \colon I \to \{0,1\}$ which
+is continuous and surjective. As $f$ is surjective, there exist $a,b \in I$ such that 
+$$
+f(a) = 0 \,, \quad  f(b) = 1 \,.
+$$
+Since $f$ is continuous, and $f(a) = 0 < 1 = f(b)$, by the *Intermediate Value Theorem in $\R$*, there exists $\xi \in [a,b]$ such that $f(\xi)=1/2$. As $I$ is an interval, $a,b \in I$, and $a\leq \xi \leq b$, it follows that $\xi \in I$. This is a contradiction, since $f$ maps $I$ into $\{0,1\}$, and $f(\xi) = 1/2 \notin \{0,1\}$. Therefore $I$ is connected.
+
+:::
 
 
 
-
-
-
-## Path connectedness
+## Path-connectedness
 
 
 
 ::: Definition
-### Path connectedness
+### Path-connectedness
 
-Let $(X,\TT)$ be a topological space. We say that $X$ is **path connected** if for every $x,y \in X$ there exist $a,b \in \R$ with $a<b$, and a
+Let $(X,\TT)$ be a topological space. We say that $X$ is **path-connected** if for every $x,y \in X$ there exist $a,b \in \R$ with $a<b$, and a
 continuous function 
 $$
-\alpha \colon [a,b] \to X 
-$$
-such that 
-$$
-\alpha (a) = x \,, \quad \alpha(b) = y \,.
+\alpha \colon [a,b] \to X  \,\, \st \,\, \alpha (a) = x \,, \quad \alpha(b) = y \,.
 $$
 
 :::
-
-
-
-
-::: Example
-
-Let $A \subset \R^n$ be convex. Then $A$ is path connected.
-
-
-> A is convex if for all $x,y \in A$ the segment connecting $x$ to $y$ is contained in $A$, namely,
-$$
-[x,y] := \{ (1-t)x + t y \divider t \in [0,1] \} \subseteq A \,.
-$$
-Therefore we can define
-$$
-\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
-$$
-Clearly $\alpha$ is continuous, and $\alpha(0)=x, \alpha(1)=y$.
-:::
-
 
 
 
@@ -3212,9 +3249,10 @@ It turns out that path-connectedness implies connectedness.
 
 
 
-::: {.Theorem  #theorem-path-connected}
+::: Theorem
+### Path-connectedness implies connectedness {#theorem-path-connected}
 
-Let $(X,\TT)$ be a path connected topological space. Then $X$ is connected.
+Let $(X,\TT)$ be a path-connected topological space. Then $X$ is connected.
 
 :::
 
@@ -3226,13 +3264,8 @@ $X$ is connected, we need to show that
 $$
 A \cap B \neq \emptyset \,.
 $$
-Since $A$ and $B$ are non-empty, we can find two points $x \in A$ and $b \in B$. As $X$ is path connected, there exists $\alpha \colon [0,1] \to X$ continuous such that 
-$$
-\alpha(0) = x \,,  
-\quad 
-\alpha(1) = y \,.
-$$
-In particular 
+Since $A$ and $B$ are non-empty, we can find two points $x \in A$ and $b \in B$. As $X$ is path-connected, there exists $\alpha \colon [0,1] \to X$ continuous such that 
+$\alpha(0) = x$ and $\alpha(1) = y$. In particular,
 $$
 \alpha^{-1} (A) \neq \emptyset \, , \quad
 \alpha^{-1} (B) \neq \emptyset \,.
@@ -3255,43 +3288,120 @@ $X$ is connected.
 
 
 
-The converse of the above theorem does not hold. A counterexample
-is given by the so-called **topologist curve**, which will be examined in
-Proposition \ref{proposition-topologist-curve}. Prior to this, we need a basic Lemma.
+
+::: Example
+
+**Question.** Let $A \subseteq \R^n$ be convex. Show that $A$ is path-connected, and hence connected.
 
 
-::: {.Lemma #lemma-connected-open-closed}
-
-Let $(X,\TT)$ be a topological space. Let $A,  U \subseteq X$ with $A$ connected and $U$ open and closed. Suppose that $A \cap U \neq \emptyset$,  then $A \subseteq U$.
- 
+**Solution.** A is convex if for all $x,y \in A$ the segment connecting $x$ to $y$ is contained in $A$, namely,
+$$
+[x,y] := \{ (1-t)x + t y \divider t \in [0,1] \} \subseteq A \,.
+$$
+Therefore we can define
+$$
+\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
+$$
+Clearly $\alpha$ is continuous, and $\alpha(0)=x, \alpha(1)=y$.
 :::
 
 
-::: Proof
 
-The following set identities hold for any pair of sets $U$ and $A$:
+
+::: Example
+### Spaces of matrices
+
+Let $\R^{2 \times 2}$ denote the space of real $2 \times 2$ matrices. Assume $\R^{2 \times 2}$ has the euclidean topology obtained by identifying it with $\R^4$.
+
+1. Consider the set of orthogonal matrices 
+$$
+\mathrm{O}(2) = \{ A \in \R^{2 \times 2} \, \colon \, A^TA = I \} \,.
+$$
+Prove that $\mathrm{O}(2)$ is disconnected.
+
+2. Consider the set of rotations
+$$
+\mathrm{SO}(2) = \{ A \in \R^{2 \times 2} \, \colon \, A^TA = I ,\,\, \det(A) = 1  \} \,.
+$$
+Prove that $\mathrm{SO}(2)$ is path-connected, and hence connected.
+
+
+
+**Solution.** Let $A \in \mathrm{O}(2)$, and denote its entries by $a,b,c,d$. By direct calculation, the condition $A^T A = I$ is equivalent to
+$$
+a^2 + b^2 = 1 \,, \qquad b^2 + c^2 = 1 \,, \qquad ac + bd = 0 \,.
+$$
+From the first condition, we get that $a = \cos(t)$ and $b = \sin(t)$, for a suitable $t \in [0,2\pi)$. From the second and third conditions, we get $c = \pm \sin(t)$ and $d = \mp \cos(t)$. We decompose $\mathrm{O}(2)$ as
 \begin{align*}
-A & = ( A \cap U ) \cup (A \cap U^c)  \\
-\emptyset & = ( A \cap U ) \cap (A \cap U^c) 
+& \mathrm{O}(2) = A \cup B \,, \\
+& A = \mathrm{SO}(2) = 
+\left\{ 
+\left(
+\begin{array}{cc}
+\cos(t) & -\sin(t) \\
+\sin(t) & \cos(t)
+\end{array} 
+\right) , \, t \in [0,2\pi)  \right \} \\
+& B = 
+\left\{  
+\left(
+\begin{array}{cc}
+\cos(t) & \sin(t) \\
+\sin(t) & -\cos(t)
+\end{array}
+\right) , \, t \in [0,2\pi)  \right \} \,.
 \end{align*}
-Now, suppose by contradiction $A \not\subseteq U$. This means $A \cap U^c \neq \emptyset$. By assumption we also have $A \cap U \neq \emptyset$. Moreover the sets $A \cap U$ and $A \cap U^c$ are open for the subspace topology on $A$, since $U$ and $U^c$ are open in $X$. Hence $A$ is the disjoint union of non-empty open sets, showing that $A$ is disconnected. Contradiction. We conclude that $A \subseteq U$.
+
+
+1. The determinant function $\det \colon \mathrm{O}(2) \to \R$ is continuous. If $M \in A$, we have $\det(M) = 1$. If instead $M \in B$, we have $\det(M) = -1$. Moreover,
+$$
+{\det}^{-1}(\{1\}) = A \,, \qquad {\det}^{-1}(\{0\}) = B \,.
+$$
+As $\det$ is continuous, and $\{0\},\{1\}$ closed, we conclude that $A$ and $B$ are closed. Therefore, $A$ and $B$ are closed, proper and disjoint. Since $\mathrm{O}(2) = A \cup B$, we conclude that $\mathrm{O}(2)$ is disconnected.
+
+
+2. Define the function $\psi \colon [0,2\pi) \to \mathrm{SO}(2)$ by
+$$
+\psi(t) = 
+\left(
+\begin{array}{cc}
+\cos(t) & -\sin(t) \\
+\sin(t) & \cos(t)
+\end{array} 
+\right) \,.
+$$
+Clearly, $\psi$ is continuous. Let $R,Q \in \mathrm{SO}(2)$. Then $R$ is determined by an angle $t_1$, while $Q$ by an angle $t_2$. Up to swapping $R$ and $Q$, we can assume $t_1 < t_2$. Define the function $f \colon [0,1] \to \mathrm{SO}(2)$ by
+$$
+f(\lambda) = \psi( t_1 (1-\lambda) + t_2 \lambda  ) \,. 
+$$
+Then, $f$ is continuous and 
+$$
+f(0) = \psi(t_1) = R, \quad f(1) = \psi(t_2) = Q \, .
+$$
+Thus $\mathrm{SO}(2)$ is path-connected.
+
 
 :::
+
+
+::: Warning
+
+In general connectedness does not imply path-connectedness, as seen in Proposition \ref{proposition-topologist-curve}.
+
+:::
+
+
 
 
 ::: Proposition 
 ### Topologist curve  {#proposition-topologist-curve}
 
-Consider $\R^2$ with the Euclidean topology and define the sets
-$$
-X := A \cup B 
-$$
-where 
+Consider $\R^2$ with the Euclidean topology, and define the sets 
 \begin{align*}
 A & := \left\{   \left(  t, \sin \left( \frac{1}{t} \right)  \right) \divider t>0   \right\} \\
-B & := \{(0,t) \divider t \in [-1,1] \} 
+B & := \{(0,t) \divider t \in [-1,1] \}  \,, \qquad X := A \cup B  \,.
 \end{align*}
-Then $X$ is connected, but not path connected.
+Then $X$ is connected, but not path-connected.
 
 
 :::
@@ -3299,14 +3409,14 @@ Then $X$ is connected, but not path connected.
 
 ::: Proof
 
-*Step 1. $X$ is not path connected.* 
+*Step 1. $X$ is not path-connected.* 
 
 Let $x \in A$ and $y \in B$. There is no continuous function $\alpha \colon [0,1] \to X$ such that $\alpha(0)=x$ and $\alpha(1)=y$. If such $\alpha$ existed, then we would obtain a continuous extension for $t=0$ of the
 function 
 $$
 f(t) = \sin \left( \frac{1}{t} \right)  \,, \quad x>0
 $$
-which is not possible. Hence $X$ is not path connected.
+which is not possible. Hence $X$ is not path-connected.
 
 
 *Step 2. Preliminary facts.* 
@@ -3321,7 +3431,7 @@ connected, by Theorem \ref{theorem-connected} we have that
 $\g((0,\infty)) = A$ is connected.
 
 - $B$ is connected: Indeed $B$ is homeomorphic to the interval $[-1,1]$. Since $[-1,1]$ is connected, by
-Corollary \ref{corollary-invariant-connected} we conclude that $B$ is connected.
+Theorem \ref{theorem-invariant-connected} we conclude that $B$ is connected.
 
 - $\closure{A} = X$: 
   This is because each point $y \in B$ is of the form $y = (0,t_0)$ for some $t_0 \in [-1,1]$. By continuity of $\sin$ and the Intermediate Value Theorem there exists some $z>0$ such that
@@ -3391,17 +3501,18 @@ Therefore $U = X$ in all possible cases, showing that $X$ is connected.
 
 
 
-To conclude, we observe that connectedness and path-connectedness are equivalent in open sets of $\R^n$. 
+We conclude with the observation that connectedness and path-connectedness are equivalent for **open** sets of $\R^n$. 
 
 
 ::: Theorem
 
-Let $A \subset \R^n$ be open for the Euclidean topology. Then $A$ is connected if and only if it is path-connected.
+Let $A \subseteq \R^n$ be **open** for the Euclidean topology. Then $A$ is connected if and only if it is path-connected.
 
 :::
 
+The proof of this theorem is a bit delicate, and we decided to omit it. We conclude with an interesting example concerning spaces of matrices.
 
-The proof of this theorem is a bit delicate, and we decided to omit it.
+
 
 
 

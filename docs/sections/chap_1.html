@@ -72,51 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -124,7 +88,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Conjecture {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -132,17 +104,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -321,7 +321,7 @@ window.Quarto = {
 <p>Curves are 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates: respectively <span class="math display">\[
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 \]</span></p>
-<div id="11cff506" class="cell" data-execution_count="1">
+<div id="397affec" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -331,7 +331,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="2942e934" class="cell" data-execution_count="2">
+<div id="0215ec6c" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -341,7 +341,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 </div>
 </div>
 </div>
-<div id="2241d548" class="cell" data-execution_count="3">
+<div id="9abfe933" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -374,7 +374,7 @@ f(x,y) = x^2 + y^2  \,\,, c = 1 \,.
 \]</span> But what about for example a helix in 3 dimensions? It would be more difficult to find an equation of the form <span class="math display">\[
 f(x,y,z) = 0
 \]</span> to describe such object.</p>
-<div id="2c50daab" class="cell" data-execution_count="4">
+<div id="280989ae" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -535,7 +535,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </ul>
 </div></details>
 </div>
-<div id="77da809e" class="cell" data-execution_count="5">
+<div id="539e0077" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -545,7 +545,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="0d276980" class="cell" data-execution_count="6">
+<div id="90157ffc" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -555,7 +555,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="8152e37b" class="cell" data-execution_count="7">
+<div id="149f6b8f" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -565,7 +565,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 </div>
 </div>
-<div id="5ea10df6" class="cell" data-execution_count="8">
+<div id="96ce553d" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -644,7 +644,7 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 <div id="fig-smooth-curve" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-smooth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/smooth_curve.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="../images/smooth_curve.png" class="img-fluid figure-img" style="width:40.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-smooth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.1: Example of smooth and non-smooth curves
@@ -697,7 +697,7 @@ Figure&nbsp;1.2: Plot of Circle and Tangent Vector at <span class="math inline">
 <div id="fig-tangent" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/tangent.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="../images/tangent.png" class="img-fluid figure-img" style="width:40.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.3: Approximating the tangent vector
@@ -785,7 +785,7 @@ Figure&nbsp;1.5: The Lemniscate curve
 \]</span> The above is just an extension of the Pythagoras theorem to <span class="math inline">\(\mathbb{R}^n\)</span>, and the length of <span class="math inline">\(v\)</span> is computed from the origin.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/pythagoras.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/pythagoras.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Interpretation of <span class="math inline">\(\left\| v \right\|\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span></figcaption>
 </figure>
 </div>
@@ -794,14 +794,14 @@ Figure&nbsp;1.5: The Lemniscate curve
 \]</span> measures the length of the difference between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/length_difference.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/length_difference.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Interpretation of <span class="math inline">\(\left\| \mathbf{u}-\mathbf{v} \right\|\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span></figcaption>
 </figure>
 </div>
 <p>We would like to define the concept of <strong>length</strong> of a curve. Intuitively, one could proceed by approximation as in the figure below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/length_approx.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/length_approx.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Approximating the length of <span class="math inline">\({\pmb{\gamma}}\)</span></figcaption>
 </figure>
 </div>
@@ -863,7 +863,7 @@ L({\pmb{\gamma}}) \approx \sum_{i=1}^m  \left\| {\pmb{\gamma}}(t_{i}) - {\pmb{\g
 <p>The above argument can be made rigorous, as we see in the next theorem.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/length_derivative.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/length_derivative.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Approximating <span class="math inline">\(L({\pmb{\gamma}})\)</span> via <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span></figcaption>
 </figure>
 </div>
@@ -951,8 +951,8 @@ Putting together (<a href="#eq-length-formula-2" class="quarto-xref"><span>1.8</
 </div></details>
 </div>
 <p>Thanks to the above theorem we have now a way to compute <span class="math inline">\(L({\pmb{\gamma}})\)</span>. Let us check that we have given a meaningful definition of length by computing <span class="math inline">\(L({\pmb{\gamma}})\)</span> on known examples.</p>
-<div id="length-of-circle" class="Example" title="Length of Circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of Circle</summary><div><strong>Question.</strong> Compute the length of the circle of radius <span class="math inline">\(R\)</span> <span class="math display">\[
+<div id="length-of-the-circle" class="Example" title="Length of the Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>Length of the Circle</summary><div><strong>Question.</strong> Compute the length of the circle of radius <span class="math inline">\(R\)</span> <span class="math display">\[
 {\pmb{\gamma}}(t) = (x_0 + R\cos(t), y_0 + R\sin(t),0) \,.
 \]</span><p></p>
 <p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
@@ -963,13 +963,13 @@ L({\pmb{\gamma}})  &amp; = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \r
 \end{align*}\]</span></p>
 </div></details>
 </div>
-<div id="length-of-helix" class="Example" title="Length of Helix">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of Helix</summary><div><strong>Question.</strong> Compute the length of the Helix <span class="math display">\[
+<div id="length-of-the-helix" class="Example" title="Length of the Helix">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Length of the Helix</summary><div><strong>Question.</strong> Compute the length of the Helix <span class="math display">\[
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t) ,Ht) \,, \quad t \in (0,2\pi) \,.
 \]</span><p></p>
 <p><strong>Solution.</strong> We compute <span class="math display">\[\begin{align*}
-\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t) , H) \\
-\left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp;  = \sqrt{R^2 + H^2} \\
+\dot{{\pmb{\gamma}}}(t) &amp; = (-R\sin(t), R\cos(t) , H) \qquad
+\left\|  \dot{{\pmb{\gamma}}}(t)   \right\|  = \sqrt{R^2 + H^2} \\
 L({\pmb{\gamma}}) &amp; = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = 2 \pi \sqrt{R^2 + H^2}
 \end{align*}\]</span></p>
 </div></details>
@@ -980,18 +980,18 @@ L({\pmb{\gamma}}) &amp; = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(u)  \right
 </section>
 <section id="arc-length" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">1.6</span> Arc-length</h2>
-<p>We have just shown in Theorem <a href="chap_1.html#theorem-length">21</a> that the length of a regular curve <span class="math inline">\({\pmb{\gamma}}\ \colon [a,b] \to \mathbb{R}^n\)</span> with <span class="math inline">\([a,b]\)</span> bounded is given by <span class="math display">\[
+<p>We have just shown in Theorem <a href="chap_1.html#theorem-length">21</a> that the length of a smooth curve <span class="math inline">\({\pmb{\gamma}}\ \colon [a,b] \to \mathbb{R}^n\)</span> with <span class="math inline">\([a,b]\)</span> bounded is given by <span class="math display">\[
 L({\pmb{\gamma}}) = \int_a^b \left\|  \dot{{\pmb{\gamma}}}(t) \right\| \,dt \,.
 \]</span> Using this formula, we introduce the notion of length of a portion of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
-<div id="arc-length-1" class="Definition" title="Arc-Length">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-Length</summary><div>The <strong>arc-length</strong> along <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> from <span class="math inline">\(t_{0}\)</span> to <span class="math inline">\(t\)</span> is <span class="math display">\[
-s \colon (a,b) \to \mathbb{R}\,, \quad s(t)=\int_{t_{0}}^{t}\|\dot{{\pmb{\gamma}}}(u)\| d u \,.
+<div id="arc-length-of-a-curve" class="Definition" title="Arc-Length of a curve">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Arc-Length of a curve</summary><div>The <strong>arc-length</strong> along <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> from <span class="math inline">\(t_{0}\)</span> to <span class="math inline">\(t\)</span> is <span class="math display">\[
+s \colon (a,b) \to \mathbb{R}\,, \qquad s(t)=\int_{t_{0}}^{t}\|\dot{{\pmb{\gamma}}}(u)\| d u \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/arc_length.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/arc_length.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting at <span class="math inline">\({\pmb{\gamma}}(t_0)\)</span></figcaption>
 </figure>
 </div>
@@ -1040,18 +1040,18 @@ c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d
 </div>
 <div id="arc-length-of-circle" class="Example" title="Arc-length of Circle">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26: </strong>Arc-length of Circle</summary><div><strong>Question.</strong> Consider the circle of radius <span class="math inline">\(R\)</span>, parametrized by <span class="math display">\[
-{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t),0) \,, \quad  t \in [0,2\pi] \,.
+{\pmb{\gamma}}(t) = (R\cos(t), R\sin(t),0)  \,.
 \]</span> Compute the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 <p><strong>Solution.</strong> We have <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t),0) \,, \quad \left\| \dot{{\pmb{\gamma}}}(t) \right\| = R \,.
-\]</span> Therefore, for any fixed <span class="math inline">\(t_0 \in [0,2\pi]\)</span>, we have <span class="math display">\[
+\]</span> Therefore, for any fixed <span class="math inline">\(t_0\)</span>, we have <span class="math display">\[
 s(t) = \int_{t_0}^{t}  \left\|   \dot{{\pmb{\gamma}}}(\tau) \right\| \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
 \]</span> In particular we see that <span class="math inline">\(\dot s = R\)</span> is constant.</p>
 </div></details>
 </div>
 <div id="arc-length-of-logarithmic-spiral" class="Example" title="Arc-length of Logarithmic Spiral">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 27: </strong>Arc-length of Logarithmic Spiral</summary><div><strong>Question.</strong> Compute the arc-length of <span class="math display">\[
-{\pmb{\gamma}}(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,, \quad t \in (0,2\pi) \,.
+{\pmb{\gamma}}(t) = (e^{kt} \cos(t), e^{kt} \sin(t),0) \,.
 \]</span><p></p>
 <p><strong>Solution.</strong> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
 \dot{{\pmb{\gamma}}}(t) &amp; = e^{kt} ( k \cos(t) - \sin(t), k \sin(t) + \cos(t) ,0) \\
@@ -1087,7 +1087,7 @@ Figure&nbsp;1.6: Plot of Logarithmic Spiral with <span class="math inline">\(k=0
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/scalar_product.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="../images/scalar_product.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Vectors <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span> forming angle <span class="math inline">\(\theta\)</span></figcaption>
 </figure>
 </div>
@@ -1268,7 +1268,7 @@ s(t) := \int_{t_0}^t \left\|   \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau  \,
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/tangent_orthogonal.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="../images/tangent_orthogonal.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>If <span class="math inline">\({\pmb{\gamma}}\)</span> is unit-speed then <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\ddot{{\pmb{\gamma}}}\)</span> are orthogonal</figcaption>
 </figure>
 </div>
@@ -1314,9 +1314,9 @@ g:= f^{-1} \,.
 </div></details>
 </div>
 <div id="reparametrization-1" class="Definition" title="Reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. A <strong>reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a curve <span class="math inline">\(\tilde{{\pmb{\gamma}}} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> such that <span id="eq-reparametrization"><span class="math display">\[
-\widetilde{{\pmb{\gamma}}}(t) = {\pmb{\gamma}}(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
-\tag{1.18}\]</span></span> for <span class="math inline">\(\phi\colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> diffeomorphism. We call both <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\phi^{-1}\)</span> <strong>reparametrization maps</strong>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span>. A <strong>reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a curve <span class="math inline">\(\tilde{{\pmb{\gamma}}} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^3\)</span> such that <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}(t) = {\pmb{\gamma}}(\phi(t)) \,,\quad \forall \, t \in (\tilde{a},\tilde{b})\,,
+\]</span> for <span class="math inline">\(\phi\colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> diffeomorphism. We call both <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\phi^{-1}\)</span> <strong>reparametrization maps</strong>.<p></p>
 </div></details>
 </div>
 <div id="Remark-44" class="Remark">
@@ -1333,14 +1333,14 @@ g:= f^{-1} \,.
 \Gamma := \{ {\pmb{\gamma}}(t) \, \colon \, t \in (a,b) \} \,.
 \]</span> <span class="math inline">\(\Gamma\)</span> is called the support of <span class="math inline">\(\gamma\)</span>.</p></li>
 <li><p>A reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is just an equivalent way to describe <span class="math inline">\(\Gamma\)</span>.</p></li>
-<li><p>For <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> to be reparametrizations of each other, there must exist a smooth rule <span class="math inline">\(\phi\)</span> (the diffeomorphism) to switch from one to another, according to formula (<a href="#eq-reparametrization" class="quarto-xref"><span>1.18</span></a>). This concept is sketched in <a href="#fig-reparametrization" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>.</p></li>
+<li><p>For <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> to be reparametrizations of each other, there must exist a smooth rule <span class="math inline">\(\phi\)</span> (the diffeomorphism) to switch from one to another, according to formula (<span class="quarto-unresolved-ref">?eq-reparametrization</span>). This concept is sketched in <a href="#fig-reparametrization" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>.</p></li>
 </ol>
 </div></details>
 </div>
 <div id="fig-reparametrization" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-reparametrization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/reparametrization.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="../images/reparametrization.png" class="img-fluid figure-img" style="width:40.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reparametrization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> parametrized by <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span>. We can switch parametrization by means of the diffeomorphism <span class="math inline">\(\phi\)</span>.
@@ -1371,7 +1371,7 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/circle_orientation.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="../images/circle_orientation.gif" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Unit circle with usual parametrization <span class="math inline">\({\pmb{\gamma}}\)</span>, and with reversed orientation <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span></figcaption>
 </figure>
 </div>
@@ -1408,7 +1408,7 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/lemniscate_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="../images/lemniscate_animated.gif" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Lemniscate curve <span class="math inline">\({\pmb{\gamma}}\)</span> and Lemniscate at double speed <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span></figcaption>
 </figure>
 </div>
@@ -1418,16 +1418,16 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 <p>For a curve <span class="math inline">\({\pmb{\gamma}}\)</span> we wish to find a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> which is unit-speed: <span class="math display">\[
 \left\|  \dot{\widetilde{{\pmb{\gamma}}}} \right\| = 1 \,, \quad  \forall \, t \in (a,b) \,.
 \]</span> We will see that this is possible if and only if the curve <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, in the sense of Definition <a href="chap_1.html#definition-regular">50</a> below.</p>
-<div id="definition-regular" class="Definition" title="Regular points">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 50: </strong>Regular points</summary><div>
+<div id="definition-regular" class="Definition" title="Regular curve">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 50: </strong>Regular curve</summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. We say that:</p>
 <ol type="1">
 <li><span class="math inline">\({\pmb{\gamma}}(t_0)\)</span> is a <strong>regular point</strong> if <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t_0) \neq 0 \,.
 \]</span></li>
 <li>A point <span class="math inline">\({\pmb{\gamma}}(t_0)\)</span> is <strong>singular</strong> if it is not regular.</li>
-<li>The curve <span class="math inline">\({\pmb{\gamma}}\)</span> is regular if every point of <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, that is, <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+<li><span class="math inline">\({\pmb{\gamma}}\)</span> is <strong>regular</strong> if every point of <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, that is, <span class="math display">\[
+\left\| \dot{{\pmb{\gamma}}}(t) \right\|  \neq 0 \,, \quad \forall \, t \in (a,b)\,.
 \]</span></li>
 </ol>
 </div></details>
@@ -1446,9 +1446,9 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 \psi (\phi(t)) = t \,, \quad \forall \, t \in (a,b) \,.
 \]</span> We can differentiate both sides of the above expression to get <span id="eq-lemma-diffeomorphism-1"><span class="math display">\[
 \frac{d}{dt} \left( \psi (\phi(t))  \right) = 1 \,.
-\tag{1.19}\]</span></span> We can differentiate the LHS by chain rule <span class="math display">\[
+\tag{1.18}\]</span></span> We can differentiate the LHS by chain rule <span class="math display">\[
 \frac{d}{dt} \left( \psi (\phi(t))  \right) = \dot\psi (\phi(t)) \, \dot\phi(t) \,.
-\]</span> From (<a href="#eq-lemma-diffeomorphism-1" class="quarto-xref"><span>1.19</span></a>) we then get <span class="math display">\[
+\]</span> From (<a href="#eq-lemma-diffeomorphism-1" class="quarto-xref"><span>1.18</span></a>) we then get <span class="math display">\[
 \dot\psi (\phi(t)) \, \dot\phi(t) = 1 \, , \quad \forall \, t \in (a,b) \,.
 \]</span> As the RHS is non-zero, we must have that both the elements in the LHS product are non-zero. In particular we conclude <span class="math display">\[
 \dot\phi(t) \neq  0 \, , \quad \forall \, t \in (a,b) \,.
@@ -1494,7 +1494,7 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/singular_curve_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="../images/singular_curve_animated.gif" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Left: Animation of <span class="math inline">\({\pmb{\gamma}}(t) = (t,t^2)\)</span>. Right: Animation of <span class="math inline">\({\pmb{\eta}}(t) = (t^3,t^6)\)</span>.</figcaption>
 </figure>
 </div>
@@ -1514,9 +1514,9 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 \dot \phi(t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,,
 \]</span> Therefore <span id="eq-regularity-invariant-1"><span class="math display">\[
 \dot{\widetilde{{\pmb{\gamma}}}}(t) \neq 0 \quad \iff \quad \dot{{\pmb{\gamma}}}(\phi(t)) \neq 0 \,.
-\tag{1.20}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular we infer <span class="math display">\[
+\tag{1.19}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular we infer <span class="math display">\[
 \dot{{\pmb{\gamma}}}(\phi(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> From (<a href="#eq-regularity-invariant-1" class="quarto-xref"><span>1.20</span></a>) we conclude that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is regular.<p></p>
+\]</span> From (<a href="#eq-regularity-invariant-1" class="quarto-xref"><span>1.19</span></a>) we conclude that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is regular.<p></p>
 </div></details>
 </div>
 <div id="Example-54" class="Example">
@@ -1536,8 +1536,8 @@ Figure&nbsp;1.7: Sketch of 1D shape <span class="math inline">\(\Gamma\)</span> 
 </div></details>
 </div>
 <p>We now define unit-speed reparametrizations:</p>
-<div id="unit-speed-reparametrization-1" class="Definition" title="unit-speed reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span>. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, that is, <span class="math display">\[
+<div id="unit-speed-reparametrization-1" class="Definition" title="Unit-speed reparametrization">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>Unit-speed reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span>. A <strong>unit-speed reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is a reparametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> which is unit-speed, that is, <span class="math display">\[
 \left\|  \dot{\widetilde{{\pmb{\gamma}}}}(t)  \right\| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b})
 \]</span><p></p>
 </div></details>
@@ -1551,7 +1551,7 @@ s(t):=\int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \,,
 \dot{s}(t) \neq 0 \,.
 \]</span> In this case the arc-length <span class="math inline">\(s\)</span> is a diffeomorphism by the Inverse Function Theorem. As it turns out, all the unit-speed reparametrizations of <span class="math inline">\({\pmb{\gamma}}\)</span> are of the form <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ \psi  \,, \qquad \psi := \pm s^{-1} + c
-\]</span> The above statements will be proved in Theorem <a href="chap_1.html#theorem-regular-unit-speed">56</a> and Proposition <a href="chap_1.html#proposition-arc-length-unit">57</a> below.</p>
+\]</span> The above statements will be proved in Theorem <a href="chap_1.html#theorem-regular-unit-speed">56</a> and Theorem <a href="chap_1.html#theorem-arc-length-unit">57</a> below.</p>
 <div id="theorem-regular-unit-speed" class="Theorem" title="Existence of unit-speed reparametrization">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 56: </strong>Existence of unit-speed reparametrization</summary><div>
 <p>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a curve. They are equivalent:</p>
@@ -1566,7 +1566,7 @@ s(t):=\int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \,,
 \dot{{\pmb{\gamma}}}(t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
 \]</span> Let <span class="math inline">\(s \ \colon (a,b) \to \mathbb{R}\)</span> be the arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. By the Fundamental Theorem of Calculus we have <span id="eq-derivative-arc"><span class="math display">\[
 \dot s (t) = \left\|  \dot{{\pmb{\gamma}}}(t)  \right\|  
-\tag{1.21}\]</span></span> so that <span class="math display">\[
+\tag{1.20}\]</span></span> so that <span class="math display">\[
 \dot s (t) &gt; 0 \,, \quad \forall \, t \in (a,b)\,.
 \]</span> The above condition and the Inverse Function Theorem guarantee the existence of a smooth inverse <span class="math display">\[
 s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
@@ -1581,11 +1581,11 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 {\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}(s(t)) \,, \quad \forall \, t \in (a,b) \,.
 \]</span> By chain rule <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \, \dot s(t) =  \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \, \left\|  \dot{{\pmb{\gamma}}}(t)  \right\|  
-\]</span> where in the last equality we used (<a href="#eq-derivative-arc" class="quarto-xref"><span>1.21</span></a>). Taking the absolute value of the above yields <span id="eq-derivative-arc-1"><span class="math display">\[
+\]</span> where in the last equality we used (<a href="#eq-derivative-arc" class="quarto-xref"><span>1.20</span></a>). Taking the absolute value of the above yields <span id="eq-derivative-arc-1"><span class="math display">\[
 \left\|  \dot{{\pmb{\gamma}}}(t)  \right\|   = \left\| \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \right\| \, \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| \,.  
-\tag{1.22}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, we have <span class="math display">\[
+\tag{1.21}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, we have <span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(t) \right\| \neq 0 \,, \quad \forall \, t \in (a,b)\,.
-\]</span> Therefore we can divide (<a href="#eq-derivative-arc-1" class="quarto-xref"><span>1.22</span></a>) by <span class="math inline">\(\left\| \dot{{\pmb{\gamma}}}(t) \right\|\)</span> and obtain <span class="math display">\[
+\]</span> Therefore we can divide (<a href="#eq-derivative-arc-1" class="quarto-xref"><span>1.21</span></a>) by <span class="math inline">\(\left\| \dot{{\pmb{\gamma}}}(t) \right\|\)</span> and obtain <span class="math display">\[
 \left\| \dot{\widetilde{{\pmb{\gamma}}}}(s(t)) \right\| = 1  \,, \quad \forall \, t \in (a,b) \,.
 \]</span> By invertibility of <span class="math inline">\(s\)</span>, the above holds if and only if <span class="math display">\[
 \left\| \dot{\widetilde{{\pmb{\gamma}}}}(t) \right\| = 1  \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
@@ -1598,7 +1598,7 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 \left\| \dot{\widetilde{{\pmb{\gamma}}}}(t) \right\| = \left\| \dot{{\pmb{\gamma}}}(\phi(t))  \right\| \, |\dot{\phi} (t)| \,.
 \]</span> Since <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed we obtain <span id="eq-derivative-arc-3"><span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(\phi(t))  \right\| \, |\dot \phi(t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\tag{1.23}\]</span></span> Hence none of terms on the LHS can be zero, meaning that <span class="math display">\[
+\tag{1.22}\]</span></span> Hence none of terms on the LHS can be zero, meaning that <span class="math display">\[
 \dot{{\pmb{\gamma}}}(\phi(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 \]</span> As <span class="math inline">\(\phi\)</span> is invertible, we also have <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
@@ -1608,16 +1608,16 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 <p>The proof of Theorem <a href="chap_1.html#theorem-regular-unit-speed">56</a> told us that, if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, then <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ s^{-1}
 \]</span> is a unit-speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>. In the next proposition we show that the arc-length <span class="math inline">\(s\)</span> is essentially the only unit-speed reparametrization of a regular curve.</p>
-<div id="proposition-arc-length-unit" class="Proposition" title="Arc-length and unit-speed reparametrization">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57: </strong>Arc-length and unit-speed reparametrization</summary><div>
-<p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^3\)</span> be a reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, that is, <span class="math display">\[
+<div id="theorem-arc-length-unit" class="Theorem" title="Characterization of unit-speed reparametrizations">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 57: </strong>Characterization of unit-speed reparametrizations</summary><div>
+<p>Let <span class="math inline">\({\pmb{\gamma}}\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, that is, <span class="math display">\[
 {\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}( \phi(t) )  , \quad \forall \, t \in (a,b)
 \]</span> for some diffeomorphism <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We have</p>
 <ol type="1">
 <li><p>If <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed, there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
 \phi(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
-\tag{1.24}\]</span></span></p></li>
-<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed" class="quarto-xref"><span>1.24</span></a>), then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
+\tag{1.23}\]</span></span></p></li>
+<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed" class="quarto-xref"><span>1.23</span></a>), then <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit-speed.</p></li>
 </ol>
 </div></details>
 </div>
@@ -1638,13 +1638,13 @@ s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
 s(t) = \int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau =  \int_{t_0}^t | \dot \phi(\tau) | \, d\tau \,.
 \]</span> By the Fundamental Theorem of Calculus we get <span id="eq-proposition-unit-speed-2bis"><span class="math display">\[
 \dot s(t) = |\dot \phi(t) |  \quad  \forall \, t \in (a,b)
-\tag{1.25}\]</span></span> As <span class="math inline">\(\phi\)</span> is a diffeomorphism, by Lemma <a href="chap_1.html#lemma-diffeomorphism">51</a> we have <span class="math display">\[
+\tag{1.24}\]</span></span> As <span class="math inline">\(\phi\)</span> is a diffeomorphism, by Lemma <a href="chap_1.html#lemma-diffeomorphism">51</a> we have <span class="math display">\[
 \dot \phi(t) \neq 0  \quad  \forall \, t \in (a,b) \,.
 \]</span> By continuity of <span class="math inline">\(\dot \phi\)</span> and the Mean Value Theorem we conclude that either <span class="math display">\[
 \dot \phi(t) &gt; 0  \quad  \forall \, t \in (a,b) \,.
 \]</span> or <span class="math display">\[
 \dot \phi(t) &lt; 0  \quad  \forall \, t \in (a,b) \,.
-\]</span> Therefore (<a href="#eq-proposition-unit-speed-2bis" class="quarto-xref"><span>1.25</span></a>) reads either <span class="math display">\[
+\]</span> Therefore (<a href="#eq-proposition-unit-speed-2bis" class="quarto-xref"><span>1.24</span></a>) reads either <span class="math display">\[
 \dot s(t) = \dot \phi(t)   \quad  \forall \, t \in (a,b)
 \]</span> or <span class="math display">\[
 \dot s(t) = - \dot \phi(t)   \quad  \forall \, t \in (a,b)
@@ -1653,9 +1653,9 @@ s(t) = \int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau =  \i
 \]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>, concluding the proof.<p></p>
 <p><em>Step 2. Second Point.</em> Let <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> be reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> <span id="eq-proposition-unit-speed-2tris"><span class="math display">\[
 {\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}(\phi(t)) \,, \quad \forall \, t \in (a,b)
-\tag{1.26}\]</span></span> with <span class="math display">\[
+\tag{1.25}\]</span></span> with <span class="math display">\[
 \phi:= \pm s + c
-\]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>. Differentiating (<a href="#eq-proposition-unit-speed-2tris" class="quarto-xref"><span>1.26</span></a>) we get <span class="math display">\[\begin{align*}
+\]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>. Differentiating (<a href="#eq-proposition-unit-speed-2tris" class="quarto-xref"><span>1.25</span></a>) we get <span class="math display">\[\begin{align*}
 \dot{{\pmb{\gamma}}}(t) &amp; = \dot{\widetilde{{\pmb{\gamma}}}}( \phi(t) ) \dot\phi(t) \\
         &amp; = \pm \dot{\widetilde{{\pmb{\gamma}}}}( \phi(t) ) \dot s(t) \\
         &amp; =  \pm \dot{\widetilde{{\pmb{\gamma}}}}( \phi(t) ) \left\|  \dot{{\pmb{\gamma}}}(t)  \right\|
@@ -1669,8 +1669,8 @@ s(t) = \int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau =  \i
 </div></details>
 </div>
 <div id="arc-length-reparametrization" class="Definition" title="Arc-length reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Arc-length reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be regular. The <strong>arc-length reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is the curve <span class="math display">\[
-\widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ s^{-1}
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Arc-length reparametrization</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be regular. The <strong>arc-length reparametrization</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}= {\pmb{\gamma}}\circ s^{-1} \,,
 \]</span> with <span class="math inline">\(s^{-1}\)</span> inverse of the arc-length function of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
 </div></details>
 </div>
@@ -1711,27 +1711,19 @@ s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = Rt
 \]</span></p>
 </div></details>
 </div>
-<div id="Example-60" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 60</strong></summary><div>
-<p><strong>Question.</strong> Consider the curve <span class="math display">\[
+<div id="reparametrization-by-arc-length" class="Example" title="Reparametrization by arc-length">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 60: </strong>Reparametrization by arc-length</summary><div><strong>Question.</strong> Consider the curve <span class="math display">\[
 {\pmb{\gamma}}(t)=(5 \cos (t), 5 \sin (t), 12 t) \,.
-\]</span></p>
-<ol type="1">
-<li>Prove that <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.</li>
-<li>Reparametrize <span class="math inline">\({\pmb{\gamma}}\)</span> by arc-length.</li>
-</ol>
-<p><strong>Solution.</strong></p>
-<ol type="1">
-<li><p><span class="math inline">\({\pmb{\gamma}}\)</span> is regular because <span class="math display">\[\begin{align*}
-\dot{{\pmb{\gamma}}}(t) &amp; =(-5 \sin (t), 5 \cos (t), 12) \\
-\|\dot{{\pmb{\gamma}}}(t)\| &amp; = 13 \neq 0
-\end{align*}\]</span></p></li>
-<li><p>The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
-s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = 13 t \,.
-\]</span> The inverse is <span class="math inline">\(t(s) = s/13\)</span>. The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\]</span><p></p>
+<p>Prove that <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, and reparametrize it by arc-length.</p>
+<p><strong>Solution.</strong> <span class="math inline">\({\pmb{\gamma}}\)</span> is regular because <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t)  =(-5 \sin (t), 5 \cos (t), 12) \,, \qquad
+\|\dot{{\pmb{\gamma}}}(t)\|  = 13 \neq 0
+\]</span> The arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> starting from <span class="math inline">\(t_0 = 0\)</span>, and its inverse, are <span class="math display">\[
+s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = 13 t \,, \qquad t(s) = \frac{s}{13} \,.
+\]</span> The arc-length reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(s)= {\pmb{\gamma}}(t(s)) = \left(5 \cos \left(\frac{s}{13} \right), 5 \sin \left(\frac{s}{13} \right), \frac{12}{13} s\right) \,.
-\]</span></p></li>
-</ol>
+\]</span></p>
 </div></details>
 </div>
 <div id="Warning*-17" class="Warning">
@@ -1742,19 +1734,17 @@ s(t) = \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, d u = 13 t \,.
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 61: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\({\pmb{\gamma}}\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
 {\pmb{\gamma}}(t) = (t,t^2,t^3)\,.
 \]</span> Therefore <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) = (1,2t,3t^2)\,,
-\]</span> so that <span class="math display">\[
-\dot{{\pmb{\gamma}}}(t) \neq 0 \,, \quad \forall \, t \in \mathbb{R}\,,
+\dot{{\pmb{\gamma}}}(t) = (1,2t,3t^2) \neq {\pmb{0}}\,,
 \]</span> meaning that <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. In particular <span class="math display">\[
-\left\|  \dot{{\pmb{\gamma}}}(t)  \right\| = \sqrt{  1 + 4t^2 + 9t^4 }
+\left\|  \dot{{\pmb{\gamma}}}(t)  \right\| = \sqrt{  1 + 4t^2 + 9t^4 }\,,
 \]</span> so that the arc-length of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span id="eq-twisted-arc"><span class="math display">\[
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
-\tag{1.27}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, by Proposition <a href="chap_1.html#proposition-arc-length-unit">57</a> we know that <span class="math inline">\({\pmb{\gamma}}\)</span> admits the unit-speed reparametrization <span class="math display">\[
+\tag{1.26}\]</span></span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is regular, by Theorem <a href="chap_1.html#theorem-arc-length-unit">57</a> we know that <span class="math inline">\({\pmb{\gamma}}\)</span> admits the unit-speed reparametrization <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}:=  {\pmb{\gamma}}\circ s^{-1}
-\]</span> with <span class="math inline">\(s^{-1}\)</span> the inverse of the arc-length function. It can be shown that the integral at (<a href="#eq-twisted-arc" class="quarto-xref"><span>1.27</span></a>) cannot be written in terms of elementary functions. Therefore there are not explicit formulas for <span class="math inline">\(s\)</span> and <span class="math inline">\(s^{-1}\)</span>. As a consequence the unit-speed parametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> cannot be computed explicitly in this case.<p></p>
+\]</span> with <span class="math inline">\(s^{-1}\)</span> the inverse of the arc-length function. It can be shown that the integral at (<a href="#eq-twisted-arc" class="quarto-xref"><span>1.26</span></a>) cannot be written in terms of elementary functions. Therefore there are not explicit formulas for <span class="math inline">\(s\)</span> and <span class="math inline">\(s^{-1}\)</span>. As a consequence the unit-speed parametrization <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> cannot be computed explicitly in this case.<p></p>
 </div></details>
 </div>
-<div id="d947ac29" class="cell" data-execution_count="13">
+<div id="78d493e9" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1793,7 +1783,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/loop_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="../images/loop_animated.gif" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Animated plot of curve <span class="math inline">\({\pmb{\gamma}}(t) = (t^2-1, t^3-1)\)</span> for <span class="math inline">\(t \in [-2,2]\)</span></figcaption>
 </figure>
 </div>
@@ -1827,7 +1817,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 <li><p>If <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic, then <span class="math inline">\({\pmb{\gamma}}\)</span> is determined by its restriction to any interval of length <span class="math inline">\(|T|\)</span>.</p></li>
 <li><p>Conversely, suppose that <span class="math inline">\({\pmb{\gamma}}\ \colon [a,b] \to \mathbb{R}^n\)</span> satisfies <span id="eq-smooth-extension"><span class="math display">\[
 {\pmb{\gamma}}(a) = {\pmb{\gamma}}(b) \,, \quad \frac{d^k {\pmb{\gamma}}}{dt^k} (a) =\frac{d^k {\pmb{\gamma}}}{dt^k}  (b)  
-\tag{1.28}\]</span></span> for all <span class="math inline">\(k \in \mathbb{N}\)</span>. Set <span class="math display">\[
+\tag{1.27}\]</span></span> for all <span class="math inline">\(k \in \mathbb{N}\)</span>. Set <span class="math display">\[
 T:=b-a \,.
 \]</span> Then <span class="math inline">\({\pmb{\gamma}}\)</span> can be extended to a smooth <span class="math inline">\(T\)</span>-periodic curve <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> defined by <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) := {\pmb{\gamma}}(\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \mathbb{R}\,.
@@ -1837,7 +1827,7 @@ t = \tilde{t} + k(b-a)
 k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
 \]</span> see figure below. In this way <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math inline">\(T\)</span>-periodic and smooth.</p>
 <blockquote class="blockquote">
-<p>Note that assumption (<a href="#eq-smooth-extension" class="quarto-xref"><span>1.28</span></a>) must hold for all <span class="math inline">\(k \in \mathbb{N}\)</span> for the extension <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> to be smooth. As a counterexample consider <span class="math inline">\(f(x):=x^2\)</span> for <span class="math inline">\(x \in [-1,1]\)</span>. As seen by plotting <span class="math inline">\(f\)</span>, it is clear that <span class="math inline">\(f\)</span> cannot be extended to a smooth periodic function. And indeed in this case (<a href="#eq-smooth-extension" class="quarto-xref"><span>1.28</span></a>) is violated, because <span class="math display">\[
+<p>Note that assumption (<a href="#eq-smooth-extension" class="quarto-xref"><span>1.27</span></a>) must hold for all <span class="math inline">\(k \in \mathbb{N}\)</span> for the extension <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> to be smooth. As a counterexample consider <span class="math inline">\(f(x):=x^2\)</span> for <span class="math inline">\(x \in [-1,1]\)</span>. As seen by plotting <span class="math inline">\(f\)</span>, it is clear that <span class="math inline">\(f\)</span> cannot be extended to a smooth periodic function. And indeed in this case (<a href="#eq-smooth-extension" class="quarto-xref"><span>1.27</span></a>) is violated, because <span class="math display">\[
 f(-1) = f(1) = 1 \,, \quad f'(-1) = -2 \neq 2 = f'(1)
 \]</span> showing that the periodic extension is continuous but not differentiable.</p>
 </blockquote></li>
@@ -1879,7 +1869,7 @@ By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/periodic_extension.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/periodic_extension.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_1.html#remark-closed">65</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
 </figure>
 </div>
@@ -1942,11 +1932,11 @@ k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n :=
        &amp; = {\pmb{\gamma}}(t_n)             &amp; \mbox{(by $k_nT_n$-periodicity)} \,.
 \end{align*}\]</span> Therefore <span id="eq-period-exists-1"><span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\gamma}}(t_n) \,, \quad \forall \, n \in \mathbb{N}\,.
-\tag{1.29}\]</span></span> Also notice that <span class="math display">\[
+\tag{1.28}\]</span></span> Also notice that <span class="math display">\[
 0 \leq t_n \leq T_n \,, \quad \forall \, n \in \mathbb{N}\,.
 \]</span> by construction. Since <span class="math inline">\(T_n \to 0\)</span>, by the Squeeze Theorem we conclude that <span class="math display">\[
 t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
-\]</span> Using the continuity of <span class="math inline">\({\pmb{\gamma}}\)</span>, we can pass to the limit in (<a href="#eq-period-exists-1" class="quarto-xref"><span>1.29</span></a>) and obtain <span class="math display">\[
+\]</span> Using the continuity of <span class="math inline">\({\pmb{\gamma}}\)</span>, we can pass to the limit in (<a href="#eq-period-exists-1" class="quarto-xref"><span>1.28</span></a>) and obtain <span class="math display">\[
 {\pmb{\gamma}}(t) = \lim_{n \to \infty} {\pmb{\gamma}}(t_n) = {\pmb{\gamma}}(0) \,.
 \]</span> Since <span class="math inline">\(t \in \mathbb{R}\)</span> was arbitrary, we have shown that <span class="math display">\[
 {\pmb{\gamma}}(t) =  {\pmb{\gamma}}(0) \,, \quad \forall \, t \in \mathbb{R}\,.
@@ -1955,7 +1945,7 @@ t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/archimedean.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../images/archimedean.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>For each <span class="math inline">\(t \in \mathbb{R}\)</span> there exist unique <span class="math inline">\(k_n \in \mathbb{Z}\)</span> and <span class="math inline">\(\tilde{t}_n \in [0,T_n]\)</span> such that <span class="math inline">\(t=\tilde{t} + k_n T_n\)</span>. In this skecth <span class="math inline">\(k_n =3\)</span>.</figcaption>
 </figure>
 </div>
@@ -2019,7 +2009,7 @@ b-a = \frac{4\pi}{3} - \frac{2\pi}{3} = \frac{2\pi}{3}
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/limacon.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="../images/limacon.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <figcaption>Limaçon curve</figcaption>
 </figure>
 </div>

@@ -5873,7 +5873,7 @@ The angle between $\g$ and $\tg$ is
 $$
 \cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
 $$
-with $E,F,G,\wE,\wF,\wG$ evaluated at $(u(t_0),v(t_0))$, and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ at $t_0$.
+with $E,F,G$ evaluated at $(u(t_0),v(t_0))$, and $\dot{u},\dot{v}, \dot{\widetilde{u}}, \dot{\widetilde{v}}$ at $t_0$.
 
 :::
 

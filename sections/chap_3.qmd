@@ -2228,7 +2228,7 @@ so that $g \circ f$ is continuous.
 We conclude the section by introducing homeomorphisms.
 
 ::: Definition
-### Homeomoprhim
+### Homeomorphism
 
 Let $(X,\TT_X)$, $(Y,\TT_Y)$ be topological space. A function $f \colon X \to Y$ is called an **homeomorphism** if they hold:
 

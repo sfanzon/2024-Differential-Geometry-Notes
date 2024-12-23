@@ -593,7 +593,7 @@
 
  [**Proof**](#Proof*-3.34)\Pageref{Proof*-3.34}
 
- [**Definition 3.75**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Definition 3.75**](#homeomorphism): Homeomorphism\Pageref{homeomorphism}
 
  [**Definition 3.76**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
@@ -749,7 +749,7 @@
 
  [**Theorem 4.25**](#continuity-topological-definition): Continuity: Topological definition\Pageref{continuity-topological-definition}
 
- [**Definition 4.26**](#homeomorphism): Homeomorphism\Pageref{homeomorphism}
+ [**Definition 4.26**](#homeomorphism-1): Homeomorphism\Pageref{homeomorphism-1}
 
  [**Definition 4.27**](#differentiable-function): Differentiable Function\Pageref{differentiable-function}
 
